@@ -1,0 +1,102 @@
+NENJAC WRITERS' ROOM v3.6: how to run it
+==========================================
+
+It's one file: index.html. It has to sit right next to your "assets" folder:
+
+  NenjacSpinoffCreator/
+    index.html      <- the app
+    assets/         <- your art, backgrounds, props and music (loaded automatically)
+
+MAC
+  Double-click index.html. Use Chrome (best for the Voice Booth and Shorts videos).
+
+CHROMEBOOK
+  1. Put the whole NenjacSpinoffCreator folder (index.html + assets) in your Files app
+     (My files or Google Drive).
+  2. Double-click index.html. It opens in Chrome. Bookmark it (Ctrl+D).
+
+No install, no server. Being online just adds the nicer fonts (including the comic
+fonts) and the YouTube mini window.
+
+ONE-TIME SETUP: LINK YOUR ASSETS FOLDER
+  Browsers won't let a page opened from a file export pictures or sounds from other
+  files. So the first time you export a comic with your art, mix theme songs into an
+  episode, or render a Short, the app asks you to pick your "assets" folder. It copies
+  it into the browser and then everything exports. You can also do it any time from
+  ⚙ Settings → "Link my assets folder". Added new art? Hit "Re-link".
+
+YOUR STUFF IS SAVED
+  Automatically, in that browser on that computer. Drawings and comics are saved too.
+  To move between Mac and Chromebook: ⚙ (top right) → "Download full backup",
+  then "Restore from backup" on the other machine. The backup includes your drawings.
+  Voice takes are NOT in the backup (they're big audio files): use
+  Voice Booth → "⬇ Keepers .zip" to save them.
+
+WRITING DESK KEYS
+  Enter .............. next line (Character → Dialogue → Character…)
+  Tab ................ change the line type
+  Alt/Option + 1–9 ... jump to Scene / Action / Character / Paren / Dialogue / Transition / Song / Lyric / Note
+  Alt/Option + F ..... focus mode (Esc to leave)
+  Alt/Option + C ..... summon a cameo
+  Cmd/Ctrl + F ....... find & replace
+  Cmd/Ctrl + S ....... save a draft snapshot
+
+ART STUDIO + COMIC KEYS
+  V select · R rectangle · O ellipse · S shape library · P custom shape (pen)
+  L line · T text · U speech bubble · N comic panel · B pencil · I color picker
+  H or Space+drag to pan
+  Double-click a shape to edit its points · Double-click text or a bubble to type
+  Drag the yellow dot on a bubble to aim its tail
+  Cmd/Ctrl+Z undo · Shift+Cmd/Ctrl+Z redo · Cmd/Ctrl+D duplicate
+  Cmd/Ctrl+G group · Shift+Cmd/Ctrl+G ungroup · [ and ] to change the stacking order
+  Arrow keys nudge (hold Shift for 10px) · Cmd/Ctrl+scroll or pinch to zoom
+  Palette: click = fill, right-click = outline
+
+VOICE BOOTH KEYS
+  R record / stop · Space play the keeper · ↑ ↓ previous / next line
+  K keep the newest take · Delete delete the newest take
+  The first time, Chrome asks to use the microphone. Click Allow.
+  (Opened from a file, Chrome may ask again each session. That's normal.)
+
+THE PIT (music) KEYS: same as Logic
+  Space play/stop · R record · Return go to start · , . back/forward a bar
+  C cycle (drag in the ruler's bar numbers to set the loop) · K metronome
+  ⌘/Ctrl+K Musical Typing (A W S E D F T G Y H U J K = notes, Z/X octave, C/V velocity)
+  P piano roll · H chords & sections · X mixer · L lyrics · O loop browser · Y library
+  M mute · S solo · T split at playhead · ⌘R repeat region · ⌘D duplicate track
+  ⌘C/⌘V copy/paste regions · ⌘B bounce · V "go on" out of a vamp · ⌘Z undo
+  Recording vocals: select the vocal track, press R, sing. Wear headphones.
+  If takes land a hair late or early, nudge "Latency fix" in the Library (Y).
+  Bounces are auto-normalized. "Save to Vibe Station" makes the song usable as music
+  in Shorts and the Episode Assembler too.
+
+ANIMATE (episodes) KEYS: same as Premiere
+  Space play/pause · J K L reverse / stop / play (tap L again = faster)
+  ← → one frame (Shift = 10 frames) · ↑ ↓ jump to the previous / next keyframe or edit
+  Home / End start / end · ⌘/Ctrl+K cut the selected clip at the playhead
+  C razor tool · V selection tool · Q / W trim the clip's start / end to the playhead
+  M marker · T make the selected character talk · + / - zoom the timeline · \ fit
+  ⌘C/⌘V copy/paste a layer · ⌘D duplicate · Delete remove · ⌘Z undo · ⌘E export
+  Keyframes: click the ⏱ stopwatch next to Position/Scale/Rotation/Opacity, then every
+  change makes a keyframe at the playhead. Or leave 🔴 Auto-key on and just drag stuff.
+  Right-click a keyframe in the timeline to change its easing (ease, linear, pop, bounce, hold).
+  ▸ next to a layer shows its keyframes. Drag diamonds to retime them.
+  Faces: the main cast talks and blinks out of the box. For any other picture, select it
+  and hit "Face rig": draw boxes over the mouth / eyes / brows, or pick a "mouth open"
+  or expression image to swap in. Drawings from the Art Studio rig themselves.
+  Export makes a real MP4 frame by frame (usually faster than real time). Leave the
+  export window open until it says Saved.
+  Your episodes and imported media are saved in this browser (not in the backup file).
+
+EVERYWHERE
+  ⌘/Ctrl+K (or the ⌘ button) = command palette (in The Pit and Animate, use the ⌘ button). ? = shortcuts for the screen you're on.
+
+SHORTS FACTORY
+  Videos are rendered frame by frame into a real MP4 (in Chrome). Older browsers fall
+  back to recording in real time: keep the tab open and in front while it records.
+  Chrome saves .mp4 (works on TikTok, Reels and YouTube Shorts). Older browsers save
+  .webm: TikTok and YouTube take it, for Instagram run it through CapCut first.
+
+YOUTUBE / SPOTIFY LINKS
+  These sites block their players inside a page opened from a file, so links pop out
+  into a small mini window. If nothing opens, allow pop-ups for the page.
