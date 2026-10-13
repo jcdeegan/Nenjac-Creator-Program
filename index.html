@@ -6,7 +6,8 @@
   ██║╚██╗██║██╔══╝  ██║╚██╗██║██   ██║██╔══██║██║
   ██║ ╚████║███████╗██║ ╚████║╚█████╔╝██║  ██║╚██████╗
   ╚═╝  ╚═══╝╚══════╝╚═╝  ╚═══╝ ╚════╝ ╚═╝  ╚═╝ ╚═════╝
-              W R I T E R S '   R O O M   — v3.6
+              C R E A T O R   — v4.0
+         (the whole object-show studio in one file)
 
   A single-file script-writing app for the Nenjac universe.
 
@@ -50,7 +51,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nenjac Writers' Room</title>
+<title>Nenjac Creator</title>
+<meta name="description" content="Nenjac Creator: write, draw, voice, score and animate your object show.">
+<meta name="theme-color" content="#930000">
+<meta name="application-name" content="Nenjac Creator">
+<meta name="apple-mobile-web-app-title" content="Nenjac Creator">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;0,600;0,800;1,600&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Bangers&family=Comic+Neue:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -1562,6 +1569,132 @@ body.an-playing #pet .pet-body{animation:petDance .45s ease-in-out infinite alte
 .fx-sti label{display:flex;flex-direction:column;font:700 9.5px var(--ui);color:#8f99ad;gap:1px}
 .fx-sti label input[type=number]{width:100%}
 
+
+/* ===================================================================
+   [CSS FINISH] Nenjac Creator 4: wheel, settings, tour, polish
+   =================================================================== */
+/* ---------- Wheel of Doom 2 ---------- */
+.wh-top{display:flex;align-items:center;gap:10px}.wh-top h2{margin:0}
+.wh-tabs{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 14px}
+.wh-tabs button{cursor:pointer;border:2.5px solid #000;border-radius:999px;background:#fff;font:800 12.5px var(--ui);padding:6px 12px;box-shadow:2px 2px 0 #000;transition:transform .1s}
+.wh-tabs button:hover{transform:translateY(-1px)}.wh-tabs button.on{background:var(--sun)}
+.wh-tabs .wh-new{background:#eef3ff;border-style:dashed}
+.wh-stage{display:grid;grid-template-columns:auto minmax(280px,1fr);gap:22px;align-items:start}
+.wh-reels{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.wh-reel{display:flex;flex-direction:column;align-items:center;gap:6px}
+.wh-lab{display:flex;align-items:baseline;gap:8px;margin-bottom:12px;font-family:var(--display)}.wh-lab b{font-size:18px;letter-spacing:1px}.wh-lab small{font:600 11px var(--ui);color:var(--muted)}
+#c-wheel .wheel-box canvas{width:100%;height:100%}
+#c-wheel .wheel-box .hub{cursor:pointer;font:900 13px var(--display);z-index:2;padding:0}
+#c-wheel .wheel-box .hub:hover{filter:brightness(1.08)}#c-wheel .wheel-box .hub:disabled{opacity:.6;cursor:wait}
+.wh-read{min-height:34px;max-width:290px;text-align:center;font:800 14px var(--ui);background:#fff;border:2.5px solid #000;border-radius:10px;padding:6px 10px;box-shadow:2px 2px 0 #000}
+.wh-read.done{background:#fffbe6}
+.wh-lock{cursor:pointer;border:2px solid #000;border-radius:999px;background:#f1f3f8;font:800 11px var(--ui);padding:4px 10px}
+.wh-lock.on{background:#ffd76a}
+.wh-side .doom-result{min-height:150px}
+.doom-result .wh-p{padding:0 4px;border-radius:5px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.wh-p.p0{background:#ffe08a}.wh-p.p1{background:#c9dcff}.wh-p.p2{background:#ffc9df}
+.wh-win{margin-top:8px;font:900 15px var(--display);color:#387520}
+.wh-hist{margin-top:12px;font-size:12.5px}.wh-hist summary{cursor:pointer;font-weight:800}
+.wh-hist div{display:flex;justify-content:space-between;gap:10px;padding:4px 0;border-bottom:1px dashed #ddd}.wh-hist small{color:var(--muted);white-space:nowrap}
+.wh-ed{min-width:min(860px,88vw)}.modal:has(.wh-ed){width:min(960px,100%)}
+.wh-edtabs{margin:6px 0 10px}
+.wh-ed-grid{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:18px}
+.wh-ed-side{display:flex;flex-direction:column;gap:6px}.wh-ed-side .lab{font:800 11px var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-top:4px}
+.wh-castgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(74px,1fr));gap:6px;max-height:230px;overflow:auto;padding:4px;border:2px solid #000;border-radius:10px;background:#f7f8fb;margin-bottom:8px}
+.wh-cast{cursor:pointer;border:2px solid #000;border-radius:9px;background:#fff;padding:4px;display:flex;flex-direction:column;align-items:center;gap:2px;transition:opacity .15s,transform .1s}
+.wh-cast span{width:44px;height:44px;display:block}.wh-cast span>*{width:100%;height:100%;object-fit:contain}
+.wh-cast small{font:700 10px var(--ui);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.wh-cast.off{opacity:.3;filter:grayscale(1)}.wh-cast.gone{opacity:.45}.wh-cast.gone small{text-decoration:line-through}
+.wh-cast:hover{transform:translateY(-1px)}
+.wh-items{max-height:280px;overflow:auto;display:flex;flex-direction:column;gap:4px}
+.wh-item{display:flex;gap:6px;align-items:center}.wh-item .txt{flex:1}.wh-item.off .txt{opacity:.45;text-decoration:line-through}
+.wh-kinds{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.wh-kinds button{cursor:pointer;text-align:left;border:2.5px solid #000;border-radius:12px;background:#fff;padding:10px;display:flex;flex-direction:column;gap:2px;box-shadow:3px 3px 0 #000;transition:transform .1s}
+.wh-kinds button:hover{transform:translateY(-2px);background:#fffbe6}.wh-kinds b{font:800 14px var(--ui)}.wh-kinds small{color:var(--muted)}
+@media (max-width:1250px){ .wh-stage{grid-template-columns:1fr} }
+@media (max-width:760px){ .wh-ed-grid{grid-template-columns:1fr} }
+body.night .wh-tabs button:not(.on),body.night .wh-read,body.night .wh-cast,body.night .wh-kinds button{background:var(--card);color:var(--ink)}
+
+/* ---------- Tour: Deegs & Starr ---------- */
+#tour{position:fixed;inset:0;z-index:300}
+.tour-hole{position:fixed;border-radius:14px;box-shadow:0 0 0 9999px rgba(10,12,20,.62);outline:3px solid var(--sun);transition:left .35s cubic-bezier(.2,1,.3,1),top .35s cubic-bezier(.2,1,.3,1),width .35s cubic-bezier(.2,1,.3,1),height .35s cubic-bezier(.2,1,.3,1);pointer-events:none}
+.tour-card{position:fixed;z-index:2;background:#fff;border:3px solid #000;border-radius:16px;box-shadow:6px 6px 0 #000;padding:14px 16px 12px;transition:left .3s,top .3s;animation:pop .2s}
+.tour-card h3{margin:2px 0 6px;font:900 21px var(--display)}
+.tour-card p{margin:0;font:600 14.5px/1.45 var(--ui);min-height:64px}
+.tour-tag{display:inline-block;font:900 11px var(--display);letter-spacing:1.5px;padding:3px 10px;border-radius:999px;border:2px solid #000;color:#fff}
+.tour-tag.deegs{background:#e69138}.tour-tag.starr{background:#4a86e8}
+.tour-foot{display:flex;align-items:center;gap:6px;margin-top:12px}
+.tour-skip{background:none;border:0;cursor:pointer;font:700 12px var(--ui);color:#777;text-decoration:underline;padding:4px 2px;margin-right:auto}
+.tour-skip:hover{color:#000}
+.tour-dots{display:flex;gap:4px;margin-right:6px}.tour-dots i{width:7px;height:7px;border-radius:50%;background:#ddd;border:1px solid #999}.tour-dots i.done{background:#bbb}.tour-dots i.on{background:var(--sun);border-color:#000;transform:scale(1.3)}
+.tour-name{display:flex;flex-direction:column;gap:4px;margin-top:10px;font:800 12px var(--ui)}
+.tour-cast{position:fixed;left:0;right:0;bottom:0;height:0;pointer-events:none}
+.tour-who{position:fixed;bottom:100px;width:150px;height:150px;transition:transform .35s cubic-bezier(.2,1.4,.4,1),opacity .3s,filter .3s;opacity:.55;filter:grayscale(.6) brightness(.8);transform:translateY(16px) scale(.85);pointer-events:auto}
+.tour-who.deegs{left:22px}.tour-who.starr{right:22px}
+.tour-who>img,.tour-who>div{width:100%;height:100%;object-fit:contain;filter:drop-shadow(4px 6px 0 rgba(0,0,0,.45))}
+.tour-who b{position:absolute;left:50%;bottom:-18px;transform:translateX(-50%);font:900 12px var(--display);letter-spacing:1.5px;color:#fff;text-shadow:2px 2px 0 #000}
+.tour-who.on{opacity:1;filter:none;transform:none;animation:tourTalk .5s ease-in-out infinite alternate}
+@keyframes tourTalk{to{transform:translateY(-6px) rotate(-2deg)}}
+body.calm .tour-who.on{animation:none}
+@media (max-width:900px){ .tour-who{width:96px;height:96px;bottom:76px} }
+body.night .tour-card{background:var(--card);color:var(--ink)}
+
+/* ---------- Settings window ---------- */
+.modal:has(.setw){width:min(920px,100%);padding:0;overflow:hidden}
+.setw{display:grid;grid-template-columns:190px minmax(0,1fr);min-height:min(560px,80vh);max-height:86vh;position:relative}
+.set-nav{background:#f3f4f8;border-right:3px solid #000;padding:16px 10px;display:flex;flex-direction:column;gap:4px}
+.set-nav button{cursor:pointer;text-align:left;border:2px solid transparent;border-radius:10px;background:none;font:800 13.5px var(--ui);padding:9px 10px;color:#333}
+.set-nav button:hover{background:#e6e9f2}.set-nav button.on{background:var(--sun);border-color:#000;color:#000;box-shadow:2px 2px 0 #000}
+.set-body{padding:18px 22px 24px;overflow:auto}.set-body h2{margin:0 0 12px}.set-body h3{margin:18px 0 6px;font-size:15px}.set-body h3.danger{color:#930000}
+.set-x{position:absolute;right:12px;top:12px}
+.bk-card{display:flex;justify-content:space-between;align-items:center;gap:12px;border:2.5px solid #000;border-radius:12px;padding:12px 14px;margin:8px 0;background:#fff;flex-wrap:wrap}
+.bk-card.warn{background:#fff4d6}.bk-card b{display:block;font-size:14px}.bk-card small{color:var(--muted);font-size:12px}
+.snaps{display:flex;flex-direction:column;gap:4px;max-height:180px;overflow:auto;margin-bottom:6px}
+.snap{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:5px 8px;border:1.5px solid #ddd;border-radius:8px;font-size:12.5px}
+.stor{height:10px;border:2px solid #000;border-radius:999px;overflow:hidden;background:#eee}.stor i{display:block;height:100%;background:linear-gradient(90deg,#38c172,#ffc81e)}
+.help-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.help-grid button{cursor:pointer;text-align:left;border:2.5px solid #000;border-radius:12px;background:#fff;padding:12px;display:flex;flex-direction:column;gap:3px;box-shadow:3px 3px 0 #000;transition:transform .1s}
+.help-grid button:hover{transform:translateY(-2px);background:#fffbe6}.help-grid b{font-size:14px}.help-grid small{color:var(--muted)}
+.faq details{border-bottom:1px dashed #ccc;padding:8px 0}.faq summary{cursor:pointer;font-weight:800}.faq p{margin:6px 0 0;font-size:13px}
+.about{display:flex;gap:16px;align-items:center}
+.about-logo{background:#4a86e8;color:#fff;border:3px solid #000;border-radius:12px;padding:10px 14px;transform:rotate(-4deg);box-shadow:4px 4px 0 #000;display:flex;flex-direction:column;align-items:center;flex:none}
+.about-logo b{font:900 26px var(--display);line-height:1}.about-logo small{font:800 11px var(--display);letter-spacing:3px}
+.about-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0 8px}.about-facts div{border:2px solid #000;border-radius:10px;padding:8px;text-align:center}.about-facts b{display:block;font:900 18px var(--display);white-space:nowrap}.about-facts small{color:var(--muted)}
+.errlog{max-height:140px;overflow:auto;background:#111;color:#ffb3b3;font:12px/1.4 var(--mono);padding:8px;border-radius:8px;white-space:pre-wrap}
+@media (max-width:700px){ .setw{grid-template-columns:1fr} .set-nav{flex-direction:row;overflow:auto;border-right:0;border-bottom:3px solid #000} }
+body.night .set-nav{background:#1b1f2a}body.night .set-nav button{color:#ddd}body.night .bk-card,body.night .help-grid button{background:var(--card);color:var(--ink)}
+.iconbtn.badge{position:relative}.iconbtn.badge::after{content:'';position:absolute;right:-3px;top:-3px;width:11px;height:11px;border-radius:50%;background:#ff3b3b;border:2px solid #000}
+
+/* ---------- What's new ---------- */
+.modal:has(.wn){width:min(720px,100%)}
+.wn-ver{border:2.5px solid #000;border-radius:12px;padding:8px 12px;margin:8px 0}.wn-ver summary{cursor:pointer;font-size:15px}.wn-ver summary span{color:var(--muted)}
+.wn-items{display:flex;flex-direction:column;gap:8px;margin-top:8px}.wn-it{display:flex;gap:10px}.wn-it>span{font-size:22px;width:30px;flex:none;text-align:center}.wn-it p{margin:2px 0 0;font-size:13px;color:#444}
+body.night .wn-it p{color:var(--muted)}
+
+/* ---------- small notices ---------- */
+.hello40{position:fixed;left:18px;bottom:82px;z-index:120;display:flex;gap:10px;align-items:center;max-width:420px;background:#fff;border:3px solid #000;border-radius:14px;box-shadow:5px 5px 0 #000;padding:10px 12px;animation:pop .25s}
+.hello40 .h40-art{width:64px;height:64px;flex:none}.hello40 .h40-art>*{width:100%;height:100%;object-fit:contain}
+.hello40 b{display:block;font-size:14px}.hello40 small{display:block;color:var(--muted);margin:2px 0 6px}
+.tab-warn{position:fixed;left:50%;top:84px;transform:translateX(-50%);z-index:250;display:flex;gap:10px;align-items:center;background:#fff4d6;border:3px solid #000;border-radius:12px;box-shadow:4px 4px 0 #000;padding:8px 12px;font-size:13px;max-width:94vw;flex-wrap:wrap}
+.tab-warn.upd{background:#e6f7ec}
+.tab-paused{position:fixed;inset:0;z-index:400;background:rgba(10,12,20,.7);display:grid;place-items:center}.tab-paused .card{max-width:420px;text-align:center}
+.now-making{margin-top:10px}.now-making span{display:inline-block;background:var(--sun);color:#000;border:2.5px solid #000;border-radius:999px;padding:4px 12px;font:800 13px var(--ui);box-shadow:2px 2px 0 #000;text-shadow:none}
+body.night .hello40{background:var(--card);color:var(--ink)}
+
+/* ---------- lobby doors ---------- */
+.doors .door{min-height:168px;padding-bottom:38px}
+.doors .door h2{max-width:100%;font-size:19px;margin-bottom:6px}
+.doors .door p{max-width:100%!important;padding-right:58px;font-size:13px}
+.doors .door .who{width:84px!important;height:84px!important;right:-4px;bottom:-4px}
+
+/* ---------- accessibility ---------- */
+:focus-visible{outline:3px solid #4a86e8!important;outline-offset:2px}
+button:focus:not(:focus-visible){outline:none}
+@media (prefers-reduced-motion:reduce){ *{scroll-behavior:auto!important} }
+
+.set-title{font:900 12px var(--display);letter-spacing:2px;color:#888;padding:2px 10px 8px}
+body.night .wh-lock{background:#2c3242;color:#eee;border-color:#000}body.night .wh-lock.on{background:#ffd76a;color:#000}body.night .wh-p{color:#000}body.night .pl-it,body.night .snap{border-color:#3a4254}
+
 </style>
 </head>
 <body data-mood="rehearsal">
@@ -1574,7 +1707,7 @@ body.an-playing #pet .pet-body{animation:petDance .45s ease-in-out infinite alte
 
 <div id="app">
   <header class="marquee">
-    <div class="logo" data-go="lobby" title="Back to the lobby"><b>NENJAC</b><small>WRITERS' ROOM</small></div>
+    <div class="logo" data-go="lobby" title="Back to the lobby" role="link" aria-label="Nenjac Creator, back to the lobby"><b>NENJAC</b><small>CREATOR</small></div>
     <nav class="tabs" id="tabs">
       <button data-go="lobby"><span class="ico">🎭</span><span class="lbl">Lobby</span></button>
       <button data-go="desk"><span class="ico">✍️</span><span class="lbl">Writing Desk</span></button>
@@ -1604,22 +1737,22 @@ body.an-playing #pet .pet-body{animation:petDance .45s ease-in-out infinite alte
         <div class="shade"></div>
         <div class="lobby-quote" id="lobbyQuote"></div>
         <div class="copy">
-          <h1>Welcome to Nenjac Theater.</h1>
-          <p>Write new episodes, spin off the side characters, and build out the universe. The creaky stairs, the 10-foot spiders and Warren are all included.</p>
+          <h1>Welcome to Nenjac Creator.</h1>
+          <p>Everything you need to make an object show: write it, draw it, voice it, score it, animate it and post it. The Nenjac cast is here to help (and to get in the way).</p><div class="now-making" id="nowMaking"></div>
         </div>
       </div>
 
       <div class="doors">
-        <div class="card door d1" data-go="desk"><h2>The Writing Desk</h2><p>A screenplay editor on Starr's notebook paper. Autocompletes the cast and exports to PDF.</p><span class="k">WRITE ▸</span><div class="who" data-art="Deegs"></div></div>
-        <div class="card door d2" data-go="bible"><h2>Universe Bible</h2><p>Every character, quote, running gag and dead body, with custom fields and tags.</p><span class="k">LORE ▸</span><div class="who" data-art="Nerd"></div></div>
-        <div class="card door d5" data-go="studio"><h2>Art Studio</h2><p>Draw new characters, backgrounds and props from shapes. Exports to PNG.</p><span class="k">DRAW ▸</span><div class="who" data-art="Starr"></div></div>
-        <div class="card door d6" data-go="voice"><h2>Voice Booth</h2><p>Record every line, pick keepers, add effects, then assemble the whole episode.</p><span class="k">RECORD ▸</span><div class="who" data-art="Warren"></div></div>
-        <div class="card door d9" data-go="pit"><h2>The Pit</h2><p>Your own pit orchestra. Pick a kind of number, get a full backing track, then tweak, sing and bounce it.</p><span class="k">OVERTURE ▸</span><div class="who" data-art="Dean"></div></div>
-        <div class="card door d10" data-go="anim"><h2>Animate</h2><p>Premiere-style episode maker: layers, keyframes, talking + blinking puppets, props they can grab. Script → Scene does the first pass for you.</p><span class="k">ACTION ▸</span><div class="who" data-art="Starr"></div></div>
-        <div class="card door d7" data-go="shorts"><h2>Shorts Factory</h2><p>Turn a scene into a TikTok, Reel or YouTube Short. Captions pop, characters bounce.</p><span class="k">GO VIRAL ▸</span><div class="who" data-art="Spencer"></div></div>
-        <div class="card door d8" onclick="go('studio');setTimeout(newComicDialog,250)"><h2>Comic Creator</h2><p>Panels, speech bubbles and pages, ready to post. Or turn a script into a comic in one click.</p><span class="k">INK ▸</span><div class="who" data-art="Elea"></div></div>
-        <div class="card door d3" data-go="vibe"><h2>Vibe Station</h2><p>Your theme songs are already loaded. Add your own tracks or paste a link.</p><span class="k">VIBE ▸</span><div class="who" data-art="Cas"></div></div>
-        <div class="card door d4" data-go="chaos"><h2>Chaos Corner</h2><p>Wheel of Doom, the Spinoff Pitch Machine, Squid Smash, and Warren's Casting Call.</p><span class="k">CHAOS ▸</span><div class="who" data-art="Neen"></div></div>
+        <div class="card door d1" data-go="desk"><h2>The Writing Desk</h2><p>A screenplay editor that knows your whole cast. Exports PDF and Fountain.</p><span class="k">WRITE ▸</span><div class="who" data-art="Deegs"></div></div>
+        <div class="card door d2" data-go="bible"><h2>Universe Bible</h2><p>Every character, quote, running gag and dead body in your universe.</p><span class="k">LORE ▸</span><div class="who" data-art="Nerd"></div></div>
+        <div class="card door d5" data-go="studio"><h2>Art Studio</h2><p>Draw characters, props and sets from shapes, outlines and the Face Kit.</p><span class="k">DRAW ▸</span><div class="who" data-art="Starr"></div></div>
+        <div class="card door d6" data-go="voice"><h2>Voice Booth</h2><p>Record every line, pick keepers, then assemble the whole episode.</p><span class="k">RECORD ▸</span><div class="who" data-art="Warren"></div></div>
+        <div class="card door d9" data-go="pit"><h2>The Pit</h2><p>A pit orchestra on demand. Build a musical number, then sing on it.</p><span class="k">OVERTURE ▸</span><div class="who" data-art="Dean"></div></div>
+        <div class="card door d10" data-go="anim"><h2>Animate</h2><p>Layers, keyframes and puppets that talk and blink. Exports MP4.</p><span class="k">ACTION ▸</span><div class="who" data-art="Starr"></div></div>
+        <div class="card door d7" data-go="shorts"><h2>Shorts Factory</h2><p>Turn any scene into a TikTok, Reel or YouTube Short.</p><span class="k">GO VIRAL ▸</span><div class="who" data-art="Spencer"></div></div>
+        <div class="card door d8" onclick="go('studio');setTimeout(newComicDialog,250)"><h2>Comic Creator</h2><p>Panels, bubbles and pages. Script → comic in one click.</p><span class="k">INK ▸</span><div class="who" data-art="Elea"></div></div>
+        <div class="card door d3" data-go="vibe"><h2>Vibe Station</h2><p>Your theme songs, plus anything you add or link.</p><span class="k">VIBE ▸</span><div class="who" data-art="Cas"></div></div>
+        <div class="card door d4" data-go="chaos"><h2>Chaos Corner</h2><p>Wheel of Doom, the pitch machine, games and the chaos settings.</p><span class="k">CHAOS ▸</span><div class="who" data-art="Neen"></div></div>
       </div>
 
       <div class="card pad daily" id="lobbyDaily"></div>
@@ -1853,7 +1986,7 @@ body.an-playing #pet .pet-body{animation:petDance .45s ease-in-out infinite alte
             </select>
             <select class="txt" id="pitchLead" style="max-width:220px"></select>
           </div>
-          <div class="pitch" id="pitchOut"><div class="muted">Hit <b>Pitch</b> and the writers' room (all two of you plus a calculator) will cook something.</div></div>
+          <div class="pitch" id="pitchOut"><div class="muted">Hit <b>Pitch</b> and the writers (all two of you plus a calculator) will cook something.</div></div>
           <div class="row" style="margin-top:12px">
             <button class="btn blue" id="pitchBtn">💡 Pitch</button>
             <button class="btn primary" id="greenlight">🎬 Greenlight it</button>
@@ -2247,12 +2380,14 @@ function loadState(){
     s.playlist = {...f.playlist, ...(s.playlist||{})};
     s.lore = s.lore || []; s.chars = s.chars || []; s.scripts = s.scripts || [];
     return s;
-  }catch(e){ console.warn('Could not load saved state', e); return null; }
+  }catch(e){ console.warn('Could not load saved state', e); try{ const raw=localStorage.getItem(LS_KEY); if(raw) localStorage.setItem(LS_KEY+'.unreadable-'+Date.now(), raw); }catch(_){} window.__stateWasBroken=true; return null; }
 }
+let FIRST_RUN=false; try{ FIRST_RUN=!localStorage.getItem(LS_KEY); }catch(e){}
 let S = loadState() || freshState();
 
 let saveTimer=null;
 function save(now=false){
+  if(window.__nenjacPaused) return;
   $('#saveDot')?.classList.add('dirty'); if($('#saveTxt')) $('#saveTxt').textContent='Saving…';
   clearTimeout(saveTimer);
   const doit = () => {
@@ -2261,7 +2396,7 @@ function save(now=false){
   };
   now ? doit() : (saveTimer = setTimeout(doit, 450));
 }
-window.addEventListener('beforeunload', () => { if(typeof syncEditor==='function') syncEditor(); try{localStorage.setItem(LS_KEY, JSON.stringify(S));}catch(e){} });
+window.addEventListener('beforeunload', () => { if(window.__nenjacPaused) return; if(typeof syncEditor==='function') syncEditor(); try{localStorage.setItem(LS_KEY, JSON.stringify(S));}catch(e){} });
 
 /* ---------- character art helper ---------- */
 function initials(n){ return (n||'?').split(/[\s&]+/).filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase(); }
@@ -2274,6 +2409,9 @@ function artHTML(path, name, color){
 }
 function artFail(img){ const d=document.createElement('div'); d.innerHTML=fallbackHTML(img.dataset.name, img.dataset.color); img.replaceWith(d.firstChild); }
 function charArt(c){ return c ? artHTML(c.img, c.name, groupColor(c.group)) : fallbackHTML('?'); }
+/* a Nenjac face by name, even if they're not in this show's Bible (used for decoration + the tour) */
+const CAST_FILES={warren:'warren outt',dean:'dean mcqueen',tony:'tony morelli',travis:'travis corbin'};
+function castArt(name){ const c=charByName(name); if(c&&c.img) return charArt(c); const f=CAST_FILES[(name||'').toLowerCase()]||(name||'').toLowerCase(); return artHTML('characters/'+f+'.png', name, '#4a86e8'); }
 
 /* ---------- find a character from a script name like "DEAN" or "MCCORMACK" ---------- */
 const cueOf = c => ((c && (c.cue||c.name))||'').toUpperCase();
@@ -2348,7 +2486,7 @@ function renderTicker(){
 /* ---------- LOBBY ---------- */
 function renderLobby(){
   $('#lobbyHero').style.backgroundImage = `url("${assetURL('backgrounds/nenjac-theater-exterior.jpg')}")`;
-  $$('.door .who').forEach(w => { const c = charByName(w.dataset.art); w.innerHTML = charArt(c); });
+  $$('.door .who').forEach(w => { w.innerHTML = castArt(w.dataset.art); });
   // quote of the moment
   const withQ = S.chars.filter(c=>c.quotes && c.quotes.length && c.img);
   const c = pick(withQ.length?withQ:S.chars);
@@ -2881,7 +3019,7 @@ p{margin:0}
 .note{margin-top:12pt;background:#fff4b8;font-style:italic;color:#6b5000;padding:2pt 6pt}
 ${opt.print?'.note{display:none}':''}
 </style></head><body>${scriptBodyHTML(s,false)}
-<p style="margin-top:36pt;text-align:center;font-size:9pt;color:#888">— written in the Nenjac Writers' Room —</p></body></html>`;
+<p style="margin-top:36pt;text-align:center;font-size:9pt;color:#888">— written in Nenjac Creator —</p></body></html>`;
 }
 function printScript(s){
   const ifr=document.createElement('iframe'); ifr.style.cssText='position:fixed;right:0;bottom:0;width:0;height:0;border:0';
@@ -3466,6 +3604,7 @@ function buildPitchLead(){
 function pitchGen(){
   const P=PITCH; const pool=S.chars.filter(c=>c.group!=='Unfiled');
   const fmt=$('#pitchFmt').value==='any'?pick(P.formats):$('#pitchFmt').value;
+  if(pool.length<3){ toast('The pitch machine needs at least 3 characters. Add some in the Universe Bible.','bad'); return; }
   const lead=S.chars.find(c=>c.id===$('#pitchLead').value) || pick(pool);
   const partner=pick(pool.filter(c=>c!==lead)); const third=pick(pool.filter(c=>c!==lead&&c!==partner));
   const f1=lead.name.split(/[ &]/)[0], f2=partner.name.split(/[ &]/)[0];
@@ -3580,7 +3719,7 @@ function castToScript(){ const blocks=[{t:'scene',x:'[NENJAC THEATER]'}]; castSc
   let start='lobby'; try{ start=sessionStorage.getItem('nenjac.screen')||'lobby'; }catch(e){}
   go(start);
   document.addEventListener('keydown', e=>{ if(e.altKey && e.code==='KeyC' && document.activeElement!==ED){ e.preventDefault(); showCameo(); } });
-  console.log('%cNENJAC WRITERS\' ROOM', 'font:900 22px Arial Black;color:#fff;background:#4a86e8;padding:6px 12px', '\nShut the fuck up, Nerd.');
+  console.log('%cNENJAC CREATOR', 'font:900 22px Arial Black;color:#fff;background:#4a86e8;padding:6px 12px', '\nShut the fuck up, Nerd.');
 })();
 /* =====================================================================
    [STUDIO] ART STUDIO — a shapes-first vector editor (Google-Drawings-ish)
@@ -5000,7 +5139,7 @@ ED.addEventListener('keydown',()=>{ const el=$('#pet'); el.classList.remove('sle
 function dailyPrompt(){
   const r=seeded(hashStr(todayKey())); const pool=S.chars.filter(c=>c.group!=='Unfiled');
   const pk=a=>a[Math.floor(r()*a.length)];
-  return {who:pk(pool), what:pk(DOOM_EVENTS), where:pk(DOOM_PLACES), twist:pk(['…during tech week','…and Warren is in charge','…but it\'s a musical','…and it\'s somehow Dean\'s fault','…while the Mafia watches','…on the night of the show','…and nobody can say "Nerd"'])};
+  return {who:pool.length?pk(pool):{name:'Your main character',quotes:[]}, what:pk(DOOM_EVENTS), where:pk(DOOM_PLACES), twist:pk(['…during tech week','…and Warren is in charge','…but it\'s a musical','…and it\'s somehow Dean\'s fault','…while the Mafia watches','…on the night of the show','…and nobody can say "Nerd"'])};
 }
 
 /* =====================================================================
@@ -5147,8 +5286,8 @@ const _enterChaos = enterChaos; enterChaos = function(then){ _enterChaos(then); 
 document.addEventListener('click',e=>{ const b=e.target.closest('.btn.primary,.btn.red,.btn.blue,nav.tabs button'); if(!b||document.body.classList.contains('calm')) return;
   for(let i=0;i<8;i++){ const s=document.createElement('i'); s.className='spark'; const a=Math.PI*2*i/8; s.style.cssText=`left:${e.clientX}px;top:${e.clientY}px;--dx:${Math.cos(a)*40}px;--dy:${Math.sin(a)*40}px;background:${pick(['#ffc81e','#4a86e8','#ff5fa2','#fff'])}`; $('#fx').appendChild(s); setTimeout(()=>s.remove(),600); } });
 function curtainIntro(){
-  if(document.body.classList.contains('calm')) return; try{ if(sessionStorage.getItem('nenjac.intro')) return; sessionStorage.setItem('nenjac.intro','1'); }catch(e){}
-  const ov=document.createElement('div'); ov.className='intro'; ov.innerHTML=`<div class="curtain l"></div><div class="curtain r"></div><div class="intro-sign"><b>NENJAC</b><small>THEATER PRESENTS…</small></div>`;
+  if(document.body.classList.contains('calm')||FIRST_RUN) return; try{ if(sessionStorage.getItem('nenjac.intro')) return; sessionStorage.setItem('nenjac.intro','1'); }catch(e){}
+  const ov=document.createElement('div'); ov.className='intro'; ov.innerHTML=`<div class="curtain l"></div><div class="curtain r"></div><div class="intro-sign"><b>NENJAC</b><small>CREATOR</small></div>`;
   document.body.appendChild(ov); const open=()=>{ ov.classList.add('open'); setTimeout(()=>ov.remove(),1300); }; ov.onclick=open; setTimeout(open,1100);
 }
 
@@ -5180,16 +5319,6 @@ setInterval(()=>{ try{ document.body.classList.toggle('music-on', isPlaying()); 
   let start='lobby'; try{ start=sessionStorage.getItem('nenjac.screen')||'lobby'; }catch(e){}
   if(start==='studio') go('studio');
   checkAch();
-  if(!S.settings.seenV2){ S.settings.seenV2=true; save(); setTimeout(()=>openModal(`<div class="whatsnew"><div class="row"><h2 class="grow">🎉 New at Nenjac Theater</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
-    <ul>
-      <li><b>🎨 Art Studio</b> (new tab): build characters, backgrounds and props from shapes and outlines, make custom shapes, add text, use the Face Kit, export PNG/JPEG/SVG, and give the art to anyone in the Bible.</li>
-      <li><b>⭐ Script Rater</b>: hit <i>Rate</i> on the Writing Desk (or the stars in the script list) and the cast reviews your script.</li>
-      <li><b>🗣 Table Read</b>: the cast reads your script out loud with their own voices.</li>
-      <li><b>🗂 Storyboard cards</b>, <b>🔍 Find & Replace</b>, <b>🕘 Draft snapshots</b> (⌘/Ctrl+S) and <b>⏱ Writing sprints</b>.</li>
-      <li><b>🎯 Focus mode</b> is fixed: Alt/⌥+F, with typewriter scrolling.</li>
-      <li><b>📺 YouTube links</b> now play in a pop-out mini window.</li>
-      <li><b>🏆 Trophies</b>, a <b>🥁 Soundboard</b>, a <b>🕸 Scene Web</b> in the Bible, a <b>desk pet</b> on the grass, a daily prompt and <b>🌙 Night Shift</b>.</li>
-    </ul><div class="row"><button class="btn primary" onclick="closeModal();go('studio')">🎨 Try the Art Studio</button><button class="btn" onclick="closeModal()">Later</button></div></div>`), 2600); }
 })();
 /* =====================================================================
    [ASSETS+] v3 SHARED HELPERS
@@ -5232,7 +5361,7 @@ function linkAssetsFolder(after){
 function askLinkAssets(reason, after){
   openModal(`<div class="row"><h2 class="grow">🔗 Link your assets folder (one time)</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
    <p>${reason||'To export art from your <b>assets</b> folder'} the app needs a copy of that folder. Browsers block exporting files a local page didn't create, so this is the way around it.</p>
-   <ol class="tiny"><li>Click the button below.</li><li>Pick the <b>assets</b> folder inside NenjacSpinoffCreator.</li><li>Click <b>Upload</b> or <b>Select</b>. Nothing leaves your computer; it's stored in this browser.</li></ol>
+   <ol class="tiny"><li>Click the button below.</li><li>Pick the <b>assets</b> folder that sits next to Nenjac Creator's index.html.</li><li>Click <b>Upload</b> or <b>Select</b>. Nothing leaves your computer; it's stored in this browser.</li></ol>
    <div class="row"><button class="btn primary" id="lnkGo">📂 Pick my assets folder</button><button class="btn" onclick="closeModal()">Not now</button></div>
    <p class="tiny muted">${assetsLinked()?`Currently linked: ${Object.keys(ASSET_BLOBS).length} files.`:'Not linked yet.'}</p>`);
   $('#lnkGo').onclick=()=>{ closeModal(); linkAssetsFolder(after); };
@@ -6601,7 +6730,7 @@ const PET_CATS = [['chatter','💬 Random chatter'],['fed','🍔 After eating ({
 const PETX = {open:false, tab:'feed', walkT:0, x:60, dir:1, pets:[], chatT:0, napping:false, keys:0};
 
 function petName(){ const n=S.settings.pet; return n&&n!=='off'?n:null; }
-function petChar(){ const n=petName(); return n?(charByName(n)||S.chars.find(c=>c.name===n)):null; }
+function petChar(){ const n=petName(); if(!n) return null; return charByName(n)||S.chars.find(c=>c.name===n)||{name:n,img:'characters/'+(CAST_FILES[n.toLowerCase()]||n.toLowerCase())+'.png',quotes:[],group:'Nenjac Kids'}; }
 function petStats(n=petName()){ if(!n) return null; const p=S.pets[n]=S.pets[n]||{hunger:85,joy:80,energy:90,xp:0,lvl:1,last:Date.now(),fed:0}; return p; }
 function petDecay(){ const p=petStats(); if(!p) return; const now=Date.now(), min=Math.min(60*24,(now-(p.last||now))/60000); p.last=now; if(min<=0) return;
   const away=min>5;
@@ -6742,15 +6871,7 @@ $('#openSettings').addEventListener('click', () => {
   if(n){ if(current==='lobby') renderLobby(); if(current==='bible') renderBible(); }
   if(['voice','shorts','pit'].includes(current)) go(current);
   renderPet(); petLoop();
-  if(FIRST_V3&&S.settings.seenV35===undefined){ S.settings.seenV3=true; save(); setTimeout(()=>openModal(`<div class="whatsnew"><div class="row"><h2 class="grow">🎬 Nenjac Theater: Season 3 drop</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
-    <ul>
-      <li><b>🎙 Voice Booth</b> (new tab): record every line with a 3-2-1 count-in, trim, add effects (📞 phone, 🎵 Neen telepathy, 👻 ghost, 🤖 robot…), pick ⭐ keepers, then <b>assemble the whole episode</b> with music, ducking and auto sound effects. Exports WAV + captions.</li>
-      <li><b>📱 Shorts Factory</b> (new tab): turn a scene into a 9:16 TikTok / Reel / Short. Talking heads with word-pop captions, a group-chat style, or a comic slideshow that zooms panel by panel.</li>
-      <li><b>💬 Comic Creator</b> in the Art Studio: Instagram/TikTok/webtoon formats, panel layouts, 8 kinds of speech bubbles with draggable tails, pages, SFX lettering, and <b>Script → Comic</b> in one click.</li>
-      <li><b>More stuff to draw with</b>: 20 new shapes, 35 new face pieces, a 📦 Prop Kit (yes: blunt, bong, cart and vape), new backdrops, comic fonts, and separate see-through sliders for fill and outline.</li>
-      <li><b>🐾 Desk Pet 2.0</b>: click your pet. Feed it, pet it, throw it a ball, let it nap, level it up, and write its lines yourself.</li>
-      <li><b>🔗 Link your assets folder</b> once (⚙ Settings) so your art can go into exports and videos.</li>
-    </ul><div class="row"><button class="btn primary" onclick="closeModal();go('voice')">🎙 Voice Booth</button><button class="btn blue" onclick="closeModal();go('shorts')">📱 Shorts</button><button class="btn" onclick="closeModal();go('studio');setTimeout(newComicDialog,250)">💬 New comic</button><button class="btn ghost" onclick="closeModal()">Later</button></div></div>`), 2800); }
+
 })();
 
 /* =====================================================================
@@ -7955,7 +8076,7 @@ ACH.push(...[['pit1','🎻','Overture!','Write a number in The Pit'],['keyChange
 $$('#tabs button').forEach(b=>{ b.title=b.querySelector('.lbl')?.textContent||''; });
 $('#openSettings').insertAdjacentHTML('beforebegin','<button class="iconbtn" id="cmdBtn" title="Command palette: jump anywhere, do anything (⌘/Ctrl+K)">⌘</button><button class="iconbtn" id="helpBtn" title="Keyboard shortcuts for this screen (?)">?</button>');
 const SCREEN_NAMES={lobby:'Lobby',desk:'Writing Desk',bible:'Universe Bible',studio:'Art Studio',voice:'Voice Booth',pit:'The Pit',shorts:'Shorts Factory',vibe:'Vibe Station',chaos:'Chaos Corner'};
-{ const _g=go; go=function(scr,then){ _g(scr,then); document.title=`${SCREEN_NAMES[scr]||'Nenjac'} · Nenjac Writers' Room`; }; }
+{ const _g=go; go=function(scr,then){ _g(scr,then); document.title=`${SCREEN_NAMES[scr]||'Nenjac'} · Nenjac Creator`; }; }
 
 function commands(){
   const C=[]; const add=(ico,label,run,kw='')=>C.push({ico,label,run,kw:(label+' '+kw).toLowerCase()});
@@ -8011,17 +8132,7 @@ document.addEventListener('keydown',e=>{ if(e.key!=='?'||e.metaKey||e.ctrlKey) r
 { const _rl=renderLobby; renderLobby=function(){ _rl(); PitDB.all('songs').then(L=>{ const el=$('#lobbyStats'); if(el&&L.length&&!el.querySelector('.songs')) el.insertAdjacentHTML('beforeend',` · <span class="songs">🎻 <b>${L.length}</b> song${L.length===1?'':'s'}</span>`); }); }; }
 
 /* what's new */
-if(!S.settings.seenV35){ const wasNew=!S.settings.seenV2 && !S.scripts.some(s=>s.blocks.length>4);
-  S.settings.seenV35=true; S.settings.seenV3=true; save();
-  setTimeout(()=>{ if($('#modalBg').classList.contains('on')) closeModal(); openModal(`<div class="whatsnew"><div class="row"><h2 class="grow">🎻 Now playing: The Pit</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
-    <ul>
-      <li><b>🎻 The Pit</b> (new tab): a musical-theater DAW. Pick a kind of number (I Want song, Villain song, Patter, Love ballad, Waltz, Cabaret vamp, Act One finale…) and your pit orchestra plays a full backing track: chords, piano, strings, brass, drums, a key change and a button ending.</li>
-      <li>It works like <b>Logic</b>: a tracks area, piano roll, chord track, mixer, loop browser, Musical Typing (⌘/Ctrl+K), cycle, metronome and the same shortcuts. Every part follows your chords, so change one chord and the whole band follows.</li>
-      <li><b>Sing on it</b>: record vocals with the lyrics scrolling in front of you, get a suggested melody for your words, then bounce the song (auto-normalized). It lands in the Vibe Station, ready for Shorts and the Episode Assembler.</li>
-      <li><b>🎙 Voice Booth fix</b>: the page no longer shrinks while you record, and big casts don't squish the line list anymore.</li>
-      <li><b>⌘ Command palette</b> (⌘/Ctrl+K) to jump anywhere, and <b>?</b> shows the shortcuts for whatever screen you're on.</li>
-      ${wasNew?'<li>Also in here: the 🎙 Voice Booth, 📱 Shorts Factory, 💬 Comic Creator and a 🐾 desk pet you can feed.</li>':''}
-    </ul><div class="row"><button class="btn primary" onclick="closeModal();go('pit');setTimeout(pitWizard,400)">✨ Write a number</button><button class="btn" onclick="closeModal();go('pit')">🎻 Open The Pit</button><button class="btn ghost" onclick="closeModal()">Later</button></div></div>`); }, 3000); }
+S.settings.seenV35=true; S.settings.seenV3=true;
 
 /* =====================================================================
    [ANIM] ANIMATION TAB, PART 1: ENGINE
@@ -8864,7 +8975,7 @@ async function anFromMix(mix,o={}){ if(!mix) return; const fmt=o.format||'16:9',
     P.cues.forEach(q=>{ if(q.layerId===last) return; last=q.layerId; const L=P.layers.find(x=>x.id===q.layerId); if(!L) return; const t=Math.max(.01,q.t-.12); hk('x',t,clamp(L.base.x,hw,W-hw)); hk('y',t,clamp(L.base.y-L.nh*.1,hh,H-hh)); hk('scale',t,z); }); }
   if(o.captions!==false) P.layers.unshift(mkLayer('text',{name:'📝 Captions',start:0,end:P.dur,fixed:true,x:W/2,y:H*(vert?.8:.9),text:{str:'',style:'caption',auto:'captions',font:'Archivo Black',size:Math.round(vert?W*.065:Math.min(W,H)*.045),color:'#ffffff'}}));
   if(o.title!==false){ const T=mkLayer('text',{name:'🎬 Title',start:0,end:2.5,x:W/2,y:H*.42,fixed:true,text:{str:(mix.title||'NENJAC').toUpperCase(),style:'title',font:'Bangers',size:Math.round(Math.min(W,H)*.12),color:'#ffc81e',stroke:'#000000'}}); T.states.push({id:uid(),type:'popin',t0:0,t1:.5,amt:1},{id:uid(),type:'fadeout',t0:2,t1:2.5,amt:1}); P.layers.unshift(T);
-    const N=mkLayer('text',{name:'NENJAC',start:0,end:2.5,x:W/2,y:H*.25,fixed:true,text:{str:'NENJAC',style:'lower',font:'Archivo Black',size:Math.round(Math.min(W,H)*.06),color:'#ffffff',bg:'#4a86e8'}}); N.states.push({id:uid(),type:'slideinL',t0:0,t1:.5,amt:1}); P.layers.unshift(N); }
+    const N=mkLayer('text',{name:showName().toUpperCase(),start:0,end:2.5,x:W/2,y:H*.25,fixed:true,text:{str:showName().toUpperCase(),style:'lower',font:'Archivo Black',size:Math.round(Math.min(W,H)*.06),color:'#ffffff',bg:'#4a86e8'}}); N.states.push({id:uid(),type:'slideinL',t0:0,t1:.5,amt:1}); P.layers.unshift(N); }
   if(o.music){ try{ await anAudioBuf(o.music); P.layers.push(mkLayer('audio',{name:'🎵 Music',start:0,end:P.dur,audio:{key:o.music,vol:.18,offset:0,fadeIn:1,fadeOut:2.5}})); }catch(e){} }
   AN.hist=[]; AN.hi=-1; AN.sel=null; anCommit(); anSave(true); if(!AN.list.some(x=>x.id===P.id)) AN.list.unshift(P); anRenderAll(); await anPreload(P); anRedraw(); unlock('anim1'); if(P.cues.length) unlock('lipsync');
   toast(`🎬 Scene built: ${spans.length} set${spans.length>1?'s':''}, ${charLayers.length} character clips, ${P.cues.length} lip-synced lines. Hit Space!`,'good'); }
@@ -8934,16 +9045,7 @@ SHORTCUTS.anim=[['Space','play / pause'],['J K L','reverse · pause · play (L a
   (AN.list||[]).slice(0,20).forEach(p=>add('🎞','Open episode: '+p.name,()=>{ go('anim'); setTimeout(()=>anOpen(JSON.parse(JSON.stringify(p))),400); },'animation')); return C; }; }
 
 /* ================= v3.6 what's new ================= */
-if(!S.settings.seenV36){ S.settings.seenV36=true; save();
-  setTimeout(()=>{ if($('#modalBg').classList.contains('on')) closeModal(); openModal(`<div class="whatsnew"><div class="row"><h2 class="grow">🎬 New tab: Animate</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
-    <ul>
-      <li><b>🎬 Animate</b> is a Premiere-style episode maker: layers, a timeline, keyframes with a ⏱ stopwatch (or 🔴 Auto-key), easing, the razor, J K L, markers. Export straight to <b>MP4</b>.</li>
-      <li><b>Puppets that act</b>: drop on states like Talking, Yelling (aggressive shake), Walking (tiny bounce), Running, Sneaking, Faint, Dancing, In love, Thinking and about 30 more. Characters blink on their own.</li>
-      <li><b>Faces</b>: the main cast already has face rigs (mouth, eyes, brows), so they lip-sync and pull expressions. For anything else, draw boxes over the mouth/eyes/brows, or upload a "mouth open" or expression variant to swap in.</li>
-      <li><b>Grab props</b>: pick a prop and who holds it. It follows every move. Drop it or throw it later.</li>
-      <li><b>✨ Script → Scene</b> builds a whole scene from your script or Voice Booth mix: sets, cast, lip-synced lines, yelling shakes, explosions, captions and a title card. Then you tweak.</li>
-      <li>Import any photo, video or audio, and mark each layer as a character, prop, background, effect or text.</li>
-    </ul><div class="row"><button class="btn primary" onclick="closeModal();go('anim');setTimeout(anBuildDialog,600)">✨ Animate a scene</button><button class="btn" onclick="closeModal();go('anim')">🎬 Open Animate</button><button class="btn ghost" onclick="closeModal()">Later</button></div></div>`); }, 3300); }
+S.settings.seenV36=true;
 
 /* ===================================================================
    [ENCODE] Frame-by-frame MP4 export (WebCodecs + mp4-muxer, MIT, (c) 2023 Vanilagy)
@@ -9285,6 +9387,458 @@ window.addEventListener('keydown',e=>{ if(current!=='anim'||!AN.proj||$('#modalB
 },true);
 
 SHORTCUTS.anim.push(['Click / Shift-click','select keyframes or states (Shift adds)'],['Drag on empty timeline','box-select keyframes + states'],['Drag a selected key','moves every selected key (Alt = copy)'],['Double-click a key','edit its time, value and easing'],['Double-click a keyframe row','add a keyframe there'],['Drag in a 🎭 States lane','draw a state (pick the type in that lane)'],['Double-click a state','edit type, start, length, strength'],['⌘A','select every key + state (on the selected layer)'],['⌘C / ⌘V','copy keyframes, paste at the playhead'],['Alt ← →','nudge the selection a frame (Shift = 10)'],['Esc','deselect']);
+
+/* ===================================================================
+   [WHEEL] Wheel of Doom 2: real wheels for every part of the result
+   (WHO / WHAT / WHERE), your own entries, your own wheels, locks,
+   elimination mode and a history.
+   =================================================================== */
+const WH_COLORS=['#930000','#4a86e8','#ffc81e','#387520','#f6b26b','#8a52d1','#ff5fa2','#1b2a5e','#2a9d8f','#e76f51'];
+const WH_LIGHT=['#ffc81e','#f6b26b','#ff5fa2','#2a9d8f','#e76f51'];
+const WH_CHALLENGES=["Build a raft out of whatever is in the prop room","Survive a full tech week","Cook-off: recreate the Chili's menu","Write and perform a musical number in 10 minutes","Escape the vault","Dodgeball against the toilet squids","Scavenger hunt through the vents","Talent show (Warren judges)","Debate: is Nerd technically right?","Egg drop off the theater roof","Trivia about Nenjac lore","Relay race through the sewers","Bake-off at Gianni's Sweets","Balance a chem tube on your head","Make the Chief laugh","Silent challenge: last one to talk wins","Haunted house night in the theater","Paint the set before opening night","Hold the creaky stairs together","Win a staring contest with Neen"];
+const WH_TWISTS=["it was all a dream","the Mafia was behind it the whole time","there's an evil twin","everyone is stuck in a time loop","the narrator was in on it","two characters are secretly related","someone wins the lottery","the theater explodes (again)","a character breaks the fourth wall","the dead character comes back","it's actually a musical episode","the real villain is the school board","everyone swaps bodies","it happens again, but worse","the cops show up for the wrong reason","the writers get involved"];
+function whDefaults(){ const it=a=>a.map(t=>({id:uid(),t,on:true}));
+  return { v:1, active:'doom', history:[], list:[
+    {id:'doom',name:'Wheel of Doom',emoji:'🎡',builtin:true,sentence:'{WHO} {WHAT} in {WHERE}.',reels:[
+      {id:'who',label:'WHO',cast:'main',off:[],items:[]},{id:'what',label:'WHAT',items:it(DOOM_EVENTS)},{id:'where',label:'WHERE',items:it(DOOM_PLACES)}]},
+    {id:'challenge',name:'Challenge Wheel',emoji:'🏆',builtin:true,sentence:"This episode's challenge: {CHALLENGE}.",reels:[{id:'c',label:'CHALLENGE',items:it(WH_CHALLENGES)}]},
+    {id:'elim',name:'Elimination Wheel',emoji:'☠️',builtin:true,sentence:'{WHO} is eliminated!',removeWinner:true,reels:[{id:'who',label:'WHO',cast:'main',off:[],items:[],gone:[]}]},
+    {id:'twist',name:'Plot Twist Wheel',emoji:'🌀',builtin:true,sentence:'Plot twist: {TWIST}.',reels:[{id:'t',label:'TWIST',items:it(WH_TWISTS)}]},
+  ]}; }
+S.wheels = S.wheels || whDefaults();
+const WH = { rot:{}, res:{}, lock:{}, spinning:false, last:null };
+const whActive = () => S.wheels.list.find(w=>w.id===S.wheels.active) || S.wheels.list[0];
+function whCastPool(reel){ if(!reel.cast||reel.cast==='none') return []; return S.chars.filter(c=>reel.cast==='all'||c.group!=='Unfiled'); }
+function whEntries(reel){ const gone=reel.gone||[], off=reel.off||[];
+  const cast=whCastPool(reel).filter(c=>!off.includes(c.id)).map(c=>({key:'c:'+c.id,t:c.name,char:c}));
+  const items=(reel.items||[]).filter(i=>i.on!==false&&String(i.t).trim()).map(i=>({key:'i:'+i.id,t:String(i.t).trim()}));
+  return [...cast,...items].filter(e=>!gone.includes(e.key)); }
+function whColor(i,N){ let c=i%WH_COLORS.length; if(N>1&&i===N-1&&c===0) c=3; return WH_COLORS[c]; }
+
+/* ---------- drawing ---------- */
+function whDraw(reel){ const cv=document.querySelector(`canvas[data-whc="${reel.id}"]`); if(!cv) return; const g=cv.getContext('2d'), E=whEntries(reel), N=E.length, R=cv.width/2, rot=WH.rot[reel.id]||0;
+  g.clearRect(0,0,cv.width,cv.height); g.save(); g.translate(R,R);
+  if(!N){ g.fillStyle='#eee'; g.beginPath(); g.arc(0,0,R-4,0,7); g.fill(); g.fillStyle='#777'; g.font='bold 26px Archivo, sans-serif'; g.textAlign='center'; g.fillText('No entries',0,-R*.35); g.restore(); return; }
+  const seg=Math.PI*2/N; g.rotate(rot); const fs=Math.round(clamp(520/N,12,26));
+  for(let i=0;i<N;i++){ g.beginPath(); g.moveTo(0,0); g.arc(0,0,R-4,i*seg,(i+1)*seg); g.closePath(); const col=whColor(i,N); g.fillStyle=col; g.fill(); g.lineWidth=N>40?1.5:4; g.strokeStyle='#000'; g.stroke();
+    if(N<=48){ g.save(); g.rotate(i*seg+seg/2); g.textAlign='right'; g.textBaseline='middle'; g.fillStyle=WH_LIGHT.includes(col)?'#000':'#fff'; g.font=`bold ${fs}px "Archivo Black", Impact, sans-serif`;
+      let s=E[i].t.toUpperCase(); const max=R*.72; if(g.measureText(s).width>max){ while(s.length>2&&g.measureText(s+'…').width>max) s=s.slice(0,-1); s+='…'; } g.fillText(s,R-20,0); g.restore(); } }
+  g.restore(); }
+function whUnder(reel){ const E=whEntries(reel), N=E.length; if(!N) return null; const seg=Math.PI*2/N, rot=WH.rot[reel.id]||0; const a=((-Math.PI/2-rot)%(Math.PI*2)+Math.PI*2)%(Math.PI*2); return E[Math.min(N-1,Math.floor(a/seg))]; }
+function whReadout(reel){ const el=document.querySelector(`[data-whr="${reel.id}"]`); if(!el) return; const r=WH.res[reel.id]; const u=WH.spinning&&!WH.lock[reel.id]?whUnder(reel):r; el.textContent=u?u.t:'—'; el.classList.toggle('done',!WH.spinning&&!!r); }
+
+/* ---------- the card ---------- */
+function whRender(){ const card=$('#c-wheel'); if(!card) return; const W=whActive(), n=W.reels.length, size=n===1?380:n===2?320:290;
+  card.innerHTML=`<div class="wh-top"><h2 class="grow">${W.emoji} ${esc(W.name)}</h2><button class="btn sm" id="whEdit" title="Add, remove or switch off entries">✏️ Edit entries</button></div>
+    <div class="wh-tabs">${S.wheels.list.map(w=>`<button data-wh="${w.id}" class="${w.id===W.id?'on':''}">${w.emoji} ${esc(w.name)}</button>`).join('')}<button data-whnew="1" class="wh-new">＋ New wheel</button></div>
+    <div class="wh-stage">
+      <div class="wh-reels n${n}">${W.reels.map(r=>{ const E=whEntries(r); return `<div class="wh-reel">
+        <div class="wh-lab"><b>${esc(r.label)}</b><small>${E.length} ${E.length===1?'entry':'entries'}</small></div>
+        <div class="wheel-box" style="width:${size}px;height:${size}px"><div class="pin"></div><canvas data-whc="${r.id}" width="600" height="600" style="width:${size}px;height:${size}px"></canvas><button class="hub" data-whspin="1" title="Spin">SPIN</button></div>
+        <div class="wh-read" data-whr="${r.id}">—</div>
+        ${n>1?`<button class="wh-lock ${WH.lock[r.id]?'on':''}" data-whlock="${r.id}" title="Keep this result and only respin the others">${WH.lock[r.id]?'🔒 Kept':'🔓 Keep this'}</button>`:''}</div>`; }).join('')}</div>
+      <div class="wh-side">
+        <div class="doom-result" id="doomOut">${whResultHTML()}</div>
+        <div class="row" style="margin-top:12px"><button class="btn red" id="spinBtn" data-whspin="1">🎡 Spin${n>1&&Object.values(WH.lock).some(Boolean)?' the rest':''}</button><button class="btn" id="doomToScript" title="Add it to the script you have open as a note">✍️ Drop into script</button><button class="btn blue" id="doomNewScript">🎬 New episode from this</button></div>
+        <div class="row" style="margin-top:6px"><button class="btn sm" id="whCopy">📋 Copy</button><button class="btn sm" id="whLore">🗝 Save to Lore Vault</button>${W.removeWinner?`<button class="btn sm" id="whBack">↺ Bring everyone back</button><span class="tiny muted">${whEntries(W.reels[0]).length} left</span>`:''}</div>
+        ${S.wheels.history.length?`<details class="wh-hist"><summary>🕘 Last spins</summary>${S.wheels.history.slice(0,10).map(h=>`<div><span>${esc(h.emoji||'🎡')} ${esc(h.text)}</span><small>${ago(h.at)}</small></div>`).join('')}</details>`:''}
+      </div></div>`;
+  W.reels.forEach(r=>{ whDraw(r); whReadout(r); }); }
+function whResultHTML(){ const L=WH.last; if(!L) { const W=whActive(); return `<div class="muted">Spin to get ${W.reels.map(r=>`a <b>${esc(r.label)}</b>`).join(W.reels.length>2?', ':' and ').replace(/, (a <b>[^<]*<\/b>)$/,', and $1')}. ${W.id==='doom'?'Then build an episode out of it.':''} <br><small>Click <b>✏️ Edit entries</b> to put your own stuff on the wheel.</small></div>`; }
+  const ch=L.char; return `<div class="row" style="align-items:flex-start;flex-wrap:nowrap">${ch?`<div style="width:90px;height:90px;flex:none">${charArt(ch)}</div>`:''}<div><div class="tiny muted">THE WHEEL HAS SPOKEN:</div><div class="big">${L.html}</div>
+    ${ch&&(ch.quotes||[]).filter(Boolean).length?`<div class="tiny" style="margin-top:6px"><i>${esc(ch.name)}:</i> “${esc(pick(ch.quotes.filter(Boolean)))}”</div>`:''}${L.winner?`<div class="wh-win">🏆 ${esc(L.winner)} is the last one standing!</div>`:''}</div></div>`; }
+function whSentence(W,parts){ const tpl=W.sentence||W.reels.map(r=>'{'+r.label+'}').join(' · '); let html=esc(tpl), text=tpl;
+  W.reels.forEach((r,i)=>{ const v=parts[r.id]?.t||'?'; const tok='{'+r.label+'}'; html=html.split(esc(tok)).join(`<span class="wh-p p${i}">${esc(v)}</span>`); text=text.split(tok).join(v); });
+  return {html,text}; }
+
+/* ---------- spinning ---------- */
+function whSpin(){ if(WH.spinning) return; const W=whActive(); const go2=W.reels.filter(r=>!WH.lock[r.id]||!WH.res[r.id]);
+  for(const r of W.reels){ if(!whEntries(r).length) return toast(`The ${r.label} wheel is empty. Hit ✏️ Edit entries and add some.`,'bad'); }
+  if(!go2.length) return toast('Everything is locked. Unlock a wheel to spin it.','bad');
+  WH.spinning=true; S.counters.spins++; save(); const t0=performance.now(); let doneN=0;
+  go2.forEach((r,k)=>{ const E=whEntries(r), N=E.length, seg=Math.PI*2/N, win=Math.floor(Math.random()*N), f=.18+Math.random()*.64, start=WH.rot[r.id]||0;
+    let end=-Math.PI/2-(win+f)*seg; const turns=4+k+Math.random()*1.5; while(end<start+Math.PI*2*turns) end+=Math.PI*2; const dur=2800+k*800+Math.random()*300; let last=-1;
+    const step=now=>{ const p=Math.min(1,(now-t0)/dur), e=1-Math.pow(1-p,4); WH.rot[r.id]=start+(end-start)*e; whDraw(r); whReadout(r);
+      const u=whUnder(r); if(u&&u.key!==last){ last=u.key; if(k===go2.length-1||p<.6) blip(1100+k*120,.018,'square',.03); }
+      if(p<1) requestAnimationFrame(step); else { WH.res[r.id]=E[win]; whReadout(r); blip(660+k*110,.12,'triangle',.07); if(++doneN===go2.length) whLanded(W); } };
+    requestAnimationFrame(step); });
+  $$('#c-wheel [data-whspin]').forEach(b=>b.disabled=true); }
+function whLanded(W){ WH.spinning=false; const parts={}; W.reels.forEach(r=>parts[r.id]=WH.res[r.id]); const s=whSentence(W,parts), ch=W.reels.map(r=>parts[r.id]?.char).find(Boolean);
+  WH.last={wheel:W.id,parts,html:s.html,text:s.text,char:ch}; S.wheels.history.unshift({at:Date.now(),wheel:W.id,emoji:W.emoji,text:s.text}); S.wheels.history=S.wheels.history.slice(0,30);
+  if(W.removeWinner){ const r=W.reels[0], k=parts[r.id]?.key; if(k){ r.gone=[...(r.gone||[]),k]; const left=whEntries(r); if(left.length===1){ WH.last.winner=left[0].t; confetti(); sfx('applause'); } } }
+  save(); [392,523,659].forEach((f,k)=>setTimeout(()=>blip(f,.16,'triangle',.08),k*120)); whRender(); unlock('wheel'); }
+
+/* ---------- actions ---------- */
+document.addEventListener('click',e=>{ if(!e.target.closest('#c-wheel')) return; const t=e.target;
+  if(t.closest('[data-whspin]')) return whSpin();
+  const tab=t.closest('[data-wh]'); if(tab){ if(WH.spinning) return; S.wheels.active=tab.dataset.wh; WH.last=null; WH.res={}; WH.lock={}; save(); return whRender(); }
+  if(t.closest('[data-whnew]')) return whNewDialog();
+  const lk=t.closest('[data-whlock]'); if(lk){ const id=lk.dataset.whlock; if(!WH.res[id]) return toast('Spin first, then keep the part you like.'); WH.lock[id]=!WH.lock[id]; return whRender(); }
+  if(t.closest('#whEdit')) return whEditor();
+  const L=WH.last; const need=()=>{ if(!L){ toast('Spin first!','bad'); return false; } return true; };
+  if(t.closest('#doomToScript')){ if(!need()) return; insertAtCursor([{t:'note',x:`${whActive().name.toUpperCase()}: ${L.text}`}]); return toast('Dropped into your script as a note.','good'); }
+  if(t.closest('#doomNewScript')){ if(!need()) return; const W=whActive(), p=L.parts, who=p.who?.char, where=p.where?.t;
+    newScript({title:(W.id==='doom'&&who?`${who.name} ${p.what?.t||''}`:L.text.replace(/[.!]$/,'')).toUpperCase().slice(0,60), logline:L.text+(W.id==='doom'?' Everything goes wrong from there.':''),
+      blocks:[...(where?[{t:'scene',x:`[${where.toUpperCase()}]`}]:[]),{t:'action',x:L.text},...(who?[{t:'character',x:cueOf(who)},{t:'dialogue',x:''}]:[{t:'note',x:'Write it.'}])]});
+    go('desk'); return toast('🎬 New episode created from the wheel. Godspeed.','good'); }
+  if(t.closest('#whCopy')){ if(!need()) return; navigator.clipboard?.writeText(L.text).then(()=>toast('📋 Copied'),()=>toast(L.text)); return; }
+  if(t.closest('#whLore')){ if(!need()) return; return createLore({title:L.text.slice(0,70),cat:'Episode Idea',body:L.text,tags:['wheel',whActive().name.toLowerCase()]}); }
+  if(t.closest('#whBack')){ const W=whActive(); W.reels.forEach(r=>r.gone=[]); WH.last=null; save(); whRender(); return toast('↺ Everyone is back on the wheel.'); } });
+
+/* ---------- editor ---------- */
+function whEditor(tab=0){ const W=whActive(); let ri=Math.min(tab,W.reels.length-1);
+  const draw=()=>{ const r=W.reels[ri], pool=whCastPool(r);
+    openModal(`<div class="wh-ed"><div class="row"><h2 class="grow">✏️ ${W.emoji} ${esc(W.name)}</h2><button class="btn sm" data-wx="close">✕</button></div>
+      ${W.reels.length>1?`<div class="seg wh-edtabs">${W.reels.map((x,i)=>`<button data-wri="${i}" class="${i===ri?'on':''}">${esc(x.label)} <small>${whEntries(x).length}</small></button>`).join('')}</div>`:''}
+      <div class="wh-ed-grid"><div>
+        ${r.cast!==undefined?`<div class="setting"><span><b>Characters from your Bible</b><br><small class="muted">Click a face to take them off the wheel (or put them back).</small></span><select class="txt" id="weCast" style="width:170px">${[['main','Main cast'],['all','Everyone'],['none','Nobody']].map(([v,l])=>`<option value="${v}" ${r.cast===v?'selected':''}>${l}</option>`).join('')}</select></div>
+          <div class="wh-castgrid">${pool.map(c=>{ const off=(r.off||[]).includes(c.id), gone=(r.gone||[]).includes('c:'+c.id); return `<button class="wh-cast ${off?'off':''} ${gone?'gone':''}" data-wcast="${c.id}" title="${esc(c.name)}${gone?' (eliminated)':''}"><span>${charArt(c)}</span><small>${esc(c.name)}</small></button>`; }).join('')||'<p class="tiny muted">No characters. Add some in the Universe Bible.</p>'}</div>`:''}
+        <h4>${r.cast!==undefined?'Extra entries':'Entries'} <small class="muted">(${(r.items||[]).length})</small></h4>
+        <div class="wh-items">${(r.items||[]).map(it=>`<div class="wh-item ${it.on===false?'off':''}"><input type="checkbox" data-won="${it.id}" ${it.on!==false?'checked':''} title="On the wheel"><input class="txt" data-wt="${it.id}" value="${esc(it.t)}"><button class="btn sm" data-wdel="${it.id}" title="Delete">🗑</button></div>`).join('')||'<p class="tiny muted">Nothing yet. Add one below.</p>'}</div>
+        <div class="row" style="margin-top:6px"><input class="txt grow" id="weNew" placeholder="Type an entry and press Enter"><button class="btn primary sm" data-wx="add">＋ Add</button></div>
+        <details style="margin-top:8px"><summary class="tiny">📋 Paste a whole list (one per line)</summary><textarea class="txt" id="wePaste" rows="5" style="width:100%;margin-top:6px" placeholder="gets stuck in the vents&#10;joins a boy band&#10;…"></textarea><button class="btn sm" data-wx="paste">Add these</button></details>
+      </div><div class="wh-ed-side">
+        <label class="lab">Wheel name</label><div class="row"><input class="txt" id="weEmoji" value="${esc(W.emoji)}" style="width:52px;text-align:center"><input class="txt grow" id="weName" value="${esc(W.name)}"></div>
+        <label class="lab">This wheel's label</label><input class="txt" id="weLabel" value="${esc(r.label)}">
+        <label class="lab">Result sentence</label><input class="txt" id="weSent" value="${esc(W.sentence||'')}"><p class="tiny muted">Use ${W.reels.map(x=>`<code>{${esc(x.label)}}</code>`).join(' ')} where each result goes.</p>
+        <label class="setting" style="padding:6px 0"><span><b>Elimination mode</b><br><small class="muted">Whatever it lands on is taken off until you bring everyone back</small></span><span class="toggle"><input type="checkbox" id="weElim" ${W.removeWinner?'checked':''}><span></span></span></label>
+        ${W.reels.length<3?`<button class="btn sm" data-wx="addreel">＋ Add another wheel to this spin</button>`:''}${W.reels.length>1?`<button class="btn sm" data-wx="delreel">− Remove the ${esc(r.label)} wheel</button>`:''}
+        <hr class="sep">${W.builtin?`<button class="btn sm" data-wx="reset">↺ Reset to the original entries</button>`:`<button class="btn sm red" data-wx="delwheel">🗑 Delete this wheel</button>`}
+      </div></div>
+      <div class="row" style="margin-top:12px;justify-content:flex-end"><button class="btn primary" data-wx="close">Done</button></div></div>`);
+    const m=$('#modal');
+    m.onclick=e=>{ const t=e.target; const wr=t.closest('[data-wri]'); if(wr){ ri=+wr.dataset.wri; return draw(); }
+      const wc=t.closest('[data-wcast]'); if(wc){ const id=wc.dataset.wcast; r.off=r.off||[]; r.off.includes(id)?r.off=r.off.filter(x=>x!==id):r.off.push(id); if((r.gone||[]).includes('c:'+id)) r.gone=r.gone.filter(x=>x!=='c:'+id); return ch(); }
+      const wd=t.closest('[data-wdel]'); if(wd){ r.items=r.items.filter(i=>i.id!==wd.dataset.wdel); return ch(); }
+      const a=t.closest('[data-wx]')?.dataset.wx; if(!a) return;
+      if(a==='close'){ closeModal(); return whRender(); }
+      if(a==='add'){ const v=$('#weNew').value.trim(); if(!v) return; r.items=r.items||[]; r.items.push({id:uid(),t:v,on:true}); ch(); setTimeout(()=>$('#weNew')?.focus(),0); return; }
+      if(a==='paste'){ const lines=$('#wePaste').value.split('\n').map(s=>s.trim()).filter(Boolean); r.items=r.items||[]; lines.forEach(t2=>r.items.push({id:uid(),t:t2,on:true})); toast(`Added ${lines.length}`); return ch(); }
+      if(a==='addreel'){ const lab=prompt('What does the new wheel pick? (one word, like WHEN or WEAPON)','WHY'); if(!lab) return; const L2=lab.toUpperCase().replace(/[{}]/g,'').trim().slice(0,16)||'MORE'; W.reels.push({id:uid(),label:L2,items:[]}); if(W.sentence) W.sentence+=` ({${L2}})`; ri=W.reels.length-1; return ch(); }
+      if(a==='delreel'){ if(!confirm(`Remove the ${r.label} wheel and its entries?`)) return; W.reels.splice(ri,1); W.sentence=(W.sentence||'').replace(` ({${r.label}})`,'').split('{'+r.label+'}').join('…'); ri=0; return ch(); }
+      if(a==='reset'){ if(!confirm('Put the original entries back? Your own entries on this wheel are removed.')) return; const d=whDefaults().list.find(x=>x.id===W.id); Object.assign(W,JSON.parse(JSON.stringify(d))); ri=0; WH.last=null; return ch(); }
+      if(a==='delwheel'){ if(!confirm(`Delete “${W.name}”?`)) return; S.wheels.list=S.wheels.list.filter(x=>x!==W); S.wheels.active=S.wheels.list[0].id; save(); closeModal(); return whRender(); } };
+    m.onchange=e=>{ const t=e.target; if(t.dataset.won){ const it=r.items.find(i=>i.id===t.dataset.won); it.on=t.checked; return ch(true); } if(t.dataset.wt){ const it=r.items.find(i=>i.id===t.dataset.wt); it.t=t.value; return ch(true); }
+      if(t.id==='weCast'){ r.cast=t.value; return ch(); } if(t.id==='weName') W.name=t.value.trim()||W.name; if(t.id==='weEmoji') W.emoji=t.value.trim().slice(0,4)||'🎡'; if(t.id==='weSent') W.sentence=t.value;
+      if(t.id==='weLabel'){ const nl=t.value.toUpperCase().replace(/[{}]/g,'').trim().slice(0,16)||r.label; W.sentence=(W.sentence||'').split('{'+r.label+'}').join('{'+nl+'}'); r.label=nl; return ch(); }
+      if(t.id==='weElim'){ W.removeWinner=t.checked; if(!t.checked) W.reels.forEach(x=>x.gone=[]); } save(); };
+    m.onkeydown=e=>{ if(e.key==='Enter'&&e.target.id==='weNew'){ e.preventDefault(); m.querySelector('[data-wx="add"]').click(); } };
+    setTimeout(()=>$('#weNew')?.focus(),30); };
+  const ch=(soft)=>{ save(); WH.res={}; WH.lock={}; if(!soft){ const y=$('#modal').scrollTop; draw(); $('#modal').scrollTop=y; } };
+  draw(); }
+function whNewDialog(){ openModal(`<div class="row"><h2 class="grow">＋ New wheel</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
+  <div class="row"><input class="txt" id="wnE" value="🎲" style="width:52px;text-align:center"><input class="txt grow" id="wnN" placeholder="Name it (like “Who Dies This Episode”)"></div>
+  <p class="tiny muted" style="margin-top:10px">Start from:</p>
+  <div class="wh-kinds"><button data-wk="list"><b>📝 A list</b><small>One wheel, your entries</small></button><button data-wk="cast"><b>🎭 The cast</b><small>Picks a character</small></button><button data-wk="combo"><b>🎡 Who + what + where</b><small>Three wheels, one sentence</small></button><button data-wk="elim"><b>☠️ Elimination</b><small>Removes whoever it lands on</small></button></div>`);
+  $('#modal').onclick=e=>{ const b=e.target.closest('[data-wk]'); if(!b) return; const k=b.dataset.wk, name=$('#wnN').value.trim()||{list:'My Wheel',cast:'Pick a Character',combo:'Episode Generator',elim:'Elimination'}[k];
+    const W={id:uid(),name,emoji:$('#wnE').value.trim()||'🎲',reels:[]};
+    if(k==='list'){ W.reels=[{id:uid(),label:'PICK',items:[]}]; W.sentence='{PICK}'; }
+    if(k==='cast'){ W.reels=[{id:uid(),label:'WHO',cast:'main',off:[],items:[]}]; W.sentence='{WHO}'; }
+    if(k==='combo'){ W.reels=[{id:uid(),label:'WHO',cast:'main',off:[],items:[]},{id:uid(),label:'WHAT',items:[]},{id:uid(),label:'WHERE',items:[]}]; W.sentence='{WHO} {WHAT} in {WHERE}.'; }
+    if(k==='elim'){ W.reels=[{id:uid(),label:'WHO',cast:'main',off:[],items:[],gone:[]}]; W.sentence='{WHO} is out!'; W.removeWinner=true; }
+    S.wheels.list.push(W); S.wheels.active=W.id; WH.last=null; WH.res={}; WH.lock={}; save(); closeModal(); whRender(); whEditor(k==='combo'?1:0); }; }
+
+/* old wheel entry points now drive the new one */
+drawWheel=function(){ whRender(); }; spinWheel=function(){ whSpin(); };
+{ const c=$('#c-wheel'); if(c) whRender(); }
+
+/* ===================================================================
+   [FINISH] Nenjac Creator 4.0: name, settings, full backups, restore
+   points, storage safety, one-tab guard, error catcher, offline app,
+   help menu, what's new, accessibility.
+   =================================================================== */
+const APP_NAME='Nenjac Creator', APP_VER='4.0', BACKUP_FORMAT=2;
+const showName = () => (S.settings.showName||'').trim() || 'Nenjac';
+S.version = Math.max(S.version||1, 4);
+const ONLINE_APP = /^https?:$/.test(location.protocol);
+
+/* every modal starts with clean handlers (stops one dialog's clicks leaking into the next) */
+{ const _om=openModal; openModal=function(h){ const m=$('#modal'); m.onclick=null; m.onchange=null; m.oninput=null; m.onkeydown=null; _om(h); anLabelIcons(m); }; }
+
+/* ---------- WHAT'S NEW ---------- */
+const CHANGELOG=[
+  {v:'4.0',title:'Nenjac Creator',items:[
+    ['🎬','Animate','A Premiere-style episode maker: layers, keyframes, easing, razor, J K L. Characters talk, blink, walk, yell and grab props. Script → Scene builds a whole scene for you.'],
+    ['🎞','Real MP4 export','Animate and the Shorts Factory now render a proper MP4 frame by frame, usually faster than real time. Full length, every time.'],
+    ['◆','Easier keyframes + states','Box-select, Shift-click, drag a whole selection, Alt-drag to copy, double-click to type exact values, a States lane under every character, snapping to dialogue lines.'],
+    ['🎡','Wheel of Doom 2','Real WHO / WHAT / WHERE wheels, your own entries, your own wheels, keep a result and respin the rest, an Elimination wheel, a Challenge wheel, a Plot Twist wheel and a history.'],
+    ['🎓','A tour from Deegs and Starr','Help (?) → Take the tour, any time.'],
+    ['💾','Safer with your work','Full backups now include drawings, songs, animations, imports and (optionally) voice takes. Automatic restore points every day. A storage meter. Two-tab protection.'],
+    ['📲','Works like an app','Hosted online it installs as an app (Chromebook shelf, Mac dock) and keeps working offline.'],
+    ['🔧','Fixes','Play from the very start works, export no longer stops at 3 seconds, and a lot of small polish everywhere.']]},
+  {v:'3.5',title:'The Pit',items:[['🎻','The Pit','A musical-theater DAW with a Number Wizard, chords, piano roll, mixer, loops, lyrics and vocal recording.'],['⌘','Command palette','⌘/Ctrl+K to jump anywhere.']]},
+  {v:'3.0',title:'Season 3',items:[['🎙','Voice Booth','Record, trim, add effects, pick keepers, assemble episodes.'],['📱','Shorts Factory','Scenes into TikToks, Reels and Shorts.'],['💬','Comic Creator','Panels, bubbles, pages, Script → Comic.'],['🐾','Desk Pet 2.0','Feed it, play with it, write its lines.']]},
+  {v:'2.0',title:'Season 2',items:[['🎨','Art Studio','Shapes, outlines, the Face Kit and PNG export.'],['⭐','Script Rater + Table Read','The cast reviews and reads your script.'],['🏆','Trophies, soundboard, Night Shift','And a lot more chaos.']]},
+  {v:'1.0',title:'Opening night',items:[['✍️','Writing Desk, Universe Bible, Vibe Station, Chaos Corner','Where it all started.']]}];
+function openWhatsNew(){ openModal(`<div class="wn"><div class="row"><h2 class="grow">✨ What's new</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
+  ${CHANGELOG.map((c,i)=>`<details ${i===0?'open':''} class="wn-ver"><summary><b>${+c.v>=4?APP_NAME:"Writers' Room"} ${c.v}</b> <span>${esc(c.title)}</span></summary><div class="wn-items">${c.items.map(([e,t,d])=>`<div class="wn-it"><span>${e}</span><div><b>${esc(t)}</b><p>${esc(d)}</p></div></div>`).join('')}</div></details>`).join('')}
+  <div class="row" style="margin-top:12px"><button class="btn primary" onclick="closeModal();tourStart()">🎓 Take the tour</button><button class="btn" onclick="closeModal()">Close</button></div></div>`); S.settings.seen40=true; save(); }
+
+/* ---------- RESTORE POINTS (daily copies of scripts + Bible + settings) ---------- */
+const SafeDB={ db:null, open(){ return new Promise(res=>{ if(this.db) return res(this.db); try{ const r=indexedDB.open('nenjac-safety',1); r.onupgradeneeded=()=>r.result.createObjectStore('snaps',{keyPath:'id'}); r.onsuccess=()=>{ this.db=r.result; res(this.db); }; r.onerror=()=>res(null); }catch(e){ res(null); } }); },
+  async all(){ const db=await this.open(); if(!db) return []; return new Promise(res=>{ const q=db.transaction('snaps').objectStore('snaps').getAll(); q.onsuccess=()=>res((q.result||[]).sort((a,b)=>b.at-a.at)); q.onerror=()=>res([]); }); },
+  async put(o){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction('snaps','readwrite'); tx.objectStore('snaps').put(o); tx.oncomplete=res; tx.onerror=res; }); },
+  async del(id){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction('snaps','readwrite'); tx.objectStore('snaps').delete(id); tx.oncomplete=res; tx.onerror=res; }); } };
+async function takeRestorePoint(label='Automatic'){ try{ if(typeof syncEditor==='function') syncEditor(); const json=JSON.stringify(S); await SafeDB.put({id:uid(),at:Date.now(),label,size:json.length,scripts:S.scripts.length,chars:S.chars.length,json});
+    const all=await SafeDB.all(); for(const x of all.slice(15)) await SafeDB.del(x.id); S.settings.lastRestorePoint=Date.now(); }catch(e){ console.warn(e); } }
+
+/* ---------- FULL BACKUP (.nenjac = a zip of everything) ---------- */
+const BK_STORES=[
+  {key:'drawings',label:'Drawings & comics',db:()=>ArtDB,st:'drawings',strip:['preview']},
+  {key:'animProjects',label:'Animated episodes',db:()=>AnimDB,st:'projects'},
+  {key:'animMedia',label:'Imported photos, video & audio',db:()=>AnimDB,st:'media'},
+  {key:'pitSongs',label:'Songs from The Pit',db:()=>PitDB,st:'songs'},
+  {key:'pitClips',label:'Pit recordings',db:()=>PitDB,st:'clips'},
+  {key:'music',label:'Uploaded music',db:()=>IDB,st:'tracks'},
+  {key:'voice',label:'Voice Booth takes',db:()=>VoiceDB,st:'takes',optional:true}];
+async function bkAll(B){ const db=await B.db().open(); if(!db) return []; return new Promise(res=>{ const q=db.transaction(B.st).objectStore(B.st).getAll(); q.onsuccess=()=>res(q.result||[]); q.onerror=()=>res([]); }); }
+async function bkClear(B){ const db=await B.db().open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction(B.st,'readwrite'); tx.objectStore(B.st).clear(); tx.oncomplete=res; tx.onerror=res; }); }
+async function bkPut(B,o){ const db=await B.db().open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction(B.st,'readwrite'); tx.objectStore(B.st).put(o); tx.oncomplete=res; tx.onerror=res; }); }
+function bkPack(v,files,depth=0){ if(v instanceof Blob){ const name=`blobs/${files.length}.bin`; files.push({name,blob:v}); return {__blob:name,type:v.type||''}; }
+  if(ArrayBuffer.isView(v)){ const name=`blobs/${files.length}.bin`; files.push({name,data:new Uint8Array(v.buffer.slice(v.byteOffset,v.byteOffset+v.byteLength))}); return {__ta:v.constructor.name,bin:name}; }
+  if(v instanceof ArrayBuffer){ const name=`blobs/${files.length}.bin`; files.push({name,data:new Uint8Array(v.slice(0))}); return {__ab:name}; }
+  if(depth>8||v===null||typeof v!=='object') return v;
+  if(Array.isArray(v)) return v.map(x=>bkPack(x,files,depth+1)); const o={}; for(const k in v) o[k]=bkPack(v[k],files,depth+1); return o; }
+function bkUnpack(v,Z,depth=0){ if(v&&typeof v==='object'){ if(v.__blob) return new Blob([Z[v.__blob]||new Uint8Array(0)],{type:v.type||''});
+    if(v.__ta){ const u=Z[v.bin]||new Uint8Array(0), C=window[v.__ta]||Uint8Array, b=u.buffer.slice(u.byteOffset,u.byteOffset+u.byteLength); return new C(b); }
+    if(v.__ab){ const u=Z[v.__ab]||new Uint8Array(0); return u.buffer.slice(u.byteOffset,u.byteOffset+u.byteLength); }
+    if(depth>8) return v; if(Array.isArray(v)) return v.map(x=>bkUnpack(x,Z,depth+1)); const o={}; for(const k in v) o[k]=bkUnpack(v[k],Z,depth+1); return o; } return v; }
+function readZip(u8){ const dv=new DataView(u8.buffer,u8.byteOffset,u8.byteLength); let e=u8.length-22; while(e>=0&&dv.getUint32(e,true)!==0x06054b50) e--; if(e<0) throw new Error('not a zip');
+  const n=dv.getUint16(e+10,true), dec=new TextDecoder(), out={}; let p=dv.getUint32(e+16,true);
+  for(let i=0;i<n;i++){ if(dv.getUint32(p,true)!==0x02014b50) throw new Error('bad zip'); const method=dv.getUint16(p+10,true), size=dv.getUint32(p+20,true), nl=dv.getUint16(p+28,true), xl=dv.getUint16(p+30,true), cl=dv.getUint16(p+32,true), lho=dv.getUint32(p+42,true);
+    const name=dec.decode(u8.subarray(p+46,p+46+nl)); if(method!==0) throw new Error('compressed zip'); const start=lho+30+dv.getUint16(lho+26,true)+dv.getUint16(lho+28,true); out[name]=u8.subarray(start,start+size); p+=46+nl+xl+cl; }
+  return out; }
+async function fullBackup({voice=true,onStep=()=>{}}={}){ if(typeof syncEditor==='function') syncEditor(); const files=[], enc=new TextEncoder(), counts={};
+  for(const B of BK_STORES){ if(B.optional&&!voice) continue; onStep(B.label); let recs=await bkAll(B); if(B.strip) recs=recs.map(r=>{ const x={...r}; B.strip.forEach(k=>delete x[k]); return x; }); counts[B.key]=recs.length; files.push({name:`${B.key}.json`,data:enc.encode(JSON.stringify(bkPack(recs,files)))}); }
+  files.unshift({name:'state.json',data:enc.encode(JSON.stringify(S))});
+  files.unshift({name:'manifest.json',data:enc.encode(JSON.stringify({app:APP_NAME,format:BACKUP_FORMAT,version:APP_VER,created:Date.now(),show:showName(),scripts:S.scripts.length,chars:S.chars.length,counts},null,1))});
+  onStep('Packing'); const blob=await makeZip(files); S.settings.lastFullBackup=Date.now(); save(); return blob; }
+async function downloadFullBackup(voice=true){ const t=toast('💾 Packing your backup…'); try{ const blob=await fullBackup({voice}); download(`nenjac-creator-backup-${todayKey()}.nenjac`,blob); toast(`💾 Backup saved (${fmtMB(blob.size)}). Keep it somewhere safe from Deegs.`,'good'); setBadge(); }catch(e){ console.error(e); toast('Backup failed: '+esc(e.message||e),'bad'); } }
+async function restoreBackupFile(f){ const u8=new Uint8Array(await f.arrayBuffer());
+  if(u8[0]===0x7b){ /* old .json backup */ let s; try{ s=JSON.parse(new TextDecoder().decode(u8)); }catch(e){ return toast("That file isn't a Nenjac backup.",'bad'); } if(!s.scripts||!s.chars) return toast("That file isn't a Nenjac backup.",'bad');
+    if(!confirm(`Restore this older backup?\n\n${s.scripts.length} scripts, ${s.chars.length} characters${s.__drawings?`, ${s.__drawings.length} drawings`:''}.\n\nIt replaces the scripts, Bible and settings in this browser. A restore point of what you have now is saved first.`)) return;
+    await takeRestorePoint('Before restoring a backup'); const dr=s.__drawings||[]; delete s.__drawings; for(const d of dr) await bkPut(BK_STORES[0],await withPreview(d)); S=s; save(true); location.reload(); return; }
+  let Z, man; try{ Z=readZip(u8); man=JSON.parse(new TextDecoder().decode(Z['manifest.json'])); if(man.app!==APP_NAME) throw 0; }catch(e){ return toast("That file isn't a Nenjac Creator backup.",'bad'); }
+  if((man.format||1)>BACKUP_FORMAT&&!confirm('This backup was made by a newer version of Nenjac Creator. Some parts might not come through. Restore anyway?')) return;
+  const c=man.counts||{}; if(!confirm(`Restore the backup from ${new Date(man.created).toLocaleString()}?\n\n${man.scripts} scripts · ${man.chars} characters · ${c.drawings||0} drawings · ${c.pitSongs||0} songs · ${c.animProjects||0} animated episodes${c.voice!=null?` · ${c.voice} voice takes`:''}\n\nThis REPLACES everything in this browser. A restore point of your current scripts and Bible is saved first.`)) return;
+  toast('📂 Restoring…'); await takeRestorePoint('Before restoring a backup');
+  for(const B of BK_STORES){ const raw=Z[`${B.key}.json`]; if(!raw) continue; const recs=bkUnpack(JSON.parse(new TextDecoder().decode(raw)),Z); await bkClear(B); for(const r of recs) await bkPut(B,B.key==='drawings'?await withPreview(r):r); }
+  S=JSON.parse(new TextDecoder().decode(Z['state.json'])); save(true); location.reload(); }
+async function withPreview(d){ let preview=null; try{ const cv=await renderToCanvas(d,{maxSide:512,bg:d.bg==='transparent'?null:d.bg}); preview=await new Promise(r=>cv.toBlob(r,'image/png')); }catch(_){} return {...d,preview}; }
+
+/* ---------- STORAGE SAFETY ---------- */
+async function storageInfo(){ const o={}; try{ if(navigator.storage?.estimate){ const e=await navigator.storage.estimate(); o.used=e.usage; o.quota=e.quota; } if(navigator.storage?.persisted) o.persisted=await navigator.storage.persisted(); }catch(e){} return o; }
+async function askPersist(){ try{ if(navigator.storage?.persist&&!(await navigator.storage.persisted())) return await navigator.storage.persist(); return true; }catch(e){ return false; } }
+const fmtMB = b => b==null?'?':b>1073741824?(b/1073741824).toFixed(1)+' GB':b<1048576?Math.max(1,Math.round(b/1024))+' KB':(b/1048576).toFixed(b>104857600?0:1)+' MB';
+S.settings.firstSeen=S.settings.firstSeen||Date.now();
+function backupOverdue(){ const since=Math.max(S.settings.lastFullBackup||0,S.settings.firstSeen||0), busy=S.scripts.length>1||(S.counters.scriptsMade||0)>1; return busy&&Date.now()-since>14*864e5; }
+function setBadge(){ const b=$('#openSettings'); if(b) b.classList.toggle('badge',backupOverdue()); }
+
+/* ---------- ONE TAB AT A TIME ---------- */
+const TAB_ID=uid(); let TAB_BC=null;
+try{ TAB_BC=new BroadcastChannel('nenjac-creator'); TAB_BC.onmessage=e=>{ const m=e.data||{}; if(m.id===TAB_ID) return;
+    if(m.t==='hello'){ TAB_BC.postMessage({t:'here',id:TAB_ID}); }
+    if(m.t==='here'&&!window.__nenjacPaused) tabWarn();
+    if(m.t==='takeover'){ save(true); window.__nenjacPaused=true; tabPaused(); } };
+  TAB_BC.postMessage({t:'hello',id:TAB_ID}); }catch(e){}
+function tabWarn(){ if($('#tabWarn')) return; document.body.insertAdjacentHTML('beforeend',`<div class="tab-warn" id="tabWarn" role="alert"><b>⚠ Nenjac Creator is open in another tab.</b><span>Two tabs can overwrite each other's work.</span><button class="btn sm primary" id="tabTake">Use this tab</button><button class="btn sm" id="tabX">✕</button></div>`);
+  $('#tabTake').onclick=()=>{ TAB_BC.postMessage({t:'takeover',id:TAB_ID}); setTimeout(()=>location.reload(),350); }; $('#tabX').onclick=()=>$('#tabWarn').remove(); }
+function tabPaused(){ document.body.insertAdjacentHTML('beforeend',`<div class="tab-paused"><div class="card pad"><h2>⏸ This tab is paused</h2><p>You're using Nenjac Creator in another tab, so this one stopped saving to keep your work safe.</p><button class="btn primary" onclick="location.reload()">Use this tab instead</button></div></div>`); }
+
+/* ---------- ERROR CATCHER ---------- */
+const ERRLOG=[]; let _errToastAt=0;
+function logErr(msg,stack){ msg=String(msg||'Unknown error'); if(/ResizeObserver|Script error\.?$|AbortError|NotAllowedError|play\(\) request|The operation was aborted|Load failed|Failed to fetch/i.test(msg)) return;
+  ERRLOG.unshift({at:Date.now(),msg:msg.slice(0,300),stack:String(stack||'').slice(0,800),screen:current}); ERRLOG.length=Math.min(ERRLOG.length,30);
+  if(Date.now()-_errToastAt>30000){ _errToastAt=Date.now(); toast('⚠ Something hiccuped, but your work is saved. Details: ⚙ Settings → About.','bad'); } }
+window.addEventListener('error',e=>logErr(e.message,e.error?.stack));
+window.addEventListener('unhandledrejection',e=>logErr(e.reason?.message||e.reason,e.reason?.stack));
+
+/* ---------- OFFLINE APP (only when it's hosted, e.g. GitHub Pages) ---------- */
+let INSTALL_EVT=null;
+if(ONLINE_APP){ const l=document.createElement('link'); l.rel='manifest'; l.href='manifest.webmanifest'; document.head.appendChild(l);
+  addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); INSTALL_EVT=e; });
+  if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').then(reg=>{ reg.addEventListener('updatefound',()=>{ const w=reg.installing; if(!w) return; w.addEventListener('statechange',()=>{ if(w.state==='installed'&&navigator.serviceWorker.controller) updateReady(); }); }); }).catch(()=>{}); }
+function updateReady(){ if($('#updBar')) return; document.body.insertAdjacentHTML('beforeend',`<div class="tab-warn upd" id="updBar"><b>✨ A new version of Nenjac Creator is ready.</b><button class="btn sm primary" onclick="save(true);location.reload()">Reload</button><button class="btn sm" onclick="this.parentNode.remove()">Later</button></div>`); }
+async function installApp(){ if(!INSTALL_EVT) return toast(ONLINE_APP?'Use your browser menu: ⋮ → Install / Add to shelf.':'Installing works when Nenjac Creator is opened from its website link.'); INSTALL_EVT.prompt(); const r=await INSTALL_EVT.userChoice; if(r.outcome==='accepted') toast('📲 Installed. Find Nenjac Creator with your other apps.','good'); INSTALL_EVT=null; }
+
+/* ---------- SETTINGS (rebuilt) ---------- */
+{ const old=$('#openSettings'), nb=old.cloneNode(true); old.replaceWith(nb); nb.title='Settings, backups & help'; nb.setAttribute('aria-label','Settings, backups and help'); nb.addEventListener('click',()=>openSettings()); }
+let SET_TAB='general';
+function openSettings(tab){ if(tab) SET_TAB=tab; const tabs=[['general','⚙','General'],['backup','💾','Backup & data'],['help','🎓','Help'],['about','ℹ️','About']];
+  openModal(`<div class="setw"><nav class="set-nav"><div class="set-title">Settings</div>${tabs.map(([k,e,l])=>`<button data-st="${k}" class="${SET_TAB===k?'on':''}">${e} ${l}</button>`).join('')}</nav><div class="set-body" id="setBody"></div><button class="btn sm set-x" onclick="closeModal()" aria-label="Close">✕</button></div>`);
+  const m=$('#modal'); m.onclick=e=>{ const b=e.target.closest('[data-st]'); if(b){ SET_TAB=b.dataset.st; $$('.set-nav button').forEach(x=>x.classList.toggle('on',x===b)); setRender(); } }; setRender(); }
+function setRow(t,d,ctl){ return `<div class="setting"><span><b>${t}</b>${d?`<br><small class="muted">${d}</small>`:''}</span>${ctl}</div>`; }
+const tog=(id,on)=>`<label class="toggle"><input type="checkbox" id="${id}" ${on?'checked':''}><span></span></label>`;
+async function setRender(){ const el=$('#setBody'); if(!el) return; const st=S.settings;
+  if(SET_TAB==='general'){ el.innerHTML=`<h2>⚙ General</h2>
+    ${setRow('Your show','Used on title cards and around the app. Making Nenjac? Leave it.',`<input class="txt" id="sgShow" value="${esc(st.showName||'')}" placeholder="Nenjac" style="width:200px">`)}
+    ${setRow('Night Shift','Dark mode for late-night writing',tog('sgNight',st.night))}
+    ${setRow('Animations','Calm turns off the bouncy stuff',`<select class="txt" id="sgMotion" style="width:170px"><option value="full" ${st.motion!=='calm'?'selected':''}>Full send</option><option value="calm" ${st.motion==='calm'?'selected':''}>Calm</option></select>`)}
+    ${setRow('Sound effects','Trigger-phrase effects, the wheel, confetti noises…',tog('sgFx',st.fx))}
+    ${setRow('Typewriter clacks','Clicky keys while you write',tog('sgClack',st.clack))}
+    ${setRow('Cameos','Characters pop up while you write',`<select class="txt" id="sgCameo" style="width:170px">${[['off','Off'],['chill','Chill (~4 min)'],['normal','Normal (~2 min)'],['chaotic','Chaotic (~45 s)']].map(([v,l])=>`<option value="${v}" ${st.cameo===v?'selected':''}>${l}</option>`).join('')}</select>`)}
+    ${setRow('Mood Ring','Recolors the theater based on what you write',tog('sgMood',st.mood))}
+    <p class="tiny muted">More chaos (desk pet, manual mood, writer's-block rescue) lives in <a href="#" data-goch="1">Chaos Corner → Chaos Settings</a>.</p>
+    <hr class="sep">${setRow('Start a brand-new show','Clear out the Nenjac lore and build your own object show from scratch',`<button class="btn sm" id="sgNew">🆕 New show…</button>`)}
+    ${ONLINE_APP?`${setRow('Install as an app','Opens in its own window and works offline',`<button class="btn sm" id="sgInstall">📲 Install</button>`)}`:''}`;
+    const on=(id,f)=>{ const x=$('#'+id); if(x) x.onchange=e=>{ f(e.target); save(); }; };
+    on('sgShow',t=>{ st.showName=t.value.trim(); renderNowMaking(); toast(`🎬 Now making: ${esc(showName())}`); });
+    on('sgNight',t=>{ st.night=t.checked; applyLook(); }); on('sgMotion',t=>{ st.motion=t.value; applyLook(); const s2=$('#setMotion'); if(s2) s2.value=t.value; });
+    on('sgFx',t=>{ st.fx=t.checked; const s2=$('#setFx'); if(s2) s2.checked=t.checked; }); on('sgClack',t=>{ st.clack=t.checked; const s2=$('#setClack'); if(s2) s2.checked=t.checked; });
+    on('sgCameo',t=>{ st.cameo=t.value; const s2=$('#setCameo'); if(s2) s2.value=t.value; }); on('sgMood',t=>{ st.mood=t.checked; const s2=$('#setMood'); if(s2) s2.checked=t.checked; if(!t.checked) applyMood('rehearsal'); });
+    $('#sgNew').onclick=()=>{ closeModal(); startNewShowDialog(); }; el.querySelector('[data-goch]').onclick=e=>{ e.preventDefault(); closeModal(); go('chaos','settings'); }; $('#sgInstall')&&($('#sgInstall').onclick=installApp); return; }
+  if(SET_TAB==='backup'){ const info=await storageInfo(), snaps=await SafeDB.all(), last=st.lastFullBackup; if(SET_TAB!=='backup') return;
+    const pct=info.quota?Math.min(100,info.used/info.quota*100):0;
+    el.innerHTML=`<h2>💾 Backup & data</h2>
+      <p class="tiny muted">Your work lives in <b>this browser on this computer</b>. A full backup is one file with everything in it. Use it to move to another computer or to sleep at night.</p>
+      <div class="bk-card ${backupOverdue()?'warn':''}"><div><b>Full backup</b><small>${last?`Last one: ${ago(last)}`:'You haven\'t made one yet.'} Scripts, Bible, drawings, comics, songs, animations, imports${''}.</small></div>
+        <div class="row"><button class="btn primary" id="bkFull">💾 Download full backup</button><label class="tiny"><input type="checkbox" id="bkVoice" checked> include voice takes</label></div></div>
+      <div class="bk-card"><div><b>Restore</b><small>Open a <code>.nenjac</code> backup (older <code>.json</code> backups work too). It replaces what's in this browser.</small></div><label class="btn">📂 Restore from a backup<input type="file" id="bkFile" accept=".nenjac,.zip,.json,application/json,application/zip" hidden></label></div>
+      <h3>🕘 Restore points</h3><p class="tiny muted">Saved automatically once a day and before big changes: scripts, the Bible, wheels and settings. Handy if something gets deleted by accident.</p>
+      <div class="snaps">${snaps.length?snaps.map(s2=>`<div class="snap"><span><b>${new Date(s2.at).toLocaleString([], {month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}</b> · ${esc(s2.label)} <small class="muted">${s2.scripts} scripts · ${s2.chars} characters</small></span><button class="btn sm" data-snap="${s2.id}">Restore</button></div>`).join(''):'<p class="tiny muted">None yet.</p>'}</div>
+      <button class="btn sm" id="bkSnapNow">＋ Make a restore point now</button>
+      <h3>📦 Storage</h3><div class="stor"><i style="width:${pct.toFixed(1)}%"></i></div><p class="tiny muted">Using ${fmtMB(info.used)}${info.quota?` of about ${fmtMB(info.quota)}`:''}. ${info.persisted?'✅ Protected: the browser won\'t clear it to save space.':'<a href="#" id="bkPersist">Ask the browser to protect it</a> so it never gets auto-cleared.'}</p>
+      <h3>🔗 Assets folder</h3><p class="tiny muted">${ONLINE_APP?'Running from a website, so your art exports without linking anything.':`Opened from a file, the browser needs a copy of your <b>assets</b> folder before art can go into exports. ${assetsLinked()?`<b>Linked: ${Object.keys(ASSET_BLOBS).length} files.</b>`:'<b>Not linked yet.</b>'}`}</p>
+      ${ONLINE_APP?'':`<div class="row"><button class="btn sm ${assetsLinked()?'':'primary'}" id="bkLink">📂 ${assetsLinked()?'Re-link (after adding art)':'Link my assets folder'}</button>${assetsLinked()?'<button class="btn sm" id="bkUnlink">Unlink</button>':''}</div>`}
+      <h3 class="danger">🧨 Danger zone</h3><div class="row"><button class="btn sm red" id="bkReset">Reset everything to the starter lore</button></div><p class="tiny muted">Erases scripts, the Bible and settings in this browser. A restore point is saved first, but download a full backup too.</p>`;
+    $('#bkFull').onclick=async()=>{ const b=$('#bkFull'); b.disabled=true; b.textContent='Packing…'; await downloadFullBackup($('#bkVoice').checked); b.disabled=false; b.textContent='💾 Download full backup'; setRender(); };
+    $('#bkFile').onchange=e=>{ const f=e.target.files[0]; if(f) restoreBackupFile(f); };
+    $('#bkSnapNow').onclick=async()=>{ await takeRestorePoint('Made by hand'); save(); toast('🕘 Restore point saved'); setRender(); };
+    $$('[data-snap]').forEach(b=>b.onclick=async()=>{ const s2=snaps.find(x=>x.id===b.dataset.snap); if(!s2||!confirm(`Go back to ${new Date(s2.at).toLocaleString()}?\n\nScripts, Bible, wheels and settings are replaced with that copy. (A restore point of right now is saved first.)`)) return; await takeRestorePoint('Before going back'); S=JSON.parse(s2.json); save(true); location.reload(); });
+    $('#bkPersist')&&($('#bkPersist').onclick=async e=>{ e.preventDefault(); const ok=await askPersist(); toast(ok?'✅ Protected':'The browser said not yet. Installing the app or using it more usually unlocks it.'); setRender(); });
+    $('#bkLink')&&($('#bkLink').onclick=()=>{ closeModal(); linkAssetsFolder(()=>{ if(current==='lobby') renderLobby(); }); });
+    $('#bkUnlink')&&($('#bkUnlink').onclick=async()=>{ if(!confirm('Remove the linked copy of your assets folder from this browser?')) return; await AssetDB.clear(); Object.keys(ASSET_BLOBS).forEach(k=>{ URL.revokeObjectURL(ASSET_BLOBS[k]); delete ASSET_BLOBS[k]; }); setRender(); toast('Unlinked'); });
+    $('#bkReset').onclick=async()=>{ if(!confirm('Really reset everything? Scripts, the Bible, all of it?')||!confirm('Like, REALLY? Deegs-with-a-bomb really?')) return; await takeRestorePoint('Before a full reset'); window.__nenjacPaused=true; localStorage.removeItem(LS_KEY); location.reload(); };
+    return; }
+  if(SET_TAB==='help'){ el.innerHTML=`<h2>🎓 Help</h2>
+      <div class="help-grid"><button data-h="tour"><b>🎓 Take the tour</b><small>Deegs and Starr show you around (2 minutes)</small></button><button data-h="keys"><b>⌨️ Shortcuts</b><small>For the screen you're on</small></button><button data-h="new"><b>✨ What's new</b><small>Everything in ${APP_NAME} ${APP_VER}</small></button><button data-h="pal"><b>⌘ Command palette</b><small>⌘/Ctrl+K: jump anywhere, do anything</small></button></div>
+      <h3>Quick answers</h3><div class="faq">
+      <details><summary>Where is my stuff saved?</summary><p>In this browser, on this computer. It saves automatically. To move it to another computer, download a full backup (Backup & data) and restore it there.</p></details>
+      <details><summary>How do I share it with my team?</summary><p>Put the folder on GitHub Pages and send the link. Everyone gets the app, but each person's work stays in their own browser. Pass backups around to share projects.</p></details>
+      <details><summary>Exports come out blank or without art</summary><p>If you opened index.html as a file, link your assets folder once (Backup & data → Assets folder). From a website link this isn't needed.</p></details>
+      <details><summary>The mic doesn't work</summary><p>Click the 🔒 / ⓘ next to the address, allow the microphone, then reload. Chrome works best.</p></details>
+      <details><summary>Something looks broken</summary><p>Reload the page first (your work is saved). If it keeps happening, copy the error report from About and send it to whoever maintains the app.</p></details></div>`;
+    el.querySelector('.help-grid').onclick=e=>{ const h=e.target.closest('[data-h]')?.dataset.h; if(!h) return; closeModal(); if(h==='tour') tourStart(); if(h==='keys') openShortcuts(); if(h==='new') openWhatsNew(); if(h==='pal') openPalette(); }; return; }
+  if(SET_TAB==='about'){ const info=await storageInfo(); if(SET_TAB!=='about') return;
+    el.innerHTML=`<div class="about"><div class="about-logo"><b>NENJAC</b><small>CREATOR</small></div><div><h2 style="margin:0">${APP_NAME} ${APP_VER}</h2><p class="muted" style="margin:4px 0">The whole object-show studio in one file. Write it, draw it, voice it, score it, animate it, post it.</p><p class="tiny">Made for <b>Nenjac</b> by JC Deegan & Noah Starr. Now making: <b>${esc(showName())}</b>.</p></div></div>
+      <div class="about-facts"><div><b>${S.scripts.length}</b><small>scripts</small></div><div><b>${S.chars.length}</b><small>characters</small></div><div><b>${S.lore.length}</b><small>lore entries</small></div><div><b>${fmtMB(info.used)}</b><small>stored</small></div></div>
+      <p class="tiny muted">Running ${ONLINE_APP?'from a website':'from a file'} · ${navigator.userAgent.match(/(Chrome|Firefox|Safari|Edg)\/[\d.]+/)?.[0]||'browser'} · backup format ${BACKUP_FORMAT}</p>
+      <h3>🐛 Error report</h3><p class="tiny muted">${ERRLOG.length?`${ERRLOG.length} hiccup${ERRLOG.length>1?'s':''} this session.`:'No errors this session. 🎉'}</p>${ERRLOG.length?`<pre class="errlog">${ERRLOG.slice(0,8).map(x=>esc(`${new Date(x.at).toLocaleTimeString()} [${x.screen}] ${x.msg}`)).join('\n')}</pre><button class="btn sm" id="abCopy">📋 Copy error report</button>`:''}
+      <div class="row" style="margin-top:12px"><button class="btn sm" onclick="closeModal();openWhatsNew()">✨ What's new</button><button class="btn sm" onclick="closeModal();tourStart()">🎓 Take the tour</button></div>`;
+    $('#abCopy')&&($('#abCopy').onclick=()=>{ const txt=`${APP_NAME} ${APP_VER} · ${navigator.userAgent}\n`+ERRLOG.map(x=>`${new Date(x.at).toISOString()} [${x.screen}] ${x.msg}\n${x.stack}`).join('\n\n'); navigator.clipboard?.writeText(txt).then(()=>toast('📋 Copied'),()=>toast('Could not copy','bad')); }); } }
+
+/* ---------- HELP (?) button + shortcuts sheet extras ---------- */
+$('#helpBtn').onclick=()=>openSettings('help'); $('#helpBtn').title='Help, tour & shortcuts (?)';
+{ const _os=openShortcuts; openShortcuts=function(){ _os(); const m=$('#modal'); m.insertAdjacentHTML('beforeend',`<div class="row" style="margin-top:10px;border-top:2px dashed #ddd;padding-top:10px"><button class="btn sm" onclick="closeModal();tourStart()">🎓 Take the tour</button><button class="btn sm" onclick="closeModal();openSettings('help')">❓ Help</button><button class="btn sm" onclick="closeModal();openWhatsNew()">✨ What's new</button></div>`); }; }
+
+/* ---------- palette ---------- */
+{ const _c=commands; commands=function(){ const C=_c().filter(c=>!/^Download full backup$/.test(c.label)); const add=(ico,label,run,kw='')=>C.push({ico,label,run,kw:(label+' '+kw).toLowerCase()});
+    add('💾','Download full backup',()=>downloadFullBackup(true),'save export everything'); add('📂','Restore a backup',()=>openSettings('backup'),'import load');
+    add('🎓','Take the tour (Deegs & Starr)',()=>tourStart(),'tutorial help'); add('✨',"What's new",openWhatsNew,'changelog updates'); add('⚙','Settings',()=>openSettings('general'),'preferences options');
+    add('🕘','Restore points',()=>openSettings('backup'),'undo history snapshot'); if(ONLINE_APP) add('📲','Install as an app',installApp,'pwa offline');
+    S.wheels.list.forEach(w=>add(w.emoji,'Spin: '+w.name,()=>{ S.wheels.active=w.id; go('chaos','wheel'); setTimeout(()=>whRender(),80); },'wheel'));
+    return C; }; }
+SCREEN_NAMES.lobby='Lobby';
+
+/* ---------- lobby: now making ---------- */
+function renderNowMaking(){ const el=$('#nowMaking'); if(!el) return; const n=showName(); el.innerHTML=n!=='Nenjac'?`<span>🎬 Now making: <b>${esc(n)}</b></span>`:''; }
+{ const _rl=renderLobby; renderLobby=function(){ _rl(); renderNowMaking(); setBadge(); }; }
+
+/* ---------- accessibility: icon buttons get real labels ---------- */
+function anLabelIcons(root=document){ root.querySelectorAll('button[title]:not([aria-label]),.iconbtn:not([aria-label])').forEach(b=>{ const t=b.title||b.textContent; const txt=b.textContent.replace(/[^\p{L}\p{N}]/gu,''); if(txt.length<3&&t) b.setAttribute('aria-label',t.split('(')[0].trim()); }); }
+{ const _g=go; go=function(scr,then){ _g(scr,then); setTimeout(()=>anLabelIcons($('#scr-'+scr)||document),120); }; }
+anLabelIcons();
+
+/* ---------- boot ---------- */
+(async function bootV4(){
+  setBadge(); renderNowMaking(); if(current==='anim'&&!$('#anRoot').children.length) enterAnim();
+  const snaps=await SafeDB.all(); if(!snaps.length||Date.now()-snaps[0].at>20*3600e3) setTimeout(()=>takeRestorePoint('Daily'),4000);
+  if(ONLINE_APP||S.scripts.length>1) askPersist();
+  if(!FIRST_RUN&&!S.settings.seen40&&!S.settings.tourDone) setTimeout(()=>{ if($('#tour')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello40" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>Nenjac Creator 4.0 is here.</b><small>New name, the Animate tab, a better Wheel of Doom and a tour from Deegs & me.</small><div class="row"><button class="btn sm primary" id="h40new">✨ What's new</button><button class="btn sm" id="h40tour">🎓 Tour</button><button class="btn sm" id="h40x" aria-label="Dismiss">✕</button></div></div></div>`);
+    const done=()=>{ S.settings.seen40=true; save(); $('#hello40')?.remove(); }; $('#h40new').onclick=()=>{ done(); openWhatsNew(); }; $('#h40tour').onclick=()=>{ done(); tourStart(); }; $('#h40x').onclick=done; },2200);
+})();
+
+/* ---------- never lose work: save when the tab hides, warn before closing mid-render ---------- */
+document.addEventListener('visibilitychange',()=>{ if(document.hidden&&!window.__nenjacPaused){ try{ if(typeof syncEditor==='function') syncEditor(); }catch(e){} save(true); } });
+addEventListener('beforeunload',e=>{ const busy=(typeof VB!=='undefined'&&VB.recording)||(typeof PIT!=='undefined'&&PIT.rec)||(typeof SH!=='undefined'&&(SH.rec||SH.enc))||!!$('#exGo:disabled')||!!$('#bxGo:disabled'); if(busy){ e.preventDefault(); e.returnValue=''; } });
+if(window.__stateWasBroken) setTimeout(()=>toast('⚠ Your saved data could not be read, so a fresh copy was started. The old data was kept aside. Check ⚙ → Backup & data → Restore points, or restore a backup.','bad'),1500);
+
+/* ---------- start a brand-new show ---------- */
+const GENERIC_EVENTS=["gets eliminated","starts an alliance","betrays their alliance","wins immunity","falls off a cliff","gets recovered","becomes the host for a day","finds a mysterious key","gets stuck in a tree","turns evil for one episode","loses a limb (it grows back)","starts a feud","gets a crush","is replaced by a lookalike","breaks the recovery center","wins the challenge by accident"];
+const GENERIC_CHALLENGES=["Build a raft and cross the lake","Climb the tallest mountain","Egg drop from the cliff","Cook-off","Scavenger hunt","Dodgeball","Talent show","Trivia about the show","Relay race","Bake-off","Balance on a pole the longest","Silent challenge: last one to talk wins","Escape room","Hide and seek","Paint a portrait of the host","Survive the night in the haunted hotel","Basket-weaving (somehow dangerous)","Win a staring contest","Carry a teammate across the finish line","Make the host laugh"];
+const GENERIC_TWISTS=["it was all a dream","the host was behind it all along","there's an evil twin","everyone is stuck in a time loop","an eliminated contestant comes back","two contestants are secretly related","the prize was fake","everyone swaps bodies","a contestant breaks the fourth wall","the challenge was a test of friendship","the recovery center explodes","the losers stage a rebellion","a new contestant joins mid-episode","it's actually a musical episode","the season ends early","the writers get involved"];
+const GENERIC_PLACES=["the challenge area","the elimination stage","the cliff","the lake","the hotel","the forest","the host's lair","the loser chamber","the cake at stake","the recovery center","the volcano","the moon","the cafeteria","a giant pencil sharpener"];
+function startNewShowDialog(){ openModal(`<div class="row"><h2 class="grow">🆕 Start a brand-new show</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
+  <p>This clears the <b>scripts, characters and lore</b> in this browser so you can build a different object show from scratch. Your drawings, songs, animations and voice takes stay.</p>
+  <p class="tiny muted">Everything you have now is kept as a restore point, but download a full backup first to be safe.</p>
+  <label class="lab">Show name</label><input class="txt" id="nsName" placeholder="Like “Battle for Snack Island”" style="width:100%">
+  <div class="row" style="margin-top:12px"><button class="btn" id="nsBk">💾 Download a backup first</button><span class="grow"></span><button class="btn red" id="nsGo">🆕 Start the new show</button></div>`);
+  $('#nsBk').onclick=()=>downloadFullBackup(true);
+  $('#nsGo').onclick=async()=>{ const name=$('#nsName').value.trim(); if(!name) return toast('Give your show a name first.','bad'); if(!confirm(`Start “${name}” from scratch? Your current scripts, characters and lore are cleared from this browser (kept as a restore point).`)) return;
+    await takeRestorePoint(`Before starting “${name}”`); const id=uid();
+    S.chars=[]; S.lore=[]; S.scripts=[{id,title:'EPISODE 1',code:'S1E1',author:'',logline:'',created:Date.now(),updated:Date.now(),blocks:[{t:'scene',x:'[THE CHALLENGE AREA]'},{t:'action',x:'Our contestants stand around, waiting for the host.'}]}]; S.activeScript=id;
+    S.settings.showName=name; S.wheels=whDefaults(); const d=S.wheels.list.find(w=>w.id==='doom'); d.reels[1].items=GENERIC_EVENTS.map(t=>({id:uid(),t,on:true})); d.reels[2].items=GENERIC_PLACES.map(t=>({id:uid(),t,on:true})); const it=a2=>a2.map(t=>({id:uid(),t,on:true})); S.wheels.list.find(w=>w.id==='challenge').reels[0].items=it(GENERIC_CHALLENGES); S.wheels.list.find(w=>w.id==='twist').reels[0].items=it(GENERIC_TWISTS);
+    save(true); location.reload(); }; }
+
+/* new characters in a non-Nenjac show go in "Contestants" */
+Object.assign(GROUPS,{'Contestants':GROUPS['Contestants']||'#4a86e8','Hosts':GROUPS['Hosts']||'#930000','Eliminated':GROUPS['Eliminated']||'#777777'});
+{ const _cc=createChar; createChar=function(seed={}){ if(showName()!=='Nenjac'&&!seed.group) seed={...seed,group:'Contestants'}; return _cc(seed); }; }
+
+/* ===================================================================
+   [TOUR] Deegs & Starr show you around. Skippable at every step
+   (Skip, Esc or clicking outside twice), replayable from Help.
+   =================================================================== */
+const TOUR=[
+  {who:'starr',scr:'lobby',el:'#lobbyHero',title:'Welcome to Nenjac Creator!',text:"Hi!! I'm Starr. This is the whole studio for making an object show: write it, draw it, voice it, score it, animate it. Deegs and I will show you around. Two minutes, tops.",name:true},
+  {who:'deegs',scr:'lobby',el:'#tabs',title:'The tabs',text:"Every part of making an episode has a tab up here. Hover one to see what it is. Or don't. I'm a burger, not a cop."},
+  {who:'starr',scr:'desk',el:'#page',title:'Writing Desk',text:"This is where episodes start. Type a character's name and Enter jumps to their line. Tab switches between scene, action, dialogue and the rest. Your cast autocompletes."},
+  {who:'deegs',scr:'bible',el:'#bibleGrid',title:'Universe Bible',text:"Everyone who's ever been in the show lives here, plus every running gag and dead body. Add your own characters and they show up everywhere else in the app."},
+  {who:'starr',scr:'studio',el:'#scr-studio',title:'Art Studio',text:"Draw characters, props and sets out of shapes, use the Face Kit, or make comics. Anything you draw can be cast, animated and put in Shorts."},
+  {who:'deegs',scr:'voice',el:'#vbRoot',title:'Voice Booth',text:"Read your lines into the mic. Keep the good takes, slap on effects, and it stitches the whole episode together with music. Wear headphones, Starr."},
+  {who:'starr',scr:'pit',el:'#pitRoot',title:'The Pit',text:"Musicals!! Pick a kind of number, get a full backing track from a little pit orchestra, then sing on it. Every object show needs a musical episode. That's the law."},
+  {who:'deegs',scr:'anim',el:'#anRoot',title:'Animate',text:"This is the big one. Layers, keyframes and a timeline like Premiere. We talk, blink, walk and grab stuff on our own. Script → Scene animates a whole scene for you, then you tweak it and export an MP4."},
+  {who:'starr',scr:'shorts',el:'#shRoot',title:'Shorts Factory',text:"Turn any scene into a TikTok, Reel or YouTube Short with popping captions. Going viral is basically guaranteed. (Not legally guaranteed.)"},
+  {who:'deegs',scr:'chaos',el:'#c-wheel',title:'Chaos Corner',text:"Out of ideas? Spin the Wheel of Doom. Who, what, where. Hit ✏️ Edit entries to put your own stuff on it, or make a whole new wheel. There's an Elimination wheel too. Don't ask why I like it."},
+  {who:'starr',scr:'lobby',el:'.hdr-right',title:'Help is up here',text:"⌘ (or Ctrl+K) lets you jump anywhere. ? opens help and this tour again. ⚙ has settings and backups. Download a backup now and then, everything lives in this browser!"},
+  {who:'deegs',scr:'lobby',el:null,title:"That's it.",text:"Go make something. Start in the Writing Desk, or spin the wheel if you're feeling unhinged. Starr, stop crying.",last:true}];
+let TS=null;
+function tourStart(at=0){ tourClose(true); $('#hello40')?.remove(); closeModal(); TS={i:at,typing:0,skipArm:0}; document.body.classList.add('touring');
+  
+  document.body.insertAdjacentHTML('beforeend',`<div id="tour" role="dialog" aria-modal="true" aria-label="Tour of Nenjac Creator"><div class="tour-hole" id="tourHole"></div>
+    <div class="tour-cast"><div class="tour-who deegs" id="tourDeegs">${castArt('Deegs')}<b>DEEGS</b></div><div class="tour-who starr" id="tourStarr">${castArt('Starr')}<b>STARR</b></div></div>
+    <div class="tour-card" id="tourCard"><div class="tour-tag" id="tourTag"></div><h3 id="tourTitle"></h3><p id="tourText" aria-live="polite"></p><div id="tourExtra"></div>
+      <div class="tour-foot"><button class="tour-skip" id="tourSkip">Skip tour</button><span class="tour-dots" id="tourDots"></span><button class="btn sm" id="tourBack">◀ Back</button><button class="btn sm primary" id="tourNext">Next ▶</button></div></div></div>`);
+  $('#tourSkip').onclick=()=>tourClose(); $('#tourBack').onclick=()=>tourGo(TS.i-1); $('#tourNext').onclick=()=>tourNextOrDone();
+  $('#tour').addEventListener('pointerdown',e=>{ if(e.target.closest('#tourCard,.tour-who')) return; e.preventDefault(); if(++TS.skipArm>=2) return tourClose(); toast('Click outside again (or press Esc) to skip the tour.'); });
+  addEventListener('resize',tourPlace); tourGo(at); }
+function tourNextOrDone(){ if(!TS) return; if(TS.typing){ TS.typing=0; $('#tourText').textContent=TOUR[TS.i].text; return; } if(TOUR[TS.i].last) return tourClose(); tourGo(TS.i+1); }
+function tourGo(i){ if(!TS) return; i=clamp(i,0,TOUR.length-1); const st=TOUR[i]; TS.i=i; TS.skipArm=0;
+  if(current!==st.scr) go(st.scr); $('#scr-'+st.scr)?.scrollTo?.(0,0);
+  $('#tourTag').textContent=st.who==='deegs'?'DEEGS':'STARR'; $('#tourTag').className='tour-tag '+st.who; $('#tourTitle').textContent=st.title;
+  $('#tourDeegs').classList.toggle('on',st.who==='deegs'); $('#tourStarr').classList.toggle('on',st.who==='starr');
+  $('#tourDots').innerHTML=TOUR.map((_,k)=>`<i class="${k===i?'on':k<i?'done':''}"></i>`).join(''); $('#tourBack').disabled=i===0; $('#tourNext').textContent=st.last?"Let's go! 🎬":'Next ▶';
+  $('#tourExtra').innerHTML=st.name?`<label class="tour-name"><span>What's your show called?</span><input class="txt" id="tourShow" placeholder="Nenjac" value="${esc(S.settings.showName||'')}"></label>`:'';
+  const ts=$('#tourShow'); if(ts) ts.onchange=()=>{ S.settings.showName=ts.value.trim(); save(); renderNowMaking(); };
+  const txt=st.text, el=$('#tourText'); el.textContent=''; const calm=document.body.classList.contains('calm'); TS.typing=calm?0:1; const tok=TS.tok={};
+  if(calm) el.textContent=txt; else { let n=0; const step=()=>{ if(!TS||TS.tok!==tok) return; if(!TS.typing){ el.textContent=txt; return; } n+=2; el.textContent=txt.slice(0,n);
+      if(S.settings.fx!==false&&n%6===0&&/[a-z]/i.test(txt[n]||'')) blip((st.who==='deegs'?150:300)+Math.random()*90,.035,'triangle',.025);
+      if(n<txt.length) setTimeout(step,14); else TS.typing=0; }; step(); }
+  setTimeout(tourPlace,current===st.scr?30:420); }
+function tourPlace(){ if(!TS||!$('#tour')) return; const st=TOUR[TS.i], hole=$('#tourHole'), card=$('#tourCard'); let R=null;
+  const el=st.el&&$(st.el); if(el){ const r=el.getBoundingClientRect(); if(r.width>4&&r.height>4) R={x:Math.max(6,r.left-8),y:Math.max(6,r.top-8),w:Math.min(innerWidth-12,r.width+16),h:Math.min(innerHeight-12,r.height+16)}; }
+  if(R){ R.h=Math.min(R.h,innerHeight-R.y-8); hole.style.cssText=`left:${R.x}px;top:${R.y}px;width:${R.w}px;height:${R.h}px;opacity:1`; } else hole.style.cssText=`left:50%;top:45%;width:0;height:0;opacity:1`;
+  const cw=Math.min(440,innerWidth-24), ch=card.offsetHeight||220; let x, y;
+  if(!R){ x=(innerWidth-cw)/2; y=innerHeight*.3; }
+  else if(R.y+R.h+ch+24<innerHeight-150){ x=R.x+R.w/2-cw/2; y=R.y+R.h+14; }
+  else if(R.y-ch-14>10){ x=R.x+R.w/2-cw/2; y=R.y-ch-14; }
+  else { x=innerWidth-cw-24; y=Math.max(12,innerHeight-ch-190); }
+  card.style.left=clamp(x,12,innerWidth-cw-12)+'px'; card.style.top=clamp(y,12,innerHeight-ch-12)+'px'; card.style.width=cw+'px'; }
+function tourClose(silent){ if(!$('#tour')){ TS=null; return; } $('#tour').remove(); document.body.classList.remove('touring'); removeEventListener('resize',tourPlace); const was=TS; TS=null;
+  if(!silent){ S.settings.tourDone=true; S.settings.seen40=true; save(); if(current!=='lobby') go('lobby'); toast(was&&TOUR[was.i]?.last?'🎬 Break a leg!':'Tour skipped. Help (?) → Take the tour brings it back.'); } }
+document.addEventListener('keydown',e=>{ if(!TS||!$('#tour')) return; if(e.target.id==='tourShow'&&e.key!=='Escape'&&e.key!=='Enter') return;
+  if(e.key==='Escape'){ e.preventDefault(); e.stopImmediatePropagation(); return tourClose(); } if(e.key==='ArrowRight'||e.key==='Enter'){ e.preventDefault(); e.stopImmediatePropagation(); return tourNextOrDone(); } if(e.key==='ArrowLeft'){ e.preventDefault(); e.stopImmediatePropagation(); return tourGo(TS.i-1); }
+  e.stopImmediatePropagation(); },true);
+if(FIRST_RUN&&!S.settings.tourDone) setTimeout(()=>{ if(!$('#tour')) tourStart(0); },900);
 
 </script>
 </body>
