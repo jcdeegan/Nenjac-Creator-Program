@@ -1,0 +1,5 @@
+# Keep these off the public website
+*.docx
+assets/photoshops/
+.DS_Store
+**/.DS_Store
