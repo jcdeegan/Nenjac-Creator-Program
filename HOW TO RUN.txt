@@ -1,4 +1,4 @@
-NENJAC CREATOR 4.0: how to run it
+NENJAC CREATOR 4.2: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -20,7 +20,7 @@ ON A WEBSITE (GitHub Pages) = THE BEST WAY
   (⚙ Settings → General → Install). It keeps working offline after the first visit.
   To update the site: put the new files in the folder, then in GitHub Desktop type a
   summary, hit "Commit to main", then "Push origin". Live about a minute later.
-  Everyone's work still saves in their own browser (it's not shared between people).
+  Everyone's work saves in their own browser, unless you connect a SHARED SHOW (below).
 
 FROM A FILE (Mac / Chromebook)
   Double-click index.html (Chrome works best). The first time you export art into a
@@ -45,12 +45,87 @@ MAKING A DIFFERENT OBJECT SHOW
   ⚙ → General → "Start a brand-new show" clears the Nenjac scripts and lore (kept as a
   restore point) so you can build your own cast from scratch.
 
+SHARED SHOW (work on one show with your crew, from different computers)
+  Syncs through a PRIVATE GitHub repo about every 20 seconds. Not live typing like
+  Google Docs, but close: different lines of the same script merge on their own. If
+  two people change the SAME line at the same moment, both versions are kept, marked
+  with ✂ notes, so you pick one and delete the other.
+  Set it up once (the person who owns the show):
+    1. github.com/new → name it something like my-show-data → PRIVATE → Create.
+       (This is a different repo from the website one. It just holds the show.)
+    2. github.com/settings/personal-access-tokens/new → give it a name and an expiry →
+       Repository access: "Only select repositories" → pick my-show-data →
+       Permissions → Repository permissions → Contents: "Read and write" → Generate.
+       Copy the token (github_pat_…). GitHub only shows it once.
+    3. In the app: ⚙ → 👥 Shared show → paste my-show-data's name (you/my-show-data)
+       and the token, type your name → Connect → "Start the shared show".
+    4. "Copy invite + my key" and send it to your crew in a private chat.
+  Everyone else: ⚙ → 👥 Shared show → paste the invite code → Connect →
+    "Use the shared show". Done. The ☁ button in the top bar shows sync status
+    (green = synced, yellow = syncing, red = problem; click it for details + activity).
+  What syncs: scripts, the Bible, lore, notes, wheels, character voices, saved moves,
+    songs, Pit recordings, drawings, animations, imported media and voice takes
+    (files over 45 MB stay on the computer they came from).
+  What doesn't: your settings, achievements, Vibe Station uploads.
+  Safety: every sync is saved in the repo's history (the "history ↗" link). The key
+    is only stored in your browser, never in backups or the repo. Anyone with the key
+    can edit the show, so only share it with your crew. If a computer is about to
+    delete a lot of stuff from the shared show (a reset, a restored backup), sync stops
+    and asks first.
+  Your crew members can also use their own GitHub accounts instead of your key: add
+    them as collaborators (repo → Settings → Collaborators), then they make a CLASSIC
+    token with the "repo" box ticked and use "Copy invite" (without the key).
+
+ON YOUR PHONE
+  Open the GitHub Pages link in Safari or Chrome. Tip: Share → "Add to Home Screen"
+  makes it an app icon. On a phone you get: 📄 Scripts drawer + the line-type buttons
+  across the top of the Writing Desk, a big REC button in the Voice Booth, the Bible,
+  notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
+  screen. Connect the shared show on your phone too and lines you record there show up
+  on your computer.
+
+NEW IN 4.2 (THE ALIVE UPDATE), QUICK GUIDE
+  🍁 Flaphead + other mouths: Animate → select a character → 👄 Talking mouth → pick a
+     style. For Flaphead / Jaw drop / Ventriloquist hit ✋ Place on stage: drag the yellow
+     line onto the mouth and the red dot to the back of the head. 🗣 Talk test previews.
+     "⭐ Make this X's mouth everywhere" saves it to their Animation profile.
+  🪀 Eyes, 🍮 jiggle, 🤬 emotions: same panel, ✨ Emotions, eyes & jiggle. Emotion buttons
+     drop at the playhead (lasts their line, or pick a length).
+  🧩 Character Creator: Universe Bible → 🧩 Character Creator (or ⌘K). 🎲 for random.
+  🎬 Animation profile: open any character in the Bible, scroll to the bottom.
+  🎬 Director mode: Animate top bar → 🎬 Director (or tick it in Script → Scene).
+  🔔 Sound board: Animate top bar 🔔, The Pit 🔔, or ⌘K "sound board". ＋ adds at the playhead.
+  🧅 Onion skin: the onion button next to Auto-key. Selected layer with 2+ position
+     keyframes: drag the diamonds on the stage to move them, drag the round dot to bend.
+  ⚡ Fast preview: the lightning button (off → while playing → always). 🎞 Queue = render queue.
+  🗣 Table Read 2.0: Writing Desk → Read. Toggle recorded takes, sound effects, laugh
+     track (click 😂 next to a line to mark it) and a music bed.
+  📈 Pace and 🔍 Compare: Writing Desk toolbar.
+  🎨 Look & feel: ⚙ Settings → 🎨 Look & feel (themes, size, hide tabs, your shortcuts).
+  📥 Drop files on any screen. 📣 Type @Name in a note to ping someone.
+
+NEW IN 4.1, QUICK GUIDE
+  📌 Notes: 🗒 in the top bar. A note sticks to where you are (script line, moment in
+     an animation, bar of a song, drawing). Lines with notes get a marker; click it.
+  📄 Templates: Writing Desk → + New → pick a shape (Shift-click + New = blank page).
+  🗣 Hum a melody: The Pit → 🗣 → hum over the band → it becomes a flute track.
+  🎯 Pitch fix: The Pit → double-click a vocal region → Strength + Style → Fix pitch.
+     "Turn into notes" makes any vocal into an instrument part.
+  🎭 Character voices: Voice Booth → 🎭 Character voices → pitch/effect/volume per
+     character, applied to every take.
+  🎬 Transitions: Animate → FX tab (top of the list) → drop one where two shots meet.
+  ⭐ Saved moves: select a layer → Saved moves → save its animation, apply to anyone.
+  🟩 Green screen: select imported video/image → Green screen → On.
+  🏗 Set Builder: Animate → Sets tab → "Build a new set…" (parallax layers).
+  🦾 Arms, legs & mouths: select a character → Arms, legs & mouth → turn them on,
+     pick poses (they blend), walk/run/dance moves swing the legs.
+
 WHEEL OF DOOM (Chaos Corner)
   Three real wheels: WHO, WHAT and WHERE. "🔓 Keep this" holds one result while you
   respin the others. ✏️ Edit entries: add your own, switch entries off, paste a whole
   list, pick which characters are on it. ＋ New wheel makes your own (a list, the cast,
-  who+what+where, or an elimination wheel that removes whoever it lands on).
-  Also included: Challenge Wheel, Elimination Wheel, Plot Twist Wheel.
+  who+what+where, or a hot seat wheel that picks everyone once).
+  Also included: Challenge Wheel, Hot Seat Wheel (picks everyone once), Plot Twist Wheel.
 
 WRITING DESK KEYS
   Enter .............. next line (Character → Dialogue → Character…)
