@@ -2177,6 +2177,8 @@ body.booth-mode>*:not(#booth):not(#modalBg){display:none!important}
 .bt-toast{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top));transform:translateX(-50%);z-index:20;background:#fff;color:#111;border:3px solid #000;border-radius:14px;padding:10px 14px;font:800 14px var(--ui);box-shadow:4px 4px 0 #000;max-width:90vw;animation:pop .3s}
 @media (min-width:900px){ .bt-wrap{padding-top:40px} .bt-dock{background:linear-gradient(to top,#14162b 60%,rgba(20,22,43,0))} }
 .modal:has(.rm){width:min(960px,100%)}.rm{min-width:0}
+.rm-update{margin-top:10px;padding:8px 10px;border-radius:10px;background:#fff9db;font-size:12.5px}.rm-diag{margin-top:8px;font:12.5px var(--mono);display:grid;gap:3px}.rm-diag small{color:#666}
+body.night .rm-update{background:#3d3418}body.night .rm-diag small{color:#aaa}
 
 
 /* ===================================================================
@@ -29193,8 +29195,23 @@ const rmUrl=()=>S.settings.rmUrl||'';
 const rmDeployId=u=>((u||'').match(/\/macros\/s\/([A-Za-z0-9_-]+)\//)||[])[1]||'';
 const rmCode=()=>Array.from(crypto.getRandomValues(new Uint8Array(7)),b=>'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[b%32]).join('');
 function rmSite(){ if(/^https?:/.test(location.protocol)) return location.origin+location.pathname; if(S.settings.siteUrl) return S.settings.siteUrl; const c=typeof SY!=='undefined'&&SY.cfg; return c&&c.owner?`https://${c.owner}.github.io/${c.repo}/`:''; }
-async function rmPost(body){ const r=await fetch(rmUrl(),{method:'POST',body:JSON.stringify(body)}); const j=await r.json(); if(!j.ok) throw new Error(j.err||'failed'); return j; }
-async function rmGet(params){ const r=await fetch(rmUrl()+'?'+new URLSearchParams(params)); return r.json(); }
+/* Talking to Google: a normal request first. If the browser blocks it (Safari can), fall back to a
+   <script> tag (JSONP) for reads, and a "no-cors" send for uploads that we then double-check. */
+const NJ={lastErr:''};
+function njJsonp(url,params,timeout=25000){ return new Promise((res,rej)=>{ const cb='__nj'+Math.random().toString(36).slice(2), s=document.createElement('script'); let done=false;
+  const end=()=>{ done=true; clearTimeout(t); try{ delete window[cb]; }catch(e){ window[cb]=undefined; } s.remove(); };
+  const t=setTimeout(()=>{ if(done) return; end(); rej(new Error('Google didn\'t answer (old drop box script? it needs the 4.5.2 version)')); },timeout);
+  window[cb]=d=>{ if(done) return; end(); res(d); }; s.onerror=()=>{ if(done) return; end(); rej(new Error('blocked loading from Google')); };
+  s.src=url+'?'+new URLSearchParams({...params,callback:cb,_:Date.now()}); document.head.appendChild(s); }); }
+async function njGet(url,params){ let first; try{ const r=await fetch(url+'?'+new URLSearchParams({...params,_:Date.now()})); const txt=await r.text(); try{ return JSON.parse(txt); }catch(e){ first=new Error(/<html/i.test(txt)?'Google sent a web page instead of data':'odd answer from Google'); } }catch(e){ first=e; }
+  try{ return await njJsonp(url,params); }catch(e2){ NJ.lastErr=`${first?.message||first} / ${e2.message}`; throw new Error(NJ.lastErr); } }
+async function njPost(url,body,verify){ let first; try{ const r=await fetch(url,{method:'POST',body:JSON.stringify(body)}); const txt=await r.text(); try{ return JSON.parse(txt); }catch(e){ first=new Error(/<html/i.test(txt)?'Google sent a web page instead of data':'odd answer from Google'); } }catch(e){ first=e; }
+  if(!verify){ NJ.lastErr=String(first?.message||first); throw first; }
+  try{ await fetch(url,{method:'POST',mode:'no-cors',body:JSON.stringify(body)}); }catch(e){ throw first; }
+  await new Promise(r=>setTimeout(r,1200)); return verify(); }
+async function rmPost(body){ const u=rmUrl(); let j; try{ j=await njPost(u,body); }catch(e){ /* blocked? saving an invite goes as a blind send + read-back check; everything else over the script-tag route */ if(body.a==='addinv') j=await njPost(u,body,async()=>{ const v=await njJsonp(u,{a:'inv',c:body.c}); return v.ok?{ok:true}:{ok:false,err:'the invite didn\'t save ('+v.err+')'}; }); else j=await njJsonp(u,{...body}); }
+  if(!j.ok) throw new Error(j.err||'failed'); return j; }
+async function rmGet(params){ return njGet(rmUrl(),params); }
 /* pack / unpack (also used by the booth) */
 async function rmPack(obj){ const json=JSON.stringify(obj); try{ if(window.CompressionStream){ const s=new Blob([json]).stream().pipeThrough(new CompressionStream('deflate-raw')); const buf=new Uint8Array(await new Response(s).arrayBuffer()); return 'z'+rmB64(buf); } }catch(e){} return 'j'+rmB64(new TextEncoder().encode(json)); }
 function rmB64(bytes){ let s=''; for(let i=0;i<bytes.length;i+=8192) s+=String.fromCharCode(...bytes.subarray(i,i+8192)); return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); }
@@ -29202,33 +29219,43 @@ function rmUnB64(s){ s=s.replace(/-/g,'+').replace(/_/g,'/'); while(s.length%4) 
 async function rmUnpack(str){ const kind=str[0], bytes=rmUnB64(str.slice(1)); if(kind==='z'){ const s=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('deflate-raw')); return JSON.parse(await new Response(s).text()); } return JSON.parse(new TextDecoder().decode(bytes)); }
 
 /* ---------- the Apps Script you paste into Google ---------- */
-function rmScript(){ return `// 🎙 Nenjac Creator: line drop box
-// Paste ALL of this into a new Google Apps Script project, then Deploy → New deployment → Web app.
-// Execute as: Me  ·  Who has access: Anyone
+function rmScript(){ return `// 🎙 Nenjac Creator: line drop box (version 2)
+// Paste ALL of this into your Apps Script project (replace what's there), Save, then:
+//   Deploy → Manage deployments → ✏️ (pencil) → Version: "New version" → Deploy.   (First time: Deploy → New deployment → Web app)
+//   Execute as: Me  ·  Who has access: Anyone
+// If Google shows checkboxes when you allow it, tick "Select all" (it needs your Google Drive).
+// To re-do the permission any time: pick "setup" in the function menu up top and click ▶ Run.
 // Actors can only UPLOAD takes for invites you made. Only your Nenjac Creator (which knows the key below) can list or download them.
+const VERSION = 2;
 const ADMIN_KEY = '${rmKey()}';
 const ROOT_NAME = 'Nenjac Takes';
-function root_(){ const it=DriveApp.getFoldersByName(ROOT_NAME); return it.hasNext()?it.next():DriveApp.createFolder(ROOT_NAME); }
+function setup(){ root_(); invFolder_(); Logger.log('✅ All set! Drive access works. Go back to Nenjac Creator and hit Connect & test.'); }
+function root_(){ const pr=PropertiesService.getScriptProperties(), id=pr.getProperty('rootId'); if(id){ try{ const f=DriveApp.getFolderById(id); if(!f.isTrashed()) return f; }catch(e){} }
+  const it=DriveApp.getFoldersByName(ROOT_NAME), f=it.hasNext()?it.next():DriveApp.createFolder(ROOT_NAME); pr.setProperty('rootId',f.getId()); return f; }
 function sub_(parent,name){ const it=parent.getFoldersByName(name); return it.hasNext()?it.next():parent.createFolder(name); }
 function invFolder_(){ return sub_(root_(),'_invites (do not edit)'); }
 function clean_(c){ return String(c||'').replace(/[^A-Za-z0-9]/g,'').slice(0,20); }
 function getInv_(code){ code=clean_(code); if(!code) return null; const it=invFolder_().getFilesByName(code+'.json'); if(!it.hasNext()) return null; try{ return JSON.parse(it.next().getBlob().getDataAsString()); }catch(e){ return null; } }
-function out_(o){ return ContentService.createTextOutput(JSON.stringify(o)).setMimeType(ContentService.MimeType.JSON); }
-function doGet(e){ const p=(e&&e.parameter)||{};
-  if(p.a==='inv'){ const inv=getInv_(p.c); return out_(inv?{ok:true,inv:inv.payload}:{ok:false,err:'gone'}); }
-  return out_({ok:true,app:'nenjac-dropbox',v:1}); }
-function doPost(e){ let b; try{ b=JSON.parse(e.postData.contents); }catch(x){ return out_({ok:false,err:'bad'}); }
-  if(b.a==='up'){ const inv=getInv_(b.c); if(!inv) return out_({ok:false,err:'gone'}); if(!b.data||b.data.length>25000000) return out_({ok:false,err:'big'});
-    const folder=sub_(root_(),inv.folder||clean_(b.c)); const blob=Utilities.newBlob(Utilities.base64Decode(b.data),b.mime||'audio/webm',String(b.name||'take').slice(0,120));
-    const f=folder.createFile(blob); f.setDescription(JSON.stringify({nj:1,c:clean_(b.c),k:String(b.k||''),w:String(b.w||'').slice(0,60),by:String(b.by||'').slice(0,60),t:String(b.t||'').slice(0,400),dur:+b.dur||0,n:+b.n||1,at:Date.now()}));
-    return out_({ok:true,id:f.getId()}); }
-  if(b.key!==ADMIN_KEY) return out_({ok:false,err:'key'});
-  if(b.a==='ping') return out_({ok:true,admin:true});
-  if(b.a==='addinv'){ const fo=invFolder_(), name=clean_(b.c)+'.json', it=fo.getFilesByName(name); while(it.hasNext()) it.next().setTrashed(true); fo.createFile(name,JSON.stringify({payload:b.payload,folder:String(b.folder||b.c).slice(0,80)}),'application/json'); return out_({ok:true}); }
-  if(b.a==='delinv'){ const it=invFolder_().getFilesByName(clean_(b.c)+'.json'); while(it.hasNext()) it.next().setTrashed(true); return out_({ok:true}); }
-  if(b.a==='list'){ const out=[], since=+b.since||0, fs=root_().getFolders(); while(fs.hasNext()){ const fo=fs.next(); if(fo.getName().indexOf('_invites')===0) continue; const files=fo.getFiles(); while(files.hasNext()){ const f=files.next(); if(f.getDateCreated().getTime()<since) continue; let d={}; try{ d=JSON.parse(f.getDescription()||'{}'); }catch(x){} if(!d.nj) continue; d.id=f.getId(); d.mime=f.getMimeType(); d.size=f.getSize(); out.push(d); } } return out_({ok:true,files:out}); }
-  if(b.a==='get'){ const f=DriveApp.getFileById(b.id); return out_({ok:true,data:Utilities.base64Encode(f.getBlob().getBytes()),mime:f.getMimeType()}); }
-  return out_({ok:false,err:'what'}); }
+function out_(o,cb){ const s=JSON.stringify(o); if(cb&&/^[A-Za-z0-9_$]{1,60}$/.test(cb)) return ContentService.createTextOutput(cb+'('+s+')').setMimeType(ContentService.MimeType.JAVASCRIPT); return ContentService.createTextOutput(s).setMimeType(ContentService.MimeType.JSON); }
+function up_(b){ const inv=getInv_(b.c); if(!inv) return {ok:false,err:'gone'}; if(!b.data||b.data.length>25000000) return {ok:false,err:'big'};
+  const folder=sub_(root_(),inv.folder||clean_(b.c)), blob=Utilities.newBlob(Utilities.base64Decode(b.data),b.mime||'audio/webm',String(b.name||'take').slice(0,120)), f=folder.createFile(blob);
+  f.setDescription(JSON.stringify({nj:1,c:clean_(b.c),k:String(b.k||''),w:String(b.w||'').slice(0,60),by:String(b.by||'').slice(0,60),t:String(b.t||'').slice(0,400),dur:+b.dur||0,n:+b.n||1,at:Date.now()})); return {ok:true,id:f.getId()}; }
+function seen_(p){ const inv=getInv_(p.c); if(!inv) return {ok:false,err:'gone'}; const it=sub_(root_(),inv.folder||clean_(p.c)).getFiles(); while(it.hasNext()){ const f=it.next(); let d={}; try{ d=JSON.parse(f.getDescription()||'{}'); }catch(x){} if(d.c===clean_(p.c)&&d.k===String(p.k)&&String(d.n)===String(p.n)) return {ok:true,id:f.getId()}; } return {ok:false,err:'notyet'}; }
+function admin_(b){ if(b.key!==ADMIN_KEY) return {ok:false,err:'key'};
+  if(b.a==='ping'){ root_(); return {ok:true,admin:true,v:VERSION}; }
+  if(b.a==='addinv'){ const payload=typeof b.payload==='string'?JSON.parse(b.payload):b.payload, fo=invFolder_(), name=clean_(b.c)+'.json', it=fo.getFilesByName(name); while(it.hasNext()) it.next().setTrashed(true); fo.createFile(name,JSON.stringify({payload:payload,folder:String(b.folder||b.c).slice(0,80)}),'application/json'); return {ok:true}; }
+  if(b.a==='delinv'){ const it=invFolder_().getFilesByName(clean_(b.c)+'.json'); while(it.hasNext()) it.next().setTrashed(true); return {ok:true}; }
+  if(b.a==='list'){ const out=[], since=+b.since||0, fs=root_().getFolders(); while(fs.hasNext()){ const fo=fs.next(); if(fo.getName().indexOf('_invites')===0) continue; const files=fo.getFiles(); while(files.hasNext()){ const f=files.next(); if(f.getDateCreated().getTime()<since) continue; let d={}; try{ d=JSON.parse(f.getDescription()||'{}'); }catch(x){} if(!d.nj) continue; d.id=f.getId(); d.mime=f.getMimeType(); d.size=f.getSize(); out.push(d); } } return {ok:true,files:out}; }
+  if(b.a==='get'){ const f=DriveApp.getFileById(b.id); return {ok:true,data:Utilities.base64Encode(f.getBlob().getBytes()),mime:f.getMimeType()}; }
+  return {ok:false,err:'what'}; }
+function doGet(e){ const p=(e&&e.parameter)||{}, cb=p.callback;
+  try{ if(p.a==='inv'){ const inv=getInv_(p.c); return out_(inv?{ok:true,inv:inv.payload}:{ok:false,err:'gone'},cb); }
+    if(p.a==='seen') return out_(seen_(p),cb);
+    if(p.key) return out_(admin_(p),cb);
+    let drive=true, derr=''; try{ root_(); }catch(x){ drive=false; derr=String(x.message||x); }
+    return out_({ok:true,app:'nenjac-dropbox',v:VERSION,drive:drive,derr:derr},cb); }
+  catch(err){ return out_({ok:false,err:String(err.message||err)},cb); } }
+function doPost(e){ try{ const b=JSON.parse(e.postData.contents); return out_(b.a==='up'?up_(b):admin_(b)); }catch(err){ return out_({ok:false,err:String(err.message||err)}); } }
 `; }
 
 /* ---------- build an invite ---------- */
@@ -29274,7 +29301,7 @@ async function rmCreate(takes){ const sid=RM.sid, s=S.scripts.find(x=>x.id===sid
   catch(err){ btn.disabled=false; btn.textContent='📨 Make the invite'; return toast(`Couldn't reach your Google Drive drop box (${esc(err.message)}). Check ☁️ Google Drive, or turn it off to use a self-contained link.`,'bad'); }
   btn.disabled=false; btn.textContent='📨 Make the invite';
   const inv={id:code,code,sid,chars,actor:who,created:Date.now(),mode:payload.mode,link,lines:lines.length,revoked:false}; S.invites.unshift(inv); save(); unlock('invite1'); rmShowLink(inv); if(drive) rmVerify(inv); }
-async function rmVerify(inv){ const box=$('#rmVerify'); if(box) box.innerHTML='🔍 Testing the link the way a phone would…'; try{ const r=await fetch(rmUrl()+'?a=inv&c='+inv.code,{redirect:'follow',cache:'no-store'}); const txt=await r.text(); let j; try{ j=JSON.parse(txt); }catch(e){ throw new Error(/<html/i.test(txt)?'Google answered with a web page, not data. In Apps Script: Deploy → Manage deployments → make sure “Who has access” is “Anyone”.':'unexpected answer'); } if(!j.ok) throw new Error(j.err==='gone'?'the drop box can\'t find this invite. Re-copy the script (☁️ tab), paste it over the old one, and Deploy → Manage deployments → ✏️ → New version.':j.err); if(box) box.innerHTML='✅ Tested: the invite is live and ready to send.'; }catch(err){ if(box) box.innerHTML=`⚠️ The link will still open on their phone (the lines are inside it), but your drop box didn't answer right: <b>${esc(err.message)}</b>`; } }
+async function rmVerify(inv){ const box=$('#rmVerify'); if(box) box.innerHTML='🔍 Testing the link the way a phone would…'; try{ const j=await rmGet({a:'inv',c:inv.code}); if(!j.ok) throw new Error(j.err==='gone'?'the drop box can\'t find this invite (update the script: ☁️ Google Drive tab)':j.err); if(box) box.innerHTML='✅ Tested: the invite is live and ready to send.'; }catch(err){ if(box) box.innerHTML=`⚠️ The link still opens on their phone (the lines are inside it), but your drop box didn't answer: <b>${esc(err.message)}</b>. Open ☁️ Google Drive → 🩺 Full check.`; } }
 function rmShowLink(inv){ const out=$('#rmBody'); if(!out) return; const s=S.scripts.find(x=>x.id===inv.sid), msg=`Hey${inv.actor?' '+inv.actor:''}! Can you record your ${inv.chars.join(' & ')} lines for ${showName()}? Just open this on your phone, it takes a few minutes 🎙\n${inv.link}`;
   out.innerHTML=`<div class="rm-link card"><div class="rm-qr" id="rmQr"></div><div class="grow"><h3>✅ Invite ready${inv.actor?' for '+esc(inv.actor):''}</h3><p class="tiny muted">${inv.lines} line${inv.lines>1?'s':''} · ${esc(inv.chars.join(', '))} · ${esc(s?.title||'')}${inv.mode==='file'?' · they\'ll send you a file at the end':' · takes come back automatically'}</p>
     <input class="txt" readonly value="${esc(inv.link)}" onclick="this.select()" style="width:100%"><p class="tiny muted" style="margin:4px 0">On their phone it opens straight into a recording booth with just these lines. ${inv.mode==='drive'?'Takes show up in 🎙 Voice Booth → 📨 Actors as they record.':'At the end they tap 📤 and send you a file. Drop it on the app.'}</p><div class="row" style="margin-top:6px;flex-wrap:wrap"><button class="btn primary" id="rmShare">📤 Share</button><button class="btn" id="rmCopy">📋 Copy link</button><button class="btn" id="rmCopyMsg">💬 Copy as a text message</button></div>
@@ -29334,15 +29361,19 @@ function rmDriveTab(el){ const url=rmUrl();
       <li>Google asks for permission. You'll see "Google hasn't verified this app" because it's YOUR script: click <b>Advanced → Go to Nenjac Drop Box</b> → Allow.</li>
       <li>Copy the <b>Web app URL</b> (ends in <code>/exec</code>) and paste it here:</li></ol>
     <div class="row"><input class="txt grow" id="rmUrlIn" value="${esc(url)}" placeholder="https://script.google.com/macros/s/…/exec"><button class="btn primary" id="rmTest">🔌 Connect & test</button></div><div id="rmTestOut" class="tiny" style="margin-top:6px"></div>
+    <div class="rm-update"><b>Already set up before 4.5.2?</b> Update your script once: 📋 Copy the script again → in Apps Script select everything and paste over it → 💾 Save → <b>Deploy → Manage deployments → ✏️ → Version: New version → Deploy</b>. The /exec link stays the same. If Google shows checkboxes, tick <b>Select all</b>. Then hit 🩺 Full check.</div>
+    <div class="row" style="margin-top:8px"><button class="btn" id="rmDiag">🩺 Full check</button><button class="btn sm" id="rmDiagCopy" style="display:none">📋 Copy results for Albert</button></div><div id="rmDiagOut" class="rm-diag"></div>
     ${url?'<div class="row" style="margin-top:10px"><button class="btn sm red" id="rmOff">Disconnect (use files instead)</button></div>':''}
     <details class="tiny" style="margin-top:12px"><summary>🔐 What can actors do with this?</summary><p>Upload takes for an invite you made and that you haven't switched off. That's it. They can't see, list or download anything. Only this app (which holds the secret key) can. Your key: <code>${esc(rmKey().slice(0,4))}…</code> (stored only on this computer). If you use Nenjac Creator on another computer, copy the script again there and redeploy, or paste this key: <button class="btn sm" id="rmShowKey">show key</button></p></details></div>`;
+  $('#rmDiag').onclick=()=>rmDiag(); $('#rmDiagCopy').onclick=()=>{ navigator.clipboard.writeText($('#rmDiagOut').innerText); toast('📋 Copied'); };
   $('#rmCopyScript').onclick=()=>{ navigator.clipboard.writeText(rmScript()); toast('📋 Script copied. Paste it into script.google.com','good'); };
   $('#rmShowKey').onclick=()=>{ const k=prompt('Your secret drop-box key. To use it on another computer, paste a key here:',rmKey()); if(k&&k!==rmKey()&&k.length>10){ try{ localStorage.setItem('nenjac.rmkey',k); }catch(e){} toast('🔑 Key updated'); } };
   $('#rmOff')&&($('#rmOff').onclick=()=>{ S.settings.rmUrl=''; save(); toast('☁️ Disconnected'); rmOpen('drive'); });
   $('#rmTest').onclick=async()=>{ const v=$('#rmUrlIn').value.trim(), out=$('#rmTestOut'); if(!/^https:\/\/script\.google\.com\/macros\/s\/[^/]+\/exec/.test(v)) return out.innerHTML='<span style="color:#c92a2a">That should look like https://script.google.com/macros/s/…/exec</span>';
     out.textContent='🔌 Talking to Google…'; const old=S.settings.rmUrl; S.settings.rmUrl=v;
-    try{ const g=await rmGet({a:'ping'}); if(g.app!=='nenjac-dropbox') throw new Error('that isn\'t the drop box script'); await rmPost({a:'ping',key:rmKey()}); save(); out.innerHTML='✅ <b>Connected!</b> New invites will send takes straight to your Drive (folder: <b>Nenjac Takes</b>).'; unlock('dropbox'); confetti(30); }
-    catch(err){ S.settings.rmUrl=old; out.innerHTML=`<span style="color:#c92a2a">❌ ${err.message==='key'?'It answered, but the secret key doesn\'t match. Copy the script again, paste it over the old one, and Deploy → Manage deployments → ✏️ → New version.':'Couldn\'t connect ('+esc(err.message)+'). Check it\'s deployed as a Web app with access "Anyone".'}</span>`; } }; }
+    try{ const g=await rmGet({a:'ping'}); if(g.app!=='nenjac-dropbox') throw new Error('that isn\'t the drop box script'); if(g.drive===false) throw new Error('drive: '+(g.derr||'no Drive permission')); await rmPost({a:'ping',key:rmKey()}); save();
+      out.innerHTML=(g.v>=2?'✅ <b>Connected!</b> New invites will send takes straight to your Drive (folder: <b>Nenjac Takes</b>).':'✅ <b>Connected!</b> (Optional: update to the newer script below. It adds a backup route in case a browser gets picky.)'); unlock('dropbox'); confetti(30); rmDiag(); }
+    catch(err){ S.settings.rmUrl=old; out.innerHTML=`<span style="color:#c92a2a">❌ ${/^drive:/.test(err.message)?'The script can\'t use your Google Drive yet. In Apps Script, pick <b>setup</b> in the function menu at the top, click ▶ Run, and when Google asks, tick <b>Select all</b> and Allow. Then try again. ('+esc(err.message)+')':err.message==='key'?'It answered, but the secret key doesn\'t match. Copy the script again, paste it over the old one, and Deploy → Manage deployments → ✏️ → New version.':'Couldn\'t connect ('+esc(err.message)+'). Check it\'s deployed as a Web app with access "Anyone".'}</span>`; } }; }
 function rmBadge(){ const b=$('#vbRmBtn'); if(b) b.innerHTML=`📨 Actors${RM.newCount?` <b class="rm-badge">${RM.newCount}</b>`:''}`; const p=$('#qlActors small'); if(p) p.textContent=RM.newCount?`${RM.newCount} new take${RM.newCount>1?'s':''} waiting!`:'Send lines to an actor'; }
 
 /* ---------- where you find it ---------- */
@@ -29357,6 +29388,19 @@ setInterval(()=>{ if(rmUrl()&&!RM.busy&&document.visibilityState==='visible'&&Da
 async function rmQuiet(){ try{ RM.busy=true; const r=await rmPost({a:'list',key:rmKey(),since:S.settings.rmSince||0}); RM.lastCheck=Date.now(); const have=new Set((await VoiceDB.all()).map(t=>t.remoteId).filter(Boolean)); const n=(r.files||[]).filter(f=>!have.has(f.id)).length; if(n>RM.newCount&&n) toast(`📥 ${n} new take${n>1?'s':''} from your actors. 🎙 Voice Booth → 📨 Actors`,'good'); RM.newCount=n; rmBadge(); }catch(e){} finally{ RM.busy=false; } }
 if(rmUrl()) setTimeout(rmQuiet,8000);
 ACH.push({id:'invite1',e:'📨',n:'Casting Call',d:'Send lines to an actor'},{id:'remote1',e:'📥',n:'Phoned It In',d:'Bring in takes an actor recorded on their phone'},{id:'dropbox',e:'☁️',n:'Drop Box',d:'Connect your Google Drive drop box'});
+
+async function rmDiag(){ const out=$('#rmDiagOut'); if(!out) return; const u=rmUrl()||$('#rmUrlIn')?.value.trim(); if(!u) return out.innerHTML='Paste your /exec link first.'; const rows=[]; const show=()=>{ out.innerHTML=rows.map(r=>`<div>${r[0]} ${esc(r[1])}${r[2]?` <small>${esc(r[2])}</small>`:''}</div>`).join(''); }; const step=async(name,fn,soft)=>{ rows.push(['⏳',name]); show(); try{ const d=await fn(); rows[rows.length-1]=['✅',name,d||'']; }catch(e){ rows[rows.length-1]=[soft?'➖':'❌',name,(e.message||String(e))+(soft?' (fine, the backup route handles it)':'')]; } show(); };
+  const code='TEST'+Math.random().toString(36).slice(2,7).toUpperCase().replace(/[^A-Z0-9]/g,'');
+  { const ua=navigator.userAgent; rows.push(['ℹ️','Browser',(/Edg\//.test(ua)?'Edge':/CriOS|Chrome\//.test(ua)?'Chrome':/Firefox\//.test(ua)?'Firefox':/Safari\//.test(ua)?'Safari':'?')+(/Mobile/.test(ua)?' (phone)':'')+' · '+location.protocol.replace(':','')]); }
+  await step('Reach the script (normal)',async()=>{ const r=await fetch(u+'?_='+Date.now()); const t=await r.text(); const j=JSON.parse(t); return 'version '+(j.v||1)+(j.drive===false?' · NO DRIVE ACCESS: '+j.derr:''); },true);
+  await step('Reach the script (backup route)',async()=>{ const j=await njJsonp(u,{}); return 'version '+(j.v||1)+(j.drive===false?' · NO DRIVE ACCESS':''); });
+  await step('Secret key matches',async()=>{ const j=await rmPost({a:'ping',key:rmKey()}); return 'version '+(j.v||1); });
+  await step('Save a test invite to Drive',async()=>{ await rmPost({a:'addinv',key:rmKey(),c:code,payload:{test:1,lines:[]},folder:'_test'}); });
+  await step('Read it back like a phone (normal)',async()=>{ const r=await fetch(u+'?a=inv&c='+code+'&_='+Date.now()); const j=JSON.parse(await r.text()); if(!j.ok) throw new Error(j.err); },true);
+  await step('Read it back like a phone (backup route)',async()=>{ const j=await njJsonp(u,{a:'inv',c:code}); if(!j.ok) throw new Error(j.err); });
+  await step('Upload a test take like a phone',async()=>{ const j=await njPost(u,{a:'up',c:code,k:'test',w:'TEST',by:'check',t:'test',n:1,mime:'audio/webm',name:'connection test.webm',data:btoa('nenjac test')},async()=>{ const s=await njJsonp(u,{a:'seen',c:code,k:'test',n:1}); return s.ok?{ok:true,id:s.id,blind:true}:{ok:false,err:'upload not confirmed: '+s.err}; }); if(!j.ok) throw new Error(j.err); return j.blind?'(through the backup route)':''; });
+  await step('Clean up the test invite',async()=>{ await rmPost({a:'delinv',key:rmKey(),c:code}); });
+  rows.push(['',rows.every(r=>r[0]!=='❌')?'🎉 Everything works. Make a new invite and you\'re good.':'Something failed. Hit 📋 Copy results and paste them to Albert.']); show(); const cp=$('#rmDiagCopy'); if(cp) cp.style.display=''; }
 
 /* ===================================================================
    [4.5] 🎙 THE RECORDING BOOTH (the actor's side, phone first)
@@ -29376,8 +29420,9 @@ function btArt(name){ const ch=(BT.inv?.chars||[]).find(c=>c.n===name); return c
 function btToast(msg){ const t=document.createElement('div'); t.className='bt-toast'; t.innerHTML=msg; $('#booth')?.appendChild(t); setTimeout(()=>t.remove(),2600); }
 
 /* iOS 18 Safari can fail a fetch made the instant a page opens, so: wait a beat and retry */
-async function btFetchJSON(url,opt={},tries=4){ let last; for(let k=0;k<tries;k++){ if(k||document.visibilityState!=='visible') await new Promise(r=>setTimeout(r,k?700*k:400)); try{ const r=await fetch(url,{redirect:'follow',cache:'no-store',...opt}); const txt=await r.text(); try{ return JSON.parse(txt); }catch(e){ last=new Error(/<html/i.test(txt)?'Google sent a web page instead of an answer (is the drop box deployed with access “Anyone”?)':'bad answer from Google'); } }catch(e){ last=e; } } throw last||new Error('no connection'); }
-async function btCheckLive(){ try{ const j=await btFetchJSON(BT.url+'?a=inv&c='+BT.code,{},2); if(!j.ok&&j.err==='gone'){ BT.gone=true; const el=$('#booth'); if(el) el.innerHTML='<div class="bt-wrap bt-center"><div class="bt-big">🚫</div><h1>This invite was switched off</h1><p>Ask whoever sent it for a new link.</p></div>'; } }catch(e){} }
+async function btFetchJSON(url,opt={},tries=4){ let last; for(let k=0;k<tries;k++){ if(k||document.visibilityState!=='visible') await new Promise(r=>setTimeout(r,k?700*k:400)); try{ const r=await fetch(url,opt); const txt=await r.text(); try{ return JSON.parse(txt); }catch(e){ last=new Error(/<html/i.test(txt)?'Google sent a web page instead of an answer':'bad answer from Google'); } }catch(e){ last=e; } }
+  if(!opt.method){ try{ const u=new URL(url); const params=Object.fromEntries(u.searchParams); return await njJsonp(u.origin+u.pathname,params); }catch(e){ last=new Error(`${last?.message||last} / ${e.message}`); } } throw last||new Error('no connection'); }
+async function btCheckLive(){ try{ const j=await btFetchJSON(BT.url+'?a=inv&c='+BT.code+'&_='+Date.now(),{},2); if(!j.ok&&j.err==='gone'){ BT.gone=true; const el=$('#booth'); if(el) el.innerHTML='<div class="bt-wrap bt-center"><div class="bt-big">🚫</div><h1>This invite was switched off</h1><p>Ask whoever sent it for a new link.</p></div>'; } }catch(e){} }
 async function boothStart(){ document.body.classList.add('booth-mode'); current='booth'; try{ tourStart=function(){}; tourClose?.(true); }catch(e){}
   let el=$('#booth'); if(!el){ el=document.createElement('div'); el.id='booth'; document.body.appendChild(el); }
   el.innerHTML='<div class="bt-load"><div class="bt-spin">🎙</div><p>Opening your lines…</p></div>';
@@ -29387,7 +29432,7 @@ async function boothStart(){ document.body.classList.add('booth-mode'); current=
       BT.code=m[1]; BT.url=`https://script.google.com/macros/s/${m[2]}/exec`; const cached=btLS('inv.'+BT.code);
       if(m[3]){ try{ BT.inv=await rmUnpack(m[3]); }catch(e){} }   /* the lines ride inside the link, so it opens even if Google is slow */
       if(BT.inv){ btLS('inv.'+BT.code,BT.inv); btCheckLive(); }
-      else { try{ const j=await btFetchJSON(BT.url+'?a=inv&c='+BT.code); if(!j.ok){ if(j.err==='gone') BT.gone=true; why=j.err||'no answer'; throw new Error(why); } BT.inv=j.inv; btLS('inv.'+BT.code,BT.inv); }
+      else { try{ const j=await btFetchJSON(BT.url+'?a=inv&c='+BT.code+'&_='+Date.now()); if(!j.ok){ if(j.err==='gone') BT.gone=true; why=j.err||'no answer'; throw new Error(why); } BT.inv=j.inv; btLS('inv.'+BT.code,BT.inv); }
         catch(err){ why=why||err.message; if(cached&&!BT.gone){ BT.inv=cached; } else throw err; } } } }
   catch(err){ el.innerHTML=`<div class="bt-wrap bt-center"><div class="bt-big">😬</div><h1>${BT.gone?'This invite was switched off':'Hmm, this link didn\'t open'}</h1><p>${BT.gone?'Ask whoever sent it for a new link.':'Check your internet, then tap Try again. If it still won\'t work, ask for a new link.'}</p><p class="bt-fine">Details: ${btEsc(why||err.message||'unknown')}</p><div class="bt-dock"><button class="bt-go" onclick="location.reload()">↻ Try again</button></div></div>`; return; }
   for(const t of await BoothDB.all()) if(t.code===BT.code) BT.takes[t.k]=t;
@@ -29444,7 +29489,7 @@ function btList(){ const lines=btLines(); const sh=document.createElement('div')
 async function btQueue(){ if(BT.queue||BT.inv?.mode!=='drive'||!BT.url||BT.gone) return; BT.queue=true; let wait=1500;
   try{ while(true){ const t=Object.values(BT.takes).find(x=>!x.sent); if(!t) break; if(!navigator.onLine){ await new Promise(r=>setTimeout(r,4000)); continue; }
       try{ const data=rmB64(new Uint8Array(await t.blob.arrayBuffer())).replace(/-/g,'+').replace(/_/g,'/'), ext=(t.mime.match(/mp4|aac/)?'m4a':'webm');
-        const j=await btFetchJSON(BT.url,{method:'POST',body:JSON.stringify({a:'up',c:BT.code,k:t.k,w:t.w,t:t.t,by:BT.inv.actor||'',dur:t.dur,n:t.n,mime:t.mime,name:`${t.w} - line ${btLines().findIndex(L=>L.k===t.k)+1} - take ${t.n}.${ext}`,data})},2); BT.upFails=0; BT.upErr='';
+        const upBody={a:'up',c:BT.code,k:t.k,w:t.w,t:t.t,by:BT.inv.actor||'',dur:t.dur,n:t.n,mime:t.mime,name:`${t.w} - line ${btLines().findIndex(L=>L.k===t.k)+1} - take ${t.n}.${ext}`,data}; const j=await njPost(BT.url,upBody,async()=>{ for(let q=0;q<3;q++){ const v=await njJsonp(BT.url,{a:'seen',c:BT.code,k:t.k,n:t.n}).catch(()=>({ok:false,err:'?'})); if(v.ok) return {ok:true,id:v.id}; if(v.err==='gone') return v; await new Promise(r=>setTimeout(r,1500)); } return {ok:false,err:'upload not confirmed'}; }); BT.upFails=0; BT.upErr='';
         if(j.ok){ const cur=BT.takes[t.k]; if(cur===t){ t.sent=true; t.fileId=j.id; await BoothDB.put(t); } wait=1500; if(BT.screen==='rec'&&btLines()[BT.i]?.k===t.k){ const s=$('.bt-status'); if(s) s.textContent='☁️ Sent'; } if(BT.screen==='done') btDone(); }
         else if(j.err==='gone'){ BT.gone=true; btToast('This invite was switched off. Use 📤 Send as a file at the end.'); break; }
         else throw new Error(j.err); }
