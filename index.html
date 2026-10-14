@@ -1568,6 +1568,14 @@ body.an-playing #pet .pet-body{animation:petDance .45s ease-in-out infinite alte
 .fx-sti .fx-stb button{background:#2c3242;border:1px solid #000;border-radius:4px;color:#fff;cursor:pointer;font-size:11px;padding:1px 4px}
 .fx-sti label{display:flex;flex-direction:column;font:700 9.5px var(--ui);color:#8f99ad;gap:1px}
 .fx-sti label input[type=number]{width:100%}
+.mv-list{display:flex;flex-direction:column;gap:3px;margin-top:6px}.mv-it{display:flex;gap:3px}
+.mv-go{flex:1;text-align:left;cursor:pointer;background:#2c3242;color:#eee;border:1.5px solid #000;border-radius:7px;font:700 11.5px var(--ui);padding:5px 8px}.mv-go:hover{background:#3d465e}.mv-go small{color:#8f99ad;margin-left:4px}
+.mv-x{cursor:pointer;background:none;border:0;color:#8f99ad}
+.pose-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:3px}
+.pose-grid button{cursor:pointer;background:#2c3242;color:#eee;border:1.5px solid #000;border-radius:7px;font-size:16px;padding:3px 2px;display:flex;flex-direction:column;align-items:center}
+.pose-grid button small{font:700 8.5px var(--ui);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.pose-grid button.on{background:var(--sun);color:#000}.pose-grid button:hover:not(.on){background:#3d465e}
+.pose-k{display:inline-block;background:#252a36;border-radius:6px;padding:1px 6px;margin:1px}.pose-k a{color:#8f99ad;text-decoration:none}
 
 
 /* ===================================================================
@@ -1694,6 +1702,189 @@ button:focus:not(:focus-visible){outline:none}
 
 .set-title{font:900 12px var(--display);letter-spacing:2px;color:#888;padding:2px 10px 8px}
 body.night .wh-lock{background:#2c3242;color:#eee;border-color:#000}body.night .wh-lock.on{background:#ffd76a;color:#000}body.night .wh-p{color:#000}body.night .pl-it,body.night .snap{border-color:#3a4254}
+
+/* ---------- templates ---------- */
+.modal:has(.tpl){width:min(900px,100%)}
+.tpl-cast{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;margin:6px 0 12px}.tpl-cast label{display:flex;flex-direction:column;gap:2px}.tpl-cast small{font:800 10px var(--ui);color:var(--muted)}.tpl-cast select{width:150px}
+.tpl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
+.tpl-grid button{cursor:pointer;text-align:left;border:2.5px solid #000;border-radius:12px;background:#fff;padding:10px 12px;display:flex;flex-direction:column;gap:3px;box-shadow:3px 3px 0 #000;transition:transform .1s}
+.tpl-grid button:hover{transform:translateY(-2px);background:#fffbe6}.tpl-e{font-size:24px}.tpl-grid b{font-size:14px}.tpl-grid small{color:var(--muted);font-size:12px}
+body.night .tpl-grid button{background:var(--card);color:var(--ink)}
+
+/* ---------- pit pitch tools + voice presets ---------- */
+.pa-tune{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:8px;padding:8px 10px;border:2px solid #000;border-radius:10px;background:#f6f0ff}
+.pa-tune,.pa-tune .tiny,.pa-tune b{color:#1d1530!important;opacity:1}.pa-tune .muted{color:#5a5070!important}.pa-tune b{font-size:13px}.pa-sep{width:1px;height:22px;background:#c9c2dd}
+.pa-prog{height:4px;background:#e01b7a;width:0;border-radius:4px;margin-top:4px;transition:width .2s}
+.modal:has(.vp){width:min(900px,100%)}
+.vp-list{display:flex;flex-direction:column;gap:6px;max-height:60vh;overflow:auto}
+.vp-row{display:grid;grid-template-columns:40px 130px 170px 1fr 1fr auto auto;gap:8px;align-items:center;border:2px solid #000;border-radius:10px;padding:6px 8px}
+.vp-art{width:40px;height:40px}.vp-art>*{width:100%;height:100%;object-fit:contain}.vp-name{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.vp-sl{display:flex;flex-direction:column;gap:0}.vp-sl small{font:700 10px var(--ui);color:var(--muted)}
+@media (max-width:800px){ .vp-row{grid-template-columns:40px 1fr;} }
+
+/* ---------- set builder ---------- */
+.modal:has(.bgg){width:min(980px,100%)}
+.bg-wrap{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;margin:8px 0}
+.bg-prev{border:3px solid #000;border-radius:10px;max-width:56vw;display:block}
+.bg-side{display:flex;flex-direction:column;gap:8px}.bg-opt{display:flex;flex-direction:column;gap:3px}.bg-opt small{font:800 10px var(--ui);color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+.bg-opt .seg{flex-wrap:wrap}.bg-opt .seg button{font-size:11.5px;padding:4px 8px}
+@media (max-width:900px){ .bg-wrap{grid-template-columns:1fr} .bg-prev{max-width:100%} }
+
+/* ---------- notes ---------- */
+#notesBtn{position:relative}#notesBtn.has::after{content:attr(data-n);position:absolute;right:-6px;top:-6px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:#ff3b3b;color:#fff;font:800 10px/18px var(--ui);border:2px solid #000;box-sizing:border-box}
+.notes-panel{position:fixed;right:-380px;top:84px;bottom:76px;width:360px;max-width:92vw;z-index:140;background:#fffdf3;border:3px solid #000;border-right:0;border-radius:16px 0 0 16px;box-shadow:-6px 6px 0 rgba(0,0,0,.35);display:flex;flex-direction:column;transition:right .25s cubic-bezier(.2,1,.3,1)}
+.notes-panel.on{right:0}
+.np-head{display:flex;align-items:center;gap:8px;padding:10px 12px;border-bottom:2px dashed #ddd}.np-head b{font:900 16px var(--display)}.np-head .seg{margin-left:auto}.np-head .seg button{font-size:11px;padding:3px 8px}
+.np-new{padding:10px 12px;border-bottom:2px dashed #ddd;display:flex;flex-direction:column;gap:6px}.np-new textarea{width:100%;resize:vertical}
+.np-cols{display:flex;gap:4px}.np-cols i{width:18px;height:18px;border-radius:50%;border:2px solid #000;cursor:pointer;display:block}.np-cols i.on{outline:3px solid #4a86e8}
+.np-list{flex:1;overflow:auto;padding:10px 12px;display:flex;flex-direction:column;gap:10px}
+.np-note{background:var(--nc);border:2.5px solid #000;border-radius:4px 14px 14px 14px;padding:8px 10px;box-shadow:3px 3px 0 #000;transform:rotate(-.4deg)}.np-note:nth-child(even){transform:rotate(.5deg)}
+.np-note.done{opacity:.55}.np-note.done .np-text{text-decoration:line-through}
+.np-where{background:none;border:0;cursor:pointer;font:800 11px var(--ui);color:#333;padding:0;text-align:left;text-decoration:underline dotted}
+.np-text{font:600 14px/1.35 var(--ui);margin:4px 0;color:#111}.np-meta{font:700 11px var(--ui);color:#555}
+.np-reply{font-size:12.5px;border-top:1px dashed rgba(0,0,0,.25);margin-top:5px;padding-top:4px;color:#111}.np-reply small{color:#666}
+.np-act{display:flex;gap:4px;margin-top:6px}.np-act button{cursor:pointer;background:rgba(255,255,255,.6);border:1.5px solid #000;border-radius:7px;font:800 11px var(--ui);padding:2px 8px}
+#editor .has-note{position:relative}#editor .has-note::after{content:'🗒';position:absolute;right:-34px;top:0;font-size:18px;cursor:pointer;filter:drop-shadow(1px 1px 0 #000)}
+#editor .note-flash{animation:noteFlash 1.5s ease}@keyframes noteFlash{0%,60%{background:#fff3a0}100%{background:transparent}}
+.tl-note{position:absolute;top:2px;font-size:13px;margin-left:-7px;cursor:pointer;z-index:3;filter:drop-shadow(1px 1px 0 #000)}
+body.night .notes-panel{background:#1d212b;color:var(--ink)}body.night .np-head,body.night .np-new{border-color:#3a4254}
+@media (max-width:700px){ .notes-panel{top:60px;bottom:60px;width:100%;border-radius:16px 16px 0 0} }
+/* shared show (sync) */
+.sy-chip{position:relative}
+.sy-chip::after{content:'';position:absolute;right:-3px;top:-3px;width:11px;height:11px;border-radius:50%;border:2px solid #000;background:#38c172}
+.sy-chip[data-st=busy]::after{background:#ffc81e;animation:syPulse .8s ease-in-out infinite alternate}
+.sy-chip[data-st=err]::after{background:#e01b1b}.sy-chip[data-st=off]::after{background:#9aa3b2}.sy-chip[data-st=hold]::after{background:#ff8a00;animation:syPulse .5s infinite alternate}
+@keyframes syPulse{to{transform:scale(1.35)}}
+.sy-steps{padding-left:20px;line-height:1.5;font-size:14px}.sy-steps li{margin-bottom:8px}.sy-steps code{background:#eef;padding:1px 5px;border-radius:4px}
+.sy-form{display:grid;gap:10px;margin:12px 0;padding:14px;border:3px solid #000;border-radius:14px;background:#f7f8fb}
+.sy-form label{display:flex;flex-direction:column;gap:4px;font:800 12px var(--ui)}
+.sy-card{border:3px solid #000;border-radius:14px;padding:12px 14px;margin:10px 0;background:#fff;box-shadow:var(--shadow-sm)}
+.sy-card.sy-ok{background:#effbf2}.sy-card.sy-err{background:#fff0f0}.sy-card.sy-hold{background:#fff6e0}
+.sy-card .row{gap:10px;flex-wrap:wrap;align-items:center}
+.sy-choices{display:grid;gap:8px;margin:10px 0}.sy-choices .btn,.sy-choices small{white-space:normal;max-width:100%}.sy-choices .btn{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:2px;height:auto;padding:10px 12px}.sy-choices small{font:600 12px var(--ui);opacity:.75;text-transform:none;letter-spacing:0}
+.sy-warn{background:#fff3cd;border:2px solid #e0a800;border-radius:10px;padding:8px 10px;margin:8px 0;font-size:13px}.sy-warn .row{margin-top:6px}
+.sy-faq{margin:8px 0;font-size:13px}.sy-faq summary{cursor:pointer;font-weight:800}.sy-faq p{margin:6px 0 0 14px;line-height:1.45}
+.sy-act{display:flex;flex-direction:column;gap:2px;max-height:240px;overflow:auto}
+.sy-act-row{font-size:13px;padding:5px 8px;border-radius:8px;background:#f5f6fa}.sy-act-row small{color:#888;white-space:nowrap}
+body.night .sy-form,body.night .sy-card,body.night .sy-act-row{background:var(--card);color:var(--ink)}body.night .sy-warn{background:#3a3220;color:#ffe9a8}
+
+
+/* ===================================================================
+   [CSS] PHONE MODE (≤700px wide). Writing scripts, recording lines,
+   notes, the Bible and the Wheel are the phone jobs. Heavy rooms
+   (Animate, Pit, Studio) still work but say they're best on a computer.
+   =================================================================== */
+.ph-only{display:none!important}
+.drawer:not(.on){visibility:hidden}
+html,body{overflow-x:hidden}
+.ph-room-note{display:flex;gap:10px;align-items:center;margin:0 0 10px;padding:8px 12px;border:3px solid #000;border-radius:12px;background:var(--sun);font-weight:700;font-size:13px;box-shadow:var(--shadow-sm)}
+.ph-room-note button{margin-left:auto;flex:none}
+
+@media (max-width:700px){
+  .ph-only{display:revert!important}
+  html,body{overscroll-behavior-y:none}
+  #app{grid-template-rows:auto 1fr 54px;grid-template-columns:minmax(0,1fr);height:100dvh;width:100vw}
+  #app>*{min-width:0}
+  .ticker{display:none}
+  /* header: logo + icons on top, tabs as one swipeable row */
+  header.marquee{flex-wrap:wrap;gap:6px 8px;padding:6px 8px 6px}
+  .logo{padding:5px 18px 5px 9px;transform:rotate(-4deg)}
+  .logo b{font-size:18px}.logo small{font-size:9px;letter-spacing:1.5px}
+  .hdr-right{margin-left:auto;gap:5px}
+  .hdr-right .mood-badge,#cameoNow{display:none}
+  .iconbtn{width:36px;height:34px;font-size:15px;border-width:2px}
+  nav.tabs{order:3;flex:1 1 100%;min-width:0;max-width:100%;flex-wrap:nowrap;overflow-x:auto;gap:6px;padding:2px 2px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x proximity}
+  nav.tabs::-webkit-scrollbar{display:none}
+  nav.tabs button{flex:none;padding:6px 9px;font-size:11px;border-width:2px;scroll-snap-align:start}
+  nav.tabs button .lbl,nav.tabs button:not(.on) .lbl{display:none}
+  nav.tabs button.on .lbl{display:inline}
+  nav.tabs button .ico{margin-right:0}nav.tabs button.on .ico{margin-right:4px}
+  /* footer: just play/pause, the song title and the save dot */
+  footer.grass{gap:8px;padding:0 8px;border-top-width:3px}
+  #mPrev,#mNext,.mini .eq,#mArt,#pet,.foot-note #saveTxt{display:none!important}
+  .pbtn{width:36px;height:36px}
+  .mini .meta small{display:none}
+  .mini .meta b{font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+  .screen{padding:10px 10px 24px}
+  .toasts{left:10px;right:10px;top:auto;bottom:66px;align-items:stretch}
+  .toast{max-width:none}
+  /* inputs at 16px so iPhones don't zoom in when you tap them */
+  input,select,textarea,.txt{font-size:16px!important}
+  /* modals + drawers go full screen */
+  .modal-bg{padding:0;place-items:stretch}
+  .modal{width:100%;max-height:none;height:100dvh;border-radius:0!important;border-width:0!important;padding:14px 12px 30px}
+  .drawer{width:100vw}
+  .tour-card{padding:12px 12px 10px}
+  .tour-card p{font-size:14px;min-height:0}
+  .tour-who{width:74px;height:74px;bottom:calc(var(--tourCardH,220px) + 74px)}
+  .tour-who.deegs{left:14px}.tour-who.starr{right:14px}
+  /* lobby */
+  .lobby-hero{min-height:250px;border-radius:14px;background-position:center 30%!important}
+  .lobby-hero .shade{background:linear-gradient(transparent 45%,rgba(0,0,0,.75))}
+  .lobby-hero .copy{padding:12px 14px}
+  .lobby-hero h1{font-size:25px!important;margin-bottom:4px}
+  .lobby-hero .copy>p{display:none}
+  .doors{gap:10px!important}
+  .doors .door{min-height:0!important;padding:14px 14px 34px!important}
+  .doors .door .who{width:76px!important;height:76px!important}
+  .doors .door p{max-width:70%!important}
+  /* writing desk: paper fills the screen, type buttons stick to the top */
+  .desk,.desk.show-right{display:block}
+  .toolbar{top:-10px;flex-wrap:nowrap;overflow-x:auto;margin:-4px -4px 10px;padding:6px;border-radius:12px;scrollbar-width:none}
+  .toolbar::-webkit-scrollbar{display:none}
+  .toolbar>*{flex:none}
+  .toolbar .sp{display:none}
+  #typeBtns{flex-wrap:nowrap}
+  .toolbar .tbtn{padding:8px 9px;font-size:11px}
+  #focusBtn,#paperBtn,#toggleRight{display:none}
+  .page{padding:16px 12px 120px 30px!important}
+  .page::before{left:20px!important}
+  .titleblock .t{font-size:22px!important}
+  .titleblock .meta{grid-template-columns:auto 1fr!important;font-size:12px}
+  #editor{font-size:15px}
+  .blk[data-t=character]{margin-left:18%!important}
+  .blk[data-t=dialogue],.blk[data-t=lyric]{margin-left:4%!important;margin-right:0!important}
+  .blk[data-t=paren]{margin-left:10%!important;margin-right:4%!important}
+  .blk[data-t=scene],.blk[data-t=transition]{font-size:14px}
+  /* scripts list slides in from the left on phones */
+  .desk.ph-scripts aside.side-scripts{display:flex!important;position:fixed;z-index:62;left:0;top:0;bottom:0;width:min(320px,86vw);border-radius:0 16px 16px 0;overflow:auto;flex-direction:column;animation:phIn .2s ease-out}
+  .desk.ph-scripts::after{content:'';position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:61}
+  .desk.ph-scripts aside.side-scripts .legend,.desk.ph-scripts aside.side-scripts .legend~*,.desk.ph-scripts aside.side-scripts hr,.desk.ph-scripts aside.side-scripts h3:not(:first-child){display:none}
+  /* voice booth: the line + big record button on top, list underneath */
+  .vb-head{flex-wrap:wrap;gap:6px}
+  .vb-title{font-size:20px}
+  .vb-script,.vb-mic{max-width:none;flex:1 1 100%}
+  .vb-grid{display:flex!important;flex-direction:column;gap:10px;min-height:0}
+  .vb-main{order:-1;padding:10px}
+  .vb-lines{max-height:46vh}
+  .vb-cur{padding:10px;gap:10px;align-items:flex-start}
+  .vb-face{width:62px;height:62px}
+  .vb-text{font-size:18px}
+  .vb-deck{flex-wrap:wrap;justify-content:center}
+  .vb-rec{width:104px;height:104px}
+  .vb-rec span{font-size:42px}
+  .vb-meterwrap{flex:1 1 100%}
+  /* bible */
+  .bible-grid,.char-grid,.cgrid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}
+  /* notes: bottom sheet */
+  .notes-panel{left:0!important;right:0!important;top:auto!important;bottom:0!important;height:72dvh;width:100%!important;max-width:none!important;border-right:3px solid #000;border-radius:16px 16px 0 0;transform:translateY(105%);visibility:hidden;transition:transform .25s ease,visibility .25s}
+  .notes-panel.on{transform:none;visibility:visible}
+  /* the pit: one column, library + loops as their own rows */
+  .pit .pit-mid,.pit.lib-on .pit-mid,.pit.loops-on .pit-mid,.pit.lib-on.loops-on .pit-mid{grid-template-columns:minmax(0,1fr)!important;grid-auto-rows:minmax(300px,auto)}
+  .pit-bar{flex-wrap:wrap}
+  .pit-arr{order:-1;min-height:440px}
+  .pit-lib,.pit-loops{max-height:340px;overflow:auto}
+  .pit-lcd{overflow-x:auto;max-width:100%}
+  /* wheel */
+  .wh-stage canvas,#whCanvas{max-width:100%;height:auto}
+  /* settings */
+  .setw{min-height:0;max-height:none}
+  .set-nav{padding:8px 52px 8px 8px!important;flex-wrap:nowrap}
+  .set-nav .set-title{display:none}
+  .set-nav button{flex:none;white-space:nowrap;padding:7px 9px}
+  .set-body{padding:14px 12px 30px}
+}
+@keyframes phIn{from{transform:translateX(-100%)}to{transform:none}}
 
 </style>
 </head>
@@ -5990,7 +6181,7 @@ function autoTrimRange(buf){
   return [Math.max(0,a*.02-.12), Math.min(buf.duration,(b+1)*.02+.2)];
 }
 async function renderTake(t){
-  const k=[t.id,t.trimS,t.trimE,t.gain,t.norm,t.fx].join('|'); if(RENDERED[k]) return RENDERED[k];
+  const k=[t.id,t.trimS,t.trimE,t.gain,t.norm,t.fx,t.pitch||0].join('|'); if(RENDERED[k]) return RENDERED[k];
   const buf=await takeBuf(t); if(!buf) return null;
   const sr=buf.sampleRate, s=clamp(t.trimS||0,0,buf.duration), e=clamp(t.trimE||buf.duration,s+.05,buf.duration), rate=VFX[t.fx]?.rate||1, body=(e-s)/rate;
   const oc=new OfflineAudioContext(1, Math.ceil((body+fxTail(t.fx))*sr), sr);
@@ -5998,7 +6189,7 @@ async function renderTake(t){
   const g=oc.createGain(); const pk=peakIn(buf,s,e)||1; g.gain.value=(t.gain??1)*(t.norm?Math.min(8,.9/pk):1);
   const f=oc.createGain(); f.gain.setValueAtTime(0,0); f.gain.linearRampToValueAtTime(1,.012); f.gain.setValueAtTime(1,Math.max(.02,body-.025)); f.gain.linearRampToValueAtTime(0,body);
   src.connect(g).connect(f); buildFx(oc,t.fx||'none',f,oc.destination); src.start(0,s,e-s);
-  const out=await oc.startRendering(); out._body=body; RENDERED[k]=out; return out;
+  let out=await oc.startRendering(); if(t.pitch&&typeof pitchShiftBuffer==='function'){ try{ out=await pitchShiftBuffer(out,t.pitch); }catch(e){ console.warn(e); } } out._body=body; RENDERED[k]=out; return out;
 }
 function vbStopPlay(){ if(VB.play){ try{ VB.play.src.stop(); }catch(e){} cancelAnimationFrame(VB.play.raf); VB.play=null; $$('.take.playing').forEach(x=>x.classList.remove('playing')); } }
 async function vbPlayTake(t){
@@ -6053,7 +6244,7 @@ async function vbSaveTake(blob, L, opts={}){
   let buf; try{ buf=await decodeBlob(blob); }catch(e){ toast("Couldn't read that audio. Try another file or browser.",'bad'); return; }
   if(buf.duration<.2){ toast('Too short. Try again!'); return; }
   const [s,e]=VB.autoTrim?autoTrimRange(buf):[0,buf.duration], T=takesFor(L.key);
-  const t={id:uid(), scriptId:VB.scriptId, key:L.key, who:L.who, text:L.text, blob, dur:buf.duration, trimS:s, trimE:e, gain:1, norm:true, fx:T.length?T[T.length-1].fx:defaultFx(L.who),
+  const t={id:uid(), scriptId:VB.scriptId, key:L.key, who:L.who, text:L.text, blob, dur:buf.duration, trimS:s, trimE:e, gain:(typeof vpFor==='function'&&vpFor(L.who)?.gain)||1, norm:true, fx:(typeof vpFor==='function'&&vpFor(L.who)?.fx)||(T.length?T[T.length-1].fx:defaultFx(L.who)), pitch:(typeof vpFor==='function'&&vpFor(L.who)?.pitch)||0,
     keeper:!T.some(x=>x.keeper), n:T.reduce((m,x)=>Math.max(m,x.n||0),0)+1, created:Date.now(), peaks:peaksOf(buf,300), uploaded:!!opts.uploaded};
   TAKEBUF[t.id]=buf; await VoiceDB.put(t); VB.takes.push(t);
   S.stats.takes=(S.stats.takes||0)+1; save(); unlock('voice1'); if(S.stats.takes>=50) unlock('voice50');
@@ -6142,6 +6333,7 @@ function takeHTML(t){ return `<div class="take ${t.keeper?'keeper':''}" data-tk=
   <div class="grow"><canvas class="wave" data-tk="${t.id}" width="640" height="58"></canvas>
   <div class="row tiny take-row"><b>Take ${t.n}</b>${t.uploaded?' <span class="pill">uploaded</span>':''}<span class="muted">${(t.trimE-t.trimS).toFixed(1)}s</span>
    <select data-ta="fx" title="Voice effect">${Object.entries(VFX).map(([k,v])=>`<option value="${k}" ${t.fx===k?'selected':''}>${v.label}</option>`).join('')}</select>
+   <select data-ta="pitch" title="Pitch (keeps the timing)">${[-12,-7,-5,-3,-2,-1,0,1,2,3,5,7,12].map(v=>`<option value="${v}" ${(t.pitch||0)===v?'selected':''}>${v===0?'🎵 pitch':(v>0?'+':'')+v+' st'}</option>`).join('')}</select>
    <span title="Volume">🔊</span><input type="range" data-ta="gain" min="0.2" max="2.5" step="0.05" value="${t.gain??1}" style="width:80px">
    <label title="Make it loud and even"><input type="checkbox" data-ta="norm" ${t.norm?'checked':''}> Normalize</label>
    <span class="grow"></span>
@@ -6203,7 +6395,8 @@ document.addEventListener('change',async e=>{
   const ta=t.closest('[data-ta]'); if(ta){ const tk=VB.takes.find(x=>x.id===ta.closest('[data-tk]').dataset.tk); if(!tk) return;
     if(ta.dataset.ta==='fx'){ tk.fx=t.value; VoiceDB.put(tk); vbPlayTake(tk); }
     if(ta.dataset.ta==='gain'){ tk.gain=+t.value; VoiceDB.put(tk); }
-    if(ta.dataset.ta==='norm'){ tk.norm=t.checked; VoiceDB.put(tk); } }
+    if(ta.dataset.ta==='norm'){ tk.norm=t.checked; VoiceDB.put(tk); }
+    if(ta.dataset.ta==='pitch'){ tk.pitch=+t.value; VoiceDB.put(tk); vbPlayTake(tk); } }
   if(t.closest('#vbAsm')) vbAsmRead();
 });
 /* trim handles: drag on the waveform */
@@ -8806,7 +8999,7 @@ async function anLibRender(){ const el=$('#anLib'); if(!el||!AN.proj) return; co
     ...Object.keys(PROP_KIT).filter(match).map(n=>libItem({k:'prop',src:{type:'kit',ref:n},name:n},`<span class="lib-th">${kitIcon(PROP_KIT[n])}</span>`,n,'vector')),
     ...DRAWINGS.filter(d=>d.kind==='prop'&&match(d.name)).map(d=>libItem({k:'prop',src:{type:'drawing',ref:d.id},name:d.name},thumbImg(DRAW_URLS[d.id]),'🎨 '+d.name)),
     ...ART_FILES.doodles.filter(match).map(p=>libItem({k:'image',src:{type:'asset',ref:p},name:p.split('/').pop().replace('.png','')},thumbImg(assetURL(p)),p.split('/').pop().replace('.png','')))].join('');
-  if(AN.lib==='fx') items=libItem({k:'camera'},'<span class="lib-th big">🎥</span>','Camera','zoom/pan')+Object.entries(FX_TYPES).filter(([k,v])=>match(v.label)).map(([k,v])=>libItem({k:'effect',type:k,name:v.label},`<span class="lib-th big">${v.e}</span>`,v.label,v.screen?'full screen':'')).join('');
+  if(AN.lib==='fx') items=libItem({k:'camera'},'<span class="lib-th big">🎥</span>','Camera','zoom/pan')+Object.entries(FX_TYPES).filter(([k,v])=>match(v.label)).sort((a,b)=>(!!b[1].trans)-(!!a[1].trans)).map(([k,v])=>libItem({k:'effect',type:k,name:v.label},`<span class="lib-th big">${v.e}</span>`,v.label,v.trans?'transition':v.screen?'full screen':'')).join('');
   if(AN.lib==='text') items=[['title','Big title','NENJAC'],['plain','Plain text','Text'],['caption','Caption','Caption text'],['lower','Name plate','DEEGS'],['bubble','Speech bubble','Say something!'],['captions','Auto captions','(shows each line)']].map(([s,l,str])=>libItem({k:'text',style:s,str,name:l},`<span class="lib-th big">${s==='bubble'?'💬':s==='lower'?'🪪':s==='captions'?'📝':'🔤'}</span>`,l)).join('')+
     S.chars.filter(c=>c.group!=='Unfiled').slice(0,24).map(c=>libItem({k:'text',style:'lower',str:c.name.toUpperCase(),sub:c.what||'',name:'Name plate: '+c.name},'<span class="lib-th big">🪪</span>',c.name)).join('');
   if(AN.lib==='audio'){ el.innerHTML=anLibShell('<div class="tiny muted" style="padding:10px">Loading…</div>'); const ups=typeof IDB!=='undefined'?await IDB.all():[]; const takes=(await VoiceDB.all()).filter(t=>t.keeper).slice(-60);
@@ -9547,7 +9740,7 @@ drawWheel=function(){ whRender(); }; spinWheel=function(){ whSpin(); };
    points, storage safety, one-tab guard, error catcher, offline app,
    help menu, what's new, accessibility.
    =================================================================== */
-const APP_NAME='Nenjac Creator', APP_VER='4.0', BACKUP_FORMAT=2;
+const APP_NAME='Nenjac Creator', APP_VER='4.1', BACKUP_FORMAT=2;
 const showName = () => (S.settings.showName||'').trim() || 'Nenjac';
 S.version = Math.max(S.version||1, 4);
 const ONLINE_APP = /^https?:$/.test(location.protocol);
@@ -9557,6 +9750,19 @@ const ONLINE_APP = /^https?:$/.test(location.protocol);
 
 /* ---------- WHAT'S NEW ---------- */
 const CHANGELOG=[
+  {v:'4.1',title:'The Crew Update',items:[
+    ['👥','Shared shows','Work on the same show from different computers. It syncs through a private GitHub repo every ~20 seconds: scripts, the Bible, notes, songs, drawings, animations and voice takes. Same script, different lines? Merged. Same line? Both versions kept with ✂ notes. Settings → 👥 Shared show.'],
+    ['📱','Phone mode','The app fits a phone now. Write scripts (📄 Scripts drawer + line-type buttons up top), record lines with a big REC button, check notes. Add it to your home screen.'],
+    ['📌','Notes on anything','Sticky notes on a script line, a moment in an animation, a bar of a song, a drawing. Replies, ✓ Done, jump straight there. 🗒 in the top bar.'],
+    ['📄','Episode templates','New script → pick a shape: elimination episode, musical, Christmas/Halloween special, bottle episode, pilot and more, with your cast dropped in.'],
+    ['🗣','Hum a melody','In The Pit, hit 🗣 and hum. It becomes notes on a flute track you can fix in the piano roll. Any vocal can become notes too.'],
+    ['🎯','Pitch fix','Double-click a vocal in The Pit: snap it to the song\'s key, from natural to full robot. Undo any time.'],
+    ['🎭','Character voices','Voice Booth → 🎭 Character voices: give each character a pitch shift, effect and volume that every take uses automatically.'],
+    ['🎬','Transitions','Star wipe, iris, swipe, spin, clock, checkerboard, dip to black/white, explosion, logo sting, wobble. Drop one on a cut in Animate.'],
+    ['⭐','Saved moves','Save any animation as a reusable move and slap it on anyone.'],
+    ['🟩','Green screen','Key out the green (or any color) on imported video and images.'],
+    ['🏗','Set Builder','Make a background from sky, skyline, ground and extras. It drops in as 3 parallax layers so camera moves get real depth.'],
+    ['🦾','Arms, legs & mouths','Give any character poseable arms and legs (wave, point, shrug, facepalm, fight…), walk cycles, and a talking mouth.']]},
   {v:'4.0',title:'Nenjac Creator',items:[
     ['🎬','Animate','A Premiere-style episode maker: layers, keyframes, easing, razor, J K L. Characters talk, blink, walk, yell and grab props. Script → Scene builds a whole scene for you.'],
     ['🎞','Real MP4 export','Animate and the Shorts Factory now render a proper MP4 frame by frame, usually faster than real time. Full length, every time.'],
@@ -9664,7 +9870,7 @@ async function installApp(){ if(!INSTALL_EVT) return toast(ONLINE_APP?'Use your 
 /* ---------- SETTINGS (rebuilt) ---------- */
 { const old=$('#openSettings'), nb=old.cloneNode(true); old.replaceWith(nb); nb.title='Settings, backups & help'; nb.setAttribute('aria-label','Settings, backups and help'); nb.addEventListener('click',()=>openSettings()); }
 let SET_TAB='general';
-function openSettings(tab){ if(tab) SET_TAB=tab; const tabs=[['general','⚙','General'],['backup','💾','Backup & data'],['help','🎓','Help'],['about','ℹ️','About']];
+function openSettings(tab){ if(tab) SET_TAB=tab; const tabs=[['general','⚙','General'],['shared','👥','Shared show'],['backup','💾','Backup & data'],['help','🎓','Help'],['about','ℹ️','About']];
   openModal(`<div class="setw"><nav class="set-nav"><div class="set-title">Settings</div>${tabs.map(([k,e,l])=>`<button data-st="${k}" class="${SET_TAB===k?'on':''}">${e} ${l}</button>`).join('')}</nav><div class="set-body" id="setBody"></div><button class="btn sm set-x" onclick="closeModal()" aria-label="Close">✕</button></div>`);
   const m=$('#modal'); m.onclick=e=>{ const b=e.target.closest('[data-st]'); if(b){ SET_TAB=b.dataset.st; $$('.set-nav button').forEach(x=>x.classList.toggle('on',x===b)); setRender(); } }; setRender(); }
 function setRow(t,d,ctl){ return `<div class="setting"><span><b>${t}</b>${d?`<br><small class="muted">${d}</small>`:''}</span>${ctl}</div>`; }
@@ -9828,7 +10034,8 @@ function tourPlace(){ if(!TS||!$('#tour')) return; const st=TOUR[TS.i], hole=$('
   const el=st.el&&$(st.el); if(el){ const r=el.getBoundingClientRect(); if(r.width>4&&r.height>4) R={x:Math.max(6,r.left-8),y:Math.max(6,r.top-8),w:Math.min(innerWidth-12,r.width+16),h:Math.min(innerHeight-12,r.height+16)}; }
   if(R){ R.h=Math.min(R.h,innerHeight-R.y-8); hole.style.cssText=`left:${R.x}px;top:${R.y}px;width:${R.w}px;height:${R.h}px;opacity:1`; } else hole.style.cssText=`left:50%;top:45%;width:0;height:0;opacity:1`;
   const cw=Math.min(440,innerWidth-24), ch=card.offsetHeight||220; let x, y;
-  if(!R){ x=(innerWidth-cw)/2; y=innerHeight*.3; }
+  if(innerWidth<=700){ x=12; y=innerHeight-ch-66; document.documentElement.style.setProperty('--tourCardH',ch+'px'); }
+  else if(!R){ x=(innerWidth-cw)/2; y=innerHeight*.3; }
   else if(R.y+R.h+ch+24<innerHeight-150){ x=R.x+R.w/2-cw/2; y=R.y+R.h+14; }
   else if(R.y-ch-14>10){ x=R.x+R.w/2-cw/2; y=R.y-ch-14; }
   else { x=innerWidth-cw-24; y=Math.max(12,innerHeight-ch-190); }
@@ -9839,6 +10046,930 @@ document.addEventListener('keydown',e=>{ if(!TS||!$('#tour')) return; if(e.targe
   if(e.key==='Escape'){ e.preventDefault(); e.stopImmediatePropagation(); return tourClose(); } if(e.key==='ArrowRight'||e.key==='Enter'){ e.preventDefault(); e.stopImmediatePropagation(); return tourNextOrDone(); } if(e.key==='ArrowLeft'){ e.preventDefault(); e.stopImmediatePropagation(); return tourGo(TS.i-1); }
   e.stopImmediatePropagation(); },true);
 if(FIRST_RUN&&!S.settings.tourDone) setTimeout(()=>{ if(!$('#tour')) tourStart(0); },900);
+
+/* ===================================================================
+   [EP_TEMPLATES] Start an episode from a template: elimination episode,
+   musical, holiday specials, bottle episode, Short skit and more.
+   {A} {B} {C} = the cast you pick, {HOST} = the host.
+   =================================================================== */
+const TB=(t,x)=>({t,x});
+const EP_TEMPLATES=[
+  {id:'blank',e:'📄',name:'Blank page',desc:'Just a scene heading and you.',blocks:()=>[TB('scene','')]},
+  {id:'standard',e:'🎬',name:'Standard episode',desc:'Cold open, intro, three acts, credits.',blocks:()=>[
+    TB('note','COLD OPEN: hook them in 30 seconds. Something weird is already happening.'),TB('scene','[LOCATION]'),TB('action','{A} is in the middle of something they should not be doing.'),TB('character','{A}'),TB('dialogue',''),TB('transition','[INTRO]'),
+    TB('note','ACT 1: the problem shows up.'),TB('scene','[LOCATION]'),TB('action',''),TB('character','{B}'),TB('dialogue',''),
+    TB('note','ACT 2: it gets worse. Way worse.'),TB('scene','[LOCATION]'),TB('action',''),TB('character','{C}'),TB('dialogue',''),
+    TB('note','ACT 3: it falls apart, then sort of works out. Or nobody survives.'),TB('scene','[LOCATION]'),TB('action',''),TB('character','{A}'),TB('dialogue',''),TB('transition','[CREDITS]')]},
+  {id:'elim',e:'☠️',name:'Elimination episode',desc:'Object-show classic: challenge, losers, votes, someone goes home.',blocks:()=>[
+    TB('scene','[THE CHALLENGE AREA]'),TB('action','The contestants stand in a line. {HOST} floats in front of them.'),TB('character','{HOST}'),TB('dialogue',"Welcome back! Today's challenge is going to hurt."),TB('character','{A}'),TB('dialogue','It always hurts.'),TB('transition','[INTRO]'),
+    TB('note','THE CHALLENGE: explain it in one sentence. Make it stupid.'),TB('character','{HOST}'),TB('dialogue','Your challenge is…'),TB('action',''),
+    TB('note','The challenge goes wrong for at least one team.'),TB('character','{B}'),TB('dialogue',''),TB('character','{C}'),TB('dialogue',''),
+    TB('note','RESULTS: who won, who lost.'),TB('scene','[THE ELIMINATION STAGE]'),TB('character','{HOST}'),TB('dialogue','The votes are in.'),TB('action','Everyone who is safe gets a prize. Two are left.'),
+    TB('character','{HOST}'),TB('dialogue','And the contestant eliminated is…'),TB('action','Long. Dramatic. Pause.'),TB('character','{HOST}'),TB('dialogue','{C}!'),TB('character','{C}'),TB('dialogue','Oh, COME ON.'),TB('action','{C} is launched into the distance.'),TB('transition','[CREDITS]')]},
+  {id:'musical',e:'🎵',name:'Musical episode',desc:'I Want song, villain song, an 11 o\'clock number and a finale.',blocks:()=>[
+    TB('scene','[LOCATION]'),TB('action','A normal day. Too normal. {A} feels a song coming on.'),TB('transition','[INTRO]'),
+    TB('song','"I WANT" SONG: {A}'),TB('lyric','(what {A} wants more than anything)'),TB('note','Score it in The Pit: Number Wizard → I Want song.'),
+    TB('scene','[LOCATION]'),TB('character','{B}'),TB('dialogue','Absolutely not.'),
+    TB('song','VILLAIN SONG: {B}'),TB('lyric','(why {B} is standing in the way)'),
+    TB('note','Everything falls apart.'),TB('scene','[LOCATION]'),TB('character','{C}'),TB('dialogue',''),
+    TB('song',"11 O'CLOCK NUMBER: {A}"),TB('lyric','(the big realization)'),
+    TB('song','FINALE: EVERYONE'),TB('lyric','(everyone sings, even the people who can\'t)'),TB('transition','[CREDITS]')]},
+  {id:'xmas',e:'🎄',name:'Holiday special',desc:'Snow, presents, family drama and a miracle.',blocks:()=>[
+    TB('scene','[LOCATION - HOLIDAY DECORATIONS]'),TB('action','Lights everywhere. {A} is determined to make this the best holiday ever.'),TB('character','{A}'),TB('dialogue','Nothing is going to ruin this year.'),TB('transition','[INTRO]'),
+    TB('note','The present / the party / the tree goes horribly wrong.'),TB('character','{B}'),TB('dialogue',''),
+    TB('note','Somebody learns the true meaning of the holiday (it\'s spite).'),TB('character','{C}'),TB('dialogue',''),
+    TB('note','A holiday miracle. Possibly a song.'),TB('song','HOLIDAY SONG'),TB('lyric',''),TB('transition','[CREDITS]')]},
+  {id:'halloween',e:'🎃',name:'Halloween special',desc:'Haunted location, a monster, a twist.',blocks:()=>[
+    TB('scene','[A HAUNTED LOCATION - NIGHT]'),TB('action','Thunder. {A} and {B} stand outside, holding flashlights.'),TB('character','{B}'),TB('dialogue','We should not go in there.'),TB('character','{A}'),TB('dialogue','We are absolutely going in there.'),TB('transition','[INTRO]'),
+    TB('note','They split up. Never split up.'),TB('character','{C}'),TB('dialogue',''),TB('note','THE MONSTER is revealed. The twist: it was ___ all along.'),TB('transition','[CREDITS]')]},
+  {id:'bottle',e:'🍾',name:'Bottle episode',desc:'Everyone stuck in one room. All dialogue, no budget.',blocks:()=>[
+    TB('scene','[ONE ROOM]'),TB('action','The door slams shut. It locks. {A}, {B} and {C} are stuck together.'),TB('character','{A}'),TB('dialogue','Nobody panic.'),TB('character','{B}'),TB('dialogue','I am panicking.'),TB('transition','[INTRO]'),
+    TB('note','Secrets come out. Someone confesses something.'),TB('character','{C}'),TB('dialogue',''),TB('note','They finally get out. Or the door was never locked.'),TB('transition','[CREDITS]')]},
+  {id:'twohander',e:'👯',name:'Two-hander',desc:'Two characters, one problem, maximum bickering.',blocks:()=>[
+    TB('scene','[LOCATION]'),TB('action','{A} and {B} are handcuffed together. Neither knows why.'),TB('character','{A}'),TB('dialogue','This is your fault.'),TB('character','{B}'),TB('dialogue','How is this MY fault?'),TB('transition','[INTRO]'),
+    TB('note','They have to work together to fix it. They are bad at it.'),TB('note','A sincere moment, immediately ruined.'),TB('transition','[CREDITS]')]},
+  {id:'flashback',e:'📼',name:'Flashback / clip show',desc:'"Remember when…" with wavy flashback transitions.',blocks:()=>[
+    TB('scene','[LOCATION]'),TB('character','{A}'),TB('dialogue','Remember when…'),TB('transition','[FLASHBACK]'),TB('scene','[LOCATION - YEARS AGO]'),TB('action','Younger {A}. Worse haircut.'),TB('transition','[BACK TO PRESENT]'),
+    TB('character','{B}'),TB('dialogue','That never happened.'),TB('transition','[FLASHBACK]'),TB('scene','[LOCATION]'),TB('action',''),TB('transition','[CREDITS]')]},
+  {id:'pilot',e:'🌟',name:'Spinoff pilot',desc:'A side character finally gets their own show.',blocks:()=>[
+    TB('note','PILOT: introduce {A} like the audience has never met them.'),TB('scene','[A BRAND-NEW LOCATION]'),TB('action','{A} moves in. Nobody here knows who they are. Yet.'),TB('character','{A}'),TB('dialogue',''),TB('transition','[INTRO: NEW THEME SONG]'),
+    TB('note','Meet the new supporting cast.'),TB('character','{B}'),TB('dialogue',''),TB('note','The thing that will happen every episode (the format).'),TB('note','A cameo from the main show.'),TB('character','{C}'),TB('dialogue',''),TB('transition','[CREDITS]')]},
+  {id:'short',e:'📱',name:'Short / skit',desc:'Under 60 seconds: setup, escalate, punchline.',blocks:()=>[
+    TB('note','SETUP (5 sec)'),TB('scene','[LOCATION]'),TB('character','{A}'),TB('dialogue',''),TB('note','ESCALATE (40 sec): each beat bigger than the last'),TB('character','{B}'),TB('dialogue',''),TB('character','{A}'),TB('dialogue',''),TB('note','PUNCHLINE (5 sec), then cut.'),TB('character','{B}'),TB('dialogue',''),TB('transition','[SMASH CUT TO BLACK]'),TB('note','Make it in the Shorts Factory when you\'re done.')]},
+  {id:'parody',e:'🎞',name:'Parody episode',desc:'Your cast remakes a famous movie, badly.',blocks:()=>[
+    TB('note','WHAT ARE WE PARODYING? Write it in the title.'),TB('scene','[THE MOVIE\'S MOST FAMOUS LOCATION]'),TB('action','{A} stands exactly where the movie\'s hero stood. It is not as cool.'),TB('character','{A}'),TB('dialogue','(the movie\'s most famous line, but wrong)'),TB('transition','[INTRO]'),
+    TB('note','The famous scene, with {B} as the villain.'),TB('character','{B}'),TB('dialogue',''),TB('note','{C} keeps pointing out plot holes.'),TB('character','{C}'),TB('dialogue',''),TB('transition','[CREDITS]')]}];
+function tplCast(){ return S.chars.filter(c=>c.group!=='Unfiled'&&!/dead|deceased/i.test(c.status||'')); }
+function tplFill(blocks,cast){ const sub=(x,cue)=>x.replace(/\{(A|B|C|HOST)\}/g,(m,k)=>{ const c=cast[k]; if(!c) return ({A:'Character A',B:'Character B',C:'Character C',HOST:'The Host'}[k]); return cue?(c.cue||c.name):c.name; });
+  return blocks.map(b=>({t:b.t,x:b.t==='character'?sub(b.x,true).toUpperCase():sub(b.x,false)})); }
+function openTemplates(){ const pool=tplCast(); const opts=`<option value="">🎲 Random</option>`+pool.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join('');
+  openModal(`<div class="tpl"><div class="row"><h2 class="grow">📄 New episode</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
+    <div class="tpl-cast"><span class="tiny muted">Starring</span>${['A','B','C','HOST'].map(k=>`<label><small>${k==='HOST'?'Host':k}</small><select class="txt" data-tc="${k}">${opts}</select></label>`).join('')}</div>
+    <div class="tpl-grid">${EP_TEMPLATES.map(t=>`<button data-tpl="${t.id}"><span class="tpl-e">${t.e}</span><b>${esc(t.name)}</b><small>${esc(t.desc)}</small></button>`).join('')}</div></div>`);
+  $('#modal').onclick=e=>{ const b=e.target.closest('[data-tpl]'); if(!b) return; const T=EP_TEMPLATES.find(x=>x.id===b.dataset.tpl), cast={}, used=new Set();
+    ['A','B','C','HOST'].forEach(k=>{ const id=$(`[data-tc="${k}"]`).value; let c=id?S.chars.find(x=>x.id===id):null; if(!c){ const left=pool.filter(x=>!used.has(x.id)); c=left.length?pick(left):null; } if(c) used.add(c.id); cast[k]=c; });
+    closeModal(); const s=newScript({title:T.id==='blank'?'':T.name.toUpperCase(),logline:T.id==='blank'?'':`${cast.A?.name||'Someone'}: ${T.desc}`,blocks:tplFill(T.blocks(),cast)}); go('desk'); unlock('tpl1');
+    toast(T.id==='blank'?'Fresh page.':`${T.e} ${T.name} ready. The grey notes are your beats: write over them.`,'good'); setTimeout(()=>{ try{ ED.focus(); }catch(_){} },100); }; }
+ACH.push({id:'tpl1',e:'📄',n:'Paint by Numbers',d:'Start an episode from a template'});
+/* "+ New" buttons open the gallery (Shift+click still makes a blank page) */
+{ const swap=(id)=>{ const o=$(id); if(!o) return; const n=o.cloneNode(true); o.replaceWith(n); n.addEventListener('click',e=>{ if(e.shiftKey){ newScript(); go('desk'); return; } openTemplates(); }); n.title='New episode (from a template). Shift+click = blank page'; }; swap('#newScript'); swap('#lobbyNew'); }
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'📄',label:'New episode from a template',run:openTemplates,kw:'new episode from a template script elimination musical christmas halloween'}); EP_TEMPLATES.slice(1).forEach(t=>C.push({ico:t.e,label:'New '+t.name.toLowerCase(),run:()=>{ openTemplates(); setTimeout(()=>$(`[data-tpl="${t.id}"]`)?.click(),50); },kw:'template new script '+t.desc.toLowerCase()})); return C; }; }
+
+/* ===================================================================
+   [PITCH] Pitch tools: YIN pitch tracking, hum → notes, TD-PSOLA
+   pitch correction ("auto-tune-ish") and pitch shift that keeps timing.
+   =================================================================== */
+const PITCH_SR=22050;
+const yieldUI = () => new Promise(r=>setTimeout(r,0));
+function monoOf(buf,sr){ const n=buf.length, ch=buf.numberOfChannels, m=new Float32Array(n); for(let c=0;c<ch;c++){ const d=buf.getChannelData(c); for(let i=0;i<n;i++) m[i]+=d[i]/ch; }
+  if(!sr||sr===buf.sampleRate) return m; const r=buf.sampleRate/sr, out=new Float32Array(Math.floor(n/r)); for(let i=0;i<out.length;i++){ const p=i*r, j=Math.floor(p), f=p-j; out[i]=(m[j]||0)*(1-f)+(m[j+1]||0)*f; } return out; }
+const hz2midi = f => 69+12*Math.log2(f/440);
+const midi2hz = m => 440*Math.pow(2,(m-69)/12);
+/* YIN: returns frames every hop seconds: {t, f0 (0 = unvoiced), conf, rms} */
+async function trackPitch(buf,{hop=.01,fmin=65,fmax=1050,onProgress}={}){
+  const sr=PITCH_SR, x=monoOf(buf,sr), W=1024, H=Math.round(hop*sr), tMin=Math.floor(sr/fmax), tMax=Math.min(W-2,Math.ceil(sr/fmin)), d=new Float32Array(tMax+1), out=[]; let gmax=0;
+  for(let i=0;i<x.length;i++){ const a=Math.abs(x[i]); if(a>gmax) gmax=a; }
+  const gate=Math.max(.012,gmax*.06);
+  for(let s=0,k=0;s+W+tMax<x.length;s+=H,k++){ let e=0; for(let i=0;i<W;i++) e+=x[s+i]*x[s+i]; const rms=Math.sqrt(e/W);
+    let f0=0, conf=0;
+    if(rms>gate*.5){ for(let tau=1;tau<=tMax;tau++){ let sum=0; for(let i=0;i<W;i++){ const v=x[s+i]-x[s+i+tau]; sum+=v*v; } d[tau]=sum; }
+      let run=0, best=-1; d[0]=1; for(let tau=1;tau<=tMax;tau++){ run+=d[tau]; d[tau]=run?d[tau]*tau/run:1; }
+      for(let tau=tMin;tau<=tMax;tau++){ if(d[tau]<.15){ while(tau+1<=tMax&&d[tau+1]<d[tau]) tau++; best=tau; break; } }
+      if(best>0){ const a=d[best-1]??d[best], b=d[best], c=d[best+1]??d[best], den=a-2*b+c, sh=den?.5*(a-c)/den:0; f0=sr/(best+sh); conf=1-b; } }
+    out.push({t:(s+W/2)/sr,f0,conf,rms});
+    if(k%60===0){ onProgress&&onProgress(s/x.length); await yieldUI(); } }
+  /* kill one-frame blips + octave jumps */
+  for(let i=1;i<out.length-1;i++){ const a=out[i-1].f0, b=out[i].f0, c=out[i+1].f0; if(b&&!a&&!c) out[i].f0=0; if(a&&b&&c){ const m=hz2midi(b), ma=hz2midi(a), mc=hz2midi(c); if(Math.abs(m-ma)>9&&Math.abs(m-mc)>9&&Math.abs(ma-mc)<2) out[i].f0=(a+c)/2; } }
+  return out; }
+function snapMidi(m,pcs){ if(!pcs) return Math.round(m); let best=Math.round(m), bd=99; for(let o=-2;o<=2;o++){ const r=Math.round(m)+o; if(pcs.includes(((r%12)+12)%12)&&Math.abs(r-m)<bd){ bd=Math.abs(r-m); best=r; } } return best; }
+
+/* ---------- hum → notes ---------- */
+function framesToNotes(fr,{pcs=null,minDur=.08}={}){ const notes=[]; let cur=null; const med=[];
+  const sm=fr.map((f,i)=>{ if(!f.f0) return 0; const w=fr.slice(Math.max(0,i-2),i+3).filter(x=>x.f0).map(x=>hz2midi(x.f0)).sort((a,b)=>a-b); return w[Math.floor(w.length/2)]; });
+  const close=t=>{ if(cur){ cur.t1=t; if(cur.t1-cur.t0>=minDur){ const ms=cur.ms.sort((a,b)=>a-b); notes.push({t0:cur.t0,t1:cur.t1,p:snapMidi(ms[Math.floor(ms.length/2)],pcs),v:Math.min(1,.35+cur.rms/(cur.n||1)*6)}); } cur=null; } };
+  fr.forEach((f,i)=>{ const m=sm[i];
+    if(!m||f.conf<.6){ if(cur&&f.t-cur.last>.06) close(cur.last+.01); return; }
+    if(cur){ const ref=cur.ms.slice(-6).sort((a,b)=>a-b)[Math.floor(Math.min(6,cur.ms.length)/2)]; if(Math.abs(m-ref)>.8&&i+2<sm.length&&Math.abs((sm[i+2]||0)-ref)>.8){ close(f.t); } }
+    if(!cur) cur={t0:f.t,ms:[],rms:0,n:0,last:f.t}; cur.ms.push(m); cur.rms+=f.rms; cur.n++; cur.last=f.t; });
+  close(fr.length?fr[fr.length-1].t:0);
+  const merged=[]; notes.forEach(n=>{ const p=merged[merged.length-1]; if(p&&p.p===n.p&&n.t0-p.t1<.07) p.t1=n.t1; else merged.push({...n}); }); return merged; }
+
+/* ---------- TD-PSOLA: change pitch, keep timing ---------- */
+/* ratioAt(t, f0) → pitch ratio (2 = up an octave). Unvoiced parts pass through. */
+async function psola(buf,frames,ratioAt,{onProgress}={}){
+  const sr=buf.sampleRate, x=monoOf(buf), N=x.length, hop=frames.length>1?frames[1].t-frames[0].t:.01;
+  const fAt=t=>{ const i=Math.round((t-frames[0]?.t||0)/hop); const f=frames[clamp(i,0,frames.length-1)]; return f&&f.conf>.5?f.f0:0; };
+  const marks=[]; let pos=0;
+  while(pos<N){ const f0=fAt(pos/sr); if(f0){ const P=sr/f0; let best=pos, bv=-1; const a=Math.max(0,Math.round(pos-P*.25)), b=Math.min(N-1,Math.round(pos+P*.25)); for(let i=a;i<=b;i++){ const v=Math.abs(x[i]); if(v>bv){ bv=v; best=i; } }
+      if(marks.length&&best<=marks[marks.length-1].pos+P*.5) best=Math.round(marks[marks.length-1].pos+P); marks.push({pos:best,P,v:true,r:ratioAt(best/sr,f0)}); pos=best+P; }
+    else { const P=Math.round(.005*sr); marks.push({pos:Math.round(pos),P,v:false,r:1}); pos+=P; } }
+  const y=new Float32Array(N), wsum=new Float32Array(N); let ts=marks[0]?marks[0].pos:0, k=0, step=0;
+  while(ts<N&&marks.length){ while(k+1<marks.length&&Math.abs(marks[k+1].pos-ts)<=Math.abs(marks[k].pos-ts)) k++; const m=marks[k], P=Math.max(16,Math.round(m.P)), L=P*2;
+    for(let j=-P;j<P;j++){ const si=m.pos+j, di=Math.round(ts)+j; if(si<0||si>=N||di<0||di>=N) continue; const w=.5-.5*Math.cos(Math.PI*2*(j+P)/L); y[di]+=x[si]*w; wsum[di]+=w; }
+    ts+=m.v?Math.max(8,m.P/(m.r||1)):m.P; if(++step%400===0){ onProgress&&onProgress(ts/N); await yieldUI(); } }
+  for(let i=0;i<N;i++) y[i]=wsum[i]>.08?y[i]/wsum[i]:y[i];
+  const out=new AudioBuffer({length:N,numberOfChannels:1,sampleRate:sr}); out.copyToChannel(y,0); return out; }
+async function pitchShiftBuffer(buf,semis,opts={}){ if(!semis) return buf; const fr=await trackPitch(buf,opts); const r=Math.pow(2,semis/12); return psola(buf,fr,()=>r,opts); }
+/* pitch fix: pull every note toward the nearest note in the key. strength 0..1, speed: seconds to glide (0 = robot) */
+async function pitchFix(buf,{pcs=null,strength=.8,speed=.06,onProgress}={}){ const fr=await trackPitch(buf,{onProgress:p=>onProgress&&onProgress(p*.4)});
+  let corr=0, lastT=0; const curve=[];
+  const ratioAt=(t,f0)=>{ const m=hz2midi(f0), tgt=snapMidi(m,pcs), want=(tgt-m)*strength, dt=Math.max(0,t-lastT); lastT=t; const a=speed<=0?1:1-Math.exp(-dt/speed); corr+=(want-corr)*a; curve.push({t,m,c:m+corr}); return Math.pow(2,corr/12); };
+  const out=await psola(buf,fr,ratioAt,{onProgress:p=>onProgress&&onProgress(.4+p*.6)}); out._curve=curve; out._frames=fr; return out; }
+
+/* ===================================================================
+   [PIT HUM + TUNE] 🗣 Hum a melody → notes, 🎹 any vocal → notes,
+   🎯 pitch fix on recorded vocals (strength + speed, undoable).
+   =================================================================== */
+const TUNE_CURVE={};
+{ const _r=renderPitShell; renderPitShell=function(){ _r(); const t=$('#pitTypBtn'); if(t&&!$('#pitHumBtn')) t.insertAdjacentHTML('afterend','<button class="ptb" data-pa="hum" id="pitHumBtn" title="Hum a melody: hum into the mic over the band and it turns into notes">🗣</button>'); }; }
+document.addEventListener('click',e=>{ const b=e.target.closest('[data-pa="hum"]'); if(!b) return; e.stopPropagation(); pitHum(); },true);
+async function pitHum(){ const s=PIT.song; if(!s) return toast('Open or write a song first.','bad'); if(PIT.rec) return pitStop();
+  let tr=s.tracks.find(t=>t.type==='audio'&&t.hum); if(!tr){ tr=mkTrack({type:'audio',inst:'vox',name:'Hum',player:null,color:'#b4a7d6'}); tr.hum=true; s.tracks.push(tr); }
+  s.tracks.forEach(t=>{ if(t.type==='audio') t.arm=t===tr; }); PIT.track=tr.id; PIT.humNext=true; pitArr();
+  toast('🗣 Hum or "la la la" your melody. Press Space (or ● again) to stop. It becomes notes automatically.'); await pitRecord(); }
+{ const _add=pitAddAudio; pitAddAudio=async function(tr,blob,name,beat,opts={}){ const r=await _add(tr,blob,name,beat,opts); if(r&&PIT.humNext&&tr&&tr.hum){ PIT.humNext=false; tr.arm=false; await pitToNotes(r,{fromHum:true}); } return r; }; }
+
+async function pitToNotes(r,{fromHum=false,grid=PIT.humGrid||.5}={}){ const s=PIT.song, q=regionOf(r.id); if(!q) return; const buf=PIT_CLIPBUF[r.clip]||await pitLoadClip(r.clip); if(!buf) return toast("Couldn't read that recording.",'bad');
+  const t0=toast('🎹 Listening for notes…'); const fr=await trackPitch(buf); const off=r.offset||0, endSec=off+(beatToSec(s,r.start+r.len)-beatToSec(s,r.start));
+  const raw=framesToNotes(fr.filter(f=>f.t>=off&&f.t<=endSec),{pcs:scalePcs(s)});
+  if(!raw.length) return toast("Didn't hear any notes. Hum louder (or closer to the mic) and try again.",'bad');
+  const sec0=beatToSec(s,r.start)-off, toB=t=>secToBeat(s,sec0+t), bl=barLen(s);
+  let notes=raw.map(n=>{ const b=Math.round(toB(n.t0)/grid)*grid, e=Math.max(b+grid,Math.round(toB(n.t1)/grid)*grid); return {b,d:e-b,p:clamp(n.p,36,96),v:+n.v.toFixed(2)}; });
+  notes=notes.filter((n,i)=>!notes.slice(0,i).some(m=>m.b===n.b)); notes.forEach((n,i)=>{ const nx=notes[i+1]; if(nx&&n.b+n.d>nx.b) n.d=Math.max(grid,nx.b-n.b); });
+  const avg=notes.reduce((a,n)=>a+n.p,0)/notes.length; if(avg<55) notes.forEach(n=>n.p+=12); /* low hums sound better up an octave on a flute */
+  let mt=s.tracks.find(t=>t.humOut); if(!mt){ mt=mkTrack({inst:'flute',name:'Hummed Melody',player:null,color:'#8e7cc3'}); mt.humOut=true; s.tracks.push(mt); }
+  const st=Math.floor(Math.min(...notes.map(n=>n.b))/bl)*bl, en=Math.ceil(Math.max(...notes.map(n=>n.b+n.d))/bl)*bl;
+  mt.regions=mt.regions.filter(x=>!(x.start<en&&x.start+x.len>st));
+  const reg={id:uid(),start:st,len:Math.max(bl,en-st),gen:null,edited:true,name:'Hummed',notes:notes.map(n=>({t:+(n.b-st).toFixed(4),d:n.d,p:n.p,v:n.v}))}; mt.regions.push(reg);
+  if(fromHum) q.t.mute=true; PIT.track=mt.id; PIT.sel=[reg.id]; pitCommit(); pitArr(); unlock('hum1');
+  toast(`🎹 ${notes.length} notes on “${mt.name}”${fromHum?' (the hum track is muted)':''}. Open the piano roll (P) to fix any wrong ones.`,'good');
+  if(typeof pitEditRegion==='function') pitEditRegion(reg.id); }
+
+/* ---------- audio editor: pitch fix + to notes ---------- */
+{ const _ae=pitAudioEd; pitAudioEd=function(){ _ae(); const body=$('#pedBody'), q=PIT.edRegion&&regionOf(PIT.edRegion); if(!body||!q||q.t.type!=='audio'||!$('#paWave')) return; const r=q.r, T=r.tune||{strength:.8,speed:.06};
+    $('#paWave').insertAdjacentHTML('afterend',`<div class="pa-tune"><b>🎯 Pitch fix</b><span class="tiny">Strength</span><input type="range" id="ptStr" min="0" max="1" step="0.05" value="${T.strength}"><span class="tiny" id="ptStrV">${Math.round(T.strength*100)}%</span>
+      <span class="tiny">Style</span><select id="ptSpd">${[[0,'🤖 Robot (hard snap)'],[.02,'⚡ Fast'],[.06,'🎤 Natural'],[.14,'🌊 Gentle']].map(([v,l])=>`<option value="${v}" ${Math.abs(T.speed-v)<.001?'selected':''}>${l}</option>`).join('')}</select>
+      <span class="tiny muted">Key: ${KEY_NAMES[PIT.song.key]} ${PIT.song.mode==='minor'?'minor':'major'}</span>
+      <button class="btn sm primary" data-pt="fix">🎯 ${r.clipOrig?'Re-tune':'Fix pitch'}</button>${r.clipOrig?'<button class="btn sm" data-pt="undo">↺ Original</button>':''}
+      <span class="pa-sep"></span><button class="btn sm" data-pt="notes" title="Turn this singing / humming into notes on an instrument">🎹 Turn into notes</button><select id="ptGrid" title="Note grid">${[[.5,'1/8'],[.25,'1/16'],[1,'1/4']].map(([v,l])=>`<option value="${v}" ${(PIT.humGrid||.5)===v?'selected':''}>${l}</option>`).join('')}</select></div>
+      <div class="pa-prog" id="ptProg"></div>`);
+    const c=TUNE_CURVE[r.id]; if(c&&c.length){ const cv=$('#paWave'), g=cv.getContext('2d'), buf=PIT_CLIPBUF[r.clip], dur=buf?buf.duration:1, ms=c.map(p=>p.m), lo=Math.min(...ms)-2, hi=Math.max(...ms)+2, Y=m=>150-(m-lo)/(hi-lo)*150;
+      g.lineWidth=2; [['m','rgba(60,60,60,.55)'],['c','#e01b7a']].forEach(([k,col])=>{ g.strokeStyle=col; g.beginPath(); let prev=-1; c.forEach(p=>{ const x=p.t/dur*1400; if(p.t-prev>.05) g.moveTo(x,Y(p[k])); else g.lineTo(x,Y(p[k])); prev=p.t; }); g.stroke(); });
+      g.fillStyle='#e01b7a'; g.font='bold 13px Archivo'; g.fillText('— tuned',8,16); g.fillStyle='rgba(60,60,60,.8)'; g.fillText('— you',80,16); } }; }
+document.addEventListener('input',e=>{ if(e.target.id==='ptStr') $('#ptStrV').textContent=Math.round(e.target.value*100)+'%'; if(e.target.id==='ptGrid') PIT.humGrid=+e.target.value; });
+document.addEventListener('click',async e=>{ const b=e.target.closest('[data-pt]'); if(!b) return; const q=regionOf(PIT.edRegion); if(!q) return; const r=q.r, a=b.dataset.pt;
+  if(a==='notes'){ PIT.humGrid=+($('#ptGrid')?.value||.5); return pitToNotes(r); }
+  if(a==='undo'){ if(!r.clipOrig) return; r.clip=r.clipOrig; delete r.clipOrig; delete r.tune; delete TUNE_CURVE[r.id]; const buf=PIT_CLIPBUF[r.clip]||await pitLoadClip(r.clip); if(buf) r.peaks=peaksOf(buf,r.peaks?.length||600,r.offset||0); pitCommit(); pitArr(); pitAudioEd(); return toast('↺ Back to the original take'); }
+  if(a==='fix'){ const src=r.clipOrig||r.clip, buf=PIT_CLIPBUF[src]||await pitLoadClip(src); if(!buf) return toast("Couldn't read that take.",'bad');
+    const strength=+$('#ptStr').value, speed=+$('#ptSpd').value; b.disabled=true; const pr=$('#ptProg');
+    const out=await pitchFix(buf,{pcs:scalePcs(PIT.song),strength,speed,onProgress:p=>{ if(pr) pr.style.width=(p*100).toFixed(0)+'%'; }});
+    const id=uid(); await PitDB.put('clips',{id,blob:wavBlob(out),name:(r.name||'Take')+' (tuned)',dur:out.duration}); PIT_CLIPBUF[id]=out;
+    let pk=0; const d=out.getChannelData(0); for(let i=0;i<d.length;i+=2){ const v=Math.abs(d[i]); if(v>pk) pk=v; }
+    r.clipOrig=src; r.clip=id; r.tune={strength,speed}; r.norm=pk>.001?Math.min(8,.89/pk):1; r.peaks=peaksOf(out,r.peaks?.length||600,r.offset||0); TUNE_CURVE[r.id]=out._curve.filter((_,i)=>i%2===0);
+    pitCommit(); pitArr(); pitAudioEd(); unlock('tune1'); toast(`🎯 Tuned to ${KEY_NAMES[PIT.song.key]} ${PIT.song.mode}. Pink line = where your voice went. Not happy? ↺ Original.`,'good'); } });
+ACH.push({id:'hum1',e:'🗣',n:'Hummingbird',d:'Turn humming into a melody'},{id:'tune1',e:'🎯',n:'Pitch Perfect (Ish)',d:'Pitch-fix a vocal'});
+SHORTCUTS.pit=SHORTCUTS.pit||[]; SHORTCUTS.pit.push(['🗣 button','hum a melody → notes'],['Double-click a vocal','pitch fix · turn into notes']);
+
+/* ===================================================================
+   [VOICE PRESETS] Every character keeps their own voice: effect,
+   pitch (timing stays the same), volume. New takes use it automatically.
+   =================================================================== */
+S.voicePresets=S.voicePresets||{};
+const vpKey = who => (typeof cleanWho==='function'?cleanWho(who):String(who||'')).toUpperCase().trim();
+function vpFor(who){ return S.voicePresets[vpKey(who)]||null; }
+{ const _dfx=defaultFx; defaultFx=function(who){ return vpFor(who)?.fx||_dfx(who); }; }
+{ const _rv=renderVoice; renderVoice=function(){ _rv(); const z=$('#vbZip'); if(z&&!$('#vbVoices')) z.insertAdjacentHTML('beforebegin','<button class="btn sm" id="vbVoices" title="Give each character their own voice effect and pitch">🎭 Character voices</button>'); }; }
+document.addEventListener('click',e=>{ if(e.target.closest('#vbVoices')) vpDialog(); });
+function vpDialog(){ const speakers=[...new Set((VB.lines||[]).map(L=>vpKey(L.who)))].filter(Boolean), extra=Object.keys(S.voicePresets).filter(k=>!speakers.includes(k)), names=[...speakers,...extra];
+  const row=k=>{ const p=S.voicePresets[k]||{}, c=charByName(k), n=(VB.takes||[]).filter(t=>vpKey(t.who)===k).length;
+    return `<div class="vp-row" data-vp="${esc(k)}"><span class="vp-art">${c?charArt(c):fallbackHTML(k)}</span><b class="vp-name">${esc(c?.name||k)}</b>
+      <select data-vpf="fx">${Object.entries(VFX).map(([v,o])=>`<option value="${v}" ${(p.fx||defaultFx(k))===v?'selected':''}>${o.label}</option>`).join('')}</select>
+      <label class="vp-sl"><small>Pitch <b>${(p.pitch||0)>0?'+':''}${p.pitch||0}</b></small><input type="range" data-vpf="pitch" min="-12" max="12" step="1" value="${p.pitch||0}"></label>
+      <label class="vp-sl"><small>Volume</small><input type="range" data-vpf="gain" min="0.3" max="2.2" step="0.05" value="${p.gain??1}"></label>
+      <button class="btn sm" data-vpa="hear" title="Hear their latest take with this voice" ${n?'':'disabled'}>▶</button><button class="btn sm" data-vpa="apply" title="Use this voice on all ${n} of their takes" ${n?'':'disabled'}>Apply to ${n} take${n===1?'':'s'}</button></div>`; };
+  openModal(`<div class="vp"><div class="row"><h2 class="grow">🎭 Character voices</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
+    <p class="tiny muted">Set it once and every new take for that character sounds right. Pitch keeps the timing (no chipmunk speed-up) and stacks with the effect.</p>
+    <div class="vp-list">${names.length?names.map(row).join(''):'<p class="tiny muted">Pick a script with dialogue first.</p>'}</div>
+    <div class="row" style="margin-top:10px"><select class="txt" id="vpAdd" style="width:220px"><option value="">＋ Add another character…</option>${S.chars.filter(c=>!names.includes(vpKey(c.cue||c.name))).map(c=>`<option value="${esc(vpKey(c.cue||c.name))}">${esc(c.name)}</option>`).join('')}</select><span class="grow"></span><button class="btn primary" onclick="closeModal()">Done</button></div></div>`);
+  const m=$('#modal'), get=k=>S.voicePresets[k]=S.voicePresets[k]||{fx:defaultFx(k),pitch:0,gain:1};
+  m.oninput=e=>{ const f=e.target.dataset.vpf; if(!f) return; const k=e.target.closest('[data-vp]').dataset.vp, p=get(k); p[f]=f==='fx'?e.target.value:+e.target.value; if(f==='pitch') e.target.previousElementSibling.querySelector('b').textContent=(p.pitch>0?'+':'')+p.pitch; save(); };
+  m.onchange=e=>{ if(e.target.id==='vpAdd'&&e.target.value){ get(e.target.value); save(); vpDialog(); } };
+  m.onclick=async e=>{ const b=e.target.closest('[data-vpa]'); if(!b) return; const k=b.closest('[data-vp]').dataset.vp, p=get(k), T=(VB.takes||[]).filter(t=>vpKey(t.who)===k);
+    if(b.dataset.vpa==='hear'){ const t=T.filter(x=>x.keeper).pop()||T[T.length-1]; if(!t) return; const tmp={...t,fx:p.fx,pitch:p.pitch,gain:p.gain,id:t.id+'~vp'}; b.textContent='…'; await vbPlayTake(tmp); b.textContent='▶'; }
+    if(b.dataset.vpa==='apply'){ for(const t of T){ t.fx=p.fx; t.pitch=p.pitch; t.gain=p.gain; await VoiceDB.put(t); } toast(`🎭 ${T.length} take${T.length===1?'':'s'} now use ${esc(charByName(k)?.name||k)}'s voice`,'good'); if(typeof vbRenderMain==='function') vbRenderMain(); } }; }
+
+/* ===================================================================
+   [ANIM MORE] Transitions · saved moves · green screen
+   =================================================================== */
+/* ---------- TRANSITIONS: cover the screen, then reveal what's underneath ---------- */
+Object.assign(FX_TYPES,{
+  tr_star:{e:'⭐',label:'Star wipe',screen:true,trans:true}, tr_iris:{e:'⚫',label:'Iris (circle) wipe',screen:true,trans:true}, tr_swipe:{e:'➡️',label:'Swipe',screen:true,trans:true},
+  tr_spin:{e:'🌀',label:'Spin wipe',screen:true,trans:true}, tr_clock:{e:'🕒',label:'Clock wipe',screen:true,trans:true}, tr_checker:{e:'🏁',label:'Checkerboard',screen:true,trans:true},
+  tr_dip:{e:'🌑',label:'Dip to black',screen:true,trans:true}, tr_dipw:{e:'🤍',label:'Dip to white',screen:true,trans:true}, tr_boom:{e:'💥',label:'BOOM cut',screen:true,trans:true},
+  tr_logo:{e:'🎭',label:'Logo wipe (your show)',screen:true,trans:true}, tr_wobble:{e:'〰️',label:'Flashback wobble',screen:true,trans:true}});
+function starPath(c,cx,cy,R,rot=0){ c.beginPath(); for(let i=0;i<10;i++){ const r=i%2?R*.45:R, a=rot-PI/2+i*PI/5; c.lineTo(cx+Math.cos(a)*r,cy+Math.sin(a)*r); } c.closePath(); }
+function drawTransition(c,L,lt,dur,P){ const f=L.fx||{}, W=P.w, H=P.h, p=clamp(lt/Math.max(.05,dur),0,1), cover=p<.5?EASES.in(p*2):1-EASES.out((p-.5)*2), col=f.color||'#000000', D=Math.hypot(W,H);
+  c.save(); c.fillStyle=col;
+  const sub=(kind,r)=>{ if(kind==='star'){ for(let i=0;i<10;i++){ const rr2=i%2?r*.45:r, a=-PI/2+i*PI/5+p*2.2, x=W/2+Math.cos(a)*rr2, y=H/2+Math.sin(a)*rr2; i?c.lineTo(x,y):c.moveTo(x,y); } c.closePath(); } else { c.moveTo(W/2+r,H/2); c.arc(W/2,H/2,r,0,PI*2); } };
+  const wipe=(kind,R)=>{ c.beginPath(); if(p<.5){ sub(kind,R*cover); c.fill(); } else { c.rect(0,0,W,H); sub(kind,R*(1-cover)); c.fill('evenodd'); } };
+  switch(f.type){
+    case 'tr_star': wipe('star',D*.8); break;
+    case 'tr_iris': wipe('circle',D*.55); break;
+    case 'tr_swipe': { const x=p<.5?-W+W*EASES.in(p*2):W*EASES.out((p-.5)*2); c.fillRect(x,0,W,H); c.fillStyle='rgba(255,255,255,.3)'; c.fillRect(p<.5?x+W-18:x,0,18,H); break; }
+    case 'tr_spin': { c.translate(W/2,H/2); c.rotate(p*PI*3); const s=D*cover*1.05; c.fillRect(-s/2,-s/2,s,s); break; }
+    case 'tr_clock': { const a=p<.5?EASES.in(p*2)*PI*2:EASES.out((p-.5)*2)*PI*2; c.beginPath(); c.moveTo(W/2,H/2); if(p<.5) c.arc(W/2,H/2,D,-PI/2,-PI/2+a); else c.arc(W/2,H/2,D,-PI/2+a,PI*1.5); c.closePath(); c.fill(); break; }
+    case 'tr_checker': { const n=8, m=Math.ceil(H/(W/n)), s=W/n, R=rr(hashStr(L.id)); for(let i=0;i<n;i++) for(let j=0;j<m;j++){ const th=R(); if(p<.5?th<cover:th<cover) c.fillRect(i*s,j*s,s+1,s+1); } break; }
+    case 'tr_dip': case 'tr_dipw': c.globalAlpha*=cover; c.fillStyle=f.type==='tr_dipw'?'#fff':col; c.fillRect(0,0,W,H); break;
+    case 'tr_boom': { const k=Math.max(0,1-Math.abs(p-.5)*2.2); c.globalAlpha*=Math.min(1,k*1.4); c.fillStyle='#fff'; c.fillRect(0,0,W,H); c.globalAlpha=1;
+      if(k>.05){ c.translate(W/2,H/2); c.scale(.6+k*.7,.6+k*.7); c.rotate(-.08); c.fillStyle='#ffc81e'; starPath(c,0,0,H*.55,0); c.fill(); c.lineWidth=H*.012; c.strokeStyle='#000'; c.stroke(); c.font=`900 ${H*.2}px Bangers, Impact, sans-serif`; c.textAlign='center'; c.textBaseline='middle'; c.lineWidth=H*.03; c.strokeText(f.text||'BOOM!',0,0); c.fillStyle='#e01b1b'; c.fillText(f.text||'BOOM!',0,0); } break; }
+    case 'tr_logo': { const k=p<.5?EASES.out(p*2):1-EASES.in((p-.5)*2); c.globalAlpha*=Math.min(1,k*1.5); c.fillStyle=col==='#000000'?'#930000':col; c.fillRect(0,0,W,H); c.globalAlpha=1;
+      c.translate(W/2,H/2); c.rotate(-.12+p*.08); const s=.2+k*.9; c.scale(s,s); const sw=W*.6, sh=H*.36; c.fillStyle='#4a86e8'; c.strokeStyle='#000'; c.lineWidth=H*.02; rrect(c,-sw/2,-sh/2,sw,sh,H*.04); c.fill(); c.stroke();
+      c.fillStyle='#fff'; c.font=`900 ${sh*.42}px "Archivo Black", Impact, sans-serif`; c.textAlign='center'; c.textBaseline='middle'; const t=(f.text||showName()).toUpperCase(); let fs=sh*.42; while(c.measureText(t).width>sw*.9&&fs>10){ fs*=.9; c.font=`900 ${fs}px "Archivo Black", Impact, sans-serif`; } c.fillText(t,0,0); break; }
+    case 'tr_wobble': { c.globalAlpha*=cover*.85; for(let y=0;y<H;y+=H/24){ c.fillStyle=`rgba(255,255,255,${.35+.35*Math.sin(y*.05+lt*14)})`; c.fillRect(Math.sin(y*.03+lt*10)*W*.04*cover,y,W,H/24+1); } break; } }
+  c.restore(); }
+{ const _df=drawFx; drawFx=function(c,L,lt,dur,P,w,h){ if(FX_TYPES[L.fx?.type]?.trans) return drawTransition(c,L,lt,dur,P); return _df(c,L,lt,dur,P,w,h); }; }
+{ const _ai=anAddItem; anAddItem=async function(it,o={}){ const r=await _ai(it,o); const L=layerById(AN.sel); if(it.k==='effect'&&FX_TYPES[it.type]?.trans&&L&&L.fx?.type===it.type){ L.start=Math.max(0,(o.time??AN.t)-.5); L.end=L.start+1; L.fx.color='#000000'; anCommit(); anTlRender(); anRedraw(); toast(`${FX_TYPES[it.type].e} Put it right on a cut: half before, half after. Its middle is the moment the screen is fully covered.`); } return r; }; }
+function anTransitionToCuts(L){ const P=AN.proj, cuts=[...new Set(P.layers.filter(x=>x.kind==='background'&&x.start>.05).map(x=>+x.start.toFixed(3)))].sort((a,b)=>a-b), len=L.end-L.start; let n=0;
+  cuts.forEach(t=>{ if(P.layers.some(x=>x.kind==='effect'&&x.fx?.type===L.fx.type&&Math.abs((x.start+x.end)/2-t)<.05)) return; const N=JSON.parse(JSON.stringify(L)); N.id=uid(); N.start=Math.max(0,t-len/2); N.end=N.start+len; P.layers.unshift(N); n++; });
+  anCommit(); anTlRender(); anRedraw(); toast(n?`${FX_TYPES[L.fx.type].e} Added to ${n} more cut${n>1?'s':''}`:'No other scene cuts found (cuts = where a background clip starts).'); }
+
+/* ---------- SAVED MOVES ---------- */
+S.animMoves=S.animMoves||[];
+function anSaveMove(L){ const P=AN.proj; let a=L.start, b=L.end; const ks=(typeof anSelEntries==='function'?anSelEntries():[]).filter(s=>s.l===L.id); if(ks.length>1){ a=Math.min(...ks.map(s=>s.k.t)); b=Math.max(...ks.map(s=>s.k.t)); }
+  const keys={}; PROPS_ANIM.forEach(p=>{ const K=(L.keys[p]||[]).filter(k=>k.t>=a-1e-4&&k.t<=b+1e-4); if(K.length){ const v0=kv(L,p,a); keys[p]=K.map(k=>({t:+(k.t-a).toFixed(4),d:p==='scale'?k.v/(v0||1):p==='op'?k.v:k.v-v0,e:k.e})); } });
+  const states=(L.states||[]).filter(s=>s.t1>a&&s.t0<b).map(s=>({type:s.type,t0:+(Math.max(s.t0,a)-a).toFixed(3),t1:+(Math.min(s.t1,b)-a).toFixed(3),amt:s.amt??1}));
+  const ex=(L.ekeys||[]).filter(k=>k.t>=a&&k.t<=b).map(k=>({t:k.t-a,v:k.v})), fl=(L.flipKeys||[]).filter(k=>k.t>=a&&k.t<=b).map(k=>({t:k.t-a,v:k.v}));
+  if(!Object.keys(keys).length&&!states.length&&!ex.length) return toast('Nothing to save: give it some keyframes or states first.','bad');
+  const name=prompt('Name this move',`${L.name}'s move`); if(!name) return; S.animMoves.unshift({id:uid(),name,dur:+(b-a).toFixed(3),keys,states,ex,fl}); save(); anFxRender(); toast(`⭐ Saved “${esc(name)}”. Select anyone and drop it on at the playhead.`,'good'); }
+function anApplyMove(L,M){ const t0=AN.t; Object.entries(M.keys).forEach(([p,K])=>{ const v0=kv(L,p,t0); K.forEach(k=>{ setKey(L,p,t0+k.t,p==='scale'?v0*k.d:p==='op'?k.d:v0+k.d); const kk=(L.keys[p]||[]).find(x=>Math.abs(x.t-(t0+k.t))<.02); if(kk&&k.e) kk.e=k.e; }); });
+  (M.states||[]).forEach(s=>L.states.push({id:uid(),type:s.type,t0:t0+s.t0,t1:t0+s.t1,amt:s.amt}));
+  (M.ex||[]).forEach(k=>setHoldKey(L.ekeys,t0+k.t,{v:k.v})); (M.fl||[]).forEach(k=>setHoldKey(L.flipKeys,t0+k.t,{v:k.v}));
+  if(L.end<t0+M.dur) L.end=t0+M.dur; anCommit(); anTlRender(); anFxRender(); anRedraw(); toast(`⭐ ${esc(M.name)} → ${esc(L.name)}`); if(!AN.playing) anPlayRange(t0,t0+M.dur); }
+
+/* ---------- GREEN SCREEN ---------- */
+const KEY_CACHE=new Map();
+function hexRGB(h){ const n=parseInt((h||'#00ff00').slice(1),16); return [n>>16&255,n>>8&255,n&255]; }
+function keyedCanvas(src,K,maxW){ const sw=src.videoWidth||src.naturalWidth||src.width, sh=src.videoHeight||src.naturalHeight||src.height; if(!sw||!sh) return null; const sc=Math.min(1,maxW/sw), w=Math.max(1,Math.round(sw*sc)), h=Math.max(1,Math.round(sh*sc));
+  const cv=document.createElement('canvas'); cv.width=w; cv.height=h; const g=cv.getContext('2d',{willReadFrequently:true}); g.drawImage(src,0,0,w,h); let im; try{ im=g.getImageData(0,0,w,h); }catch(e){ return null; }
+  const d=im.data, [kr,kg,kb]=hexRGB(K.color), kcb=-.169*kr-.331*kg+.5*kb, kcr=.5*kr-.419*kg-.081*kb, sim=(K.sim??.35)*180, sm=Math.max(1,(K.smooth??.12)*180), spill=K.spill??.6, dom=kg>=kr&&kg>=kb?1:kb>=kr?2:0;
+  for(let i=0;i<d.length;i+=4){ const r=d[i], gg=d[i+1], b=d[i+2], cb=-.169*r-.331*gg+.5*b, cr=.5*r-.419*gg-.081*b, dist=Math.hypot(cb-kcb,cr-kcr), a=clamp((dist-sim)/sm,0,1);
+    d[i+3]=Math.round(d[i+3]*a); if(a<1&&spill>0){ if(dom===1){ const m=Math.max(r,b); if(gg>m) d[i+1]=gg-(gg-m)*spill; } else if(dom===2){ const m=Math.max(r,gg); if(b>m) d[i+2]=b-(b-m)*spill; } else { const m=Math.max(gg,b); if(r>m) d[i]=r-(r-m)*spill; } } }
+  g.putImageData(im,0,0); return cv; }
+{ const _dl=anDrawLayer; anDrawLayer=function(c,P,L,t,screen){ const K=L.key; if(!K||!K.on||!(L.kind==='video'||((L.kind==='image'||L.kind==='background'||L.kind==='prop')&&!rigFor(L.src)))) return _dl(c,P,L,t,screen);
+    const E=anEval(P,L,t); if(E.op<=.001) return; c.globalAlpha=E.op; c.translate(E.x,E.y); c.rotate(E.rot*PI/180); c.scale(E.s*E.sx*(E.flip?-1:1),E.s*E.sy); const w=L.nw, h=L.nh, maxW=AN.exporting?1920:960;
+    let src=null, cv=null; if(L.kind==='video'){ src=AN.vid[L.src?.ref]; if(src&&src.readyState>=2) cv=keyedCanvas(src,K,maxW); }
+    else { const vk=holdAt(L.vkeys,t,null); src=vk&&vk.src?AN.img[srcKey(vk.src)]:imgOf(L.src); if(src){ const ck=L.id+'|'+JSON.stringify(K)+'|'+maxW+'|'+srcKey(vk?.src||L.src); cv=KEY_CACHE.get(ck); if(!cv){ cv=keyedCanvas(src,K,maxW); if(cv){ if(KEY_CACHE.size>40) KEY_CACHE.clear(); KEY_CACHE.set(ck,cv); } } } }
+    if(cv) c.drawImage(cv,-w/2,-h/2,w,h); else if(src) c.drawImage(src,-w/2,-h/2,w,h); }; }
+{ const _rd=anRender; anRender=async function(...a){ AN.exporting=true; try{ return await _rd(...a); } finally{ AN.exporting=false; KEY_CACHE.clear(); } }; }
+
+/* ---------- Effect Controls additions ---------- */
+{ const _fx=anFxRender; anFxRender=function(){ _fx(); const L=layerById(AN.sel), el=$('#anFx'); if(!L||!el) return; const foot=el.querySelector('.fx-foot'); if(!foot) return; let h='';
+    if(L.kind==='effect'&&FX_TYPES[L.fx?.type]?.trans) h+=`<details open><summary>🎬 Transition</summary><div class="fx-row2"><span>Color</span><input type="color" id="trCol" value="${L.fx.color||'#000000'}"></div>${['tr_boom','tr_logo'].includes(L.fx.type)?`<div class="fx-row2"><span>Text</span><input class="txt" id="trTxt" value="${esc(L.fx.text||(L.fx.type==='tr_logo'?showName():'BOOM!'))}"></div>`:''}<div class="fx-row2"><span>Length</span><input type="number" id="trLen" min="0.2" max="5" step="0.1" value="${(L.end-L.start).toFixed(2)}"> s</div><button class="btn sm" data-mv="cuts">📋 Put this on every scene cut</button></details>`;
+    if(['character','prop','image','text','video','background'].includes(L.kind)){ h+=`<details ${S.animMoves.length?'open':''}><summary>⭐ Saved moves <small>(reuse any animation)</small></summary><button class="btn sm" data-mv="save" title="Saves this layer's keyframes and states (or just the selected keyframes)">⭐ Save ${esc(L.name)}'s move</button>
+      <div class="mv-list">${S.animMoves.map(M=>`<div class="mv-it"><button class="mv-go" data-mvgo="${M.id}" title="Put it on ${esc(L.name)} at the playhead">▶ ${esc(M.name)} <small>${M.dur.toFixed(1)}s</small></button><button class="mv-x" data-mvdel="${M.id}" title="Delete">✕</button></div>`).join('')||'<p class="tiny muted">Animate something you like, then save it here to use on anyone.</p>'}</div></details>`; }
+    if(L.kind==='video'||['image','background','prop'].includes(L.kind)&&!rigFor(L.src)){ const K=L.key||{}; h+=`<details ${K.on?'open':''}><summary>🟩 Green screen</summary><label class="row tiny"><input type="checkbox" id="gkOn" ${K.on?'checked':''}> Remove a color (chroma key)</label>
+      <div class="fx-row2"><span>Key color</span><input type="color" id="gkCol" value="${K.color||'#00ff00'}"><button class="btn sm" data-gk="#00b140">Green</button><button class="btn sm" data-gk="#0047bb">Blue</button></div>
+      <div class="fx-row2"><span>Amount</span><input type="range" id="gkSim" min="0.05" max="0.8" step="0.01" value="${K.sim??.35}"></div><div class="fx-row2"><span>Soft edge</span><input type="range" id="gkSm" min="0.01" max="0.5" step="0.01" value="${K.smooth??.12}"></div><div class="fx-row2"><span>Remove spill</span><input type="range" id="gkSp" min="0" max="1" step="0.05" value="${K.spill??.6}"></div></details>`; }
+    if(h) foot.insertAdjacentHTML('beforebegin',h); }; }
+document.addEventListener('input',e=>{ const L=layerById(AN.sel); if(!L||!e.target.closest('#anFx')) return; const id=e.target.id;
+  if(['gkOn','gkCol','gkSim','gkSm','gkSp'].includes(id)){ L.key=L.key||{on:false,color:'#00b140',sim:.35,smooth:.12,spill:.6}; const v=e.target; if(id==='gkOn') L.key.on=v.checked; if(id==='gkCol') L.key.color=v.value; if(id==='gkSim') L.key.sim=+v.value; if(id==='gkSm') L.key.smooth=+v.value; if(id==='gkSp') L.key.spill=+v.value; anRedraw(); clearTimeout(AN._gk); AN._gk=setTimeout(()=>{ anCommit(); if(id==='gkOn') unlock('greenscreen'); },300); }
+  if(id==='trCol'){ L.fx.color=e.target.value; anRedraw(); clearTimeout(AN._gk); AN._gk=setTimeout(anCommit,300); } if(id==='trTxt'){ L.fx.text=e.target.value; anRedraw(); clearTimeout(AN._gk); AN._gk=setTimeout(anCommit,300); }
+  if(id==='trLen'){ const m=(L.start+L.end)/2, len=clamp(+e.target.value||1,.2,5); L.start=Math.max(0,m-len/2); L.end=L.start+len; anRedraw(); clearTimeout(AN._gk); AN._gk=setTimeout(()=>{ anCommit(); anTlRender(); },300); } });
+document.addEventListener('click',e=>{ const t=e.target; if(!t.closest('#anFx')) return; const L=layerById(AN.sel); if(!L) return;
+  const gk=t.closest('[data-gk]'); if(gk){ L.key=L.key||{on:true,sim:.35,smooth:.12,spill:.6}; L.key.on=true; L.key.color=gk.dataset.gk; anCommit(); anRedraw(); return anFxRender(); }
+  const mv=t.closest('[data-mv]')?.dataset.mv; if(mv==='save') return anSaveMove(L); if(mv==='cuts') return anTransitionToCuts(L);
+  const go=t.closest('[data-mvgo]'); if(go){ const M=S.animMoves.find(m=>m.id===go.dataset.mvgo); if(M) anApplyMove(L,M); return; }
+  const dl=t.closest('[data-mvdel]'); if(dl){ const M=S.animMoves.find(m=>m.id===dl.dataset.mvdel); if(M&&confirm(`Delete the move “${M.name}”?`)){ S.animMoves=S.animMoves.filter(m=>m!==M); save(); anFxRender(); } } });
+ACH.push({id:'greenscreen',e:'🟩',n:'Weatherman',d:'Use the green screen'});
+
+/* ===================================================================
+   [BG GEN] Set Builder: flat object-show backgrounds in three depth
+   layers (sky / skyline / ground) that slide at different speeds when
+   the camera moves (parallax). Day, sunset, night, storm.
+   =================================================================== */
+const BG_OPTS={time:[['day','☀️ Day'],['sunset','🌇 Sunset'],['night','🌙 Night'],['storm','⛈ Storm']],
+  sky:[['city','🏙 City'],['houses','🏘 Houses'],['forest','🌲 Forest'],['mountains','🏔 Mountains'],['hills','⛰ Hills'],['none','— Nothing']],
+  ground:[['grass','🌱 Grass'],['road','🛣 Road'],['sand','🏖 Beach'],['snow','❄️ Snow'],['stage','🎭 Stage floor'],['water','🌊 Water']]};
+const BGS={time:'day',sky:'city',ground:'grass',clouds:true,front:true,fence:false,seed:7,wide:1.6};
+const lerpCol=(a,b,k)=>{ const A=hexRGB(a), Bc=hexRGB(b); return `rgb(${A.map((v,i)=>Math.round(v+(Bc[i]-v)*k)).join(',')})`; };
+function bgOutline(g,H){ g.lineWidth=Math.max(2,H*.006); g.strokeStyle='#000'; g.lineJoin='round'; }
+function bgLayers(o,W,H){ const R=rr(o.seed*7919+1), night=o.time==='night', storm=o.time==='storm', sunset=o.time==='sunset', Wd=Math.round(W*o.wide), hz=H*.78;
+  const mk=()=>{ const c=document.createElement('canvas'); c.width=Wd; c.height=H; return c; };
+  /* far: sky */
+  const far=mk(), g=far.getContext('2d'); const sky={day:['#4fa8ff','#cfeaff'],sunset:['#2b1b5a','#ffb16b'],night:['#060a26','#283470'],storm:['#30363f','#8a93a3']}[o.time];
+  const gr=g.createLinearGradient(0,0,0,hz); gr.addColorStop(0,sky[0]); if(sunset) gr.addColorStop(.55,'#ff6f61'); gr.addColorStop(1,sky[1]); g.fillStyle=gr; g.fillRect(0,0,Wd,H);
+  bgOutline(g,H);
+  if(night){ for(let i=0;i<160;i++){ g.fillStyle=`rgba(255,255,255,${.4+R()*.6})`; const s=R()*H*.004+1; g.fillRect(R()*Wd,R()*hz*.85,s,s); } const mr=H*.07, mc=document.createElement('canvas'); mc.width=mc.height=Math.ceil(mr*2.4); const mg=mc.getContext('2d'); bgOutline(mg,H); mg.fillStyle='#fff6c9'; mg.beginPath(); mg.arc(mc.width/2,mc.width/2,mr,0,7); mg.fill(); mg.stroke(); mg.globalCompositeOperation='destination-out'; mg.beginPath(); mg.arc(mc.width/2+mr*.45,mc.width/2-mr*.3,mr*.86,0,7); mg.fill(); g.drawImage(mc,Wd*.7-mc.width/2,H*.18-mc.width/2); }
+  else if(!storm){ g.fillStyle=sunset?'#ff8a3d':'#ffd23a'; g.beginPath(); g.arc(sunset?Wd*.5:Wd*.72,sunset?hz*.92:H*.16,H*(sunset?.16:.075),0,7); g.fill(); g.stroke(); }
+  if(o.clouds||storm){ const n=storm?14:7; for(let i=0;i<n;i++){ const cx=R()*Wd, cy=H*(.08+R()*.32), s=H*(.05+R()*.05); g.fillStyle=storm?(i%2?'#4b5262':'#5d6575'):sunset?'#ffd9c2':night?'#3a4680':'#ffffff';
+      g.beginPath(); [[0,0,1],[s*1.1,s*.15,.85],[-s*1.1,s*.2,.8],[s*.5,-s*.45,.75],[-s*.5,-s*.35,.7]].forEach(([dx,dy,k])=>{ g.moveTo(cx+dx+s*k,cy+dy); g.arc(cx+dx,cy+dy,s*k,0,7); }); g.fill(); } }
+  if(storm){ g.strokeStyle='#fff7a0'; g.lineWidth=H*.006; g.beginPath(); let x=Wd*.3, y=H*.2; g.moveTo(x,y); for(let i=0;i<5;i++){ x+=(R()-.5)*H*.08; y+=H*.07; g.lineTo(x,y); } g.stroke(); }
+  /* mid: skyline */
+  const mid=mk(), m=mid.getContext('2d'); bgOutline(m,H); const dim=night?.45:storm?.6:sunset?.8:1, shade=c=>lerpCol(c,'#10142a',1-dim);
+  if(o.sky==='city'){ let x=-H*.05; while(x<Wd){ const w=H*(.12+R()*.16), h=H*(.18+R()*.42), cols=['#7d8aa6','#9aa7c0','#b07c6a','#6d7f8f','#c2a675','#8f7aa8']; m.fillStyle=shade(pick2(cols,R)); m.fillRect(x,hz-h,w,h); m.strokeRect(x,hz-h,w,h);
+      const lit=night||sunset; for(let wy=hz-h+H*.03;wy<hz-H*.04;wy+=H*.05) for(let wx=x+w*.12;wx<x+w*.85;wx+=w*.24){ m.fillStyle=lit&&R()<.55?'#ffd75e':shade('#cfe3ff'); m.fillRect(wx,wy,w*.13,H*.028); }
+      if(R()<.35){ m.fillStyle=shade('#555555'); m.fillRect(x+w*.6,hz-h-H*.05,H*.01,H*.05); } x+=w-H*.004; } }
+  if(o.sky==='houses'){ let x=-H*.04; while(x<Wd){ const w=H*(.2+R()*.1), h=H*(.14+R()*.06), col=shade(pick2(['#f2c57c','#9fd18b','#8fc7e8','#e8a0a0','#d9c3f0','#fff1c1'],R)), roof=shade(pick2(['#b5452f','#5a4a7a','#3f6c8f','#7a3f2b'],R));
+      m.fillStyle=col; m.fillRect(x,hz-h,w,h); m.strokeRect(x,hz-h,w,h); m.fillStyle=roof; m.beginPath(); m.moveTo(x-H*.02,hz-h); m.lineTo(x+w/2,hz-h-H*.11); m.lineTo(x+w+H*.02,hz-h); m.closePath(); m.fill(); m.stroke();
+      m.fillStyle=shade('#6b4423'); m.fillRect(x+w*.4,hz-h*.55,w*.2,h*.55); m.strokeRect(x+w*.4,hz-h*.55,w*.2,h*.55); m.fillStyle=night?'#ffd75e':shade('#cfe3ff'); [[.1],[.7]].forEach(([k])=>{ m.fillRect(x+w*k,hz-h*.8,w*.2,h*.25); m.strokeRect(x+w*k,hz-h*.8,w*.2,h*.25); }); x+=w+H*.04; } }
+  if(o.sky==='forest'||o.sky==='mountains'||o.sky==='hills'){ if(o.sky==='mountains'){ let x=-H*.3; while(x<Wd){ const w=H*(.6+R()*.5), h=H*(.35+R()*.25); m.fillStyle=shade(pick2(['#6c6fa8','#5b7aa6','#7d6ca8'],R)); m.beginPath(); m.moveTo(x,hz); m.lineTo(x+w/2,hz-h); m.lineTo(x+w,hz); m.closePath(); m.fill(); m.stroke(); m.fillStyle=night?'#c9d2ff':'#fff'; m.beginPath(); m.moveTo(x+w/2,hz-h); m.lineTo(x+w/2-w*.12,hz-h+h*.25); m.lineTo(x+w/2,hz-h+h*.18); m.lineTo(x+w/2+w*.12,hz-h+h*.25); m.closePath(); m.fill(); m.stroke(); x+=w*.6; } }
+    if(o.sky==='hills'){ for(let i=0;i<3;i++){ m.fillStyle=shade(['#7cc46a','#5fae55','#4a9a48'][i]); m.beginPath(); m.moveTo(0,hz); for(let x=0;x<=Wd;x+=H*.05) m.lineTo(x,hz-H*(.12+.06*i)*(.6+.4*Math.sin(x/H*2.2+i*2+o.seed))); m.lineTo(Wd,hz); m.closePath(); m.fill(); m.stroke(); } }
+    if(o.sky==='forest'){ for(let row=0;row<2;row++){ let x=-H*.05; while(x<Wd){ const s=H*(.1+R()*.08)*(row?1.25:1); bgTree(m,x,hz,s,shade(row?'#2f7d3a':'#3e9a48'),shade('#6b4423')); x+=s*(.7+R()*.4); } } } }
+  /* near: ground + foreground */
+  const near=mk(), n=near.getContext('2d'); bgOutline(n,H); const gTop=hz-H*.005;
+  const gcol={grass:'#5cb85c',road:'#6b6f78',sand:'#f2d48b',snow:'#f4f8ff',stage:'#a0682f',water:'#3a8fd6'}[o.ground];
+  n.fillStyle=shade(gcol); n.fillRect(0,gTop,Wd,H-gTop); n.beginPath(); n.moveTo(0,gTop); n.lineTo(Wd,gTop); n.stroke();
+  if(o.ground==='grass'){ n.strokeStyle=shade('#3f8f3f'); n.lineWidth=H*.004; for(let i=0;i<Wd/H*40;i++){ const x=R()*Wd, y=gTop+R()*(H-gTop); n.beginPath(); n.moveTo(x,y); n.lineTo(x+H*.006,y-H*.018); n.stroke(); } }
+  if(o.ground==='road'){ n.fillStyle=shade('#b9b9b9'); n.fillRect(0,gTop,Wd,H*.035); n.strokeRect(-5,gTop,Wd+10,H*.035); n.fillStyle='#ffd23a'; for(let x=0;x<Wd;x+=H*.2) n.fillRect(x,gTop+(H-gTop)*.55,H*.11,H*.015); }
+  if(o.ground==='sand'){ n.fillStyle=shade('#3a8fd6'); n.fillRect(0,gTop,Wd,H*.04); n.fillStyle=shade('#e0bd6c'); for(let i=0;i<60;i++) n.fillRect(R()*Wd,gTop+H*.05+R()*(H-gTop-H*.05),H*.008,H*.004); }
+  if(o.ground==='snow'){ n.fillStyle=shade('#d6e3ff'); for(let i=0;i<12;i++){ n.beginPath(); n.ellipse(R()*Wd,gTop+H*.04+R()*(H-gTop),H*.12,H*.02,0,0,7); n.fill(); } }
+  if(o.ground==='stage'){ n.strokeStyle='rgba(0,0,0,.45)'; n.lineWidth=H*.003; for(let y=gTop;y<H;y+=H*.035){ n.beginPath(); n.moveTo(0,y); n.lineTo(Wd,y); n.stroke(); } bgOutline(n,H); }
+  if(o.ground==='water'){ n.strokeStyle='rgba(255,255,255,.55)'; n.lineWidth=H*.004; for(let i=0;i<40;i++){ const x=R()*Wd, y=gTop+R()*(H-gTop); n.beginPath(); n.arc(x,y,H*.02,PI*1.15,PI*1.85); n.stroke(); } bgOutline(n,H); }
+  if(o.fence&&o.ground!=='water'){ n.fillStyle=shade('#ffffff'); const fy=gTop+H*.01; for(let x=0;x<Wd;x+=H*.05){ n.beginPath(); n.moveTo(x,fy); n.lineTo(x,fy-H*.09); n.lineTo(x+H*.0175,fy-H*.105); n.lineTo(x+H*.035,fy-H*.09); n.lineTo(x+H*.035,fy); n.closePath(); n.fill(); n.stroke(); } n.fillRect(0,fy-H*.07,Wd,H*.015); n.strokeRect(-5,fy-H*.07,Wd+10,H*.015); }
+  if(o.front&&!['water','stage'].includes(o.ground)){ [Wd*.04,Wd*.96].forEach((x,i)=>{ if(o.ground==='sand'||o.ground==='road') bgBush(n,x,H*.97,H*.09,shade('#3f8f3f')); else bgTree(n,x,H*1.02,H*.3,shade(o.ground==='snow'?'#2f6d4a':'#2f7d3a'),shade('#6b4423'),o.ground==='snow'); }); }
+  if(storm){ [far,mid,near].forEach(cv=>{ const x=cv.getContext('2d'); x.strokeStyle='rgba(200,215,255,.35)'; x.lineWidth=H*.002; const r2=rr(o.seed+3); for(let i=0;i<120;i++){ const a=r2()*Wd, b=r2()*H; x.beginPath(); x.moveTo(a,b); x.lineTo(a-H*.01,b+H*.04); x.stroke(); } }); }
+  return {far,mid,near,Wd,H}; }
+function pick2(a,R){ return a[Math.floor(R()*a.length)]; }
+function bgTree(g,x,base,s,leaf,trunk,snow){ g.fillStyle=trunk; g.fillRect(x-s*.08,base-s*.35,s*.16,s*.35); g.strokeRect(x-s*.08,base-s*.35,s*.16,s*.35);
+  for(let i=0;i<3;i++){ const y=base-s*.25-i*s*.28, w=s*(.55-i*.12); g.fillStyle=leaf; g.beginPath(); g.moveTo(x-w,y); g.lineTo(x,y-s*.5); g.lineTo(x+w,y); g.closePath(); g.fill(); g.stroke(); if(snow){ g.fillStyle='#fff'; g.beginPath(); g.moveTo(x-w*.35,y-s*.32); g.lineTo(x,y-s*.5); g.lineTo(x+w*.35,y-s*.32); g.closePath(); g.fill(); } } }
+function bgBush(g,x,y,s,col){ g.fillStyle=col; g.beginPath(); [[0,0,1],[s*.7,s*.1,.75],[-s*.7,s*.1,.75]].forEach(([dx,dy,k])=>{ g.moveTo(x+dx+s*k*.6,y+dy); g.arc(x+dx,y+dy,s*k*.6,0,7); }); g.fill(); g.stroke(); }
+
+function bgDialog(){ const P=AN.proj, W=P?P.w:1920, H=P?P.h:1080;
+  const sel=(k)=>`<div class="bg-opt"><small>${{time:'Time',sky:'Skyline',ground:'Ground'}[k]}</small><div class="seg">${BG_OPTS[k].map(([v,l])=>`<button data-bgo="${k}" data-v="${v}" class="${BGS[k]===v?'on':''}">${l}</button>`).join('')}</div></div>`;
+  openModal(`<div class="bgg"><div class="row"><h2 class="grow">🏗 Set Builder</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
+    <div class="bg-wrap"><canvas id="bgPrev" class="bg-prev"></canvas><div class="bg-side">${sel('time')}${sel('sky')}${sel('ground')}
+      <div class="bg-opt"><label class="tiny"><input type="checkbox" data-bgt="clouds" ${BGS.clouds?'checked':''}> Clouds</label><label class="tiny"><input type="checkbox" data-bgt="front" ${BGS.front?'checked':''}> Trees / bushes in front</label><label class="tiny"><input type="checkbox" data-bgt="fence" ${BGS.fence?'checked':''}> Picket fence</label></div>
+      <button class="btn sm" data-bga="shuffle">🎲 Shuffle</button></div></div>
+    <p class="tiny muted">Added to Animate as three layers (sky, skyline, ground). Add a 🎥 camera and pan it: the sky barely moves, the ground moves the most. That's parallax, baby.</p>
+    <div class="row"><button class="btn primary" data-bga="anim" ${P?'':'disabled'}>🎬 Add to this episode (3 depth layers)</button><button class="btn" data-bga="flat" ${P?'':'disabled'}>🖼 Add as one picture</button><button class="btn" data-bga="png">⬇ Download PNG</button></div></div>`);
+  const draw=()=>{ const L=bgLayers(BGS,W,H), cv=$('#bgPrev'); if(!cv) return; const k=Math.min(1,560/W); cv.width=W*k; cv.height=H*k; const g=cv.getContext('2d'); [L.far,L.mid,L.near].forEach(x=>g.drawImage(x,(L.Wd-W)/2,0,W,H,0,0,cv.width,cv.height)); AN._bg=L; };
+  draw(); const m=$('#modal');
+  m.onclick=async e=>{ const o=e.target.closest('[data-bgo]'); if(o){ BGS[o.dataset.bgo]=o.dataset.v; $$(`[data-bgo="${o.dataset.bgo}"]`).forEach(b=>b.classList.toggle('on',b===o)); return draw(); }
+    const a=e.target.closest('[data-bga]')?.dataset.bga; if(!a) return;
+    if(a==='shuffle'){ BGS.seed=Math.floor(Math.random()*1e6); return draw(); }
+    if(a==='png'){ const L=AN._bg, cv=document.createElement('canvas'); cv.width=W; cv.height=H; const g=cv.getContext('2d'); [L.far,L.mid,L.near].forEach(x=>g.drawImage(x,(L.Wd-W)/2,0,W,H,0,0,W,H)); cv.toBlob(b=>download(`set-${BGS.time}-${BGS.sky}-${BGS.ground}.png`,b)); return; }
+    if(a==='anim'||a==='flat'){ const L=AN._bg, nm=`${BG_OPTS.sky.find(x=>x[0]===BGS.sky)[1].split(' ').pop()} · ${BGS.time}`;
+      const put=async(cv,label)=>{ const blob=await new Promise(r=>cv.toBlob(r,'image/png')), id=uid(); await AnimDB.put('media',{id,name:label,type:'image',blob}); AN.media.push({id,name:label,type:'image'}); await anLoadImg({type:'media',ref:id}); return id; };
+      const Pj=AN.proj, t=0, end=Pj.dur; let ids;
+      if(a==='flat'){ const cv=document.createElement('canvas'); cv.width=L.Wd; cv.height=H; const g=cv.getContext('2d'); [L.far,L.mid,L.near].forEach(x=>g.drawImage(x,0,0)); ids=[[await put(cv,'Set: '+nm),'🌆 '+nm,1]]; }
+      else ids=[[await put(L.near,'Set ground: '+nm),'🌱 Ground ('+nm+')',1],[await put(L.mid,'Set skyline: '+nm),'🏙 Skyline ('+nm+')',.55],[await put(L.far,'Set sky: '+nm),'☁️ Sky ('+nm+')',.2]];
+      const i0=Pj.layers.findIndex(l=>l.kind==='background'); let at=i0<0?Pj.layers.length:i0;
+      ids.forEach(([id,label,par])=>{ const Ly=mkLayer('background',{name:label,src:{type:'media',ref:id},nw:L.Wd,nh:H,x:Pj.w/2,y:Pj.h/2,start:t,end}); Ly.parallax=par; Ly.lock=true; Pj.layers.splice(at++,0,Ly); });
+      closeModal(); anCommit(); anRenderAll(); unlock('setbuilder'); toast(a==='anim'?'🏗 Set added as 3 depth layers (locked so you don\'t drag them by accident). Pan a camera to see the parallax.':'🏗 Set added','good'); } }; }
+
+/* ---------- parallax: depth-aware camera ---------- */
+const parOf = L => (L&&L.parallax!=null&&L.kind!=='camera')?L.parallax:1;
+anDraw=function(c,P,t,{sel=null}={}){ AN._t=t; const W=P.w, H=P.h; c.save(); c.fillStyle=P.bg||'#000'; c.fillRect(0,0,W,H);
+  const cam=P.layers.find(L=>L.kind==='camera'&&!L.hide&&isActive(L,t)); let shake={x:0,y:0};
+  P.layers.forEach(L=>{ if(L.kind==='effect'&&L.fx?.type==='shake'&&!L.hide&&isActive(L,t)){ const lt=t-L.start, k=(L.fx.amt??.7)*Math.max(0,1-lt/Math.max(.2,L.end-L.start)*.6); shake.x+=nz(11,Math.floor(lt*30))*W*.012*k; shake.y+=nz(12,Math.floor(lt*30))*H*.015*k; } });
+  const C=cam?anEval(P,cam,t):null;
+  const camT=(par)=>{ c.translate(W/2+shake.x*par,H/2+shake.y*par); if(C){ const z=1+(Math.max(.05,C.s)-1)*par; c.scale(z,z); c.rotate(-C.rot*PI/180*par); c.translate(-(W/2+(C.x-W/2)*par),-(H/2+(C.y-H/2)*par)); } else c.translate(-W/2,-H/2); };
+  for(const L of P.layers.slice().reverse()){ if(L.hide||!isActive(L,t)||L.kind==='audio'||L.kind==='camera') continue;
+    const screen=(L.kind==='effect'&&FX_TYPES[L.fx?.type]?.screen)||(L.kind==='text'&&L.fixed); c.save(); if(!screen) camT(parOf(L));
+    try{ anDrawLayer(c,P,L,t,screen); }catch(e){ console.warn('draw',L.name,e); } c.restore(); }
+  c.restore(); };
+{ const camP=(P,t,L)=>{ const C=camOf(P,t); if(!C) return null; const p=parOf(L); return {x:P.w/2+(C.x-P.w/2)*p,y:P.h/2+(C.y-P.h/2)*p,z:1+(C.z-1)*p,r:C.r*p}; };
+  anToScreen=function(P,t,L,p){ if(L&&((L.kind==='text'&&L.fixed)||(L.kind==='effect'&&FX_TYPES[L.fx?.type]?.screen))) return p; const C=camP(P,t,L); if(!C) return p; const dx=p.x-C.x, dy=p.y-C.y, c=Math.cos(-C.r), s=Math.sin(-C.r); return {x:P.w/2+(dx*c-dy*s)*C.z, y:P.h/2+(dx*s+dy*c)*C.z}; };
+  anToWorld=function(P,t,L,p){ if(L&&((L.kind==='text'&&L.fixed)||(L.kind==='effect'&&FX_TYPES[L.fx?.type]?.screen))) return p; const C=camP(P,t,L); if(!C) return p; const dx=(p.x-P.w/2)/C.z, dy=(p.y-P.h/2)/C.z, c=Math.cos(C.r), s=Math.sin(C.r); return {x:C.x+dx*c-dy*s, y:C.y+dx*s+dy*c}; }; }
+/* Effect Controls: depth slider for any layer */
+{ const _fx=anFxRender; anFxRender=function(){ _fx(); const L=layerById(AN.sel), el=$('#anFx'); if(!L||!el||['camera','audio'].includes(L.kind)||(L.kind==='text'&&L.fixed)||(L.kind==='effect'&&FX_TYPES[L.fx?.type]?.screen)) return; const foot=el.querySelector('.fx-foot'); if(!foot) return;
+    foot.insertAdjacentHTML('beforebegin',`<details ${L.parallax!=null&&L.parallax!==1?'open':''}><summary>🏔 Depth (parallax)</summary><div class="fx-row2"><span>Depth</span><input type="range" id="pxDepth" min="0" max="1.5" step="0.05" value="${parOf(L)}"><small id="pxV">${parOf(L)===1?'normal':parOf(L)<1?'far away':'close up'}</small></div><p class="tiny muted">How much it moves when the 🎥 camera moves. 0 = stuck to the screen like the sky, 1 = normal, above 1 = right in front of the lens.</p></details>`); }; }
+document.addEventListener('input',e=>{ if(e.target.id!=='pxDepth') return; const L=layerById(AN.sel); if(!L) return; L.parallax=+e.target.value; $('#pxV').textContent=L.parallax===1?'normal':L.parallax<1?'far away':'close up'; anRedraw(); clearTimeout(AN._px); AN._px=setTimeout(anCommit,300); });
+/* entry points: library Sets tab + palette */
+{ const _lr=anLibRender; anLibRender=async function(){ await _lr(); if(AN.lib==='sets'){ const g=$('#anLib .lib-grid'); if(g&&!g.querySelector('[data-bgnew]')) g.insertAdjacentHTML('afterbegin','<div class="lib-imp" data-bgnew="1">🏗 Build a new set…</div>'); } }; }
+document.addEventListener('click',e=>{ if(e.target.closest('[data-bgnew]')){ e.stopPropagation(); bgDialog(); } },true);
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'🏗',label:'Set Builder: make a background',run:()=>{ if(current!=='anim') go('anim'); setTimeout(bgDialog,300); },kw:'background parallax sky city forest generator'}); return C; }; }
+ACH.push({id:'setbuilder',e:'🏗',n:'Location Scout',d:'Build a set in the Set Builder'});
+
+/* ===================================================================
+   [PARTS] Stick arms, legs and a talking mouth for ANY character
+   (object-show style). Poses (wave, point, shrug, hips, hold…) are
+   keyframed like expressions; arms reach for held props on their own;
+   legs walk when a Walking/Running state is on.
+   =================================================================== */
+const POSES={ rest:{e:'🧍',l:'Rest'}, wave:{e:'👋',l:'Wave'}, point:{e:'👉',l:'Point'}, shrug:{e:'🤷',l:'Shrug'}, hips:{e:'💁',l:'Hands on hips'}, up:{e:'🙌',l:'Arms up'}, hold:{e:'🤲',l:'Hold / reach'}, think:{e:'🤔',l:'Thinking'}, facepalm:{e:'🤦',l:'Facepalm'}, cross:{e:'🙅',l:'Arms crossed'}, flail:{e:'😱',l:'Flail'}, fight:{e:'🥊',l:'Fists up'} };
+const MOUTHS=[['auto','🗣 Auto (talks + expressions)'],['smile','🙂 Smile'],['grin','😁 Big grin'],['frown','🙁 Frown'],['o','😮 O'],['flat','😐 Flat'],['smirk','😏 Smirk']];
+function imgBox(img){ try{ const W=Math.min(200,img.width), H=Math.max(1,Math.round(W*img.height/img.width)), c=document.createElement('canvas'); c.width=W; c.height=H; const g=c.getContext('2d'); g.drawImage(img,0,0,W,H); const d=g.getImageData(0,0,W,H).data; let x0=W,y0=H,x1=0,y1=0;
+    for(let y=0;y<H;y++) for(let x=0;x<W;x++) if(d[(y*W+x)*4+3]>40){ if(x<x0)x0=x; if(x>x1)x1=x; if(y<y0)y0=y; if(y>y1)y1=y; }
+    if(x1<=x0||y1<=y0) return null; return {x0:x0/W,y0:y0/H,x1:x1/W,y1:y1/H,g,W,H}; }catch(e){ return null; } }
+function partsDefault(L){ const img=L&&(holdAt(L.vkeys,AN.t,null)?.src?AN.img[srcKey(holdAt(L.vkeys,AN.t,null).src)]:imgOf(L.src)); const B=img&&imgBox(img)||{x0:0,y0:0,x1:1,y1:1}, bh=B.y1-B.y0;
+  let skin=''; try{ if(B.g){ const px=B.g.getImageData(Math.round((B.x0+B.x1)/2*B.W),Math.round((B.y0+bh*.72)*B.H),1,1).data; if(px[3]>40) skin='#'+[px[0],px[1],px[2]].map(v=>v.toString(16).padStart(2,'0')).join(''); } }catch(e){}
+  return {arms:{on:true,sy:+((B.y0+bh*.5)-.5).toFixed(3),sx:+(Math.max(.5-B.x0,B.x1-.5)*.92).toFixed(3),len:+clamp(bh*.75,.18,.7).toFixed(3),thick:.022,color:'#000000',hands:true},
+    legs:{on:true,hy:+(B.y1-.5-bh*.04).toFixed(3),hx:+((B.x1-B.x0)*.22).toFixed(3),len:+clamp(bh*.55,.12,.5).toFixed(3),thick:.026,color:'#000000',feet:true},
+    mouth:{on:false,x:0,y:+((B.y0+bh*.72)-.5).toFixed(3),w:+clamp((B.x1-B.x0)*.3,.08,.4).toFixed(3),style:'auto',cover:true,skin}}; }
+function poseAngles(name,t){ const w=Math.sin(t*12), s=Math.sin(t*20);
+  switch(name){ case 'wave': return {L:[12,-8],R:[150,25+28*w]}; case 'point': return {L:[12,-8],R:[95,0]}; case 'shrug': return {L:[65,85],R:[65,85]}; case 'hips': return {L:[55,-115],R:[55,-115]};
+    case 'up': return {L:[160+6*w,8],R:[160-6*w,8]}; case 'hold': return {L:[12,-8],R:[70,-55]}; case 'think': return {L:[25,-120],R:[35,-150]}; case 'facepalm': return {L:[12,-8],R:[28,-168]};
+    case 'cross': return {L:[25,-138],R:[25,-138]}; case 'flail': return {L:[120+40*s,40*w],R:[120-40*s,-40*w]}; case 'fight': return {L:[40,-140+8*s],R:[40,-140-8*s]}; default: return {L:[12,-8],R:[12,-8]}; } }
+function poseAt(L,t){ const K=L.poseKeys||[]; let cur=null, prev=null; for(const k of K){ if(k.t<=t+1e-6){ prev=cur; cur=k; } else break; }
+  const A=poseAngles(cur?cur.v:'rest',t); if(!cur) return {A,name:'rest'}; const k=clamp((t-cur.t)/.22,0,1); if(k>=1) return {A,name:cur.v};
+  const B=poseAngles(prev?prev.v:'rest',t), mix=(a,b)=>a.map((v,i)=>b[i]+(v-b[i])*EASES.ease(k)); return {A:{L:mix(A.L,B.L),R:mix(A.R,B.R)},name:cur.v}; }
+function activeMove(L,t){ const s=(L.states||[]).find(s=>t>=s.t0&&t<s.t1&&['walk','run','sneak','dance'].includes(s.type)); return s?{type:s.type,lt:t-s.t0}:null; }
+function ik2(sx,sy,tx,ty,a,b,bendSign){ let dx=tx-sx, dy=ty-sy, d=Math.hypot(dx,dy)||1; const dd=clamp(d,Math.abs(a-b)+1,a+b-1), base=Math.atan2(dy,dx), ca=clamp((a*a+dd*dd-b*b)/(2*a*dd),-1,1), A=base+bendSign*Math.acos(ca), ex=sx+Math.cos(A)*a, ey=sy+Math.sin(A)*a; return [ex,ey,sx+Math.cos(base)*dd,sy+Math.sin(base)*dd]; }
+function drawLimb(c,pts,thick,col,end){ c.save(); c.lineCap='round'; c.lineJoin='round'; c.strokeStyle=col; c.lineWidth=thick; c.beginPath(); c.moveTo(pts[0],pts[1]); c.lineTo(pts[2],pts[3]); c.lineTo(pts[4],pts[5]); c.stroke(); if(end) end(pts[4],pts[5]); c.restore(); }
+function drawLegs(c,L,w,h,t){ const G=L.parts.legs, mv=activeMove(L,t), th=Math.max(2,G.thick*h), len=G.len*h, hy=G.hy*h, sp={walk:2.2,run:4.4,sneak:1.2,dance:2}[mv?.type]||0, amp={walk:28,run:42,sneak:18,dance:20}[mv?.type]||0;
+  [-1,1].forEach(side=>{ const ph=mv?Math.sin(mv.lt*PI*sp+(side>0?0:PI)):0, ang=(ph*amp)*PI/180, knee=mv?Math.max(0,-ph)*35*PI/180:0, hx=side*G.hx*w, ky=hy+Math.cos(ang)*len*.5, kx=hx+Math.sin(ang)*len*.5, fa=ang-knee, fx=kx+Math.sin(fa)*len*.5, fy=ky+Math.cos(fa)*len*.5;
+    drawLimb(c,[hx,hy,kx,ky,fx,fy],th,G.color,G.feet?(x,y)=>{ c.fillStyle=G.color; c.beginPath(); c.ellipse(x+th*.9,y,th*1.6,th*.85,0,0,7); c.fill(); }:null); }); }
+function drawArms(c,L,w,h,t){ const A=L.parts.arms, th=Math.max(2,A.thick*h), a=A.len*h*.5, b=A.len*h*.5, sy=A.sy*h, sx=A.sx*w; const {A:ang,name}=poseAt(L,t), mv=activeMove(L,t);
+  let swing=0; if(mv&&name==='rest'){ const sp={walk:2.2,run:4.4,sneak:1.2,dance:2}[mv.type]; swing=Math.sin(mv.lt*PI*sp)*({run:40,dance:55}[mv.type]||25); }
+  const pk=(AN.proj?.layers||[]).map(p=>({p,k:holdAt(p.parentKeys,t,null)})).find(o=>o.k&&o.k.pid===L.id&&isActive(o.p,t));
+  [-1,1].forEach(side=>{ const S=side>0?ang.R:ang.L, x0=side*sx; let pts;
+    if(side>0&&pk){ const [ex,ey,tx,ty]=ik2(x0,sy,pk.k.ox,pk.k.oy,a,b,-1); pts=[x0,sy,ex,ey,tx,ty]; }
+    else { const t1=(S[0]+(side>0?swing:-swing))*PI/180, t2=t1+S[1]*PI/180, ex=x0+side*Math.sin(t1)*a, ey=sy+Math.cos(t1)*a; pts=[x0,sy,ex,ey,ex+side*Math.sin(t2)*b,ey+Math.cos(t2)*b]; }
+    drawLimb(c,pts,th,A.color,A.hands?(x,y)=>{ c.fillStyle='#fff'; c.lineWidth=th*.45; c.strokeStyle=A.color; c.beginPath(); c.arc(x,y,th*1.05,0,7); c.fill(); c.stroke(); }:null); }); }
+function drawMouthPart(c,L,w,h,st){ const M=L.parts.mouth, cx=M.x*w, cy=M.y*h, mw=M.w*w, m=clamp(st.m||0,0,1); let style=M.style==='auto'?({happy:'smile',angry:'flat',sad:'frown',surprised:'o',scared:'o',smug:'smirk'}[st.expr]||'smile'):M.style;
+  c.save(); c.lineCap='round'; c.lineJoin='round'; c.strokeStyle='#000'; c.lineWidth=Math.max(2,mw*.07);
+  if(M.cover){ c.fillStyle=M.skin||rigFor(L.src)?.skin||'#ffffff'; c.beginPath(); c.ellipse(cx,cy,mw*.62,mw*.36,0,0,7); c.fill(); }
+  if(m>.12||style==='o'){ const oh=mw*(style==='o'?.38+m*.2:.12+m*.42), ow=style==='o'?mw*.42:mw*.5; c.fillStyle='#3a0d0d'; c.beginPath();
+    if(style==='smile'||style==='grin'){ c.moveTo(cx-ow,cy-oh*.25); c.quadraticCurveTo(cx,cy-oh*.45,cx+ow,cy-oh*.25); c.quadraticCurveTo(cx+ow*.8,cy+oh,cx,cy+oh); c.quadraticCurveTo(cx-ow*.8,cy+oh,cx-ow,cy-oh*.25); }
+    else c.ellipse(cx,cy,ow*(style==='o'?.7:1),oh/2,0,0,7);
+    c.fill(); c.stroke(); c.save(); c.clip(); c.fillStyle='#e05a6a'; c.beginPath(); c.ellipse(cx,cy+oh*.45,ow*.55,oh*.35,0,0,7); c.fill(); if(style==='grin'||st.expr==='angry'){ c.fillStyle='#fff'; c.fillRect(cx-ow,cy-oh*.6,ow*2,oh*.28); } c.restore(); }
+  else { c.beginPath(); const k=mw*.5;
+    if(style==='smile'||style==='grin'){ c.moveTo(cx-k,cy-k*.15); c.quadraticCurveTo(cx,cy+k*.55,cx+k,cy-k*.15); if(style==='grin'){ c.closePath(); c.fillStyle='#fff'; c.fill(); } }
+    else if(style==='frown'){ c.moveTo(cx-k,cy+k*.2); c.quadraticCurveTo(cx,cy-k*.45,cx+k,cy+k*.2); }
+    else if(style==='smirk'){ c.moveTo(cx-k*.8,cy+k*.05); c.quadraticCurveTo(cx+k*.3,cy+k*.2,cx+k,cy-k*.3); }
+    else { c.moveTo(cx-k*.8,cy); c.lineTo(cx+k*.8,cy); } c.stroke(); }
+  c.restore(); }
+{ const _dp=drawPuppet; drawPuppet=function(c,L,img,w,h,st){ const P=L.parts, t=AN._t||0;
+    if(!P) return _dp(c,L,img,w,h,st);
+    if(P.legs?.on) try{ drawLegs(c,L,w,h,t); }catch(e){}
+    if(P.arms?.on&&P.arms.behind) try{ drawArms(c,L,w,h,t); }catch(e){}
+    _dp(c,L,img,w,h,st);
+    if(P.mouth?.on) try{ drawMouthPart(c,L,w,h,st); }catch(e){}
+    if(P.arms?.on&&!P.arms.behind) try{ drawArms(c,L,w,h,t); }catch(e){} }; }
+/* hit box grows to include legs so you can still grab the character by its feet */
+
+/* ---------- Effect Controls: 🦾 Arms, legs & mouth ---------- */
+{ const _fx=anFxRender; anFxRender=function(){ _fx(); const L=layerById(AN.sel), el=$('#anFx'); if(!L||!el||L.kind!=='character') return; const foot=el.querySelector('.fx-foot'); if(!foot) return; const P=L.parts, on=!!P;
+    const sl=(id,lab,v,min,max,st)=>`<div class="fx-row2"><span>${lab}</span><input type="range" data-pps="${id}" min="${min}" max="${max}" step="${st}" value="${v}"></div>`;
+    const cur=holdAt(L.poseKeys||[],AN.t,null)?.v||'rest';
+    foot.insertAdjacentHTML('beforebegin',`<details ${on?'open':''} class="parts-sec"><summary>🦾 Arms, legs & mouth</summary>
+      ${on?`<div class="row tiny"><label><input type="checkbox" data-prt="arms" ${P.arms.on?'checked':''}> Arms</label><label><input type="checkbox" data-prt="legs" ${P.legs.on?'checked':''}> Legs</label><label><input type="checkbox" data-prt="mouth" ${P.mouth.on?'checked':''}> Mouth</label><label><input type="checkbox" data-prt="behind" ${P.arms.behind?'checked':''}> Arms behind</label></div>
+        ${P.arms.on?`<div class="fx-cat">Pose at the playhead</div><div class="pose-grid">${Object.entries(POSES).map(([k,p])=>`<button data-pose="${k}" class="${cur===k?'on':''}" title="${p.l}">${p.e}<small>${p.l}</small></button>`).join('')}</div>
+          ${(L.poseKeys||[]).length?`<div class="tiny muted" style="margin:4px 0">${L.poseKeys.map((k,i)=>`<span class="pose-k">${POSES[k.v]?.e||''} ${fmtT(k.t)} <a href="#" data-posedel="${i}">✕</a></span>`).join(' ')}</div>`:''}
+          <p class="tiny muted">🤲 Holding a prop? The right hand reaches for it on its own.</p>`:''}
+        <details><summary class="tiny">📐 Fit them to this character</summary>
+          ${sl('arms.sy','Shoulders ↕',P.arms.sy,-.5,.5,.01)}${sl('arms.sx','Shoulders ↔',P.arms.sx,.05,.8,.01)}${sl('arms.len','Arm length',P.arms.len,.1,1,.01)}
+          ${sl('legs.hy','Hips ↕',P.legs.hy,0,.8,.01)}${sl('legs.hx','Hips ↔',P.legs.hx,0,.5,.01)}${sl('legs.len','Leg length',P.legs.len,.05,.9,.01)}
+          ${sl('arms.thick','Thickness',P.arms.thick,.008,.06,.002)}<div class="fx-row2"><span>Color</span><input type="color" data-pc="color" value="${P.arms.color}"><label class="tiny"><input type="checkbox" data-prt="hands" ${P.arms.hands?'checked':''}> Hands</label><label class="tiny"><input type="checkbox" data-prt="feet" ${P.legs.feet?'checked':''}> Feet</label></div></details>
+        ${P.mouth.on?`<details open><summary class="tiny">👄 Mouth</summary><div class="fx-row2"><span>Style</span><select data-pm="style">${MOUTHS.map(([v,l])=>`<option value="${v}" ${P.mouth.style===v?'selected':''}>${l}</option>`).join('')}</select></div>
+          ${sl('mouth.x','Mouth ↔',P.mouth.x,-.5,.5,.01)}${sl('mouth.y','Mouth ↕',P.mouth.y,-.5,.5,.01)}${sl('mouth.w','Mouth size',P.mouth.w,.05,.6,.01)}
+          <div class="fx-row2"><label class="tiny"><input type="checkbox" data-prt="cover" ${P.mouth.cover?'checked':''}> Cover the drawn mouth</label><input type="color" data-pc="skin" value="${P.mouth.skin||rigFor(L.src)?.skin||'#ffffff'}" title="Face color under the mouth"></div></details>`:''}
+        <button class="btn sm" data-prt="remove">Remove all parts</button>`
+      :`<p class="tiny muted">Give ${esc(L.name)} stick arms (with poses like wave, point, shrug, hold), walking legs and a talking mouth. Perfect for imported pictures that don't have any.</p><button class="btn sm primary" data-prt="add">🦾 Add arms & legs</button>`}</details>`); }; }
+const ppSet=(L,path,v)=>{ const [a,b]=path.split('.'); L.parts[a][b]=v; };
+document.addEventListener('input',e=>{ const t=e.target, L=layerById(AN.sel); if(!L||!L.parts||!t.closest('#anFx .parts-sec')) return;
+  if(t.dataset.pps){ ppSet(L,t.dataset.pps,+t.value); if(t.dataset.pps==='arms.thick') L.parts.legs.thick=+t.value*1.15; }
+  if(t.dataset.pc==='color'){ L.parts.arms.color=t.value; L.parts.legs.color=t.value; } if(t.dataset.pc==='skin') L.parts.mouth.skin=t.value;
+  anRedraw(); clearTimeout(AN._pp); AN._pp=setTimeout(anCommit,300); });
+document.addEventListener('change',e=>{ const t=e.target, L=layerById(AN.sel); if(!L||!t.closest('#anFx .parts-sec')) return;
+  if(t.dataset.pm==='style'){ L.parts.mouth.style=t.value; anCommit(); anRedraw(); }
+  const k=t.dataset.prt; if(k&&t.type==='checkbox'&&L.parts){ if(['arms','legs','mouth'].includes(k)) L.parts[k].on=t.checked; if(k==='behind') L.parts.arms.behind=t.checked; if(k==='hands') L.parts.arms.hands=t.checked; if(k==='feet') L.parts.legs.feet=t.checked; if(k==='cover') L.parts.mouth.cover=t.checked; anCommit(); anRedraw(); anFxRender(); } });
+document.addEventListener('click',e=>{ const t=e.target; if(!t.closest('#anFx .parts-sec')) return; const L=layerById(AN.sel); if(!L) return;
+  const a=t.closest('button[data-prt]')?.dataset.prt; if(a==='add'){ L.parts=partsDefault(L); L.poseKeys=L.poseKeys||[]; anCommit(); anRedraw(); anFxRender(); unlock('parts1'); return toast('🦾 Arms and legs on! Fit them with 📐, pick poses, and add a Walking state to make the legs walk.'); }
+  if(a==='remove'){ if(!confirm('Remove the arms, legs and mouth?')) return; delete L.parts; anCommit(); anRedraw(); return anFxRender(); }
+  const p=t.closest('[data-pose]'); if(p){ L.poseKeys=L.poseKeys||[]; setHoldKey(L.poseKeys,AN.t,{v:p.dataset.pose}); anCommit(); anRedraw(); anFxRender(); if(!AN.playing) anPlayRange(AN.t,AN.t+1.2); return; }
+  const d=t.closest('[data-posedel]'); if(d){ e.preventDefault(); L.poseKeys.splice(+d.dataset.posedel,1); anCommit(); anRedraw(); anFxRender(); } });
+ACH.push({id:'parts1',e:'🦾',n:'Limb Donor',d:'Give a character arms and legs'});
+
+/* ===================================================================
+   [NOTES] Sticky notes on anything: a script line, a moment in an
+   animation, a spot in a song, a drawing, a character. Replies,
+   resolve, jump-to. They sync with a shared show too.
+   =================================================================== */
+S.notes=S.notes||[];
+const NOTE_COLS=['#ffe066','#ffb3c1','#b5e8ff','#c6f6c6','#e0c8ff'];
+function myName(){ return (S.settings.myName||'').trim(); }
+function askName(){ if(myName()) return myName(); const n=prompt('Your name (shown on your notes)','')||''; S.settings.myName=n.trim()||'Someone'; save(); return S.settings.myName; }
+function noteContext(){ const scr=current;
+  if(scr==='desk'){ const s=activeScript(); if(typeof syncEditor==='function') syncEditor(); const blocks=[...ED.children], bi=Math.max(0,blocks.indexOf(curBlk)); const txt=(curBlk?.textContent||'').trim();
+    return {type:'script',id:s.id,bi,snip:txt.slice(0,60),label:`${s.title||'Untitled'} · ${txt?'“'+txt.slice(0,38)+(txt.length>38?'…':'')+'”':'line '+(bi+1)}`}; }
+  if(scr==='anim'&&AN.proj) return {type:'anim',id:AN.proj.id,t:+AN.t.toFixed(3),label:`${AN.proj.name} @ ${fmtTC(AN.t,AN.proj.fps)}`};
+  if(scr==='pit'&&PIT.song){ const bl=barLen(PIT.song); return {type:'pit',id:PIT.song.id,b:+PIT.pos.toFixed(3),label:`${PIT.song.name} · bar ${Math.floor(PIT.pos/bl)+1}`}; }
+  if(scr==='studio'&&ST.doc&&$('#stEditor')?.offsetParent!==null) return {type:'drawing',id:ST.doc.id,label:`🎨 ${ST.doc.name||'Drawing'}`};
+  return {type:'screen',id:scr,label:SCREEN_NAMES[scr]||scr}; }
+function noteJump(n){ const w=n.where; closeNotes(false);
+  if(w.type==='script'){ const s=S.scripts.find(x=>x.id===w.id); if(!s) return toast('That script is gone.','bad'); S.activeScript=s.id; save(); go('desk'); setTimeout(()=>{ loadScriptIntoEditor(s); const B=[...ED.children]; let el=B[w.bi]; if(w.snip&&(!el||!el.textContent.trim().startsWith(w.snip.slice(0,20)))) el=B.find(b=>b.textContent.trim().startsWith(w.snip.slice(0,20)))||el; if(el){ el.scrollIntoView({block:'center'}); el.classList.add('note-flash'); setTimeout(()=>el.classList.remove('note-flash'),1600); } notesMark(); },250); return; }
+  if(w.type==='anim'){ go('anim'); setTimeout(async()=>{ if(!AN.proj||AN.proj.id!==w.id){ const p=AN.list.find(x=>x.id===w.id); if(p) await anOpen(JSON.parse(JSON.stringify(p))); } anSeek(w.t); },350); return; }
+  if(w.type==='pit'){ go('pit'); setTimeout(async()=>{ if(!PIT.song||PIT.song.id!==w.id){ const s=(PIT.list||[]).find(x=>x.id===w.id); if(s) await pitOpen(JSON.parse(JSON.stringify(s))); } pitSeek(w.b); },400); return; }
+  if(w.type==='drawing'){ go('studio'); setTimeout(()=>{ if(typeof stOpen==='function') stOpen(w.id); },300); return; }
+  if(w.type==='screen') go(w.id); }
+function notesOpenCount(){ return S.notes.filter(n=>!n.done).length; }
+function notesBadge(){ const b=$('#notesBtn'); if(!b) return; const n=notesOpenCount(); b.dataset.n=n||''; b.classList.toggle('has',n>0); }
+let NOTES_FILTER='here';
+function notesHere(n){ const c=noteContext(); if(n.where.type!==c.type) return false; return c.type==='screen'?n.where.id===c.id:n.where.id===c.id; }
+function renderNotes(){ const el=$('#notesPanel'); if(!el) return; const list=S.notes.filter(n=>NOTES_FILTER==='done'?n.done:!n.done).filter(n=>NOTES_FILTER!=='here'||notesHere(n)).sort((a,b)=>b.at-a.at), ctx=noteContext();
+  el.innerHTML=`<div class="np-head"><b>🗒 Notes</b><span class="seg mini">${[['here','Here'],['all','All open'],['done','Done']].map(([k,l])=>`<button data-nf="${k}" class="${NOTES_FILTER===k?'on':''}">${l}</button>`).join('')}</span><button class="btn sm" data-nx="1" aria-label="Close notes">✕</button></div>
+    <div class="np-new"><div class="tiny muted">On: <b>${esc(ctx.label)}</b></div><textarea class="txt" id="npText" rows="2" placeholder="Leave a note here… (⌘/Ctrl+Enter)"></textarea><div class="row"><span class="np-cols">${NOTE_COLS.map((c,i)=>`<i data-nc="${c}" class="${i===0?'on':''}" style="background:${c}"></i>`).join('')}</span><span class="grow"></span><button class="btn sm primary" id="npAdd">📌 Add note</button></div></div>
+    <div class="np-list">${list.length?list.map(n=>`<div class="np-note ${n.done?'done':''}" data-nid="${n.id}" style="--nc:${n.color||NOTE_COLS[0]}"><button class="np-where" data-njump="${n.id}" title="Go there">📍 ${esc(n.where.label)}</button>
+      <div class="np-text">${esc(n.text).replace(/\n/g,'<br>')}</div><div class="np-meta">${esc(n.author||'Someone')} · ${ago(n.at)}</div>
+      ${(n.replies||[]).map(r=>`<div class="np-reply"><b>${esc(r.author||'Someone')}</b> ${esc(r.text)} <small>${ago(r.at)}</small></div>`).join('')}
+      <div class="np-act"><button data-nact="reply">↩ Reply</button><button data-nact="done">${n.done?'↺ Reopen':'✓ Done'}</button><button data-nact="del" title="Delete">🗑</button></div></div>`).join(''):`<p class="tiny muted" style="padding:10px">${NOTES_FILTER==='here'?'No notes on this yet.':NOTES_FILTER==='done'?'Nothing resolved yet.':'No open notes. Clean desk!'}</p>`}</div>`;
+  notesBadge(); }
+function openNotes(){ if(!$('#notesPanel')) document.body.insertAdjacentHTML('beforeend','<aside class="notes-panel" id="notesPanel" aria-label="Notes"></aside>'); $('#notesPanel').classList.add('on'); renderNotes(); setTimeout(()=>$('#npText')?.focus(),60); }
+function closeNotes(){ $('#notesPanel')?.classList.remove('on'); }
+function addNote(text,color){ text=(text||'').trim(); if(!text) return; const n={id:uid(),where:noteContext(),text,color:color||NOTE_COLS[0],author:askName(),at:Date.now(),updated:Date.now(),done:false,replies:[]}; S.notes.push(n); save(); renderNotes(); notesMark(); unlock('note1'); toast('📌 Note added'); return n; }
+document.addEventListener('click',e=>{ const t=e.target; if(t.closest('#notesBtn')) return $('#notesPanel.on')?closeNotes():openNotes();
+  if(!t.closest('#notesPanel')) return; if(t.closest('[data-nx]')) return closeNotes();
+  const f=t.closest('[data-nf]'); if(f){ NOTES_FILTER=f.dataset.nf; return renderNotes(); }
+  const c=t.closest('[data-nc]'); if(c){ $$('#notesPanel [data-nc]').forEach(x=>x.classList.toggle('on',x===c)); return; }
+  if(t.closest('#npAdd')){ return addNote($('#npText').value,$('#notesPanel [data-nc].on')?.dataset.nc); }
+  const j=t.closest('[data-njump]'); if(j){ const n=S.notes.find(x=>x.id===j.dataset.njump); if(n) noteJump(n); return; }
+  const a=t.closest('[data-nact]'); if(a){ const n=S.notes.find(x=>x.id===a.closest('[data-nid]').dataset.nid); if(!n) return; const k=a.dataset.nact;
+    if(k==='done'){ n.done=!n.done; n.updated=Date.now(); }
+    if(k==='del'){ if(!confirm('Delete this note?')) return; S.notes=S.notes.filter(x=>x!==n); }
+    if(k==='reply'){ const r=prompt('Reply'); if(!r) return; n.replies=n.replies||[]; n.replies.push({text:r,author:askName(),at:Date.now()}); n.updated=Date.now(); }
+    save(); renderNotes(); notesMark(); } });
+document.addEventListener('keydown',e=>{ if(e.target.id==='npText'&&e.key==='Enter'&&(e.metaKey||e.ctrlKey)){ e.preventDefault(); $('#npAdd').click(); } if(e.key==='Escape'&&$('#notesPanel.on')&&!$('#modalBg').classList.contains('on')) closeNotes(); });
+/* markers: script lines + animation ruler */
+function notesMark(){ notesBadge(); if(current==='desk'){ const s=activeScript(); const B=[...ED.children]; B.forEach(b=>b.classList.remove('has-note')); S.notes.filter(n=>!n.done&&n.where.type==='script'&&n.where.id===s?.id).forEach(n=>{ let el=B[n.where.bi]; if(n.where.snip&&(!el||!el.textContent.trim().startsWith(n.where.snip.slice(0,20)))) el=B.find(b=>b.textContent.trim().startsWith(n.where.snip.slice(0,20)))||el; if(el){ el.classList.add('has-note'); el.dataset.noteId=n.id; } }); }
+  if(current==='anim'&&AN.proj) anNoteFlags(); }
+function anNoteFlags(){ const r=$('#tlRuler'); if(!r||!AN.proj) return; r.querySelectorAll('.tl-note').forEach(x=>x.remove()); S.notes.filter(n=>!n.done&&n.where.type==='anim'&&n.where.id===AN.proj.id).forEach(n=>r.insertAdjacentHTML('beforeend',`<b class="tl-note" data-njump2="${n.id}" style="left:${n.where.t*AN.pps}px;--nc:${n.color}" title="${esc(n.author)}: ${esc(n.text)}">🗒</b>`)); }
+document.addEventListener('pointerdown',e=>{ const f=e.target.closest('[data-njump2]'); if(!f) return; e.stopPropagation(); e.preventDefault(); const n=S.notes.find(x=>x.id===f.dataset.njump2); if(n){ anSeek(n.where.t); NOTES_FILTER='here'; openNotes(); } },true);
+document.addEventListener('click',e=>{ const b=e.target.closest('#editor .has-note'); if(!b||e.offsetX<b.clientWidth-30) return; NOTES_FILTER='here'; openNotes(); });
+{ const _r=anTlRender; anTlRender=function(){ _r(); anNoteFlags(); }; }
+{ const _l=loadScriptIntoEditor; loadScriptIntoEditor=function(s){ _l(s); setTimeout(notesMark,30); }; }
+{ const _g=go; go=function(scr,then){ _g(scr,then); setTimeout(()=>{ notesMark(); if($('#notesPanel.on')) renderNotes(); },150); }; }
+/* header button + palette */
+$('#helpBtn').insertAdjacentHTML('beforebegin','<button class="iconbtn" id="notesBtn" title="Notes: leave sticky notes on scripts, animations, songs…" aria-label="Notes">🗒</button>');
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'📌',label:'Add a note here',run:()=>openNotes(),kw:'note comment sticky feedback'},{ico:'🗒',label:'Show all notes',run:()=>{ NOTES_FILTER='all'; openNotes(); },kw:'notes comments'}); return C; }; }
+ACH.push({id:'note1',e:'📌',n:'Script Doctor',d:'Leave a note'});
+setTimeout(notesBadge,500);
+
+/* ===================================================================
+   [PHONE MODE] Small-screen helpers. The CSS does most of the work;
+   this adds the Scripts drawer button, "best on a computer" notes for
+   the heavy rooms, and keeps the active tab scrolled into view.
+   =================================================================== */
+const PHONE_MQ=matchMedia('(max-width:700px)');
+function isPhone(){ return PHONE_MQ.matches; }
+function phSync(){ document.body.classList.toggle('phone',isPhone()); if(!isPhone()) $('#desk')?.classList.remove('ph-scripts'); }
+(PHONE_MQ.addEventListener?PHONE_MQ.addEventListener('change',phSync):PHONE_MQ.addListener(phSync)); phSync();
+SCREEN_NAMES.anim=SCREEN_NAMES.anim||'Animate';
+/* scripts drawer on the desk */
+$('#typeBtns')?.insertAdjacentHTML('beforebegin','<button class="tbtn ph-only" id="phScripts" title="Your scripts">📄 Scripts</button>');
+function phScripts(on){ const d=$('#desk'); if(!d) return; d.classList.toggle('ph-scripts',on===undefined?!d.classList.contains('ph-scripts'):on); }
+document.addEventListener('click',e=>{ if(e.target.closest('#phScripts')) return phScripts();
+  const d=$('#desk'); if(!d||!d.classList.contains('ph-scripts')) return;
+  if(e.target===d||e.target.closest('#scriptList .script-item')&&!e.target.closest('button,input')) setTimeout(()=>phScripts(false),60);
+  if(e.target.closest('#newScript')) setTimeout(()=>phScripts(false),60); });
+/* "best on a computer" notes for the big rooms */
+const PH_HEAVY={anim:'🎬 Animating is way easier on a computer. On your phone you can still scrub, preview and leave notes.',pit:'🎻 The Pit is built for a big screen + keyboard. Hum ideas in the 🗣 Hum button, finish the song on a computer.',studio:'🎨 Drawing works with a finger or stylus, but the tools are roomy. A tablet or computer is nicer.',shorts:'📱 Shorts Factory works best on a computer.'};
+function phRoomNote(scr){ $$('.ph-room-note').forEach(x=>x.remove()); if(!isPhone()||!PH_HEAVY[scr]) return; S.settings.phSeen=S.settings.phSeen||{}; if(S.settings.phSeen[scr]) return;
+  const sc=$('#scr-'+scr); if(!sc) return; sc.insertAdjacentHTML('afterbegin',`<div class="ph-room-note" role="note"><span>${PH_HEAVY[scr]}</span><button class="btn sm" data-phok="${scr}">Got it</button></div>`); }
+document.addEventListener('click',e=>{ const b=e.target.closest('[data-phok]'); if(!b) return; S.settings.phSeen=S.settings.phSeen||{}; S.settings.phSeen[b.dataset.phok]=true; save(); b.closest('.ph-room-note').remove(); });
+{ const _g=go; go=function(scr,then){ _g(scr,then); if(isPhone()){ phScripts(false); setTimeout(()=>{ $('#tabs button.on')?.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'}); phRoomNote(scr); },120); } }; }
+/* voice booth: keep the current line in view after each take on phones */
+document.addEventListener('click',e=>{ if(!isPhone()||!e.target.closest('#vbLines .vb-line')) return; setTimeout(()=>$('#vbMain')?.scrollIntoView({block:'start',behavior:'smooth'}),80); });
+
+/* ===================================================================
+   [SHARED SHOW] Sync a show between computers through a private
+   GitHub repo. Every script, character, lore entry, note, song,
+   drawing, animation and voice take is its own file in the repo, so
+   two people editing different things never collide. When they DO
+   edit the same thing, it's a 3-way merge (script lines merge line by
+   line; a true clash keeps both versions, flagged with ✂ notes).
+   No server: the browser talks to the GitHub API directly.
+   =================================================================== */
+const SY_KEY='nenjac.sync', SY_MAX=45*1048576, SY_POLL=20000;
+const SY_COLS=['scripts','chars','lore','notes','wild'], SY_MISC=['wheels','voicePresets','animMoves','rigs','voices'];
+const SY_ENC=new TextEncoder(), SY_DEC=new TextDecoder();
+const SY={cfg:null,base:{},rmap:null,fp:{},touched:new Set(),busy:false,again:false,timer:null,poll:null,state:'off',msg:'',err:'',lastOk:0,fails:0,nextTry:0,hold:null,quiet:false,mode:null,activity:[],prog:'',warned:{}};
+function syLoadCfg(){ try{ return JSON.parse(localStorage.getItem(SY_KEY)||'null'); }catch(e){ return null; } }
+function sySaveCfg(){ try{ SY.cfg?localStorage.setItem(SY_KEY,JSON.stringify(SY.cfg)):localStorage.removeItem(SY_KEY); }catch(e){} }
+SY.cfg=syLoadCfg();
+function syApi(){ try{ return localStorage.getItem('nenjac.ghApi')||'https://api.github.com'; }catch(e){ return 'https://api.github.com'; } }
+const syOn=()=>!!(SY.cfg&&SY.cfg.on);
+
+/* ---------- local bookkeeping (IndexedDB: what each file looked like at the last sync) ---------- */
+const SyncDB={ db:null, open(){ return new Promise(res=>{ if(this.db) return res(this.db); try{ const r=indexedDB.open('nenjac-sync',1); r.onupgradeneeded=()=>{ ['base','fp','meta'].forEach(n=>r.result.createObjectStore(n,{keyPath:'k'})); }; r.onsuccess=()=>{ this.db=r.result; res(this.db); }; r.onerror=()=>res(null); }catch(e){ res(null); } }); },
+  async all(st){ const db=await this.open(); if(!db) return []; return new Promise(res=>{ const q=db.transaction(st).objectStore(st).getAll(); q.onsuccess=()=>res(q.result||[]); q.onerror=()=>res([]); }); },
+  async write(st,puts=[],dels=[]){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction(st,'readwrite'), o=tx.objectStore(st); puts.forEach(x=>o.put(x)); dels.forEach(k=>o.delete(k)); tx.oncomplete=res; tx.onerror=res; }); },
+  async clear(){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction(['base','fp','meta'],'readwrite'); ['base','fp','meta'].forEach(n=>tx.objectStore(n).clear()); tx.oncomplete=res; tx.onerror=res; }); } };
+async function syLoadLocal(){ SY.base={}; (await SyncDB.all('base')).forEach(x=>SY.base[x.k]=x); SY.fp={}; (await SyncDB.all('fp')).forEach(x=>SY.fp[x.k]=x); const metas=await SyncDB.all('meta'), m=metas.find(x=>x.k==='remote'); SY.sent=new Set(metas.find(x=>x.k==='sent')?.list||[]); SY.rmap=m&&SY.cfg&&m.head===SY.cfg.lastCommit?m.map:null; }
+
+/* ---------- hashing (git blob ids, so we know what GitHub already has) ---------- */
+function sha1js(u8){ /* fallback for browsers without crypto.subtle */ const l=u8.length, nb=((l+8)>>6)+1, w=new Uint32Array(nb*16); for(let i=0;i<l;i++) w[i>>2]|=u8[i]<<(24-(i%4)*8); w[l>>2]|=0x80<<(24-(l%4)*8); w[nb*16-1]=l*8; w[nb*16-2]=Math.floor(l/0x20000000);
+  let a=0x67452301,b=0xEFCDAB89,c=0x98BADCFE,d=0x10325476,e=0xC3D2E1F0; const W=new Uint32Array(80);
+  for(let i=0;i<w.length;i+=16){ for(let t=0;t<80;t++){ W[t]=t<16?w[i+t]:((x=>(x<<1)|(x>>>31))(W[t-3]^W[t-8]^W[t-14]^W[t-16])); } let A=a,B=b,C=c,D=d,E=e;
+    for(let t=0;t<80;t++){ const f=t<20?(B&C)|(~B&D):t<40?B^C^D:t<60?(B&C)|(B&D)|(C&D):B^C^D, k=t<20?0x5A827999:t<40?0x6ED9EBA1:t<60?0x8F1BBCDC:0xCA62C1D6; const T=(((A<<5)|(A>>>27))+f+E+k+W[t])>>>0; E=D; D=C; C=((B<<30)|(B>>>2))>>>0; B=A; A=T; }
+    a=(a+A)>>>0; b=(b+B)>>>0; c=(c+C)>>>0; d=(d+D)>>>0; e=(e+E)>>>0; }
+  return [a,b,c,d,e].map(x=>x.toString(16).padStart(8,'0')).join(''); }
+async function sha1hex(u8){ if(crypto?.subtle){ try{ const d=await crypto.subtle.digest('SHA-1',u8); return [...new Uint8Array(d)].map(x=>x.toString(16).padStart(2,'0')).join(''); }catch(e){} } return sha1js(u8); }
+async function gitSha(u8){ const h=SY_ENC.encode(`blob ${u8.length}\0`), all=new Uint8Array(h.length+u8.length); all.set(h); all.set(u8,h.length); return sha1hex(all); }
+const gitShaText=t=>gitSha(SY_ENC.encode(t));
+
+/* ---------- canonical JSON (sorted keys, so the same data = the same file everywhere) ---------- */
+function syKeys(v){ if(Array.isArray(v)) return v.map(syKeys); if(v&&typeof v==='object'){ const o={}; Object.keys(v).sort().forEach(k=>{ if(v[k]!==undefined&&typeof v[k]!=='function') o[k]=syKeys(v[k]); }); return o; } return v; }
+const canon=v=>JSON.stringify(syKeys(v),null,1);
+const ckey=v=>JSON.stringify(syKeys(v));
+function deq(a,b){ if(a===b) return true; if(!a||!b||typeof a!=='object'||typeof b!=='object') return typeof a==='number'&&typeof b==='number'&&isNaN(a)&&isNaN(b); if(Array.isArray(a)!==Array.isArray(b)) return false;
+  if(Array.isArray(a)){ if(a.length!==b.length) return false; for(let i=0;i<a.length;i++) if(!deq(a[i],b[i])) return false; return true; }
+  const ka=Object.keys(a).filter(k=>a[k]!==undefined), kb=Object.keys(b).filter(k=>b[k]!==undefined); if(ka.length!==kb.length) return false; for(const k of ka) if(!deq(a[k],b[k])) return false; return true; }
+const isObj=v=>!!v&&typeof v==='object'&&!Array.isArray(v);
+
+/* ---------- 3-way merge ---------- */
+function lcsMatch(a,b){ const n=a.length, m=b.length, res=new Int32Array(n).fill(-1); let s=0; while(s<n&&s<m&&a[s]===b[s]){ res[s]=s; s++; } let e=0; while(e<n-s&&e<m-s&&a[n-1-e]===b[m-1-e]){ res[n-1-e]=m-1-e; e++; }
+  const N=n-s-e, M=m-s-e; if(!N||!M) return res; if(N*M>4e6) return null; const W=M+1, dp=new Uint16Array((N+1)*W);
+  for(let i=N-1;i>=0;i--) for(let j=M-1;j>=0;j--) dp[i*W+j]=a[s+i]===b[s+j]?dp[(i+1)*W+j+1]+1:Math.max(dp[(i+1)*W+j],dp[i*W+j+1]);
+  let i=0,j=0; while(i<N&&j<M){ if(a[s+i]===b[s+j]){ res[s+i]=s+j; i++; j++; } else if(dp[(i+1)*W+j]>=dp[i*W+j+1]) i++; else j++; } return res; }
+function diff3(b,l,r,onClash,key=ckey){ const kb=b.map(key), kl=l.map(key), kr=r.map(key), ml=lcsMatch(kb,kl), mr=lcsMatch(kb,kr); if(!ml||!mr) return null;
+  const out=[], same=(x,y)=>x.length===y.length&&x.every((v,i)=>v===y[i]); let ib=0, il=0, ir=0;
+  for(let i=0;i<=kb.length;i++){ const end=i===kb.length; if(!end&&!(ml[i]>=0&&mr[i]>=0)) continue; const le=end?kl.length:ml[i], re=end?kr.length:mr[i];
+    if(i>ib||le>il||re>ir){ const B=kb.slice(ib,i), KL=kl.slice(il,le), KR=kr.slice(ir,re), Lc=l.slice(il,le), Rc=r.slice(ir,re);
+      if(same(KL,KR)) out.push(...Lc); else if(same(B,KL)) out.push(...Rc); else if(same(B,KR)) out.push(...Lc); else if(!B.length) out.push(...Lc,...Rc.filter((x,j)=>!KL.includes(KR[j]))); else out.push(...onClash(Lc,Rc)); }
+    if(!end){ out.push(l[le]); ib=i+1; il=le+1; ir=re+1; } }
+  return out; }
+function mergeIdArr(b,l,r,ctx){ const bm=new Map(b.map(x=>[x.id,x])), lm=new Map(l.map(x=>[x.id,x])), rm=new Map(r.map(x=>[x.id,x]));
+  const sameOrder=deq(b.map(x=>x.id).filter(id=>lm.has(id)),l.map(x=>x.id).filter(id=>bm.has(id))); const P=sameOrder?r:l, Q=sameOrder?l:r, pm=sameOrder?rm:lm;
+  const order=P.map(x=>x.id); Q.forEach((x,i)=>{ if(pm.has(x.id)) return; const prev=i>0?Q[i-1].id:null; let at=prev==null?0:order.indexOf(prev); at=prev==null?0:at<0?order.length:at+1; order.splice(at,0,x.id); });
+  const out=[], seen=new Set(); for(const id of order){ if(seen.has(id)) continue; seen.add(id); const bx=bm.get(id), lx=lm.get(id), rx=rm.get(id); let v;
+    if(lx&&rx) v=merge3(bx,lx,rx,ctx); else if(lx) v=bx&&deq(bx,lx)?undefined:lx; else if(rx) v=bx&&deq(bx,rx)?undefined:rx; if(v!==undefined) out.push(v); }
+  return out; }
+const SY_VOLATILE=new Set(['updated','ratedAt','modified','lastOpened']);
+function merge3(b,l,r,ctx,depth=0,key=''){
+  if(deq(l,r)) return l; if(deq(b,l)) return r; if(deq(b,r)) return l;
+  if(SY_VOLATILE.has(key)&&typeof l==='number'&&typeof r==='number') return Math.max(l,r);
+  if(isObj(l)&&isObj(r)){ const bo=isObj(b)?b:{}, out={}; for(const k of new Set([...Object.keys(l),...Object.keys(r)])){ const v=merge3(bo[k],l[k],r[k],ctx,depth+1,k); if(v!==undefined) out[k]=v; } return out; }
+  if(Array.isArray(l)&&Array.isArray(r)){ const bb=Array.isArray(b)?b:[], idd=a=>a.length&&a.every(x=>isObj(x)&&x.id!=null);
+    if(idd(l)&&idd(r)&&(!bb.length||idd(bb))) return mergeIdArr(bb,l,r,ctx);
+    const script=ctx.script&&depth===1&&key==='blocks';
+    const m=diff3(bb,l,r,(Lc,Rc)=>{ ctx.clash++; if(script) return [...Lc,{t:'note',x:`✂ SYNC CLASH: ${ctx.who||'Someone'} changed this part at the same time. Their version is below. Keep the one you like, then delete the other one and these ✂ notes.`},...Rc,{t:'note',x:'✂ End of their version'}]; return Lc; });
+    if(m) return m; }
+  if(typeof l==='string'&&typeof r==='string'&&typeof b==='string'&&(l+r).includes('\n')){ const m=diff3(b.split('\n'),l.split('\n'),r.split('\n'),(Lc,Rc)=>{ ctx.clash++; return [...Lc,...Rc]; },x=>x); if(m) return m.join('\n'); }
+  ctx.clash++; return l; }
+
+/* ---------- GitHub API ---------- */
+async function gh(path,{method='GET',body,raw=false,ok404=false}={}){ const c=SY.cfg, url=/^https?:/.test(path)?path:`${syApi()}/repos/${c.owner}/${c.repo}${path}`; let res;
+  try{ res=await fetch(url,{method,cache:'no-store',headers:{Authorization:'Bearer '+c.token,Accept:raw?'application/vnd.github.raw+json':'application/vnd.github+json',...(body?{'Content-Type':'application/json'}:{})},body:body?JSON.stringify(body):undefined}); }
+  catch(e){ const er=new Error("Can't reach GitHub (offline?)"); er.offline=true; throw er; }
+  if(ok404&&res.status===404) return null;
+  if(!res.ok){ let j={}; try{ j=await res.json(); }catch(_){} let msg=j.message||('GitHub error '+res.status);
+    if(res.status===401) msg='GitHub rejected the key (token). It may have expired or been typed wrong.';
+    else if(res.status===429||(res.status===403&&(res.headers.get('x-ratelimit-remaining')==='0'||res.headers.get('retry-after')||/rate limit/i.test(msg)))) msg='GitHub says slow down (rate limit). Sync will pick up where it left off in a minute.';
+    else if(res.status===403) msg='This key can see the repo but isn\'t allowed to save to it. Give the token "Contents: Read and write".';
+    else if(res.status===404) msg="Can't find that repo with this key. Check the name, and that the token has access to it.";
+    const er=new Error(msg); er.status=res.status; er.gh=j.message; throw er; }
+  if(raw){ const ct=res.headers.get('content-type')||''; if(/json/.test(ct)){ const j=await res.json(); return Uint8Array.from(atob((j.content||'').replace(/\s/g,'')),ch=>ch.charCodeAt(0)); } return new Uint8Array(await res.arrayBuffer()); }
+  if(res.status===204) return {}; const t=await res.text(); return t?JSON.parse(t):{}; }
+const syB64=u8=>{ let s=''; for(let i=0;i<u8.length;i+=0x8000) s+=String.fromCharCode.apply(null,u8.subarray(i,i+0x8000)); return btoa(s); };
+async function pool(items,n,fn){ let i=0; const go=async()=>{ while(i<items.length){ const k=i++; await fn(items[k],k); } }; await Promise.all(Array.from({length:Math.min(n,items.length)},go)); }
+
+/* ---------- what's on this computer ---------- */
+const syIdSafe=id=>String(id).replace(/[^A-Za-z0-9_-]/g,c=>'~'+c.charCodeAt(0).toString(16));
+const SY_DB_MAP={drawings:['ArtDB',null],animProjects:['AnimDB','projects'],animMedia:['AnimDB','media'],pitSongs:['PitDB','songs'],pitClips:['PitDB','clips'],voice:['VoiceDB',null]};
+const syStores=()=>BK_STORES.filter(B=>SY_DB_MAP[B.key]&&(B.key!=='voice'||SY.cfg?.voice!==false));
+function syPack(v,bins,depth=0){ if(v instanceof Blob){ bins.push(v); return {__bin:bins.length-1,kind:'blob',type:v.type||'',size:v.size}; }
+  if(ArrayBuffer.isView(v)){ bins.push(v); return {__bin:bins.length-1,kind:'ta',ta:v.constructor.name,size:v.byteLength}; }
+  if(v instanceof ArrayBuffer){ bins.push(v); return {__bin:bins.length-1,kind:'ab',size:v.byteLength}; }
+  if(depth>14||v===null||typeof v!=='object') return v; if(Array.isArray(v)) return v.map(x=>syPack(x,bins,depth+1)); const o={}; for(const k in v) o[k]=syPack(v[k],bins,depth+1); return o; }
+function syFill(v,shas){ if(v&&typeof v==='object'){ if(typeof v.__bin==='number'&&v.kind) return {...v,__bin:shas[v.__bin]}; if(Array.isArray(v)) return v.map(x=>syFill(x,shas)); const o={}; for(const k in v) o[k]=syFill(v[k],shas); return o; } return v; }
+function syBinsOf(v,out=new Set()){ if(v&&typeof v==='object'){ if(typeof v.__bin==='string'&&v.kind){ out.add(v.__bin); return out; } for(const k in v) syBinsOf(v[k],out); } return out; }
+async function binBytes(b){ if(b instanceof Blob) return new Uint8Array(await b.arrayBuffer()); if(ArrayBuffer.isView(b)) return new Uint8Array(b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength)); return new Uint8Array(b.slice(0)); }
+function syStateRecords(){ const out=[], seen=new Set();
+  for(const col of SY_COLS){ const arr=S[col]; if(!Array.isArray(arr)) continue; for(const x of arr){ if(!isObj(x)) continue; if(x.id==null||seen.has(col+'/'+syIdSafe(x.id))) x.id=uid(); const p=`show/${col}/${syIdSafe(x.id)}.json`; seen.add(col+'/'+syIdSafe(x.id)); out.push({path:p,kind:'col',col,id:x.id,val:x}); } }
+  for(const k of SY_MISC) if(S[k]!==undefined) out.push({path:`show/misc/${k}.json`,kind:'misc',key:k,val:S[k]});
+  out.push({path:'show/misc/showInfo.json',kind:'misc',key:'showInfo',val:{showName:S.settings.showName||''}});
+  return out; }
+async function sySnapshot(){ if(current==='desk'&&typeof syncEditor==='function') syncEditor(); SY.touched=new Set(); const recs={}, binSrc={}, big=[];
+  for(const r of syStateRecords()){ r.text=canon(r.val); r.sha=await gitShaText(r.text); delete r.val; recs[r.path]=r; }
+  for(const B of syStores()){ const all=await bkAll(B); for(const rec0 of all){ const id=rec0.id; if(id==null) continue; const rec={...rec0}; (B.strip||[]).forEach(k=>delete rec[k]);
+      const bins=[], packed=syPack(rec,bins), fpText=ckey(packed), ck=B.key+':'+id, fp=await sha1hex(SY_ENC.encode(fpText)); let c=SY.fp[ck];
+      if(!c||c.fp!==fp||c.bins.length!==bins.length){ const shas=[]; let tooBig=false; for(const b of bins){ const u=await binBytes(b); if(u.length>SY_MAX) tooBig=true; shas.push(await gitSha(u)); } c={k:ck,fp,bins:shas,big:tooBig}; SY.fp[ck]=c; SyncDB.write('fp',[c]); }
+      if(c.big){ big.push(rec.name||rec.title||id); continue; } c.bins.forEach((s,i)=>binSrc[s]=bins[i]);
+      const text=canon(syFill(packed,c.bins)), path=`db/${B.key}/${syIdSafe(id)}.json`; recs[path]={path,kind:'db',store:B.key,id,text,sha:await gitShaText(text)}; } }
+  return {recs,binSrc,big}; }
+const syIsRecord=p=>/^(show|db)\/[^/]+\/[^/]+\.json$/.test(p);
+function syKindOf(p){ const m=p.match(/^(show|db)\/([^/]+)\/([^/]+)\.json$/); if(!m) return null; if(m[1]==='db') return {kind:'db',store:m[2]}; if(m[2]==='misc') return {kind:'misc',key:m[3]}; return SY_COLS.includes(m[2])?{kind:'col',col:m[2]}:null; }
+
+/* ---------- applying a change from the shared show to this computer ---------- */
+function syOpenBusy(store,id){ if(store==='animProjects'&&AN.proj?.id===id&&(AN.playing||AN.exporting)) return true; if(store==='pitSongs'&&PIT.song?.id===id&&(PIT.playing||PIT.rec)) return true;
+  if(store==='drawings'&&current==='studio'&&ST.doc?.id===id&&$('#stEditor')?.offsetParent) return true; if(store==='voice'&&VB.recording) return true; return false; }
+async function syBkDel(B,id){ const db=await B.db().open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction(B.st,'readwrite'); tx.objectStore(B.st).delete(id); tx.oncomplete=res; tx.onerror=res; }); }
+async function syApply(path,text,L,binSrc,applied){ /* returns false if this computer changed it mid-sync (try again next round) */
+  const k=syKindOf(path); if(!k) return true; const cur=L[path]; const base=SY.base[path];
+  if(k.kind==='col'){ const arr=S[k.col]=S[k.col]||[]; const id=text?JSON.parse(text).id:(cur?.id??base?.id); const i=arr.findIndex(x=>x&&String(x.id)===String(id));
+    if(current==='desk'&&k.col==='scripts'&&typeof syncEditor==='function') syncEditor();
+    const nowTxt=i>=0?canon(arr[i]):null; if(nowTxt!==(cur?cur.text:null)) return false;
+    if(text==null){ if(i>=0) arr.splice(i,1); } else { const v=JSON.parse(text); if(i>=0) arr[i]=v; else arr.push(v); } applied.add(k.col); if(k.col==='scripts') applied.add('script:'+id); return true; }
+  if(k.kind==='misc'){ const nowTxt=k.key==='showInfo'?canon({showName:S.settings.showName||''}):S[k.key]!==undefined?canon(S[k.key]):null; if(nowTxt!==(cur?cur.text:null)) return false;
+    if(k.key==='showInfo'){ S.settings.showName=text?(JSON.parse(text).showName||''):S.settings.showName; } else if(text!=null) S[k.key]=JSON.parse(text); applied.add(k.key); return true; }
+  if(k.kind==='db'){ const B=BK_STORES.find(x=>x.key===k.store); if(!B||!SY_DB_MAP[k.store]) return true; const v=text?JSON.parse(text):null, id=v?v.id:(cur?.id??base?.id);
+    if(SY.touched.has(k.store+':'+id)||syOpenBusy(k.store,id)) return false;
+    if(v==null){ await syBkDel(B,id); } else { let rec=await syUnpack(v,async sha=>{ if(binSrc[sha]) return binBytes(binSrc[sha]); SY.prog='Downloading media…'; syChip(); return gh(`/git/blobs/${sha}`,{raw:true}); });
+      if(k.store==='drawings'&&typeof withPreview==='function') rec=await withPreview(rec); await bkPut(B,rec); }
+    delete SY.fp[k.store+':'+id]; applied.add(k.store); applied.add(k.store+':'+id); return true; }
+  return true; }
+async function syUnpack(v,getBin){ if(v&&typeof v==='object'){ if(typeof v.__bin==='string'&&v.kind){ const u=await getBin(v.__bin), ab=u.buffer.slice(u.byteOffset,u.byteOffset+u.byteLength);
+      if(v.kind==='blob') return new Blob([u],{type:v.type||''}); if(v.kind==='ab') return ab; const C=/^(Float|Int|Uint|BigInt|BigUint)\d+(Clamped)?Array$/.test(v.ta)&&window[v.ta]?window[v.ta]:Uint8Array; return new C(ab); }
+    if(Array.isArray(v)){ const a=[]; for(const x of v) a.push(await syUnpack(x,getBin)); return a; } const o={}; for(const k in v) o[k]=await syUnpack(v[k],getBin); return o; } return v; }
+
+/* ---------- one sync round ---------- */
+function sySummary(paths,L,texts){ const n={}, names=[]; for(const [p,del] of paths){ const k=syKindOf(p); if(!k) continue; const t=k.kind==='col'?k.col:k.kind==='db'?k.store:'misc'; n[t]=(n[t]||0)+1;
+    if(t==='scripts'&&names.length<2){ try{ const tt=JSON.parse(texts[p]||L[p]?.text||'{}').title; if(tt) names.push(`${del?'deleted':'edited'} “${tt}”`); }catch(e){} } }
+  const W={scripts:['script','scripts'],chars:['character','characters'],lore:['lore entry','lore entries'],notes:['note','notes'],wild:['wild line','wild lines'],misc:['setting','settings'],drawings:['drawing','drawings'],animProjects:['animation','animations'],animMedia:['media file','media files'],pitSongs:['song','songs'],pitClips:['recording','recordings'],voice:['voice take','voice takes']};
+  const parts=[...names]; for(const t in n){ if(t==='scripts'&&names.length>=n[t]) continue; const c=t==='scripts'?n[t]-names.length:n[t]; parts.push(`${c} ${(W[t]||[t,t])[c===1?0:1]}${t==='scripts'&&names.length?' more':''}`); }
+  return parts.join(', ')||'tidied up'; }
+async function syRound(){ const c=SY.cfg; SY.prog='Checking…'; syChip();
+  const snap=await sySnapshot(), L=snap.recs; if(snap.big.length&&!SY.warned.big){ SY.warned.big=true; toast(`☁ ${snap.big.length} file${snap.big.length>1?'s are':' is'} over 45 MB and stay${snap.big.length>1?'':'s'} on this computer only: ${esc(snap.big.slice(0,3).join(', '))}`,'bad'); }
+  let ref=null; try{ ref=await gh(`/git/ref/heads/${encodeURIComponent(c.branch)}`,{ok404:true}); }catch(e){ if(e.status!==409) throw e; }
+  let head=ref?.object?.sha||null, treeSha=null, R={}, headMsg='';
+  if(head&&head===c.lastCommit&&SY.rmap) R={...SY.rmap};
+  else if(head){ const cm=await gh(`/git/commits/${head}`); treeSha=cm.tree.sha; headMsg=cm.message||''; const tr=await gh(`/git/trees/${treeSha}?recursive=1`); if(tr.truncated) throw new Error('The shared show is too big for GitHub to list in one go.'); (tr.tree||[]).forEach(e=>{ if(e.type==='blob') R[e.path]=e.sha; }); }
+  const remoteBins=new Set(Object.keys(R).filter(p=>p.startsWith('blobs/')).map(p=>p.slice(6))), sent=SY.sent||(SY.sent=new Set());
+  const recR={}; for(const p in R) if(syIsRecord(p)) recR[p]=R[p];
+  const B=SY.base, all=new Set([...Object.keys(L),...Object.keys(B),...Object.keys(recR)]);
+  if(!c.joined&&head&&Object.keys(recR).length&&!Object.keys(B).length){ SY.hold={type:'join',n:Object.keys(recR).length}; return 'hold'; }
+  const ops=[]; let delRemote=0;
+  for(const p of all){ const l=L[p]?.sha||null, b=B[p]?.sha||null, r=recR[p]||null; if(l===r){ ops.push({p,a:'same'}); continue; }
+    if(SY.mode==='replace'){ ops.push({p,a:r?'pull':'delLocal'}); continue; }
+    if(l===b) ops.push({p,a:r?'pull':'delLocal'});
+    else if(r===b){ ops.push({p,a:l?'push':'delRemote'}); if(!l) delRemote++; }
+    else if(!l) ops.push({p,a:'pull'}); else if(!r) ops.push({p,a:'push'}); else ops.push({p,a:'merge'}); }
+  const baseCount=Object.keys(B).length;
+  if(delRemote>Math.max(5,baseCount*.25)&&!SY.allowMass){ SY.hold={type:'mass',n:delRemote}; return 'hold'; }
+  SY.allowMass=false;
+  const need=ops.filter(o=>o.a==='pull'||o.a==='merge'), texts={}; SY.prog=need.length?`Downloading ${need.length} change${need.length>1?'s':''}…`:'Checking…'; syChip();
+  await pool(need,6,async o=>{ texts[o.p]=SY_DEC.decode(await gh(`/git/blobs/${recR[o.p]}`,{raw:true})); });
+  let clashes=0; const clashIn=[], who=(headMsg.match(/^([^:—]{1,40})[:—]/)||[])[1]?.trim()||'Someone';
+  for(const o of ops) if(o.a==='merge'){ const ctx={clash:0,script:o.p.startsWith('show/scripts/'),who}; const bt=B[o.p]?.text; const mv=merge3(bt?JSON.parse(bt):undefined,JSON.parse(L[o.p].text),JSON.parse(texts[o.p]),ctx);
+      o.text=canon(mv); o.sha=await gitShaText(o.text); if(ctx.clash){ clashes+=ctx.clash; try{ clashIn.push(JSON.parse(o.text).title||JSON.parse(o.text).name||o.p.split('/')[1]); }catch(e){} } }
+  /* push */
+  const up=[], dels=[]; for(const o of ops){ if(o.a==='push') up.push({p:o.p,text:L[o.p].text}); if(o.a==='merge'&&o.sha!==recR[o.p]) up.push({p:o.p,text:o.text}); if(o.a==='delRemote') dels.push(o.p); }
+  let newHead=head, newR={...R};
+  if(up.length||dels.length){
+    if(!head){ SY.prog='Setting up the repo…'; syChip(); const put=await gh(`/contents/nenjac-show.json`,{method:'PUT',body:{message:`${c.name||'Someone'}: started the shared show`,content:syB64(SY_ENC.encode(canon({app:APP_NAME,format:1,show:showName(),created:Date.now()}))),branch:c.branch}});
+      head=put.commit.sha; treeSha=put.commit.tree?.sha||(await gh(`/git/commits/${head}`)).tree.sha; newR={'nenjac-show.json':put.content?.sha}; }
+    else if(!treeSha) treeSha=(await gh(`/git/commits/${head}`)).tree.sha;
+    const needBins=new Set(); for(const u of up) syBinsOf(JSON.parse(u.text)).forEach(s=>{ if(!remoteBins.has(s)) needBins.add(s); });
+    const binList=[...needBins].filter(s=>snap.binSrc[s]), toSend=binList.filter(s=>!sent.has(s)); let done=0, bytes=0;
+    await pool(toSend,2,async s=>{ const u=await binBytes(snap.binSrc[s]); bytes+=u.length; SY.prog=`Uploading media ${++done}/${toSend.length} (${fmtMB(bytes)})…`; syChip(); const t0=Date.now(); const res=await gh('/git/blobs',{method:'POST',body:{content:syB64(u),encoding:'base64'}}); if(res.sha!==s) console.warn('blob sha mismatch',s,res.sha); sent.add(s); SyncDB.write('meta',[{k:'sent',list:[...sent].slice(-5000)}]); const wait=1600-(Date.now()-t0); if(toSend.length>30&&wait>0) await sleep(wait); });
+    SY.prog=`Saving ${up.length+dels.length} change${up.length+dels.length>1?'s':''}…`; syChip();
+    const entries=[]; for(const u of up){ if(u.text.length>150000){ const bl=await gh('/git/blobs',{method:'POST',body:{content:u.text,encoding:'utf-8'}}); entries.push({path:u.p,mode:'100644',type:'blob',sha:bl.sha}); } else entries.push({path:u.p,mode:'100644',type:'blob',content:u.text}); }
+    binList.forEach(s=>entries.push({path:'blobs/'+s,mode:'100644',type:'blob',sha:s})); dels.forEach(p=>entries.push({path:p,mode:'100644',type:'blob',sha:null}));
+    if(!R['nenjac-show.json']&&!newR['nenjac-show.json']) entries.push({path:'nenjac-show.json',mode:'100644',type:'blob',content:canon({app:APP_NAME,format:1,show:showName(),created:Date.now()})});
+    let tree; try{ tree=await gh('/git/trees',{method:'POST',body:{base_tree:treeSha,tree:entries}}); }catch(e){ if(e.status===422&&sent.size){ sent.clear(); SyncDB.write('meta',[],['sent']); const er=new Error('race'); er.race=true; throw er; } throw e; }
+    const msg=`${c.name||'Someone'}: ${sySummary([...up.map(u=>[u.p,false]),...dels.map(p=>[p,true])],L,Object.fromEntries(up.map(u=>[u.p,u.text])))}`;
+    const cm=await gh('/git/commits',{method:'POST',body:{message:msg,tree:tree.sha,parents:[head]}});
+    try{ await gh(`/git/refs/heads/${encodeURIComponent(c.branch)}`,{method:'PATCH',body:{sha:cm.sha,force:false}}); }
+    catch(e){ if(e.status===422||e.status===409){ const er=new Error('race'); er.race=true; throw er; } throw e; }
+    newHead=cm.sha; for(const u of up) newR[u.p]=await gitShaText(u.text); binList.forEach(s=>newR['blobs/'+s]=s); dels.forEach(p=>delete newR[p]); if(!newR['nenjac-show.json']) newR['nenjac-show.json']='x';
+    SY.activity.unshift({at:Date.now(),msg,mine:true}); }
+  /* apply to this computer */
+  const applied=new Set(), basePut=[], baseDel=[]; let deferred=0, pulled=0;
+  const setBase=(p,sha,text)=>{ const k=syKindOf(p)||{}; const x={k:p,sha,text,id:L[p]?.id??(text?(()=>{ try{ return JSON.parse(text).id; }catch(e){ return null; } })():SY.base[p]?.id)}; SY.base[p]=x; basePut.push(x); };
+  const dropBase=p=>{ if(SY.base[p]){ delete SY.base[p]; baseDel.push(p); } };
+  try{ for(const o of ops){ const p=o.p;
+    if(o.a==='same'){ if(L[p]){ if(B[p]?.sha!==L[p].sha) setBase(p,L[p].sha,L[p].text); } else dropBase(p); }
+    else if(o.a==='push') setBase(p,L[p].sha,L[p].text);
+    else if(o.a==='delRemote') dropBase(p);
+    else if(o.a==='pull'){ if(await syApply(p,texts[p],L,snap.binSrc,applied)){ setBase(p,recR[p],texts[p]); pulled++; } else deferred++; }
+    else if(o.a==='delLocal'){ if(await syApply(p,null,L,snap.binSrc,applied)){ dropBase(p); pulled++; } else deferred++; }
+    else if(o.a==='merge'){ if(o.sha===L[p].sha) setBase(p,o.sha,o.text); else if(await syApply(p,o.text,L,snap.binSrc,applied)){ setBase(p,o.sha,o.text); pulled++; } else { setBase(p,L[p].sha,L[p].text); deferred++; } } } }
+  finally{}
+  await SyncDB.write('base',basePut,baseDel);
+  c.lastCommit=newHead; c.joined=true; c.lastSync=Date.now(); SY.rmap=newR; sySaveCfg(); await SyncDB.write('meta',[{k:'remote',head:newHead,map:newR}]);
+  if(applied.size){ save(true); await syRefresh(applied); }
+  if(pulled&&head&&headMsg&&!headMsg.startsWith((c.name||'Someone')+':')) toast(`☁ ${esc(headMsg.slice(0,90))}`);
+  if(clashes) toast(`✂ ${clashes} sync clash${clashes>1?'es':''} in ${esc(clashIn.slice(0,2).join(', '))}. Both versions were kept${clashIn.length?' (look for the ✂ notes)':''}.`,'bad');
+  if(deferred){ SY.again=true; }
+  SY.mode=null; return 'ok'; }
+
+/* ---------- refresh the screen after changes arrive ---------- */
+async function syRefresh(A){ try{
+  if(A.has('scripts')){ if(typeof renderScriptList==='function') renderScriptList(); if(current==='desk'){ const s=activeScript(); if(!S.scripts.some(x=>x.id===S.activeScript)&&s) S.activeScript=s.id; if(s&&(A.has('script:'+s.id)||!A.has('script:'+S.activeScript))) syReloadEditor(); } }
+  if(['chars','lore'].some(k=>A.has(k))&&current==='bible'&&typeof renderBible==='function') renderBible();
+  if(A.has('notes')&&typeof notesMark==='function'){ notesMark(); if($('#notesPanel.on')) renderNotes(); }
+  if(A.has('showInfo')&&typeof renderNowMaking==='function') renderNowMaking();
+  if(current==='lobby'&&typeof renderLobby==='function') renderLobby();
+  if(A.has('wheels')&&typeof whRender==='function') whRender();
+  if(A.has('drawings')&&typeof loadDrawings==='function'){ await loadDrawings(); if(current==='studio'&&!$('#stEditor')?.offsetParent&&typeof renderStudioHome==='function') renderStudioHome(); }
+  if(A.has('animProjects')||A.has('animMedia')){ await anLoadList(); const id=AN.proj?.id; if(id&&A.has('animProjects:'+id)){ const p=AN.list.find(x=>x.id===id); SY.quiet=true; try{ if(p){ const t=AN.t; const pr=anOpen(JSON.parse(JSON.stringify(p))); SY.quiet=false; await pr; anSeek?.(t); } else { AN.proj=null; if(current==='anim') enterAnim(); } } finally{ SY.quiet=false; } } else if(current==='anim'&&AN.proj) anRenderAll(); }
+  if(A.has('pitSongs')||A.has('pitClips')){ await pitLoadList(); const id=PIT.song?.id; if(id&&A.has('pitSongs:'+id)){ const s=PIT.list.find(x=>x.id===id); SY.quiet=true; try{ if(s){ const pos=PIT.pos; await pitOpen(JSON.parse(JSON.stringify(s))); PIT.pos=pos; } else { PIT.song=null; if(current==='pit') enterPit(); } } finally{ SY.quiet=false; } } }
+  if(A.has('voice')&&current==='voice'&&!VB.recording&&typeof enterVoice==='function') enterVoice();
+  }catch(e){ console.warn('sync refresh',e); } }
+function syReloadEditor(){ const s=activeScript(); if(!s||typeof loadScriptIntoEditor!=='function') return; const blocks=[...ED.children], sel=getSelection(); let bi=-1, off=0, txt='';
+  if(sel.rangeCount&&ED.contains(sel.anchorNode)){ let n=sel.anchorNode; while(n&&n.parentNode!==ED) n=n.parentNode; bi=blocks.indexOf(n); if(n){ txt=n.textContent; const r=document.createRange(); r.selectNodeContents(n); r.setEnd(sel.anchorNode,sel.anchorOffset); off=r.toString().length; } }
+  const sc=$('#scr-desk'), top=sc?.scrollTop||0, focused=document.activeElement===ED; loadScriptIntoEditor(s); if(sc) sc.scrollTop=top;
+  if(bi<0||!focused) return; const nb=[...ED.children]; let el=nb.find((b,i)=>b.textContent===txt&&Math.abs(i-bi)<40)||nb[Math.min(bi,nb.length-1)]; if(!el) return;
+  ED.focus(); const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT); let left=Math.min(off,el.textContent.length), node; while((node=w.nextNode())){ if(left<=node.length){ const r=document.createRange(); r.setStart(node,left); r.collapse(true); sel.removeAllRanges(); sel.addRange(r); return; } left-=node.length; }
+  const r=document.createRange(); r.selectNodeContents(el); r.collapse(false); sel.removeAllRanges(); sel.addRange(r); }
+
+/* ---------- running it ---------- */
+async function syRun(){ if(!syOn()||window.__nenjacPaused) return; if(SY.busy){ SY.again=true; return; } if(SY.hold) return syChip();
+  if(Date.now()<SY.nextTry) return; SY.busy=true; SY.err=''; syChip(); let res;
+  try{ for(let tries=0;;tries++){ try{ res=await syRound(); break; }catch(e){ if(e.race&&tries<4){ await sleep(400+Math.random()*900); continue; } throw e; } }
+    SY.fails=0; SY.lastOk=Date.now(); SY.offline=false; }
+  catch(e){ console.warn('sync',e); SY.fails++; SY.offline=!!e.offline; SY.err=e.message||String(e); SY.nextTry=Date.now()+Math.min(300000,5000*2**Math.min(6,SY.fails));
+    if(e.status===401||e.status===404) { SY.cfg.auto=false; sySaveCfg(); } }
+  finally{ SY.busy=false; SY.prog=''; syChip(); if(SET_TAB==='shared'&&$('#syPanel')) syPanelRender(); }
+  if(SY.again&&!SY.hold){ SY.again=false; syncSoon(1500); } }
+function syncSoon(ms=4000){ if(!syOn()) return; clearTimeout(SY.timer); SY.timer=setTimeout(syRun,ms); }
+function syStartPolling(){ clearInterval(SY.poll); if(!syOn()) return; SY.poll=setInterval(()=>{ if(SY.cfg?.auto!==false&&document.visibilityState==='visible'&&navigator.onLine!==false) syRun(); },SY_POLL); }
+document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible'&&syOn()) syncSoon(800); });
+addEventListener('online',()=>{ SY.nextTry=0; syncSoon(800); });
+{ const _s=save; save=function(now){ _s(now); if(syOn()&&SY.cfg.auto!==false&&!SY.quiet) syncSoon(5000); }; }
+/* remember which IndexedDB records changed while a sync round was running.
+   Also: a save that only bumps "updated" (like just opening a song) isn't a change. */
+for(const [key,[obj,st]] of Object.entries(SY_DB_MAP)){ const D={ArtDB,AnimDB,PitDB,VoiceDB}[obj]; if(!D) continue;
+  for(const fn of ['put','del']){ const _f=D[fn]; if(typeof _f!=='function') continue;
+    D[fn]=async function(...a){ const s0=st?a[0]:null, o=st?a[1]:a[0]; if(st&&s0!==st) return _f.apply(this,a); const id=fn==='put'?o?.id:o;
+      if(fn==='put'&&(key==='animProjects'||key==='pitSongs')&&o&&D.get){ try{ const prev=await D.get(st,o.id); if(prev&&deq({...prev,updated:0},{...o,updated:0})) return true; }catch(e){} }
+      SY.touched.add(key+':'+id); delete SY.fp[key+':'+id]; if(syOn()&&SY.cfg.auto!==false) syncSoon(6000); return _f.apply(this,a); }; } }
+
+/* ---------- connect / join / disconnect ---------- */
+function syParseRepo(s){ s=(s||'').trim(); const m=s.match(/github\.com[/:]([^/\s]+)\/([^/\s#?]+?)(?:\.git)?(?:[/#?].*)?$/)||s.match(/^([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)$/); return m?{owner:m[1],repo:m[2].replace(/\.git$/,'')}:null; }
+function syInviteCode(withKey){ const c=SY.cfg; return 'NENJAC-CREW:'+btoa(unescape(encodeURIComponent(JSON.stringify({o:c.owner,r:c.repo,...(withKey?{t:c.token}:{})})))); }
+function syReadInvite(s){ const m=(s||'').trim().match(/^NENJAC-CREW:([A-Za-z0-9+/=]+)$/); if(!m) return null; try{ return JSON.parse(decodeURIComponent(escape(atob(m[1])))); }catch(e){ return null; } }
+async function syConnect(repoStr,token,name){ const inv=syReadInvite(repoStr); if(inv){ repoStr=inv.o+'/'+inv.r; token=token||inv.t||''; }
+  const rp=syParseRepo(repoStr); if(!rp) throw new Error('Type the repo as owner/name (like crystopal/my-show), or paste its GitHub link.'); if(!token) throw new Error('Paste a GitHub key (token) too.');
+  SY.cfg={...rp,token:token.trim(),name:(name||myName()||'').trim()||'Someone',auto:true,voice:true,on:false,joined:false,branch:'main'};
+  const info=await gh(''); SY.cfg.branch=info.default_branch||'main'; SY.cfg.private=info.private!==false;
+  let ref=null; try{ ref=await gh(`/git/ref/heads/${encodeURIComponent(SY.cfg.branch)}`,{ok404:true}); }catch(e){ if(e.status!==409) throw e; }
+  let count=0, show=''; if(ref){ const cm=await gh(`/git/commits/${ref.object.sha}`); const tr=await gh(`/git/trees/${cm.tree.sha}?recursive=1`); count=(tr.tree||[]).filter(e=>syIsRecord(e.path)).length;
+    if(count){ try{ show=JSON.parse(SY_DEC.decode(await gh('/git/blobs/'+tr.tree.find(e=>e.path==='nenjac-show.json')?.sha,{raw:true}))).show||''; }catch(e){} } }
+  if(!S.settings.myName&&name) { S.settings.myName=name.trim(); save(); }
+  return {count,show,private:SY.cfg.private,canPush:info.permissions?info.permissions.push!==false:true}; }
+async function syBegin(mode){ /* mode: 'start' | 'replace' | 'combine' */ await SyncDB.clear(); SY.base={}; SY.fp={}; SY.rmap=null; SY.hold=null; SY.sent=new Set(); SY.cfg.on=true; SY.cfg.joined=true; SY.cfg.lastCommit=null; SY.cfg.connectedAt=Date.now(); sySaveCfg();
+  if(mode==='replace'){ await takeRestorePoint('Before joining a shared show'); SY.mode='replace'; }
+  syStartPolling(); syChip(); SY.nextTry=0; await syRun(); if(mode==='replace'&&!SY.err){ toast('☁ Joined! Loading the shared show…','good'); setTimeout(()=>location.reload(),700); } }
+async function syDisconnect(){ SY.sent=new Set(); SY.cfg=null; sySaveCfg(); clearInterval(SY.poll); SY.hold=null; SY.base={}; SY.fp={}; SY.rmap=null; await SyncDB.clear(); syChip(); }
+
+/* ---------- header chip ---------- */
+function syChip(){ let b=$('#syncBtn'); if(!SY.cfg?.on){ b?.remove(); return; }
+  if(!b){ $('#notesBtn')?.insertAdjacentHTML('beforebegin','<button class="iconbtn sy-chip" id="syncBtn" aria-label="Shared show sync">☁</button>'); b=$('#syncBtn'); if(!b) return; }
+  const st=SY.hold?'hold':SY.busy?'busy':SY.err?(SY.offline?'off':'err'):'ok'; b.dataset.st=st;
+  b.title=st==='busy'?'☁ '+(SY.prog||'Syncing…'):st==='hold'?'☁ Sync is waiting for you. Click.':st==='off'?'☁ Offline. Your work is saved here and syncs when you\'re back.':st==='err'?'☁ Sync problem: '+SY.err:`☁ Shared show: ${SY.cfg.owner}/${SY.cfg.repo}. Synced ${SY.lastOk?ago(SY.lastOk):'…'}`; }
+document.addEventListener('click',e=>{ if(e.target.closest('#syncBtn')) openSettings('shared'); });
+
+/* ---------- Settings → 👥 Shared show ---------- */
+{ const _sr=setRender; setRender=async function(){ if(SET_TAB!=='shared') return _sr(); const el=$('#setBody'); if(!el) return; el.innerHTML='<div id="syPanel"></div>'; syPanelRender(); }; }
+async function syActivity(){ try{ const list=await gh(`/commits?sha=${encodeURIComponent(SY.cfg.branch)}&per_page=12`); return list.map(x=>({msg:x.commit?.message||'',at:Date.parse(x.commit?.author?.date||x.commit?.committer?.date||'')||0})); }catch(e){ return null; } }
+function syPanelRender(){ const el=$('#syPanel'); if(!el) return; const c=SY.cfg;
+  if(!c||!c.on){ const inv=SY._pending; el.innerHTML=`<h2>👥 Shared show</h2>
+    <p class="tiny muted">Work on the same show from different computers (and phones). Everything syncs through a <b>private GitHub repo</b> about every 20 seconds. It's not live typing like Google Docs: if two people change the <i>same line</i> at the same moment, both versions are kept and marked with ✂ so you can pick.</p>
+    ${inv?`<div class="sy-card"><b>✅ Connected to ${esc(c.owner)}/${esc(c.repo)}</b>${inv.private?'':'<p class="sy-warn">⚠ This repo is <b>public</b>, so anyone on the internet can read your show. Make it private in the repo\'s Settings unless that\'s on purpose.</p>'}
+      ${inv.count?`<p>It already has a show${inv.show?` (<b>${esc(inv.show)}</b>)`:''} with ${inv.count} things in it.</p>
+        <div class="sy-choices"><button class="btn primary" data-sy="replace">⬇ Use the shared show<small>Replaces the scripts, Bible, songs, drawings and animations on this computer with the shared ones. A restore point is saved first.</small></button>
+        <button class="btn" data-sy="combine">🔀 Combine<small>Adds what's on this computer into the shared show. Only do this if both have stuff you want to keep (duplicates are possible).</small></button>
+        <button class="btn sm" data-sy="bk">💾 Download a backup first</button></div>`
+      :`<p>The repo is empty. Start the shared show with what's on this computer: <b>${S.scripts.length} scripts, ${S.chars.length} characters</b>, plus your songs, drawings, animations and voice takes.</p><button class="btn primary" data-sy="start">🚀 Start the shared show</button>`}
+      <button class="btn sm" data-sy="cancel">Cancel</button></div>`
+    :`<ol class="sy-steps">
+      <li><b>Make a private repo</b> on GitHub (one per show). Name it something like <code>my-show-data</code>, set it to <b>Private</b>, leave everything else alone. <a href="https://github.com/new" target="_blank" rel="noopener">Open github.com/new ↗</a></li>
+      <li><b>Make a key</b> (a "fine-grained token"): Repository access → <i>Only select repositories</i> → your show repo. Permissions → Repository → <b>Contents: Read and write</b>. Copy the token it shows you. <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Make a token ↗</a></li>
+      <li><b>Connect</b> below. Then in the panel that opens, copy the <b>crew invite code</b> and send it to your crew.</li></ol>
+    <div class="sy-form"><label>Repo or crew invite code<input class="txt" id="syRepo" placeholder="you/my-show-data  ·  or paste NENJAC-CREW:…" value="${esc(SY._form?.repo||'')}"></label>
+      <label>GitHub key (token)<input class="txt" id="syTok" type="password" placeholder="github_pat_…" value="${esc(SY._form?.tok||'')}" autocomplete="off"></label>
+      <label>Your name<input class="txt" id="syName" placeholder="JC" value="${esc(SY._form?.name||myName()||'')}"></label>
+      <div class="row"><button class="btn primary" data-sy="connect">🔌 Connect</button><span class="tiny muted" id="syMsg">${esc(SY._err||'')}</span></div></div>
+    <details class="sy-faq"><summary>Crew members: how do I join?</summary><p>Ask whoever set it up for the <b>crew invite code</b> and paste it in the first box. If the code includes their key, you're done. If not, you need your own key: they add you as a collaborator on the repo (repo → Settings → Collaborators), then you make a <a href="https://github.com/settings/tokens/new?scopes=repo&description=Nenjac%20Creator" target="_blank" rel="noopener">classic token with the "repo" box ticked ↗</a> (fine-grained tokens only work on repos you own).</p></details>
+    <details class="sy-faq"><summary>Is my stuff safe?</summary><p>Your show lives in <b>your</b> GitHub repo, and every sync is saved in its history, so nothing is ever truly lost. The key is stored only in this browser and is never put in backups or the repo. Anyone with the key (or an invite code that includes it) can edit the show, so only share it with your crew. You can delete the token on GitHub at any time.</p></details>`}`;
+    return; }
+  const st=SY.hold?'hold':SY.busy?'busy':SY.err?(SY.offline?'off':'err'):'ok';
+  el.innerHTML=`<h2>👥 Shared show</h2>
+    <div class="sy-card sy-${st}"><div class="row"><b class="grow">☁ ${esc(c.owner)}/${esc(c.repo)}</b><a class="tiny" href="https://github.com/${esc(c.owner)}/${esc(c.repo)}/commits" target="_blank" rel="noopener">history ↗</a></div>
+      <p class="tiny">${st==='busy'?'🔄 '+esc(SY.prog||'Syncing…'):st==='ok'?`✅ Up to date${SY.lastOk?' · '+ago(SY.lastOk):''}`:st==='off'?'📴 Offline. Everything is saved on this computer and syncs when you\'re back.':st==='hold'?'⏸ Waiting for you (see below)':'⚠ '+esc(SY.err)}</p>
+      ${SY.hold?.type==='mass'?`<div class="sy-warn"><b>Hold up.</b> This would delete <b>${SY.hold.n}</b> things from the shared show for everyone (maybe from a reset or a restored backup). <div class="row"><button class="btn sm red" data-sy="mass-ok">Yes, delete them for everyone</button><button class="btn sm primary" data-sy="mass-no">No, get the shared show back</button></div></div>`:''}
+      ${SY.hold?.type==='join'?`<div class="sy-warn">This repo has a show already. <div class="row"><button class="btn sm primary" data-sy="replace">⬇ Use the shared show</button><button class="btn sm" data-sy="combine">🔀 Combine</button></div></div>`:''}
+      <div class="row"><button class="btn sm primary" data-sy="now" ${SY.busy?'disabled':''}>🔄 Sync now</button><label class="tiny"><input type="checkbox" id="syAuto" ${c.auto!==false?'checked':''}> Sync automatically</label><label class="tiny"><input type="checkbox" id="syVoice" ${c.voice!==false?'checked':''}> Include voice takes</label></div></div>
+    ${setRow('Your name','Shows on notes and in the activity list',`<input class="txt" id="syName2" value="${esc(c.name||'')}" style="width:160px">`)}
+    <h3>🔗 Invite your crew</h3><p class="tiny muted">Send this code. They paste it in Settings → 👥 Shared show → Connect.</p>
+    <div class="row"><button class="btn sm" data-sy="inv">📋 Copy invite (they bring their own key)</button><button class="btn sm" data-sy="invkey">📋 Copy invite + my key</button></div>
+    <p class="tiny muted">"+ my key" is easiest (nobody needs a GitHub account), but anyone with it can edit the show. Only send it to people you trust, in a private chat.</p>
+    <h3>📜 Recent activity</h3><div class="sy-act" id="syAct"><p class="tiny muted">Loading…</p></div>
+    <hr class="sep"><div class="row"><button class="btn sm" data-sy="disc">Disconnect this computer</button><span class="tiny muted">Your work stays here and in the repo.</span></div>`;
+  syActivity().then(list=>{ const a=$('#syAct'); if(!a) return; a.innerHTML=list?list.map(x=>{ const m=x.msg.match(/^([^:]{1,40}):\s*(.*)$/s); return `<div class="sy-act-row"><b>${esc(m?m[1]:'')}</b> <span>${esc((m?m[2]:x.msg).split('\n')[0])}</span> <small>${x.at?ago(x.at):''}</small></div>`; }).join('')||'<p class="tiny muted">Nothing yet.</p>':'<p class="tiny muted">Couldn\'t load (offline?).</p>'; }); }
+document.addEventListener('click',async e=>{ const b=e.target.closest('[data-sy]'); if(!b||!$('#syPanel')) return; const a=b.dataset.sy;
+  if(a==='connect'){ const repo=$('#syRepo').value, tok=$('#syTok').value, name=$('#syName').value; SY._form={repo,tok,name}; b.disabled=true; $('#syMsg').textContent='Knocking on GitHub\'s door…';
+    try{ SY._pending=await syConnect(repo,tok,name); SY._err=''; if(!SY._pending.canPush) SY._err='Heads up: your account can only read this repo.'; }catch(err){ SY.cfg=null; SY._err=err.message; SY._pending=null; } return syPanelRender(); }
+  if(a==='cancel'){ SY.cfg=null; SY._pending=null; return syPanelRender(); }
+  if(a==='bk') return downloadFullBackup(true);
+  if(['start','replace','combine'].includes(a)){ if(a==='replace'&&!confirm('Replace what\'s on this computer with the shared show?\n\nScripts, the Bible, songs, drawings, animations and voice takes here are swapped for the shared ones. A restore point of your scripts + Bible is saved first. (Want everything? Hit "Download a backup first".)')) return;
+    if(a==='combine'&&!confirm('Combine this computer\'s show with the shared one? Everything from both ends up in the shared show.')) return;
+    SY._pending=null; SY._form=null; b.disabled=true; toast(a==='start'?'🚀 Uploading your show… (first time can take a minute)':'☁ Syncing…'); syPanelRender(); await syBegin(a); unlock('sync1'); return syPanelRender(); }
+  if(a==='now'){ SY.nextTry=0; SY.err=''; syRun(); return setTimeout(syPanelRender,50); }
+  if(a==='mass-ok'){ SY.hold=null; SY.allowMass=true; await syRun(); return syPanelRender(); }
+  if(a==='mass-no'){ if(!confirm('Throw away the deletions on this computer and load the shared show again?')) return; SY.hold=null; await takeRestorePoint('Before re-loading the shared show'); SY.mode='replace'; await syRun(); if(!SY.err) location.reload(); return; }
+  if(a==='inv'||a==='invkey'){ const code=syInviteCode(a==='invkey'); try{ await navigator.clipboard.writeText(code); toast('📋 Invite code copied'); }catch(_){ prompt('Copy this invite code',code); } return; }
+  if(a==='disc'){ if(!confirm('Disconnect this computer from the shared show? Nothing is deleted; it just stops syncing.')) return; await syDisconnect(); toast('Disconnected'); return syPanelRender(); } });
+document.addEventListener('change',e=>{ if(!SY.cfg) return; if(e.target.id==='syAuto'){ SY.cfg.auto=e.target.checked; sySaveCfg(); if(SY.cfg.auto) syncSoon(500); } if(e.target.id==='syVoice'){ SY.cfg.voice=e.target.checked; sySaveCfg(); }
+  if(e.target.id==='syName2'){ SY.cfg.name=e.target.value.trim()||'Someone'; S.settings.myName=SY.cfg.name; sySaveCfg(); save(); } });
+document.addEventListener('keydown',e=>{ if(e.key==='Enter'&&['syRepo','syTok','syName'].includes(e.target.id)) $('[data-sy="connect"]')?.click(); });
+
+/* ---------- big local changes while connected ---------- */
+{ const _r=restoreBackupFile; restoreBackupFile=async function(f){ if(syOn()&&!confirm(`You're connected to the shared show (${SY.cfg.owner}/${SY.cfg.repo}). Restoring a backup would push it to everyone.\n\nDisconnect this computer first, then restore? (The shared show stays safe on GitHub.)`)) return; if(syOn()) await syDisconnect(); return _r(f); }; }
+{ const _n=startNewShowDialog; startNewShowDialog=function(...a){ if(syOn()){ if(!confirm(`You're connected to the shared show (${SY.cfg.owner}/${SY.cfg.repo}). Starting a new show here will disconnect this computer from it first (the shared show stays safe on GitHub). Keep going?`)) return; syDisconnect(); } return _n(...a); }; }
+
+/* ---------- boot ---------- */
+ACH.push({id:'sync1',e:'👥',n:'Writers\' Room, Expanded',d:'Start or join a shared show'});
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'👥',label:'Shared show (sync with your crew)',run:()=>openSettings('shared'),kw:'sync github share crew collaborate cloud'}); if(syOn()) C.push({ico:'🔄',label:'Sync now',run:()=>{ SY.nextTry=0; syRun(); },kw:'sync pull push github'}); return C; }; }
+(async()=>{ await syLoadLocal(); if(syOn()){ syChip(); syStartPolling(); setTimeout(syRun,1800); } })();
+
+/* ---------- 4.1 hello ---------- */
+if(!FIRST_RUN&&!S.settings.seen41&&(S.settings.seen40||S.settings.tourDone)) setTimeout(()=>{ if($('#tour')||$('#hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello41" role="status"><div class="h40-art">${castArt('Deegs')}</div><div><b>4.1: The Crew Update.</b><small>Shared shows with your crew, phone mode, notes on anything, hum-a-melody, pitch fix, transitions and more.</small><div class="row"><button class="btn sm primary" id="h41new">✨ What's new</button><button class="btn sm" id="h41sync">👥 Shared show</button><button class="btn sm" id="h41x" aria-label="Dismiss">✕</button></div></div></div>`);
+  const done=()=>{ S.settings.seen41=true; save(); $('#hello41')?.remove(); }; $('#h41new').onclick=()=>{ done(); openWhatsNew(); }; $('#h41sync').onclick=()=>{ done(); openSettings('shared'); }; $('#h41x').onclick=done; },2600);
+if(FIRST_RUN) S.settings.seen41=true;
 
 </script>
 </body>
