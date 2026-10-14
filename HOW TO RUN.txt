@@ -1,4 +1,4 @@
-NENJAC CREATOR 4.2: how to run it
+NENJAC CREATOR 4.3: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -83,6 +83,29 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 4.3 (THE MUSICAL UPDATE), QUICK GUIDE
+  🎼 Musical Room: the new tab right after the Writing Desk (or the lobby door).
+     Musical EPISODES still go in the Writing Desk (Song + Lyric lines). The Musical
+     Room is for single songs and full-length musicals.
+  🎵 A song: pick a style (46 of them: Broadway, hip-hop/rap, pop/rock, shanties,
+     jingles, metal...). Each section is a card. Left of every line: syllable count
+     (red = longer/shorter than the style likes) and its rhyme letter (A A B B).
+     Rhymes on the right follow the line you're answering. Click a word to drop it in.
+     Ctrl/⌘+R = rhymes for the exact word at your cursor (pinned). Tab = next section.
+     Choruses are linked: write the first one and the repeats fill themselves.
+     Buttons: 🔁 Make a reprise · ✍️ Put in a script · 🎻 Send to The Pit · ⤓ Lyric sheet.
+     Duets/group songs say A / B: fill in "🎭 Cast it" in the guide box.
+  🎭 A full musical: 🎭 New musical → pick a structure. Drag numbers and book scenes
+     between acts. ✍️ Write it opens a book scene in the Writing Desk (stays linked).
+     Tabs: Overview, Cast, Motifs & reprises, Stats & check (runtime + script doctor).
+     📜 Libretto prints the whole show or saves a .txt.
+  ⬆️ Lift mouth: Animate → select a character → 👄 Talking mouth → ⬆️ Lift → ✋ Place on
+     stage and drag the yellow line onto the mouth. The top half lifts straight up.
+  🎤 Rhyme Battle + 🗯 Who Said It?: Chaos Corner, under Squid Smash.
+  💡 Idea inbox: Alt+I anywhere (or the lobby button). 📍 The lobby shows where you left off.
+  ✏️ Rename a character everywhere: ⌘K → "Rename". 🎲 Musical Room → Song idea.
+  Shared show: songs, musicals and ideas sync like scripts do.
 
 NEW IN 4.2 (THE ALIVE UPDATE), QUICK GUIDE
   🍁 Flaphead + other mouths: Animate → select a character → 👄 Talking mouth → pick a
