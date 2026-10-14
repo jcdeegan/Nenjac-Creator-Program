@@ -1,4 +1,4 @@
-NENJAC CREATOR 4.3: how to run it
+NENJAC CREATOR 4.4: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -83,6 +83,28 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 4.4 (THE PICTURE DAY UPDATE), QUICK GUIDE
+  👥 Two+ people saying a line: on the Writing Desk hit 👥 Together, or just type
+     DEEGS & STARR as the character name. Put ^ after a name (STARR ^) to make that
+     line overlap the one before it. The Voice Booth splits group lines so each person
+     records their own take; the mix and Script → Scene play them at the same time.
+  📋 The Call Sheet (tab, or the lobby door): every episode's progress. Boxes fill in
+     from your takes and animations. Click a box to override (✓ → skip → auto).
+     ⋯ = episode code, posted link, notes, archive. "Call sheet for a recording day"
+     prints who needs to record which lines (or copies it for the group chat).
+  📊 The Numbers: stats for the whole show or one episode.
+  📸 Photo Studio: pick people in "Who", then try the quick looks (School picture day,
+     Glamour Shot, Mugshot…). Drag things on the photo, scroll = size, Shift+scroll =
+     tilt. 📸 Say cheese! saves a proof at the bottom. 🧾 Picture package = printable sheet.
+     Hats you add with 🎅 stick to that person when you move them.
+  🎄 Card Shop: 1 Who (✨ Make them into an object = 30-second character for a real
+     person, saved in the Bible under "Real Life") · 2 Design · 3 Words · 4 Extras ·
+     5 Send (record a voice message, then 🎞 video card / 🖨 print & fold / PNGs /
+     🎬 Animate / 📮 same card for more people). A 📸 proof's 🎄 button starts a photo card.
+  ⌨️ Alt+1…9 tabs · Alt+` last tab · Ctrl/⌘+G jump to scene · right-click a line on
+     the Desk for quote / hear it / record it.
+  🥚 Easter eggs: findable. Probably.
 
 NEW IN 4.3 (THE MUSICAL UPDATE), QUICK GUIDE
   🎼 Musical Room: the new tab right after the Writing Desk (or the lobby door).
