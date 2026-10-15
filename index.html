@@ -35397,6 +35397,9 @@ function pkPostEd(){ const el=$('#pkPed'); if(!el) return; const p=S.posts.find(
 if(!FIRST_RUN&&!S.settings.seen492) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello492" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>4.9.2: The Cleanup Update.</b><small>Five hubs instead of 20+ tabs, a Home screen, search everything (/), the Post Kit, and backups that carry your WHOLE universe.${S.settings.seen49?'':' Plus 4.9: Nenjac City and a rhythm game.'}</small><div class="row"><button class="btn sm primary" id="h492p">📲 Post Kit</button><button class="btn sm" id="h492w">✨ What's new</button><button class="btn sm" id="h492x" aria-label="Dismiss">✕</button></div></div></div>`);
   const done=()=>{ S.settings.seen492=true; S.settings.seen49=true; S.settings.seen48=true; S.settings.seen47=true; S.settings.seen46=true; save(); $('#hello492')?.remove(); }; $('#h492p').onclick=()=>{ done(); go('post'); }; $('#h492w').onclick=()=>{ done(); openWhatsNew(); }; $('#h492x').onclick=done; },3300);
 if(FIRST_RUN) S.settings.seen492=true;
+/* 4.9.2: the planner syncs with the Shared Show; words that arrive from crewmates don't pay your wallet */
+if(typeof SY_COLS!=='undefined'&&!SY_COLS.includes('posts')) SY_COLS.push('posts');
+if(typeof syRun==='function'){ const _r=syRun; syRun=async function(){ try{ if(BK.ready) await bkAudit(); }catch(e){} const r=await _r.apply(this,arguments); try{ if(BK.ready&&!BK.busy){ bkTexts().forEach(t=>bkShingles(t,h=>{ if(!BK.set.has(h)){ BK.set.add(h); BK.dirty=true; } })); bkStoreSet(); } }catch(e){} return r; }; }
 
 </script>
 </body>
