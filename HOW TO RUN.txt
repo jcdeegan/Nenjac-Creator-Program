@@ -1,4 +1,4 @@
-NENJAC CREATOR 5.0: how to run it
+NENJAC CREATOR 5.1: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -86,6 +86,24 @@ ON YOUR PHONE
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
 
+NEW IN 5.1: THE FACE UPDATE
+  🙂 FACE RIGS (Puppet Studio). Hit 🙂 on anyone in the cast. Pick eyes, brows and a mouth,
+     drag the 👁 👁 👄 handles onto the face (⬆ moves the brows, Shift moves one eye alone),
+     tick "Paint over the art's own eyes & mouth" and 🎯 pick the skin color from the art.
+     Extras: blush, lashes, mustache, shades, freckles, sweat, tears, scar. Test buttons
+     at the bottom (📷 Me = your webcam drives it).
+  📷 FACE TRACKING now does blinks, eyebrows, smile/frown, eye gaze and tongue, and it's
+     all recorded. Keys (Pro): G angry brows · H surprised · J smile · K frown · L blink ·
+     ; wink · U / I look left/right.
+  📸 NENJCAM (Play hub). Click to power on, hold a straight face for calibration, then
+     hover your NOSE over a game for a second to pick it (or click). Poker Face, Bomb Day,
+     Feed Cas, Starr Says, Be Someone. Esc = menu. No camera? 🖱 Mouse mode.
+     Poker Face catches go on the Wall of Shame under the game (download them there).
+  🎨 PROJECTS WALL (Make hub). Graffiti. Practice wall = undo (Ctrl/⌘+Z) + eraser + saved
+     pieces. Street mode = permanent: no undo, no eraser, saves itself. Right-click a can
+     for the 2nd color (outlines / 3D on letters). Hold the spray still and it drips.
+  🎞 TRAILERS: 9 new genres.
+
 NEW IN 5.0: THE MAKE ANYTHING UPDATE (all three live in the MAKE hub)
   🎭 PUPPET STUDIO. Improv a whole episode with your mic. Pick a set, add up to 6
      characters, hit ⏺ (or R) and talk: whoever's selected talks. 1–6 switch who,
@@ -125,7 +143,7 @@ NEW IN 4.9.2: THE CLEANUP UPDATE
   ⏳ TIME MACHINE. Settings → Backup & data (or ⌘K "Time Machine"). Older versions of every
      script, comic, animation and song. Peek, then restore.
 
-PUSHING 5.0
+PUSHING 5.1
   index.html, sw.js and this file changed. Commit + push in GitHub Desktop like always.
 
 NEW IN 4.9: THE NENJAC CITY UPDATE
