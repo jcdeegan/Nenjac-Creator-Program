@@ -1,4 +1,4 @@
-NENJAC CREATOR 4.9: how to run it
+NENJAC CREATOR 4.9.2: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -85,6 +85,32 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 4.9.2: THE CLEANUP UPDATE
+  🧭 HUBS. The tabs are now five hubs: 🏠 Home, ✍️ Write, 🎬 Make, 🎮 Play, 🍿 Watch. Pick one
+     and its rooms show up in the strip under the header. Alt+1…0 still jumps around.
+  🏠 HOME. Continue where you left off, + New buttons, and every room grouped by hub.
+  🔍 SEARCH EVERYTHING. Press / (or the 🔍 button). Finds script lines, characters, lore,
+     comic bubbles, songs, animations, planned posts, city residents, your Empire stuff.
+  📲 POST KIT (Make → Post Kit).
+     📸 Carousel: a comic → Instagram slides (per page or per panel) + cover + end card, as a .zip.
+     ✂️ Clip It: any video in the Cinemas (every export lands there) → 15/30/60s clips in
+        vertical, portrait, square or wide, with word-pop captions (automatic for Animate
+        Script → Scene and Shorts videos; or load an .srt), hook text, watermark, intro + end card.
+     🖼 Thumbnail Maker, 🎬 Intro & end card designer, 📅 Content Planner (calendar, a caption
+        per platform with character counters, idea → ready → posted).
+     Set your handle, watermark and hashtags in Settings → 📲 Posting.
+  💾 BACKUPS. "Download full backup" now has EVERYTHING: Photo Studio, Cinemas videos, wallet,
+     Empire, cards, Nenjac City, Funkin'. Restoring never rolls your wallet back to before a
+     loss on the same wallet. Drop a .nenjac file anywhere on the app to restore it.
+  📲 MAC ↔ CHROMEBOOK. Settings → Backup & data → Handoff. Make a handoff file (Google Drive /
+     USB / email it to yourself, then drag it in on the other computer), or send it through your
+     Shared Show repo if you have one connected (it uses its own "nenjac-handoff" branch).
+  ⏳ TIME MACHINE. Settings → Backup & data (or ⌘K "Time Machine"). Older versions of every
+     script, comic, animation and song. Peek, then restore.
+
+PUSHING 4.9.2
+  index.html, sw.js and this file changed. Commit + push in GitHub Desktop like always.
 
 NEW IN 4.9: THE NENJAC CITY UPDATE
   🏙 CITY tab. Your whole cast lives in a big top-down Nenjac City. They go to school

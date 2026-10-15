@@ -2923,6 +2923,76 @@ nav.tabs{flex-wrap:nowrap;overflow-x:auto;min-width:0;scrollbar-width:none}nav.t
 .ct-heart{position:relative;width:130px}.ct-heart svg{width:130px;display:block;filter:drop-shadow(0 0 14px rgba(240,101,149,.5))}.ct-heart b{position:absolute;left:0;right:0;top:34%;font:900 26px system-ui;color:#fff;text-shadow:0 2px 4px #000}.ct-lres{min-height:44px;margin:6px 0 12px}
 .ct-away{min-width:min(520px,90vw)}.ct-away .ct-feed{max-height:50vh;overflow:auto;margin:10px 0}.ct-away .ct-fi{background:#f1f3f5;color:#212529}
 header.marquee,main{min-width:0;max-width:100%}
+/* ===== 4.9.2 hubs + home + search ===== */
+nav.tabs#tabs{display:none!important}
+nav.hubs{display:flex;gap:6px;flex:1;min-width:0;align-items:center;overflow-x:auto;scrollbar-width:none}nav.hubs::-webkit-scrollbar{display:none}
+nav.hubs button{font-family:var(--display);font-size:14px;letter-spacing:.4px;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;gap:6px;padding:8px 14px;border:3px solid #000;border-radius:12px;background:#fff;box-shadow:3px 3px 0 #000;flex:none;color:#111;transition:transform .15s}
+nav.hubs button:hover{transform:translate(-1px,-2px)}nav.hubs button.on{background:var(--sun,#ffc81e)}nav.hubs .hub-search{margin-left:auto;background:#e7f5ff}
+body.night nav.hubs button{background:#2b2f3a;color:#fff;border-color:#000}body.night nav.hubs button.on{background:var(--sun,#ffc81e);color:#111}
+.hubbar{display:flex;align-items:stretch;min-width:0;max-width:100%;overflow:hidden;background:#000;border-bottom:3px solid #000;min-height:32px;position:relative;z-index:4}.hubbar .ticker{flex:1;min-width:0;border-bottom:0}
+.subnav{display:flex;align-items:center;gap:4px;padding:3px 8px;overflow-x:auto;scrollbar-width:none;flex:none;max-width:72%;background:#16161c}.subnav[hidden]{display:none}.subnav::-webkit-scrollbar{display:none}
+.subnav .sub-h{color:var(--sun,#ffc81e);font-family:var(--display);font-size:12px;letter-spacing:.6px;text-transform:uppercase;padding:0 6px 0 2px;flex:none}
+.subnav button{flex:none;font:700 12.5px system-ui,sans-serif;color:#e9ecef;background:transparent;border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:4px 11px;cursor:pointer;white-space:nowrap}
+.subnav button:hover{background:rgba(255,255,255,.1)}.subnav button.on{background:var(--sun,#ffc81e);color:#111;border-color:#000;font-weight:800}
+body.focusing .hubbar{display:none}@media (max-height:820px){ body.edit-suite .hubbar{display:none} }
+@media (max-width:760px){ nav.hubs{order:3;flex:1 1 100%}nav.hubs button{padding:6px 10px;font-size:12px}nav.hubs .lbl{display:inline}.subnav{max-width:100%;flex:1}.hubbar .ticker{display:none} }
+.lobby-hero{min-height:230px!important}
+.home-dash{margin-top:18px}.home-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.home-row h2{margin:0;font-family:var(--display);font-size:22px}.home-new{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.home-cont{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:10px}
+.home-c{display:flex;gap:12px;align-items:center;text-align:left;background:#fff;border:3px solid #000;border-radius:16px;padding:10px;cursor:pointer;box-shadow:4px 4px 0 #000;font:inherit;color:#111;transition:transform .15s}.home-c:hover{transform:translate(-2px,-3px)}
+.home-img{width:64px;height:64px;flex:none;border-radius:10px;background:#f1f3f5 center/contain no-repeat;border:2px solid #000}.home-ico{width:64px;height:64px;flex:none;border-radius:10px;background:#f1f3f5;border:2px solid #000;display:flex;align-items:center;justify-content:center;font-size:30px}
+.home-t{display:flex;flex-direction:column;min-width:0}.home-t small{font-size:11px;text-transform:uppercase;letter-spacing:.06em;opacity:.6;font-weight:800}.home-t b{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.home-t em{font-style:normal;font-size:12px;opacity:.6}
+body.night .home-c{background:#22252d;color:#fff}
+.doors.grouped{display:block!important}.door-group{margin-top:22px}.door-group h3{font-family:var(--display);font-size:20px;margin:0 0 10px}.door-group h3 small{font-family:system-ui;font-size:13px;font-weight:600;opacity:.6;margin-left:8px;text-transform:none}
+.door-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}.door-grid .door{grid-column:auto!important}
+.srch{width:min(680px,86vw)}.srch #srQ{width:100%;font-size:17px;padding:12px 14px}.srch-list{max-height:60vh;overflow:auto;margin:10px 0}.srch-g{font:800 11px system-ui;text-transform:uppercase;letter-spacing:.08em;opacity:.55;margin:10px 4px 4px}
+.srch-it{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:10px;cursor:pointer}.srch-it:hover{background:var(--soft,#f1f3f5)}.srch-it.on{background:var(--sun,#ffc81e)}.srch-it>span{width:24px;text-align:center;font-size:18px}.srch-it small{display:block;opacity:.7;font-size:12.5px;line-height:1.3}.srch-it mark{background:#ffe066;color:inherit;border-radius:3px;padding:0 1px}
+.blk.srch-flash{animation:srchFlash 2s}@keyframes srchFlash{0%,60%{background:#ffe066}}
+.kb-all{margin-top:12px;border-top:2px dashed #ddd;padding-top:8px}.kb-all summary{cursor:pointer;font-weight:800}.kb-all h3{margin:12px 0 4px;font-size:15px}
+/* ===== bulletproof ===== */
+body.safe-drop::after{content:"📂 Drop a .nenjac backup to restore it";position:fixed;inset:12px;border:4px dashed #ffc81e;border-radius:24px;background:rgba(0,0,0,.55);color:#fff;font:900 28px system-ui;display:flex;align-items:center;justify-content:center;z-index:99999;pointer-events:none}
+.safe-ban{position:fixed;left:50%;bottom:76px;transform:translateX(-50%);z-index:9500;display:flex;gap:10px;align-items:center;background:#fff;border:3px solid #000;border-radius:16px;padding:10px 14px;box-shadow:5px 5px 0 #000;max-width:calc(100vw - 24px);flex-wrap:wrap;color:#111}
+.safe-ho{width:min(640px,86vw)}.safe-opt{border:2px solid #e9ecef;border-radius:14px;padding:12px;margin:10px 0;display:flex;flex-direction:column;gap:8px}.safe-opt.off{opacity:.55}.safe-opt>span{font-size:13.5px;line-height:1.4}.safe-qr svg{width:120px;height:120px;flex:none;background:#fff}.safe-qr code{display:block;word-break:break-all;font-size:12px;margin-bottom:6px}.safe-more .bk-card{margin-top:10px}
+.tm{width:min(820px,86vw)}.tm-tabs{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.tm-cols{display:grid;grid-template-columns:260px 1fr;gap:12px;max-height:60vh}@media(max-width:700px){.tm-cols{grid-template-columns:1fr}}
+.tm-items{overflow:auto;display:flex;flex-direction:column;gap:4px}.tm-items button{text-align:left;border:2px solid transparent;background:#f8f9fa;border-radius:10px;padding:7px 10px;cursor:pointer;font:inherit;color:inherit}.tm-items button.on{border-color:#000;background:#fff3bf}.tm-items small{display:block;opacity:.6;font-size:11.5px}
+.tm-vers{overflow:auto;display:flex;flex-direction:column;gap:6px}.tm-v{display:flex;justify-content:space-between;align-items:center;gap:10px;border:1px solid #e9ecef;border-radius:10px;padding:8px 10px;font-size:13.5px}.tm-v small{opacity:.65}
+.tm-peek{border:2px solid #000;border-radius:12px;padding:10px;background:#fffdf3}.tm-peek pre{white-space:pre-wrap;font:13px/1.45 'Courier Prime','Courier New',monospace;max-height:260px;overflow:auto;margin:6px 0 0}
+body.night .tm-items button{background:#2b2f3a}body.night .tm-peek{background:#1f2128}
+.safe-st{width:min(640px,86vw)}.ss-row{display:grid;grid-template-columns:220px 1fr 80px;gap:10px;align-items:center;font-size:13.5px;margin:4px 0}.ss-row i{height:10px;background:#f1f3f5;border-radius:6px;overflow:hidden}.ss-row b{display:block;height:100%;background:#4dabf7}.ss-row em{font-style:normal;text-align:right;opacity:.7}
+.ss-films{display:flex;flex-direction:column;gap:6px;max-height:280px;overflow:auto}.ss-f{display:flex;gap:10px;align-items:center}.ss-f img{width:70px;height:40px;object-fit:cover;border-radius:6px}.ss-f small{display:block;opacity:.6}
+/* ===== post kit ===== */
+.door.d18{background:linear-gradient(160deg,#fff 55%,#e5dbff)}
+.pk{display:grid;grid-template-columns:230px 1fr;gap:16px;align-items:start}@media(max-width:860px){.pk{grid-template-columns:1fr}}
+.pk-tools{display:flex;flex-direction:column;gap:6px;position:sticky;top:10px}@media(max-width:860px){.pk-tools{flex-direction:row;overflow-x:auto;position:static}.pk-tools button{flex:none;width:150px}.pk-title{display:none}}
+.pk-title{padding:4px 6px 8px}.pk-title b{font-family:var(--display);font-size:22px;display:block}.pk-title small{opacity:.65}
+.pk-tools button{display:grid;grid-template-columns:30px 1fr;grid-template-rows:auto auto;column-gap:6px;text-align:left;background:#fff;border:3px solid #000;border-radius:14px;padding:8px 10px;cursor:pointer;font:inherit;color:#111;box-shadow:3px 3px 0 #000}
+.pk-tools button span{grid-row:1/3;font-size:22px;align-self:center}.pk-tools button small{opacity:.6;font-size:11.5px}.pk-tools button.on{background:var(--sun,#ffc81e)}
+.pk-main{background:#fff;border:3px solid #000;border-radius:18px;padding:16px;box-shadow:5px 5px 0 #000;min-height:420px;color:#111}body.night .pk-main,body.night .pk-tools button{background:#22252d;color:#fff}
+.pk-h h2{margin:0;font-family:var(--display)}.pk-src{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin:12px 0;max-height:300px;overflow:auto;padding:2px}
+.pk-thumb{display:flex;flex-direction:column;gap:3px;align-items:stretch;text-align:left;border:2px solid #dee2e6;border-radius:12px;padding:6px;background:#f8f9fa;cursor:pointer;font:inherit;color:inherit}.pk-thumb.on{border-color:#000;background:#fff3bf;box-shadow:3px 3px 0 #000}
+.pk-thumb img{width:100%;height:80px;object-fit:contain;background:#fff;border-radius:8px}.pk-thumb>span{height:80px;display:flex;align-items:center;justify-content:center;font-size:30px;background:#fff;border-radius:8px}.pk-thumb b{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.pk-thumb small{font-size:11px;opacity:.6}.pk-thumb.up{border-style:dashed}
+body.night .pk-thumb{background:#2b2f3a;border-color:#444}body.night .pk-thumb.on{background:#5c4a00}
+.pk-opts{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;font-size:13.5px;font-weight:600}.pk-opts.col{flex-direction:column;align-items:stretch;gap:8px}.pk-opts label{display:flex;gap:6px;align-items:center;flex-wrap:wrap}.pk-opts.col label .txt{flex:1;min-width:140px}
+.pk-opts select,.pk-opts .txt{padding:5px 8px;border-radius:8px;border:2px solid #ced4da;font:inherit;font-weight:500;background:#fff;color:#111}
+.pk-out{margin-top:12px}.pk-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.pk-slides{display:flex;gap:10px;overflow-x:auto;padding:10px 2px}.pk-slides figure{margin:0;flex:none;width:170px}.pk-slides img{width:100%;border-radius:8px;border:2px solid #000;display:block}.pk-slides figcaption{display:flex;justify-content:space-between;align-items:center;margin-top:4px;font-weight:800}
+.pk-clip{display:grid;grid-template-columns:1fr 360px;gap:16px}@media(max-width:1100px){.pk-clip{grid-template-columns:1fr}}
+.pk-cl video{width:100%;max-height:420px;background:#000;border-radius:12px}.pk-trim{display:flex;flex-direction:column;gap:6px;margin-top:8px;font-size:13.5px}.pk-trim label{display:flex;gap:8px;align-items:center}.pk-trim input[type=range]{flex:1}
+.pk-cr canvas{display:block;margin:0 auto 10px;border-radius:12px;border:3px solid #000;background:#000;max-width:100%}.linkish{text-decoration:underline;cursor:pointer;color:#1c7ed6}
+.pk-result{width:100%;max-height:420px;border-radius:12px;background:#000;margin:8px 0}.pk-opts .big{font-size:16px;padding:10px}
+.pk-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:1000px){.pk-cards{grid-template-columns:1fr}}.pk-card h3{margin:6px 0}.pk-card canvas{width:100%;aspect-ratio:16/9;border-radius:12px;border:3px solid #000;margin-bottom:10px;background:#000}
+.pk-th{display:grid;grid-template-columns:1fr 320px;gap:16px}@media(max-width:1100px){.pk-th{grid-template-columns:1fr}}.pk-thc canvas{width:100%;border-radius:12px;border:3px solid #000;touch-action:none;cursor:grab;display:block;margin-bottom:8px}
+.pk-stk{display:flex;flex-wrap:wrap;gap:4px}.pk-sel{border-top:2px dashed #dee2e6;padding-top:8px;display:flex;flex-direction:column;gap:6px}.pk-frm{width:min(560px,86vw)}.pk-frm video{width:100%;max-height:300px;background:#000;border-radius:10px;margin:8px 0}
+.pk-plan{display:grid;grid-template-columns:1fr 380px;gap:16px;align-items:start}@media(max-width:1100px){.pk-plan{grid-template-columns:1fr}}
+.pk-week,.pk-days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.pk-week span{font:800 11px system-ui;text-transform:uppercase;opacity:.55;text-align:center;padding:6px 0}
+.pk-day{min-height:84px;border:2px solid #e9ecef;border-radius:10px;padding:4px;display:flex;flex-direction:column;gap:3px;cursor:pointer;background:#fff;overflow:hidden}.pk-day:hover{border-color:#adb5bd}.pk-day.out{opacity:.4}.pk-day.today{border-color:#000;box-shadow:inset 0 0 0 2px #ffc81e}.pk-day i{font-style:normal;font-weight:800;font-size:12px}
+body.night .pk-day{background:#1f2128;border-color:#333}
+.pk-pc{font:700 11px system-ui;text-align:left;border:0;border-radius:6px;padding:3px 5px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#111}.pk-pc.idea{background:#e9ecef}.pk-pc.ready{background:#d3f9d8}.pk-pc.posted{background:#d0bfff}.pk-pc.on{outline:2px solid #000}
+.pk-unsched{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px}.pk-ped{border:2px solid #000;border-radius:14px;padding:12px;display:flex;flex-direction:column;gap:8px;position:sticky;top:10px}.pk-ped .txt{width:100%;box-sizing:border-box}
+.pk-plats{display:flex;flex-wrap:wrap;gap:6px}.pk-plats label{border:2px solid #dee2e6;border-radius:999px;padding:3px 10px;font-size:13px;font-weight:700;cursor:pointer}.pk-plats label.on{border-color:#000;background:#fff3bf}body.night .pk-plats label.on{background:#5c4a00}
+.pk-help{gap:4px;flex-wrap:wrap}.pk-capbox{border:1px solid #e9ecef;border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:6px}.pk-cnt{font-size:11.5px;opacity:.7}.pk-cnt.bad{color:#e03131;opacity:1;font-weight:800}.pk-empty{text-align:center;padding:30px 10px}
+#app{grid-template-rows:auto auto 1fr 66px}
+@media (max-width:700px){ #app{grid-template-rows:auto auto 1fr 54px} .hubbar{min-height:0} }
+@media (max-width:760px){ nav.hubs .hub-search .lbl{display:none} }
 
 </style>
 </head>
@@ -4580,7 +4650,7 @@ $('#mMeta').onclick=()=>go('vibe');
 
 /* fake-but-fun visualizer (works with every source, even on file://) */
 $('#viz').innerHTML = Array.from({length:32},()=>'<i></i>').join('');
-setInterval(()=>{ const bars=$$('#viz i'); const p=isPlaying(); const t=Date.now()/260;
+let VIZ_IDLE=false; setInterval(()=>{ if(document.hidden) return; const p=isPlaying(); if(!p&&VIZ_IDLE) return; VIZ_IDLE=!p; const bars=$$('#viz i'); const t=Date.now()/260;
   bars.forEach((b,i)=>{ b.style.height = p ? (12+Math.abs(Math.sin(t+i*.55))*55+Math.random()*30)+'%' : '6%'; }); }, 140);
 
 /* uploads */
@@ -10786,7 +10856,7 @@ drawWheel=function(){ whRender(); }; spinWheel=function(){ whSpin(); };
    points, storage safety, one-tab guard, error catcher, offline app,
    help menu, what's new, accessibility.
    =================================================================== */
-const APP_NAME='Nenjac Creator', APP_VER='4.9', BACKUP_FORMAT=2;
+const APP_NAME='Nenjac Creator', APP_VER='4.9.2', BACKUP_FORMAT=2;
 const showName = () => (S.settings.showName||'').trim() || 'Nenjac';
 S.version = Math.max(S.version||1, 4);
 const ONLINE_APP = /^https?:$/.test(location.protocol);
@@ -10796,6 +10866,15 @@ const ONLINE_APP = /^https?:$/.test(location.protocol);
 
 /* ---------- WHAT'S NEW ---------- */
 const CHANGELOG=[
+  {v:'4.9.2',title:'The Cleanup Update',items:[
+    ['🧭','Five hubs instead of 20+ tabs','Home, Write, Make, Play and Watch. Pick one and its rooms show up in the strip under the header. The app remembers which room you were last in for each hub.'],
+    ['🏠','A real Home screen','“Continue where you left off” (your latest script, comic, drawing, animation and songs), one-click New buttons, your next planned post, and every room grouped by hub.'],
+    ['🔍','Search everything','Press / (or 🔍 up top) and search every script line, character, lore entry, comic bubble, song, animation, post, city resident and thing you own.'],
+    ['📲','The Post Kit','New in Make. Instagram carousels from comics (page by page or panel by panel), Clip It (trim any video to vertical / square / wide with word-pop captions, hook text, watermark, intro and end cards), a Thumbnail Maker, an intro & end card designer, and a Content Planner calendar with per-platform captions.'],
+    ['💾','Backups that really have everything','The full backup now includes Photo Studio, Cinemas videos, your wallet, Empire, trading cards, Nenjac City and Funkin\'. Restoring can never roll your wallet back to before a casino loss. Drag a .nenjac file onto the app to restore it.'],
+    ['📲','Move to another computer','Handoff file or straight through your Shared Show repo (on its own branch), plus a QR code to open the app on another device.'],
+    ['⏳','Time Machine','Older versions of every script, comic, animation and song, saved as you work. Peek and restore any of them.'],
+    ['🛠','Also','Backup reminder after a week, a storage manager, Games & Posting settings tabs, every shortcut in one sheet, and fixes (classic sets in the Playground backdrop list, Funkin\' freeplay stages).']]},
   {v:'4.9',title:'The Nenjac City Update',items:[
     ['🏙','Nenjac City','New tab. A top-down life sim with your whole cast living in a big city: Nenjac High, the Theater, Little Italy, the Mafia Hideout, Chili\'s, the Brown Fountain, the Bunker, the beach and 80+ places. They go to school and work, eat, sleep, make friends, start beef, catch feelings, date, break up and get married, even while you\'re away. Colored bubbles mean someone wants something: black = an item, orange = friendship advice, pink = love advice, blue = bored, green = a goal, yellow = good news, purple = weird, red = emergency. Drag anyone onto anyone to force a hangout, onto a building to send them there. Give gifts, run the Love Tester, read the Gazette.'],
     ['🎤','Nenjac Night Funkin\'','A four-arrow rap battle in Chaos Corner. Seven story weeks (Neen, Nerd, Warren, Dean, Tony, Deegs, Starr) plus a bonus, Freeplay against anyone in your cast, holds, bombs, Tony\'s cut, downscroll, offset calibration and touch buttons. Bet on yourself, or bet on CPU-vs-CPU Showdowns in the Casino.'],
@@ -10904,7 +10983,7 @@ const CHANGELOG=[
   {v:'2.0',title:'Season 2',items:[['🎨','Art Studio','Shapes, outlines, the Face Kit and PNG export.'],['⭐','Script Rater + Table Read','The cast reviews and reads your script.'],['🏆','Trophies, soundboard, Night Shift','And a lot more chaos.']]},
   {v:'1.0',title:'Opening night',items:[['✍️','Writing Desk, Universe Bible, Vibe Station, Chaos Corner','Where it all started.']]}];
 function openWhatsNew(){ openModal(`<div class="wn"><div class="row"><h2 class="grow">✨ What's new</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
-  ${CHANGELOG.map((c,i)=>`<details ${i===0?'open':''} class="wn-ver"><summary><b>${+c.v>=4?APP_NAME:"Writers' Room"} ${c.v}</b> <span>${esc(c.title)}</span></summary><div class="wn-items">${c.items.map(([e,t,d])=>`<div class="wn-it"><span>${e}</span><div><b>${esc(t)}</b><p>${esc(d)}</p></div></div>`).join('')}</div></details>`).join('')}
+  ${CHANGELOG.map((c,i)=>`<details ${i===0?'open':''} class="wn-ver"><summary><b>${parseFloat(c.v)>=4?APP_NAME:"Writers' Room"} ${c.v}</b> <span>${esc(c.title)}</span></summary><div class="wn-items">${c.items.map(([e,t,d])=>`<div class="wn-it"><span>${e}</span><div><b>${esc(t)}</b><p>${esc(d)}</p></div></div>`).join('')}</div></details>`).join('')}
   <div class="row" style="margin-top:12px"><button class="btn primary" onclick="closeModal();tourStart()">🎓 Take the tour</button><button class="btn" onclick="closeModal()">Close</button></div></div>`); S.settings.seen40=true; save(); }
 
 /* ---------- RESTORE POINTS (daily copies of scripts + Bible + settings) ---------- */
@@ -32263,7 +32342,7 @@ function pgFatal(b,kind){ if(PG.fatal||!b||b.gone) return; PG.fatal={b:b.id,kind
 ACH.push({id:'pg_kill',e:'🧨',n:'Playground Casualty',d:'Kill someone in the Nenjac Playground'},{id:'pg_fatal',e:'💀',n:'FATALITY',d:'Finish someone with a fatality'},{id:'pg_nuke',e:'☢️',n:'Ends the Episode',d:'Drop a nuke in the Playground'},{id:'pg_snap',e:'🫰',n:'Perfectly Balanced',d:'Do the Snap'},{id:'pg_high',e:'🍃',n:'Puff Puff Pass',d:'Get someone high in the Playground'},{id:'pg_100',e:'⚰️',n:'Mass Casualty Event',d:'100 Playground kills in one session'});
 
 /* ---------- backgrounds ---------- */
-function pgSettings(){ const L=[['lab','🧪 The Lab'],['void','🌌 The Void'],['white','⬜ White room'],['stage','🎭 Spotlight stage']]; try{ CLASSIC_SETS.forEach(([f,n])=>L.push([CL_ROOT+'backgrounds/'+f+'.jpg','📼 '+n])); }catch(e){} try{ BACKGROUNDS.forEach(p=>L.push([p,'🖼 '+p.split('/').pop().replace('.jpg','').replace(/-/g,' ')])); }catch(e){} return L; }
+function pgSettings(){ const L=[['lab','🧪 The Lab'],['void','🌌 The Void'],['white','⬜ White room'],['stage','🎭 Spotlight stage']]; try{ CLASSIC_SETS.forEach(c=>L.push([c.p,'📼 '+c.n])); }catch(e){} try{ BACKGROUNDS.forEach(p=>L.push([p,'🖼 '+p.split('/').pop().replace('.jpg','').replace(/-/g,' ')])); }catch(e){} return L; }
 async function pgSetBg(k){ PG.bg=k; PG.bgImg=null; if(!['lab','void','white','stage'].includes(k)){ const im=await loadImg(assetURL(k)); if(PG.bg===k) PG.bgImg=im; } try{ S.settings.pgBg=k; save(); }catch(e){} }
 function pgDrawBg(g){ const W=PG.W, H=PG.H, F=PG.floor;
   if(PG.bgImg){ const im=PG.bgImg, s=Math.max(W/im.width,H/im.height); g.drawImage(im,(W-im.width*s)/2,(H-im.height*s)/2,im.width*s,im.height*s); g.fillStyle='rgba(0,0,0,.35)'; g.fillRect(0,F,W,H-F); g.fillStyle='rgba(255,255,255,.25)'; g.fillRect(0,F,W,2); return; }
@@ -34088,7 +34167,7 @@ function nfWeekSong(w,i,diff){ const W=NF_WEEKS[w], [title,bpm]=W.songs[i]; retu
 const NF_GSTYLE={'Morelli Family':'mafia','Nenjac PD':'rock','Adults & Staff':'lofi','Classic Nenjac':'chip','Families':'country','Citizens':'trap'};
 function nfSongsFor(c){ const w=NF_WEEKS.find(w=>w.opp===c.name); if(w) return w.songs.map(([t,b],i)=>({title:t,bpm:b,style:w.style,mech:w.mech,idx:i,bg:w.bg}));
   const R=nfRng(c.name+'|songs'), f=c.name.replace(/^(Mr\.?|Mrs|Dr\.?|Officer|Principal|Inspector|Reporter) /,'').split(' ')[0], T=[`${f} Freestyle`,`${f}'s Theme`,`Beef With ${f}`,`${f} (Remix)`,`Respect ${f}`,`${f} Unplugged`,`Nobody Likes ${f}`,`${f} Forever`,`${f} vs The World`,`Big ${f} Energy`];
-  const keys=Object.keys(NF_STYLES), style=NF_GSTYLE[c.group]||keys[hashStr(c.name)%keys.length], out=[]; while(out.length<3){ const t=T[R()*T.length|0]; if(!out.some(s=>s.title===t)) out.push({title:t,bpm:Math.round(96+R()*78),style,idx:out.length,bg:CLASSIC_SETS[R()*CLASSIC_SETS.length|0][0]}); } return out; }
+  const keys=Object.keys(NF_STYLES), style=NF_GSTYLE[c.group]||keys[hashStr(c.name)%keys.length], out=[]; while(out.length<3){ const t=T[R()*T.length|0]; if(!out.some(s=>s.title===t)) out.push({title:t,bpm:Math.round(96+R()*78),style,idx:out.length,bg:CLASSIC_SETS[R()*CLASSIC_SETS.length|0].f}); } return out; }
 function nfFree(){ NF.mode='menu'; const q=(NF._fq||'').toLowerCase(), opp=charByName(NF._fopp||'Neen')||S.chars[0], D=NF._diff??1, songs=nfSongsFor(opp), si=Math.min(NF._fsong||0,songs.length-1), me=NF._fme||(opp.name==='Deegs'?'Starr':'Deegs'), room=nfBetRoom();
   const list=S.chars.filter(c=>!q||c.name.toLowerCase().includes(q));
   nfUI(`<div class="nf-panel nf-free"><div class="nf-top"><button class="nf-b sm" data-nf="menu">‹ Back</button><h2>Freeplay</h2><input class="nf-q" id="nfQ" placeholder="Search the cast…" value="${esc(NF._fq||'')}"></div><div class="nf-cols">
@@ -34735,9 +34814,589 @@ function ctEnter(){ if(!CTS){ ctInit(); } ctMount(); if(!CTV.map) ctRenderMap();
 window.addEventListener('beforeunload',()=>{ try{ if(CTS) ctSave(); }catch(e){} });
 document.addEventListener('visibilitychange',()=>{ if(document.hidden&&CTS) ctSave(); else if(!document.hidden&&current==='city'&&CTS){ const away=Date.now()-(CTS.real||Date.now()); if(away>20000){ const ev=ctCatchUp(away/CT_MIN_MS); CTS.real=Date.now(); CTV.last=0; if(ev.length) ctAway(ev,away); } } });
 { const _c=commands; commands=function(){ const C=_c(); C.push({ico:'🏙',label:'Nenjac City (life sim)',run:()=>go('city'),kw:'city sims tomodachi life town map relationships love'},{ico:'💘',label:'Nenjac City: Love Tester',run:()=>{ go('city'); setTimeout(()=>ctLoveModal(),300); },kw:'love compatibility test crush'}); return C; }; }
-if(!FIRST_RUN&&!S.settings.seen49) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello49" role="status"><div class="h40-art">${castArt('Mister Mayor')}</div><div><b>4.9: The Nenjac City Update.</b><small>Your whole cast now lives in Nenjac City (and keeps living while you're gone). Plus a rhythm battle game and more stuff to collect.</small><div class="row"><button class="btn sm primary" id="h49c">🏙 Visit the city</button><button class="btn sm" id="h49f">🎤 Funkin'</button><button class="btn sm" id="h49x" aria-label="Dismiss">✕</button></div></div></div>`);
+if(!FIRST_RUN&&!S.settings.seen49&&S.settings.seen492) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello49" role="status"><div class="h40-art">${castArt('Mister Mayor')}</div><div><b>4.9: The Nenjac City Update.</b><small>Your whole cast now lives in Nenjac City (and keeps living while you're gone). Plus a rhythm battle game and more stuff to collect.</small><div class="row"><button class="btn sm primary" id="h49c">🏙 Visit the city</button><button class="btn sm" id="h49f">🎤 Funkin'</button><button class="btn sm" id="h49x" aria-label="Dismiss">✕</button></div></div></div>`);
   const done=()=>{ S.settings.seen49=true; S.settings.seen48=true; S.settings.seen47=true; S.settings.seen46=true; save(); $('#hello49')?.remove(); }; $('#h49c').onclick=()=>{ done(); go('city'); }; $('#h49f').onclick=()=>{ done(); go('chaos'); setTimeout(()=>nfOpen(),250); }; $('#h49x').onclick=done; },3500);
 if(FIRST_RUN) S.settings.seen49=true;
+
+/* =====================================================================
+   [SAFE] 4.9.2 "Bulletproof". One backup file that really has
+   EVERYTHING (photos, cinema videos, the wallet + empire + cards, the
+   city, Funkin' scores, your writing history), a wallet guard so a
+   restore can't be used to undo casino losses, handoff to another
+   computer (file, Shared Show repo, or QR to open the app), the Time
+   Machine (version history for scripts, comics, animations and songs),
+   backup reminders and a storage manager.
+   ===================================================================== */
+const SAFE_FORMAT=3;
+try{ if(typeof CZ!=='undefined'&&!CZ.wid){ CZ.wid=uid(); bkSave(); } }catch(e){}
+BK_STORES.push(
+  {key:'photos',label:'Photo Studio photos',db:()=>PhotoDB,st:'photos'},
+  {key:'photoBgs',label:'Photo Studio backdrops',db:()=>PhotoDB,st:'bgs'},
+  {key:'booth',label:'Remote recording takes',db:()=>BoothDB,st:'takes',optional:true},
+  {key:'cinema',label:'Nenjac Cinemas videos',db:()=>CinemaDB,st:'films',video:true},
+  {key:'bank',label:'Nenjac Bucks writing history',db:()=>BankDB,st:'kv',kv:true,wallet:true});
+/* key-value stores (no keyPath) need their keys carried along */
+{ const _a=bkAll, _p=bkPut;
+  bkAll=async function(B){ if(!B.kv) return _a(B); const db=await B.db().open(); if(!db) return []; return new Promise(res=>{ const st=db.transaction(B.st).objectStore(B.st), out=[]; const q=st.openCursor(); q.onsuccess=()=>{ const c=q.result; if(c){ out.push({k:c.key,v:c.value}); c.continue(); } else res(out); }; q.onerror=()=>res(out); }); };
+  bkPut=async function(B,o){ if(!B.kv) return _p(B,o); const db=await B.db().open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction(B.st,'readwrite'); tx.objectStore(B.st).put(o.v,o.k); tx.oncomplete=res; tx.onerror=res; }); }; }
+/* everything else this app keeps in localStorage (wallet, empire, cards, city, Funkin', cinema bookmarks…) */
+const SAFE_SKIP=[LS_KEY,SY_KEY,'nenjac.rmkey','nenjac.ghApi'];
+function safeLocalKeys(){ const out={}; try{ for(let i=0;i<localStorage.length;i++){ const k=localStorage.key(i); if(!k||!/^nenjac/i.test(k)||SAFE_SKIP.includes(k)) continue; out[k]=localStorage.getItem(k); } }catch(e){} return out; }
+function safeFlushLocal(){ try{ bkSave(true); }catch(e){} try{ if(typeof CTS!=='undefined'&&CTS) ctSave(); }catch(e){} try{ nfSave(); }catch(e){} }
+/* while a restore is reloading the page, nothing may write the old data back */
+{ const wrap=n=>{ const f=window[n]; if(typeof f!=='function') return; window[n]=function(){ if(window.__nenjacRestoring) return; return f.apply(this,arguments); }; }; ['bkSave','ctSave','nfSave'].forEach(wrap); }
+fullBackup=async function({voice=true,videos=true,onStep=()=>{}}={}){ if(typeof syncEditor==='function') syncEditor(); safeFlushLocal(); const files=[], enc=new TextEncoder(), counts={};
+  for(const B of BK_STORES){ if(B.optional&&!voice) continue; if(B.video&&!videos) continue; onStep(B.label); let recs=await bkAll(B); if(B.strip) recs=recs.map(r=>{ const x={...r}; B.strip.forEach(k=>delete x[k]); return x; }); counts[B.key]=recs.length; files.push({name:`${B.key}.json`,data:enc.encode(JSON.stringify(bkPack(recs,files)))}); }
+  const local=safeLocalKeys(); counts.local=Object.keys(local).length; files.unshift({name:'local.json',data:enc.encode(JSON.stringify(local))});
+  files.unshift({name:'state.json',data:enc.encode(JSON.stringify(S))});
+  let wallet=null; try{ wallet={bal:Math.round(CZ.bal),last:CZ.ledger[0]?.t||0,wid:CZ.wid||''}; }catch(e){}
+  files.unshift({name:'manifest.json',data:enc.encode(JSON.stringify({app:APP_NAME,format:SAFE_FORMAT,version:APP_VER,created:Date.now(),from:safeDevice(),show:showName(),scripts:S.scripts.length,chars:S.chars.length,counts,wallet,videos},null,1))});
+  onStep('Packing'); const blob=await makeZip(files); S.settings.lastFullBackup=Date.now(); S.settings.bkSnooze=0; save(); return blob; };
+downloadFullBackup=async function(voice=true,videos=true,name){ const t=toast('💾 Packing your backup…'); try{ const blob=await fullBackup({voice,videos}); download(name||`nenjac-creator-backup-${todayKey()}.nenjac`,blob); toast(`💾 Backup saved (${fmtMB(blob.size)}). Keep it somewhere safe from Deegs.`,'good'); setBadge(); safeBanner(); return blob; }catch(e){ console.error(e); toast('Backup failed: '+esc(e.message||e),'bad'); } };
+function safeDevice(){ const u=navigator.userAgent; return /CrOS/.test(u)?'Chromebook':/iPhone|iPad/.test(u)?'iPhone/iPad':/Android/.test(u)?'Android':/Mac/.test(u)?'Mac':/Windows/.test(u)?'Windows PC':'computer'; }
+restoreBackupFile=async function(f,opts={}){ const u8=new Uint8Array(await f.arrayBuffer());
+  if(u8[0]===0x7b){ let s; try{ s=JSON.parse(new TextDecoder().decode(u8)); }catch(e){ return toast("That file isn't a Nenjac backup.",'bad'); } if(!s.scripts||!s.chars) return toast("That file isn't a Nenjac backup.",'bad');
+    if(!confirm(`Restore this older backup?\n\n${s.scripts.length} scripts, ${s.chars.length} characters${s.__drawings?`, ${s.__drawings.length} drawings`:''}.\n\nIt replaces the scripts, Bible and settings in this browser. A restore point of what you have now is saved first.`)) return;
+    await takeRestorePoint('Before restoring a backup'); const dr=s.__drawings||[]; delete s.__drawings; for(const d of dr) await bkPut(BK_STORES[0],await withPreview(d)); S=s; save(true); location.reload(); return; }
+  let Z, man; try{ Z=readZip(u8); man=JSON.parse(new TextDecoder().decode(Z['manifest.json'])); if(man.app!==APP_NAME) throw 0; }catch(e){ return toast("That file isn't a Nenjac Creator backup.",'bad'); }
+  if((man.format||1)>SAFE_FORMAT&&!confirm('This backup was made by a newer version of Nenjac Creator. Some parts might not come through. Restore anyway?')) return;
+  /* wallet guard: never roll the wallet back to an older copy (that would undo casino losses) */
+  let keepWallet=false; try{ const W=man.wallet||{}, curLast=CZ.ledger[0]?.t||0, same=!W.wid||W.wid===CZ.wid; keepWallet=same&&curLast>(W.last||0); }catch(e){}
+  const c=man.counts||{}; const what=`${man.scripts} scripts · ${man.chars} characters · ${c.drawings||0} drawings & comics · ${c.pitSongs||0} songs · ${c.animProjects||0} animations${c.cinema!=null?` · ${c.cinema} videos`:''}${c.local!=null?' · wallet, empire, cards, city & Funkin\'':''}`;
+  if(!opts.yes&&!confirm(`Restore the backup from ${new Date(man.created).toLocaleString()}${man.from?` (made on a ${man.from})`:''}?\n\n${what}\n\nThis REPLACES everything in this browser. A restore point of your current scripts and Bible is saved first.${keepWallet?'\n\n💵 Your wallet here is newer than the one in this backup, so you keep THIS wallet (no un-doing casino losses).':''}`)) return;
+  toast('📂 Restoring…'); await takeRestorePoint('Before restoring a backup'); window.__nenjacRestoring=true; try{ clearTimeout(bkSaveT); }catch(e){}
+  for(const B of BK_STORES){ const raw=Z[`${B.key}.json`]; if(!raw) continue; if(B.wallet&&keepWallet) continue; const recs=bkUnpack(JSON.parse(new TextDecoder().decode(raw)),Z); await bkClear(B); for(const r of recs) await bkPut(B,B.key==='drawings'?await withPreview(r):r); }
+  if(Z['local.json']){ const L=JSON.parse(new TextDecoder().decode(Z['local.json'])); for(const [k,v] of Object.entries(L)){ if(keepWallet&&k===BK_KEY) continue; try{ localStorage.setItem(k,v); }catch(e){} } }
+  try{ sessionStorage.setItem('nenjac.restored',JSON.stringify({at:man.created,keepWallet})); }catch(e){}
+  S=JSON.parse(new TextDecoder().decode(Z['state.json'])); save(true); location.reload(); };
+try{ const r=JSON.parse(sessionStorage.getItem('nenjac.restored')||'null'); if(r){ sessionStorage.removeItem('nenjac.restored'); setTimeout(()=>toast(`📂 Restored the backup from ${new Date(r.at).toLocaleDateString()}.${r.keepWallet?' 💵 You kept your newer wallet.':''}`,'good'),1500); } }catch(e){}
+/* drop a .nenjac anywhere on the app to restore it */
+document.addEventListener('dragover',e=>{ if([...(e.dataTransfer?.items||[])].some(i=>i.kind==='file')){ const f=e.dataTransfer.items[0]; if(f&&/zip|octet|^$/.test(f.type||'')) { e.preventDefault(); document.body.classList.add('safe-drop'); } } });
+document.addEventListener('dragleave',e=>{ if(!e.relatedTarget) document.body.classList.remove('safe-drop'); });
+document.addEventListener('drop',e=>{ document.body.classList.remove('safe-drop'); const f=e.dataTransfer?.files?.[0]; if(!f||e.defaultPrevented) return; if(/\.nenjac$/i.test(f.name)){ e.preventDefault(); restoreBackupFile(f); } else if(/zip|octet|^$/.test(f.type||'')) e.preventDefault(); });
+
+/* ---------- handoff ---------- */
+const SAFE_BRANCH='nenjac-handoff';
+async function safeHandoffUp(){ if(!(typeof syOn==='function'&&syOn())) return toast('Connect a Shared Show first (Settings → Shared show).','bad'); const t=toast('☁ Packing your universe…');
+  try{ const blob=await fullBackup({voice:true,videos:false}); if(blob.size>SY_MAX) return toast(`That's ${fmtMB(blob.size)}. Too big for GitHub (max ${fmtMB(SY_MAX)}). Use a handoff file instead.`,'bad');
+    const u8=new Uint8Array(await blob.arrayBuffer()); toast(`☁ Uploading ${fmtMB(blob.size)}…`);
+    const bl=await gh('/git/blobs',{method:'POST',body:{content:syB64(u8),encoding:'base64'}}); const tr=await gh('/git/trees',{method:'POST',body:{tree:[{path:'universe.nenjac',mode:'100644',type:'blob',sha:bl.sha}]}});
+    const cm=await gh('/git/commits',{method:'POST',body:{message:`Handoff from ${safeDevice()} · ${new Date().toLocaleString()} · ${fmtMB(blob.size)}`,tree:tr.sha,parents:[]}});
+    try{ await gh(`/git/refs/heads/${SAFE_BRANCH}`,{method:'PATCH',body:{sha:cm.sha,force:true}}); }catch(e){ if(e.status!==404&&e.status!==422) throw e; await gh('/git/refs',{method:'POST',body:{ref:'refs/heads/'+SAFE_BRANCH,sha:cm.sha}}); }
+    S.settings.lastHandoff=Date.now(); save(); toast('☁ Sent. On the other computer: Settings → Backup & data → Pick up handoff.','good'); setRender?.(); }catch(e){ console.error(e); toast('Handoff failed: '+esc(e.message||e),'bad'); } }
+async function safeHandoffDown(){ if(!(typeof syOn==='function'&&syOn())) return toast('Connect the same Shared Show on this computer first (Settings → Shared show).','bad');
+  try{ const ref=await gh(`/git/ref/heads/${SAFE_BRANCH}`,{ok404:true}); if(!ref?.object?.sha) return toast('No handoff waiting. Send one from your other computer first.','bad');
+    const cm=await gh(`/git/commits/${ref.object.sha}`); const tr=await gh(`/git/trees/${cm.tree.sha}`); const ent=(tr.tree||[]).find(x=>x.path==='universe.nenjac'); if(!ent) return toast('That handoff is empty.','bad');
+    if(!confirm(`Pick up this handoff?\n\n${cm.message}\n\nIt replaces what's in this browser (a restore point is saved first).`)) return; toast('☁ Downloading…');
+    const u8=await gh(`/git/blobs/${ent.sha}`,{raw:true}); await restoreBackupFile(new File([u8],'universe.nenjac'),{yes:true}); }catch(e){ console.error(e); toast('Pickup failed: '+esc(e.message||e),'bad'); } }
+function safeHandoffModal(){ const on=typeof syOn==='function'&&syOn(), url=location.href.split('#')[0];
+  let qr=''; try{ const q=qrcode(0,'M'); q.addData(url); q.make(); qr=q.createSvgTag({cellSize:4,margin:2,scalable:true}); }catch(e){}
+  openModal(`<div class="safe-ho"><h2>📲 Move to another computer</h2><p class="tiny muted">Your work lives in this browser. Here's how to carry ALL of it (scripts, art, songs, animations, wallet, empire, cards, city, Funkin') to your ${safeDevice()==='Mac'?'Chromebook':safeDevice()==='Chromebook'?'Mac':'other computer'}.</p>
+    <div class="safe-opt"><b>1. Handoff file</b><span>Works every time. Save it to Google Drive, a USB stick or email it to yourself, then <b>drag it onto Nenjac Creator</b> on the other computer.</span><div class="row"><button class="btn primary" id="hoFile">📦 Make handoff file</button><label class="tiny"><input type="checkbox" id="hoVid"> include Cinemas videos (big)</label></div></div>
+    <div class="safe-opt ${on?'':'off'}"><b>2. Through your Shared Show</b><span>${on?`Sends it to your GitHub repo (a separate <code>${SAFE_BRANCH}</code> branch, so it never touches the shared show). Videos stay behind.`:'Connect a Shared Show (Settings → Shared show) on both computers to use this.'}</span><div class="row"><button class="btn" id="hoUp" ${on?'':'disabled'}>☁ Send</button><button class="btn" id="hoDown" ${on?'':'disabled'}>⬇ Pick up handoff</button></div></div>
+    <div class="safe-opt"><b>3. Open the app over there</b><span>Scan this with a phone or tablet, or send yourself the link.</span><div class="row safe-qr">${qr}<div><code>${esc(url)}</code><button class="btn sm" id="hoCopy">📋 Copy link</button></div></div></div></div>`);
+  $('#hoFile').onclick=()=>{ closeModal(); downloadFullBackup(true,$('#hoVid')?.checked,`nenjac-universe-${safeDevice().toLowerCase().replace(/\W/g,'')}-${todayKey()}.nenjac`); };
+  $('#hoUp').onclick=()=>{ closeModal(); safeHandoffUp(); }; $('#hoDown').onclick=()=>{ closeModal(); safeHandoffDown(); }; $('#hoCopy').onclick=()=>{ navigator.clipboard?.writeText(url).then(()=>toast('📋 Copied')); }; }
+
+/* ---------- Time Machine (version history) ---------- */
+const TMDB={db:null,open(){ return new Promise(res=>{ if(this.db) return res(this.db); try{ const r=indexedDB.open('nenjac-history',1); r.onupgradeneeded=()=>{ const s=r.result.createObjectStore('v',{keyPath:'id'}); s.createIndex('item','item'); }; r.onsuccess=()=>{ this.db=r.result; res(this.db); }; r.onerror=()=>res(null); }catch(e){ res(null); } }); },
+  async list(item){ const db=await this.open(); if(!db) return []; return new Promise(res=>{ const q=db.transaction('v').objectStore('v').index('item').getAll(item); q.onsuccess=()=>res((q.result||[]).sort((a,b)=>b.at-a.at)); q.onerror=()=>res([]); }); },
+  async meta(){ const db=await this.open(); if(!db) return []; return new Promise(res=>{ const out=[]; const q=db.transaction('v').objectStore('v').openCursor(); q.onsuccess=()=>{ const c=q.result; if(c){ const v=c.value; out.push({id:v.id,item:v.item,kind:v.kind,at:v.at,title:v.title,size:v.size||0}); c.continue(); } else res(out); }; q.onerror=()=>res(out); }); },
+  async put(o){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction('v','readwrite'); tx.objectStore('v').put(o); tx.oncomplete=res; tx.onerror=res; }); },
+  async del(id){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction('v','readwrite'); tx.objectStore('v').delete(id); tx.oncomplete=res; tx.onerror=res; }); },
+  async clear(){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction('v','readwrite'); tx.objectStore('v').clear(); tx.oncomplete=res; tx.onerror=res; }); }};
+const TM_KEEP={script:60,drawing:25,anim:20,song:20}, TM_GAP=8*60e3, TM_LAST={};
+async function tmSnap(kind,id,title,data,size,force){ const k=kind+':'+id; if(!force&&TM_LAST[k]&&Date.now()-TM_LAST[k]<TM_GAP) return; TM_LAST[k]=Date.now();
+  try{ await TMDB.put({id:uid(),item:k,kind,at:Date.now(),title:title||'Untitled',data,size:size||0}); const L=await TMDB.list(k); const keep=TM_KEEP[kind]||20;
+    /* keep the newest N, plus one per day for older ones */ const days=new Set(); for(let i=0;i<L.length;i++){ const v=L[i]; if(i<keep) continue; const d=new Date(v.at).toDateString(); if(days.has(d)||i>keep+30) await TMDB.del(v.id); else days.add(d); } }catch(e){ console.warn('time machine',e); } }
+const tmWords=s=>s.blocks.reduce((m,b)=>m+(b.x&&b.x.trim()?b.x.trim().split(/\s+/).length:0),0);
+let TM_T=0; const TM_SEEN={};
+function tmScripts(force){ (S.scripts||[]).forEach(s=>{ if(!s||!s.id) return; if(!force&&TM_SEEN[s.id]===s.updated) return; if(TM_SEEN[s.id]===undefined&&!force){ TM_SEEN[s.id]=s.updated; tmSnap('script',s.id,s.title,JSON.stringify(s),0,false); return; } TM_SEEN[s.id]=s.updated; const j=JSON.stringify(s); tmSnap('script',s.id,s.title,j,j.length,force); }); }
+{ const _s=save; save=function(){ const r=_s.apply(this,arguments); clearTimeout(TM_T); TM_T=setTimeout(()=>tmScripts(false),20000); return r; }; }
+{ const _p=ArtDB.put.bind(ArtDB); ArtDB.put=async function(o){ const r=await _p(o); try{ if(o&&o.id){ const {preview,...d}=o; tmSnap('drawing',o.id,o.name,d,0); } }catch(e){} return r; }; }
+{ const _p=AnimDB.put.bind(AnimDB); AnimDB.put=async function(st,o){ const r=await _p(st,o); try{ if(st==='projects'&&o&&o.id) tmSnap('anim',o.id,o.name,o,0); }catch(e){} return r; }; }
+{ const _p=PitDB.put.bind(PitDB); PitDB.put=async function(st,o){ const r=await _p(st,o); try{ if(st==='songs'&&o&&o.id) tmSnap('song',o.id,o.name,o,0); }catch(e){} return r; }; }
+const TM_KINDS=[['script','📄','Scripts'],['drawing','🎨','Comics & drawings'],['anim','🎬','Animations'],['song','🎼','Songs']];
+async function tmOpen(kind='script',item){ const meta=await TMDB.meta(); const groups={}; meta.forEach(m=>{ (groups[m.item]=groups[m.item]||{item:m.item,kind:m.kind,title:m.title,n:0,last:0}); const g=groups[m.item]; g.n++; if(m.at>g.last){ g.last=m.at; g.title=m.title; } });
+  const items=Object.values(groups).filter(g=>g.kind===kind).sort((a,b)=>b.last-a.last); const sel=item||items[0]?.item;
+  openModal(`<div class="tm"><div class="row"><h2 class="grow">⏳ Time Machine</h2><button class="btn sm" onclick="closeModal()">✕</button></div><p class="tiny muted">Every script, comic, animation and song keeps its recent versions (about every ${TM_GAP/6e4} minutes while you work, plus one per day after that). Go back to any of them. Your current version is saved first, so restoring is never scary.</p>
+    <div class="tm-tabs">${TM_KINDS.map(([k,e,n])=>`<button class="chip ${k===kind?'on':''}" data-tmk="${k}">${e} ${n}</button>`).join('')}</div>
+    <div class="tm-cols"><div class="tm-items">${items.map(g=>`<button class="${g.item===sel?'on':''}" data-tmi="${esc(g.item)}"><b>${esc(g.title)}</b><small>${g.n} version${g.n>1?'s':''} · ${ago(g.last)}</small></button>`).join('')||'<p class="tiny muted">Nothing yet. Versions start saving as you work.</p>'}</div><div class="tm-vers" id="tmVers"></div></div></div>`);
+  const m=$('#modal'); m.querySelector('.tm-tabs').onclick=e=>{ const b=e.target.closest('[data-tmk]'); if(b) tmOpen(b.dataset.tmk); }; m.querySelector('.tm-items').onclick=e=>{ const b=e.target.closest('[data-tmi]'); if(b) tmOpen(kind,b.dataset.tmi); };
+  if(sel) tmVersions(sel,kind); }
+async function tmVersions(item,kind){ const el=$('#tmVers'); if(!el) return; const L=await TMDB.list(item); const id=item.split(':').slice(1).join(':');
+  const prev=v=>{ if(kind!=='script') return ''; try{ const s=JSON.parse(v.data); const w=tmWords(s); const first=s.blocks.filter(b=>b.x&&b.x.trim()).slice(-2).map(b=>b.x.trim().slice(0,70)).join(' / '); return `<small>${w.toLocaleString()} words · ends: “${esc(first)}”</small>`; }catch(e){ return ''; } };
+  el.innerHTML=L.map((v,i)=>`<div class="tm-v"><div><b>${new Date(v.at).toLocaleString([],{weekday:'short',month:'short',day:'numeric',hour:'numeric',minute:'2-digit'})}</b>${i===0?' <span class="pill">newest</span>':''}<br>${prev(v)}</div><div class="row">${kind==='script'?`<button class="btn sm" data-tmp="${v.id}">👀 Peek</button>`:''}<button class="btn sm" data-tmr="${v.id}">↩ Restore</button></div></div>`).join('')||'<p class="tiny muted">No versions.</p>';
+  el.onclick=async e=>{ const p=e.target.closest('[data-tmp]'), r=e.target.closest('[data-tmr]'); const v=L.find(x=>x.id===(p||r)?.dataset[p?'tmp':'tmr']); if(!v) return;
+    if(p){ const s=JSON.parse(v.data); el.insertAdjacentHTML('afterbegin',`<div class="tm-peek"><div class="row"><b class="grow">${esc(s.title||'Untitled')} · ${new Date(v.at).toLocaleString()}</b><button class="btn sm" onclick="this.closest('.tm-peek').remove()">✕</button></div><pre>${esc(s.blocks.map(b=>(b.t==='character'?'\n'+b.x.toUpperCase():b.t==='scene'?'\n'+b.x.toUpperCase():b.x)).join('\n').slice(0,6000))}</pre></div>`); return; }
+    if(!confirm(`Go back to the version from ${new Date(v.at).toLocaleString()}?\n\nYour current version is saved to the Time Machine first.`)) return; await tmRestore(kind,id,v); closeModal(); }; }
+async function tmRestore(kind,id,v){ try{
+  if(kind==='script'){ const cur=S.scripts.find(s=>s.id===id); if(cur){ const j=JSON.stringify(cur); await tmSnap('script',id,cur.title,j,j.length,true); } const old=JSON.parse(v.data); old.updated=Date.now(); if(cur) Object.assign(cur,old); else S.scripts.unshift(old); TM_SEEN[id]=old.updated; S.activeScript=id; save(true); go('desk'); if(typeof loadScriptIntoEditor==='function') setTimeout(()=>{ try{ loadScriptIntoEditor(activeScript()); }catch(e){} },120); }
+  else if(kind==='drawing'){ const cur=await ArtDB.get(id); if(cur){ const {preview,...d}=cur; await tmSnap('drawing',id,cur.name,d,0,true); } const rec=await withPreview({...v.data,updated:Date.now()}); await ArtDB.put(rec); if(typeof loadDrawings==='function') await loadDrawings(); go('studio'); setTimeout(()=>stOpen(id),300); }
+  else if(kind==='anim'){ const cur=await AnimDB.get('projects',id); if(cur) await tmSnap('anim',id,cur.name,cur,0,true); await AnimDB.put('projects',{...v.data,updated:Date.now()}); if(AN.proj&&AN.proj.id===id) AN.proj=null; S.settings.lastAnim=id; save(); go('anim'); }
+  else if(kind==='song'){ const cur=await PitDB.get('songs',id); if(cur) await tmSnap('song',id,cur.name,cur,0,true); await PitDB.put('songs',{...v.data,updated:Date.now()}); go('pit'); setTimeout(async()=>{ await pitLoadList(); const s=PIT.list.find(x=>x.id===id); if(s) pitOpen(JSON.parse(JSON.stringify(s))); },350); }
+  toast('⏳ Restored. (Your previous version is in the Time Machine if you change your mind.)','good'); }catch(e){ console.error(e); toast('Could not restore that version: '+esc(e.message||e),'bad'); } }
+setTimeout(()=>tmScripts(false),6000);
+
+/* ---------- backup reminder ---------- */
+function safeDaysSince(){ const st=S.settings, since=Math.max(st.lastFullBackup||0,st.firstSeen||0); return (Date.now()-since)/864e5; }
+backupOverdue=function(){ const busy=S.scripts.length>1||(S.counters.scriptsMade||0)>1||(typeof CZ!=='undefined'&&CZ.life?.earned>200); return busy&&safeDaysSince()>7; };
+function safeBanner(){ $('#safeBan')?.remove(); if(!backupOverdue()||(S.settings.bkSnooze||0)>Date.now()||FIRST_RUN) return; const d=Math.floor(safeDaysSince());
+  document.body.insertAdjacentHTML('beforeend',`<div class="safe-ban" id="safeBan" role="status"><span>💾 <b>${S.settings.lastFullBackup?`${d} days since your last backup.`:'You haven\'t made a backup yet.'}</b> One click and Deegs can't blow it up.</span><button class="btn sm primary" id="sbGo">Back up now</button><button class="btn sm" id="sbLater">Tomorrow</button></div>`);
+  $('#sbGo').onclick=async()=>{ $('#safeBan')?.remove(); await downloadFullBackup(true,true); }; $('#sbLater').onclick=()=>{ S.settings.bkSnooze=Date.now()+864e5; save(); $('#safeBan')?.remove(); }; }
+setTimeout(safeBanner,9000);
+
+/* ---------- storage manager ---------- */
+async function safeSizes(){ const out=[]; const sz=v=>{ if(v instanceof Blob) return v.size; if(v instanceof ArrayBuffer) return v.byteLength; if(ArrayBuffer.isView(v)) return v.byteLength; if(typeof v==='string') return v.length; if(v&&typeof v==='object'){ let n=0; for(const k in v) n+=sz(v[k]); return n; } return 8; };
+  for(const B of BK_STORES){ try{ const recs=await bkAll(B); out.push({key:B.key,label:B.label,n:recs.length,size:recs.reduce((a,r)=>a+sz(r),0)}); }catch(e){} }
+  try{ const m=await TMDB.meta(); out.push({key:'history',label:'Time Machine versions',n:m.length,size:0,history:true}); }catch(e){}
+  return out.sort((a,b)=>b.size-a.size); }
+async function safeStorageModal(){ openModal(`<div class="safe-st"><div class="row"><h2 class="grow">📦 Storage manager</h2><button class="btn sm" onclick="closeModal()">✕</button></div><div id="ssBody"><p class="tiny muted">Measuring…</p></div></div>`);
+  const S2=await safeSizes(), info=await storageInfo(), max=Math.max(1,...S2.map(x=>x.size)); const films=(await CinemaDB.all?.())||await bkAll({db:()=>CinemaDB,st:'films'});
+  const el=$('#ssBody'); if(!el) return;
+  el.innerHTML=`<p class="tiny muted">Using ${fmtMB(info.used)}${info.quota?` of about ${fmtMB(info.quota)}`:''} in this browser.</p><div class="ss-bars">${S2.map(x=>`<div class="ss-row"><span>${esc(x.label)} <small class="muted">${x.n}</small></span><i><b style="width:${(x.size/max*100).toFixed(1)}%"></b></i><em>${x.history||!x.size?'—':fmtMB(x.size)}</em></div>`).join('')}</div>
+    <h3>🍿 Cinemas videos</h3><p class="tiny muted">Copies of videos you exported (the downloads are still in your Downloads folder). Deleting these only removes them from Nenjac Cinemas.</p>
+    <div class="ss-films">${films.filter(f=>f.blob).sort((a,b)=>(b.size||b.blob.size)-(a.size||a.blob.size)).map(f=>`<div class="ss-f">${f.poster?`<img src="${f.poster}" alt="">`:'<span>🎬</span>'}<span class="grow"><b>${esc(f.title)}</b><small>${fmtMB(f.size||f.blob.size)} · ${ago(f.created)}</small></span><button class="btn sm red" data-ssdel="${f.id}">🗑</button></div>`).join('')||'<p class="tiny muted">None.</p>'}</div>
+    <h3>⏳ Time Machine</h3><div class="row"><button class="btn sm" id="ssTmOpen">Open Time Machine</button><button class="btn sm red" id="ssTmClear">Clear all versions</button></div>`;
+  el.onclick=async e=>{ const d=e.target.closest('[data-ssdel]'); if(d){ if(!confirm('Delete this video from Nenjac Cinemas?')) return; const db=await CinemaDB.open(); await new Promise(r=>{ const tx=db.transaction('films','readwrite'); tx.objectStore('films').delete(d.dataset.ssdel); tx.oncomplete=r; tx.onerror=r; }); toast('🗑 Deleted'); safeStorageModal(); }
+    if(e.target.id==='ssTmOpen'){ closeModal(); tmOpen(); } if(e.target.id==='ssTmClear'){ if(!confirm('Delete every saved version in the Time Machine? Your current work is not touched.')) return; await TMDB.clear(); toast('⏳ Cleared'); safeStorageModal(); } }; }
+
+/* ---------- settings: backup tab gets the new stuff ---------- */
+{ const _r=setRender; setRender=async function(){ await _r.apply(this,arguments); if(SET_TAB!=='backup') return; const el=$('#setBody'); if(!el||el.querySelector('.safe-more')) return;
+    const full=el.querySelector('.bk-card'); if(full){ full.querySelector('small').innerHTML=`${S.settings.lastFullBackup?`Last one: ${ago(S.settings.lastFullBackup)}.`:'You haven\'t made one yet.'} <b>Everything</b>: scripts, Bible, art, comics, songs, animations, voice, photos, Cinemas videos, your wallet, empire, cards, city and Funkin'.`; const r=full.querySelector('.row'); r.insertAdjacentHTML('beforeend','<label class="tiny"><input type="checkbox" id="bkVid" checked> include Cinemas videos</label>'); const b=$('#bkFull'); b.onclick=async()=>{ b.disabled=true; b.textContent='Packing…'; await downloadFullBackup($('#bkVoice').checked,$('#bkVid').checked); b.disabled=false; b.textContent='💾 Download full backup'; setRender(); }; }
+    const on=typeof syOn==='function'&&syOn();
+    full?.insertAdjacentHTML('afterend',`<div class="safe-more"><div class="bk-card"><div><b>📲 Move to another computer</b><small>Mac ↔ Chromebook in a couple of clicks. A handoff file you drag in, or straight through your Shared Show repo${on?'':' (once one is connected)'}.</small></div><div class="row"><button class="btn" id="bkHand">📲 Handoff…</button>${on?'<button class="btn" id="bkPick">⬇ Pick up handoff</button>':''}</div></div>
+      <div class="bk-card"><div><b>⏳ Time Machine</b><small>Older versions of every script, comic, animation and song. Undo a bad day.</small></div><div class="row"><button class="btn" id="bkTm">⏳ Open Time Machine</button></div></div>
+      <div class="bk-card"><div><b>📦 Storage manager</b><small>See what's taking space and clean up big videos.</small></div><div class="row"><button class="btn" id="bkSt">📦 Open</button></div></div></div>`);
+    $('#bkHand').onclick=()=>{ closeModal(); safeHandoffModal(); }; $('#bkPick')&&($('#bkPick').onclick=()=>{ closeModal(); safeHandoffDown(); }); $('#bkTm').onclick=()=>{ closeModal(); tmOpen(); }; $('#bkSt').onclick=()=>{ closeModal(); safeStorageModal(); }; }; }
+{ const _c=commands; commands=function(){ const C=_c(); const add=(ico,label,run,kw='')=>C.push({ico,label,run,kw:(label+' '+kw).toLowerCase()});
+    add('⏳','Time Machine (version history)',()=>tmOpen(),'undo history versions restore old'); add('📲','Move to another computer (handoff)',safeHandoffModal,'chromebook mac transfer sync'); add('📦','Storage manager',safeStorageModal,'space disk clean'); return C; }; }
+
+/* =====================================================================
+   [HUBS] 4.9.2 layout cleanup. Twenty-something tabs become five hubs
+   (Home · Write · Make · Play · Watch) with a strip of that hub's
+   rooms under the header. The Lobby becomes a Home dashboard with
+   "continue where you left off" and quick-create buttons, the doors get
+   grouped by hub, there's a universal search (/ or 🔍), settings gains
+   Games and Posting tabs, and the ? sheet lists every shortcut.
+   ===================================================================== */
+const HUBS=[
+  {k:'home',e:'🏠',n:'Home',d:'Your dashboard',s:['lobby']},
+  {k:'write',e:'✍️',n:'Write',d:'Scripts, songs, the Bible',s:['desk','musical','bible','callsheet','numbers']},
+  {k:'make',e:'🎬',n:'Make',d:'Art, animation, video, music',s:['studio','anim','shorts','post','photo','cards','voice','pit']},
+  {k:'play',e:'🎮',n:'Play',d:'City, games, casino',s:['city','chaos','casino','empire'],x:[['🎤','Funkin\'',()=>{ if(typeof nfOpen==='function') nfOpen(); }],['🧨','Playground',()=>{ go('chaos'); setTimeout(()=>typeof pgOpen==='function'&&pgOpen(),200); }]]},
+  {k:'watch',e:'🍿',n:'Watch',d:'Cinemas & music',s:['cinema','vibe']}];
+const HUB_SHORT={desk:'Writing Desk',musical:'Musicals',bible:'Bible',callsheet:'Call Sheet',numbers:'Numbers',studio:'Art Studio',anim:'Animate',shorts:'Shorts',post:'Post Kit',photo:'Photo Studio',cards:'Card Shop',voice:'Voice Booth',pit:'The Pit',city:'City',chaos:'Chaos Corner',casino:'Casino',empire:'Empire',cinema:'Cinemas',vibe:'Vibe Station',lobby:'Home'};
+function hubOf(scr){ return (HUBS.find(h=>h.s.includes(scr))||HUBS[2]).k; }
+function hubIco(scr){ return $(`#tabs [data-go="${scr}"] .ico`)?.textContent||'•'; }
+function hubScreens(h){ const hidden=(S.settings.look&&S.settings.look.hidden)||[]; return h.s.filter(k=>$('#scr-'+k)&&!hidden.includes(k)); }
+SCREEN_NAMES.lobby='Home';
+$('#tabs')?.insertAdjacentHTML('afterend',`<nav class="hubs" id="hubs" aria-label="Sections">${HUBS.map(h=>`<button data-hub="${h.k}" title="${esc(h.d)}"><span class="ico">${h.e}</span><span class="lbl">${h.n}</span></button>`).join('')}<button class="hub-search" id="hubSearch" title="Search everything (/)" aria-label="Search everything"><span class="ico">🔍</span><span class="lbl">Search</span></button></nav>`);
+$('header.marquee')?.insertAdjacentHTML('afterend','<div class="hubbar" id="hubbar"><nav class="subnav" id="subnav" aria-label="Rooms in this section"></nav></div>'); { const tk=$('.ticker'); if(tk&&$('#hubbar')) $('#hubbar').appendChild(tk); }
+function hubRender(){ const scr=current, hk=hubOf(scr), h=HUBS.find(x=>x.k===hk); $$('#hubs [data-hub]').forEach(b=>b.classList.toggle('on',b.dataset.hub===hk)); const sn=$('#subnav'); if(!sn) return;
+  if(hk==='home'){ sn.innerHTML=''; sn.hidden=true; return; } sn.hidden=false;
+  sn.innerHTML=`<b class="sub-h">${h.e} ${h.n}</b>`+hubScreens(h).map(k=>`<button data-go="${k}" class="${k===scr?'on':''}">${hubIco(k)} ${esc(HUB_SHORT[k]||SCREEN_NAMES[k]||k)}</button>`).join('')+(h.x||[]).map(([e,n],i)=>`<button data-hubx="${i}">${e} ${esc(n)}</button>`).join('');
+  sn.querySelector('.on')?.scrollIntoView({inline:'nearest',block:'nearest'}); }
+$('#hubs')?.addEventListener('click',e=>{ if(e.target.closest('#hubSearch')) return openSearch(); const b=e.target.closest('[data-hub]'); if(!b) return; const h=HUBS.find(x=>x.k===b.dataset.hub), last=(S.settings.hubLast||{})[h.k], list=hubScreens(h); go(list.includes(last)?last:list[0]); });
+$('#subnav')?.addEventListener('click',e=>{ const b=e.target.closest('[data-hubx]'); if(!b) return; const h=HUBS.find(x=>x.k===hubOf(current)); h?.x?.[+b.dataset.hubx]?.[2](); });
+{ const _g=go; go=function(scr){ const r=_g.apply(this,arguments); try{ const hk=hubOf(scr); S.settings.hubLast=S.settings.hubLast||{}; if(hk!=='home') S.settings.hubLast[hk]=scr; hubRender(); }catch(e){} return r; }; }
+setTimeout(hubRender,0);
+try{ const st=TOUR.find(s=>s.el==='#tabs'); if(st){ st.el='#hubs'; st.title='The hubs'; st.text="Everything lives in five hubs now: Home, Write, Make, Play and Watch. Pick one and its rooms show up in the strip underneath. Lost? Hit 🔍 and search for literally anything. I'm a burger, not a librarian."; } }catch(e){}
+
+/* ---------- Home dashboard ---------- */
+const HOME_NEW=[['📝','Script',()=>{ newScript(); go('desk'); }],['💬','Comic',()=>{ go('studio'); setTimeout(newComicDialog,250); }],['🎨','Drawing',()=>{ go('studio'); setTimeout(()=>stNew('character'),250); }],['🎬','Animation',()=>{ go('anim'); setTimeout(()=>{ const n=anNewProject({}); AN.list.unshift(n); anOpen(n); },400); }],['🎼','Song',()=>{ go('pit'); setTimeout(pitWizard,350); }],['📱','Short',()=>go('shorts')],['📲','Post',()=>{ go('post'); }]];
+let HOME_URLS=[];
+async function homeDash(){ const host=$('#homeDash'); if(!host) return; HOME_URLS.forEach(u=>URL.revokeObjectURL(u)); HOME_URLS=[];
+  const cards=[]; const sc=[...S.scripts].sort((a,b)=>(b.updated||0)-(a.updated||0))[0]; if(sc) cards.push({ico:'📄',k:'Script',t:sc.title||'Untitled',at:sc.updated,sub:`${(sc.code||'')} ${tmWords(sc).toLocaleString()} words`,open:()=>{ S.activeScript=sc.id; save(); go('desk'); }});
+  try{ const dr=(await ArtDB.all()).sort((a,b)=>(b.updated||0)-(a.updated||0)); const c=dr.find(d=>d.kind==='comic'), d=dr.find(d=>d.kind!=='comic'); [c,d].filter(Boolean).forEach(x=>{ let img=''; if(x.preview instanceof Blob){ const u=URL.createObjectURL(x.preview); HOME_URLS.push(u); img=u; } cards.push({ico:x.kind==='comic'?'💬':'🎨',k:x.kind==='comic'?'Comic':'Drawing',t:x.name,at:x.updated,img,open:()=>{ go('studio'); setTimeout(()=>stOpen(x.id),250); }}); }); }catch(e){}
+  try{ const an=(await AnimDB.all('projects')).sort((a,b)=>(b.updated||0)-(a.updated||0))[0]; if(an) cards.push({ico:'🎬',k:'Animation',t:an.name,at:an.updated,sub:`${Math.round(an.dur||0)}s · ${(an.layers||[]).length} layers`,open:()=>{ S.settings.lastAnim=an.id; save(); go('anim'); setTimeout(async()=>{ if(AN.proj?.id!==an.id){ const r=await AnimDB.get('projects',an.id); if(r) anOpen(r); } },350); }}); }catch(e){}
+  try{ const sg=(await PitDB.all('songs')).sort((a,b)=>(b.updated||0)-(a.updated||0))[0]; if(sg) cards.push({ico:'🎻',k:'Pit song',t:sg.name,at:sg.updated,open:()=>{ go('pit'); setTimeout(()=>pitOpen(JSON.parse(JSON.stringify(sg))),350); }}); }catch(e){}
+  const ms=[...(S.songs||[])].sort((a,b)=>(b.updated||0)-(a.updated||0))[0]; if(ms) cards.push({ico:'🎼',k:'Musical song',t:ms.title||'Untitled song',at:ms.updated,open:()=>{ go('musical'); setTimeout(()=>{ try{ MU.view='song'; MU.songId=ms.id; muRender(); }catch(e){} },200); }});
+  const nextPost=(S.posts||[]).filter(p=>p.date&&p.date>=todayKey()&&!Object.values(p.st||{}).every(v=>v==='posted')).sort((a,b)=>a.date.localeCompare(b.date))[0]; if(nextPost) cards.push({ico:'📅',k:'Next post',t:nextPost.title||'Untitled post',at:0,sub:new Date(nextPost.date+'T12:00').toLocaleDateString([],{weekday:'short',month:'short',day:'numeric'}),open:()=>{ go('post'); setTimeout(()=>typeof pkTool==='function'&&pkTool('plan'),100); }});
+  cards.sort((a,b)=>(b.at||0)-(a.at||0)); HOME_CARDS=cards;
+  host.innerHTML=`<div class="home-row"><h2>Continue where you left off</h2><div class="home-new">${HOME_NEW.map(([e,n],i)=>`<button class="btn sm" data-hnew="${i}">＋ ${e} ${n}</button>`).join('')}</div></div>
+    <div class="home-cont">${cards.slice(0,6).map((c,i)=>`<button class="home-c" data-hc="${i}">${c.img?`<span class="home-img" style="background-image:url('${c.img}')"></span>`:`<span class="home-ico">${c.ico}</span>`}<span class="home-t"><small>${c.ico} ${esc(c.k)}</small><b>${esc(c.t)}</b><em>${c.sub?esc(c.sub)+' · ':''}${c.at?ago(c.at):''}</em></span></button>`).join('')||'<p class="tiny muted">Nothing yet. Start something up there. ↗</p>'}</div>`; }
+let HOME_CARDS=[];
+function homeGroupDoors(){ const D=$('.doors'); if(!D) return; D.classList.add('grouped'); HUBS.filter(h=>h.k!=='home').forEach(h=>{ if(!D.querySelector(`.door-group[data-hg="${h.k}"]`)) D.insertAdjacentHTML('beforeend',`<section class="door-group" data-hg="${h.k}"><h3>${h.e} ${h.n} <small>${esc(h.d)}</small></h3><div class="door-grid"></div></section>`); });
+  [...D.querySelectorAll('.door')].forEach(d=>{ const k=d.dataset.go, hk=k?hubOf(k):'make', grid=D.querySelector(`.door-group[data-hg="${hk==='home'?'make':hk}"] .door-grid`); if(grid&&d.parentElement!==grid) grid.appendChild(d); });
+  [...D.querySelectorAll('.door-group')].forEach(g=>{ const grid=g.querySelector('.door-grid'), ord=HUBS.find(h=>h.k===g.dataset.hg).s; [...grid.children].sort((a,b)=>{ const ia=ord.indexOf(a.dataset.go), ib=ord.indexOf(b.dataset.go); return (ia<0?99:ia)-(ib<0?99:ib); }).forEach(x=>grid.appendChild(x)); }); }
+$('#lobbyCont')?.insertAdjacentHTML('afterend','<section class="home-dash" id="homeDash"></section>');
+$('#homeDash')?.addEventListener('click',e=>{ const n=e.target.closest('[data-hnew]'); if(n) return HOME_NEW[+n.dataset.hnew][2](); const c=e.target.closest('[data-hc]'); if(c) HOME_CARDS[+c.dataset.hc]?.open(); });
+{ const _rl=renderLobby; renderLobby=function(){ _rl.apply(this,arguments); homeGroupDoors(); homeDash(); }; }
+
+/* ---------- universal search ---------- */
+const SRCH={cache:null,at:0};
+async function srchLoad(){ if(SRCH.cache&&Date.now()-SRCH.at<30000) return SRCH.cache; const C={}; const safe=async f=>{ try{ return await f(); }catch(e){ return []; } };
+  C.drawings=await safe(()=>ArtDB.all()); C.anims=await safe(()=>AnimDB.all('projects')); C.songs=await safe(()=>PitDB.all('songs')); C.films=await safe(()=>bkAll({db:()=>CinemaDB,st:'films'})); C.films=C.films.map(f=>({id:f.id,title:f.title,created:f.created}));
+  C.drawings=C.drawings.map(d=>({id:d.id,name:d.name,kind:d.kind,updated:d.updated,text:JSON.stringify((d.pages||[{objects:d.objects}]).map(p=>(p.objects||[]).map(o=>o.text||'').filter(Boolean)))}));
+  C.anims=C.anims.map(a=>({id:a.id,name:a.name,updated:a.updated,text:(a.layers||[]).map(L=>L.name+' '+(L.text?.str||'')).join(' ')+' '+(a.cues||[]).map(q=>q.text).join(' ')}));
+  C.songs=C.songs.map(s=>({id:s.id,name:s.name,updated:s.updated,text:JSON.stringify(s.lyrics||s.words||'')}));
+  SRCH.cache=C; SRCH.at=Date.now(); return C; }
+function srchHit(text,words){ const low=(text||'').toLowerCase(); if(!words.every(w=>low.includes(w))) return null; const i=low.indexOf(words[0]); const a=Math.max(0,i-40), b=Math.min(text.length,i+90); return (a?'…':'')+text.slice(a,b).replace(/\s+/g,' ')+(b<text.length?'…':''); }
+function srchMark(s,words){ let h=esc(s); words.forEach(w=>{ if(w.length<2) return; h=h.replace(new RegExp('('+w.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig'),'<mark>$1</mark>'); }); return h; }
+async function srchRun(q){ const words=q.toLowerCase().split(/\s+/).filter(Boolean); if(!words.length) return []; const R=[]; const add=(g,ico,title,snip,run,score=1)=>R.push({g,ico,title,snip,run,score});
+  S.scripts.forEach(s=>{ const head=`${s.code||''} ${s.title||''} ${s.logline||''}`; const t=srchHit(head,words); if(t) add('Scripts','📄',s.title||'Untitled',s.logline||'',()=>{ S.activeScript=s.id; save(); go('desk'); },3);
+    else { const bi=s.blocks.findIndex(b=>srchHit(b.x,words)); if(bi>=0||srchHit(s.blocks.map(b=>b.x).join(' '),words)) add('Scripts','📄',s.title||'Untitled',srchHit(bi>=0?s.blocks[bi].x:s.blocks.map(b=>b.x).join(' '),words)||'',()=>{ S.activeScript=s.id; save(); go('desk'); setTimeout(()=>srchJump(bi),400); },2); } });
+  const charTxt=c=>Object.entries(c).filter(([k,v])=>!['id','img','color','group','name','looks','variants','rig','voice'].includes(k)&&(typeof v==='string'||Array.isArray(v))).map(([k,v])=>Array.isArray(v)?v.filter(x=>typeof x==='string').join(' · '):v).filter(Boolean).join(' · ');
+  S.chars.forEach(c=>{ const nm=srchHit(c.name,words); const all=nm||srchHit(charTxt(c),words); if(all) add('Characters','🎭',c.name,nm?[c.group,(charTxt(c)||'').slice(0,110)].filter(Boolean).join(' · '):all,()=>{ go('bible'); setTimeout(()=>openCharEditor(c.id),300); },nm?3:1); });
+  (S.lore||[]).forEach(l=>{ const t=srchHit(`${l.title} ${l.body||''}`,words); if(t) add('Lore','🗝',l.title,t,()=>{ go('bible'); },1.5); });
+  (S.songs||[]).forEach(s=>{ const t=srchHit(`${s.title||''} ${JSON.stringify(s.lyrics||s.lines||'')}`,words); if(t) add('Musical songs','🎼',s.title||'Untitled song',t,()=>{ go('musical'); setTimeout(()=>{ try{ MU.view='song'; MU.songId=s.id; muRender(); }catch(e){} },200); },1.5); });
+  (S.musicals||[]).forEach(m=>{ const t=srchHit(m.title||'',words); if(t) add('Musicals','🎭',m.title,'',()=>{ go('musical'); setTimeout(()=>{ try{ MU.view='musical'; MU.musId=m.id; muRender(); }catch(e){} },200); },2); });
+  (S.notes||[]).forEach(n=>{ const t=srchHit(n.text||n.body||'',words); if(t) add('Notes','🗒',(n.text||n.body||'Note').slice(0,50),t,()=>{ typeof openNotes==='function'&&openNotes(); },1); });
+  (S.posts||[]).forEach(p=>{ const t=srchHit(`${p.title||''} ${JSON.stringify(p.cap||{})} ${p.tags||''}`,words); if(t) add('Posts','📅',p.title||'Post',t,()=>{ go('post'); setTimeout(()=>{ if(typeof pkTool==='function'){ PK.planSel=p.id; pkTool('plan'); } },100); },1.5); });
+  const C=await srchLoad();
+  C.drawings.forEach(d=>{ const nm=srchHit(d.name,words), tx=nm?null:srchHit(d.text,words); if(nm||tx) add(d.kind==='comic'?'Comics':'Drawings',d.kind==='comic'?'💬':'🎨',d.name,tx||d.kind,()=>{ go('studio'); setTimeout(()=>stOpen(d.id),250); },nm?2.5:1); });
+  C.anims.forEach(a=>{ const nm=srchHit(a.name,words), tx=nm?null:srchHit(a.text,words); if(nm||tx) add('Animations','🎬',a.name,tx||'',()=>{ S.settings.lastAnim=a.id; save(); go('anim'); setTimeout(async()=>{ if(AN.proj?.id!==a.id){ const r=await AnimDB.get('projects',a.id); if(r) anOpen(r); } },350); },nm?2.5:1); });
+  C.songs.forEach(s=>{ const nm=srchHit(s.name,words), tx=nm?null:srchHit(s.text,words); if(nm||tx) add('Pit songs','🎻',s.name,tx||'',()=>{ go('pit'); setTimeout(async()=>{ const r=await PitDB.get('songs',s.id); if(r) pitOpen(r); },350); },nm?2.5:1); });
+  C.films.forEach(f=>{ if(srchHit(f.title,words)) add('Cinemas','🍿',f.title,ago(f.created),()=>go('cinema'),1.5); });
+  try{ if(typeof CTZ!=='undefined'&&Object.keys(CTZ).length) Object.values(CTZ).forEach(z=>{ if(srchHit(z.n,words)) add('Nenjac City','🏙',z.n,`${ctWhere(z)}`,()=>{ go('city'); setTimeout(()=>{ ctSelect(z); ctCenter(z); },400); },.8); }); }catch(e){}
+  try{ (CZ.emp?.own||[]).forEach(o=>{ const d=emDef(o); if(!d) return; const nm=`${o.nm||''} ${d.n}`; if(srchHit(nm,words)) add('Empire','💎',o.nm||d.n,o.nm?d.n:'',()=>go('empire'),.6); }); }catch(e){}
+  Object.entries(SCREEN_NAMES).forEach(([k,n])=>{ if(srchHit(n+' '+(HUB_SHORT[k]||''),words)) add('Go to','➜',n,'',()=>go(k),4); });
+  return R.sort((a,b)=>b.score-a.score); }
+function srchJump(bi){ if(bi<0) return; const b=$$('#scr-desk .blk')[bi]; if(!b) return; b.scrollIntoView({block:'center'}); b.classList.add('srch-flash'); setTimeout(()=>b.classList.remove('srch-flash'),2200); }
+function openSearch(q0=''){ openModal(`<div class="srch"><input class="txt" id="srQ" placeholder="Search scripts, lines, characters, lore, comics, songs, animations, posts…" autocomplete="off" value="${esc(q0)}"><div class="srch-list" id="srList"><p class="tiny muted">Type to search everything you've made.</p></div><div class="tiny muted">↑↓ to move · Enter to open · Esc to close</div></div>`);
+  let sel=0, R=[], tk=0; const draw=()=>{ const words=$('#srQ').value.toLowerCase().split(/\s+/).filter(Boolean); let g=''; $('#srList').innerHTML=R.length?R.slice(0,80).map((r,i)=>{ const head=r.g!==g?`<div class="srch-g">${esc(r.g)}</div>`:''; g=r.g; return head+`<div class="srch-it ${i===sel?'on':''}" data-sri="${i}"><span>${r.ico}</span><div><b>${srchMark(r.title,words)}</b>${r.snip?`<small>${srchMark(r.snip,words)}</small>`:''}</div></div>`; }).join(''):($('#srQ').value.trim()?'<p class="tiny muted">Nothing found. Try fewer words.</p>':'<p class="tiny muted">Type to search everything you\'ve made.</p>'); $('#srList').querySelector('.on')?.scrollIntoView({block:'nearest'}); };
+  const run=async()=>{ const my=++tk; const r=await srchRun($('#srQ').value); if(my!==tk) return; const groups=[...new Set(r.map(x=>x.g))]; R=r.sort((a,b)=>groups.indexOf(a.g)-groups.indexOf(b.g)); sel=0; draw(); };
+  const open=i=>{ const r=R[i]; if(!r) return; closeModal(); setTimeout(()=>r.run(),30); };
+  $('#srQ').oninput=()=>{ clearTimeout(SRCH.t); SRCH.t=setTimeout(run,120); }; $('#srQ').onkeydown=e=>{ if(e.key==='ArrowDown'){ e.preventDefault(); sel=Math.min(R.length-1,sel+1); draw(); } if(e.key==='ArrowUp'){ e.preventDefault(); sel=Math.max(0,sel-1); draw(); } if(e.key==='Enter'){ e.preventDefault(); open(sel); } if(e.key==='Escape') closeModal(); e.stopPropagation(); };
+  $('#srList').onclick=e=>{ const it=e.target.closest('[data-sri]'); if(it) open(+it.dataset.sri); }; setTimeout(()=>{ $('#srQ').focus(); if(q0) run(); },30); }
+document.addEventListener('keydown',e=>{ if(e.key!=='/'||e.metaKey||e.ctrlKey||e.altKey) return; const el=document.activeElement; if(['INPUT','TEXTAREA','SELECT'].includes(el?.tagName)||el?.isContentEditable||$('#modalBg')?.classList.contains('on')||(typeof NF!=='undefined'&&NF.open)||(typeof PG!=='undefined'&&PG.open)) return; if(['desk','pit','anim'].includes(current)) return; e.preventDefault(); openSearch(); });
+{ const _c=commands; commands=function(){ const C=_c(); C.unshift({ico:'🔍',label:'Search everything',run:()=>openSearch(),kw:'search find everything lines scripts comics songs'}); return C; }; }
+{ const _op=openPalette; openPalette=function(){ _op(); const q=$('#cmdQ'); if(!q) return; q.addEventListener('keydown',e=>{ if(e.key==='Enter'&&!$('#cmdList .cmd-it')&&q.value.trim()){ e.preventDefault(); const v=q.value; closeModal(); setTimeout(()=>openSearch(v),40); } },true);
+  q.addEventListener('input',()=>{ setTimeout(()=>{ const L=$('#cmdList'); if(!L||!q.value.trim()||L.querySelector('.srch-more')) return; L.insertAdjacentHTML('beforeend',`<div class="cmd-it srch-more" data-srmore="1"><span>🔍</span>Search everything for “${esc(q.value.trim())}”</div>`); L.querySelector('.srch-more').onclick=ev=>{ ev.stopPropagation(); const v=q.value; closeModal(); setTimeout(()=>openSearch(v),40); }; },0); }); }; }
+
+/* ---------- settings: Games and Posting tabs, Shortcuts tab ---------- */
+{ const _os=openSettings; openSettings=function(tab){ _os(tab); const nav=$('.set-nav'); if(!nav||nav.querySelector('[data-st="games"]')) return; const help=nav.querySelector('[data-st="help"]');
+    help?.insertAdjacentHTML('beforebegin','<button data-st="games">🎮 Games & extras</button><button data-st="posting">📲 Posting</button><button data-st="keys">⌨️ Shortcuts</button>'); $$('.set-nav button').forEach(x=>x.classList.toggle('on',x.dataset.st===SET_TAB)); if(['games','posting','keys'].includes(SET_TAB)) setRender(); }; }
+{ const _r=setRender; setRender=async function(){ const el=$('#setBody'); if(!el) return; const st=S.settings;
+  if(SET_TAB==='games'){ const o=(typeof NFS!=='undefined'&&NFS.opt)||{};
+    el.innerHTML=`<h2>🎮 Games & extras</h2><h3>🎤 Nenjac Night Funkin'</h3>
+      ${setRow('Scroll speed','How fast the arrows fly',`<input type="range" min=".6" max="2.6" step=".1" value="${o.speed||1}" data-gs="speed" style="width:170px">`)}
+      ${setRow('Downscroll','Arrows come from the top',tog('gsDown',o.down))}${setRow('Ghost tapping','Pressing with no arrow doesn\'t hurt',tog('gsGhost',o.ghost))}
+      ${setRow('Keys','',`<select class="txt" data-gs="keys" style="width:170px"><option value="arrows" ${o.keys!=='dfjk'?'selected':''}>Arrows + WASD</option><option value="dfjk" ${o.keys==='dfjk'?'selected':''}>D F J K</option></select>`)}
+      ${setRow('Audio offset','Arrows feel late? Calibrate it inside Funkin\' → Options.',`<b>${o.offset||0} ms</b>`)}
+      <h3>🏙 Nenjac City</h3>${setRow('Start the city over','Everyone moves back in fresh. Relationships, history and the Gazette reset.',`<button class="btn sm red" id="gsCity">🏙 Reset city</button>`)}
+      <h3>🍿 Cinemas</h3>${setRow('Keep exported videos in the Cinemas','Every video you export also plays in Nenjac Cinemas',tog('gsCine',st.cinemaAuto!==false))}
+      <h3>💣 Chaos Corner</h3><p class="tiny muted">Desk pet, cameos, the Mood Ring and writer's-block rescue live in Chaos Corner → Chaos Settings. <a href="#" id="gsChaos">Open them</a>.</p>`;
+    $$('[data-gs]').forEach(x=>x.onchange=()=>{ if(typeof NFS==='undefined') return; NFS.opt[x.dataset.gs]=x.type==='range'?+x.value:x.value; nfSave(); });
+    $('#gsDown').onchange=e=>{ NFS.opt.down=e.target.checked; nfSave(); }; $('#gsGhost').onchange=e=>{ NFS.opt.ghost=e.target.checked; nfSave(); };
+    $('#gsCine').onchange=e=>{ st.cinemaAuto=e.target.checked; save(); };
+    $('#gsCity').onclick=()=>{ if(!confirm('Reset Nenjac City? Everyone forgets everything.')) return; try{ localStorage.removeItem(CT_KEY); }catch(e){} CTS=null; if(typeof CT_PATHS!=='undefined') CT_PATHS.clear(); toast('🏙 Nenjac City reset. Visit to watch everyone move in.'); };
+    $('#gsChaos').onclick=e=>{ e.preventDefault(); closeModal(); go('chaos','settings'); }; return; }
+  if(SET_TAB==='posting'){ const P=pkCfg();
+    el.innerHTML=`<h2>📲 Posting</h2><p class="tiny muted">Defaults for the Post Kit (Make → Post Kit).</p>
+      ${setRow('Your handle','Shows on end cards and watermarks',`<input class="txt" id="psHandle" value="${esc(P.handle)}" placeholder="@crystopal" style="width:200px">`)}
+      ${setRow('Watermark','Corner text on Post Kit exports',tog('psWm',P.wm.on))}
+      ${setRow('Watermark text','',`<input class="txt" id="psWmT" value="${esc(P.wm.text)}" style="width:200px">`)}
+      ${setRow('Watermark corner','',`<select class="txt" id="psWmP" style="width:200px">${[['br','Bottom right'],['bl','Bottom left'],['tr','Top right'],['tl','Top left']].map(([v,l])=>`<option value="${v}" ${P.wm.pos===v?'selected':''}>${l}</option>`).join('')}</select>`)}
+      ${setRow('Default hashtags','Added to caption drafts',`<input class="txt" id="psTags" value="${esc(P.tags)}" style="width:260px">`)}`;
+    const sv=()=>{ P.handle=$('#psHandle').value.trim(); P.wm.on=$('#psWm').checked; P.wm.text=$('#psWmT').value; P.wm.pos=$('#psWmP').value; P.tags=$('#psTags').value; save(); };
+    ['psHandle','psWm','psWmT','psWmP','psTags'].forEach(id=>{ const x=$('#'+id); x.onchange=sv; x.oninput=sv; }); return; }
+  if(SET_TAB==='keys'){ el.innerHTML=`<h2>⌨️ Every shortcut</h2>${allShortcutsHTML()}`; return; }
+  return _r.apply(this,arguments); }; }
+const SHORTCUTS_GLOBAL=[['/','search everything'],['⌘/Ctrl K','command palette'],['?','shortcuts for the screen you\'re on'],['Alt+1…0','jump between rooms'],['Esc','close a window']];
+Object.assign(SHORTCUTS,{city:[['Drag a person','onto a person = hang out · onto a building = send them'],['Scroll / pinch','zoom'],['Drag the map','pan'],['Double-click','zoom in'],['Click a bubble','help them']],
+  chaos:[...(SHORTCUTS.chaos||[]),['Playground: Space · S · G · R · F','pause · slow-mo · gravity · revive · fullscreen'],['Funkin\': ← ↓ ↑ → / WASD / DFJK','sing'],['Funkin\': Enter','pause']],
+  post:[['Clip It: Space','play / pause the source'],['Thumbnail: Delete','remove the selected piece'],['Thumbnail: drag','move pieces around']],
+  casino:[['Wallet pill','opens the bank'],['Card Shop: click a pack','rip it']],empire:[['Click anything you own','rename or sell it']],cinema:[['Space','play / pause'],['F','theater mode'],['type “high”','👀']]});
+function allShortcutsHTML(){ const sec=(t,L)=>`<h3>${t}</h3><div class="kb-list">${L.map(([k,d])=>`<div><span class="kbd">${esc(k)}</span><span>${esc(d)}</span></div>`).join('')}</div>`;
+  return sec('🌐 Everywhere',SHORTCUTS_GLOBAL)+Object.entries(SHORTCUTS).map(([k,L])=>sec(`${hubIco(k)} ${esc(SCREEN_NAMES[k]||k)}`,L)).join(''); }
+{ const _os=openShortcuts; openShortcuts=function(){ _os(); const m=$('#modal'); if(!m) return; m.insertAdjacentHTML('beforeend',`<details class="kb-all"><summary>⌨️ Show every shortcut in the app</summary>${allShortcutsHTML()}</details>`); }; }
+
+/* =====================================================================
+   [POST] 4.9.2 Post Kit: make it once, post it everywhere.
+   📸 Instagram carousels from comics (page by page or panel by panel)
+   ✂️ Clip It: cut any exported video into vertical / square / wide clips
+      with burned-in captions (TikTok word-pop or classic), hook text,
+      watermark, intro and outro cards
+   🖼 Thumbnail Maker (1280×720, cast cutouts, big text, arrows, circles)
+   🎬 Intro & outro card designer
+   📅 Content Planner (calendar, per-platform captions + status)
+   ===================================================================== */
+SCREEN_NAMES.post='Post Kit';
+addTab('post','📲','Post Kit',{before:'photo',door:{cls:'d18',h:'Post Kit',p:'Make it once, post it everywhere: Instagram carousels, vertical clips with captions, thumbnails, end cards and a posting calendar.',k:'POST',art:'Reporter Ligma'}});
+S.posts=S.posts||[];
+function pkCfg(){ const st=S.settings; st.postkit=st.postkit||{}; const P=st.postkit;
+  P.handle??=''; P.wm=Object.assign({on:false,text:'Crystopal',pos:'br'},P.wm||{}); P.tags??='#nenjac #animation #objectshow #comedy #webseries';
+  P.intro=Object.assign({on:true,style:'slam',title:showName(),sub:'',bg:'#930000',fg:'#ffc81e',dur:2,snd:'boom'},P.intro||{});
+  P.outro=Object.assign({on:true,text:'Follow for part 2',sub:'',who:'Deegs',bg:'#0b0618',fg:'#ffffff',dur:2.5},P.outro||{}); return P; }
+const PK={tool:'carousel',car:{src:null,mode:'pages',size:'45',cover:true,end:true,bg:'#ffffff',slides:[]},clip:{film:null,url:'',start:0,end:15,fmt:'v',fit:'blur',focus:.5,caps:'pop',who:false,hook:'',intro:true,outro:true,cues:null},
+  th:null,img:{},planMonth:null,planSel:null,raf:0,lastCues:null};
+const PK_FMT={v:[1080,1920,'Vertical 9:16 (TikTok · Reels · Shorts)'],p:[1080,1350,'Portrait 4:5 (Instagram feed)'],s:[1080,1080,'Square 1:1'],h:[1920,1080,'Wide 16:9 (YouTube)']};
+const PK_TOOLS=[['carousel','📸','Carousel','Instagram slides from a comic'],['clip','✂️','Clip It','Vertical clips + captions'],['thumb','🖼','Thumbnail','YouTube thumbnails'],['cards','🎬','Intro & outro','Your end card'],['plan','📅','Planner','What posts where, when']];
+const pkFont=s=>`900 ${Math.round(s)}px "Archivo Black", Impact, "Arial Black", sans-serif`;
+async function pkImg(src){ if(!src) return null; if(PK.img[src]!==undefined) return PK.img[src]; try{ PK.img[src]=await loadImg(src); }catch(e){ PK.img[src]=null; } return PK.img[src]; }
+async function pkChar(name){ const c=charByName(name); if(!c) return null; try{ return await pgCharImg(c); }catch(e){ return null; } }
+function pkWatermark(g,W,H,force){ const P=pkCfg(); if(!P.wm.on&&!force) return; const t=(P.wm.text||P.handle||'').trim(); if(!t) return; const s=Math.round(Math.min(W,H)*.034); g.save(); g.font=pkFont(s); g.textBaseline='middle'; const tw=g.measureText(t).width, pad=s*.9, x=P.wm.pos.includes('r')?W-pad-tw:pad, y=P.wm.pos.includes('b')?H-pad:pad; g.globalAlpha=.78; g.lineWidth=s*.22; g.strokeStyle='rgba(0,0,0,.7)'; g.lineJoin='round'; g.strokeText(t,x,y); g.fillStyle='#fff'; g.fillText(t,x,y); g.restore(); }
+function pkWrap(g,text,maxW){ const words=String(text).split(/\s+/), lines=[]; let cur=''; words.forEach(w=>{ const t=cur?cur+' '+w:w; if(g.measureText(t).width>maxW&&cur){ lines.push(cur); cur=w; } else cur=t; }); if(cur) lines.push(cur); return lines; }
+function pkCaptionDraft(title,cast=[]){ const P=pkCfg(); const ct=[...new Set(cast)].slice(0,3).map(w=>'#'+w.toLowerCase().replace(/[^a-z0-9]/g,'')).join(' '); return `${title} 🎭\n\n${P.tags}${ct?' '+ct:''}`.trim(); }
+
+/* ---------- screen ---------- */
+function pkMount(){ const el=$('#scr-post'); if(!el) return; if(!$('#pkMain')){ el.innerHTML=`<div class="pk"><aside class="pk-tools"><div class="pk-title"><b>📲 Post Kit</b><small>Make it once. Post it everywhere.</small></div>${PK_TOOLS.map(([k,e,n,d])=>`<button data-pkt="${k}"><span>${e}</span><b>${n}</b><small>${d}</small></button>`).join('')}
+      <button data-pkshorts="1"><span>📱</span><b>Comic video</b><small>Vertical comic → Shorts Factory</small></button><button data-pkset="1"><span>⚙️</span><b>Settings</b><small>Handle, watermark, hashtags</small></button></aside><div class="pk-main" id="pkMain"></div></div>`;
+    el.querySelector('.pk-tools').onclick=e=>{ const b=e.target.closest('[data-pkt]'); if(b) return pkTool(b.dataset.pkt); if(e.target.closest('[data-pkshorts]')){ go('shorts'); toast('📱 Pick a comic as the source in Shorts Factory and it makes the vertical video.'); } if(e.target.closest('[data-pkset]')) openSettings('posting'); }; }
+  pkTool(PK.tool); }
+function pkTool(k){ PK.tool=k; cancelAnimationFrame(PK.raf); PK.raf=0; $$('.pk-tools [data-pkt]').forEach(b=>b.classList.toggle('on',b.dataset.pkt===k)); const m=$('#pkMain'); if(!m) return; m.innerHTML='';
+  ({carousel:pkCarousel,clip:pkClip,thumb:pkThumb,cards:pkCards,plan:pkPlan}[k]||pkCarousel)(m); }
+{ const _g=go; go=function(s){ const r=_g.apply(this,arguments); if(s==='post') setTimeout(pkMount,0); else { cancelAnimationFrame(PK.raf); PK.raf=0; const v=$('#pkVid'); if(v) v.pause(); } return r; }; }
+
+/* ---------- 📸 carousel ---------- */
+async function pkCarousel(m){ const C=PK.car; const list=(await ArtDB.all()).filter(d=>d.kind==='comic'||d.preview).sort((a,b)=>(b.updated||0)-(a.updated||0));
+  const urls=list.map(d=>d.preview instanceof Blob?URL.createObjectURL(d.preview):''); PK._urls?.forEach(u=>u&&URL.revokeObjectURL(u)); PK._urls=urls;
+  m.innerHTML=`<div class="pk-h"><h2>📸 Instagram carousel</h2><p class="tiny muted">Pick a comic (or any drawing). Every page or every panel becomes a slide sized for the Instagram feed, with a cover and an end card if you want them.</p></div>
+    <div class="pk-src">${list.map((d,i)=>`<button class="pk-thumb ${C.src===d.id?'on':''}" data-pks="${d.id}">${urls[i]?`<img src="${urls[i]}" alt="">`:'<span>💬</span>'}<b>${esc(d.name)}</b><small>${d.kind==='comic'?`comic · ${(d.pages||[1]).length} page${(d.pages||[1]).length>1?'s':''}`:esc(d.kind)}</small></button>`).join('')||'<p class="tiny muted">No comics yet. Make one in the Art Studio (Make → Art Studio → New comic).</p>'}</div>
+    <div class="pk-opts"><label>Slides <select id="pkcMode"><option value="pages" ${C.mode==='pages'?'selected':''}>One per page</option><option value="panels" ${C.mode==='panels'?'selected':''}>One per panel (zoomed in)</option></select></label>
+      <label>Size <select id="pkcSize"><option value="45" ${C.size==='45'?'selected':''}>Portrait 4:5 (1080×1350)</option><option value="11" ${C.size==='11'?'selected':''}>Square (1080×1080)</option></select></label>
+      <label>Background <input type="color" id="pkcBg" value="${C.bg}"></label><label><input type="checkbox" id="pkcCover" ${C.cover?'checked':''}> Cover slide</label><label><input type="checkbox" id="pkcEnd" ${C.end?'checked':''}> End card</label></div>
+    <div id="pkcOut" class="pk-out"></div>`;
+  m.querySelector('.pk-src').onclick=e=>{ const b=e.target.closest('[data-pks]'); if(!b) return; C.src=b.dataset.pks; $$('.pk-src .pk-thumb').forEach(x=>x.classList.toggle('on',x===b)); pkCarBuild(); };
+  $('#pkcMode').onchange=e=>{ C.mode=e.target.value; pkCarBuild(); }; $('#pkcSize').onchange=e=>{ C.size=e.target.value; pkCarBuild(); }; $('#pkcBg').onchange=e=>{ C.bg=e.target.value; pkCarBuild(); }; $('#pkcCover').onchange=e=>{ C.cover=e.target.checked; pkCarBuild(); }; $('#pkcEnd').onchange=e=>{ C.end=e.target.checked; pkCarBuild(); };
+  if(C.src&&list.find(d=>d.id===C.src)) pkCarBuild(); }
+async function pkCarBuild(){ const C=PK.car, out=$('#pkcOut'); if(!out||!C.src) return; out.innerHTML='<p class="tiny muted">Building slides…</p>'; const rec=await ArtDB.get(C.src); if(!rec) return;
+  const W=1080, H=C.size==='11'?1080:1350, pages=rec.pages||[{objects:rec.objects,bg:rec.bg}], slides=[], P=pkCfg(); const mk=()=>{ const c=document.createElement('canvas'); c.width=W; c.height=H; const g=c.getContext('2d'); g.fillStyle=C.bg; g.fillRect(0,0,W,H); return [c,g]; };
+  const pageCv=[]; for(const pg of pages){ const scale=Math.min(2,1600/Math.max(rec.w,rec.h)); try{ pageCv.push(await renderToCanvas({...rec,objects:pg.objects,bg:pg.bg},{scale,bg:(pg.bg&&pg.bg!=='transparent')?pg.bg:'#ffffff'})); }catch(e){ pageCv.push(null); } }
+  const fit=(g,src,sx,sy,sw,sh,pad)=>{ const s=Math.min((W-pad*2)/sw,(H-pad*2)/sh), dw=sw*s, dh=sh*s; g.save(); g.shadowColor='rgba(0,0,0,.25)'; g.shadowBlur=24; g.drawImage(src,sx,sy,sw,sh,(W-dw)/2,(H-dh)/2,dw,dh); g.restore(); };
+  if(C.cover&&pageCv[0]){ const [c,g]=mk(); const pc=pageCv[0]; const s=Math.max(W/pc.width,H/pc.height); g.filter='blur(14px) brightness(.55)'; g.drawImage(pc,(W-pc.width*s)/2,(H-pc.height*s)/2,pc.width*s,pc.height*s); g.filter='none'; g.fillStyle='rgba(0,0,0,.25)'; g.fillRect(0,0,W,H);
+    g.font=pkFont(96); g.textAlign='center'; g.textBaseline='middle'; const lines=pkWrap(g,rec.name.toUpperCase(),W*.84); lines.forEach((l,i)=>{ const y=H*.42+(i-(lines.length-1)/2)*104; g.lineWidth=18; g.strokeStyle='#000'; g.lineJoin='round'; g.strokeText(l,W/2,y); g.fillStyle='#ffc81e'; g.fillText(l,W/2,y); });
+    g.font=pkFont(40); g.fillStyle='#fff'; g.fillText(showName().toUpperCase(),W/2,H*.42-lines.length*56-40); g.font=pkFont(46); g.fillText('SWIPE ➜',W/2,H*.86); slides.push(c); }
+  pages.forEach((pg,i)=>{ const pc=pageCv[i]; if(!pc) return; const sc=pc.width/rec.w;
+    if(C.mode==='panels'){ const P2=(pg.objects||[]).filter(o=>o.type==='panel'&&!o.hidden).sort((a,b)=>Math.abs(a.y-b.y)<rec.h*.06?a.x-b.x:a.y-b.y); if(!P2.length){ const [c,g]=mk(); fit(g,pc,0,0,pc.width,pc.height,40); slides.push(c); return; }
+      P2.forEach(p=>{ const pad=Math.min(rec.w,rec.h)*.015, x=Math.max(0,p.x-pad), y=Math.max(0,p.y-pad), w=Math.min(rec.w-x,p.w+pad*2), h=Math.min(rec.h-y,p.h+pad*2); const [c,g]=mk(); fit(g,pc,x*sc,y*sc,w*sc,h*sc,60); slides.push(c); }); }
+    else { const [c,g]=mk(); fit(g,pc,0,0,pc.width,pc.height,Math.abs(pc.width/pc.height-W/H)<.02?0:40); slides.push(c); } });
+  if(C.end){ const [c,g]=mk(); g.fillStyle=P.outro.bg; g.fillRect(0,0,W,H); const im=await pkChar(P.outro.who); if(im){ const h=H*.42, w=h*im.sw/im.sh; g.drawImage(im.im,im.sx,im.sy,im.sw,im.sh,(W-w)/2,H*.12,w,h); }
+    g.textAlign='center'; g.textBaseline='middle'; g.font=pkFont(70); const L=pkWrap(g,P.outro.text||'Follow for more',W*.84); L.forEach((l,i)=>{ g.fillStyle=P.outro.fg||'#fff'; g.fillText(l,W/2,H*.64+i*80); }); g.font=pkFont(48); g.fillStyle='#ffc81e'; g.fillText(P.handle||showName(),W/2,H*.64+L.length*80+40); slides.push(c); }
+  slides.forEach(c=>pkWatermark(c.getContext('2d'),W,H)); C.slides=slides;
+  const cap=pkCaptionDraft(rec.name,[]);
+  out.innerHTML=`<div class="pk-row"><b>${slides.length} slide${slides.length===1?'':'s'}</b>${slides.length>20?' <span class="bad">Instagram allows 20 per post. Split it in two.</span>':''}<span class="grow"></span><button class="btn primary" id="pkcZip">⬇ Download all (.zip)</button></div>
+    <div class="pk-slides">${slides.map((c,i)=>`<figure><img src="${c.toDataURL('image/jpeg',.7)}" alt="slide ${i+1}"><figcaption><span>${i+1}</span><button class="btn sm" data-pkdl="${i}">⬇ PNG</button></figcaption></figure>`).join('')}</div>
+    <label class="lab">Caption draft</label><textarea class="txt" id="pkcCap" rows="4">${esc(cap)}</textarea><div class="row"><button class="btn sm" id="pkcCopy">📋 Copy caption</button><button class="btn sm" id="pkcPlan">📅 Add to planner</button></div>`;
+  const nm=slug(rec.name||'comic');
+  out.querySelector('.pk-slides').onclick=async e=>{ const b=e.target.closest('[data-pkdl]'); if(!b) return; const c=slides[+b.dataset.pkdl]; const bl=await new Promise(r=>c.toBlob(r,'image/png')); download(`${nm}-slide-${String(+b.dataset.pkdl+1).padStart(2,'0')}.png`,bl); };
+  $('#pkcZip').onclick=async()=>{ const files=[]; for(let i=0;i<slides.length;i++){ const bl=await new Promise(r=>slides[i].toBlob(r,'image/png')); files.push({name:`${nm}-slide-${String(i+1).padStart(2,'0')}.png`,blob:bl}); } files.push({name:'caption.txt',data:new TextEncoder().encode($('#pkcCap').value)}); download(`${nm}-instagram-carousel.zip`,await makeZip(files)); toast('📸 Carousel downloaded. Unzip it and post the slides in order.','good'); };
+  $('#pkcCopy').onclick=()=>navigator.clipboard?.writeText($('#pkcCap').value).then(()=>toast('📋 Copied'));
+  $('#pkcPlan').onclick=()=>{ const p=pkNewPost({title:rec.name,plat:{ig:true},cap:{ig:$('#pkcCap').value},link:{kind:'drawing',id:rec.id,title:rec.name}}); PK.planSel=p.id; pkTool('plan'); toast('📅 Added to the planner. Pick a day.'); }; }
+
+/* ---------- ✂️ Clip It ---------- */
+function pkParseSRT(s){ const ts=x=>{ const m=x.trim().match(/(\d+):(\d+):(\d+)[,.](\d+)/); return m?(+m[1])*3600+(+m[2])*60+(+m[3])+(+m[4])/1000:0; }; return String(s).replace(/\r/g,'').split(/\n\n+/).map(b=>{ const L=b.split('\n').filter(Boolean); const i=L.findIndex(l=>l.includes('-->')); if(i<0) return null; const [a,c]=L[i].split('-->'); const txt=L.slice(i+1).join(' '); const m=txt.match(/^([^:]{1,30}):\s*(.*)$/); return {t:ts(a),dur:Math.max(.2,ts(c)-ts(a)),who:m?m[1]:'',text:m?m[2]:txt}; }).filter(Boolean); }
+async function pkClip(m){ const C=PK.clip; const films=(await bkAll({db:()=>CinemaDB,st:'films'})).filter(f=>f.blob).sort((a,b)=>(b.created||0)-(a.created||0));
+  m.innerHTML=`<div class="pk-h"><h2>✂️ Clip It</h2><p class="tiny muted">Every video you export lands in Nenjac Cinemas, so it's here too. Pick one, trim it to 15/30/60 seconds, reframe it and burn in captions. Videos from Animate (Script → Scene) and Shorts already know every line, so the captions are automatic.</p></div>
+    <div class="pk-src">${films.map(f=>`<button class="pk-thumb ${C.film?.id===f.id?'on':''}" data-pkf="${f.id}">${f.poster?`<img src="${f.poster}" alt="">`:'<span>🎬</span>'}<b>${esc(f.title)}</b><small>${f.dur?fmtT(f.dur)+' · ':''}${f.cues?.length?'💬 captions':ago(f.created)}</small></button>`).join('')}<label class="pk-thumb up"><span>⬆</span><b>Upload a video</b><small>MP4 / WebM / MOV</small><input type="file" id="pkUp" accept="video/*" hidden></label></div>
+    <div id="pkClipEd"></div>`;
+  m.querySelector('.pk-src').onclick=e=>{ const b=e.target.closest('[data-pkf]'); if(!b) return; const f=films.find(x=>x.id===b.dataset.pkf); $$('.pk-src .pk-thumb').forEach(x=>x.classList.toggle('on',x===b)); pkClipLoad(f); };
+  $('#pkUp').onchange=e=>{ const file=e.target.files[0]; if(!file) return; pkClipLoad({id:'up:'+uid(),title:file.name.replace(/\.\w+$/,''),blob:file,cues:null}); };
+  if(C.film) pkClipLoad(C.film,true); }
+function pkClipLoad(f,keep){ const C=PK.clip; if(C.url&&C.film!==f){ URL.revokeObjectURL(C.url); } if(C.film!==f||!C.url) C.url=URL.createObjectURL(f.blob); C.film=f; C.cues=f.cues||null; if(!keep){ C.start=0; C.end=15; C.hook=''; }
+  const ed=$('#pkClipEd'); if(!ed) return; const P=pkCfg();
+  ed.innerHTML=`<div class="pk-clip"><div class="pk-cl"><video id="pkVid" src="${C.url}" controls playsinline preload="auto"></video>
+      <div class="pk-trim"><div class="row"><b>Clip</b><span id="pkClen" class="pill"></span><span class="grow"></span>${[15,30,60].map(n=>`<button class="btn sm" data-pklen="${n}">${n}s from here</button>`).join('')}<button class="btn sm" data-pkall="1">Whole thing</button></div>
+        <label>Start <input type="range" id="pkS" min="0" step=".05"><span id="pkSv"></span></label><label>End <input type="range" id="pkE" min="0" step=".05"><span id="pkEv"></span></label>
+        <div class="row"><button class="btn sm" data-pkset="s">⇤ Start here</button><button class="btn sm" data-pkset="e">End here ⇥</button><button class="btn sm" data-pkplay="1">▶ Play the clip</button></div></div></div>
+    <div class="pk-cr"><canvas id="pkPrev"></canvas>
+      <div class="pk-opts col"><label>Format <select id="pkFmt">${Object.entries(PK_FMT).map(([k,[w,h,n]])=>`<option value="${k}" ${C.fmt===k?'selected':''}>${n}</option>`).join('')}</select></label>
+        <label>Framing <select id="pkFit"><option value="blur" ${C.fit==='blur'?'selected':''}>Fit + blurred background</option><option value="crop" ${C.fit==='crop'?'selected':''}>Crop to fill</option><option value="bars" ${C.fit==='bars'?'selected':''}>Fit + black bars</option></select></label>
+        <label id="pkFocusL" ${C.fit==='crop'?'':'hidden'}>Crop focus <input type="range" id="pkFocus" min="0" max="1" step=".01" value="${C.focus}"></label>
+        <label>Captions <select id="pkCaps"><option value="pop" ${C.caps==='pop'?'selected':''}>Word pop (TikTok style)</option><option value="sub" ${C.caps==='sub'?'selected':''}>Classic subtitles</option><option value="off" ${C.caps==='off'?'selected':''}>Off</option></select></label>
+        <p class="tiny ${C.cues?.length?'':'muted'}" id="pkCapNote">${C.cues?.length?`💬 ${C.cues.length} lines of dialogue found.`:'No dialogue saved with this video.'} <label class="linkish">Load an .srt<input type="file" id="pkSrt" accept=".srt,.vtt,text/plain" hidden></label></p>
+        <label><input type="checkbox" id="pkWho" ${C.who?'checked':''}> Show who's talking</label>
+        <label>Hook text (first 3 seconds) <input class="txt" id="pkHook" value="${esc(C.hook)}" placeholder="POV: Deegs found the bomb drawer"></label>
+        <label><input type="checkbox" id="pkIn" ${C.intro?'checked':''}> Intro card (${P.intro.dur}s)</label><label><input type="checkbox" id="pkOut" ${C.outro?'checked':''}> End card (${P.outro.dur}s)</label><label><input type="checkbox" id="pkWm" ${P.wm.on?'checked':''}> Watermark “${esc(P.wm.text||P.handle||'…')}”</label>
+        <button class="btn primary big" id="pkGo">🎬 Export clip</button><div id="pkProg"></div></div></div></div>`;
+  const v=$('#pkVid'), S2=$('#pkS'), E2=$('#pkE'); const sync=()=>{ const d=v.duration||0; S2.max=E2.max=d; C.end=Math.min(C.end,d||C.end); if(C.end<=C.start) C.end=Math.min(d,C.start+15); S2.value=C.start; E2.value=C.end; $('#pkSv').textContent=fmtT(C.start); $('#pkEv').textContent=fmtT(C.end); const len=C.end-C.start; $('#pkClen').textContent=`${len.toFixed(1)}s${len>60?' (over 60s: fine for TikTok, too long for Shorts)':''}`; };
+  v.onloadedmetadata=()=>{ if(!f.dur&&isFinite(v.duration)) f.dur=v.duration; if(C.end>v.duration||C.end<=C.start) C.end=Math.min(v.duration,C.start+15); sync(); v.currentTime=C.start; }; if(v.readyState>=1) v.onloadedmetadata();
+  S2.oninput=()=>{ C.start=Math.min(+S2.value,C.end-.5); v.currentTime=C.start; sync(); }; E2.oninput=()=>{ C.end=Math.max(+E2.value,C.start+.5); v.currentTime=C.end; sync(); };
+  ed.onclick=e=>{ const b=e.target.closest('[data-pklen],[data-pkall],[data-pkset],[data-pkplay]'); if(!b) return; const d=v.duration||0;
+    if(b.dataset.pklen){ C.start=v.currentTime; C.end=Math.min(d,C.start+ +b.dataset.pklen); } if(b.dataset.pkall){ C.start=0; C.end=d; } if(b.dataset.pkset==='s'){ C.start=Math.min(v.currentTime,C.end-.5); } if(b.dataset.pkset==='e'){ C.end=Math.max(v.currentTime,C.start+.5); }
+    if(b.dataset.pkplay){ v.currentTime=C.start; v.play(); const stop=()=>{ if(v.currentTime>=C.end){ v.pause(); v.removeEventListener('timeupdate',stop); } }; v.addEventListener('timeupdate',stop); } sync(); };
+  const opt=(id,k,f2)=>{ $('#'+id).onchange=$('#'+id).oninput=e=>{ C[k]=f2?f2(e.target):e.target.value; $('#pkFocusL').hidden=C.fit!=='crop'; }; };
+  opt('pkFmt','fmt'); opt('pkFit','fit'); opt('pkFocus','focus',t=>+t.value); opt('pkCaps','caps'); opt('pkWho','who',t=>t.checked); opt('pkHook','hook'); opt('pkIn','intro',t=>t.checked); opt('pkOut','outro',t=>t.checked);
+  $('#pkWm').onchange=e=>{ P.wm.on=e.target.checked; save(); };
+  $('#pkSrt').onchange=async e=>{ const file=e.target.files[0]; if(!file) return; const q=pkParseSRT(await file.text()); if(!q.length) return toast('No captions in that file.','bad'); C.cues=q; f.cues=q; $('#pkCapNote').innerHTML=`💬 ${q.length} lines loaded from ${esc(file.name)}.`; if(f.blob&&!String(f.id).startsWith('up:')){ try{ await CinemaDB.put({...f}); }catch(err){} } };
+  $('#pkGo').onclick=pkClipExport;
+  const cv=$('#pkPrev'), loop=()=>{ if(PK.tool!=='clip'||!$('#pkPrev')){ PK.raf=0; return; } PK.raf=requestAnimationFrame(loop); const [W,H]=PK_FMT[C.fmt], sc=Math.min(360/W,360/H); if(cv.width!==Math.round(W*sc)){ cv.width=Math.round(W*sc); cv.height=Math.round(H*sc); } const g=cv.getContext('2d'); g.setTransform(sc,0,0,sc,0,0); pkClipFrame(g,v,v.currentTime,W,H,C,v.currentTime-C.start); pkWatermark(g,W,H); };
+  cancelAnimationFrame(PK.raf); PK.raf=requestAnimationFrame(loop); }
+function pkClipFrame(g,v,ft,W,H,C,rel){ g.fillStyle='#000'; g.fillRect(0,0,W,H); const vw=v.videoWidth||16, vh=v.videoHeight||9;
+  if(v.readyState>=2){ if(C.fit==='crop'){ const s=Math.max(W/vw,H/vh), dw=vw*s, dh=vh*s; g.drawImage(v,(W-dw)*C.focus,(H-dh)/2,dw,dh); }
+    else { if(C.fit==='blur'){ const s=Math.max(W/vw,H/vh)*1.1, dw=vw*s, dh=vh*s; g.save(); g.filter='blur(28px) brightness(.55) saturate(1.2)'; g.drawImage(v,(W-dw)/2,(H-dh)/2,dw,dh); g.restore(); g.fillStyle='rgba(0,0,0,.18)'; g.fillRect(0,0,W,H); }
+      const s=Math.min(W/vw,H/vh), dw=vw*s, dh=vh*s; g.drawImage(v,(W-dw)/2,(H-dh)/2,dw,dh); } }
+  if(C.hook&&rel>=0&&rel<3){ const s=W*.058; g.font=pkFont(s); g.textAlign='center'; g.textBaseline='middle'; const L=pkWrap(g,C.hook,W*.8), y0=H*(C.fmt==='h'?.1:.14); L.forEach((l,i)=>{ const tw=g.measureText(l).width, y=y0+i*s*1.3; g.fillStyle='#fff'; g.fillRect(W/2-tw/2-s*.4,y-s*.65,tw+s*.8,s*1.3); g.fillStyle='#111'; g.fillText(l,W/2,y); }); }
+  const q=C.caps!=='off'&&(C.cues||[]).find(x=>ft>=x.t&&ft<x.t+x.dur+.1); if(!q||!q.text) return;
+  if(C.caps==='pop'){ const words=q.text.replace(/\s+/g,' ').trim().split(' '), n=words.length, idx=clamp(Math.floor((ft-q.t)/Math.max(.2,q.dur)*n),0,n-1), chunk=Math.floor(idx/4)*4, show=words.slice(chunk,chunk+4), s=W*(C.fmt==='h'?.05:.082);
+    g.font=pkFont(s); g.textAlign='center'; g.textBaseline='middle'; const y=H*(C.fmt==='h'?.82:C.fmt==='v'?.68:.78); const L=pkWrap(g,show.join(' ').toUpperCase(),W*.86); let k=chunk;
+    L.forEach((line,li)=>{ const ws=line.split(' '), tw=g.measureText(line).width; let x=W/2-tw/2; const yy=y+(li-(L.length-1)/2)*s*1.15; g.textAlign='left'; ws.forEach(w=>{ const ww=g.measureText(w+' ').width; g.lineWidth=s*.2; g.lineJoin='round'; g.strokeStyle='#000'; g.strokeText(w,x,yy); g.fillStyle=k===idx?'#ffd43b':'#fff'; g.fillText(w,x,yy); x+=ww; k++; }); });
+    if(C.who&&q.who){ g.textAlign='center'; g.font=pkFont(s*.42); g.lineWidth=s*.1; g.strokeText(q.who.toUpperCase(),W/2,y-s*1.05-(L.length-1)*s*.6); g.fillStyle='#ffd43b'; g.fillText(q.who.toUpperCase(),W/2,y-s*1.05-(L.length-1)*s*.6); } }
+  else { const s=W*(C.fmt==='h'?.03:.045); g.font=`700 ${Math.round(s)}px system-ui, sans-serif`; g.textAlign='center'; g.textBaseline='middle'; const L=pkWrap(g,(C.who&&q.who?q.who+': ':'')+q.text,W*.86).slice(0,3), y=H*(C.fmt==='h'?.9:.8);
+    L.forEach((l,i)=>{ const tw=g.measureText(l).width, yy=y+(i-(L.length-1))*s*1.35; g.fillStyle='rgba(0,0,0,.72)'; g.fillRect(W/2-tw/2-s*.4,yy-s*.68,tw+s*.8,s*1.36); g.fillStyle='#fff'; g.fillText(l,W/2,yy); }); } }
+function pkSeek(v,t){ return new Promise(res=>{ t=clamp(t,0,Math.max(0,(v.duration||0)-.001)); if(Math.abs(v.currentTime-t)<.004&&v.readyState>=2) return res(); let done=false; const fin=()=>{ if(done) return; done=true; v.removeEventListener('seeked',fin); res(); }; v.addEventListener('seeked',fin); setTimeout(fin,1500); v.currentTime=t; }); }
+async function pkCardAudio(oc,kind,t0){ const P=pkCfg(); const fx=(k,t,vol=1)=>{ const s=OSFX[k]; if(!s) return; const g=oc.createGain(); g.gain.value=vol; g.connect(oc.destination); try{ s.run(oc,t,g); }catch(e){} }; if(kind==='intro'){ fx('whoosh',t0,.6); if(P.intro.snd&&P.intro.snd!=='none') fx(P.intro.snd,t0+.32,.9); } else fx('whoosh',t0+.05,.6); }
+async function pkClipExport(){ const C=PK.clip, P=pkCfg(); if(!C.film) return; const [W,H]=PK_FMT[C.fmt], iD=C.intro&&P.intro.on!==false?P.intro.dur:0, oD=C.outro&&P.outro.on!==false?P.outro.dur:0, mD=Math.max(.5,C.end-C.start), dur=iD+mD+oD;
+  const btn=$('#pkGo'); btn.disabled=true; const prog=$('#pkProg'); prog.innerHTML='<div class="vb-bar"><i id="pkBar" style="width:0"></i></div><p class="tiny muted" id="pkPt">Getting ready…</p>';
+  try{ const v=document.createElement('video'); v.src=C.url; v.muted=true; v.playsInline=true; v.preload='auto'; await new Promise((r,j)=>{ v.onloadeddata=r; v.onerror=()=>j(new Error('This browser can\'t open that video.')); setTimeout(r,6000); });
+    await pkCardsPrep(); const sr=48000, oc=new OfflineAudioContext(2,Math.ceil((dur+.3)*sr),sr);
+    try{ const buf=await new OfflineAudioContext(2,1,sr).decodeAudioData(await C.film.blob.arrayBuffer()); const src=oc.createBufferSource(); src.buffer=buf; const g=oc.createGain(); g.gain.setValueAtTime(0,iD); g.gain.linearRampToValueAtTime(1,iD+.08); g.gain.setValueAtTime(1,iD+mD-.12); g.gain.linearRampToValueAtTime(0,iD+mD); src.connect(g).connect(oc.destination); src.start(iD,C.start,mD); }catch(e){ console.warn('clip audio',e); }
+    if(iD) await pkCardAudio(oc,'intro',0); if(oD) await pkCardAudio(oc,'outro',iD+mD); const audio=await oc.startRendering();
+    $('#pkPt').textContent='Rendering frames…';
+    const r=await encodeMovie({w:W,h:H,fps:30,dur,audio,draw:async(g,t)=>{ if(t<iD) pkIntroDraw(g,W,H,t,iD); else if(t<iD+mD){ const ft=C.start+(t-iD); await pkSeek(v,ft); pkClipFrame(g,v,ft,W,H,C,t-iD); } else pkOutroDraw(g,W,H,t-iD-mD,oD); pkWatermark(g,W,H); },
+      onProgress:(p,t)=>{ const b=$('#pkBar'); if(b) b.style.width=(p*100).toFixed(1)+'%'; const pt=$('#pkPt'); if(pt) pt.textContent=`Rendering… ${Math.round(p*100)}%`; }});
+    if(!r) throw new Error('This browser can\'t make videos (try Chrome).');
+    const name=`${slug(C.film.title||'clip')}-${C.fmt==='v'?'vertical':C.fmt==='h'?'wide':C.fmt==='s'?'square':'portrait'}-${Math.round(mD)}s.${r.ext}`; const url=URL.createObjectURL(r.blob);
+    const cast=[...new Set((C.cues||[]).filter(q=>q.t>=C.start&&q.t<C.end).map(q=>q.who).filter(Boolean))], cap=pkCaptionDraft(C.hook||C.film.title,cast);
+    prog.innerHTML=`<video src="${url}" controls playsinline class="pk-result"></video><div class="row"><button class="btn primary" id="pkDl">⬇ Download (${fmtMB(r.blob.size)})</button><button class="btn" id="pkToPlan">📅 Add to planner</button></div>${encNote(r)}<label class="lab">Caption draft</label><textarea class="txt" id="pkCap" rows="3">${esc(cap)}</textarea><button class="btn sm" id="pkCapCopy">📋 Copy caption</button>`;
+    $('#pkDl').onclick=()=>download(name,r.blob); $('#pkCapCopy').onclick=()=>navigator.clipboard?.writeText($('#pkCap').value).then(()=>toast('📋 Copied'));
+    $('#pkToPlan').onclick=()=>{ const vert=C.fmt==='v'; const p=pkNewPost({title:C.hook||C.film.title,plat:vert?{tt:true,ys:true,ig:true}:{yt:true},cap:vert?{tt:$('#pkCap').value,ig:$('#pkCap').value,ys:$('#pkCap').value}:{yt:$('#pkCap').value,ytTitle:C.film.title},link:{kind:'film',id:C.film.id,title:C.film.title}}); PK.planSel=p.id; pkTool('plan'); };
+    try{ sfx('fanfare'); }catch(e){} }catch(e){ console.error(e); prog.innerHTML=`<p class="bad">Export failed: ${esc(e.message||e)}</p>`; } btn.disabled=false; }
+
+/* ---------- 🎬 intro + outro cards ---------- */
+async function pkCardsPrep(){ const P=pkCfg(); PK.outIm=await pkChar(P.outro.who); }
+function pkEase(x){ return 1-Math.pow(1-clamp(x,0,1),3); }
+function pkIntroDraw(g,W,H,t,dur){ const P=pkCfg().intro, u=Math.min(W,H); g.save(); g.fillStyle=P.bg; g.fillRect(0,0,W,H);
+  g.translate(W/2,H/2); g.globalAlpha=.18; g.fillStyle=P.fg; for(let i=0;i<14;i++){ g.rotate(Math.PI*2/14+(t*.4)/14); g.beginPath(); g.moveTo(0,0); g.lineTo(Math.max(W,H),-u*.06); g.lineTo(Math.max(W,H),u*.06); g.fill(); } g.globalAlpha=1; g.setTransform(1,0,0,1,0,0);
+  const out=clamp(t>dur-.25?(t-(dur-.25))/.25:0,0,1); let sc=1, rot=0, dx=0;
+  if(P.style==='slam'){ const a=clamp((t-.05)/.3,0,1); sc=a<1?3-2*pkEase(a):1+Math.sin((t-.35)*30)*Math.exp(-(t-.35)*8)*.06; if(t>.35&&t<.6){ dx=(Math.random()-.5)*u*.03; } }
+  else if(P.style==='spin'){ const a=pkEase(t/.6); sc=a; rot=(1-a)*Math.PI*2; } else { dx=(t<.8&&Math.random()<.4)?(Math.random()-.5)*u*.06:0; }
+  g.translate(W/2+dx,H*.47); g.rotate(rot); g.scale(sc*(1-out*.3),sc*(1-out*.3)); g.globalAlpha=1-out; g.textAlign='center'; g.textBaseline='middle'; const s=u*.13; g.font=pkFont(s); const L=pkWrap(g,(P.title||showName()).toUpperCase(),W*.86);
+  L.forEach((l,i)=>{ const y=(i-(L.length-1)/2)*s*1.08; if(P.style==='glitch'){ g.fillStyle='#ff004c'; g.fillText(l,-u*.012,y); g.fillStyle='#00e5ff'; g.fillText(l,u*.012,y); } g.lineWidth=s*.16; g.lineJoin='round'; g.strokeStyle='#000'; g.strokeText(l,0,y); g.fillStyle=P.fg; g.fillText(l,0,y); });
+  if(P.sub){ g.font=pkFont(s*.32); g.globalAlpha=clamp((t-.5)/.3,0,1)*(1-out); g.fillStyle='#fff'; g.fillText(P.sub.toUpperCase(),0,L.length*s*.6+s*.35); } g.restore(); }
+function pkOutroDraw(g,W,H,t,dur){ const P=pkCfg(), O=P.outro, u=Math.min(W,H), vert=H>W; g.save(); g.fillStyle=O.bg; g.fillRect(0,0,W,H); const fin=clamp(t/.35,0,1), out=clamp(t>dur-.2?(t-(dur-.2))/.2:0,0,1); g.globalAlpha=1-out;
+  const im=PK.outIm; if(im){ const h=vert?H*.34:H*.62, w=h*im.sw/im.sh, cx=vert?W/2:W*.27, cy=vert?H*.3:H*.52; g.save(); g.translate(cx,cy+h/2); g.rotate(Math.sin(t*6)*.08); g.scale(pkEase(fin),pkEase(fin)); g.drawImage(im.im,im.sx,im.sy,im.sw,im.sh,-w/2,-h,w,h); g.restore(); }
+  const tx=vert?W/2:W*.66, s=u*(vert?.085:.095); g.textAlign='center'; g.textBaseline='middle'; g.font=pkFont(s); const L=pkWrap(g,O.text||'Follow for more',vert?W*.84:W*.6), y0=vert?H*.6:H*.36;
+  L.forEach((l,i)=>{ g.fillStyle=O.fg||'#fff'; g.fillText(l,tx-(1-pkEase(fin))*W*.3,y0+i*s*1.15); }); const yy=y0+L.length*s*1.15+s*.3;
+  if(P.handle){ g.font=pkFont(s*.62); g.fillStyle='#ffc81e'; g.fillText(P.handle,tx,yy); } if(O.sub){ g.font=`700 ${Math.round(s*.42)}px system-ui`; g.fillStyle='rgba(255,255,255,.8)'; g.fillText(O.sub,tx,yy+s*.75); }
+  const bp=1+Math.sin(t*8)*.04, bw=s*4.4, bh=s*1.15, by=yy+s*(O.sub?1.8:1.3); g.save(); g.translate(tx,by); g.scale(bp,bp); g.fillStyle='#e03131'; g.beginPath(); g.roundRect?g.roundRect(-bw/2,-bh/2,bw,bh,bh/2):g.rect(-bw/2,-bh/2,bw,bh); g.fill(); g.fillStyle='#fff'; g.font=pkFont(s*.5); g.fillText('▶ FOLLOW',0,2); g.restore(); g.restore(); }
+async function pkCards(m){ const P=pkCfg(), I=P.intro, O=P.outro;
+  m.innerHTML=`<div class="pk-h"><h2>🎬 Intro & end card</h2><p class="tiny muted">Design them once. Clip It adds them to every clip (turn them off per clip). You can also export them on their own to use in other editors.</p></div>
+    <div class="pk-cards"><div class="pk-card"><h3>Intro</h3><canvas id="pkIc"></canvas><div class="pk-opts col"><label><input type="checkbox" id="ciOn" ${I.on?'checked':''}> Use it</label>
+        <label>Style <select id="ciStyle">${[['slam','💥 Slam'],['spin','🌀 Spin in'],['glitch','📺 Glitch']].map(([v,l])=>`<option value="${v}" ${I.style===v?'selected':''}>${l}</option>`).join('')}</select></label>
+        <label>Title <input class="txt" id="ciTitle" value="${esc(I.title)}"></label><label>Subtitle <input class="txt" id="ciSub" value="${esc(I.sub)}" placeholder="Episode 5"></label>
+        <label>Colors <input type="color" id="ciBg" value="${I.bg}"> <input type="color" id="ciFg" value="${I.fg}"></label><label>Length <input type="range" id="ciDur" min="1" max="4" step=".25" value="${I.dur}"><span>${I.dur}s</span></label>
+        <label>Sound <select id="ciSnd">${['boom','vineboom','airhorn','scratch','whoosh','none'].filter(k=>k==='none'||OSFX[k]).map(k=>`<option ${I.snd===k?'selected':''}>${k}</option>`).join('')}</select></label>
+        <div class="row"><button class="btn sm" data-pkexp="intro:h">⬇ Wide MP4</button><button class="btn sm" data-pkexp="intro:v">⬇ Vertical MP4</button></div></div></div>
+      <div class="pk-card"><h3>End card</h3><canvas id="pkOc"></canvas><div class="pk-opts col"><label><input type="checkbox" id="coOn" ${O.on?'checked':''}> Use it</label>
+        <label>Big text <input class="txt" id="coText" value="${esc(O.text)}"></label><label>Small text <input class="txt" id="coSub" value="${esc(O.sub)}" placeholder="New episodes every Friday"></label>
+        <label>Who waves <select id="coWho">${S.chars.map(c=>`<option ${c.name===O.who?'selected':''}>${esc(c.name)}</option>`).join('')}</select></label>
+        <label>Colors <input type="color" id="coBg" value="${O.bg}"> <input type="color" id="coFg" value="${O.fg}"></label><label>Length <input type="range" id="coDur" min="1.5" max="5" step=".25" value="${O.dur}"><span>${O.dur}s</span></label>
+        <p class="tiny muted">Your handle (${esc(P.handle||'not set')}) goes under the text. <a href="#" id="coSet">Change it</a>.</p>
+        <div class="row"><button class="btn sm" data-pkexp="outro:h">⬇ Wide MP4</button><button class="btn sm" data-pkexp="outro:v">⬇ Vertical MP4</button></div></div></div></div>`;
+  const bind=(id,obj,k,num)=>{ const x=$('#'+id); x.oninput=x.onchange=()=>{ obj[k]=x.type==='checkbox'?x.checked:num?+x.value:x.value; const sp=x.nextElementSibling; if(x.type==='range'&&sp) sp.textContent=x.value+'s'; save(); if(id==='coWho') pkCardsPrep(); }; };
+  bind('ciOn',I,'on'); bind('ciStyle',I,'style'); bind('ciTitle',I,'title'); bind('ciSub',I,'sub'); bind('ciBg',I,'bg'); bind('ciFg',I,'fg'); bind('ciDur',I,'dur',1); bind('ciSnd',I,'snd');
+  bind('coOn',O,'on'); bind('coText',O,'text'); bind('coSub',O,'sub'); bind('coWho',O,'who'); bind('coBg',O,'bg'); bind('coFg',O,'fg'); bind('coDur',O,'dur',1);
+  $('#coSet').onclick=e=>{ e.preventDefault(); openSettings('posting'); };
+  m.querySelector('.pk-cards').onclick=async e=>{ const b=e.target.closest('[data-pkexp]'); if(!b) return; const [k,f]=b.dataset.pkexp.split(':'), [W,H]=f==='v'?[1080,1920]:[1920,1080], d=k==='intro'?I.dur:O.dur; b.disabled=true; const old=b.textContent; b.textContent='Rendering…';
+    try{ await pkCardsPrep(); const oc=new OfflineAudioContext(2,Math.ceil((d+.3)*48000),48000); await pkCardAudio(oc,k,0); const audio=await oc.startRendering(); const r=await encodeMovie({w:W,h:H,fps:30,dur:d,audio,draw:(g,t)=>{ k==='intro'?pkIntroDraw(g,W,H,t,d):pkOutroDraw(g,W,H,t,d); pkWatermark(g,W,H); }}); if(r) download(`${slug(showName())}-${k}-${f==='v'?'vertical':'wide'}.${r.ext}`,r.blob); }catch(err){ toast('Export failed: '+esc(err.message||err),'bad'); } b.disabled=false; b.textContent=old; };
+  await pkCardsPrep(); const ic=$('#pkIc'), oc2=$('#pkOc'); ic.width=oc2.width=480; ic.height=oc2.height=270; const t0=performance.now();
+  const loop=now=>{ if(PK.tool!=='cards'||!$('#pkIc')){ PK.raf=0; return; } PK.raf=requestAnimationFrame(loop); const t=(now-t0)/1000; const g1=ic.getContext('2d'), g2=oc2.getContext('2d'); g1.setTransform(.25,0,0,.25,0,0); g2.setTransform(.25,0,0,.25,0,0); const d1=I.dur+.6, d2=O.dur+.6; pkIntroDraw(g1,1920,1080,t%d1,I.dur); pkOutroDraw(g2,1920,1080,t%d2,O.dur); };
+  cancelAnimationFrame(PK.raf); PK.raf=requestAnimationFrame(loop); }
+
+/* ---------- 🖼 thumbnail maker ---------- */
+function pkThDefault(){ return {bg:{kind:'set',v:BACKGROUNDS.find(b=>/closed-nenjac-theater/.test(b))||BACKGROUNDS[0]},dim:.25,items:[{t:'char',name:'Deegs',x:340,y:420,s:1,flip:false},{t:'text',str:'HE DID WHAT?!',x:850,y:250,s:.85,style:'impact',r:-.04},{t:'sticker',e:'arrow',x:640,y:420,s:1,r:.3}],sel:1}; }
+const PK_STICK=[['arrow','➡️ Red arrow'],['circle','⭕ Red circle'],['😱','😱'],['💀','💀'],['🔥','🔥'],['‼️','‼️'],['🤯','🤯'],['💣','💣'],['NEW','🆕 NEW tag']];
+const PK_TSTY=[['impact','White + black outline'],['yellow','Yellow + black outline'],['redbox','White on red box'],['black','Black + white outline']];
+async function pkThumb(m){ const st=pkCfg(); PK.th=PK.th||st.thumb||pkThDefault(); const T=PK.th; const sets=[...BACKGROUNDS.map(b=>[b,b.split('/').pop().replace(/\.\w+$/,'').replace(/-/g,' ')]),...(typeof CLASSIC_SETS!=='undefined'?CLASSIC_SETS.map(c=>[c.p,'📼 '+c.n]):[])];
+  m.innerHTML=`<div class="pk-h"><h2>🖼 Thumbnail Maker</h2><p class="tiny muted">1280×720 for YouTube. Drag stuff around on the canvas. Big face, big text, red arrow. You know the rules.</p></div>
+    <div class="pk-th"><div class="pk-thc"><canvas id="pkTh" width="1280" height="720"></canvas><div class="row"><button class="btn primary" id="thDl">⬇ Download PNG</button><button class="btn" id="thReset">↺ Start over</button></div></div>
+    <div class="pk-opts col"><b>Background</b><select id="thSet"><option value="">Pick a set…</option>${sets.map(([p,n])=>`<option value="${esc(p)}" ${T.bg.kind==='set'&&T.bg.v===p?'selected':''}>${esc(n)}</option>`).join('')}</select>
+      <div class="row"><label>Color <input type="color" id="thCol" value="${T.bg.kind==='color'?T.bg.v:'#930000'}"></label><label class="btn sm">⬆ Upload<input type="file" id="thUp" accept="image/*" hidden></label><button class="btn sm" id="thFrame">🎞 Frame from a video</button></div>
+      <label>Darken <input type="range" id="thDim" min="0" max=".7" step=".05" value="${T.dim}"></label>
+      <b>Add</b><div class="row"><select id="thChar"><option value="">＋ Character…</option>${S.chars.filter(c=>c.img).map(c=>`<option>${esc(c.name)}</option>`).join('')}</select><button class="btn sm" id="thText">＋ Text</button></div>
+      <div class="pk-stk">${PK_STICK.map(([k,l])=>`<button class="btn sm" data-stk="${k}">${l}</button>`).join('')}</div>
+      <div id="thSel" class="pk-sel"></div></div></div>`;
+  const cv=$('#pkTh'); const draw=()=>pkThDraw(cv.getContext('2d')).then(pkThSel);
+  $('#thSet').onchange=e=>{ if(!e.target.value) return; T.bg={kind:'set',v:e.target.value}; draw(); }; $('#thCol').oninput=e=>{ T.bg={kind:'color',v:e.target.value}; draw(); }; $('#thDim').oninput=e=>{ T.dim=+e.target.value; draw(); };
+  $('#thUp').onchange=e=>{ const f=e.target.files[0]; if(!f) return; const r=new FileReader(); r.onload=()=>{ T.bg={kind:'img',v:r.result}; draw(); }; r.readAsDataURL(f); };
+  $('#thFrame').onclick=()=>pkThFrame(draw);
+  $('#thChar').onchange=e=>{ if(!e.target.value) return; T.items.push({t:'char',name:e.target.value,x:640,y:420,s:1,flip:false}); T.sel=T.items.length-1; e.target.value=''; draw(); };
+  $('#thText').onclick=()=>{ T.items.push({t:'text',str:'NO WAY',x:640,y:200,s:1,style:'yellow',r:0}); T.sel=T.items.length-1; draw(); };
+  m.querySelector('.pk-stk').onclick=e=>{ const b=e.target.closest('[data-stk]'); if(!b) return; T.items.push({t:'sticker',e:b.dataset.stk,x:640,y:360,s:1,r:0}); T.sel=T.items.length-1; draw(); };
+  $('#thDl').onclick=async()=>{ T.sel=-1; await pkThDraw(cv.getContext('2d')); const bl=await new Promise(r=>cv.toBlob(r,'image/png')); download(`${slug((T.items.find(i=>i.t==='text')||{}).str||'thumbnail')}-thumbnail.png`,bl); pkThSave(); toast('🖼 Thumbnail saved','good'); };
+  $('#thReset').onclick=()=>{ PK.th=pkThDefault(); pkThumb(m); };
+  let drag=null; const pos=e=>{ const r=cv.getBoundingClientRect(); return [(e.clientX-r.left)/r.width*1280,(e.clientY-r.top)/r.height*720]; };
+  cv.onpointerdown=e=>{ const [x,y]=pos(e); const i=[...T.items.keys()].reverse().find(i=>{ const b=T.items[i]._box; return b&&x>=b[0]&&x<=b[0]+b[2]&&y>=b[1]&&y<=b[1]+b[3]; }); T.sel=i??-1; if(i!=null){ drag={i,dx:x-T.items[i].x,dy:y-T.items[i].y}; cv.setPointerCapture(e.pointerId); } draw(); };
+  cv.onpointermove=e=>{ if(!drag) return; const [x,y]=pos(e); const it=T.items[drag.i]; it.x=x-drag.dx; it.y=y-drag.dy; pkThDraw(cv.getContext('2d')); };
+  cv.onpointerup=()=>{ if(drag){ drag=null; pkThSave(); } };
+  cv.onwheel=e=>{ const it=T.items[T.sel]; if(!it) return; e.preventDefault(); it.s=clamp(it.s*Math.exp(-e.deltaY*.0015),.15,5); draw(); };
+  PK.thKey=e=>{ if(PK.tool!=='thumb'||current!=='post'||/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName)) return; if((e.key==='Delete'||e.key==='Backspace')&&T.items[T.sel]){ e.preventDefault(); T.items.splice(T.sel,1); T.sel=-1; draw(); } };
+  draw(); }
+document.addEventListener('keydown',e=>PK.thKey&&PK.thKey(e));
+function pkThSave(){ const T=PK.th; if(!T) return; const st=pkCfg(); st.thumb={...T,bg:T.bg.kind==='frame'?{kind:'color',v:'#222'}:T.bg.kind==='img'&&T.bg.v.length>200000?{kind:'color',v:'#222'}:T.bg,items:T.items.map(({_box,...i})=>i)}; save(); }
+function pkThSel(){ const el=$('#thSel'); if(!el) return; const T=PK.th, it=T.items[T.sel]; if(!it){ el.innerHTML='<p class="tiny muted">Click something on the canvas to change it. Scroll on it to resize. Delete removes it.</p>'; return; }
+  el.innerHTML=`<b>Selected: ${it.t==='char'?esc(it.name):it.t==='text'?'text':'sticker'}</b>${it.t==='text'?`<textarea class="txt" id="tsStr" rows="2">${esc(it.str)}</textarea><select id="tsSty">${PK_TSTY.map(([k,l])=>`<option value="${k}" ${it.style===k?'selected':''}>${l}</option>`).join('')}</select>`:''}
+    <label>Size <input type="range" id="tsS" min=".15" max="4" step=".05" value="${it.s}"></label>${it.t!=='char'?`<label>Tilt <input type="range" id="tsR" min="-.8" max=".8" step=".02" value="${it.r||0}"></label>`:''}
+    <div class="row">${it.t==='char'?`<button class="btn sm" id="tsFlip">⇋ Flip</button><label><input type="checkbox" id="tsGlow" ${it.glow!==false?'checked':''}> White outline</label>`:''}<button class="btn sm" id="tsUp">⬆ Front</button><button class="btn sm red" id="tsDel">🗑 Remove</button></div>`;
+  const cv=$('#pkTh'), draw=()=>pkThDraw(cv.getContext('2d'));
+  $('#tsStr')&&($('#tsStr').oninput=e=>{ it.str=e.target.value; draw(); }); $('#tsSty')&&($('#tsSty').onchange=e=>{ it.style=e.target.value; draw(); }); $('#tsS').oninput=e=>{ it.s=+e.target.value; draw(); }; $('#tsR')&&($('#tsR').oninput=e=>{ it.r=+e.target.value; draw(); });
+  $('#tsFlip')&&($('#tsFlip').onclick=()=>{ it.flip=!it.flip; draw(); }); $('#tsGlow')&&($('#tsGlow').onchange=e=>{ it.glow=e.target.checked; draw(); });
+  $('#tsUp').onclick=()=>{ T.items.splice(T.sel,1); T.items.push(it); T.sel=T.items.length-1; draw(); pkThSel(); }; $('#tsDel').onclick=()=>{ T.items.splice(T.sel,1); T.sel=-1; draw(); pkThSel(); }; }
+const PK_SIL={};
+function pkSil(im){ const k=im.im.src+'|'+im.sx; if(PK_SIL[k]) return PK_SIL[k]; const c=document.createElement('canvas'); c.width=Math.ceil(im.sw); c.height=Math.ceil(im.sh); const g=c.getContext('2d'); g.drawImage(im.im,im.sx,im.sy,im.sw,im.sh,0,0,im.sw,im.sh); g.globalCompositeOperation='source-in'; g.fillStyle='#fff'; g.fillRect(0,0,c.width,c.height); return PK_SIL[k]=c; }
+async function pkThDraw(g){ const T=PK.th, W=1280, H=720; g.setTransform(1,0,0,1,0,0); g.fillStyle='#222'; g.fillRect(0,0,W,H);
+  if(T.bg.kind==='color'){ const gr=g.createLinearGradient(0,0,W,H); gr.addColorStop(0,T.bg.v); gr.addColorStop(1,'#000'); g.fillStyle=gr; g.fillRect(0,0,W,H); }
+  else { const im=T.bg.kind==='frame'?T.bg.cv:await pkImg(T.bg.kind==='set'?assetURL(T.bg.v):T.bg.v); if(im){ const iw=im.width, ih=im.height, s=Math.max(W/iw,H/ih); g.drawImage(im,(W-iw*s)/2,(H-ih*s)/2,iw*s,ih*s); } }
+  if(T.dim){ g.fillStyle=`rgba(0,0,0,${T.dim})`; g.fillRect(0,0,W,H); }
+  for(let i=0;i<T.items.length;i++){ const it=T.items[i]; g.save(); g.translate(it.x,it.y);
+    if(it.t==='char'){ const im=await pkChar(it.name); if(im){ const h=520*it.s, w=h*im.sw/im.sh; g.scale(it.flip?-1:1,1); if(it.glow!==false){ const sil=pkSil(im), o=Math.max(5,h*.016); for(let a=0;a<12;a++){ const ang=a/12*Math.PI*2; g.drawImage(sil,-w/2+Math.cos(ang)*o,-h/2+Math.sin(ang)*o,w,h); } } g.shadowColor='rgba(0,0,0,.5)'; g.shadowBlur=30; g.drawImage(im.im,im.sx,im.sy,im.sw,im.sh,-w/2,-h/2,w,h); it._box=[it.x-w/2,it.y-h/2,w,h]; } }
+    else if(it.t==='text'){ g.rotate(it.r||0); const s=110*it.s; g.font=pkFont(s); g.textAlign='center'; g.textBaseline='middle'; const L=String(it.str||'').toUpperCase().split('\n').flatMap(l=>pkWrap(g,l,W*.7)); const lh=s*1.05, tw=Math.max(...L.map(l=>g.measureText(l).width),10), th=L.length*lh;
+      L.forEach((l,k)=>{ const y=(k-(L.length-1)/2)*lh; if(it.style==='redbox'){ const lw=g.measureText(l).width; g.fillStyle='#e03131'; g.fillRect(-lw/2-s*.25,y-lh/2,lw+s*.5,lh); g.fillStyle='#fff'; g.fillText(l,0,y+s*.04); } else { g.lineJoin='round'; g.lineWidth=s*.22; g.strokeStyle=it.style==='black'?'#fff':'#000'; g.strokeText(l,0,y); g.fillStyle=it.style==='yellow'?'#ffd43b':it.style==='black'?'#000':'#fff'; g.fillText(l,0,y); } });
+      it._box=[it.x-tw/2-20,it.y-th/2-10,tw+40,th+20]; }
+    else { g.rotate(it.r||0); const s=150*it.s;
+      if(it.e==='arrow'){ g.lineJoin='round'; const p=new Path2D(`M${-s} ${-s*.18} L${s*.25} ${-s*.18} L${s*.25} ${-s*.5} L${s} 0 L${s*.25} ${s*.5} L${s*.25} ${s*.18} L${-s} ${s*.18} Z`); g.lineWidth=s*.12; g.strokeStyle='#fff'; g.stroke(p); g.fillStyle='#e03131'; g.fill(p); it._box=[it.x-s,it.y-s*.5,s*2,s]; }
+      else if(it.e==='circle'){ g.lineWidth=s*.12; g.strokeStyle='#fff'; g.beginPath(); g.ellipse(0,0,s,s*.8,0,0,7); g.stroke(); g.lineWidth=s*.07; g.strokeStyle='#e03131'; g.stroke(); it._box=[it.x-s,it.y-s*.8,s*2,s*1.6]; }
+      else if(it.e==='NEW'){ g.fillStyle='#e03131'; g.fillRect(-s*.7,-s*.3,s*1.4,s*.6); g.fillStyle='#fff'; g.font=pkFont(s*.42); g.textAlign='center'; g.textBaseline='middle'; g.fillText('NEW',0,s*.02); it._box=[it.x-s*.7,it.y-s*.3,s*1.4,s*.6]; }
+      else { g.font=`${s}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`; g.textAlign='center'; g.textBaseline='middle'; g.fillText(it.e,0,0); it._box=[it.x-s*.6,it.y-s*.6,s*1.2,s*1.2]; } }
+    g.restore(); if(i===T.sel&&it._box){ g.save(); g.strokeStyle='#4dabf7'; g.setLineDash([10,6]); g.lineWidth=3; g.strokeRect(...it._box); g.restore(); } } }
+async function pkThFrame(draw){ const films=(await bkAll({db:()=>CinemaDB,st:'films'})).filter(f=>f.blob); if(!films.length) return toast('No videos in Nenjac Cinemas yet.','bad');
+  openModal(`<div class="pk-frm"><h2>🎞 Grab a frame</h2><select id="frF">${films.map(f=>`<option value="${f.id}">${esc(f.title)}</option>`).join('')}</select><video id="frV" muted playsinline preload="auto"></video><input type="range" id="frT" min="0" max="1" step=".01" value=".3" style="width:100%"><div class="row"><button class="btn primary" id="frUse">Use this frame</button><button class="btn" onclick="closeModal()">Cancel</button></div></div>`);
+  let url=''; const v=$('#frV'); const load=()=>{ if(url) URL.revokeObjectURL(url); const f=films.find(x=>x.id===$('#frF').value); url=URL.createObjectURL(f.blob); v.src=url; v.onloadedmetadata=()=>{ v.currentTime=(v.duration||1)*+$('#frT').value; }; };
+  $('#frF').onchange=load; $('#frT').oninput=()=>{ if(v.duration) v.currentTime=v.duration*+$('#frT').value; }; load();
+  $('#frUse').onclick=()=>{ const c=document.createElement('canvas'); c.width=v.videoWidth||1280; c.height=v.videoHeight||720; c.getContext('2d').drawImage(v,0,0,c.width,c.height); PK.th.bg={kind:'frame',cv:c}; closeModal(); draw(); }; }
+
+/* ---------- 📅 planner ---------- */
+const PK_PLAT=[['ig','📸','Instagram',2200],['tt','🎵','TikTok',4000],['ys','📱','YT Shorts',5000],['yt','▶️','YouTube',5000]];
+const PK_STATUS=[['idea','💡 Idea'],['ready','✅ Ready'],['posted','🚀 Posted']];
+function pkNewPost(o={}){ const p={id:uid(),title:o.title||'New post',date:o.date||'',plat:o.plat||{tt:true},st:{},cap:o.cap||{},tags:'',link:o.link||null,notes:'',created:Date.now()}; Object.keys(p.plat).forEach(k=>p.st[k]='idea'); S.posts.push(p); save(); return p; }
+function pkYMD(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function pkPlan(m){ const now=new Date(); PK.planMonth=PK.planMonth||[now.getFullYear(),now.getMonth()]; const [Y,M]=PK.planMonth, first=new Date(Y,M,1), start=new Date(Y,M,1-((first.getDay()+6)%7)), today=pkYMD(now);
+  const inMonth=S.posts.filter(p=>p.date&&p.date.startsWith(`${Y}-${String(M+1).padStart(2,'0')}`)), posted=inMonth.reduce((n,p)=>n+Object.values(p.st||{}).filter(s=>s==='posted').length,0), unsched=S.posts.filter(p=>!p.date);
+  const days=[]; for(let i=0;i<42;i++){ const d=new Date(start); d.setDate(start.getDate()+i); days.push(d); }
+  const chip=p=>{ const all=Object.keys(p.plat||{}).filter(k=>p.plat[k]), done=all.every(k=>p.st[k]==='posted'), ready=all.every(k=>p.st[k]!=='idea'); return `<button class="pk-pc ${done?'posted':ready?'ready':'idea'} ${PK.planSel===p.id?'on':''}" data-pkp="${p.id}">${all.map(k=>PK_PLAT.find(x=>x[0]===k)[1]).join('')} ${esc(p.title)}</button>`; };
+  m.innerHTML=`<div class="pk-h"><h2>📅 Content Planner</h2><p class="tiny muted">Plan what goes where. Each post has its own caption per platform and a status: 💡 idea → ✅ ready → 🚀 posted.</p></div>
+    <div class="pk-plan"><div class="pk-cal"><div class="row"><button class="btn sm" data-pkm="-1">‹</button><b class="grow" style="text-align:center">${first.toLocaleDateString([],{month:'long',year:'numeric'})}</b><button class="btn sm" data-pkm="1">›</button><button class="btn sm" data-pkm="0">Today</button></div>
+      <div class="pk-week">${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(d=>`<span>${d}</span>`).join('')}</div>
+      <div class="pk-days">${days.map(d=>{ const k=pkYMD(d); return `<div class="pk-day ${d.getMonth()!==M?'out':''} ${k===today?'today':''}" data-pkd="${k}"><i>${d.getDate()}</i>${S.posts.filter(p=>p.date===k).map(chip).join('')}</div>`; }).join('')}</div>
+      <p class="tiny muted">${inMonth.length} post${inMonth.length===1?'':'s'} planned this month · ${posted} posted. Click a day to add a post there.</p>
+      ${unsched.length?`<h4>No date yet</h4><div class="pk-unsched">${unsched.map(chip).join('')}</div>`:''}<button class="btn sm" data-pknew="1">＋ New post (no date)</button></div>
+    <div class="pk-ped" id="pkPed"></div></div>`;
+  m.querySelector('.pk-plan').onclick=e=>{ const mo=e.target.closest('[data-pkm]'); if(mo){ const d=+mo.dataset.pkm; if(!d){ PK.planMonth=[now.getFullYear(),now.getMonth()]; } else { const nd=new Date(Y,M+d,1); PK.planMonth=[nd.getFullYear(),nd.getMonth()]; } return pkPlan(m); }
+    const pc=e.target.closest('[data-pkp]'); if(pc){ PK.planSel=pc.dataset.pkp; return pkPlan(m); } if(e.target.closest('[data-pknew]')){ PK.planSel=pkNewPost({}).id; return pkPlan(m); }
+    const dd=e.target.closest('[data-pkd]'); if(dd&&!e.target.closest('.pk-ped')){ const sel=S.posts.find(p=>p.id===PK.planSel&&!p.date); if(sel){ sel.date=dd.dataset.pkd; save(); toast(`📅 Scheduled for ${new Date(dd.dataset.pkd+'T12:00').toLocaleDateString()}`); } else PK.planSel=pkNewPost({date:dd.dataset.pkd}).id; pkPlan(m); } };
+  pkPostEd(); }
+function pkPostEd(){ const el=$('#pkPed'); if(!el) return; const p=S.posts.find(x=>x.id===PK.planSel); if(!p){ el.innerHTML='<div class="pk-empty"><b>Pick or add a post</b><p class="tiny muted">Tip: export a clip in ✂️ Clip It or a carousel in 📸 and hit “Add to planner”. The caption comes along.</p></div>'; return; }
+  const plats=PK_PLAT.filter(([k])=>p.plat[k]), cast=S.chars.filter(c=>new RegExp('\\b'+c.name.split(' ')[0].replace(/[^\w]/g,'')+'\\b','i').test(p.title+' '+Object.values(p.cap).join(' '))).map(c=>c.name);
+  el.innerHTML=`<div class="row"><input class="txt grow" id="ppTitle" value="${esc(p.title)}"><button class="btn sm red" id="ppDel" title="Delete post">🗑</button></div>
+    <div class="row"><label>Date <input type="date" class="txt" id="ppDate" value="${p.date||''}"></label>${p.link?`<span class="pill">🔗 ${esc(p.link.title||'')}</span>`:''}</div>
+    <div class="pk-plats">${PK_PLAT.map(([k,e,n])=>`<label class="${p.plat[k]?'on':''}"><input type="checkbox" data-ppp="${k}" ${p.plat[k]?'checked':''}> ${e} ${n}</label>`).join('')}</div>
+    <div class="row pk-help"><span class="tiny muted">Caption helpers:</span>${['POV: ','Wait for the end 💀 ','Part 2? 👀 ','Nobody: … ','He really said '].map(h=>`<button class="btn sm" data-pph="${esc(h)}">${esc(h.trim())}</button>`).join('')}<button class="btn sm" data-pptags="1"># hashtags</button></div>
+    ${plats.map(([k,e,n,max])=>`<div class="pk-capbox"><div class="row"><b>${e} ${n}</b><select data-pps="${k}">${PK_STATUS.map(([v,l])=>`<option value="${v}" ${(p.st[k]||'idea')===v?'selected':''}>${l}</option>`).join('')}</select><span class="grow"></span><small class="pk-cnt" id="ppc-${k}"></small><button class="btn sm" data-ppcopy="${k}">📋</button></div>
+      ${k==='yt'?`<input class="txt" data-ppcap="ytTitle" placeholder="Video title (100 max)" value="${esc(p.cap.ytTitle||'')}" maxlength="100">`:''}<textarea class="txt" rows="3" data-ppcap="${k}" placeholder="${k==='yt'?'Description':'Caption'}" maxlength="${max}">${esc(p.cap[k]||'')}</textarea></div>`).join('')||'<p class="tiny muted">Tick at least one platform.</p>'}
+    <label class="lab">Notes</label><textarea class="txt" id="ppNotes" rows="2" placeholder="Post at 7pm, pin the comment…">${esc(p.notes||'')}</textarea>`;
+  const cnt=()=>plats.forEach(([k,e,n,max])=>{ const c=$('#ppc-'+k), len=(p.cap[k]||'').length, tags=((p.cap[k]||'').match(/#\w+/g)||[]).length; if(c){ c.textContent=`${len}/${max}${k==='ig'?` · ${tags}/30 #`:''}`; c.classList.toggle('bad',len>max||(k==='ig'&&tags>30)); } }); cnt();
+  let lastCap=plats[0]?.[0]; const sv=()=>{ save(); };
+  $('#ppTitle').oninput=e=>{ p.title=e.target.value; sv(); }; $('#ppDate').onchange=e=>{ p.date=e.target.value; sv(); pkTool('plan'); }; $('#ppNotes').oninput=e=>{ p.notes=e.target.value; sv(); };
+  $('#ppDel').onclick=()=>{ if(!confirm('Delete this post?')) return; S.posts=S.posts.filter(x=>x!==p); PK.planSel=null; save(); pkTool('plan'); };
+  el.onchange=e=>{ const c=e.target.closest('[data-ppp]'); if(c){ p.plat[c.dataset.ppp]=c.checked; if(c.checked&&!p.st[c.dataset.ppp]) p.st[c.dataset.ppp]='idea'; if(!c.checked) delete p.plat[c.dataset.ppp]; sv(); pkTool('plan'); } const s2=e.target.closest('[data-pps]'); if(s2){ p.st[s2.dataset.pps]=s2.value; sv(); if(s2.value==='posted'){ try{ confetti(40); }catch(err){} } pkTool('plan'); } };
+  el.oninput=e=>{ const t=e.target.closest('[data-ppcap]'); if(t){ p.cap[t.dataset.ppcap]=t.value; if(t.tagName==='TEXTAREA') lastCap=t.dataset.ppcap; cnt(); sv(); } };
+  el.addEventListener('focusin',e=>{ const t=e.target.closest('textarea[data-ppcap]'); if(t) lastCap=t.dataset.ppcap; });
+  el.onclick=e=>{ const h=e.target.closest('[data-pph]'), tg=e.target.closest('[data-pptags]'), cp=e.target.closest('[data-ppcopy]'); const ta=lastCap&&el.querySelector(`textarea[data-ppcap="${lastCap}"]`);
+    if(h&&ta){ ta.value=h.dataset.pph+ta.value; ta.dispatchEvent(new Event('input',{bubbles:true})); ta.focus(); }
+    if(tg&&ta){ const add=pkCaptionDraft('',cast).trim(); ta.value=(ta.value.trim()+'\n\n'+add).trim(); ta.dispatchEvent(new Event('input',{bubbles:true})); }
+    if(cp){ const k=cp.dataset.ppcopy; navigator.clipboard?.writeText((k==='yt'&&p.cap.ytTitle?p.cap.ytTitle+'\n\n':'')+(p.cap[k]||'')).then(()=>toast('📋 Copied')); } }; }
+
+/* ---------- captions travel with exported videos ---------- */
+{ const _s=typeof shShowResult==='function'?shShowResult:null; if(_s) shShowResult=function(blob,ext,P){ try{ PK.lastCues={blob,cues:(P.cues||[]).filter(q=>q.text).map(q=>({t:q.t,dur:q.dur,who:q.who,text:q.text}))}; }catch(e){} return _s.apply(this,arguments); }; }
+{ const _p=CinemaDB.put.bind(CinemaDB); CinemaDB.put=function(f){ try{ if(f&&f.source==='export'&&!f.cues){ if(PK.lastCues&&PK.lastCues.blob===f.blob&&PK.lastCues.cues.length) f.cues=PK.lastCues.cues; else if(f.from==='anim'&&typeof AN!=='undefined'&&AN.proj?.cues?.length) f.cues=AN.proj.cues.filter(q=>q.text).map(q=>({t:q.t,dur:q.dur,who:q.who,text:q.text})); } }catch(e){} return _p(f); }; }
+{ const _c=commands; commands=function(){ const C=_c(); const add=(ico,label,run,kw='')=>C.push({ico,label,run,kw:(label+' '+kw).toLowerCase()});
+    PK_TOOLS.forEach(([k,e,n,d])=>add(e,`Post Kit: ${n}`,()=>{ go('post'); setTimeout(()=>pkTool(k),80); },d+' post instagram tiktok youtube')); return C; }; }
+if(!FIRST_RUN&&!S.settings.seen492) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello492" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>4.9.2: The Cleanup Update.</b><small>Five hubs instead of 20+ tabs, a Home screen, search everything (/), the Post Kit, and backups that carry your WHOLE universe.${S.settings.seen49?'':' Plus 4.9: Nenjac City and a rhythm game.'}</small><div class="row"><button class="btn sm primary" id="h492p">📲 Post Kit</button><button class="btn sm" id="h492w">✨ What's new</button><button class="btn sm" id="h492x" aria-label="Dismiss">✕</button></div></div></div>`);
+  const done=()=>{ S.settings.seen492=true; S.settings.seen49=true; S.settings.seen48=true; S.settings.seen47=true; S.settings.seen46=true; save(); $('#hello492')?.remove(); }; $('#h492p').onclick=()=>{ done(); go('post'); }; $('#h492w').onclick=()=>{ done(); openWhatsNew(); }; $('#h492x').onclick=done; },3300);
+if(FIRST_RUN) S.settings.seen492=true;
 
 </script>
 </body>
