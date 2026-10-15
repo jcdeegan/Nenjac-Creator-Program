@@ -3087,6 +3087,27 @@ body.night .pk-day{background:#1f2128;border-color:#333}
 .gf-recent{display:inline-flex;gap:3px;margin-left:6px}.gf-recent i{width:18px;height:18px;border-radius:50%;border:2px solid #000;cursor:pointer;display:inline-block}
 .gf-caps{display:flex;gap:4px;flex-wrap:wrap}.gf-tip{margin:0}
 .gf-bottom{display:flex;gap:6px;flex-wrap:wrap;align-items:center}.gf-bottom .grow{flex:1}
+/* 5.2 Pitch Box */
+.door.d24{background:linear-gradient(160deg,#fff 55%,#fff3bf)}
+[data-badge]{position:relative}[data-badge]::after{content:attr(data-badge);position:absolute;top:-7px;right:-7px;min-width:19px;height:19px;padding:0 5px;border-radius:999px;background:#e03131;color:#fff;font:900 11px/19px system-ui,sans-serif;border:2px solid #000;text-align:center;z-index:3;animation:pbPop .4s}
+@keyframes pbPop{0%{transform:scale(0)}70%{transform:scale(1.25)}}
+.pb{display:flex;flex-direction:column;gap:10px;min-width:0}.pb-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.pb-top h2{margin:0}.pb-top .grow{flex:1}
+.pb-card{background:#fff;color:#111;border:3px solid #000;border-radius:14px;padding:12px 14px;box-shadow:3px 3px 0 #000;margin-bottom:6px}.pb-card p{margin:6px 0 10px}.pb-setup{background:#fff9db}.pb-warn{background:#fff4e6}.pb-ok{background:#ebfbee}.pb-card ol{margin:6px 0;padding-left:20px;line-height:1.7}
+.pb-bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.pb-bar .txt{max-width:280px}.pb-st{flex-wrap:wrap}.pb-st b{font-weight:900;opacity:.7}
+.pb-types{display:flex;gap:6px;flex-wrap:wrap}.pb-types .chip b{opacity:.6}
+.pb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;align-items:start}
+.pb-c{background:#fff;color:#111;border:3px solid #000;border-radius:16px;padding:12px;box-shadow:3px 3px 0 #000;cursor:pointer;display:flex;flex-direction:column;gap:6px;transition:transform .12s}.pb-c:hover{transform:translateY(-2px)}
+.pb-c.unseen{box-shadow:3px 3px 0 #000,0 0 0 3px var(--sun,#ffc81e)}.pb-c.unseen .pb-ch b::after{content:' NEW';color:#e03131;font-size:11px}.pb-c.st-pass{opacity:.55}.pb-c.st-used{background:#ebfbee}.pb-c.st-star{background:#fff9db}
+.pb-ch{display:flex;align-items:center;gap:6px;font-size:13px}.pb-ch small{opacity:.6}.pb-ch .grow,.pb-foot .grow{flex:1}.pb-e{font-size:22px}.pb-e.big{font-size:44px;margin-right:6px}
+.pb-c h3{margin:0;font-size:17px;line-height:1.25}.pb-body{margin:0;font-size:13.5px;line-height:1.4;color:#333;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-line}
+.pb-chars{display:flex;gap:4px;flex-wrap:wrap}.pb-chars span{background:#f1f3f5;border:1.5px solid #000;border-radius:999px;padding:1px 8px;font-size:11.5px;font-weight:700;display:inline-flex;align-items:center;gap:4px}.pb-chars.big span{font-size:13px;padding:3px 10px 3px 3px}.pb-chars.big img,.pb-chars.big svg{width:26px;height:26px;object-fit:contain}
+.pb-foot{display:flex;align-items:center;gap:4px;font-size:12.5px;border-top:2px dashed #ddd;padding-top:6px}.pb-foot button{border:2px solid #000;background:#fff;border-radius:8px;cursor:pointer;padding:2px 5px;font-size:14px;opacity:.55}.pb-foot button.on,.pb-foot button:hover{opacity:1;background:var(--sun,#ffc81e)}
+.pb-empty{grid-column:1/-1;text-align:center;padding:40px 10px;background:#fff;border:3px dashed #000;border-radius:16px;color:#555}
+.modal:has(.pb-m),.modal:has(.pb-set){width:min(760px,100%)}.pb-m h2{margin:2px 0 0}.pb-from{margin:8px 0;font-size:14px}.pb-full{background:#fffdf3;border:2px solid #000;border-radius:12px;padding:12px;margin:10px 0;line-height:1.5;white-space:normal;max-height:46vh;overflow:auto}
+.pb-att{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px}.pb-att img{max-height:220px;max-width:100%;border:2px solid #000;border-radius:10px;display:block}.pb-att audio{display:block;margin-top:4px}
+.pb-acts{display:flex;flex-direction:column;gap:8px;margin-top:10px}.pb-acts .row{gap:6px;align-items:center}
+.pb-qr{width:180px;background:#fff;border:3px solid #000;border-radius:12px;padding:6px}.pb-qr.sm{width:110px;float:right;margin:-70px 0 0 10px}.pb-qr svg{width:100%;height:auto;display:block}
+.pb-tsel{display:flex;gap:5px;flex-wrap:wrap}.pb-tsel .chip{cursor:pointer;font-size:12.5px}.pb-set h3{margin:14px 0 6px}.pb-set label.row{gap:8px;align-items:center;margin:6px 0;flex-wrap:wrap}.pb-ntfy{background:#f8f9fa;border:2px solid #000;border-radius:12px;padding:8px 10px;margin:6px 0;overflow:hidden}.pb-ntfy ol{margin:4px 0;padding-left:18px;line-height:1.7}
 
 </style>
 </head>
@@ -10950,7 +10971,7 @@ drawWheel=function(){ whRender(); }; spinWheel=function(){ whSpin(); };
    points, storage safety, one-tab guard, error catcher, offline app,
    help menu, what's new, accessibility.
    =================================================================== */
-const APP_NAME='Nenjac Creator', APP_VER='5.1', BACKUP_FORMAT=2;
+const APP_NAME='Nenjac Creator', APP_VER='5.2', BACKUP_FORMAT=2;
 const showName = () => (S.settings.showName||'').trim() || 'Nenjac';
 S.version = Math.max(S.version||1, 4);
 const ONLINE_APP = /^https?:$/.test(location.protocol);
@@ -10960,6 +10981,12 @@ const ONLINE_APP = /^https?:$/.test(location.protocol);
 
 /* ---------- WHAT'S NEW ---------- */
 const CHANGELOG=[
+  {v:'5.2',title:'The Pitch Box',items:[
+    ['💡','Pitch Box','Anyone can pitch you ideas from their phone: episodes, characters, lore, headcanons, songs (they can hum them), comics, running gags, lines, shorts, places, items, villains, AUs, fan theories, duos, specials, games, merch, fan art and wildcards. They can sketch it, add a photo, record a voice memo, or just talk and it types for them.'],
+    ['📥','Your pitch inbox','Write → 💡 Pitch Box. Filter by type, search, sort by spice. ⭐ Keeper, 👀 Maybe, ✅ Used, 🗑 Pass, private notes. One click turns a pitch into a new script, a Bible character, lore, or an idea, and keeps the credit.'],
+    ['🔔','Pings','A red badge plus a pop-up and a ding while the app is open, an email from your own Google script, and free phone push notifications through the ntfy app.'],
+    ['🌟','The Pitch Wall','Feature your favorite pitches and they show at the top of the pitch page, where everyone can 🔥 them. Nothing is public unless you feature it.'],
+  ]},
   {v:'5.1',title:'The Face Update',items:[
     ['🙂','Face rigs for any character','In the Puppet Studio, hit 🙂 on anyone to give them drawn eyes (round, googly with physics, anime, sleepy, angry, glowing, X, spiral, hearts), eyebrows (line, thick, bushy, angled, unibrow, dots) and a new mouth (drawn, toothy, big grin, fangs, tiny, beak, robot grille, stitched). Drag every part exactly where you want it, paint over the art\'s own face, add blush, lashes, a mustache, shades, freckles, sweat, tears or a scar.'],
     ['📷','Full face tracking','Your webcam now drives blinks (each eye), eyebrows, smiles, frowns, where you look and your tongue, not just your head and mouth. All of it is recorded and plays back and exports. Characters blink on their own and look at whoever is talking.'],
@@ -36761,9 +36788,190 @@ function gfFrame(now){ GF.raf=current==='graffiti'?requestAnimationFrame(gfFrame
 document.addEventListener('keydown',e=>{ if(current!=='graffiti'||/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName)) return; if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='z'){ e.preventDefault(); gfUndo(); } });
 { const _g=go; go=function(s){ if(current==='graffiti'&&s!=='graffiti'){ gfHiss(false); if(GF.dirty&&GF.mode==='street') gfSave(true); } const r=_g.apply(this,arguments); if(s==='graffiti') setTimeout(gfEnter,0); return r; }; }
 { const _c=commands; commands=function(){ const C=_c(); C.push({ico:'🎨',label:'Projects Wall (graffiti)',run:()=>go('graffiti'),kw:'graffiti spray paint tag wall projects mural'}); return C; }; }
-if(!FIRST_RUN&&!S.settings.seen51) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello51" role="status"><div class="h40-art">${castArt('Cas')}</div><div><b>5.1: The Face Update.</b><small>🙂 Face rigs + full face tracking in the Puppet Studio, 📸 NenjCam (games you play with your face, including Poker Face), and 🎨 the Projects Wall for graffiti.${S.settings.seen50?'':' Plus 5.0: Puppet Studio, Print Shop and Trailer Studio.'}</small><div class="row"><button class="btn sm primary" id="h51c">📸 NenjCam</button><button class="btn sm" id="h51g">🎨 Graffiti</button><button class="btn sm" id="h51w">✨ What's new</button><button class="btn sm" id="h51x" aria-label="Dismiss">✕</button></div></div></div>`);
+if(!FIRST_RUN&&!S.settings.seen51&&S.settings.seen52) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello51" role="status"><div class="h40-art">${castArt('Cas')}</div><div><b>5.1: The Face Update.</b><small>🙂 Face rigs + full face tracking in the Puppet Studio, 📸 NenjCam (games you play with your face, including Poker Face), and 🎨 the Projects Wall for graffiti.${S.settings.seen50?'':' Plus 5.0: Puppet Studio, Print Shop and Trailer Studio.'}</small><div class="row"><button class="btn sm primary" id="h51c">📸 NenjCam</button><button class="btn sm" id="h51g">🎨 Graffiti</button><button class="btn sm" id="h51w">✨ What's new</button><button class="btn sm" id="h51x" aria-label="Dismiss">✕</button></div></div></div>`);
   const done=()=>{ ['seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello51')?.remove(); }; $('#h51c').onclick=()=>{ done(); go('nenjcam'); }; $('#h51g').onclick=()=>{ done(); go('graffiti'); }; $('#h51w').onclick=()=>{ done(); openWhatsNew(); }; $('#h51x').onclick=done; },3300);
 if(FIRST_RUN) S.settings.seen51=true;
+/* =====================================================================
+   [PITCH] 5.2 Pitch Box. Anyone can pitch from their phone (pitch.html):
+   episodes, characters, lore, headcanons, songs, comics, gags, lines,
+   places, villains, AUs, theories, specials, merch, fan art... Pitches
+   land in your Google Drive drop box (the same one actor invites use,
+   upgraded to version 3) and show up here. You get pinged by email,
+   phone push (ntfy, free) and a pop-up while the app is open. Sort,
+   star, feature the best ones on a public Pitch Wall, and send them
+   straight into a script, the Bible or the idea inbox.
+   ===================================================================== */
+SCREEN_NAMES.pitches='Pitch Box';
+addTab('pitches','💡','Pitch Box',{before:'bible',door:{cls:'d24',h:'Pitch Box',p:'Fans and friends pitch you episodes, characters, lore, songs and more from their phones. They land here.',k:'FAN IDEAS',art:'Starr'}});
+try{ const w=HUBS.find(h=>h.k==='write'); if(w&&!w.s.includes('pitches')) w.s.splice(1,0,'pitches'); HUB_SHORT.pitches='Pitch Box'; }catch(e){}
+ACH.push({id:'pitch1',e:'📣',n:'Open Door Policy',d:'Share your Pitch Box link'},{id:'pitch2',e:'🤝',n:'Fan Service',d:'Use a pitch from someone else'});
+const PB_TYPES={episode:['🎬','Episode'],character:['🧍','Character'],lore:['📜','Lore'],headcanon:['🧠','Headcanon'],song:['🎵','Song'],comic:['💬','Comic'],gag:['😂','Running gag'],line:['🗣','Line'],short:['📱','Short'],place:['📍','Place'],item:['🧨','Item'],villain:['😈','Villain'],au:['🌀','AU'],theory:['🔍','Theory'],duo:['🤝','Duo'],special:['🎄','Special'],game:['🎮','Game'],merch:['🧢','Merch'],art:['🎨','Fan art'],wild:['🎲','Wildcard']};
+const PB_STATUS=[['new','📥','New'],['star','⭐','Keepers'],['maybe','👀','Maybe'],['used','✅','Used'],['pass','🗑','Passed'],['all','📚','All']];
+const PB_SPICE=['😇','🙂','😏','🔥','💀'];
+const PitchDB={db:null,open(){ return new Promise(res=>{ if(this.db) return res(this.db); try{ const r=indexedDB.open('nenjac-pitches',1); r.onupgradeneeded=()=>{ r.result.createObjectStore('p',{keyPath:'id'}); r.result.createObjectStore('f',{keyPath:'id'}); }; r.onsuccess=()=>{ this.db=r.result; res(this.db); }; r.onerror=()=>res(null); }catch(e){ res(null); } }); },
+  async all(st='p'){ const db=await this.open(); if(!db) return []; return new Promise(res=>{ const q=db.transaction(st).objectStore(st).getAll(); q.onsuccess=()=>res(q.result||[]); q.onerror=()=>res([]); }); },
+  async get(id,st='p'){ const db=await this.open(); if(!db) return null; return new Promise(res=>{ const q=db.transaction(st).objectStore(st).get(id); q.onsuccess=()=>res(q.result||null); q.onerror=()=>res(null); }); },
+  async put(o,st='p'){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction(st,'readwrite'); tx.objectStore(st).put(o); tx.oncomplete=res; tx.onerror=res; }); },
+  async del(id,st='p'){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction(st,'readwrite'); tx.objectStore(st).delete(id); tx.oncomplete=res; tx.onerror=res; }); }};
+BK_STORES.push({key:'pitches',label:'Pitch Box pitches',db:()=>PitchDB,st:'p'});
+const PB={list:[],status:'new',type:'',q:'',sort:'new',busy:false,lastCheck:0,v:0,err:'',timer:0};
+function pbCfg(){ const s=S.settings.pitch=S.settings.pitch||{}; const d={on:false,open:true,who:S.settings.rmFrom||'JC',prompt:'',types:null,email:true,ntfy:'',pop:false,feat:[]}; Object.keys(d).forEach(k=>{ if(s[k]===undefined) s[k]=Array.isArray(d[k])?[...d[k]]:d[k]; }); return s; }
+function pbLink(){ const site=rmSite(), d=rmDeployId(rmUrl()); if(!site||!d) return ''; return site.replace(/[^/]*\.html?$/,'')+'pitch.html#d='+d; }
+
+/* ---------- the drop box script grows pitch powers (version 3) ---------- */
+const PB_SCRIPT=`
+// ---------- 💡 Pitch Box (version 3) ----------
+function pfolder_(){ return sub_(root_(),'_pitches (do not edit)'); }
+function pp_(){ return PropertiesService.getScriptProperties(); }
+function pjson_(k,d){ try{ return JSON.parse(pp_().getProperty(k)||'')||d; }catch(e){ return d; } }
+function cut_(v,n){ return String(v==null?'':v).slice(0,n); }
+function pcfgPub_(){ const c=pjson_('pcfg',{}), f=pjson_('pfeat',[]).map(function(x){ return Object.assign({},x,{fires:+(pp_().getProperty('fire_'+x.id)||0)}); });
+  return {ok:true,v:VERSION,open:!!c.open,show:c.show||'Nenjac',who:c.who||'',prompt:c.prompt||'',types:c.types||null,cast:c.cast||[],featured:f}; }
+function pitch_(b){ const c=pjson_('pcfg',{}); if(!c.open) return {ok:false,err:'closed'}; if(b.hp) return {ok:true,id:'x'};
+  const p=b.p||{}; if(JSON.stringify(p).length>40000) return {ok:false,err:'big'};
+  const k='pc_'+Utilities.formatDate(new Date(),'UTC','yyyyMMdd'), n=+(pp_().getProperty(k)||0); if(n>=(+c.cap||400)) return {ok:false,err:'busy'}; pp_().setProperty(k,String(n+1));
+  const id='p'+Date.now().toString(36)+Math.floor(Math.random()*1e6).toString(36), fo=pfolder_(), files=[];
+  (b.files||[]).slice(0,4).forEach(function(f,i){ if(!f||!f.data||f.data.length>8000000) return; const mime=cut_(f.mime,60)||'application/octet-stream'; const ff=fo.createFile(Utilities.newBlob(Utilities.base64Decode(f.data),mime,id+'_'+i+'_'+cut_(f.name,40).replace(/[^\\w.-]/g,''))); files.push({id:ff.getId(),mime:mime,kind:cut_(f.kind,20),name:cut_(f.name,60)}); });
+  const rec={id:id,at:Date.now(),p:p,files:files}; fo.createFile(id+'.json',JSON.stringify(rec),'application/json'); notify_(rec,c); return {ok:true,id:id}; }
+function notify_(rec,c){ const p=rec.p||{}, head=cut_(p.typeLabel||'Pitch',40)+': '+cut_(p.title||'(no title)',90), by=p.by?' from '+cut_(p.by,40):'';
+  if(c.email){ try{ const k='em_'+Utilities.formatDate(new Date(),'UTC','yyyyMMdd'), n=+(pp_().getProperty(k)||0); if(n<80&&MailApp.getRemainingDailyQuota()>5){ pp_().setProperty(k,String(n+1)); MailApp.sendEmail(Session.getEffectiveUser().getEmail(),'💡 New pitch'+by+': '+cut_(p.title||p.typeLabel,70),head+by+'\\n\\n'+cut_(p.body,3000)+(rec.files.length?'\\n\\n📎 '+rec.files.length+' attachment(s)':'')+'\\n\\nOpen Nenjac Creator → 💡 Pitch Box to see it.'); } }catch(e){} }
+  if(c.ntfy){ try{ UrlFetchApp.fetch('https://ntfy.sh/'+encodeURIComponent(c.ntfy),{method:'post',payload:cut_(head+by,250),headers:{'Title':'New Nenjac pitch','Tags':'bulb'},muteHttpExceptions:true}); }catch(e){} } }
+function fire_(b){ const id=cut_(b.id,40); if(!pjson_('pfeat',[]).some(function(x){ return x.id===id; })) return {ok:false,err:'nope'}; const k='fire_'+id, n=+(pp_().getProperty(k)||0)+1; pp_().setProperty(k,String(n)); return {ok:true,fires:n}; }
+function admin2_(b){ if(b.key!==ADMIN_KEY) return {ok:false,err:'key'};
+  if(b.a==='pcfgset'){ const c=typeof b.cfg==='string'?JSON.parse(b.cfg):b.cfg; pp_().setProperty('pcfg',JSON.stringify(c||{})); pfolder_(); return {ok:true}; }
+  if(b.a==='pfeat'){ const L=typeof b.list==='string'?JSON.parse(b.list):b.list; pp_().setProperty('pfeat',JSON.stringify((L||[]).slice(0,16))); return {ok:true}; }
+  if(b.a==='plist'){ const out=[], since=+b.since||0, it=pfolder_().getFiles(); while(it.hasNext()){ const f=it.next(); if(!/\\.json$/.test(f.getName())) continue; if(f.getDateCreated().getTime()<since) continue; try{ out.push(JSON.parse(f.getBlob().getDataAsString())); }catch(e){} } return {ok:true,pitches:out}; }
+  if(b.a==='pdel'){ const id=cut_(b.id,40), it=pfolder_().getFiles(); if(id.length<6) return {ok:false,err:'id'}; while(it.hasNext()){ const f=it.next(); if(f.getName().indexOf(id)===0) f.setTrashed(true); } return {ok:true}; }
+  if(b.a==='ntest'){ const c=pjson_('pcfg',{}); notify_({p:{typeLabel:'Test',title:'Your Pitch Box notifications work 🎉',body:'This is a test from Nenjac Creator.'},files:[]},c); return {ok:true}; }
+  return admin_(b); }
+`;
+{ const _rs=rmScript; rmScript=function(){ let s=_rs(); const R=(a,b)=>{ if(s.indexOf(a)<0) console.warn('pitch script patch missed:',a); s=s.replace(a,b); };
+  R('line drop box (version 2)','line drop box + 💡 pitch box (version 3)'); R('const VERSION = 2;','const VERSION = 3;');
+  R("function setup(){ root_(); invFolder_();","function setup(){ root_(); invFolder_(); pfolder_(); try{ MailApp.getRemainingDailyQuota(); }catch(e){} try{ UrlFetchApp.fetch('https://ntfy.sh/',{muteHttpExceptions:true}); }catch(e){}");
+  R("if(p.key) return out_(admin_(p),cb);","if(p.a==='pcfg') return out_(pcfgPub_(),cb); if(p.a==='fire') return out_(fire_(p),cb); if(p.key) return out_(admin2_(p),cb);");
+  R("return out_(b.a==='up'?up_(b):admin_(b));","return out_(b.a==='up'?up_(b):b.a==='pitch'?pitch_(b):b.a==='fire'?fire_(b):admin2_(b));");
+  return s+PB_SCRIPT; }; }
+
+/* ---------- syncing with the drop box ---------- */
+async function pbPing(){ if(!rmUrl()) return 0; try{ const r=await rmPost({a:'ping',key:rmKey()}); PB.v=+r.v||2; }catch(e){ PB.v=0; PB.err=e.message; } return PB.v; }
+function pbPublicCfg(){ const c=pbCfg(); return {open:!!c.open,show:showName(),who:c.who||'',prompt:c.prompt||'',types:c.types,email:!!c.email,ntfy:c.ntfy||'',cap:400,
+  cast:S.chars.filter(x=>x.img&&!x.img.startsWith('drawing:')&&!x.img.startsWith('data:')).slice(0,60).map(x=>({n:x.name,art:/^https?:/.test(x.img)?x.img:encodeURI(ASSET_ROOT+x.img),col:groupColor(x.group)}))}; }
+async function pbPublish(quiet){ if(!rmUrl()) return false; try{ await rmPost({a:'pcfgset',key:rmKey(),cfg:pbPublicCfg()}); if(!quiet) toast('💡 Pitch Box updated','good'); return true; }catch(e){ if(!quiet) toast(e.message==='what'||e.message==='key'?'Your drop box script needs the version 3 update (see ⚙️ Setup).':"Couldn't reach your drop box: "+esc(e.message),'bad'); return false; } }
+async function pbPushFeat(){ const c=pbCfg(), all=await PitchDB.all(), L=c.feat.map(id=>all.find(p=>p.id===id)).filter(Boolean).map(p=>{ const q=p.p||{}; return {id:p.id,type:q.typeLabel||'',e:q.e||'💡',title:String(q.title||'').slice(0,90),body:String(q.body||'').slice(0,240),by:q.shout&&q.by?String(q.by).slice(0,40):''}; });
+  try{ await rmPost({a:'pfeat',key:rmKey(),list:L}); }catch(e){ toast("Couldn't update the Pitch Wall: "+esc(e.message),'bad'); } }
+async function pbCheck(loud){ const c=pbCfg(); if(!rmUrl()||!c.on||PB.busy) return 0; PB.busy=true; let fresh=[];
+  try{ const r=await rmPost({a:'plist',key:rmKey(),since:S.settings.pbSince||0}); PB.lastCheck=Date.now(); const have=new Set((await PitchDB.all()).map(p=>p.id)); let mx=S.settings.pbSince||0;
+    for(const rec of r.pitches||[]){ mx=Math.max(mx,rec.at||0); if(have.has(rec.id)||(S.settings.pbGone||[]).includes(rec.id)) continue; const o={...rec,status:'new',seen:false,got:Date.now(),note:''}; await PitchDB.put(o); fresh.push(o); }
+    if(mx) S.settings.pbSince=Math.max(0,mx-5*60000); save(); PB.err=''; if(fresh.length) pbNotify(fresh); else if(loud) toast('💡 No new pitches right now'); }
+  catch(e){ PB.err=e.message; if(loud) toast(e.message==='what'?'Your drop box script needs the version 3 update (⚙️ Setup).':"Couldn't check: "+esc(e.message),'bad'); }
+  finally{ PB.busy=false; } await pbLoad(); pbBadge(); if(current==='pitches') pbRender(); return fresh.length; }
+function pbNotify(fresh){ const n=fresh.length, p=fresh[fresh.length-1].p||{}, msg=`${p.e||'💡'} ${n>1?n+' new pitches! Latest':'New pitch'}${p.by?' from '+p.by:''}: “${String(p.title||'').slice(0,60)}”`;
+  toast(esc(msg),'good'); try{ SB_AC=SB_AC||new (window.AudioContext||window.webkitAudioContext)(); OSFX.ding.run(SB_AC,SB_AC.currentTime,SB_AC.destination); }catch(e){}
+  const c=pbCfg(); if(c.pop&&'Notification' in window&&Notification.permission==='granted'&&document.hidden){ try{ const N=new Notification(n>1?`💡 ${n} new pitches`:'💡 New pitch',{body:`${p.typeLabel||''}: ${p.title||''}${p.by?' — '+p.by:''}`,icon:'icon-192.png',tag:'nenjac-pitch'}); N.onclick=()=>{ window.focus(); go('pitches'); N.close(); }; }catch(e){} } }
+async function pbLoad(){ PB.list=(await PitchDB.all()).sort((a,b)=>(b.at||0)-(a.at||0)); return PB.list; }
+function pbUnseen(){ return PB.list.filter(p=>!p.seen&&p.status==='new').length; }
+function pbBadge(){ const n=pbUnseen(); $$('[data-go="pitches"],[data-hub="write"]').forEach(b=>{ if(n) b.setAttribute('data-badge',n>99?'99+':n); else b.removeAttribute('data-badge'); }); const t=document.title.replace(/^\(\d+\+?\) /,''); document.title=(n?`(${n}) `:'')+t; }
+{ const _h=hubRender; hubRender=function(){ const r=_h.apply(this,arguments); pbBadge(); return r; }; }
+setTimeout(async()=>{ await pbLoad(); pbBadge(); pbCheck(false); },6000);
+PB.timer=setInterval(()=>{ if(!document.hidden||pbCfg().pop) pbCheck(false); },60000);
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden&&Date.now()-PB.lastCheck>20000) pbCheck(false); });
+
+/* ---------- the page ---------- */
+async function pbEnter(){ const el=$('#scr-pitches'); if(!el) return; const c=pbCfg(); await pbLoad();
+  el.innerHTML=`<div class="pb"><div class="pb-top"><div><h2>💡 Pitch Box</h2><small class="muted">People pitch from their phone. You decide what's canon.</small></div><span class="grow"></span>
+    <button class="btn" id="pbChk">🔄 Check now</button><button class="btn primary" id="pbShare">📣 Share the link</button><button class="btn" id="pbSet">⚙️ Setup & alerts</button></div>
+    <div id="pbSetup"></div><div class="pb-bar"><div class="seg pb-st">${PB_STATUS.map(([k,e,n])=>`<button data-pbs="${k}" class="${PB.status===k?'on':''}">${e} ${n}<b data-pbn="${k}"></b></button>`).join('')}</div>
+      <input class="txt" id="pbQ" placeholder="🔍 Search pitches, names, characters…" value="${esc(PB.q)}"><select class="txt" id="pbSort"><option value="new">Newest</option><option value="old" ${PB.sort==='old'?'selected':''}>Oldest</option><option value="spice" ${PB.sort==='spice'?'selected':''}>Spiciest</option><option value="long" ${PB.sort==='long'?'selected':''}>Longest</option></select></div>
+    <div class="pb-types" id="pbTypes"></div><div class="pb-grid" id="pbGrid"></div></div>`;
+  $('#pbChk').onclick=()=>pbCheck(true); $('#pbShare').onclick=pbShare; $('#pbSet').onclick=()=>pbSettings();
+  el.querySelector('.pb-st').onclick=e=>{ const b=e.target.closest('[data-pbs]'); if(!b) return; PB.status=b.dataset.pbs; $$('[data-pbs]').forEach(x=>x.classList.toggle('on',x===b)); pbRender(); };
+  $('#pbQ').oninput=e=>{ PB.q=e.target.value; pbRender(); }; $('#pbSort').onchange=e=>{ PB.sort=e.target.value; pbRender(); };
+  pbSetupCard(); pbRender(); if(rmUrl()&&c.on&&Date.now()-PB.lastCheck>15000) pbCheck(false); }
+async function pbSetupCard(){ const el=$('#pbSetup'); if(!el) return; const c=pbCfg();
+  if(!rmUrl()){ el.innerHTML=`<div class="pb-card pb-setup"><b>👋 One-time setup (about 5 minutes)</b><p>Pitches land in your own Google Drive, using the same free drop box the line-recording invites use. Nobody else can read them. Set that up first, then come back here.</p><button class="btn primary" id="pbDrive">☁️ Set up the Google Drive drop box</button></div>`; $('#pbDrive').onclick=()=>rmOpen('drive'); return; }
+  if(!c.on){ el.innerHTML=`<div class="pb-card pb-setup"><b>💡 Turn on your Pitch Box</b><p>Your drop box is connected. Turn this on and you'll get a link anyone can pitch from: episodes, characters, lore, songs, comics, headcanons, whatever.</p><button class="btn primary" id="pbOn">💡 Turn it on</button></div>`;
+    $('#pbOn').onclick=async()=>{ $('#pbOn').disabled=true; const v=await pbPing(); if(v<3){ $('#pbOn').disabled=false; return pbSettings('update'); } c.on=true; save(); await pbPublish(true); pbEnter(); pbShare(); }; return; }
+  el.innerHTML=''; if(PB.err==='what'||PB.v&&PB.v<3) el.innerHTML=`<div class="pb-card pb-warn">⚠️ Your drop box script is an older version, so pitches can't come in yet. <button class="btn sm primary" id="pbUpd">Update it (2 min)</button></div>`; $('#pbUpd')&&($('#pbUpd').onclick=()=>pbSettings('update'));
+  if(!c.open) el.insertAdjacentHTML('beforeend','<div class="pb-card pb-warn">🔒 The Pitch Box is closed, so people see a "closed for now" page. Open it in ⚙️ Setup.</div>'); }
+function pbFiltered(){ const q=PB.q.trim().toLowerCase(); let L=PB.list.filter(p=>PB.status==='all'||p.status===PB.status).filter(p=>!PB.type||p.p?.type===PB.type);
+  if(q) L=L.filter(p=>JSON.stringify([p.p?.title,p.p?.body,p.p?.by,p.p?.chars,p.note]).toLowerCase().includes(q));
+  if(PB.sort==='old') L=L.slice().reverse(); else if(PB.sort==='spice') L=L.slice().sort((a,b)=>(b.p?.spice||0)-(a.p?.spice||0)); else if(PB.sort==='long') L=L.slice().sort((a,b)=>String(b.p?.body||'').length-String(a.p?.body||'').length); return L; }
+function pbRender(){ const g=$('#pbGrid'); if(!g) return; PB_STATUS.forEach(([k])=>{ const n=k==='all'?PB.list.length:PB.list.filter(p=>p.status===k).length, b=$(`[data-pbn="${k}"]`); if(b) b.textContent=n?` ${n}`:''; });
+  const inStatus=PB.list.filter(p=>PB.status==='all'||p.status===PB.status), types={}; inStatus.forEach(p=>{ const t=p.p?.type||'wild'; types[t]=(types[t]||0)+1; }); if(PB.type&&!types[PB.type]) PB.type='';
+  $('#pbTypes').innerHTML=Object.keys(types).length>1?`<button class="chip ${!PB.type?'on':''}" data-pbt="">All types</button>`+Object.entries(types).sort((a,b)=>b[1]-a[1]).map(([t,n])=>`<button class="chip ${PB.type===t?'on':''}" data-pbt="${t}">${(PB_TYPES[t]||['💡'])[0]} ${esc((PB_TYPES[t]||[0,t])[1])} <b>${n}</b></button>`).join(''):'';
+  $('#pbTypes').onclick=e=>{ const b=e.target.closest('[data-pbt]'); if(!b) return; PB.type=b.dataset.pbt; pbRender(); };
+  const L=pbFiltered(), c=pbCfg();
+  g.innerHTML=L.length?L.map(r=>{ const p=r.p||{}, t=PB_TYPES[p.type]||['💡',p.typeLabel||'Pitch'], feat=c.feat.includes(r.id);
+    return `<article class="pb-c ${r.seen?'':'unseen'} st-${r.status}" data-pid="${r.id}"><div class="pb-ch"><span class="pb-e">${p.e||t[0]}</span><b>${esc(p.typeLabel||t[1])}</b>${feat?'<span title="On the Pitch Wall">🌟</span>':''}<span class="grow"></span><span title="${esc(p.spiceLabel||'')}">${PB_SPICE[p.spice??1]||''}</span><small>${ago(r.at)}</small></div>
+      <h3>${esc(p.title||'(no title)')}</h3><p class="pb-body">${esc(p.body||'')}</p>${(p.chars||[]).length?`<div class="pb-chars">${p.chars.slice(0,6).map(n=>`<span>${esc(n)}</span>`).join('')}</div>`:''}
+      <div class="pb-foot"><span>${p.by?'👤 '+esc(p.by)+(p.shout?' 📣':''):'👤 anonymous'}</span>${(r.files||[]).map(f=>f.kind==='voice'?'🎙':f.kind==='sketch'?'✏️':'🖼').join('')}<span class="grow"></span>
+        <button data-pq="star" title="Keeper" class="${r.status==='star'?'on':''}">⭐</button><button data-pq="maybe" title="Maybe" class="${r.status==='maybe'?'on':''}">👀</button><button data-pq="used" title="Used it" class="${r.status==='used'?'on':''}">✅</button><button data-pq="pass" title="Pass" class="${r.status==='pass'?'on':''}">🗑</button></div></article>`; }).join('')
+    :`<div class="pb-empty">${PB.list.length?'Nothing here with these filters.':c.on?'<b>No pitches yet.</b><br>Hit 📣 Share the link and post it somewhere. They\'ll show up here (and ping you).':'Turn on the Pitch Box above to start getting pitches.'}</div>`;
+  g.onclick=async e=>{ const card=e.target.closest('[data-pid]'); if(!card) return; const r=PB.list.find(x=>x.id===card.dataset.pid); if(!r) return; const q=e.target.closest('[data-pq]');
+    if(q){ r.status=r.status===q.dataset.pq?'new':q.dataset.pq; r.seen=true; await PitchDB.put(r); pbBadge(); return pbRender(); } pbOpen(r.id); }; }
+const pbStatusBtns=r=>PB_STATUS.filter(s=>s[0]!=='all'&&s[0]!=='new').map(([k,e,n])=>`<button class="btn sm ${r.status===k?'on':''}" data-po="st:${k}">${e} ${n==='Keepers'?'Keeper':n}</button>`).join('');
+async function pbOpen(id){ const r=await PitchDB.get(id); if(!r) return; if(!r.seen){ r.seen=true; await PitchDB.put(r); await pbLoad(); pbBadge(); pbRender(); } const p=r.p||{}, c=pbCfg(), feat=c.feat.includes(r.id), t=PB_TYPES[p.type]||['💡','Pitch'];
+  const canScript=['episode','short','special','song','comic','gag','villain','au'].includes(p.type), canChar=p.type==='character', canLore=['lore','headcanon','theory','place','item','au','villain'].includes(p.type);
+  openModal(`<div class="pb-m"><div class="row"><span class="pb-e big">${p.e||t[0]}</span><div class="grow"><small class="muted">${esc(p.typeLabel||t[1])} · ${PB_SPICE[p.spice??1]||''} ${esc(p.spiceLabel||'')} · ${new Date(r.at).toLocaleString()}</small><h2>${esc(p.title||'(no title)')}</h2></div><button class="btn sm" onclick="closeModal()">✕</button></div>
+    <div class="pb-from">👤 <b>${esc(p.by||'Anonymous')}</b>${p.shout?' · 📣 wants a shout-out if it\'s used':''}${p.contact?` · 📬 ${esc(p.contact)}`:''}${p.ua?` · <span class="muted">${esc(p.ua)}</span>`:''}</div>
+    ${(p.chars||[]).length?`<div class="pb-chars big">${p.chars.map(n=>{ const ch=charByName(n); return `<span>${ch?castArt(n):''}${esc(n)}</span>`; }).join('')}</div>`:''}
+    <div class="pb-full">${esc(p.body||'').replace(/\n/g,'<br>')}</div><div class="pb-att" id="pbAtt">${(r.files||[]).length?'<p class="tiny muted">Loading attachments…</p>':''}</div>
+    <label class="lab">Your private notes</label><textarea class="txt" id="pbNote" rows="2" style="width:100%" placeholder="Only you see this.">${esc(r.note||'')}</textarea>
+    <div class="pb-acts"><div class="row wrap">${pbStatusBtns(r)}<button class="btn sm ${feat?'on':''}" data-po="feat" title="Show it on the public Pitch Wall at the top of the pitch page">🌟 ${feat?'On the Pitch Wall':'Feature it'}</button></div>
+      <div class="row wrap"><b class="tiny">Use it:</b>${canScript?'<button class="btn sm primary" data-po="script">✍️ New script from this</button>':''}${canChar?'<button class="btn sm primary" data-po="char">🧍 Add to the Bible</button>':''}${canLore?'<button class="btn sm" data-po="lore">📖 Add as lore</button>':''}<button class="btn sm" data-po="idea">💡 Idea inbox</button><button class="btn sm" data-po="copy">📋 Copy</button><span class="grow"></span><button class="btn sm red" data-po="del">Delete for good</button></div></div></div>`);
+  $('#pbNote').oninput=async e=>{ r.note=e.target.value; clearTimeout(PB.nt); PB.nt=setTimeout(()=>PitchDB.put(r),500); };
+  $('#modal').onclick=async e=>{ const b=e.target.closest('[data-po]'); if(!b) return; const a=b.dataset.po, credit=p.by?`Pitched by ${p.by}${p.shout?' (shout them out!)':''}`:'Fan pitch (anonymous)', text=`${p.title||''}\n\n${p.body||''}`;
+    if(a.startsWith('st:')){ const k=a.slice(3); r.status=r.status===k?'new':k; await PitchDB.put(r); await pbLoad(); pbRender(); return pbOpen(r.id); }
+    if(a==='feat'){ const i=c.feat.indexOf(r.id); if(i>=0) c.feat.splice(i,1); else { if(c.feat.length>=16) return toast('The Pitch Wall holds 16. Unfeature one first.','bad'); c.feat.push(r.id); } save(); await pbPushFeat(); toast(i>=0?'Removed from the Pitch Wall':'🌟 It\'s on the Pitch Wall. Everyone can 🔥 it now.','good'); pbRender(); return pbOpen(r.id); }
+    if(a==='copy'){ navigator.clipboard.writeText(text+'\n\n'+credit); return toast('📋 Copied'); }
+    if(a==='idea'){ S.ideas.unshift({id:uid(),x:`${text.trim()}\n(${credit})`,kind:{episode:'episode',short:'episode',special:'episode',song:'song',gag:'gag',line:'gag',character:'character',art:'art',merch:'art'}[p.type]||'other',at:Date.now(),done:false}); save(); toast('💡 In your idea inbox','good'); }
+    if(a==='script'){ const s=newScript({title:(p.title||'Fan pitch').toUpperCase().slice(0,60),logline:String(p.fields?.logline||p.body||'').slice(0,300),blocks:[{t:'scene',x:''},{t:'action',x:`[${credit}]\n${p.body||''}`}]}); closeModal(); go('desk'); setTimeout(()=>{ try{ loadScriptIntoEditor(s); }catch(e){} },300); }
+    if(a==='char'){ const f=p.fields||{}; S.chars.unshift({id:uid(),name:p.title||'New Character',img:'',what:String(f.look||'').slice(0,300),group:'Fan Made',status:'Alive',personality:String(f.vibe||'').slice(0,600),quotes:f.catch?[f.catch]:[],voice:'',relationships:String(f.rel||''),theme:'',tags:['fan pitch'],custom:[],notes:credit}); save(); toast(`🧍 ${esc(p.title||'They')} joined the Bible (no art yet)`,'good'); }
+    if(a==='lore'){ S.lore.unshift({id:uid(),title:p.title||'Fan lore',cat:'Lore',body:`${p.body||''}\n\n${credit}`,tags:['fan pitch',p.type]}); save(); toast('📖 Added to the Bible\'s lore','good'); }
+    if(a==='del'){ if(!confirm('Delete this pitch for good? It\'s removed from your Google Drive too.')) return; try{ await rmPost({a:'pdel',key:rmKey(),id:r.id}); }catch(err){} S.settings.pbGone=[...(S.settings.pbGone||[]).slice(-300),r.id]; const i=c.feat.indexOf(r.id); if(i>=0){ c.feat.splice(i,1); pbPushFeat(); } save(); await PitchDB.del(r.id); await pbLoad(); pbRender(); pbBadge(); return closeModal(); }
+    if(['script','char','lore','idea'].includes(a)){ r.status='used'; await PitchDB.put(r); await pbLoad(); pbRender(); if(p.by) unlock('pitch2'); } };
+  pbAttach(r); }
+async function pbAttach(r){ const box=$('#pbAtt'); if(!box||!(r.files||[]).length) return; const out=[];
+  for(const f of r.files){ let c=await PitchDB.get(f.id,'f'); if(!c){ try{ const g=await rmPost({a:'get',key:rmKey(),id:f.id}); c={id:f.id,blob:new Blob([rmUnB64(g.data.replace(/\+/g,'-').replace(/\//g,'_'))],{type:g.mime||f.mime})}; await PitchDB.put(c,'f'); }catch(e){ out.push(`<p class="tiny muted">Couldn't load ${esc(f.kind)} (${esc(e.message)})</p>`); continue; } }
+    const u=URL.createObjectURL(c.blob); out.push(f.kind==='voice'?`<div><b>🎙 ${r.p?.type==='song'?'Hummed it':'Voice memo'}</b><audio controls src="${u}"></audio></div>`:`<a href="${u}" target="_blank" rel="noopener"><img src="${u}" alt="${esc(f.kind)}"></a>`); }
+  if($('#pbAtt')) $('#pbAtt').innerHTML=out.join(''); }
+function pbShare(){ const link=pbLink(); if(!link) return toast(rmUrl()?'Set your website address first (it opens from GitHub Pages).':'Set up the drop box first (⚙️ Setup).','bad'); unlock('pitch1'); const c=pbCfg(), msg=`Pitch me ideas for ${showName()}! Episodes, characters, songs, lore, headcanons, anything 💡👇\n${link}`;
+  openModal(`<div class="pb-share"><div class="row"><h2 class="grow">📣 Your Pitch Box link</h2><button class="btn sm" onclick="closeModal()">✕</button></div><div class="row" style="align-items:flex-start;gap:14px;flex-wrap:wrap"><div id="pbQr" class="pb-qr"></div><div class="grow" style="min-width:240px">
+    <input class="txt" readonly value="${esc(link)}" onclick="this.select()" style="width:100%"><div class="row wrap" style="margin-top:8px"><button class="btn primary" id="pbS1">📤 Share</button><button class="btn" id="pbS2">📋 Copy link</button><button class="btn" id="pbS3">💬 Copy a post</button><button class="btn" id="pbS4">🧪 Open it</button></div>
+    <p class="tiny muted">Works on any phone, no app or login. Put it in your YouTube community tab, bio, Discord, a pinned comment, or print the QR on a sticker in the 🖨 Print Shop. ${c.open?'':'<b>Heads up: the box is closed right now.</b>'}</p></div></div></div>`);
+  try{ const qr=qrcode(0,'M'); qr.addData(link); qr.make(); $('#pbQr').innerHTML=qr.createSvgTag({cellSize:5,margin:2,scalable:true}); }catch(e){ $('#pbQr').remove(); }
+  $('#pbS1').onclick=async()=>{ if(navigator.share){ try{ await navigator.share({title:'Pitch Box',text:msg.replace(/\n.*$/,''),url:link}); }catch(e){} } else { navigator.clipboard.writeText(msg); toast('📋 Copied'); } };
+  $('#pbS2').onclick=()=>{ navigator.clipboard.writeText(link); toast('📋 Link copied'); }; $('#pbS3').onclick=()=>{ navigator.clipboard.writeText(msg); toast('💬 Copied. Paste it anywhere.'); }; $('#pbS4').onclick=()=>window.open(link,'_blank'); }
+async function pbSettings(focus){ const c=pbCfg(); if(!c.ntfy) c.ntfy='nenjac-'+Array.from(crypto.getRandomValues(new Uint8Array(8)),b=>'abcdefghjkmnpqrstuvwxyz23456789'[b%31]).join(''); save();
+  const v=rmUrl()?await pbPing():0, perm='Notification' in window?Notification.permission:'unsupported';
+  openModal(`<div class="pb-set"><div class="row"><h2 class="grow">⚙️ Pitch Box setup</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
+    ${!rmUrl()?`<div class="pb-card pb-warn">First set up the Google Drive drop box. <button class="btn sm primary" onclick="rmOpen('drive')">☁️ Set it up</button></div>`:v<3?`<div class="pb-card pb-warn" id="pbUpdBox"><b>🔧 Update your drop box script (2 minutes, one time)</b><ol><li><button class="btn sm primary" id="pbCopyScript">📋 Copy the new script</button></li><li>Open <a href="https://script.google.com/home" target="_blank" rel="noopener">script.google.com</a> → your <b>Nenjac Drop Box</b> project. Select everything and paste over it. 💾 Save.</li><li>In the function menu at the top pick <b>setup</b> and click ▶ <b>Run</b>. Google asks for permission again (it can now email you and send phone pings). Allow it.</li><li><b>Deploy → Manage deployments → ✏️ → Version: New version → Deploy</b>. Your link stays the same.</li><li><button class="btn sm" id="pbRecheck">🔌 Check again</button> <span id="pbVer" class="tiny"></span></li></ol><p class="tiny muted">Actor invites keep working the whole time.</p></div>`:`<div class="pb-card pb-ok">✅ Drop box script version ${v}. Pitches can come in.</div>`}
+    <label class="row"><input type="checkbox" id="pbOpenC" ${c.open?'checked':''}> <b>Pitch Box is open</b> <span class="tiny muted">(off = people see "closed for now")</span></label>
+    <label class="lab">Your name on the pitch page</label><input class="txt" id="pbWho" value="${esc(c.who)}" placeholder="JC" style="width:100%">
+    <label class="lab">This week's prompt <span class="muted">(optional, shows at the top)</span></label><input class="txt" id="pbPrompt" value="${esc(c.prompt)}" placeholder="Pitch me a Halloween special. Make it weird." style="width:100%">
+    <label class="lab">What can people pitch?</label><div class="pb-tsel">${Object.entries(PB_TYPES).map(([k,[e,n]])=>`<label class="chip ${!c.types||c.types.includes(k)?'on':''}"><input type="checkbox" value="${k}" hidden ${!c.types||c.types.includes(k)?'checked':''}>${e} ${esc(n)}</label>`).join('')}</div>
+    <h3>🔔 Ping me when a pitch comes in</h3>
+    <label class="row"><input type="checkbox" id="pbEmail" ${c.email?'checked':''}> 📧 Email me <span class="tiny muted">(your own Google script sends it to your Gmail. Free.)</span></label>
+    <div class="pb-ntfy"><label class="row"><input type="checkbox" id="pbNtfyOn" ${c.ntfyOn?'checked':''}> 📱 Push to my phone with <b>ntfy</b> <span class="tiny muted">(free app, no account)</span></label>
+      <ol class="tiny"><li>Install <b>ntfy</b> (App Store / Google Play).</li><li>Tap ＋ and subscribe to this topic: <code id="pbTopic">${esc(c.ntfy)}</code> <button class="btn sm" id="pbTopicCopy">📋</button> <span class="muted">(or scan →)</span></li><li>Tick the box above, Save, then hit 🧪 Test.</li></ol><div id="pbNtfyQr" class="pb-qr sm"></div><p class="tiny muted">Keep the topic secret. Anyone who has it sees pitch titles.</p></div>
+    <label class="row"><input type="checkbox" id="pbPop" ${c.pop?'checked':''}> 🖥 Pop-up on this computer while Nenjac Creator is open <span class="tiny muted">(${perm==='granted'?'allowed':perm==='denied'?'blocked in browser settings':'it\'ll ask'})</span></label>
+    <div class="row wrap" style="margin-top:12px"><button class="btn primary" id="pbSave">💾 Save & publish</button><button class="btn" id="pbTest" ${v<3?'disabled':''}>🧪 Send a test ping</button><span class="grow"></span>${c.on?'<button class="btn sm red" id="pbOff">Turn Pitch Box off</button>':''}</div></div>`);
+  try{ const qr=qrcode(0,'M'); qr.addData('https://ntfy.sh/'+c.ntfy); qr.make(); $('#pbNtfyQr').innerHTML=qr.createSvgTag({cellSize:3,margin:1,scalable:true}); }catch(e){}
+  $$('.pb-tsel input').forEach(i=>i.onchange=()=>i.closest('.chip').classList.toggle('on',i.checked)); $('#pbTopicCopy').onclick=()=>{ navigator.clipboard.writeText(c.ntfy); toast('📋 Topic copied'); };
+  $('#pbCopyScript')&&($('#pbCopyScript').onclick=()=>{ navigator.clipboard.writeText(rmScript()); toast('📋 Script copied. Paste it into script.google.com','good'); });
+  $('#pbRecheck')&&($('#pbRecheck').onclick=async()=>{ const nv=await pbPing(); if(nv>=3){ toast('✅ Updated! Pitches can come in.','good'); c.on=true; save(); await pbPublish(true); pbSettings(); if(current==='pitches') pbEnter(); } else $('#pbVer').textContent=`Still version ${nv||'?'}. Did you deploy a New version?`; });
+  $('#pbSave').onclick=async()=>{ c.open=$('#pbOpenC').checked; c.who=$('#pbWho').value.trim(); c.prompt=$('#pbPrompt').value.trim(); const ts=$$('.pb-tsel input:checked').map(i=>i.value); c.types=ts.length===Object.keys(PB_TYPES).length?null:ts; c.email=$('#pbEmail').checked; c.ntfyOn=$('#pbNtfyOn').checked; c.pop=$('#pbPop').checked;
+    if(c.pop&&'Notification' in window&&Notification.permission==='default'){ try{ await Notification.requestPermission(); }catch(e){} }
+    save(); if(v>=3){ c.on=true; save(); const cfg=pbPublicCfg(); if(!c.ntfyOn) cfg.ntfy=''; try{ await rmPost({a:'pcfgset',key:rmKey(),cfg}); toast('💡 Saved and published','good'); }catch(e){ toast("Couldn't reach your drop box: "+esc(e.message),'bad'); } } else toast('Saved here. Update the script so it goes live.'); if(current==='pitches') pbEnter(); };
+  $('#pbTest').onclick=async()=>{ try{ await rmPost({a:'ntest',key:rmKey()}); toast('🧪 Test ping sent. Check your email / phone.','good'); }catch(e){ toast("Test failed: "+esc(e.message),'bad'); } };
+  $('#pbOff')&&($('#pbOff').onclick=async()=>{ c.on=false; c.open=false; save(); await pbPublish(true); closeModal(); if(current==='pitches') pbEnter(); });
+  if(focus==='update') $('#pbUpdBox')?.scrollIntoView({block:'center'}); }
+{ const _pp=pbPublicCfg; pbPublicCfg=function(){ const o=_pp(); if(!pbCfg().ntfyOn) o.ntfy=''; return o; }; }
+{ const _g=go; go=function(s){ const r=_g.apply(this,arguments); if(s==='pitches') setTimeout(pbEnter,0); return r; }; }
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'💡',label:'Pitch Box (fan pitches)',run:()=>go('pitches'),kw:'pitch fans ideas submissions inbox'},{ico:'📣',label:'Share my Pitch Box link',run:()=>{ go('pitches'); setTimeout(pbShare,300); },kw:'pitch link qr share'}); return C; }; }
+if(!FIRST_RUN&&!S.settings.seen52) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello52" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>5.2: The Pitch Box.</b><small>Get a link anyone can pitch you ideas from (episodes, characters, lore, songs, headcanons…) and they land in Write → 💡 Pitch Box, with pings to your phone.${S.settings.seen51?'':' Plus 5.1: face rigs, NenjCam and the Projects Wall.'}</small><div class="row"><button class="btn sm primary" id="h52p">💡 Set it up</button><button class="btn sm" id="h52w">✨ What's new</button><button class="btn sm" id="h52x" aria-label="Dismiss">✕</button></div></div></div>`);
+  const done=()=>{ ['seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello52')?.remove(); }; $('#h52p').onclick=()=>{ done(); go('pitches'); }; $('#h52w').onclick=()=>{ done(); openWhatsNew(); }; $('#h52x').onclick=done; },3300);
+if(FIRST_RUN) S.settings.seen52=true;
 
 </script>
 </body>

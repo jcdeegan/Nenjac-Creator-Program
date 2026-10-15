@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pitch Box</title><meta name="theme-color" content="#111111"><meta name="description" content="Pitch an episode, character, song, lore, anything.">
+<link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Archivo:wght@500;700;900&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+:root{--sun:#ffc81e;--ink:#111;--paper:#fff8e1;--pink:#ff4d8d;--cyan:#22d3ee;--green:#2fbf71;--card:#fff;--muted:#6b6458;--r:18px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:Archivo,system-ui,sans-serif;font-size:16px}
+body{background-image:radial-gradient(rgba(0,0,0,.07) 1.2px,transparent 1.3px);background-size:14px 14px;min-height:100vh;padding-bottom:calc(96px + env(safe-area-inset-bottom))}
+button,input,textarea,select{font:inherit;color:inherit}
+.top{background:#111;color:#fff;padding:calc(14px + env(safe-area-inset-top)) 18px 16px;border-bottom:4px solid #000;position:relative;overflow:hidden}
+.top h1{font-family:Bangers,Impact,sans-serif;font-size:clamp(32px,9vw,46px);padding-right:78px;letter-spacing:1.5px;margin:0;line-height:1;color:var(--sun);text-shadow:3px 3px 0 var(--pink)}
+.top p{margin:6px 0 0;font-size:14px;opacity:.85}.top .bulb{position:absolute;right:-6px;top:-4px;font-size:84px;transform:rotate(14deg);opacity:.9;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:rotate(8deg) translateY(6px)}}
+.wrap{max-width:640px;margin:0 auto;padding:14px}
+.prompt{background:var(--sun);border:3px solid #000;border-radius:var(--r);padding:12px 14px;box-shadow:4px 4px 0 #000;margin-bottom:14px;font-weight:700}.prompt small{display:block;font-family:Bangers;font-size:18px;letter-spacing:1px;font-weight:400}
+h2{font-family:Bangers,Impact,sans-serif;font-weight:400;font-size:30px;letter-spacing:1px;margin:18px 0 8px}
+.types{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.type{display:flex;flex-direction:column;align-items:flex-start;gap:2px;background:var(--card);border:3px solid #000;border-radius:var(--r);padding:12px;box-shadow:4px 4px 0 #000;text-align:left;cursor:pointer;min-height:104px;transition:transform .12s}
+.type:active{transform:translate(3px,3px);box-shadow:1px 1px 0 #000}.type .e{font-size:34px;line-height:1}.type b{font-size:16px;font-weight:900}.type small{font-size:12.5px;color:var(--muted);line-height:1.25}
+.card{background:var(--card);border:3px solid #000;border-radius:var(--r);padding:14px;box-shadow:4px 4px 0 #000;margin-bottom:14px}
+.f{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}.f>span{font-weight:900;font-size:15px}.f>small{color:var(--muted);font-size:12.5px;margin-top:-4px}
+.in{width:100%;border:3px solid #000;border-radius:14px;padding:12px 13px;background:#fff;font-size:17px;outline:none}.in:focus{box-shadow:0 0 0 4px var(--sun)}
+textarea.in{min-height:96px;resize:vertical;line-height:1.4}
+.ta{position:relative}.ta .mic{position:absolute;right:8px;bottom:8px;width:42px;height:42px;border-radius:50%;border:2px solid #000;background:#fff;font-size:19px;cursor:pointer}.ta .mic.on{background:var(--pink);color:#fff;animation:pulse 1s infinite}
+@keyframes pulse{50%{transform:scale(1.1)}}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:2.5px solid #000;border-radius:999px;background:#fff;padding:7px 12px;font-weight:700;font-size:14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}.chip.on{background:var(--sun);box-shadow:2px 2px 0 #000}
+.cast{display:grid;grid-template-columns:repeat(auto-fill,minmax(74px,1fr));gap:8px}
+.ch{border:2.5px solid #000;border-radius:14px;background:#fff;padding:6px 4px 5px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;font-size:11.5px;font-weight:800;text-align:center;line-height:1.1}.ch img{width:52px;height:52px;object-fit:contain}.ch .fb{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:900;font-size:22px}.ch.on{background:var(--sun);transform:translateY(-2px);box-shadow:2px 3px 0 #000}
+.spice{display:flex;gap:6px}.spice button{flex:1;border:2.5px solid #000;border-radius:12px;background:#fff;padding:8px 2px;font-size:13px;font-weight:800;cursor:pointer;display:flex;flex-direction:column;align-items:center}.spice button span{font-size:20px}.spice button.on{background:var(--pink);color:#fff}
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:8px}.panels textarea{min-height:84px;font-size:15px}
+.extras{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ex{border:3px solid #000;border-radius:16px;background:#fff;padding:12px 4px;font-weight:900;font-size:13px;display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;box-shadow:3px 3px 0 #000}.ex span{font-size:28px}.ex.done{background:#d3f9d8}
+.att{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.att>div{position:relative;border:2px solid #000;border-radius:12px;background:#fff;padding:4px}.att img{height:84px;display:block;border-radius:8px}.att audio{height:40px;max-width:220px}.att button{position:absolute;top:-10px;right:-10px;width:28px;height:28px;border-radius:50%;border:2px solid #000;background:#fff;font-weight:900;cursor:pointer}
+.bar{position:fixed;left:0;right:0;bottom:0;padding:12px 14px calc(12px + env(safe-area-inset-bottom));background:rgba(255,248,225,.94);backdrop-filter:blur(8px);border-top:3px solid #000;display:flex;gap:10px;justify-content:center;z-index:5}
+.bar .in2{max-width:640px;width:100%;display:flex;gap:10px}
+.btn{border:3px solid #000;border-radius:16px;background:#fff;padding:14px 16px;font-weight:900;font-size:17px;cursor:pointer;box-shadow:3px 3px 0 #000}.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 #000}
+.btn.go{flex:1;background:var(--sun);font-family:Bangers,Impact;font-weight:400;letter-spacing:1.2px;font-size:24px}.btn:disabled{opacity:.5}
+.back{display:inline-flex;align-items:center;gap:6px;border:0;background:none;font-weight:900;font-size:15px;padding:4px 0;cursor:pointer}
+.head{display:flex;align-items:center;gap:10px;margin:2px 0 12px}.head .e{font-size:44px}.head h2{margin:0}.head small{display:block;color:var(--muted)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.feat{display:flex;gap:10px;overflow-x:auto;padding:4px 2px 10px;scroll-snap-type:x mandatory}
+.fc{flex:none;width:250px;scroll-snap-align:start;background:#fff;border:3px solid #000;border-radius:var(--r);padding:12px;box-shadow:3px 3px 0 #000;display:flex;flex-direction:column;gap:6px}
+.fc .t{font-size:12px;font-weight:900;color:var(--muted)}.fc b{font-size:16px}.fc p{margin:0;font-size:14px;line-height:1.35}.fc .by{font-size:12px;color:var(--muted)}
+.fire{align-self:flex-start;border:2.5px solid #000;border-radius:999px;background:#fff;padding:5px 12px;font-weight:900;cursor:pointer}.fire.on{background:#ff7a1a;color:#fff}
+.msg{text-align:center;padding:30px 10px}.msg .big{font-size:80px}.msg h2{font-size:40px}
+.toast{position:fixed;left:50%;top:18px;transform:translateX(-50%);background:#111;color:#fff;border-radius:14px;padding:10px 16px;font-weight:700;z-index:50;max-width:90vw;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.pad{position:fixed;inset:0;background:#111;z-index:40;display:flex;flex-direction:column}
+.pad canvas{flex:1;background:#fff;touch-action:none;width:100%;min-height:0}
+.pad .tools{display:flex;gap:8px;padding:10px calc(10px + env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) 10px;flex-wrap:wrap;align-items:center;background:#111}
+.pad .sw{width:34px;height:34px;border-radius:50%;border:3px solid #fff;cursor:pointer}.pad .sw.on{outline:3px solid var(--sun);outline-offset:2px}
+.pad .tb{border:2px solid #fff;background:#222;color:#fff;border-radius:10px;padding:8px 10px;font-weight:800;cursor:pointer}.pad .tb.on{background:var(--sun);color:#000}
+.rec{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.meter{flex:1;height:14px;border:2px solid #000;border-radius:999px;overflow:hidden;background:#eee;min-width:80px}.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--sun),var(--pink))}
+.who{display:grid;grid-template-columns:1fr;gap:10px}
+.tiny{font-size:12.5px;color:var(--muted)}
+.ok{display:flex;gap:8px;align-items:flex-start;font-size:14px;font-weight:600}.ok input{width:22px;height:22px;flex:none;margin:0}
+.conf{position:fixed;inset:0;pointer-events:none;z-index:60}
+.hidden{display:none!important}
+</style></head><body>
+<header class="top"><div class="bulb">💡</div><h1 id="hTitle">PITCH BOX</h1><p id="hSub">Got an idea? Pitch it. Every single one gets read.</p></header>
+<main class="wrap" id="app"><div class="msg"><div class="big">💡</div><p>Loading…</p></div></main>
+<div class="bar hidden" id="bar"><div class="in2"><button class="btn" id="bBack">←</button><button class="btn go" id="bGo">NEXT →</button></div></div>
+<canvas class="conf" id="conf"></canvas>
+<script>
+"use strict";
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const LS=(k,v)=>{ try{ if(v===undefined) return JSON.parse(localStorage.getItem('nj.pitch.'+k)||'null'); localStorage.setItem('nj.pitch.'+k,JSON.stringify(v)); }catch(e){ return null; } };
+const TYPES=[
+ ['episode','🎬','Episode','A whole episode idea',[['title','Episode title','text','The One Where Deegs Gets a Job'],['logline','What happens?','area','One or two sentences. The hook.'],['beats','How it goes','beats'],['chars','Who\'s in it?','chars'],['cold','Cold open (optional)','area','The bit before the theme song']]],
+ ['character','🧍','Character','A new face for Nenjac',[['title','Name','text','Their name'],['look','What do they look like?','area','Shape, colors, what are they an object of?'],['vibe','Personality','area','Quirks, flaws, what they want'],['catch','Catchphrase (optional)','text','"…"'],['rel','Who do they mess with, love or hate?','area','']]],
+ ['lore','📜','Lore','Something TRUE in Nenjac',[['title','Short title','text','The Ferry Incident of 1998'],['body','The lore','area','What happened? What\'s the truth?'],['chars','Who\'s involved?','chars'],['sure','How canon is it?','pick','Canon-worthy|A rumor|Totally cursed']]],
+ ['headcanon','🧠','Headcanon','What you believe about someone',[['chars','About who?','chars1'],['body','I believe that…','area','Neen secretly does taxes for the whole town']]],
+ ['song','🎵','Song / musical number','A banger for the musical',[['title','Song title','text',''],['style','Style','pick','Showtune|Rap|Pop punk|Ballad|Villain song|Country|Metal|Disco|Lullaby|Opera|Other'],['chars','Who sings it?','chars'],['hook','The hook / chorus','area','Lyrics, or how it goes. Hum it with 🎙 below!'],['body','Where does it go in the story?','area','']]],
+ ['comic','💬','Comic','A strip, 1–4 panels',[['title','Comic title','text',''],['panels','The panels','panels'],['chars','Who\'s in it?','chars']]],
+ ['gag','😂','Running gag / joke','A bit that keeps coming back',[['title','Name the bit','text','Every time someone says "balls", Cas appears'],['body','How does it work?','area',''],['chars','Who\'s involved?','chars']]],
+ ['line','🗣','A line for someone','Put words in their mouth',[['chars','Who says it?','chars1'],['line','The line','area','"…"'],['body','When do they say it? (optional)','text','']]],
+ ['short','📱','Short / skit','Under a minute, all killer',[['title','Title','text',''],['body','What happens?','area','Setup → punchline'],['chars','Who\'s in it?','chars']]],
+ ['place','📍','Place','Somewhere on Nenjac Island',[['title','Name of the place','text','Cas\'s Discount Organs'],['body','What\'s there? What happens there?','area','']]],
+ ['item','🧨','Item / prop','A thing. Maybe it explodes.',[['title','What is it?','text',''],['body','What does it do?','area',''],['chars','Who has it?','chars']]],
+ ['villain','😈','Villain','Someone to ruin everyone\'s day',[['title','Villain name','text',''],['body','What\'s their deal?','area',''],['plan','The evil plan','area',''],['chars','Who do they go after?','chars']]],
+ ['au','🌀','AU / crossover','What if Nenjac but…',[['title','The AU','text','Nenjac but everyone is in high school… again'],['body','What changes?','area',''],['chars','Who\'s in it?','chars']]],
+ ['theory','🔍','Fan theory','You figured something out',[['title','The theory','text',''],['body','Explain','area',''],['proof','Your evidence','area','Episode, line, vibes…']]],
+ ['duo','🤝','Duo','Two characters who should team up',[['chars','Pick two','chars2'],['body','What do they get into?','area','']]],
+ ['special','🎄','Special / movie','Holiday special, movie, finale',[['title','Title','text',''],['kind','What kind?','pick','Holiday special|Movie|Season finale|Crossover|Musical episode|Other'],['body','The pitch','area',''],['chars','Who\'s in it?','chars']]],
+ ['game','🎮','Game idea','For the Nenjac arcade',[['title','Game name','text',''],['body','How do you play?','area','']]],
+ ['merch','🧢','Merch idea','Shirts, stickers, chaos',[['title','What is it?','text','A Deegs bomb stress ball'],['body','Describe it','area','Sketch it below!']]],
+ ['art','🎨','Fan art','Draw it or upload it',[['title','Title','text',''],['body','Caption (optional)','area','']]],
+ ['wild','🎲','Wildcard','Anything else. Go nuts.',[['title','Title','text',''],['body','The idea','area','']]]];
+const SPICE=[['😇','Wholesome'],['🙂','Mild'],['😏','Spicy'],['🔥','Unhinged'],['💀','Cursed']];
+const P={d:'',cfg:null,type:null,step:'home',f:{},chars:[],spice:1,files:[],by:LS('by')||'',shout:true,contact:'',sending:false,t0:Date.now()};
+const urlD=()=>(location.hash.match(/[#&]d=([A-Za-z0-9_-]+)/)||[])[1]||LS('d')||'';
+const api=()=>`https://script.google.com/macros/s/${P.d}/exec`;
+function toast(m){ const t=document.createElement('div'); t.className='toast'; t.innerHTML=m; document.body.appendChild(t); setTimeout(()=>t.remove(),2800); }
+function jsonp(params,timeout=20000){ return new Promise((res,rej)=>{ const cb='__p'+Math.random().toString(36).slice(2), s=document.createElement('script'); let done=false; const end=()=>{ done=true; clearTimeout(t); delete window[cb]; s.remove(); };
+  const t=setTimeout(()=>{ if(!done){ end(); rej(new Error('timeout')); } },timeout); window[cb]=d=>{ if(!done){ end(); res(d); } }; s.onerror=()=>{ if(!done){ end(); rej(new Error('blocked')); } }; s.src=api()+'?'+new URLSearchParams({...params,callback:cb,_:Date.now()}); document.head.appendChild(s); }); }
+async function getJSON(params){ for(let k=0;k<3;k++){ try{ if(k) await new Promise(r=>setTimeout(r,600*k)); const r=await fetch(api()+'?'+new URLSearchParams({...params,_:Date.now()})); return JSON.parse(await r.text()); }catch(e){} } return jsonp(params); }
+async function post(body){ const s=JSON.stringify(body); try{ const r=await fetch(api(),{method:'POST',body:s}); return JSON.parse(await r.text()); }catch(e){ try{ await fetch(api(),{method:'POST',mode:'no-cors',body:s}); return {ok:true,blind:true}; }catch(e2){ throw e; } } }
+const T=()=>TYPES.find(t=>t[0]===P.type);
+const castArt=c=>c.art?`<img src="${esc(c.art)}" alt="" loading="lazy" onerror="this.outerHTML='<div class=fb style=background:${esc(c.col||'#888')}>${esc((c.n||'?')[0])}</div>'">`:`<div class="fb" style="background:${esc(c.col||'#888')}">${esc((c.n||'?')[0])}</div>`;
+function bar(back,label,dis){ const b=$('#bar'); b.classList.toggle('hidden',!label); $('#bBack').classList.toggle('hidden',!back); $('#bGo').textContent=label||''; $('#bGo').disabled=!!dis; }
+
+/* ---------- screens ---------- */
+function home(){ P.step='home'; const C=P.cfg, types=TYPES.filter(t=>!C.types||C.types.includes(t[0]));
+  $('#app').innerHTML=`${C.prompt?`<div class="prompt"><small>💡 THIS WEEK'S PROMPT</small>${esc(C.prompt)}</div>`:''}
+    ${(C.featured||[]).length?`<h2>🔥 The Pitch Wall</h2><p class="tiny" style="margin-top:-6px">Pitches ${esc(C.who||'the creator')} loved. Hit 🔥 on your favorites.</p><div class="feat">${C.featured.map(f=>`<div class="fc"><span class="t">${esc(f.e||'💡')} ${esc(f.type||'')}</span><b>${esc(f.title||'')}</b><p>${esc(f.body||'')}</p><span class="by">${f.by?'by '+esc(f.by):'anonymous'}</span><button class="fire ${LS('fire_'+f.id)?'on':''}" data-fire="${esc(f.id)}">🔥 <span>${+f.fires||0}</span></button></div>`).join('')}</div>`:''}
+    <h2>What are you pitching?</h2><div class="types">${types.map(t=>`<button class="type" data-t="${t[0]}"><span class="e">${t[1]}</span><b>${esc(t[2])}</b><small>${esc(t[3])}</small></button>`).join('')}</div>
+    <p class="tiny" style="text-align:center;margin-top:18px">Pitches go straight to ${esc(C.who||'the creator')}. Nothing you send shows up publicly unless they feature it.</p>`;
+  bar(false,''); $('#app').onclick=e=>{ const t=e.target.closest('[data-t]'); if(t){ P.type=t.dataset.t; const dr=LS('draft_'+P.type); P.f=dr?.f||{}; P.chars=dr?.chars||[]; P.spice=dr?.spice??1; P.files=[]; return form(); }
+    const f=e.target.closest('[data-fire]'); if(f&&!f.classList.contains('on')){ f.classList.add('on'); const n=f.querySelector('span'); n.textContent=+n.textContent+1; LS('fire_'+f.dataset.fire,1); post({a:'fire',id:f.dataset.fire}).catch(()=>{}); } }; window.scrollTo(0,0); }
+function field([k,label,kind,ph]){ const v=P.f[k]||'', cast=P.cfg.cast||[];
+  if(kind==='text') return `<label class="f"><span>${esc(label)}</span><input class="in" data-k="${k}" value="${esc(v)}" placeholder="${esc(ph||'')}" maxlength="140" enterkeyhint="next"></label>`;
+  if(kind==='area') return `<label class="f"><span>${esc(label)}</span><div class="ta"><textarea class="in" data-k="${k}" placeholder="${esc(ph||'')}" maxlength="4000">${esc(v)}</textarea>${SR?`<button type="button" class="mic" data-mic="${k}" aria-label="Talk instead of typing">🎤</button>`:''}</div></label>`;
+  if(kind==='pick') return `<div class="f"><span>${esc(label)}</span><div class="chips">${ph.split('|').map(o=>`<button type="button" class="chip ${v===o?'on':''}" data-pick="${k}" data-v="${esc(o)}">${esc(o)}</button>`).join('')}</div></div>`;
+  if(kind==='beats') return `<div class="f"><span>${esc(label)}</span>${['Setup','Chaos','Ending'].map((b,i)=>`<textarea class="in" data-k="${k}${i}" placeholder="${b}" style="min-height:64px">${esc(P.f[k+i]||'')}</textarea>`).join('')}</div>`;
+  if(kind==='panels') return `<div class="f"><span>${esc(label)}</span><div class="panels">${[1,2,3,4].map(i=>`<textarea class="in" data-k="panel${i}" placeholder="Panel ${i}${i>1?' (optional)':''}">${esc(P.f['panel'+i]||'')}</textarea>`).join('')}</div></div>`;
+  if(kind.startsWith('chars')){ const max=kind==='chars1'?1:kind==='chars2'?2:8; return `<div class="f"><span>${esc(label)}</span>${cast.length?`<div class="cast" data-max="${max}">${cast.map(c=>`<button type="button" class="ch ${P.chars.includes(c.n)?'on':''}" data-ch="${esc(c.n)}">${castArt(c)}${esc(c.n.split(' ')[0])}</button>`).join('')}</div>`:''}<input class="in" data-k="otherChars" value="${esc(P.f.otherChars||'')}" placeholder="${cast.length?'Someone else? Type their name':'Type the names'}" maxlength="120"></div>`; }
+  return ''; }
+function form(){ P.step='form'; const t=T(); $('#app').innerHTML=`<button class="back" id="fBack">← all pitch types</button><div class="head"><span class="e">${t[1]}</span><div><h2>${esc(t[2])}</h2><small>${esc(t[3])}</small></div></div>
+  <div class="card">${t[4].map(field).join('')}<div class="f"><span>Spice level</span><div class="spice">${SPICE.map(([e,n],i)=>`<button type="button" class="${P.spice===i?'on':''}" data-sp="${i}"><span>${e}</span>${n}</button>`).join('')}</div></div></div>`;
+  bar(true,'NEXT →'); $('#fBack').onclick=home; wireForm(); window.scrollTo(0,0); }
+function wireForm(){ const A=$('#app'); A.oninput=e=>{ const k=e.target.dataset.k; if(k){ P.f[k]=e.target.value; saveDraft(); } };
+  A.onclick=e=>{ const pk=e.target.closest('[data-pick]'); if(pk){ P.f[pk.dataset.pick]=P.f[pk.dataset.pick]===pk.dataset.v?'':pk.dataset.v; $$(`[data-pick="${pk.dataset.pick}"]`).forEach(b=>b.classList.toggle('on',b.dataset.v===P.f[pk.dataset.pick])); saveDraft(); buzz(); }
+    const ch=e.target.closest('[data-ch]'); if(ch){ const n=ch.dataset.ch, max=+ch.closest('.cast').dataset.max, i=P.chars.indexOf(n); if(i>=0) P.chars.splice(i,1); else { if(P.chars.length>=max) P.chars.shift(); P.chars.push(n); } $$('[data-ch]').forEach(b=>b.classList.toggle('on',P.chars.includes(b.dataset.ch))); saveDraft(); buzz(); }
+    const sp=e.target.closest('[data-sp]'); if(sp){ P.spice=+sp.dataset.sp; $$('[data-sp]').forEach(b=>b.classList.toggle('on',b===sp)); saveDraft(); buzz(); }
+    const mic=e.target.closest('[data-mic]'); if(mic){ e.preventDefault(); dictate(mic); } }; }
+function saveDraft(){ LS('draft_'+P.type,{f:P.f,chars:P.chars,spice:P.spice}); }
+const buzz=()=>{ try{ navigator.vibrate&&navigator.vibrate(8); }catch(e){} };
+function filled(){ const t=T(); return t[4].some(([k,,kind])=>kind==='beats'?[0,1,2].some(i=>(P.f[k+i]||'').trim()):kind==='panels'?[1,2,3,4].some(i=>(P.f['panel'+i]||'').trim()):kind.startsWith('chars')?P.chars.length||(P.f.otherChars||'').trim():(P.f[k]||'').trim()); }
+function extras(){ P.step='extras'; const t=T(), need=P.type==='art';
+  $('#app').innerHTML=`<button class="back" id="xBack">← back to your pitch</button><h2>Add something? ${need?'':'<small class="tiny">(optional)</small>'}</h2>
+    <div class="extras"><button class="ex ${P.files.some(f=>f.kind==='sketch')?'done':''}" id="xSketch"><span>✏️</span>Sketch it</button><label class="ex ${P.files.some(f=>f.kind==='photo')?'done':''}"><span>📷</span>Photo<input type="file" accept="image/*" id="xPhoto" hidden></label><button class="ex ${P.files.some(f=>f.kind==='voice')?'done':''}" id="xVoice"><span>🎙</span>${P.type==='song'?'Hum it':'Voice memo'}</button></div>
+    <div id="xRec"></div><div class="att" id="xAtt"></div>
+    <h2>Who's pitching?</h2><div class="card who"><label class="f" style="margin:0"><span>Your name or @</span><input class="in" id="xBy" value="${esc(P.by)}" placeholder="Anonymous is fine too" maxlength="40"></label>
+      <label class="ok"><input type="checkbox" id="xShout" ${P.shout?'checked':''}> Shout me out if this gets used</label>
+      <label class="f" style="margin:0"><span>Contact <small class="tiny">(optional, only ${esc(P.cfg.who||'the creator')} sees it)</small></span><input class="in" id="xContact" value="${esc(P.contact)}" placeholder="Instagram, Discord, email…" maxlength="80"></label>
+      <input class="hp" id="xHp" tabindex="-1" autocomplete="off" aria-hidden="true"></div>`;
+  bar(true,'SEND IT 🚀'); renderAtt();
+  $('#xBack').onclick=form; $('#xSketch').onclick=sketch; $('#xVoice').onclick=voice; $('#xPhoto').onchange=e=>photo(e.target.files[0]);
+  $('#xBy').oninput=e=>{ P.by=e.target.value; LS('by',P.by); }; $('#xShout').onchange=e=>P.shout=e.target.checked; $('#xContact').oninput=e=>P.contact=e.target.value; window.scrollTo(0,0); }
+function renderAtt(){ const el=$('#xAtt'); if(!el) return; el.innerHTML=P.files.map((f,i)=>`<div>${f.kind==='voice'?`<audio controls src="${f.url}"></audio>`:`<img src="${f.url}" alt="">`}<button data-rm="${i}" aria-label="Remove">✕</button></div>`).join(''); el.onclick=e=>{ const b=e.target.closest('[data-rm]'); if(b){ P.files.splice(+b.dataset.rm,1); extras(); } }; }
+function blobB64(blob){ return new Promise(r=>{ const fr=new FileReader(); fr.onload=()=>r(String(fr.result).split(',')[1]); fr.readAsDataURL(blob); }); }
+async function photo(file){ if(!file) return; try{ const url=URL.createObjectURL(file), im=await new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=url; }); const s=Math.min(1,1400/Math.max(im.width,im.height)), c=document.createElement('canvas'); c.width=Math.round(im.width*s); c.height=Math.round(im.height*s); c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+  const blob=await new Promise(r=>c.toBlob(r,'image/jpeg',.82)); P.files=P.files.filter(f=>f.kind!=='photo'); P.files.push({kind:'photo',mime:'image/jpeg',name:'photo.jpg',blob,url:URL.createObjectURL(blob)}); extras(); }catch(e){ toast('Couldn\'t read that photo'); } }
+
+/* ---------- sketch pad ---------- */
+function sketch(){ const cols=['#111111','#e03131','#f59f00','#2fbf71','#1c7ed6','#7048e8','#ff4d8d','#ffffff'], pad=document.createElement('div'); pad.className='pad';
+  pad.innerHTML=`<canvas id="sk"></canvas><div class="tools">${cols.map((c,i)=>`<button class="sw ${i?'':'on'}" data-c="${c}" style="background:${c}"></button>`).join('')}<button class="tb" data-s="4">S</button><button class="tb on" data-s="9">M</button><button class="tb" data-s="22">L</button><button class="tb" id="skU">↶</button><button class="tb" id="skC">🗑</button><span style="flex:1"></span><button class="tb" id="skX">Cancel</button><button class="tb on" id="skOk">✓ Use it</button></div>`;
+  document.body.appendChild(pad); const cv=$('#sk'), r=cv.getBoundingClientRect(), dpr=Math.min(2,devicePixelRatio||1); cv.width=r.width*dpr; cv.height=r.height*dpr; const g=cv.getContext('2d'); g.scale(dpr,dpr); g.fillStyle='#fff'; g.fillRect(0,0,r.width,r.height); g.lineCap=g.lineJoin='round';
+  let col=cols[0], size=9, last=null, undo=[]; const snap=()=>{ undo.push(g.getImageData(0,0,cv.width,cv.height)); if(undo.length>20) undo.shift(); };
+  cv.onpointerdown=e=>{ snap(); cv.setPointerCapture(e.pointerId); last=[e.offsetX,e.offsetY]; g.fillStyle=col; g.beginPath(); g.arc(last[0],last[1],size/2,0,7); g.fill(); };
+  cv.onpointermove=e=>{ if(!last) return; const p=[e.offsetX,e.offsetY], w=size*(e.pointerType==='pen'?(e.pressure||.5)*1.6:1); g.strokeStyle=col; g.lineWidth=w; g.beginPath(); g.moveTo(...last); g.lineTo(...p); g.stroke(); last=p; };
+  cv.onpointerup=cv.onpointercancel=()=>{ last=null; };
+  pad.onclick=async e=>{ const c=e.target.closest('[data-c]'); if(c){ col=c.dataset.c; $$('.pad .sw').forEach(b=>b.classList.toggle('on',b===c)); buzz(); }
+    const s=e.target.closest('[data-s]'); if(s){ size=+s.dataset.s; $$('[data-s]').forEach(b=>b.classList.toggle('on',b===s)); }
+    if(e.target.id==='skU'&&undo.length){ g.putImageData(undo.pop(),0,0); } if(e.target.id==='skC'){ snap(); g.fillStyle='#fff'; g.fillRect(0,0,r.width,r.height); }
+    if(e.target.id==='skX') pad.remove();
+    if(e.target.id==='skOk'){ const blob=await new Promise(rr=>cv.toBlob(rr,'image/png')); P.files=P.files.filter(f=>f.kind!=='sketch'); P.files.push({kind:'sketch',mime:'image/png',name:'sketch.png',blob,url:URL.createObjectURL(blob)}); pad.remove(); extras(); } }; }
+
+/* ---------- voice memo ---------- */
+let REC=null;
+async function voice(){ const el=$('#xRec'); if(REC){ REC.mr.stop(); return; } let stream; try{ stream=await navigator.mediaDevices.getUserMedia({audio:true}); }catch(e){ return toast('🎙 Mic blocked. Allow the microphone and try again.'); }
+  const mime=['audio/webm;codecs=opus','audio/mp4','audio/webm'].find(m=>window.MediaRecorder&&MediaRecorder.isTypeSupported&&MediaRecorder.isTypeSupported(m))||''; const mr=new MediaRecorder(stream,mime?{mimeType:mime}:{}), chunks=[]; const ac=new (window.AudioContext||window.webkitAudioContext)(), an=ac.createAnalyser(); ac.createMediaStreamSource(stream).connect(an); const buf=new Float32Array(an.fftSize);
+  REC={mr,t0:Date.now()}; el.innerHTML=`<div class="card rec"><b>🔴 Recording</b><span id="rT">0:00</span><div class="meter"><i id="rM"></i></div><button class="btn" id="rStop">■ Stop</button></div>`; $('#rStop').onclick=()=>mr.stop(); $('#xVoice').innerHTML='<span>■</span>Stop';
+  const tick=()=>{ if(!REC) return; an.getFloatTimeDomainData(buf); let s=0; for(const v of buf) s+=v*v; $('#rM')&&($('#rM').style.width=Math.min(100,Math.sqrt(s/buf.length)*600)+'%'); const sec=(Date.now()-REC.t0)/1000; $('#rT')&&($('#rT').textContent=`${Math.floor(sec/60)}:${String(Math.floor(sec%60)).padStart(2,'0')}`); if(sec>90) mr.stop(); requestAnimationFrame(tick); }; tick();
+  mr.ondataavailable=e=>e.data.size&&chunks.push(e.data); mr.onstop=()=>{ stream.getTracks().forEach(t=>t.stop()); ac.close(); REC=null; const blob=new Blob(chunks,{type:mr.mimeType||'audio/webm'}); P.files=P.files.filter(f=>f.kind!=='voice'); P.files.push({kind:'voice',mime:blob.type,name:'voice.'+(/mp4/.test(blob.type)?'m4a':'webm'),blob,url:URL.createObjectURL(blob)}); extras(); }; mr.start(250); }
+
+/* ---------- dictation (free, built into the browser) ---------- */
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition; let DICT=null;
+function dictate(btn){ if(DICT){ DICT.stop(); return; } const ta=btn.parentElement.querySelector('textarea'), r=new SR(); r.lang=navigator.language||'en-US'; r.interimResults=true; r.continuous=true; const base=ta.value?ta.value.replace(/\s*$/,' '):''; let fin='';
+  r.onresult=e=>{ let interim=''; for(let i=e.resultIndex;i<e.results.length;i++){ const t=e.results[i][0].transcript; if(e.results[i].isFinal) fin+=t+' '; else interim+=t; } ta.value=base+fin+interim; P.f[ta.dataset.k]=ta.value; saveDraft(); };
+  r.onend=()=>{ DICT=null; btn.classList.remove('on'); }; r.onerror=()=>{ toast('🎤 Couldn\'t hear you. Typing works too!'); }; DICT=r; btn.classList.add('on'); r.start(); }
+
+/* ---------- send ---------- */
+function compose(){ const t=T(), lines=[]; let title=(P.f.title||'').trim();
+  t[4].forEach(([k,label,kind])=>{ if(k==='title') return; if(kind==='beats'){ const b=['Setup','Chaos','Ending'].map((n,i)=>(P.f[k+i]||'').trim()?`${n}: ${P.f[k+i].trim()}`:'').filter(Boolean); if(b.length) lines.push(b.join('\n')); }
+    else if(kind==='panels'){ const b=[1,2,3,4].map(i=>(P.f['panel'+i]||'').trim()?`Panel ${i}: ${P.f['panel'+i].trim()}`:'').filter(Boolean); if(b.length) lines.push(b.join('\n')); }
+    else if(kind.startsWith('chars')){ } else if((P.f[k]||'').trim()) lines.push(t[4].length>2&&!['body','logline'].includes(k)?`${label.replace(/\s*\(optional\)|\?$/g,'')}: ${P.f[k].trim()}`:P.f[k].trim()); });
+  const chars=[...P.chars,...(P.f.otherChars||'').split(/[,&]| and /).map(s=>s.trim()).filter(Boolean)];
+  if(!title){ title=P.type==='line'?`${chars[0]||'Someone'}: “${(P.f.line||'').trim().slice(0,50)}”`:P.type==='headcanon'?`${chars[0]||'Headcanon'}: ${(P.f.body||'').trim().slice(0,60)}`:P.type==='duo'?chars.slice(0,2).join(' & ')||'A duo':(P.f.body||P.f.logline||'').trim().slice(0,60)||t[2]; }
+  return {v:1,type:P.type,typeLabel:t[2],e:t[1],title,body:lines.join('\n\n'),fields:P.f,chars,spice:P.spice,spiceLabel:SPICE[P.spice][1],by:P.by.trim(),shout:P.shout,contact:P.contact.trim(),lang:navigator.language||'',ua:/iPhone|iPad/.test(navigator.userAgent)?'iOS':/Android/.test(navigator.userAgent)?'Android':'Desktop'}; }
+async function send(){ if(P.sending) return; if(P.type==='art'&&!P.files.some(f=>f.kind!=='voice')) return toast('🎨 Add a sketch or a photo first'); const wait=(LS('last')||0)+25000-Date.now(); if(wait>0) return toast(`Slow down, legend. Try again in ${Math.ceil(wait/1000)}s`);
+  if(Date.now()-P.t0<4000) return toast('One sec…'); P.sending=true; bar(true,'SENDING…',true);
+  try{ const files=[]; for(const f of P.files) files.push({kind:f.kind,mime:f.mime,name:f.name,data:await blobB64(f.blob)}); const r=await post({a:'pitch',p:compose(),files,hp:$('#xHp')?.value||''});
+    if(!r.ok) throw new Error(r.err==='closed'?'The pitch box just closed. Try again later!':r.err==='busy'?'Too many pitches today. Try tomorrow!':r.err==='big'?'That\'s too long. Trim it a little.':'Something broke ('+r.err+')');
+    LS('last',Date.now()); LS('draft_'+P.type,null); const n=(LS('count')||0)+1; LS('count',n); done(n); }
+  catch(e){ toast('😬 '+(e.message||'Couldn\'t send. Check your signal and try again.')); bar(true,'SEND IT 🚀'); } finally{ P.sending=false; } }
+function done(n){ P.step='done'; const C=P.cfg, c=(C.cast||[]).filter(x=>x.art), pick=c[Math.floor(Math.random()*c.length)];
+  const lines=['This is going straight in the vault.','Pitch received. Brain: activated.','Sent. Someone is going to read this and laugh.','The writers\' room thanks you.','Yep. That\'s a pitch alright.','Okay this one\'s actually good.'];
+  $('#app').innerHTML=`<div class="msg">${pick?`<img src="${esc(pick.art)}" alt="" style="width:150px;height:150px;object-fit:contain;animation:bob 2s ease-in-out infinite">`:'<div class="big">🚀</div>'}<h2>PITCHED!</h2><p style="font-weight:700">${esc(lines[Math.floor(Math.random()*lines.length)])}</p><p class="tiny">That's ${n} pitch${n>1?'es':''} from you. ${esc(C.who||'The creator')} gets pinged right away.</p><button class="btn go" id="dAgain" style="width:100%;margin-top:14px">PITCH ANOTHER 💡</button><button class="btn" id="dShare" style="width:100%;margin-top:10px">📤 Send the Pitch Box to a friend</button></div>`;
+  bar(false,''); confetti(); $('#dAgain').onclick=home; $('#dShare').onclick=async()=>{ const u=location.href; try{ if(navigator.share) await navigator.share({title:'Pitch Box',text:`Pitch ideas to ${C.show||'Nenjac'}!`,url:u}); else { await navigator.clipboard.writeText(u); toast('📋 Link copied'); } }catch(e){} }; window.scrollTo(0,0); }
+function confetti(){ const c=$('#conf'), g=c.getContext('2d'); c.width=innerWidth; c.height=innerHeight; const P2=Array.from({length:140},()=>({x:innerWidth/2,y:innerHeight*.35,vx:(Math.random()-.5)*14,vy:-Math.random()*14-4,r:Math.random()*7,c:['#ffc81e','#ff4d8d','#22d3ee','#2fbf71','#7048e8'][Math.floor(Math.random()*5)],s:6+Math.random()*6})); let t=0;
+  const f=()=>{ g.clearRect(0,0,c.width,c.height); P2.forEach(p=>{ p.vy+=.35; p.x+=p.vx; p.y+=p.vy; p.r+=.2; g.save(); g.translate(p.x,p.y); g.rotate(p.r); g.fillStyle=p.c; g.fillRect(-p.s/2,-p.s/4,p.s,p.s/2); g.restore(); }); if(++t<150) requestAnimationFrame(f); else g.clearRect(0,0,c.width,c.height); }; f(); buzz(); }
+$('#bBack').onclick=()=>{ if(P.step==='form') home(); else if(P.step==='extras') form(); };
+$('#bGo').onclick=()=>{ if(P.step==='form'){ if(!filled()) return toast('Fill in at least one thing first 😅'); extras(); } else if(P.step==='extras') send(); };
+
+/* ---------- boot ---------- */
+(async()=>{ P.d=urlD(); if(!P.d){ $('#app').innerHTML='<div class="msg"><div class="big">🔗</div><h2>Missing link</h2><p>This link is missing its address. Ask for the full Pitch Box link.</p></div>'; return; } LS('d',P.d);
+  try{ const c=await getJSON({a:'pcfg'}); if(!c||!c.ok) throw new Error(c&&c.err||'no'); P.cfg=c; }
+  catch(e){ $('#app').innerHTML='<div class="msg"><div class="big">📡</div><h2>Can\'t reach the Pitch Box</h2><p>Check your signal and refresh. If it keeps happening, the box might be getting updated.</p><button class="btn" onclick="location.reload()">↻ Try again</button></div>'; return; }
+  document.title=`Pitch Box · ${P.cfg.show||'Nenjac'}`; $('#hTitle').textContent=`${(P.cfg.show||'NENJAC').toUpperCase()} PITCH BOX`; $('#hSub').textContent=`Got an idea? Pitch it to ${P.cfg.who||'the creator'}. Every single one gets read.`;
+  if(!P.cfg.open){ $('#app').innerHTML='<div class="msg"><div class="big">🔒</div><h2>Closed for now</h2><p>The pitch box is closed right now. Check back soon!</p></div>'; return; } home(); })();
+</script></body></html>

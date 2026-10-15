@@ -1,4 +1,4 @@
-NENJAC CREATOR 5.1: how to run it
+NENJAC CREATOR 5.2: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -86,6 +86,17 @@ ON YOUR PHONE
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
 
+NEW IN 5.2: THE PITCH BOX
+  💡 Write → Pitch Box. Uses the same Google Drive drop box as actor invites.
+     ONE-TIME: ⚙️ Setup & alerts → 📋 Copy the new script → paste over your Nenjac Drop Box
+     script at script.google.com → 💾 Save → pick "setup" up top and ▶ Run (allow the new
+     permissions: it can now email you and ping your phone) → Deploy → Manage deployments →
+     ✏️ → Version: New version → Deploy → 🔌 Check again.
+     📣 Share the link: it opens pitch.html (in this folder) on any phone. No login.
+     Pings: email (free, from your own script), phone push via the free ntfy app (subscribe
+     to the topic shown in Setup), and pop-ups/badges while the app is open.
+     🌟 Feature a pitch → it shows on the public Pitch Wall where people can 🔥 it.
+
 NEW IN 5.1: THE FACE UPDATE
   🙂 FACE RIGS (Puppet Studio). Hit 🙂 on anyone in the cast. Pick eyes, brows and a mouth,
      drag the 👁 👁 👄 handles onto the face (⬆ moves the brows, Shift moves one eye alone),
@@ -143,8 +154,8 @@ NEW IN 4.9.2: THE CLEANUP UPDATE
   ⏳ TIME MACHINE. Settings → Backup & data (or ⌘K "Time Machine"). Older versions of every
      script, comic, animation and song. Peek, then restore.
 
-PUSHING 5.1
-  index.html, sw.js and this file changed. Commit + push in GitHub Desktop like always.
+PUSHING 5.2
+  index.html, sw.js, this file AND the new pitch.html changed. Commit all of them. Commit + push in GitHub Desktop like always.
 
 NEW IN 4.9: THE NENJAC CITY UPDATE
   🏙 CITY tab. Your whole cast lives in a big top-down Nenjac City. They go to school
