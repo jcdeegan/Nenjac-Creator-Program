@@ -1,4 +1,4 @@
-NENJAC CREATOR 4.5: how to run it
+NENJAC CREATOR 4.7: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -7,6 +7,8 @@ THE FILES
   Nenjac Creator/
     index.html             <- the app
     assets/                <- your art, backgrounds, props and music
+      classic nenjac/      <- web-sized Classic Nenjac art + the 4 classic episodes
+      sound fx/            <- the real sound effects (neen, vine boom, crash...)
     manifest.webmanifest   <- these five make it installable as an app
     sw.js                     when it's on a website (GitHub Pages).
     icon-192.png              Leave them next to index.html.
@@ -83,6 +85,45 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 4.7: THE PLAYGROUND UPDATE
+  🧨 NENJAC PLAYGROUND (Chaos Corner, top card). A ragdoll sandbox with your cast.
+     Drag people and fling them. Pick anything on the left, then click the stage:
+     explosives, throwables, blades (grab one and swing it), guns, fire/ice/toxic waste/
+     tornadoes, vices, food, fun stuff, spells, energy powers, hero powers, fatalities,
+     airstrikes and healing. Right-click deletes. Space pauses, S is slow-mo, G cycles
+     gravity, R revives everybody, F is fullscreen. 📸 takes a screenshot, ⏺ records a
+     clip (it lands in Nenjac Cinemas too).
+  🧬 FUSION MAKER (Chaos Corner). Pick two characters, hit FUSE!, watch the dance.
+     Save the fusion to the Bible (group "Fusions"), drop it in the Playground, save a
+     PNG, or export the dance as an MP4.
+  🤫 There's a secret in Nenjac Cinemas. Type something while you're in there.
+
+PUSHING 4.7
+  Only index.html and sw.js changed. Commit + push in GitHub Desktop like always.
+
+NEW IN 4.6: THE REWIND UPDATE
+  - 🍿 Nenjac Cinemas (new tab + the big red door on the home page). Classic
+    Season 1 is in there, and every MP4 you export (Animate, Shorts, Card Shop)
+    gets saved there automatically. You can also add videos or YouTube links.
+  - 📼 Classic Nenjac. The old realistic art lives in assets/classic nenjac/ as
+    web-sized copies (backgrounds .jpg, characters .webp, episodes 720p .mp4).
+    The ORIGINAL full-size files were moved to:
+        NenjacSpinoffCreator/kept off the website/classic nenjac originals/
+    so they don't get pushed to GitHub (they were 3 GB; GitHub's limit is
+    100 MB a file). Nothing was deleted.
+  - "warren's desk" turned out to be a see-through overlay, so it's a PROP
+    (Animate → 📼 Classic → Classic props), not a background.
+  - Type "classic" anywhere (not in a text box) for Classic mode. Type it again
+    to go back.
+  - The face rig picker, mouths, eyes, walk styles, voice effect sliders,
+    generated theme songs and everything else: see ✨ What's new in the app.
+
+PUSHING 4.6
+  The episodes add about 180 MB to the repo (biggest file 53 MB). GitHub is
+  fine with that, the first push just takes a minute. If GitHub Desktop ever
+  complains about a file over 100 MB, it's something in "kept off the website",
+  which should never be inside the Nenjac Creator folder.
 
 NEW IN 4.5: ACTORS RECORD THEIR LINES ON THEIR PHONES
   1) One-time (optional but recommended): 🎙 Voice Booth → 📨 Actors → ☁️ Google Drive.
