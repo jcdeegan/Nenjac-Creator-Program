@@ -1,4 +1,4 @@
-NENJAC CREATOR 4.8: how to run it
+NENJAC CREATOR 4.9: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -85,6 +85,24 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 4.9: THE NENJAC CITY UPDATE
+  🏙 CITY tab. Your whole cast lives in a big top-down Nenjac City. They go to school
+     and work, eat, sleep, hang out, make friends and enemies, catch feelings, date,
+     break up, even propose, and it keeps going while you're away (you get a "while you
+     were gone" recap). Drag to pan, scroll or pinch to zoom, click anyone or anything.
+     Bubbles: black = needs an item, orange = friendship advice, pink = love advice,
+     blue = bored, green = a goal, yellow = good news, purple = weird, red = emergency.
+     DRAG a person onto another person to make them hang out, or onto a building to
+     send them there. 🎁 Give gifts, 💘 Love Tester, 📰 Gazette, 👥 People, 1×/4×/15×.
+  🎤 NENJAC NIGHT FUNKIN' (Chaos Corner, top card). Arrow keys / WASD (or DFJK) on the
+     beat. Story weeks, Freeplay vs anyone, Showdowns. Enter pauses. If the arrows feel
+     late (Bluetooth headphones), use Options → Calibrate offset. Bet on yourself in
+     Freeplay (Tony caps your winnings per day), or bet on CPU Showdowns in the Casino.
+  📼 EMPIRE: new stores + rooms for video games, music, movies, skateboards and the Stash.
+
+PUSHING 4.9
+  index.html, sw.js and this file changed. Commit + push in GitHub Desktop like always.
 
 NEW IN 4.8: THE MONEY UPDATE
   💵 NENJAC BUCKS. Earned only by making stuff: new writing (anywhere), new shapes in the
