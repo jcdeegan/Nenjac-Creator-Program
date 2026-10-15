@@ -1,4 +1,4 @@
-NENJAC CREATOR 4.4: how to run it
+NENJAC CREATOR 4.5: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -83,6 +83,24 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 4.5: ACTORS RECORD THEIR LINES ON THEIR PHONES
+  1) One-time (optional but recommended): 🎙 Voice Booth → 📨 Actors → ☁️ Google Drive.
+     Follow the 6 steps (copy the script → script.google.com → paste → Deploy as a
+     Web app, Execute as: Me, Who has access: Anyone → allow it → paste the /exec URL
+     → Connect & test). Takes then go to a "Nenjac Takes" folder in your Drive.
+     Google says "hasn't verified this app": that's because it's YOUR script. Click
+     Advanced → Go to Nenjac Drop Box.
+     Your secret key lives only on this computer. On another computer, open the same
+     tab and paste the key (🔐 section) so it can pull takes too.
+  2) 📨 New invite: pick the episode + character, tick what they can see, add your
+     name and a note → Make the invite → 📤 Share / copy the text / show the QR code.
+  3) They open it on their phone, pick who they are, do a mic check and record.
+  4) 📬 Invites & takes → Bring them in. Takes go on the right lines (⭐ keeper if the
+     line didn't have one; their newest redo wins). 🚫 Turn off kills a link.
+  No Google Drive? Invites still work: at the end they tap 📤 and send you a
+  ".nenjac-takes.txt" file. Drag it onto the app, or 📥 Import a takes file.
+  Invites open your GitHub Pages site, so push this version first!
 
 NEW IN 4.4 (THE PICTURE DAY UPDATE), QUICK GUIDE
   👥 Two+ people saying a line: on the Writing Desk hit 👥 Together, or just type
