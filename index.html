@@ -2993,6 +2993,63 @@ body.night .pk-day{background:#1f2128;border-color:#333}
 #app{grid-template-rows:auto auto 1fr 66px}
 @media (max-width:700px){ #app{grid-template-rows:auto auto 1fr 54px} .hubbar{min-height:0} }
 @media (max-width:760px){ nav.hubs .hub-search .lbl{display:none} }
+/* 5.0 Puppet Studio */
+.door.d19{background:linear-gradient(160deg,#fff 55%,#fff0d6)}.door.d20{background:linear-gradient(160deg,#fff 55%,#d8f5e3)}.door.d21{background:linear-gradient(160deg,#fff 55%,#ffd8d8)}
+.pz{display:flex;flex-direction:column;gap:10px;min-width:0}
+.pz-top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.pz-top .grow{flex:1}.pz-name{font-family:var(--display);font-size:22px;max-width:320px}
+.pz-mode{display:flex;gap:4px}
+.pz-body{display:grid;grid-template-columns:200px minmax(0,1fr) 240px;gap:12px;align-items:start}
+@media(max-width:1100px){.pz-body{grid-template-columns:minmax(0,1fr) 240px}.pz-scenes{grid-column:1/-1;order:3}}
+@media(max-width:760px){.pz-body{grid-template-columns:minmax(0,1fr)}.pz-side{order:2}}
+.pz-scenes,.pz-side{background:#fff;border:3px solid #000;border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:6px;box-shadow:3px 3px 0 #000;color:#111}
+.pz-scenes h4,.pz-side h4{margin:6px 0 2px;font-size:14px}
+.pz-sc{display:flex;flex-direction:column;text-align:left;background:#f8f9fa;border:2px solid #000;border-radius:10px;padding:6px 8px;cursor:pointer;font:inherit;color:#111}.pz-sc.on{background:var(--sun,#ffc81e)}.pz-sc small{opacity:.65;font-size:11px}
+.pz-ep{display:flex;flex-direction:column;gap:5px;margin-top:8px;padding-top:8px;border-top:2px dashed #ccc}.pz-ep small{opacity:.6}
+.pz-main{display:flex;flex-direction:column;gap:8px;min-width:0}
+.pz-stage{position:relative;border:4px solid #000;border-radius:14px;overflow:hidden;background:#111;box-shadow:4px 4px 0 #000}
+.pz-stage canvas{display:block;width:100%;height:auto;aspect-ratio:16/9;touch-action:none;outline:none}
+.pz-count{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-size:140px;color:#fff;text-shadow:5px 5px 0 #000;background:rgba(0,0,0,.35);pointer-events:none}
+.pz-rec{position:absolute;top:10px;left:12px;background:#e03131;color:#fff;font-weight:800;padding:3px 10px;border-radius:999px;border:2px solid #000;display:none;animation:pzBlink 1s infinite}
+#scr-puppet.pz-recording .pz-rec{display:block}@keyframes pzBlink{50%{opacity:.45}}
+.pz-prompt{position:absolute;left:10px;right:10px;bottom:10px;background:rgba(255,255,255,.93);color:#111;border:2px solid #000;border-radius:10px;padding:6px 10px;font-weight:700;font-size:14px}
+.pz-cam{position:absolute;right:10px;top:10px;width:120px;border:2px solid #000;border-radius:8px;transform:scaleX(-1);opacity:.85}
+.pz-trans{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.pz-meter{width:90px;height:12px;border:2px solid #000;border-radius:999px;overflow:hidden;background:#eee;display:inline-block}.pz-meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,#2f9e44,#fab005,#e03131);transition:width .06s}
+.pz-cast{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.pz-chip{display:flex;align-items:center;gap:6px;background:#fff;color:#111;border:3px solid #000;border-radius:999px;padding:3px 8px 3px 4px;cursor:pointer;box-shadow:2px 2px 0 #000}.pz-chip.on{background:var(--sun,#ffc81e);transform:translateY(-2px)}
+.pz-chip kbd{font-size:11px}.pz-chip select{font-size:11px;max-width:96px}
+.pz-ca{width:34px;height:34px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:#eee;border:2px solid #000}.pz-ca img,.pz-ca svg{width:100%;height:100%;object-fit:cover}
+.pz-x{border:0;background:none;cursor:pointer;opacity:.5;font-size:12px}.pz-x:hover{opacity:1}
+.pz-add{max-width:200px}
+.pz-keys{display:flex;flex-direction:column;gap:3px;font-size:12.5px}
+.pz-pads{display:grid;grid-template-columns:1fr 1fr;gap:5px}.pz-pads button{background:#f1f3f5;border:2px solid #000;border-radius:9px;padding:6px 4px;cursor:pointer;font:inherit;font-size:12px;color:#111}.pz-pads button:active{background:var(--sun,#ffc81e)}.pz-pads kbd{font-size:10px}
+.pz-watch{width:min(1000px,86vw)}.pz-watch canvas{width:100%;height:auto;border:3px solid #000;border-radius:10px;display:block;margin-bottom:8px;background:#000}
+.pz-exp{width:min(520px,86vw);display:flex;flex-direction:column;gap:8px}.pz-exp label{display:flex;gap:8px;align-items:flex-start}
+/* 5.0 Print Shop */
+.prs{display:flex;flex-direction:column;gap:12px;min-width:0}.prs-head h2{margin:0}
+.prs-kinds{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.prs-k{display:grid;grid-template-columns:30px 1fr;column-gap:6px;text-align:left;background:#fff;border:3px solid #000;border-radius:14px;padding:8px 10px;cursor:pointer;font:inherit;color:#111;box-shadow:3px 3px 0 #000}.prs-k span{grid-row:1/3;font-size:24px;align-self:center}.prs-k small{opacity:.6;font-size:11px}.prs-k.on{background:var(--sun,#ffc81e)}
+.prs-ed{display:grid;grid-template-columns:280px minmax(0,1fr) 240px;gap:14px;align-items:start}
+@media(max-width:1100px){.prs-ed{grid-template-columns:260px minmax(0,1fr)}.prs-out{grid-column:1/-1}}@media(max-width:760px){.prs-ed{grid-template-columns:minmax(0,1fr)}}
+.prs-form span{font-weight:700;font-size:13px}
+.prs-pal{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}.prs-pal button{width:30px;height:30px;border-radius:50%;border:3px solid #000;cursor:pointer;background:linear-gradient(135deg,var(--a) 50%,var(--b) 50%)}.prs-pal button.on{outline:3px solid var(--sun,#ffc81e);outline-offset:2px}
+.prs-cast{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px;max-height:220px;overflow:auto}.prs-cast button{width:44px;height:44px;border-radius:10px;border:2px solid #000;background:#fff;cursor:pointer;padding:2px;overflow:hidden;opacity:.55}.prs-cast button.on{opacity:1;background:var(--sun,#ffc81e);box-shadow:2px 2px 0 #000}.prs-cast button img,.prs-cast button svg{width:100%;height:100%;object-fit:contain}
+.prs-prev{position:relative;min-width:0}
+.prs-canvas{background:repeating-conic-gradient(#e9ecef 0 25%,#fff 0 50%) 0 0/24px 24px;border:3px solid #000;border-radius:12px;padding:10px;display:grid;place-items:center;box-shadow:4px 4px 0 #000}
+.prs-canvas canvas{width:100%;height:auto;justify-self:center;display:block;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.prs-busy{position:absolute;top:14px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:4px 12px;border-radius:999px;font-size:12px}
+.prs-out{display:flex;flex-direction:column;gap:8px;background:#fff;color:#111;border:3px solid #000;border-radius:14px;padding:10px;box-shadow:3px 3px 0 #000}.prs-out img{width:100%;border-radius:8px;border:2px solid #000}
+.prs-btns{display:flex;flex-direction:column;gap:6px}
+/* 5.0 Trailer Studio */
+.trl{display:flex;flex-direction:column;gap:12px;min-width:0}.trl-head h2{margin:0}
+.trl-body{display:grid;grid-template-columns:330px minmax(0,1fr);gap:14px;align-items:start}@media(max-width:900px){.trl-body{grid-template-columns:minmax(0,1fr)}.trl-main{order:-1}}
+.trl-form span{font-weight:700;font-size:13px}.trl-form select[multiple]{width:100%}
+.trl-gen{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}.trl-gen button{background:#fff;border:2px solid #000;border-radius:999px;padding:5px 10px;cursor:pointer;font:inherit;font-size:13px;color:#111}.trl-gen button.on{background:var(--sun,#ffc81e);box-shadow:2px 2px 0 #000}
+.trl-lines{display:flex;flex-direction:column;gap:5px;margin:4px 0 6px}.trl-line{display:grid;grid-template-columns:100px 1fr 22px;gap:4px;align-items:center}.trl-line select{min-width:0;font-size:12px}
+.trl-main{display:flex;flex-direction:column;gap:8px;min-width:0}
+.trl-stage{position:relative;border:4px solid #000;border-radius:14px;overflow:hidden;background:#000;box-shadow:4px 4px 0 #000}.trl-stage canvas{display:block;width:100%;height:auto;aspect-ratio:16/9}
+.trl-busy{position:absolute;top:12px;left:50%;transform:translateX(-50%);background:#fff;color:#111;padding:4px 12px;border-radius:999px;font-size:12px;border:2px solid #000}
+.pz-count[hidden]{display:none}.pz-top select.txt{width:auto;max-width:280px;flex:0 1 auto}.pz-top .pz-name{width:auto;flex:0 1 320px}
 
 </style>
 </head>
@@ -10856,7 +10913,7 @@ drawWheel=function(){ whRender(); }; spinWheel=function(){ whSpin(); };
    points, storage safety, one-tab guard, error catcher, offline app,
    help menu, what's new, accessibility.
    =================================================================== */
-const APP_NAME='Nenjac Creator', APP_VER='4.9.2', BACKUP_FORMAT=2;
+const APP_NAME='Nenjac Creator', APP_VER='5.0', BACKUP_FORMAT=2;
 const showName = () => (S.settings.showName||'').trim() || 'Nenjac';
 S.version = Math.max(S.version||1, 4);
 const ONLINE_APP = /^https?:$/.test(location.protocol);
@@ -10866,6 +10923,13 @@ const ONLINE_APP = /^https?:$/.test(location.protocol);
 
 /* ---------- WHAT'S NEW ---------- */
 const CHANGELOG=[
+  {v:'5.0',title:'The Make Anything Update',items:[
+    ['🎭','Live Puppet Studio','Improv a whole episode by puppeting your cast. Pick a set, add up to 6 characters, hit ⏺ and talk: whoever is selected talks with your voice. 1–6 switch who, arrows walk and hop, drag to move. Scenes stack into an episode.'],
+    ['🎛','Simple or Pro, your call','Simple is pick, record, done. Pro adds emotes (Z–N), sound pads (7–=), tilt/flip/grow, close-up camera cuts (T), voice filters per character, overdub passes (voice one character, rewind, voice the next) and webcam head tracking (beta).'],
+    ['🎬','Puppet → MP4 or Animate','Export the episode wide (16:9) or vertical (9:16) with a camera that follows whoever is talking. Or send it to Animate: every move becomes keyframes and every line is lip-synced, so you can polish it frame by frame.'],
+    ['🖨','Print Shop','Real print files at real sizes: sticker sheets (plus each sticker on its own), 18×24 posters (movie, WANTED, concert, minimal), T-shirt prints with a mockup, 2.25" button sheets, 8-page fold zines from your comics, DVD covers, VHS sleeves and album covers. PNG or PDF.'],
+    ['🎞','Surprise: Trailer Studio','Turn your cast into a movie trailer in one click. Five genres (Blockbuster, Horror, Rom-com, Indie, Anime), parody approval card, studio sting, title cards, voiced lines with subtitles, a montage that hits on every beat, the BRAAAM title drop and a billing block. Original music every time. 🔀 Re-cut for a different edit.'],
+  ]},
   {v:'4.9.2',title:'The Cleanup Update',items:[
     ['🧭','Five hubs instead of 20+ tabs','Home, Write, Make, Play and Watch. Pick one and its rooms show up in the strip under the header. The app remembers which room you were last in for each hub.'],
     ['🏠','A real Home screen','“Continue where you left off” (your latest script, comic, drawing, animation and songs), one-click New buttons, your next planned post, and every room grouped by hub.'],
@@ -35394,12 +35458,531 @@ function pkPostEd(){ const el=$('#pkPed'); if(!el) return; const p=S.posts.find(
 { const _p=CinemaDB.put.bind(CinemaDB); CinemaDB.put=function(f){ try{ if(f&&f.source==='export'&&!f.cues){ if(PK.lastCues&&PK.lastCues.blob===f.blob&&PK.lastCues.cues.length) f.cues=PK.lastCues.cues; else if(f.from==='anim'&&typeof AN!=='undefined'&&AN.proj?.cues?.length) f.cues=AN.proj.cues.filter(q=>q.text).map(q=>({t:q.t,dur:q.dur,who:q.who,text:q.text})); } }catch(e){} return _p(f); }; }
 { const _c=commands; commands=function(){ const C=_c(); const add=(ico,label,run,kw='')=>C.push({ico,label,run,kw:(label+' '+kw).toLowerCase()});
     PK_TOOLS.forEach(([k,e,n,d])=>add(e,`Post Kit: ${n}`,()=>{ go('post'); setTimeout(()=>pkTool(k),80); },d+' post instagram tiktok youtube')); return C; }; }
-if(!FIRST_RUN&&!S.settings.seen492) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello492" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>4.9.2: The Cleanup Update.</b><small>Five hubs instead of 20+ tabs, a Home screen, search everything (/), the Post Kit, and backups that carry your WHOLE universe.${S.settings.seen49?'':' Plus 4.9: Nenjac City and a rhythm game.'}</small><div class="row"><button class="btn sm primary" id="h492p">📲 Post Kit</button><button class="btn sm" id="h492w">✨ What's new</button><button class="btn sm" id="h492x" aria-label="Dismiss">✕</button></div></div></div>`);
+if(!FIRST_RUN&&!S.settings.seen492&&S.settings.seen50) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello492" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>4.9.2: The Cleanup Update.</b><small>Five hubs instead of 20+ tabs, a Home screen, search everything (/), the Post Kit, and backups that carry your WHOLE universe.${S.settings.seen49?'':' Plus 4.9: Nenjac City and a rhythm game.'}</small><div class="row"><button class="btn sm primary" id="h492p">📲 Post Kit</button><button class="btn sm" id="h492w">✨ What's new</button><button class="btn sm" id="h492x" aria-label="Dismiss">✕</button></div></div></div>`);
   const done=()=>{ S.settings.seen492=true; S.settings.seen49=true; S.settings.seen48=true; S.settings.seen47=true; S.settings.seen46=true; save(); $('#hello492')?.remove(); }; $('#h492p').onclick=()=>{ done(); go('post'); }; $('#h492w').onclick=()=>{ done(); openWhatsNew(); }; $('#h492x').onclick=done; },3300);
 if(FIRST_RUN) S.settings.seen492=true;
 /* 4.9.2: the planner syncs with the Shared Show; words that arrive from crewmates don't pay your wallet */
 if(typeof SY_COLS!=='undefined'&&!SY_COLS.includes('posts')) SY_COLS.push('posts');
 if(typeof syRun==='function'){ const _r=syRun; syRun=async function(){ try{ if(BK.ready) await bkAudit(); }catch(e){} const r=await _r.apply(this,arguments); try{ if(BK.ready&&!BK.busy){ bkTexts().forEach(t=>bkShingles(t,h=>{ if(!BK.set.has(h)){ BK.set.add(h); BK.dirty=true; } })); bkStoreSet(); } }catch(e){} return r; }; }
+
+/* =====================================================================
+   [PUPPET] 5.0 Live Puppet Studio. Improv a whole episode by puppeting
+   your cast live: you talk into the mic and whoever's selected talks.
+   Simple: pick a set + cast, hit record, press 1–6 to switch who's
+   talking. Pro: move/hop/tilt/flip/grow, emotes, sound pads, camera
+   close-ups, voice filters per character, overdub passes (voice one
+   character, then rewind and voice the next over it), webcam head and
+   jaw tracking (beta). Scenes → an episode → MP4 (wide or vertical with
+   a speaker-follow camera) or straight into Animate as keyframes.
+   ===================================================================== */
+SCREEN_NAMES.puppet='Puppet Studio';
+addTab('puppet','🎭','Puppet Studio',{before:'shorts',door:{cls:'d19',h:'Puppet Studio',p:'Improv a whole episode live. You talk, they talk. Switch characters with number keys, move them, emote, overdub, then export it or finish it in Animate.',k:'PERFORM',art:'Neen'}});
+try{ const mk=HUBS.find(h=>h.k==='make'); if(mk&&!mk.s.includes('puppet')) mk.s.splice(mk.s.indexOf('anim')+1,0,'puppet'); HUB_SHORT.puppet='Puppet Studio'; }catch(e){}
+const PZDB={db:null,open(){ return new Promise(res=>{ if(this.db) return res(this.db); try{ const r=indexedDB.open('nenjac-puppet',1); r.onupgradeneeded=()=>r.result.createObjectStore('eps',{keyPath:'id'}); r.onsuccess=()=>{ this.db=r.result; res(this.db); }; r.onerror=()=>res(null); }catch(e){ res(null); } }); },
+  async all(){ const db=await this.open(); if(!db) return []; return new Promise(res=>{ const q=db.transaction('eps').objectStore('eps').getAll(); q.onsuccess=()=>res((q.result||[]).sort((a,b)=>(b.updated||0)-(a.updated||0))); q.onerror=()=>res([]); }); },
+  async put(o){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction('eps','readwrite'); tx.objectStore('eps').put(o); tx.oncomplete=res; tx.onerror=res; }); },
+  async del(id){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction('eps','readwrite'); tx.objectStore('eps').delete(id); tx.oncomplete=res; tx.onerror=res; }); }};
+BK_STORES.push({key:'puppet',label:'Puppet Studio episodes',db:()=>PZDB,st:'eps'});
+ACH.push({id:'puppet1',e:'🎭',n:'Hand Up Its Back',d:'Record a scene in the Puppet Studio'},{id:'puppet2',e:'🎬',n:'Improv Episode',d:'Export a Puppet Studio episode'});
+const PZ_W=1280, PZ_H=720;
+const PZ_VOICES=[['none','🎙 My voice'],['deep','🐻 Deep'],['tiny','🐭 Tiny'],['radio','📻 Radio'],['robot','🤖 Robot'],['monster','👹 Monster'],['echo','🏔 Echo']];
+const PZ_EMO={z:['laugh','😂','Laugh'],x:['angry','💢','Angry'],c:['shock','❗','Shock'],v:['love','❤️','Love'],b:['spin','🌀','Spin'],n:['faint','💤','Faint']};
+const PZ_SFX={'7':'boom','8':'airhorn','9':'vineboom','0':'laugh','-':'rimshot','=':'crickets'};
+const PZ_PROMPTS=['{A} and {B} are stuck in {P}. Nobody has a phone.','{A} has to tell {B} a secret about {C}.','{A} is selling something terrible door to door. {B} answers.','Awkward first date: {A} and {B} at {P}.','{A} is interviewing for a job at {P}. {B} is the boss.','{A} found something in {P} that should not exist.','{A} is hosting a cooking show. {B} is the guest who can\'t cook.','Breaking news: {A} did something to {P}. {B} reports live.','{A} and {B} swap bodies. Only {C} notices.','{A} is trying to apologize to {B}. It keeps getting worse.','{A} is teaching {B} how to drive. {C} is in the back seat.','A talent show at {P}. {A} goes first. {B} heckles.','{A} thinks {B} is a ghost.','{A} and {B} are planning a heist on {P}.'];
+const PZ={ep:null,si:0,mode:'simple',act:0,live:[],rec:null,play:null,mic:null,an:null,level:0,lvSm:0,gate:.025,face:null,keys:{},raf:0,img:{},view:{z:1,x:.5,y:.5,tz:1,tx:.5,ty:.5,close:false},buf:{},prompt:'',last:0,drag:null};
+const pzScene=()=>PZ.ep&&PZ.ep.scenes[PZ.si];
+function pzNewScene(prev){ const set=prev?.set||(BACKGROUNDS.find(b=>/stage|theater/.test(b))||BACKGROUNDS[0]); const cast=(prev?.cast||[{name:'Deegs'},{name:'Starr'}].filter(c=>charByName(c.name))).map((c,i,a)=>({name:c.name,x:(i+1)/(a.length+1),y:.62,s:1,r:0,f:i>=a.length/2})); return {id:uid(),set,cast,passes:[]}; }
+function pzNewEp(){ return {id:uid(),name:'Improv Episode '+new Date().toLocaleDateString([],{month:'short',day:'numeric'}),scenes:[pzNewScene()],updated:Date.now()}; }
+async function pzSave(){ if(!PZ.ep) return; PZ.ep.updated=Date.now(); await PZDB.put(PZ.ep); }
+async function pzCharImg(name){ if(PZ.img[name]!==undefined) return PZ.img[name]; PZ.img[name]=null; const c=charByName(name); if(!c||!c.img) return null; try{ let im; if(c.img.startsWith('drawing:')){ const d=await ArtDB.get(c.img.slice(8)); if(d) im=await renderToCanvas(d,{maxSide:900}); } else im=await loadImg(assetURL(c.img)); if(!im) return null; const B=imgBox(im)||{x0:0,y0:0,x1:1,y1:1}; PZ.img[name]={im,B}; return PZ.img[name]; }catch(e){ return null; } }
+async function pzSetImg(p){ const k='set:'+p; if(PZ.img[k]!==undefined) return PZ.img[k]; PZ.img[k]=null; try{ PZ.img[k]=await loadImg(assetURL(p)); }catch(e){} return PZ.img[k]; }
+
+/* ---------- drawing one frame ---------- */
+function pzDrawPuppet(g,P,st,t,sel){ const I=PZ.img[P.name]; const H0=PZ_H*.62*st.s; const emo=st.emo, ea=emo?t-emo.t:9; let sx=1, sy=1, dx=0, dy=0, rot=st.r, alpha=1;
+  const breathe=Math.sin(t*2.2+P.name.length)*.012; sy+=breathe; sy+=st.m*.05; sx-=st.m*.02;
+  if(st.hop) dy-=st.hop*PZ_H;
+  if(emo&&ea<1.4){ const k=emo.e; if(k==='laugh'){ dy-=Math.abs(Math.sin(ea*16))*12*(1-ea/1.4); } else if(k==='angry'){ dx+=Math.sin(ea*70)*8*(1-ea/1.4); } else if(k==='shock'){ const a=Math.max(0,1-ea*2); sx+=a*.15; sy+=a*.25; dy-=a*20; } else if(k==='spin'){ sx*=Math.cos(Math.min(1,ea/.7)*Math.PI*4); } else if(k==='faint'){ rot+=Math.min(1,ea*2)*85*(P.f?-1:1); } }
+  else if(emo&&emo.e==='faint'&&ea<4){ rot+=85*(P.f?-1:1); alpha=1; }
+  g.save(); g.translate(st.x*PZ_W+dx,st.y*PZ_H+H0/2+dy); g.fillStyle='rgba(0,0,0,.25)'; g.beginPath(); g.ellipse(0,0,H0*.28,H0*.05,0,0,7); g.fill(); g.translate(0,-H0/2); g.rotate(rot*Math.PI/180); g.scale((st.f?-1:1)*sx,sy); g.globalAlpha=alpha;
+  if(I){ const im=I.im, W0=H0*im.width/im.height, B=I.B, my=(B.y0+(B.y1-B.y0)*.64)*im.height, gap=st.m*H0*.09, cutY=-H0/2+my/im.height*H0;
+    if(st.m>.03){ g.drawImage(im,0,0,im.width,my,-W0/2,-H0/2,W0,my/im.height*H0); const mw=(B.x1-B.x0)*W0*.42; g.fillStyle='#2a0505'; g.beginPath(); g.ellipse(((B.x0+B.x1)/2-.5)*W0,cutY+gap/2,mw/2,Math.max(1,gap/2+2),0,0,7); g.fill(); g.drawImage(im,0,my,im.width,im.height-my,-W0/2,cutY+gap,W0,(im.height-my)/im.height*H0); }
+    else g.drawImage(im,-W0/2,-H0/2,W0,H0);
+    if(emo&&emo.e==='angry'&&ea<1.4){ g.globalCompositeOperation='source-atop'; g.fillStyle=`rgba(255,0,0,${.25*(1-ea/1.4)})`; g.fillRect(-W0/2,-H0/2,W0,H0); g.globalCompositeOperation='source-over'; } }
+  else { g.fillStyle=groupColor((charByName(P.name)||{}).group); g.beginPath(); g.ellipse(0,0,H0*.25,H0*.45,0,0,7); g.fill(); g.fillStyle='#fff'; g.font=`900 ${H0*.25}px system-ui`; g.textAlign='center'; g.textBaseline='middle'; g.fillText(P.name[0],0,0); }
+  g.restore();
+  if(emo&&ea<1.6){ const ic=(Object.values(PZ_EMO).find(e=>e[0]===emo.e)||[])[1]; if(ic){ g.save(); g.globalAlpha=1-ea/1.6; g.font='54px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif'; g.textAlign='center'; g.fillText(ic,st.x*PZ_W+H0*.25,st.y*PZ_H-H0*.45-ea*60+dy); g.restore(); } }
+  if(sel){ g.save(); g.strokeStyle='rgba(255,212,59,.9)'; g.lineWidth=4; g.setLineDash([10,8]); g.beginPath(); g.ellipse(st.x*PZ_W,st.y*PZ_H+H0/2,H0*.33,H0*.07,0,0,7); g.stroke(); g.restore(); } }
+function pzDraw(g,sc,states,t,view,opts={}){ g.save(); g.fillStyle='#111'; g.fillRect(0,0,PZ_W,PZ_H); const v=view||{z:1,x:.5,y:.5};
+  g.translate(PZ_W/2,PZ_H/2); g.scale(v.z,v.z); g.translate(-v.x*PZ_W,-v.y*PZ_H);
+  const bg=PZ.img['set:'+sc.set]; if(bg){ const s=Math.max(PZ_W/bg.width,PZ_H/bg.height); g.drawImage(bg,(PZ_W-bg.width*s)/2,(PZ_H-bg.height*s)/2,bg.width*s,bg.height*s); } else { const gr=g.createLinearGradient(0,0,0,PZ_H); gr.addColorStop(0,'#2b2148'); gr.addColorStop(1,'#120f1f'); g.fillStyle=gr; g.fillRect(0,0,PZ_W,PZ_H); }
+  sc.cast.map((P,i)=>[P,i]).sort((a,b)=>states[a[1]].y-states[b[1]].y).forEach(([P,i])=>pzDrawPuppet(g,P,states[i],t,opts.sel===i)); g.restore(); }
+
+/* ---------- recorded tracks ---------- */
+function pzLerp(T,t,k){ const ts=T.t; if(!ts.length) return null; if(t<=ts[0]) return T[k][0]; if(t>=ts[ts.length-1]) return T[k][ts.length-1]; let lo=0, hi=ts.length-1; while(hi-lo>1){ const m=(lo+hi)>>1; if(ts[m]<=t) lo=m; else hi=m; } if(k==='f') return T.f[lo]; const a=(t-ts[lo])/Math.max(1e-6,ts[hi]-ts[lo]); return T[k][lo]+(T[k][hi]-T[k][lo])*a; }
+function pzStatesAt(sc,t,skipPass){ return sc.cast.map((P,i)=>{ const st={x:P.x,y:P.y,s:P.s,r:P.r,f:P.f,m:0,hop:0,emo:null}; let owner=null; sc.passes.forEach(p=>{ if(p===skipPass) return; const T=p.tr&&p.tr[i]; if(!T||!T.t.length) return; if(p.own.includes(i)&&t>=T.t[0]-.001) owner=p; const mm=pzLerp(T,t,'m'); if(mm!=null&&t<=p.dur+.05) st.m=Math.max(st.m,mm); });
+    if(owner){ const T=owner.tr[i]; ['x','y','s','r','hop'].forEach(k=>{ const v=pzLerp(T,t,k); if(v!=null) st[k]=v; }); st.f=!!pzLerp(T,t,'f'); }
+    sc.passes.forEach(p=>{ if(p===skipPass) return; (p.ev||[]).forEach(e=>{ if(e.k==='emo'&&e.i===i&&e.t<=t&&(!st.emo||e.t>st.emo.t)) st.emo={e:e.e,t:e.t}; }); }); return st; }); }
+const pzDur=sc=>Math.max(0,...sc.passes.map(p=>p.dur||0));
+function pzCamAt(sc,t,states){ let c=null; sc.passes.forEach(p=>(p.ev||[]).forEach(e=>{ if(e.k==='cam'&&e.t<=t&&(!c||e.t>=c.t)) c=e; })); if(!c||c.i<0) return {z:1,x:.5,y:.5}; const st=states[c.i]; return st?{z:1.6,x:clamp(st.x,.32,.68),y:clamp(st.y-.04,.32,.68)}:{z:1,x:.5,y:.5}; }
+
+/* ---------- audio: voice filters, mixing ---------- */
+function pzVoiceChain(ctx,src,dest,kind){ const n=(t,o={})=>Object.assign(ctx.createBiquadFilter(),{type:t}), conn=(...a)=>{ for(let i=0;i<a.length-1;i++) a[i].connect(a[i+1]); };
+  const curve=k=>{ const c=new Float32Array(1024); for(let i=0;i<1024;i++){ const x=i/512-1; c[i]=(1+k)*x/(1+k*Math.abs(x)); } return c; };
+  if(kind==='deep'){ const a=n('lowshelf'); a.frequency.value=220; a.gain.value=9; const b=n('lowpass'); b.frequency.value=2400; conn(src,a,b,dest); }
+  else if(kind==='tiny'){ const a=n('highpass'); a.frequency.value=380; const b=n('peaking'); b.frequency.value=3200; b.gain.value=8; conn(src,a,b,dest); }
+  else if(kind==='radio'){ const a=n('bandpass'); a.frequency.value=1700; a.Q.value=.9; const w=ctx.createWaveShaper(); w.curve=curve(6); const g=ctx.createGain(); g.gain.value=.8; conn(src,a,w,g,dest); }
+  else if(kind==='robot'){ const g=ctx.createGain(); g.gain.value=0; const o=ctx.createOscillator(); o.frequency.value=55; o.connect(g.gain); o.start(); const hp=n('highpass'); hp.frequency.value=120; conn(src,hp,g,dest); }
+  else if(kind==='monster'){ const a=n('lowpass'); a.frequency.value=900; const w=ctx.createWaveShaper(); w.curve=curve(25); const g=ctx.createGain(); g.gain.value=.55; conn(src,a,w,g,dest); }
+  else if(kind==='echo'){ const d=ctx.createDelay(1); d.delayTime.value=.2; const fb=ctx.createGain(); fb.gain.value=.38; src.connect(dest); src.connect(d); d.connect(fb); fb.connect(d); d.connect(dest); }
+  else src.connect(dest); }
+async function pzPassBuf(p){ if(PZ.buf[p.id]) return PZ.buf[p.id]; if(!p.blob) return null; try{ const ac=new OfflineAudioContext(1,1,48000); PZ.buf[p.id]=await ac.decodeAudioData(await p.blob.arrayBuffer()); }catch(e){ console.warn('puppet audio',e); PZ.buf[p.id]=null; } return PZ.buf[p.id]; }
+/* schedule one pass's voice into ctx at time `at` (scene time 0), with per-speaker filters switched by the 'act' events */
+async function pzSchedPass(ctx,dest,sc,p,at,from=0){ const buf=await pzPassBuf(p); if(!buf) return []; const voices=PZ.ep.voices||{}, kinds=[...new Set(sc.cast.map(c=>voices[c.name]||'none'))], acts=(p.ev||[]).filter(e=>e.k==='act').sort((a,b)=>a.t-b.t), nodes=[];
+  const src=ctx.createBufferSource(); src.buffer=buf; const off=(p.lat||0)+from; if(off>=buf.duration) return [];
+  kinds.forEach(kind=>{ const g=ctx.createGain(); g.gain.value=0; const actAt=t=>{ let a=p.act0??0; acts.forEach(e=>{ if(e.t<=t) a=e.i; }); return a; };
+    const on=t=>(voices[sc.cast[actAt(t)]?.name]||'none')===kind?1:0; g.gain.setValueAtTime(on(from),at); acts.forEach(e=>{ if(e.t<from) return; g.gain.setTargetAtTime(on(e.t+.001),at+e.t-from,.01); });
+    const pre=ctx.createGain(); src.connect(pre); pzVoiceChain(ctx,pre,g,kind); g.connect(dest); nodes.push(g); });
+  src.start(Math.max(ctx.currentTime||0,at),off); nodes.push(src); return nodes; }
+function pzSchedSfx(ctx,dest,sc,at,from=0,skip){ sc.passes.forEach(p=>{ if(p===skip) return; (p.ev||[]).forEach(e=>{ if(e.k!=='sfx'||e.t<from) return; const s=OSFX[e.s]; if(!s) return; const g=ctx.createGain(); g.gain.value=.8; g.connect(dest); try{ s.run(ctx,at+e.t-from,g); }catch(err){} }); }); }
+async function pzEpisodeAudio(ep,lead=0){ const durs=ep.scenes.map(pzDur), total=lead+durs.reduce((a,b)=>a+b,0)+.5, sr=48000, oc=new OfflineAudioContext(2,Math.ceil(total*sr),sr); let t=lead;
+  for(let i=0;i<ep.scenes.length;i++){ const sc=ep.scenes[i]; for(const p of sc.passes) await pzSchedPass(oc,oc.destination,sc,p,t); pzSchedSfx(oc,oc.destination,sc,t); t+=durs[i]; } return {buf:await oc.startRendering(),durs,total}; }
+
+/* ---------- mic + webcam ---------- */
+async function pzMic(){ if(PZ.mic) return PZ.mic; try{ const stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:false}}); const ac=SB_AC=SB_AC||new (window.AudioContext||window.webkitAudioContext)(); if(ac.state==='suspended') await ac.resume();
+    const an=ac.createAnalyser(); an.fftSize=1024; ac.createMediaStreamSource(stream).connect(an); PZ.mic={stream,an,buf:new Float32Array(1024)}; return PZ.mic; }catch(e){ toast('🎙 The mic is blocked. Click the 🔒 next to the address and allow the microphone.','bad'); return null; } }
+function pzLevel(){ const M=PZ.mic; if(!M) return 0; M.an.getFloatTimeDomainData(M.buf); let s=0; for(let i=0;i<M.buf.length;i++) s+=M.buf[i]*M.buf[i]; return Math.sqrt(s/M.buf.length); }
+async function pzFaceStart(){ if(PZ.face){ pzFaceStop(); return; } toast('📷 Loading head tracking (needs internet the first time)…');
+  try{ const vision=await import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/vision_bundle.mjs'); const fs=await vision.FilesetResolver.forVisionTasks('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm');
+    const lm=await vision.FaceLandmarker.createFromOptions(fs,{baseOptions:{modelAssetPath:'https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task',delegate:'GPU'},runningMode:'VIDEO',numFaces:1,outputFaceBlendshapes:true});
+    const stream=await navigator.mediaDevices.getUserMedia({video:{width:320,height:240}}); const v=document.createElement('video'); v.srcObject=stream; v.muted=true; v.playsInline=true; await v.play(); v.className='pz-cam'; $('#pzStageWrap')?.appendChild(v);
+    PZ.face={lm,v,stream,roll:0,yaw:0,pitch:0,jaw:0,base:null}; toast('📷 Head tracking on. Tilt your head, turn, open your mouth.','good'); $('#pzFace')?.classList.add('on'); }catch(e){ console.warn(e); toast('📷 Head tracking couldn\'t start (offline, or the camera is blocked). Everything else still works.','bad'); PZ.face=null; } }
+function pzFaceStop(){ const F=PZ.face; if(!F) return; try{ F.stream.getTracks().forEach(t=>t.stop()); F.v.remove(); F.lm.close(); }catch(e){} PZ.face=null; $('#pzFace')?.classList.remove('on'); }
+function pzFaceTick(){ const F=PZ.face; if(!F||F.v.readyState<2) return; try{ const r=F.lm.detectForVideo(F.v,performance.now()); const L=r.faceLandmarks?.[0]; if(!L) return; const a=L[33], b=L[263], n=L[1], mx=(a.x+b.x)/2, my=(a.y+b.y)/2, ed=Math.hypot(b.x-a.x,b.y-a.y)||.1;
+    const roll=Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI, yaw=(n.x-mx)/ed, pitch=(n.y-my)/ed; if(!F.base) F.base={pitch}; F.roll+=(roll-F.roll)*.5; F.yaw+=(yaw-F.yaw)*.5; F.pitch+=(pitch-F.base.pitch-F.pitch)*.5;
+    const bs=r.faceBlendshapes?.[0]?.categories||[]; const j=bs.find(c=>c.categoryName==='jawOpen'); F.jaw=j?j.score:0; }catch(e){} }
+
+/* ---------- live loop ---------- */
+function pzLiveFrom(sc){ PZ.live=sc.cast.map(P=>({x:P.x,y:P.y,s:P.s,r:P.r,f:P.f,m:0,hop:0,vy:0,emo:null,rt:P.r})); }
+function pzFrame(now){ PZ.raf=current==='puppet'?requestAnimationFrame(pzFrame):0; if(!PZ.raf) return; const cv=$('#pzCv'); if(!cv||!PZ.ep) return; const g=cv.getContext('2d'), sc=pzScene(); if(!sc) return;
+  const dt=Math.min(.05,(now-(PZ.last||now))/1000); PZ.last=now; const R=PZ.rec, Pl=PZ.play; const t=R?(performance.now()-R.t0)/1000:Pl?(performance.now()-Pl.t0)/1000:0;
+  if(PZ.face) pzFaceTick(); const lv=pzLevel(); PZ.lvSm=Math.max(lv,PZ.lvSm*.9); const meter=$('#pzMeter i'); if(meter) meter.style.width=Math.min(100,PZ.lvSm*700)+'%';
+  if(Pl&&!R){ if(t>Pl.dur+.2){ pzStop(); } else { const st=pzStatesAt(sc,t); const v=PZ.view; const c=pzCamAt(sc,t,st); pzEase(v,c,dt); pzDraw(g,sc,st,t,v); pzHud(t,Pl.dur); return; } }
+  /* live puppets */ const L=PZ.live; const a=PZ.act, P=L[a]; let moved=false;
+  L.forEach((p,i)=>{ const target=i===a?clamp((lv-PZ.gate)*9,0,1):0; let m=target; if(i===a&&PZ.face) m=Math.max(m,clamp((PZ.face.jaw-.05)*2.2,0,1)); p.m+=(m-p.m)*(m>p.m?.6:.25);
+    if(p.vy||p.hop>0){ p.vy-=dt*3.2; p.hop=Math.max(0,p.hop+p.vy*dt); if(p.hop===0) p.vy=0; } });
+  if(P){ const k=PZ.keys, sp=.38*dt; if(k.ArrowLeft){ P.x=clamp(P.x-sp,.05,.95); P.f=true; moved=true; } if(k.ArrowRight){ P.x=clamp(P.x+sp,.05,.95); P.f=false; moved=true; }
+    if(k.ArrowDown){ P.s=Math.max(.3,P.s); } if(k.w){ P.s=Math.min(2.2,P.s+dt*.6); moved=true; } if(k.s){ P.s=Math.max(.3,P.s-dt*.6); moved=true; }
+    P.rt=k.q?-18:k.e?18:0; if(PZ.face){ P.rt=clamp(PZ.face.roll*.9,-35,35); P.x=clamp(P.x+PZ.face.yaw*dt*.4,.05,.95); } P.r+=(P.rt-P.r)*Math.min(1,dt*10); if(Math.abs(P.r)>1) moved=true; }
+  const skip=R?R.pass:null; let st; if(R||Pl){ const rec=pzStatesAt(sc,t,skip); st=L.map((p,i)=>R&&R.pass.own.includes(i)?{...p,emo:p.emo}:{...rec[i],m:Math.max(rec[i].m,i===a&&R?p.m:0)}); } else st=L.map(p=>({...p}));
+  if(R){ if(moved||P?.m>.05) if(!R.pass.own.includes(a)) R.pass.own.push(a); const tr=R.pass.tr; if(t-(R.lastT??-1)>=1/30){ R.lastT=t; R.pass.own.forEach(i=>{ const p=L[i], T=tr[i]||(tr[i]={t:[],x:[],y:[],s:[],r:[],f:[],m:[],hop:[]}); T.t.push(+t.toFixed(3)); T.x.push(+p.x.toFixed(4)); T.y.push(+p.y.toFixed(4)); T.s.push(+p.s.toFixed(3)); T.r.push(+p.r.toFixed(2)); T.f.push(p.f?1:0); T.m.push(+p.m.toFixed(3)); T.hop.push(+p.hop.toFixed(4)); }); } }
+  const v=PZ.view; const tgt=PZ.view.close&&st[a]?{z:1.6,x:clamp(st[a].x,.32,.68),y:clamp(st[a].y-.04,.32,.68)}:{z:1,x:.5,y:.5}; pzEase(v,(R||Pl)?pzCamAt(sc,t,st).z>1?pzCamAt(sc,t,st):tgt:tgt,dt);
+  if(!R&&!Pl&&P){ const c=sc.cast[a]; if(c&&(Math.abs(c.x-P.x)>.001||Math.abs(c.y-P.y)>.001||c.s!==P.s||c.f!==P.f)){ c.x=P.x; c.y=P.y; c.s=P.s; c.f=P.f; clearTimeout(PZ.bt); PZ.bt=setTimeout(pzSave,800); } }
+  pzDraw(g,sc,st,R?t:performance.now()/1000,v,{sel:R?null:a}); if(R) pzHud(t,null); }
+function pzEase(v,c,dt){ const k=Math.min(1,dt*5); v.z+=(c.z-v.z)*k; v.x+=(c.x-v.x)*k; v.y+=(c.y-v.y)*k; }
+function pzHud(t,dur){ const el=$('#pzTime'); if(el) el.textContent=fmtT(t)+(dur?' / '+fmtT(dur):''); }
+
+/* ---------- record / overdub / play ---------- */
+async function pzRecord(overdub){ if(PZ.rec) return pzStop(); const sc=pzScene(); if(!sc) return; if(!overdub&&sc.passes.length&&!confirm('Record this scene again from scratch? (The old take is replaced.)')) return; const M=await pzMic(); if(!M) return;
+  if(!overdub){ sc.passes=[]; pzLiveFrom(sc); } else pzLiveFrom(sc);
+  const cd=$('#pzCount'); for(const n of ['3','2','1']){ cd.textContent=n; cd.hidden=false; try{ OSFX.ding.run(SB_AC,SB_AC.currentTime,SB_AC.destination); }catch(e){} await new Promise(r=>setTimeout(r,650)); } cd.hidden=true;
+  const mime=['audio/webm;codecs=opus','audio/webm','audio/mp4'].find(m=>window.MediaRecorder&&MediaRecorder.isTypeSupported?.(m))||'';
+  const mr=new MediaRecorder(M.stream,mime?{mimeType:mime}:{}), chunks=[]; mr.ondataavailable=e=>e.data.size&&chunks.push(e.data);
+  const pass={id:uid(),own:[PZ.act],tr:{},ev:[],act0:PZ.act,dur:0,lat:0}; const ac=SB_AC; if(overdub) for(const p of sc.passes) await pzPassBuf(p);
+  const lead=overdub?.15:0, at=ac.currentTime+lead; mr.start(250); pass.lat=lead; PZ.rec={pass,mr,chunks,t0:performance.now()+lead*1000};
+  if(overdub&&sc.passes.length){ const out=ac.createGain(); out.gain.value=.9; out.connect(ac.destination); for(const p of sc.passes) await pzSchedPass(ac,out,sc,p,at); pzSchedSfx(ac,out,sc,at); PZ.rec.out=out; }
+  $('#scr-puppet').classList.add('pz-recording'); pzTransport(); }
+async function pzStop(){ if(PZ.play){ try{ PZ.play.out.disconnect(); }catch(e){} PZ.play=null; pzTransport(); return; } const R=PZ.rec; if(!R) return; PZ.rec=null; $('#scr-puppet').classList.remove('pz-recording'); try{ R.out&&R.out.disconnect(); }catch(e){}
+  const dur=(performance.now()-R.t0)/1000; await new Promise(res=>{ R.mr.onstop=res; R.mr.stop(); }); const blob=new Blob(R.chunks,{type:R.mr.mimeType||'audio/webm'}); R.pass.blob=blob; R.pass.dur=+dur.toFixed(2);
+  const sc=pzScene(); if(dur<.6){ toast('That was too short to keep.'); pzTransport(); return; } sc.passes.push(R.pass); await pzSave(); unlock('puppet1'); pzRenderScenes(); toast(`🎭 Got it: ${fmtT(dur)}. ▶ to watch it back, or 🎙 Add a pass to voice someone else over it.`,'good'); pzRenderSide(); pzTransport(); }
+async function pzPlay(){ if(PZ.play||PZ.rec) return pzStop(); const sc=pzScene(); if(!sc||!sc.passes.length) return toast('Record something first (⏺ or R).'); const ac=SB_AC=SB_AC||new (window.AudioContext||window.webkitAudioContext)(); if(ac.state==='suspended') await ac.resume();
+  for(const p of sc.passes) await pzPassBuf(p); const out=ac.createGain(); out.connect(ac.destination); const at=ac.currentTime+.08; for(const p of sc.passes) await pzSchedPass(ac,out,sc,p,at); pzSchedSfx(ac,out,sc,at); PZ.play={t0:performance.now()+80,dur:pzDur(sc),out}; pzTransport(); }
+function pzEvent(e){ const R=PZ.rec; if(!R) return; e.t=+((performance.now()-R.t0)/1000).toFixed(3); R.pass.ev.push(e); }
+function pzSelect(i){ const sc=pzScene(); if(!sc||i<0||i>=sc.cast.length) return; PZ.act=i; pzEvent({k:'act',i}); if(PZ.rec&&!PZ.rec.pass.own.includes(i)) PZ.rec.pass.own.push(i); $$('.pz-chip').forEach((c,k)=>c.classList.toggle('on',k===i)); }
+function pzEmote(e){ const p=PZ.live[PZ.act]; if(!p) return; p.emo={e,t:PZ.rec?(performance.now()-PZ.rec.t0)/1000:performance.now()/1000}; if(PZ.rec) p.emo.t=(performance.now()-PZ.rec.t0)/1000; pzEvent({k:'emo',i:PZ.act,e}); if(e==='spin') try{ OSFX.whoosh.run(SB_AC,SB_AC.currentTime,SB_AC.destination); }catch(err){} }
+function pzSfx(k){ try{ SB_AC=SB_AC||new (window.AudioContext||window.webkitAudioContext)(); OSFX[k].run(SB_AC,SB_AC.currentTime,SB_AC.destination); }catch(e){} pzEvent({k:'sfx',s:k}); }
+function pzHop(){ const p=PZ.live[PZ.act]; if(p&&!p.hop){ p.vy=1.1; p.hop=.001; } }
+
+/* ---------- screen ---------- */
+async function pzEnter(){ const el=$('#scr-puppet'); if(!el) return; if(!PZ.ep){ const all=await PZDB.all(); PZ.ep=all[0]||pzNewEp(); PZ.si=0; }
+  el.innerHTML=`<div class="pz"><div class="pz-top"><input class="txt pz-name" id="pzName" value="${esc(PZ.ep.name)}"><select class="txt" id="pzEps"></select><button class="btn sm" id="pzNewEp">＋ New episode</button><span class="grow"></span>
+      <div class="pz-mode"><button class="chip ${PZ.mode==='simple'?'on':''}" data-pzm="simple">😌 Simple</button><button class="chip ${PZ.mode==='pro'?'on':''}" data-pzm="pro">🎛 Pro</button></div><button class="btn sm" id="pzPrompt">💡 Give me a prompt</button></div>
+    <div class="pz-body"><aside class="pz-scenes" id="pzScenes"></aside>
+      <div class="pz-main"><div class="pz-stage" id="pzStageWrap"><canvas id="pzCv" width="${PZ_W}" height="${PZ_H}" tabindex="0"></canvas><div class="pz-count" id="pzCount" hidden></div><div class="pz-rec">● REC</div><div class="pz-prompt" id="pzPromptTxt" ${PZ.prompt?'':'hidden'}>${esc(PZ.prompt)}</div></div>
+        <div class="pz-trans" id="pzTrans"></div><div class="pz-cast" id="pzCast"></div></div>
+      <aside class="pz-side" id="pzSide"></aside></div></div>`;
+  $('#pzName').oninput=e=>{ PZ.ep.name=e.target.value; clearTimeout(PZ.nt); PZ.nt=setTimeout(pzSave,600); };
+  $('#pzNewEp').onclick=async()=>{ await pzSave(); PZ.ep=pzNewEp(); PZ.si=0; await pzSave(); pzEnter(); };
+  el.querySelector('.pz-mode').onclick=e=>{ const b=e.target.closest('[data-pzm]'); if(!b) return; PZ.mode=b.dataset.pzm; S.settings.pzMode=PZ.mode; save(); $$('[data-pzm]').forEach(x=>x.classList.toggle('on',x===b)); pzRenderSide(); pzRenderCast(); pzTransport(); };
+  $('#pzPrompt').onclick=()=>{ const sc=pzScene(), names=sc.cast.map(c=>c.name), others=S.chars.map(c=>c.name).filter(n=>!names.includes(n)), pl=CT_PLACES_RAW.map(p=>p[1]); PZ.prompt='💡 '+pick(PZ_PROMPTS).replace(/\{A\}/g,names[0]||pick(others)).replace(/\{B\}/g,names[1]||pick(others)).replace(/\{C\}/g,pick(others)).replace(/\{P\}/g,pick(pl)); const p=$('#pzPromptTxt'); p.textContent=PZ.prompt; p.hidden=false; };
+  const cv=$('#pzCv'); cv.onpointerdown=pzDown; cv.onpointermove=pzMove; cv.onpointerup=cv.onpointercancel=()=>{ PZ.drag=null; };
+  const all=await PZDB.all(); if(!all.find(x=>x.id===PZ.ep.id)) all.unshift(PZ.ep); $('#pzEps').innerHTML=all.map(x=>`<option value="${x.id}" ${x.id===PZ.ep.id?'selected':''}>${esc(x.name)} (${x.scenes.length} scene${x.scenes.length>1?'s':''})</option>`).join('');
+  $('#pzEps').onchange=async e=>{ await pzSave(); PZ.ep=(await PZDB.all()).find(x=>x.id===e.target.value)||PZ.ep; PZ.si=0; pzEnter(); };
+  PZ.mode=S.settings.pzMode||PZ.mode; pzLoadScene(); if(!PZ.raf) PZ.raf=requestAnimationFrame(pzFrame); }
+async function pzLoadScene(){ const sc=pzScene(); if(!sc) return; PZ.act=Math.min(PZ.act,sc.cast.length-1); pzLiveFrom(sc); await pzSetImg(sc.set); for(const c of sc.cast) await pzCharImg(c.name); pzRenderScenes(); pzRenderCast(); pzRenderSide(); pzTransport(); }
+function pzRenderScenes(){ const el=$('#pzScenes'); if(!el) return; el.innerHTML=`<h4>Scenes</h4>${PZ.ep.scenes.map((sc,i)=>`<button class="pz-sc ${i===PZ.si?'on':''}" data-pzs="${i}"><b>${i+1}. ${esc((sc.set.split('/').pop()||'').replace(/\.\w+$/,'').replace(/[-_]/g,' '))}</b><small>${esc(sc.cast.map(c=>c.name.split(' ')[0]).join(', '))} · ${sc.passes.length?fmtT(pzDur(sc))+(sc.passes.length>1?` · ${sc.passes.length} passes`:''):'not recorded'}</small></button>`).join('')}
+    <button class="btn sm" id="pzAddSc">＋ New scene</button><div class="pz-ep"><b>Episode</b><small>${fmtT(PZ.ep.scenes.reduce((a,s)=>a+pzDur(s),0))} total</small><button class="btn sm primary" id="pzWatch">▶ Watch it all</button><button class="btn sm" id="pzExp">⬇ Export MP4</button><button class="btn sm" id="pzAnim">🎬 Edit in Animate</button></div>`;
+  el.onclick=async e=>{ const b=e.target.closest('[data-pzs]'); if(b){ if(PZ.rec) return; PZ.si=+b.dataset.pzs; return pzLoadScene(); } if(e.target.id==='pzAddSc'){ PZ.ep.scenes.push(pzNewScene(pzScene())); PZ.si=PZ.ep.scenes.length-1; await pzSave(); pzLoadScene(); }
+    if(e.target.id==='pzWatch') pzWatchAll(); if(e.target.id==='pzExp') pzExportDialog(); if(e.target.id==='pzAnim') pzToAnimate(); }; }
+function pzRenderCast(){ const el=$('#pzCast'); if(!el) return; const sc=pzScene(), voices=PZ.ep.voices||{};
+  el.innerHTML=sc.cast.map((c,i)=>`<div class="pz-chip ${i===PZ.act?'on':''}" data-pzc="${i}"><kbd>${i+1}</kbd><span class="pz-ca">${castArt(c.name)}</span><b>${esc(c.name)}</b>${PZ.mode==='pro'?`<select data-pzv="${esc(c.name)}" title="Voice filter">${PZ_VOICES.map(([k,l])=>`<option value="${k}" ${(voices[c.name]||'none')===k?'selected':''}>${l}</option>`).join('')}</select>`:''}<button class="pz-x" data-pzrm="${i}" title="Remove from scene">✕</button></div>`).join('')+(sc.cast.length<6?`<select class="txt pz-add" id="pzAdd"><option value="">＋ Add a character…</option>${S.chars.filter(c=>c.img&&!sc.cast.some(x=>x.name===c.name)).map(c=>`<option>${esc(c.name)}</option>`).join('')}</select>`:'');
+  el.onclick=e=>{ if(e.target.closest('select')) return; const rm=e.target.closest('[data-pzrm]'); if(rm){ if(sc.passes.length&&!confirm('Removing someone resets this scene\'s recording. OK?')) return; sc.cast.splice(+rm.dataset.pzrm,1); sc.passes=[]; pzSave(); return pzLoadScene(); } const c=e.target.closest('[data-pzc]'); if(c) pzSelect(+c.dataset.pzc); };
+  el.onchange=async e=>{ const v=e.target.closest('[data-pzv]'); if(v){ PZ.ep.voices=PZ.ep.voices||{}; PZ.ep.voices[v.dataset.pzv]=v.value; pzSave(); return; } if(e.target.id==='pzAdd'&&e.target.value){ if(sc.passes.length&&!confirm('Adding someone resets this scene\'s recording. OK?')){ e.target.value=''; return; } sc.cast.push({name:e.target.value,x:.5,y:.62,s:1,r:0,f:false}); sc.cast.forEach((c,i,a)=>{ c.x=(i+1)/(a.length+1); c.f=i>=a.length/2; }); sc.passes=[]; await pzSave(); pzLoadScene(); } }; }
+function pzTransport(){ const el=$('#pzTrans'); if(!el) return; const sc=pzScene(), R=!!PZ.rec, Pl=!!PZ.play, has=sc&&sc.passes.length;
+  el.innerHTML=`<button class="btn ${R?'red':'primary'} big" id="pzRecB">${R?'■ Stop (R)':has?'⏺ Re-record (R)':'⏺ Record (R)'}</button><button class="btn" id="pzPlayB" ${R||!has?'disabled':''}>${Pl?'■ Stop':'▶ Play (Space)'}</button>${PZ.mode==='pro'?`<button class="btn" id="pzOver" ${R||Pl||!has?'disabled':''} title="Plays what you recorded while you voice someone else">🎙 Add a pass (O)</button>`:''}
+    <span class="pz-meter" id="pzMeter" title="Mic level"><i></i></span><span class="pill" id="pzTime">0:00</span><span class="tiny muted">${R?'Talking = the selected character talks. 1–'+sc.cast.length+' switch who.':'Select who talks with 1–'+sc.cast.length+'. Drag them around.'}</span>`;
+  $('#pzRecB').onclick=()=>pzRecord(false); $('#pzPlayB').onclick=pzPlay; $('#pzOver')&&($('#pzOver').onclick=()=>pzRecord(true)); }
+function pzRenderSide(){ const el=$('#pzSide'); if(!el) return; const sc=pzScene(), sets=[...BACKGROUNDS.map(b=>[b,b.split('/').pop().replace(/\.\w+$/,'').replace(/-/g,' ')]),...(typeof CLASSIC_SETS!=='undefined'?CLASSIC_SETS.map(c=>[c.p,'📼 '+c.n]):[])], pro=PZ.mode==='pro';
+  el.innerHTML=`<h4>🌆 Set</h4><select class="txt" id="pzSet">${sets.map(([p,n])=>`<option value="${esc(p)}" ${sc.set===p?'selected':''}>${esc(n)}</option>`).join('')}</select>
+    <h4>🎮 Controls</h4><div class="pz-keys"><div><kbd>1</kbd>–<kbd>${sc.cast.length}</kbd> who's talking</div><div><kbd>R</kbd> record / stop · <kbd>Space</kbd> play</div><div><kbd>←</kbd><kbd>→</kbd> walk · <kbd>↑</kbd> hop · drag to move</div>${pro?`<div><kbd>Q</kbd><kbd>E</kbd> tilt · <kbd>W</kbd><kbd>S</kbd> grow/shrink · <kbd>F</kbd> flip</div><div><kbd>T</kbd> close-up on whoever's selected · <kbd>O</kbd> add a pass</div>`:''}</div>
+    ${pro?`<h4>😂 Emotes</h4><div class="pz-pads">${Object.entries(PZ_EMO).map(([k,[e,ic,n]])=>`<button data-pze="${e}">${ic} ${n} <kbd>${k.toUpperCase()}</kbd></button>`).join('')}</div>
+    <h4>🔊 Sound pads</h4><div class="pz-pads">${Object.entries(PZ_SFX).map(([k,s])=>`<button data-pzx="${s}">${(SFX_META[s]||['🔊'])[0]} ${esc((SFX_META[s]||[0,s])[1])} <kbd>${k}</kbd></button>`).join('')}</div>
+    <h4>📷 Head tracking <span class="pill">beta</span></h4><button class="btn sm ${PZ.face?'on':''}" id="pzFace">📷 ${PZ.face?'Turn off':'Use my webcam'}</button><p class="tiny muted">Tilt and turn your head and the selected character copies you. Open your mouth and it talks.</p>
+    <h4>🎚 Mic sensitivity</h4><input type="range" id="pzGate" min=".005" max=".08" step=".005" value="${PZ.gate}" style="width:100%">`:`<p class="tiny muted">That's it. Pick a set, add up to 6 characters, hit ⏺ and talk. Switch Simple → <b>Pro</b> for emotes, sound pads, voice filters, overdubbing, close-ups and webcam head tracking.</p>`}`;
+  $('#pzSet').onchange=async e=>{ sc.set=e.target.value; await pzSetImg(sc.set); pzSave(); pzRenderScenes(); };
+  el.onclick=e=>{ const em=e.target.closest('[data-pze]'); if(em) pzEmote(em.dataset.pze); const sx=e.target.closest('[data-pzx]'); if(sx) pzSfx(sx.dataset.pzx); if(e.target.closest('#pzFace')) pzFaceStart().then(pzRenderSide); };
+  $('#pzGate')&&($('#pzGate').oninput=e=>{ PZ.gate=+e.target.value; }); }
+function pzPt(e){ const r=$('#pzCv').getBoundingClientRect(); return [(e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height]; }
+function pzDown(e){ if(PZ.play) return; const [x,y]=pzPt(e), sc=pzScene(); let best=-1, bd=1e9; PZ.live.forEach((p,i)=>{ const d=Math.hypot(p.x-x,(p.y-y)*.6); if(d<.12*p.s&&d<bd){ bd=d; best=i; } }); if(best>=0){ pzSelect(best); PZ.drag={dx:x-PZ.live[best].x,dy:y-PZ.live[best].y}; e.currentTarget.setPointerCapture(e.pointerId); } }
+function pzMove(e){ if(!PZ.drag) return; const [x,y]=pzPt(e), p=PZ.live[PZ.act]; if(!p) return; const nx=clamp(x-PZ.drag.dx,.03,.97); if(Math.abs(nx-p.x)>.002) p.f=nx<p.x; p.x=nx; p.y=clamp(y-PZ.drag.dy,.3,.8); if(PZ.rec&&!PZ.rec.pass.own.includes(PZ.act)) PZ.rec.pass.own.push(PZ.act); }
+document.addEventListener('keydown',e=>{ if(current!=='puppet'||e.metaKey||e.ctrlKey||e.altKey) return; if(/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName)||$('#modalBg')?.classList.contains('on')) return; const k=e.key.length===1?e.key.toLowerCase():e.key;
+  if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown',' '].includes(e.key)) e.preventDefault();
+  if(e.repeat&&!['ArrowLeft','ArrowRight'].includes(e.key)) return; const sc=pzScene(); if(!sc) return;
+  if(/^[1-6]$/.test(k)) return pzSelect(+k-1); if(k==='r') return pzRecord(false); if(k===' ') return pzPlay(); if(k==='ArrowUp') return pzHop(); if(k==='o'&&PZ.mode==='pro'&&sc.passes.length&&!PZ.rec) return pzRecord(true);
+  if(PZ.mode==='pro'){ if(PZ_EMO[k]) return pzEmote(PZ_EMO[k][0]); if(PZ_SFX[k]) return pzSfx(PZ_SFX[k]); if(k==='f'){ const p=PZ.live[PZ.act]; if(p) p.f=!p.f; return; } if(k==='t'){ PZ.view.close=!PZ.view.close; pzEvent({k:'cam',i:PZ.view.close?PZ.act:-1}); return; } }
+  PZ.keys[k]=true; });
+document.addEventListener('keyup',e=>{ const k=e.key.length===1?e.key.toLowerCase():e.key; delete PZ.keys[k]; });
+{ const _g=go; go=function(s){ if(current==='puppet'&&s!=='puppet'){ if(PZ.rec) pzStop(); if(PZ.play) pzStop(); pzFaceStop(); pzSave(); } const r=_g.apply(this,arguments); if(s==='puppet') setTimeout(pzEnter,0); return r; }; }
+
+/* ---------- watch, export, Animate ---------- */
+function pzEpTimeline(ep,lead){ const segs=[]; let t=lead; ep.scenes.forEach(sc=>{ const d=pzDur(sc); if(d>0){ segs.push({sc,t0:t,t1:t+d}); t+=d; } }); return {segs,total:t}; }
+function pzSpeakerCam(seg,t){ const st=pzStatesAt(seg.sc,t-seg.t0); let best=-1, bm=.12; st.forEach((s,i)=>{ if(s.m>bm){ bm=s.m; best=i; } }); return {st,best}; }
+async function pzWatchAll(){ const {segs,total}=pzEpTimeline(PZ.ep,0); if(!segs.length) return toast('Record a scene first.'); const ac=SB_AC=SB_AC||new (window.AudioContext||window.webkitAudioContext)(); if(ac.state==='suspended') await ac.resume();
+  openModal(`<div class="pz-watch"><canvas id="pzWv" width="${PZ_W}" height="${PZ_H}"></canvas><div class="row"><b class="grow">${esc(PZ.ep.name)}</b><button class="btn sm" id="pzWx">✕ Close</button></div></div>`);
+  for(const s of segs) for(const p of s.sc.passes) await pzPassBuf(p); const out=ac.createGain(); out.connect(ac.destination); const at=ac.currentTime+.1; for(const s of segs){ for(const p of s.sc.passes) await pzSchedPass(ac,out,s.sc,p,at+s.t0); pzSchedSfx(ac,out,s.sc,at+s.t0); }
+  const t0=performance.now()+100, cv=$('#pzWv'), g=cv.getContext('2d'); let raf=0; const v={z:1,x:.5,y:.5}; let last=performance.now();
+  const loop=now=>{ if(!$('#pzWv')){ out.disconnect(); return; } raf=requestAnimationFrame(loop); const t=(now-t0)/1000, dt=(now-last)/1000; last=now; const seg=segs.find(s=>t>=s.t0&&t<s.t1)||segs[segs.length-1]; if(t>total+.5){ cancelAnimationFrame(raf); return; } const lt=clamp(t-seg.t0,0,seg.t1-seg.t0), st=pzStatesAt(seg.sc,lt); pzEase(v,pzCamAt(seg.sc,lt,st),dt); pzDraw(g,seg.sc,st,lt,v); };
+  raf=requestAnimationFrame(loop); $('#pzWx').onclick=()=>{ out.disconnect(); closeModal(); }; }
+function pzExportDialog(){ openModal(`<div class="pz-exp"><h2>⬇ Export “${esc(PZ.ep.name)}”</h2><label><input type="radio" name="pzf" value="h" checked> 🖥 Wide 16:9 (YouTube)</label><label><input type="radio" name="pzf" value="v"> 📱 Vertical 9:16, camera follows whoever's talking (TikTok · Reels · Shorts)</label><label><input type="checkbox" id="pzTitle" checked> Title card at the start</label><div class="row"><button class="btn primary" id="pzGoExp">🎬 Export</button><button class="btn" onclick="closeModal()">Cancel</button></div><div id="pzExpOut"></div></div>`);
+  $('#pzGoExp').onclick=async()=>{ const f=document.querySelector('[name="pzf"]:checked').value; $('#pzGoExp').disabled=true; await pzExport(f,$('#pzTitle').checked); }; }
+async function pzExport(fmt,title){ const out=$('#pzExpOut'), lead=title?2:0, {segs,total}=pzEpTimeline(PZ.ep,lead); if(!segs.length){ out.innerHTML='<p class="bad">Record a scene first.</p>'; return; }
+  out.innerHTML='<div class="vb-bar"><i id="pzBar" style="width:0"></i></div><p class="tiny muted" id="pzPt">Mixing the audio…</p>';
+  try{ for(const s of segs){ await pzSetImg(s.sc.set); for(const c of s.sc.cast) await pzCharImg(c.name); }
+    const {buf}=await pzEpisodeAudio(PZ.ep,lead); const [W,H]=fmt==='v'?[1080,1920]:[1920,1080];
+    /* vertical camera track: follow the loudest puppet, smoothed */ const camTr=[]; if(fmt==='v'){ let cur={x:.5,y:.55}, tgt=cur; for(let t=0;t<=total+.1;t+=.1){ const seg=segs.find(s=>t>=s.t0&&t<s.t1); if(seg){ const {st,best}=pzSpeakerCam(seg,t); if(best>=0) tgt={x:st[best].x,y:st[best].y}; } cur={x:cur.x+(tgt.x-cur.x)*.35,y:cur.y+(tgt.y-cur.y)*.35}; camTr.push(cur); } }
+    const OS=1.5, off=document.createElement('canvas'); off.width=PZ_W*OS; off.height=PZ_H*OS; const og=off.getContext('2d'); const odraw=(sc,st,lt,v)=>{ og.setTransform(OS,0,0,OS,0,0); pzDraw(og,sc,st,lt,v); };
+    const r=await encodeMovie({w:W,h:H,fps:30,dur:total+.3,audio:buf,onProgress:p=>{ const b=$('#pzBar'); if(b) b.style.width=(p*100).toFixed(1)+'%'; const pt=$('#pzPt'); if(pt) pt.textContent=`Rendering… ${Math.round(p*100)}%`; },draw:(g,t)=>{
+      if(t<lead){ g.fillStyle='#0b0618'; g.fillRect(0,0,W,H); const a=Math.min(1,t/.4)*(t>lead-.3?(lead-t)/.3:1); g.globalAlpha=Math.max(0,a); g.textAlign='center'; g.textBaseline='middle'; g.font=`${Math.round(Math.min(W,H)*.11)}px Bangers, Impact, sans-serif`; g.fillStyle='#ffc81e'; g.fillText(PZ.ep.name.toUpperCase(),W/2,H*.47,W*.9); g.font=`800 ${Math.round(Math.min(W,H)*.035)}px system-ui`; g.fillStyle='#fff'; g.fillText(showName().toUpperCase()+' · LIVE IMPROV',W/2,H*.47+Math.min(W,H)*.1); g.globalAlpha=1; return; }
+      const seg=segs.find(s=>t>=s.t0&&t<s.t1)||segs[segs.length-1], lt=clamp(t-seg.t0,0,seg.t1-seg.t0), st=pzStatesAt(seg.sc,lt);
+      if(fmt==='v'){ const c=camTr[Math.min(camTr.length-1,Math.round(t*10))]||{x:.5,y:.55}; odraw(seg.sc,st,lt,{z:1,x:.5,y:.5}); const sh=PZ_H*OS, sw=sh*W/H, sx=clamp(c.x*PZ_W*OS-sw/2,0,PZ_W*OS-sw); g.fillStyle='#000'; g.fillRect(0,0,W,H); const s2=Math.max(W/PZ_W,H/PZ_H); g.save(); g.filter='blur(24px) brightness(.5)'; g.drawImage(off,(W-PZ_W*s2)/2,(H-PZ_H*s2)/2,PZ_W*s2,PZ_H*s2); g.restore(); g.drawImage(off,sx,0,sw,sh,0,0,W,H); }
+      else { const v=pzCamAt(seg.sc,lt,st); odraw(seg.sc,st,lt,v); g.drawImage(off,0,0,W,H); } }});
+    if(!r) throw new Error('This browser can\'t make videos (try Chrome).'); const name=`${slug(PZ.ep.name)}-${fmt==='v'?'vertical':'wide'}.${r.ext}`; download(name,r.blob); unlock('puppet2');
+    out.innerHTML=`<p class="good">✅ Saved ${esc(name)} (${fmtMB(r.blob.size)}). It's in Nenjac Cinemas too, so ✂️ Clip It and the Post Kit can grab it.</p>${encNote(r)}`; }catch(e){ console.error(e); out.innerHTML=`<p class="bad">Export failed: ${esc(e.message||e)}</p>`; } }
+async function pzToAnimate(){ const ep=PZ.ep, {segs,total}=pzEpTimeline(ep,0); if(!segs.length) return toast('Record a scene first.'); toast('🎬 Building the Animate project…');
+  try{ const {buf}=await pzEpisodeAudio(ep,0); const P=anNewProject({name:ep.name,format:'16:9',dur:Math.ceil(total+.5)}); AN.proj=P; AN.t=0; go('anim'); const W=P.w, H=P.h;
+    const id=uid(); await AnimDB.put('media',{id,name:'Improv: '+ep.name,type:'dialog',blob:wavBlob(buf)}); const key='media:'+id; await anAudioBuf(key); P.layers.push(mkLayer('audio',{name:'🎙 Improv',start:0,end:total,audio:{key,vol:1,offset:0,dialog:true}})); P.cues=[];
+    const EMO2STATE={laugh:'laugh',angry:'angry',shock:'shock',love:'love',spin:'spin',faint:'faint'};
+    for(const s of segs){ const sc=s.sc; const B=await anAddImageLayer('background',{type:'asset',ref:sc.set},'🌆 Scene '+(ep.scenes.indexOf(sc)+1),{time:s.t0,end:s.t1}); if(B){ B.start=s.t0; B.end=s.t1; }
+      for(let i=0;i<sc.cast.length;i++){ const c=charByName(sc.cast[i].name); if(!c||!c.img) continue; const src=c.img.startsWith('drawing:')?{type:'drawing',ref:c.img.slice(8)}:{type:'asset',ref:c.img}; const st0=pzStatesAt(sc,0)[i];
+        const L=await anAddImageLayer('character',src,c.name,{time:s.t0,end:s.t1,charName:c.name,at:{x:st0.x*W,y:st0.y*H}}); if(!L) continue; L.start=s.t0; L.end=s.t1; L.keys=L.keys||{};
+        let last=null; for(let t=0;t<=s.t1-s.t0+.001;t+=1/6){ const st=pzStatesAt(sc,t)[i]; const cur=[st.x*W,(st.y-st.hop)*H,st.s,st.r]; if(!last||cur.some((v,k)=>Math.abs(v-last[k])>(k<2?2:k===2?.01:.5))){ setKey(L,'x',s.t0+t,cur[0]); setKey(L,'y',s.t0+t,cur[1]); setKey(L,'scale',s.t0+t,cur[2]); setKey(L,'rot',s.t0+t,cur[3]); last=cur; } }
+        L.flipKeys=[]; let lf=null; for(let t=0;t<=s.t1-s.t0;t+=.25){ const f=pzStatesAt(sc,t)[i].f; if(f!==lf){ L.flipKeys.push({t:+(s.t0+t).toFixed(3),v:f}); lf=f; } }
+        /* lip sync cues from the recorded mouth */ let on=null; const step=.05; for(let t=0;t<=s.t1-s.t0+step;t+=step){ const m=t<=s.t1-s.t0?pzStatesAt(sc,t)[i].m:0; if(m>.08&&on==null) on=t; if(m<=.08&&on!=null){ const prev=P.cues[P.cues.length-1]; if(prev&&prev.layerId===L.id&&s.t0+on-(prev.t+prev.dur)<.3) prev.dur=s.t0+t-prev.t; else P.cues.push({t:s.t0+on,dur:t-on,who:c.name,text:'',layerId:L.id}); on=null; } }
+        sc.passes.forEach(p=>(p.ev||[]).forEach(e=>{ if(e.k==='emo'&&e.i===i&&EMO2STATE[e.e]) L.states.push({id:uid(),type:EMO2STATE[e.e],t0:s.t0+e.t,t1:s.t0+e.t+(STATE_DUR[EMO2STATE[e.e]]||1.5),amt:1}); })); } }
+    P.cues.sort((a,b)=>a.t-b.t); AN.hist=[]; AN.hi=-1; AN.sel=null; anCommit(); anSave(true); if(!AN.list.some(x=>x.id===P.id)) AN.list.unshift(P); anRenderAll(); await anPreload(P); anRedraw(); toast('🎬 Your improv is now an Animate project: every move is a keyframe, every line is lip-synced. Tweak away.','good');
+  }catch(e){ console.error(e); toast('Couldn\'t build the Animate project: '+esc(e.message||e),'bad'); } }
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'🎭',label:'Puppet Studio (live improv)',run:()=>go('puppet'),kw:'puppet improv live perform mic record episode'}); return C; }; }
+
+/* =====================================================================
+   [PRINT] 5.0 Print Shop: real stuff you can print or sell. Die-cut
+   sticker sheets (+ each sticker as its own PNG), posters (movie,
+   WANTED, concert, minimal), T-shirt print files with a mockup, button
+   sheets, an 8-page one-sheet zine from a comic, DVD wraps, VHS
+   sleeves, CD and vinyl covers. Print-ready PNG/PDF at real sizes.
+   ===================================================================== */
+SCREEN_NAMES.print='Print Shop';
+addTab('print','🖨','Print Shop',{before:'photo',door:{cls:'d20',h:'Print Shop',p:'Stickers, posters, shirts, buttons, zines, DVD and VHS covers, album art. Print-ready files at real sizes.',k:'PRINT',art:'Bread Mistress'}});
+try{ const mk=HUBS.find(h=>h.k==='make'); if(mk&&!mk.s.includes('print')) mk.s.splice(mk.s.indexOf('post')+1,0,'print'); HUB_SHORT.print='Print Shop'; }catch(e){}
+ACH.push({id:'print1',e:'🖨',n:'Merch Mogul',d:'Export something from the Print Shop'});
+/* [key, emoji, name, blurb, W, H, inches label, max cast, styles] */
+const PR_KINDS=[['stickers','🏷','Sticker sheet','Die-cut stickers of your cast. Get the sheet and every sticker as its own PNG.',2550,3300,'8.5×11 in · 300 dpi',12,[['grid','Neat grid'],['scatter','Scattered']]],
+  ['poster','🖼','Poster','Movie poster, WANTED poster, concert poster or something clean.',2700,3600,'18×24 in · 150 dpi',4,[['movie','🎬 Movie'],['wanted','🤠 WANTED'],['concert','🎤 Concert'],['minimal','◻️ Minimal']]],
+  ['shirt','👕','T-shirt','Transparent print file (for Redbubble, Printful, a local shop) + a mockup.',3000,3600,'15×18 in · 200 dpi',3,[['big','Big front'],['retro','Retro sunset'],['pocket','Pocket logo']]],
+  ['buttons','📍','Buttons','2.25" buttons, 12 to a sheet, with the bleed ring a button press needs.',2550,3300,'8.5×11 in · 300 dpi',12,[['solid','Solid'],['burst','Starburst']]],
+  ['zine','📒','Zine','One sheet of paper, one cut, folds into an 8-page mini comic.',3300,2550,'11×8.5 in · 300 dpi',2,[['comic','From a comic'],['cast','Cast pages']]],
+  ['dvd','📀','DVD cover','Full wrap: back, spine and front. Fits a standard DVD case.',3263,2175,'10.875×7.25 in · 300 dpi',4,[['action','Action'],['comedy','Comedy'],['prestige','Prestige']]],
+  ['vhs','📼','VHS sleeve','Front of an old-school VHS sleeve.',1238,2250,'4.125×7.5 in · 300 dpi',3,[['retro','Retro grid'],['rental','Rental store']]],
+  ['album','💿','Album cover','CD or vinyl cover art.',3600,3600,'12×12 in · 300 dpi',2,[['portrait','Portrait'],['bold','Bold type'],['collage','Collage']]]];
+const PR_PAL=[['#930000','#ffc81e'],['#0b0618','#ff4fd8'],['#1c3d8f','#ffd43b'],['#2b8a3e','#f8f9fa'],['#111111','#e03131'],['#f8f1e3','#3b2a1f'],['#5f3dc4','#69db7c'],['#e8590c','#111111']];
+const PRS={kind:null,cv:null,t:0};
+function prCfg(k){ const st=S.settings; st.print=st.print||{}; const K=PR_KINDS.find(x=>x[0]===k); const c=st.print[k]=st.print[k]||{}, d={style:K[8][0][0],title:showName().toUpperCase(),sub:'',cast:['Deegs','Starr'].filter(n=>charByName(n)).slice(0,K[7]),set:'',pal:0,blurb:'',extra:'',src:''}; Object.keys(d).forEach(x=>{ if(c[x]===undefined) c[x]=d[x]; }); return c; }
+const prFont=(w,s,f)=>`${w} ${Math.round(s)}px ${f||'"Archivo Black", Impact, sans-serif'}`;
+function prText(g,t,x,y,s,{fill='#fff',stroke=null,sw=.12,font,w=900,align='center',max}={}){ g.font=prFont(w,s,font); g.textAlign=align; g.textBaseline='middle'; if(stroke){ g.lineJoin='round'; g.lineWidth=s*sw; g.strokeStyle=stroke; g.strokeText(t,x,y,max); } g.fillStyle=fill; g.fillText(t,x,y,max); }
+async function prChar(name){ return name?pzCharImg(name):null; }
+async function prSet(p){ return p?pzSetImg(p):null; }
+function prCover(g,im,x,y,w,h){ const s=Math.max(w/im.width,h/im.height); g.save(); g.beginPath(); g.rect(x,y,w,h); g.clip(); g.drawImage(im,x+(w-im.width*s)/2,y+(h-im.height*s)/2,im.width*s,im.height*s); g.restore(); }
+function prDrawChar(g,I,cx,by,h,{flip=false,outline=0,ocol='#fff'}={}){ if(!I) return; const im=I.im, B=I.B, sw=(B.x1-B.x0)*im.width, sh=(B.y1-B.y0)*im.height, w=h*sw/sh; g.save(); g.translate(cx,by); if(flip) g.scale(-1,1);
+  if(outline){ const sil=prSil(I,ocol); for(let a=0;a<16;a++){ const an=a/16*Math.PI*2; g.drawImage(sil,0,0,sil.width,sil.height,-w/2+Math.cos(an)*outline,-h+Math.sin(an)*outline,w,h); } } g.drawImage(im,B.x0*im.width,B.y0*im.height,sw,sh,-w/2,-h,w,h); g.restore(); return w; }
+const PR_SIL={}; function prSil(I,col){ const k=(I.im.src||I.im.width+'x'+I.im.height)+col; if(PR_SIL[k]) return PR_SIL[k]; const im=I.im, B=I.B, sw=Math.ceil((B.x1-B.x0)*im.width), sh=Math.ceil((B.y1-B.y0)*im.height), c=document.createElement('canvas'); c.width=sw; c.height=sh; const g=c.getContext('2d'); g.drawImage(im,B.x0*im.width,B.y0*im.height,sw,sh,0,0,sw,sh); g.globalCompositeOperation='source-in'; g.fillStyle=col; g.fillRect(0,0,sw,sh); return PR_SIL[k]=c; }
+function prBg(g,W,H,cfg,setIm,dark=0){ const [a,b]=PR_PAL[cfg.pal]||PR_PAL[0]; if(setIm){ prCover(g,setIm,0,0,W,H); if(dark){ g.fillStyle=`rgba(0,0,0,${dark})`; g.fillRect(0,0,W,H); } } else { const gr=g.createLinearGradient(0,0,0,H); gr.addColorStop(0,a); gr.addColorStop(1,'#000'); g.fillStyle=gr; g.fillRect(0,0,W,H); } }
+function prBarcode(g,x,y,w,h){ g.fillStyle='#fff'; g.fillRect(x,y,w,h); g.fillStyle='#000'; let cx=x+w*.06; const R=nfRng('barcode'); while(cx<x+w*.94){ const bw=(1+(R()*3|0))*w*.008; if(R()<.6) g.fillRect(cx,y+h*.08,bw,h*.7); cx+=bw+w*.006; } g.font=prFont(600,h*.14,'monospace'); g.textAlign='center'; g.fillText('0 12345 67890 5',x+w/2,y+h*.9); }
+function prRays(g,cx,cy,r,n,col,rot=0){ g.save(); g.translate(cx,cy); g.rotate(rot); g.fillStyle=col; for(let i=0;i<n;i++){ g.rotate(Math.PI*2/n); g.beginPath(); g.moveTo(0,0); g.lineTo(r,-r*Math.PI/n*.5); g.lineTo(r,r*Math.PI/n*.5); g.fill(); } g.restore(); }
+
+/* ---------- renderers (full print resolution) ---------- */
+async function prRender(k,cfg,g,W,H){ const [pa,pb]=PR_PAL[cfg.pal]||PR_PAL[0], setIm=await prSet(cfg.set), C=[]; for(const n of cfg.cast) C.push(await prChar(n)); g.save(); g.clearRect(0,0,W,H);
+  if(k==='stickers'){ g.fillStyle='#fff'; g.fillRect(0,0,W,H); const items=cfg.cast.map((n,i)=>({n,I:C[i]})).filter(x=>x.I); if(cfg.title) items.push({txt:cfg.title}); const n=Math.max(1,items.length), cols=Math.ceil(Math.sqrt(n*W/H)), rows=Math.ceil(n/cols), m=110, cw=(W-m*2)/cols, ch=(H-m*2)/rows; PRS.boxes=[];
+    items.forEach((it,i)=>{ const c=i%cols, r=Math.floor(i/cols); let cx=m+cw*(c+.5), cy=m+ch*(r+.5), rot=0; if(cfg.style==='scatter'){ const R=nfRng('st'+i); cx+=(R()-.5)*cw*.15; cy+=(R()-.5)*ch*.12; rot=(R()-.5)*.35; } g.save(); g.translate(cx,cy); g.rotate(rot);
+      if(it.I){ const h=Math.min(ch*.82,cw*.82*(it.I.B.y1-it.I.B.y0)/(it.I.B.x1-it.I.B.x0)*it.I.im.height/it.I.im.width); g.translate(0,h/2); prDrawChar(g,it.I,0,0,h,{outline:h*.06,ocol:'#d0d4da'}); prDrawChar(g,it.I,0,0,h,{outline:h*.05}); PRS.boxes.push({n:it.n,I:it.I,h}); }
+      else { const s=Math.min(cw,ch)*.22; g.font=prFont(900,s,'Bangers, Impact, sans-serif'); const tw=g.measureText(it.txt).width; g.lineJoin='round'; g.lineWidth=s*.62; g.strokeStyle='#d0d4da'; g.strokeText(it.txt,-tw/2,0); g.lineWidth=s*.5; g.strokeStyle='#fff'; g.textAlign='left'; g.textBaseline='middle'; g.strokeText(it.txt,-tw/2,0); g.lineWidth=s*.14; g.strokeStyle='#000'; g.strokeText(it.txt,-tw/2,0); g.fillStyle=pb; g.fillText(it.txt,-tw/2,0); }
+      g.restore(); });
+    prText(g,'Cut along the gray outlines · print at 100% on sticker paper',W/2,H-50,34,{fill:'#adb5bd',w:600,font:'system-ui'}); }
+  else if(k==='poster'){ const st=cfg.style;
+    if(st==='wanted'){ g.fillStyle='#e9d8a6'; g.fillRect(0,0,W,H); const R=nfRng('paper'); for(let i=0;i<900;i++){ g.fillStyle=`rgba(90,60,20,${R()*.08})`; g.beginPath(); g.arc(R()*W,R()*H,R()*30,0,7); g.fill(); } g.strokeStyle='#3b2a1f'; g.lineWidth=18; g.strokeRect(70,70,W-140,H-140);
+      prText(g,'WANTED',W/2,420,430,{fill:'#3b2a1f',font:'"Rockwell","Georgia",serif'}); prText(g,'DEAD OR ALIVE',W/2,700,130,{fill:'#7a2e14',font:'"Rockwell","Georgia",serif'});
+      g.fillStyle='#f8f1e3'; g.fillRect(400,820,W-800,1650); g.strokeStyle='#3b2a1f'; g.lineWidth=10; g.strokeRect(400,820,W-800,1650); if(setIm){ g.save(); g.globalAlpha=.35; prCover(g,setIm,410,830,W-820,1630); g.restore(); } if(C[0]){ g.save(); g.filter='sepia(.6)'; prDrawChar(g,C[0],W/2,2440,1500); g.restore(); }
+      prText(g,(cfg.cast[0]||'THE SUSPECT').toUpperCase(),W/2,2700,190,{fill:'#3b2a1f',font:'"Rockwell","Georgia",serif',max:W-300}); prText(g,cfg.sub||'FOR CRIMES AGAINST NENJAC THEATER',W/2,2900,90,{fill:'#3b2a1f',font:'"Rockwell","Georgia",serif',max:W-300});
+      prText(g,'REWARD',W/2,3120,150,{fill:'#7a2e14',font:'"Rockwell","Georgia",serif'}); prText(g,cfg.extra||'N$ 1,000,000',W/2,3330,170,{fill:'#3b2a1f',font:'"Rockwell","Georgia",serif'}); }
+    else if(st==='concert'){ g.fillStyle=pa; g.fillRect(0,0,W,H); prRays(g,W/2,H*.45,H,24,'rgba(255,255,255,.08)'); g.fillStyle='rgba(0,0,0,.18)'; for(let y=0;y<H;y+=40) for(let x=(y/40%2)*20;x<W;x+=40){ g.beginPath(); g.arc(x,y,6+8*(y/H),0,7); g.fill(); }
+      if(C[0]) prDrawChar(g,C[0],W/2,H*.78,H*.58,{outline:28,ocol:pb}); prText(g,cfg.title,W/2,330,300,{fill:pb,stroke:'#000',sw:.1,max:W-200,font:'Bangers, Impact, sans-serif'}); prText(g,cfg.sub||'LIVE IN CONCERT',W/2,560,110,{fill:'#fff',stroke:'#000',sw:.12});
+      g.fillStyle='#000'; g.fillRect(0,H*.82,W,H*.18); prText(g,(cfg.extra||'ONE NIGHT ONLY · THE BROWN FOUNTAIN').toUpperCase(),W/2,H*.87,92,{fill:pb,max:W-200}); prText(g,'DOORS AT 8 · ALL AGES (WARREN WILL BE THERE)',W/2,H*.93,64,{fill:'#fff',w:700,font:'system-ui',max:W-200}); }
+    else if(st==='minimal'){ g.fillStyle=pb==='#111111'?'#f8f9fa':pb; g.fillRect(0,0,W,H); g.fillStyle=pa; g.beginPath(); g.arc(W/2,H*.44,W*.36,0,7); g.fill(); if(C[0]) prDrawChar(g,C[0],W/2,H*.66,H*.48); prText(g,cfg.title,W/2,H*.8,220,{fill:pa,max:W-240}); if(cfg.sub) prText(g,cfg.sub.toUpperCase(),W/2,H*.87,80,{fill:'#333',w:700,font:'system-ui',max:W-240}); }
+    else { prBg(g,W,H,cfg,setIm,.45); const gr=g.createLinearGradient(0,H*.45,0,H); gr.addColorStop(0,'rgba(0,0,0,0)'); gr.addColorStop(1,'rgba(0,0,0,.95)'); g.fillStyle=gr; g.fillRect(0,0,W,H);
+      const n=C.filter(Boolean).length; C.forEach((I,i)=>{ if(!I) return; const big=i===0, h=big?H*.55:H*.36, x=n===1?W/2:big?W*.5:W*(i%2?.82:.18), by=big?H*.72:H*.66; prDrawChar(g,I,x,by,h,{flip:!big&&i%2===0}); });
+      if(cfg.sub) prText(g,cfg.sub.toUpperCase(),W/2,210,90,{fill:'#fff',w:700,font:'system-ui',max:W-200}); prText(g,cfg.title,W/2,H*.8,280,{fill:pb,stroke:'#000',sw:.08,max:W-200}); prText(g,(cfg.extra||'COMING SOON').toUpperCase(),W/2,H*.87,100,{fill:'#fff',max:W-200});
+      g.globalAlpha=.75; prText(g,`${showName().toUpperCase()} PRESENTS · ${cfg.cast.map(x=>x.toUpperCase()).join(' · ')} · A WARREN OUTT PRODUCTION · WRITTEN BY JC DEEGAN & NOAH STARR`,W/2,H*.94,40,{fill:'#fff',w:600,font:'"Arial Narrow",system-ui',max:W-200}); g.globalAlpha=1; } }
+  else if(k==='shirt'){ const st=cfg.style;
+    if(st==='retro'){ const cx=W/2, cy=H*.42, r=W*.38; g.save(); g.beginPath(); g.arc(cx,cy,r,0,7); g.clip(); const gr=g.createLinearGradient(0,cy-r,0,cy+r); gr.addColorStop(0,pb); gr.addColorStop(1,pa); g.fillStyle=gr; g.fillRect(cx-r,cy-r,r*2,r*2); g.globalCompositeOperation='destination-out'; for(let i=0;i<7;i++){ const y=cy+r*(.1+i*.13); g.fillRect(cx-r,y,r*2,10+i*7); } g.restore(); if(C[0]) prDrawChar(g,C[0],cx,cy+r*.95,r*1.5); prText(g,cfg.title,cx,H*.86,300,{fill:pb,stroke:'#000',sw:.1,max:W-200,font:'Bangers, Impact, sans-serif'}); }
+    else if(st==='pocket'){ if(C[0]) prDrawChar(g,C[0],W*.73,H*.33,H*.22,{outline:12}); prText(g,cfg.title,W*.73,H*.37,110,{fill:pb,stroke:'#000',sw:.12,max:W*.4}); }
+    else { const n=C.filter(Boolean).length; C.forEach((I,i)=>{ if(!I) return; const x=n===1?W/2:W*(.25+.5*i/(n-1)); prDrawChar(g,I,x,H*.72,H*(n===1?.62:.48),{outline:22}); }); prText(g,cfg.title,W/2,H*.82,320,{fill:pb,stroke:'#000',sw:.1,max:W-160,font:'Bangers, Impact, sans-serif'}); if(cfg.sub) prText(g,cfg.sub.toUpperCase(),W/2,H*.92,110,{fill:'#fff',stroke:'#000',sw:.15,max:W-200}); } }
+  else if(k==='buttons'){ g.fillStyle='#fff'; g.fillRect(0,0,W,H); const cut=787, face=675, cols=3, rows=4, mx=(W-cols*cut)/(cols+1), my=(H-rows*cut)/(rows+1); const L=cfg.cast.length?cfg.cast:['Deegs'];
+    for(let i=0;i<12;i++){ const c=i%cols, r=Math.floor(i/cols), cx=mx+(mx+cut)*c+cut/2, cy=my+(my+cut)*r+cut/2, I=C[i%Math.max(1,C.length)], nm=L[i%L.length]; g.save(); g.beginPath(); g.arc(cx,cy,cut/2,0,7); g.clip(); g.fillStyle=i%2?pa:pb; g.fillRect(cx-cut/2,cy-cut/2,cut,cut); if(cfg.style==='burst') prRays(g,cx,cy,cut,18,'rgba(255,255,255,.18)',i);
+      if(I) prDrawChar(g,I,cx,cy+face*.36,face*.72); prText(g,(nm||'').toUpperCase(),cx,cy+face*.4,64,{fill:'#fff',stroke:'#000',sw:.2,max:face*.8}); g.restore();
+      g.setLineDash([12,10]); g.strokeStyle='#adb5bd'; g.lineWidth=3; g.beginPath(); g.arc(cx,cy,cut/2,0,7); g.stroke(); g.setLineDash([]); g.strokeStyle='rgba(0,0,0,.15)'; g.beginPath(); g.arc(cx,cy,face/2,0,7); g.stroke(); }
+    prText(g,'Dashed = cut line (2.625") · thin ring = button face (2.25") · print at 100%',W/2,H-40,30,{fill:'#adb5bd',w:600,font:'system-ui'}); }
+  else if(k==='zine'){ g.fillStyle='#fff'; g.fillRect(0,0,W,H); const cw=W/4, ch=H/2; const pages=await prZinePages(cfg,cw,ch,C,setIm,pa,pb);
+    const place=(img,col,row,flip)=>{ g.save(); g.translate(col*cw+cw/2,row*ch+ch/2); if(flip) g.rotate(Math.PI); g.drawImage(img,-cw/2,-ch/2,cw,ch); g.restore(); };
+    [5,4,3,2].forEach((p,i)=>place(pages[p-1],i,0,true)); [6,7,8,1].forEach((p,i)=>place(pages[p-1],i,1,false));
+    g.setLineDash([16,14]); g.strokeStyle='#ced4da'; g.lineWidth=3; for(let i=1;i<4;i++){ g.beginPath(); g.moveTo(cw*i,0); g.lineTo(cw*i,H); g.stroke(); } g.beginPath(); g.moveTo(0,ch); g.lineTo(W,ch); g.stroke(); g.setLineDash([]); g.strokeStyle='#e03131'; g.lineWidth=6; g.beginPath(); g.moveTo(cw,ch); g.lineTo(cw*3,ch); g.stroke(); prText(g,'✂ cut here',W/2,ch-22,28,{fill:'#e03131',w:700,font:'system-ui'}); }
+  else if(k==='dvd'){ const sp=Math.round(W*.0506), fw=(W-sp)/2; prBg(g,W,H,cfg,setIm,.35); g.fillStyle='rgba(0,0,0,.55)'; g.fillRect(0,0,fw,H);
+    /* front */ g.save(); g.beginPath(); g.rect(fw+sp,0,fw,H); g.clip(); const fx=fw+sp; if(cfg.style==='prestige'){ g.fillStyle='#f8f9fa'; g.fillRect(fx,0,fw,H); if(C[0]){ g.save(); g.filter='grayscale(1) contrast(1.2)'; prDrawChar(g,C[0],fx+fw/2,H*.8,H*.6); g.restore(); } prText(g,cfg.title,fx+fw/2,H*.15,150,{fill:'#111',font:'"Times New Roman",serif',w:400,max:fw-120}); prText(g,'★★★★★ “A MASTERPIECE” — WARREN OUTT (UNCONFIRMED)',fx+fw/2,H*.9,34,{fill:'#555',w:700,font:'system-ui',max:fw-80}); }
+      else { const n=C.filter(Boolean).length; C.forEach((I,i)=>{ if(!I) return; prDrawChar(g,I,fx+fw*(n===1?.5:.25+.5*i/Math.max(1,n-1)),H*.78,H*(i?.45:.55)); }); prText(g,cfg.title,fx+fw/2,H*.86,180,{fill:pb,stroke:'#000',sw:.1,max:fw-100,font:cfg.style==='comedy'?'Bangers, Impact, sans-serif':undefined}); if(cfg.sub) prText(g,cfg.sub.toUpperCase(),fx+fw/2,H*.1,60,{fill:'#fff',stroke:'#000',sw:.15,max:fw-100}); }
+      g.restore(); /* spine */ g.fillStyle=pa; g.fillRect(fw,0,sp,H); g.save(); g.translate(fw+sp/2,H/2); g.rotate(Math.PI/2); prText(g,cfg.title,0,0,sp*.55,{fill:pb,max:H*.7}); g.restore(); prText(g,'DVD',fw+sp/2,H-80,sp*.4,{fill:'#fff'});
+    /* back */ prText(g,cfg.title,fw/2,170,110,{fill:pb,max:fw-160}); g.font=prFont(500,46,'system-ui'); g.fillStyle='#fff'; g.textAlign='left'; const blurb=cfg.blurb||`From the minds behind ${showName()} comes the story nobody asked for. ${cfg.cast.join(' and ')} are back, and this time it's personal. And loud. Mostly loud.`; pkWrap(g,blurb,fw-240).slice(0,8).forEach((l,i)=>g.fillText(l,120,300+i*62));
+      for(let i=0;i<3;i++){ const x=120+i*((fw-240)/3), w=(fw-240)/3-30, y=860, h=w*.56; g.fillStyle='#000'; g.fillRect(x,y,w,h); if(setIm) prCover(g,setIm,x,y,w,h); if(C[i%Math.max(1,C.length)]) { g.save(); g.beginPath(); g.rect(x,y,w,h); g.clip(); prDrawChar(g,C[i%C.length],x+w/2,y+h*1.05,h*.95); g.restore(); } g.strokeStyle='#fff'; g.lineWidth=6; g.strokeRect(x,y,w,h); }
+      g.font=prFont(800,44,'system-ui'); g.fillStyle=pb; g.fillText('SPECIAL FEATURES',120,1210); g.font=prFont(500,38,'system-ui'); g.fillStyle='#fff'; ['Deleted scenes (deleted for a reason)','Director\'s commentary (Warren fell asleep)','Blooper reel: Nerd gets told to shut up 40 times'].forEach((l,i)=>g.fillText('• '+l,120,1280+i*54));
+      g.globalAlpha=.75; g.font=prFont(600,26,'"Arial Narrow",system-ui'); pkWrap(g,`${showName().toUpperCase()} PRESENTS ${cfg.title} STARRING ${cfg.cast.join(' ').toUpperCase()} WRITTEN BY JC DEEGAN AND NOAH STARR DIRECTED BY WARREN OUTT. THIS DISC IS NOT REAL. NEITHER IS THE THEATER. PROBABLY.`,fw-240).forEach((l,i)=>g.fillText(l,120,1560+i*34)); g.globalAlpha=1;
+      g.fillStyle='#fff'; g.fillRect(120,1820,250,250); prText(g,'N',245,1920,150,{fill:'#000'}); prText(g,'RATED N',245,2020,32,{fill:'#000',w:800,font:'system-ui'}); g.font=prFont(600,30,'system-ui'); g.fillStyle='#fff'; g.textAlign='left'; g.fillText('for nonstop Nenjac, mild peril',400,1900); g.fillText('and Warren',400,1940); prBarcode(g,fw-560,1830,420,240); }
+  else if(k==='vhs'){ g.fillStyle='#0b0618'; g.fillRect(0,0,W,H); if(cfg.style==='retro'){ g.strokeStyle=pb; g.globalAlpha=.4; g.lineWidth=4; for(let i=0;i<24;i++){ const y=H*.55+i*i*3; g.beginPath(); g.moveTo(0,y); g.lineTo(W,y); g.stroke(); } for(let i=-12;i<=12;i++){ g.beginPath(); g.moveTo(W/2+i*40,H*.55); g.lineTo(W/2+i*220,H); g.stroke(); } g.globalAlpha=1; const gr=g.createLinearGradient(0,H*.2,0,H*.55); gr.addColorStop(0,pb); gr.addColorStop(1,pa); g.fillStyle=gr; g.beginPath(); g.arc(W/2,H*.55,W*.38,Math.PI,0); g.fill(); }
+    else { prBg(g,W,H,cfg,setIm,.3); g.fillStyle='#ffd43b'; g.fillRect(0,0,W,180); prText(g,'BE KIND · REWIND',W/2,90,70,{fill:'#000'}); g.fillStyle='#e03131'; g.save(); g.translate(W*.8,H*.2); g.rotate(.25); g.fillRect(-150,-50,300,100); prText(g,'NEW RELEASE',0,0,40,{fill:'#fff'}); g.restore(); }
+    const n=C.filter(Boolean).length; C.forEach((I,i)=>{ if(!I) return; prDrawChar(g,I,W*(n===1?.5:.3+.4*i/Math.max(1,n-1)),H*.74,H*(i?.32:.42),{outline:10,ocol:pb}); }); prText(g,cfg.title,W/2,H*.82,140,{fill:pb,stroke:'#000',sw:.12,max:W-80,font:'Bangers, Impact, sans-serif'}); if(cfg.sub) prText(g,cfg.sub.toUpperCase(),W/2,H*.88,44,{fill:'#fff',max:W-80});
+    g.fillStyle='#fff'; g.fillRect(W-230,H-150,190,110); prText(g,'HI-FI',W-135,H-115,40,{fill:'#000'}); prText(g,'STEREO',W-135,H-70,30,{fill:'#000'}); }
+  else if(k==='album'){ prBg(g,W,H,cfg,cfg.style==='bold'?null:setIm,.2);
+    if(cfg.style==='bold'){ g.fillStyle=pb; g.fillRect(0,0,W,H); prText(g,cfg.title,W/2,H*.35,W*.16,{fill:pa,max:W*.9}); if(C[0]) prDrawChar(g,C[0],W/2,H*.98,H*.55); }
+    else if(cfg.style==='collage'){ const R=nfRng('col'); for(let i=0;i<9;i++){ const I=C[i%Math.max(1,C.length)]; if(!I) break; g.save(); g.translate(W*(.15+R()*.7),H*(.25+R()*.6)); g.rotate((R()-.5)*.6); prDrawChar(g,I,0,H*.15,H*(.2+R()*.2),{outline:14}); g.restore(); } prText(g,cfg.title,W/2,H*.12,W*.09,{fill:pb,stroke:'#000',sw:.1,max:W*.9,font:'Bangers, Impact, sans-serif'}); }
+    else { if(C[0]) prDrawChar(g,C[0],W/2,H*1.02,H*.92); prText(g,(cfg.cast[0]||'').toUpperCase(),W*.06,H*.08,W*.05,{fill:'#fff',align:'left',max:W*.8}); prText(g,cfg.title,W*.06,H*.15,W*.08,{fill:pb,align:'left',max:W*.88}); }
+    g.fillStyle='#000'; g.fillRect(W*.74,H*.86,W*.22,H*.1); prText(g,'NENJAC ADVISORY',W*.85,H*.895,W*.017,{fill:'#fff'}); prText(g,'EXPLICIT LORE',W*.85,H*.93,W*.022,{fill:'#fff'}); }
+  g.restore(); }
+async function prZinePages(cfg,cw,ch,C,setIm,pa,pb){ const mk=()=>{ const c=document.createElement('canvas'); c.width=cw; c.height=ch; const g=c.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,cw,ch); return [c,g]; }; const P=[];
+  { const [c,g]=mk(); g.fillStyle=pa; g.fillRect(0,0,cw,ch); if(setIm){ g.globalAlpha=.4; prCover(g,setIm,0,0,cw,ch); g.globalAlpha=1; } if(C[0]) prDrawChar(g,C[0],cw/2,ch*.86,ch*.55,{outline:10}); prText(g,cfg.title,cw/2,ch*.15,90,{fill:pb,stroke:'#000',sw:.12,max:cw-60,font:'Bangers, Impact, sans-serif'}); prText(g,'ISSUE #1',cw/2,ch*.24,36,{fill:'#fff'}); P.push(c); }
+  let srcs=[]; if(cfg.style==='comic'&&cfg.src){ const rec=await ArtDB.get(cfg.src); if(rec){ const pages=rec.pages||[{objects:rec.objects,bg:rec.bg}]; for(const pg of pages){ const pc=await renderToCanvas({...rec,objects:pg.objects,bg:pg.bg},{maxSide:1400,bg:'#ffffff'}); const sc=pc.width/rec.w; const pan=(pg.objects||[]).filter(o=>o.type==='panel'&&!o.hidden).sort((a,b)=>Math.abs(a.y-b.y)<rec.h*.06?a.x-b.x:a.y-b.y); if(pages.length>=6||!pan.length) srcs.push({pc,r:[0,0,pc.width,pc.height]}); else pan.forEach(p=>srcs.push({pc,r:[p.x*sc,p.y*sc,p.w*sc,p.h*sc]})); } } }
+  for(let i=0;i<6;i++){ const [c,g]=mk(); const s=srcs[i]; if(s){ const [x,y,w,h]=s.r, k=Math.min((cw-50)/w,(ch-90)/h); g.drawImage(s.pc,x,y,w,h,(cw-w*k)/2,(ch-h*k)/2,w*k,h*k); } else { const I=C[(i+1)%Math.max(1,C.length)]; if(setIm){ g.globalAlpha=.25; prCover(g,setIm,0,0,cw,ch); g.globalAlpha=1; } if(I) prDrawChar(g,I,cw/2,ch*.8,ch*.5); prText(g,['IT BEGINS','MEANWHILE…','UH OH','NOT AGAIN','THE TWIST','THE END?'][i],cw/2,ch*.14,64,{fill:'#000',font:'Bangers, Impact, sans-serif'}); }
+    prText(g,String(i+2),cw/2,ch-28,26,{fill:'#868e96',w:700,font:'system-ui'}); P.push(c); }
+  { const [c,g]=mk(); g.fillStyle=pb; g.fillRect(0,0,cw,ch); if(C[1]||C[0]) prDrawChar(g,C[1]||C[0],cw/2,ch*.62,ch*.35); prText(g,'THE END',cw/2,ch*.72,70,{fill:pa,font:'Bangers, Impact, sans-serif'}); prText(g,(pkCfg().handle||showName()),cw/2,ch*.82,34,{fill:'#000'}); prText(g,'made with Nenjac Creator',cw/2,ch*.9,22,{fill:'#555',w:600,font:'system-ui'}); P.push(c); }
+  return P; }
+
+/* ---------- mockups ---------- */
+function prMockup(k,full,cfg){ const c=document.createElement('canvas'); c.width=600; c.height=600; const g=c.getContext('2d'), [pa,pb]=PR_PAL[cfg.pal]||PR_PAL[0]; g.fillStyle='#e9ecef'; g.fillRect(0,0,600,600);
+  const fit=(x,y,w,h)=>{ const s=Math.min(w/full.width,h/full.height); const dw=full.width*s, dh=full.height*s; g.drawImage(full,x+(w-dw)/2,y+(h-dh)/2,dw,dh); return [x+(w-dw)/2,y+(h-dh)/2,dw,dh]; };
+  if(k==='shirt'){ const col=cfg.shirt||'#212529'; g.fillStyle=col; g.beginPath(); g.moveTo(170,70); g.quadraticCurveTo(300,130,430,70); g.lineTo(560,150); g.lineTo(510,260); g.lineTo(450,230); g.lineTo(450,560); g.lineTo(150,560); g.lineTo(150,230); g.lineTo(90,260); g.lineTo(40,150); g.closePath(); g.fill(); g.fillStyle='rgba(255,255,255,.08)'; g.fill(); fit(205,150,190,230); }
+  else if(k==='poster'){ g.fillStyle='#d9cbb3'; g.fillRect(0,0,600,600); const [x,y,w,h]=fit(150,40,300,520); g.strokeStyle='#111'; g.lineWidth=14; g.strokeRect(x-7,y-7,w+14,h+14); }
+  else if(k==='dvd'){ g.save(); g.translate(300,300); g.transform(1,-.08,0,1,0,0); const s=Math.min(330/((full.width-full.width*.0506)/2),480/full.height), fw=(full.width-full.width*.0506)/2; g.fillStyle='#111'; g.fillRect(-170,-245,340,490); g.drawImage(full,full.width-fw,0,fw,full.height,-165,-240,330,480); g.restore(); }
+  else if(k==='album'){ g.fillStyle='#111'; g.beginPath(); g.arc(380,300,220,0,7); g.fill(); g.fillStyle=pa; g.beginPath(); g.arc(380,300,70,0,7); g.fill(); fit(40,80,440,440); }
+  else if(k==='buttons'){ for(let i=0;i<4;i++){ const cx=150+(i%2)*300, cy=150+Math.floor(i/2)*300, r=120; g.save(); g.beginPath(); g.arc(cx,cy,r,0,7); g.clip(); const col=i%3, row=Math.floor(i/3), cut=787, mx=(full.width-3*cut)/4, my=(full.height-4*cut)/5; g.drawImage(full,mx+(mx+cut)*col+56,my+(my+cut)*row+56,675,675,cx-r,cy-r,r*2,r*2); const gr=g.createRadialGradient(cx-40,cy-50,10,cx,cy,r); gr.addColorStop(0,'rgba(255,255,255,.45)'); gr.addColorStop(1,'rgba(255,255,255,0)'); g.fillStyle=gr; g.fillRect(cx-r,cy-r,r*2,r*2); g.restore(); } }
+  else if(k==='zine'){ const cw=full.width/4, ch=full.height/2; g.save(); g.translate(300,300); g.rotate(-.06); g.fillStyle='rgba(0,0,0,.2)'; g.fillRect(-150,-210,320,440); g.drawImage(full,cw*3,ch,cw,ch,-160,-220,300,440); g.restore(); }
+  else fit(40,40,520,520);
+  return c; }
+
+/* ---------- export ---------- */
+async function prPDF(canvases,wIn,hIn){ const enc=new TextEncoder(), parts=[], offs=[]; let off=0; const push=b=>{ if(typeof b==='string') b=enc.encode(b); parts.push(b); off+=b.length; }; const obj=(n,body)=>{ offs[n]=off; push(`${n} 0 obj\n`); if(Array.isArray(body)) body.forEach(push); else push(body); push('\nendobj\n'); };
+  const W=Math.round(wIn*72), H=Math.round(hIn*72), N=canvases.length; push('%PDF-1.4\n%\xFF\xFF\xFF\xFF\n');
+  obj(1,'<< /Type /Catalog /Pages 2 0 R >>'); obj(2,`<< /Type /Pages /Kids [${canvases.map((c,i)=>`${3+i*3} 0 R`).join(' ')}] /Count ${N} >>`);
+  for(let i=0;i<N;i++){ const c=canvases[i], jb=new Uint8Array(await (await new Promise(r=>c.toBlob(r,'image/jpeg',.93))).arrayBuffer()), cs=`q ${W} 0 0 ${H} 0 0 cm /Im0 Do Q`;
+    obj(3+i*3,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W} ${H}] /Resources << /XObject << /Im0 ${5+i*3} 0 R >> >> /Contents ${4+i*3} 0 R >>`); obj(4+i*3,`<< /Length ${cs.length} >>\nstream\n${cs}\nendstream`);
+    obj(5+i*3,[`<< /Type /XObject /Subtype /Image /Width ${c.width} /Height ${c.height} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${jb.length} >>\nstream\n`,jb,'\nendstream']); }
+  const xo=off, n=3+N*3; push(`xref\n0 ${n}\n0000000000 65535 f \n`+Array.from({length:n-1},(_,i)=>String(offs[i+1]).padStart(10,'0')+' 00000 n \n').join('')+`trailer\n<< /Size ${n} /Root 1 0 R >>\nstartxref\n${xo}\n%%EOF`);
+  return new Blob(parts,{type:'application/pdf'}); }
+async function prExport(how){ const K=PR_KINDS.find(x=>x[0]===PRS.kind), cfg=prCfg(PRS.kind), cv=PRS.cv, nm=slug(cfg.title||K[2])+'-'+K[0]; if(!cv) return; const [wi,hi]=(K[6].match(/([\d.]+)×([\d.]+)/)||[0,8.5,11]).slice(1).map(Number);
+  try{ if(how==='png'){ const bl=await new Promise(r=>cv.toBlob(r,'image/png')); download(nm+'.png',bl); }
+    else if(how==='pdf'){ const flat=document.createElement('canvas'); flat.width=cv.width; flat.height=cv.height; const g=flat.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,flat.width,flat.height); g.drawImage(cv,0,0); download(nm+'.pdf',await prPDF([flat],wi,hi)); }
+    else if(how==='each'){ const files=[]; for(const b of PRS.boxes||[]){ const I=b.I, h=900, w=h*(I.B.x1-I.B.x0)*I.im.width/((I.B.y1-I.B.y0)*I.im.height), pad=70, c=document.createElement('canvas'); c.width=Math.ceil(w+pad*2); c.height=h+pad*2; const g=c.getContext('2d'); g.translate(c.width/2,h+pad); prDrawChar(g,I,0,0,h,{outline:h*.05}); files.push({name:slug(b.n)+'-sticker.png',blob:await new Promise(r=>c.toBlob(r,'image/png'))}); } if(!files.length) return toast('Add some characters first.','bad'); download(nm+'-individual.zip',await makeZip(files)); }
+    unlock('print1'); toast('🖨 Saved. Print at 100% / "actual size" (not "fit to page").','good'); }catch(e){ console.error(e); toast('Export failed: '+esc(e.message||e),'bad'); } }
+
+/* ---------- screen ---------- */
+function prEnter(){ const el=$('#scr-print'); if(!el) return; el.innerHTML=`<div class="prs"><div class="prs-head"><h2>🖨 Print Shop</h2><p class="tiny muted">Real files at real sizes. Print at home, send to a print shop, or upload to Redbubble / Printful / Sticker Mule.</p></div><div class="prs-kinds">${PR_KINDS.map(K=>`<button class="prs-k ${PRS.kind===K[0]?'on':''}" data-prk="${K[0]}"><span>${K[1]}</span><b>${K[2]}</b><small>${esc(K[3])}</small></button>`).join('')}</div><div id="prEd"></div></div>`;
+  el.querySelector('.prs-kinds').onclick=e=>{ const b=e.target.closest('[data-prk]'); if(!b) return; PRS.kind=b.dataset.prk; $$('.prs-k').forEach(x=>x.classList.toggle('on',x===b)); prEditor(); };
+  if(PRS.kind) prEditor(); }
+async function prEditor(){ const el=$('#prEd'), K=PR_KINDS.find(x=>x[0]===PRS.kind), cfg=prCfg(PRS.kind); if(!el||!K) return; const sets=[...BACKGROUNDS.map(b=>[b,b.split('/').pop().replace(/\.\w+$/,'').replace(/-/g,' ')]),...(typeof CLASSIC_SETS!=='undefined'?CLASSIC_SETS.map(c=>[c.p,'📼 '+c.n]):[])];
+  const comics=PRS.kind==='zine'?(await ArtDB.all()).filter(d=>d.kind==='comic'):[];
+  const lab={poster:{sub:'Tagline',extra:cfg.style==='wanted'?'Reward':cfg.style==='concert'?'Venue / date':'Bottom line'},dvd:{sub:'Tagline'},vhs:{sub:'Tagline'},shirt:{sub:'Line under the title'},album:{},stickers:{},buttons:{},zine:{}}[PRS.kind]||{};
+  el.innerHTML=`<div class="prs-ed"><div class="prs-form pk-opts col"><b>${K[1]} ${K[2]} <small class="muted">${K[6]}</small></b>
+      <label>Style <select data-prf="style">${K[8].map(([v,l])=>`<option value="${v}" ${cfg.style===v?'selected':''}>${l}</option>`).join('')}</select></label>
+      <label>${PRS.kind==='stickers'?'Text sticker':'Title'} <input class="txt" data-prf="title" value="${esc(cfg.title)}"></label>${lab.sub?`<label>${lab.sub} <input class="txt" data-prf="sub" value="${esc(cfg.sub)}"></label>`:''}${lab.extra?`<label>${lab.extra} <input class="txt" data-prf="extra" value="${esc(cfg.extra)}"></label>`:''}
+      ${PRS.kind==='dvd'?`<label>Back cover blurb <textarea class="txt" rows="3" data-prf="blurb">${esc(cfg.blurb)}</textarea></label>`:''}${PRS.kind==='zine'?`<label>Comic <select data-prf="src"><option value="">— cast pages instead —</option>${comics.map(d=>`<option value="${d.id}" ${cfg.src===d.id?'selected':''}>${esc(d.name)}</option>`).join('')}</select></label>`:''}
+      ${!['stickers','buttons','zine'].includes(PRS.kind)||PRS.kind==='zine'?`<label>Background <select data-prf="set"><option value="">Color only</option>${sets.map(([p,n])=>`<option value="${esc(p)}" ${cfg.set===p?'selected':''}>${esc(n)}</option>`).join('')}</select></label>`:''}
+      <div><span>Colors</span><div class="prs-pal">${PR_PAL.map(([a,b],i)=>`<button data-prp="${i}" class="${cfg.pal===i?'on':''}" style="--a:${a};--b:${b}"></button>`).join('')}</div></div>
+      ${PRS.kind==='shirt'?`<label>Mockup shirt color <input type="color" data-prf="shirt" value="${cfg.shirt||'#212529'}"></label>`:''}
+      <div><span>Characters (up to ${K[7]})</span><div class="prs-cast">${S.chars.filter(c=>c.img).map(c=>`<button data-prc="${esc(c.name)}" class="${cfg.cast.includes(c.name)?'on':''}" title="${esc(c.name)}">${charArt(c)}</button>`).join('')}</div></div></div>
+    <div class="prs-prev"><div class="prs-canvas"><canvas id="prCv"></canvas></div><div class="prs-busy" id="prBusy" hidden>Rendering at full print size…</div></div>
+    <div class="prs-out"><b>Mockup</b><img id="prMock" alt="mockup"><div class="prs-btns"><button class="btn primary" data-prx="png">⬇ PNG (print-ready)</button>${['shirt','stickers'].includes(PRS.kind)?'':'<button class="btn" data-prx="pdf">⬇ PDF</button>'}${PRS.kind==='stickers'?'<button class="btn" data-prx="each">⬇ Each sticker (.zip)</button>':''}</div>
+      <p class="tiny muted">${{stickers:'Print on full-sheet sticker paper and cut along the gray outline, or upload the single stickers to a sticker site.',poster:'18×24 prints at most print shops. The PNG works at smaller sizes too (12×16, 9×12).',shirt:'Transparent PNG. Upload it as the front print to Redbubble, Printful, Teespring or a local shop.',buttons:'For a 2.25" button press. Cut on the dashed circles.',zine:'Print one-sided, landscape, actual size. Fold in half the long way, cut the red line, fold into a little book. Search "8 page zine fold" if it\'s your first one.',dvd:'Slides into the clear sleeve of a standard DVD case.',vhs:'Old-school sleeve front. Print, trim, slip it over a VHS case (or a book).',album:'12×12 for vinyl. For a CD, print at 4.75×4.75.'}[PRS.kind]}</p></div></div>`;
+  const f=el.querySelector('.prs-form'); f.oninput=f.onchange=e=>{ const x=e.target.closest('[data-prf]'); if(!x) return; cfg[x.dataset.prf]=x.value; save(); if(x.dataset.prf==='style') return prEditor(); prRedraw(); };
+  f.onclick=e=>{ const p=e.target.closest('[data-prp]'); if(p){ cfg.pal=+p.dataset.prp; save(); $$('.prs-pal button').forEach(b=>b.classList.toggle('on',b===p)); return prRedraw(); } const c=e.target.closest('[data-prc]'); if(c){ const n=c.dataset.prc, i=cfg.cast.indexOf(n); if(i>=0) cfg.cast.splice(i,1); else { if(cfg.cast.length>=K[7]) cfg.cast.shift(); cfg.cast.push(n); } save(); $$('.prs-cast button').forEach(b=>b.classList.toggle('on',cfg.cast.includes(b.dataset.prc))); prRedraw(); } };
+  el.querySelector('.prs-btns').onclick=e=>{ const b=e.target.closest('[data-prx]'); if(b) prExport(b.dataset.prx); }; prRedraw(); }
+function prRedraw(){ clearTimeout(PRS.t); PRS.t=setTimeout(async()=>{ const K=PR_KINDS.find(x=>x[0]===PRS.kind), cfg=prCfg(PRS.kind), cv=$('#prCv'); if(!cv||!K) return; $('#prBusy').hidden=false; if(cv.width!==K[4]||cv.height!==K[5]){ cv.width=K[4]; cv.height=K[5]; } cv.style.maxWidth=Math.round(Math.max(260,innerHeight*.7)*K[4]/K[5])+'px'; const g=cv.getContext('2d'); g.setTransform(1,0,0,1,0,0);
+    try{ await document.fonts.load('80px Bangers'); }catch(e){} try{ await prRender(PRS.kind,cfg,g,K[4],K[5]); PRS.cv=cv; const mk=prMockup(PRS.kind,cv,cfg); $('#prMock').src=mk.toDataURL('image/jpeg',.85); }catch(e){ console.error(e); } $('#prBusy').hidden=true; },180); }
+{ const _g=go; go=function(s){ const r=_g.apply(this,arguments); if(s==='print') setTimeout(prEnter,0); return r; }; }
+{ const _c=commands; commands=function(){ const C=_c(); PR_KINDS.forEach(K=>C.push({ico:K[1],label:'Print Shop: '+K[2],run:()=>{ PRS.kind=K[0]; go('print'); },kw:'print merch '+K[3].toLowerCase()})); return C; }; }
+/* =====================================================================
+   [TRAILER] 5.0 surprise: Trailer Studio. Pick a genre, a title and a
+   cast, drop in a few lines (typed, rolled, or pulled from a script)
+   and it cuts a full movie trailer: parody approval card, studio
+   sting, "THIS SUMMER…" cards, push-in character shots with voices and
+   subtitles, a hit-on-every-beat montage, the BRAAAM title reveal and
+   a billing block. Original music per genre. MP4 wide or vertical.
+   ===================================================================== */
+SCREEN_NAMES.trailer='Trailer Studio';
+addTab('trailer','🎞','Trailer Studio',{before:'shorts',door:{cls:'d21',h:'Trailer Studio',p:'Turn your cast into a movie trailer in one click. Pick a genre, add a few lines, get the BRAAAM, the title cards and the billing block.',k:'COMING SOON',art:'Starr'}});
+try{ const mk=HUBS.find(h=>h.k==='make'); if(mk&&!mk.s.includes('trailer')) mk.s.splice((mk.s.indexOf('puppet')+1)||mk.s.length,0,'trailer'); HUB_SHORT.trailer='Trailer Studio'; }catch(e){}
+ACH.push({id:'trailer1',e:'🎞',n:'In A World…',d:'Export a movie trailer from the Trailer Studio'});
+
+/* genre: colors, fonts, cards, music */
+const TR_GENRES={
+  blockbuster:{n:'💥 Blockbuster',bg:'#05070c',fg:'#e9f1ff',ac:'#ffb347',grade:['rgba(0,90,140,.22)','rgba(255,140,40,.14)'],font:'900 {S}px Impact, "Arial Black", sans-serif',
+    cards:['THIS SUMMER','ONE CITY','ONE CHANCE','NO MORE GAMES','THE END BEGINS'],bpm:96,key:38,prog:[0,0,-4,-2],pad:'strings',lead:'brass',perc:'orch',sting:'boom',
+    lines:['{A}, we have maybe ten minutes before this whole place goes up.','I didn\'t ask for this. But I\'m gonna finish it.','{B}! Get down!','You think you can just walk in here?','Nobody leaves until this is over.','We do this together, or not at all.']},
+  horror:{n:'🩸 Horror',bg:'#040303',fg:'#e8e2dc',ac:'#c1121f',grade:['rgba(20,40,30,.35)','rgba(0,0,0,.25)'],font:'italic 700 {S}px Georgia, "Times New Roman", serif',
+    cards:['THEY THOUGHT IT WAS OVER','SOMETHING FOLLOWED THEM HOME','DON\'T LOOK BEHIND YOU','NOBODY IS SAFE'],bpm:60,key:37,prog:[0,1,0,-1],pad:'pad',lead:'strings',perc:'',sting:'vineboom',
+    lines:['Did you hear that?','{A}… is that you?','We should not be here.','It\'s been watching us the whole time.','Don\'t open that door.','Why is the music getting louder?']},
+  romcom:{n:'💘 Rom-com',bg:'#fff4f6',fg:'#2b1b22',ac:'#e64980',grade:['rgba(255,170,190,.14)','rgba(255,230,180,.12)'],font:'700 {S}px Georgia, serif',
+    cards:['THIS VALENTINE\'S DAY','TWO PEOPLE','ZERO CHILL','ONE VERY BAD PLAN'],bpm:118,key:60,prog:[0,7,9,5],pad:'piano',lead:'pizz',perc:'brushes',sting:'ding',
+    lines:['Okay, so this is NOT a date.','{B}, I need you to pretend to be my boyfriend for one weekend.','You\'re the most annoying person I\'ve ever met.','Wait. Did you just smile at me?','I hate how much I like you.','Nobody falls in love at {P}.']},
+  indie:{n:'🌿 Indie darling',bg:'#efe9dd',fg:'#2d2a26',ac:'#8a7a5a',grade:['rgba(200,180,120,.18)','rgba(60,80,70,.10)'],font:'300 {S}px "Helvetica Neue", Arial, sans-serif',
+    cards:['A FILM ABOUT','GROWING UP','AND STAYING STILL','"DEVASTATING." — SOME GUY'],bpm:84,key:55,prog:[0,5,9,7],pad:'epiano',lead:'harp',perc:'',sting:'ding',
+    lines:['Do you ever feel like you\'re just… waiting?','I think I was happier when I didn\'t know.','{A} keeps a list of everything that ended.','Let\'s just drive.','It\'s fine. It\'s whatever. It\'s a whole thing.','I\'m not sad. I\'m just in a movie.']},
+  anime:{n:'⚡ Anime movie',bg:'#0b0430',fg:'#ffffff',ac:'#ff2e88',grade:['rgba(120,60,255,.16)','rgba(0,200,255,.10)'],font:'{S}px Bangers, Impact, sans-serif',
+    cards:['THE FINAL ARC','BONDS WILL BE TESTED','POWER BEYOND LIMITS','THIS IS OUR STORY'],bpm:150,key:45,prog:[0,-4,-2,3],pad:'synth',lead:'synth',perc:'drums',sting:'boom',
+    lines:['I won\'t lose. Not to you. Not ever!','{B}! This power… it\'s not mine!','You were always the strongest, {A}.','If I fall, keep going!','This is the moment I was born for!','Hmph. Interesting.']}};
+
+const TRL={cv:null,playing:null,img:{},raf:0};
+function trlCfg(){ S.settings.trailer=S.settings.trailer||{}; const c=S.settings.trailer; const def={genre:'blockbuster',title:'',tag:'',studio:'A Warren Outt Film',date:'COMING SOON',cast:[],lines:[],sets:[],seed:1};
+  Object.keys(def).forEach(k=>{ if(c[k]===undefined) c[k]=Array.isArray(def[k])?[...def[k]]:def[k]; });
+  if(!c.cast.length) c.cast=S.chars.filter(x=>x.img).slice(0,3).map(x=>x.name); if(!c.title) c.title=showName().toUpperCase()+': THE MOVIE'; return c; }
+const trlSets=()=>[...BACKGROUNDS.map(b=>[b,b.split('/').pop().replace(/\.\w+$/,'').replace(/[-_]/g,' ')]),...(typeof CLASSIC_SETS!=='undefined'?CLASSIC_SETS.map(c=>[c.p,'📼 '+c.n]):[])];
+function trlFill(s,cfg){ const c=cfg.cast.length?cfg.cast:['Deegs','Starr'], pl=(typeof CT_PLACES_RAW!=='undefined'?CT_PLACES_RAW.map(p=>p[1]):['the mall']); return s.replace(/\{A\}/g,c[0].split(' ')[0]).replace(/\{B\}/g,(c[1]||c[0]).split(' ')[0]).replace(/\{P\}/g,pl[hashStr(s)%pl.length]); }
+function trlRoll(cfg){ const G=TR_GENRES[cfg.genre], R=nfRng(Date.now()), pool=[...G.lines].sort(()=>R()-.5), cast=cfg.cast.length?cfg.cast:['Deegs'];
+  cfg.lines=pool.slice(0,Math.min(4,Math.max(3,cast.length+1))).map((l,i)=>{ const c=charByName(cast[i%cast.length]); const q=c&&c.quotes&&c.quotes.length&&R()<.35?pick(c.quotes):null; return {who:cast[i%cast.length],text:q||trlFill(l,cfg)}; }); }
+function trlFromScript(cfg,id){ const s=S.scripts.find(x=>x.id===id); if(!s) return 0; const out=[]; let who=null; s.blocks.forEach(b=>{ if(b.t==='character') who=(b.x||'').trim(); else if(b.t==='dialogue'&&who&&b.x&&b.x.trim()){ const c=S.chars.find(x=>x.name.toUpperCase()===who.toUpperCase()||x.name.split(' ')[0].toUpperCase()===who.split(' ')[0].toUpperCase()); out.push({who:c?c.name:who,text:b.x.trim().slice(0,140)}); } });
+  if(!out.length) return 0; const R=nfRng(id), pickd=[...out].sort((a,b)=>Math.abs(a.text.length-55)-Math.abs(b.text.length-55)+(R()-.5)*30).slice(0,5); cfg.lines=out.filter(l=>pickd.includes(l)); cfg.lines.forEach(l=>{ if(!cfg.cast.includes(l.who)&&charByName(l.who)&&cfg.cast.length<5) cfg.cast.push(l.who); }); return cfg.lines.length; }
+
+/* ---------- the cut ---------- */
+function trlPlan(cfg){ const G=TR_GENRES[cfg.genre]||TR_GENRES.blockbuster, R=nfRng(cfg.seed+':'+cfg.genre), cast=cfg.cast.filter(n=>charByName(n)), sets=cfg.sets.length?cfg.sets:[BACKGROUNDS[hashStr(cfg.title)%BACKGROUNDS.length]], shots=[]; let t=0;
+  const add=(type,dur,o={})=>{ shots.push({type,t0:t,t1:t+dur,...o}); t+=dur; }; const setAt=i=>sets[i%sets.length], who=i=>cast.length?cast[i%cast.length]:null;
+  add('rating',2.6); add('studio',3.2); const lines=cfg.lines.filter(l=>l.text&&l.text.trim()); let ci=0;
+  if(lines.length){ lines.forEach((l,i)=>{ if(i%2===0&&ci<G.cards.length-1) add('card',1.9,{text:G.cards[ci++]}); add('say',Math.max(2.2,babbleDur(l.text)+.9),{who:charByName(l.who)?l.who:who(i),text:l.text,set:setAt(i),side:R()<.5?-1:1,z:R()}); }); }
+  else cast.forEach((n,i)=>{ if(ci<G.cards.length-1) add('card',1.9,{text:G.cards[ci++]}); add('pose',2.2,{who:n,set:setAt(i),side:R()<.5?-1:1,z:R()}); });
+  add('card',1.7,{text:G.cards[G.cards.length-1]}); if(cfg.tag) add('card',2.2,{text:cfg.tag.toUpperCase(),tag:true});
+  const n=Math.max(8,cast.length*3), beat=60/G.bpm/(G.bpm<90?1:2); for(let i=0;i<n;i++) add('hit',Math.max(.28,beat),{who:who(i+1),set:setAt(i+1),side:i%2?1:-1,z:R(),flash:i%2===0});
+  add('gap',.45); add('title',4.4); add('date',2.4); add('billing',3.6); return {shots,dur:t,G}; }
+async function trlLoad(cfg,plan){ for(const s of plan.shots){ if(s.set&&TRL.img['set:'+s.set]===undefined){ TRL.img['set:'+s.set]=null; try{ TRL.img['set:'+s.set]=await loadImg(assetURL(s.set)); }catch(e){} } if(s.who) await pzCharImg(s.who); } try{ await document.fonts.load('80px Bangers'); }catch(e){} }
+
+/* audio: music bed, stings, dialogue — one offline mix shared by preview + export */
+async function trlAudio(plan,cfg){ const G=plan.G, sr=44100, dur=plan.dur+1.5, oc=new OfflineAudioContext(2,Math.ceil(dur*sr),sr), master=oc.createGain(); master.gain.value=.9; master.connect(oc.destination);
+  const mus=oc.createGain(); mus.connect(master); const vox=oc.createGain(); vox.gain.value=1.25; vox.connect(master); const fx=oc.createGain(); fx.gain.value=.9; fx.connect(master);
+  const sh=k=>plan.shots.filter(s=>s.type===k), ins=k=>INST[k]||INST.piano, play=(k,p,t,d,v)=>{ try{ ins(k).play(oc,mus,p,t,d,v,{}); }catch(e){} }, sfx=(k,t)=>{ try{ (OSFX[k]||OSFX.boom).run(oc,t,fx); }catch(e){} };
+  const st=sh('studio')[0], hits=sh('hit'), title=sh('title')[0], m0=st.t1-.2, m1=hits.length?hits[0].t0:title.t0, beat=60/G.bpm;
+  sfx(G.sting,st.t0+.15); if(cfg.genre!=='horror') play(G.lead,G.key+12,st.t0+.2,2.2,.5);
+  /* bed: chords per bar, building */ mus.gain.setValueAtTime(.55,0);
+  for(let b=0,t=m0;t<m1-.05;b++,t+=beat*4){ const r=G.key+G.prog[b%G.prog.length], minor=cfg.genre!=='romcom'&&cfg.genre!=='indie', ch=[r,r+(minor?3:4),r+7], d=Math.min(beat*4,m1-t);
+    ch.forEach(p=>play(G.pad,p,t,d,.32+Math.min(.25,b*.04))); play(cfg.genre==='horror'?'pad':'bass',r-12,t,d,.5);
+    for(let i=0;i<4;i++){ const tt=t+i*beat; if(tt>=m1) break; if(G.perc){ play(G.perc,i%2?38:36,tt,.2,.7); if(G.perc!=='orch') play(G.perc,42,tt+beat/2,.1,.35); } else if(cfg.genre==='indie') play(G.lead,r+12+[0,7,12,7][i],tt,beat,.35); else if(cfg.genre==='horror'&&i===0) play('strings',r+25,tt,beat*3.5,.18); } }
+  sh('card').forEach(c=>{ if(cfg.genre==='horror') sfx(c.tag?'vineboom':'whoosh',c.t0); else if(cfg.genre==='blockbuster'){ play('timpani',G.key-12,c.t0,.8,.9); sfx('whoosh',c.t0); } else sfx('whoosh',c.t0); });
+  /* duck music under lines */ [...sh('say')].forEach(s=>{ const t0=s.t0+.35, d=babbleDur(s.text); mus.gain.setTargetAtTime(.22,t0-.15,.05); mus.gain.setTargetAtTime(.55,t0+d,.15); try{ babble(oc,t0,s.text,s.who,vox,1); }catch(e){} });
+  /* montage: double time, hit on every cut */ hits.forEach((h,i)=>{ const r=G.key+G.prog[(i>>1)%G.prog.length]; play(G.lead,r+12+(i%2?7:0),h.t0,h.t1-h.t0,.55); play(G.perc||'orch',36,h.t0,.2,1); if(h.flash) sfx(cfg.genre==='romcom'?'ding':'whoosh',h.t0); if(i===hits.length-1) mus.gain.setTargetAtTime(0,h.t1,.03); });
+  /* BRAAAM */ const T=title.t0; sfx('boom',T); [G.key-24,G.key-12,G.key-5,G.key].forEach(p=>{ play('brass',p,T,2.6,1); play('strings',p,T,3.6,.8); }); if(cfg.genre==='horror') play('pad',G.key+1,T,4,.6); mus.gain.setTargetAtTime(.75,T-.02,.01);
+  const D=sh('date')[0]; sfx('boom',D.t0); play('timpani',G.key-12,D.t0,1,1); const bl=sh('billing')[0]; [0,4,7,12].forEach(i=>play(G.pad,G.key+i,bl.t0,3.2,.35)); mus.gain.setTargetAtTime(0,bl.t1-.8,.3);
+  return oc.startRendering(); }
+
+/* ---------- drawing ---------- */
+function trlFont(G,s){ return G.font.replace('{S}',Math.round(s)); }
+function trlCover(g,im,W,H,z,px){ if(!im){ g.fillStyle='#222'; g.fillRect(0,0,W,H); return; } const s=Math.max(W/im.width,H/im.height)*z, w=im.width*s, h=im.height*s; g.drawImage(im,(W-w)/2+px*W*.04,(H-h)/2,w,h); }
+function trlChar(g,name,cx,by,h,m,flip){ const I=PZ.img[name]; if(!I) return; const im=I.im, B=I.B, w=h*im.width/im.height; g.save(); g.translate(cx,by-h/2); g.scale(flip?-1:1,1);
+  if(m>.05){ const my=(B.y0+(B.y1-B.y0)*.64)*im.height, gap=m*h*.07, cut=-h/2+my/im.height*h; g.drawImage(im,0,0,im.width,my,-w/2,-h/2,w,my/im.height*h); g.fillStyle='#2a0505'; g.beginPath(); g.ellipse(((B.x0+B.x1)/2-.5)*w,cut+gap/2,(B.x1-B.x0)*w*.2,gap/2+2,0,0,7); g.fill(); g.drawImage(im,0,my,im.width,im.height-my,-w/2,cut+gap,w,(im.height-my)/im.height*h); }
+  else g.drawImage(im,-w/2,-h/2,w,h); g.restore(); }
+function trlText(g,text,x,y,maxW,size,font,fill,lh=1.12){ g.font=font; const lines=pkWrap(g,text,maxW); lines.forEach((l,i)=>g.fillText(l,x,y+(i-(lines.length-1)/2)*size*lh)); }
+function trlDraw(g,W,H,plan,t,cfg){ const G=plan.G, s=plan.shots.find(x=>t>=x.t0&&t<x.t1)||plan.shots[plan.shots.length-1], p=clamp((t-s.t0)/(s.t1-s.t0),0,1), lt=t-s.t0, M=Math.min(W,H), vert=H>W;
+  const fade=(a=.25,b=.25)=>Math.max(0,Math.min(1,lt/a,(s.t1-t)/b)); g.save(); g.setTransform(1,0,0,1,0,0); g.globalAlpha=1; g.textAlign='center'; g.textBaseline='middle'; g.fillStyle='#000'; g.fillRect(0,0,W,H);
+  if(s.type==='rating'){ const horror=cfg.genre==='horror', col=horror?'#7a0c0c':'#0c6b2f'; g.fillStyle=col; g.fillRect(0,0,W,H); g.globalAlpha=fade(.3,.3); const bw=W*(vert?.86:.62), bh=H*(vert?.36:.56), x=(W-bw)/2, y=(H-bh)/2; g.strokeStyle='#fff'; g.lineWidth=M*.006; g.strokeRect(x,y,bw,bh); g.fillStyle='#fff';
+    trlText(g,'THE FOLLOWING PREVIEW HAS BEEN APPROVED BY WARREN FOR',W/2,y+bh*.16,bw*.9,M*.032,`800 ${M*.032}px system-ui, sans-serif`); g.font=`900 ${M*.07}px system-ui, sans-serif`; g.fillText(horror?'BRAVE AUDIENCES ONLY':'APPROPRIATE AUDIENCES',W/2,y+bh*.42,bw*.92);
+    trlText(g,'NENJAC ADVISORY: EXPLICIT LORE',W/2,y+bh*.66,bw*.9,M*.034,`800 ${M*.034}px system-ui, sans-serif`); g.font=`600 ${M*.024}px system-ui, sans-serif`; g.globalAlpha*=.85; g.fillText('www.nenjac.notreal · rated N for Nenjac',W/2,y+bh*.86,bw*.9); }
+  else if(s.type==='studio'){ g.fillStyle=G.bg==='#fff4f6'||G.bg==='#efe9dd'?'#111':G.bg; g.fillRect(0,0,W,H); const a=fade(.5,.5); g.globalAlpha=a; const sweep=-.3+p*1.6, gr=g.createLinearGradient(W*sweep-W*.15,0,W*sweep+W*.15,0); gr.addColorStop(0,'#b8860b'); gr.addColorStop(.5,'#fff6c8'); gr.addColorStop(1,'#b8860b');
+    g.fillStyle=gr; g.font=`900 ${M*.085}px Georgia, serif`; g.fillText((cfg.studio||'A WARREN OUTT FILM').toUpperCase(),W/2,H*.48,W*.9); g.font=`600 ${M*.026}px Georgia, serif`; g.fillStyle='rgba(255,240,200,.8)'; g.fillText('PICTURES · '+showName().toUpperCase()+' ENTERTAINMENT',W/2,H*.48+M*.08,W*.9); }
+  else if(s.type==='card'){ const lt2=cfg.genre==='romcom'||cfg.genre==='indie'; g.fillStyle=lt2?G.bg:'#000'; g.fillRect(0,0,W,H); g.globalAlpha=fade(.18,.25); const sc=1+p*.06; g.translate(W/2,H/2); g.scale(sc,sc); g.fillStyle=s.tag?G.ac:G.fg;
+    if(cfg.genre==='horror'&&Math.sin(t*53)>.82) g.globalAlpha*=.3; trlText(g,s.text,0,0,W*.84/sc,M*(s.text.length>22?.07:.1),trlFont(G,M*(s.text.length>22?.07:.1)),g.fillStyle); }
+  else if(s.type==='say'||s.type==='pose'||s.type==='hit'){ const z=1.06+p*(s.type==='hit'?.08:.07)+(s.z||0)*.04, im=TRL.img['set:'+s.set]; trlCover(g,im,W,H,z,(p-.5)*(s.side||1)); const pal=G.grade; g.fillStyle=pal[0]; g.fillRect(0,0,W,H); g.globalCompositeOperation='soft-light'; g.fillStyle=pal[1]; g.fillRect(0,0,W,H); g.globalCompositeOperation='source-over';
+    if(s.who){ const cz=s.type==='say'?(s.z>.5?1.25:1.0):1.1, ch=H*(vert?.48:.74)*cz*(1+p*.05), cx=vert?W/2:W*(.5+(s.side||1)*(s.type==='hit'?.18:.14)); let m=0; if(s.type==='say'){ const a=lt-.35, d=babbleDur(s.text)-.35; if(a>0&&a<d) m=Math.abs(Math.sin(a*Math.PI/.105))*.9; } trlChar(g,s.who,cx+Math.sin(t*.9)*M*.004,H*(vert?.8:.98)+ch*(cz-1)*.35,ch,m,(s.side||1)>0); }
+    if(cfg.genre==='anime'&&s.type==='hit'){ g.strokeStyle='rgba(255,255,255,.55)'; g.lineWidth=M*.004; const R=nfRng(Math.floor(t*12)); for(let i=0;i<40;i++){ const a=R()*7, r0=M*(.35+R()*.2); g.beginPath(); g.moveTo(W/2+Math.cos(a)*r0,H/2+Math.sin(a)*r0); g.lineTo(W/2+Math.cos(a)*M*1.2,H/2+Math.sin(a)*M*1.2); g.stroke(); } }
+    const vg=g.createRadialGradient(W/2,H/2,M*.3,W/2,H/2,Math.max(W,H)*.75); vg.addColorStop(0,'rgba(0,0,0,0)'); vg.addColorStop(1,cfg.genre==='horror'?'rgba(0,0,0,.85)':'rgba(0,0,0,.45)'); g.fillStyle=vg; g.fillRect(0,0,W,H);
+    if(cfg.genre==='indie'){ const R=nfRng(Math.floor(t*24)); g.fillStyle='rgba(255,255,255,.06)'; for(let i=0;i<220;i++) g.fillRect(R()*W,R()*H,2,2); }
+    if(s.type==='hit'&&s.flash&&lt<.08){ g.fillStyle='rgba(255,255,255,.75)'; g.fillRect(0,0,W,H); }
+    if(s.type!=='hit'){ g.globalAlpha=Math.min(1,lt/.15,(s.t1-t)/.12); }
+    if(s.type==='say'){ const a=lt-.3; if(a>0){ g.font=`700 ${M*.038}px system-ui, sans-serif`; g.lineWidth=M*.008; g.strokeStyle='rgba(0,0,0,.85)'; g.fillStyle='#fff'; const lines=pkWrap(g,s.text,W*.8); const y0=vert?H*.88:H-(H-W/2.39)/2-M*.055; lines.forEach((l,i)=>{ const y=y0+(i-(lines.length-1))*M*.048; g.strokeText(l,W/2,y); g.fillText(l,W/2,y); }); } }
+    if(!vert){ const bar=(H-W/2.39)/2; g.globalAlpha=1; g.fillStyle='#000'; g.fillRect(0,0,W,bar); g.fillRect(0,H-bar,W,bar); } }
+  else if(s.type==='title'){ g.fillStyle=G.bg==='#fff4f6'||G.bg==='#efe9dd'?G.bg:'#000'; g.fillRect(0,0,W,H); if(cfg.genre!=='romcom'&&cfg.genre!=='indie'){ const gl=g.createRadialGradient(W/2,H/2,0,W/2,H/2,M*.8); gl.addColorStop(0,G.ac+'55'); gl.addColorStop(1,'rgba(0,0,0,0)'); g.globalAlpha=Math.min(1,lt*2); g.fillStyle=gl; g.fillRect(0,0,W,H); }
+    g.globalAlpha=Math.min(1,lt/.12)*Math.min(1,(s.t1-t)/.3); const sc=1.18-Math.min(1,lt/.35)*.18+p*.04; g.translate(W/2,H/2); g.scale(sc,sc); const sz=M*(cfg.title.length>18?.11:.15); g.fillStyle=cfg.genre==='horror'?'#e8e2dc':G.fg; if(cfg.genre==='anime'||cfg.genre==='blockbuster'){ g.shadowColor=G.ac; g.shadowBlur=M*.04; } trlText(g,cfg.title.toUpperCase(),0,0,W*.88/sc,sz,trlFont(G,sz)); g.shadowBlur=0;
+    if(cfg.genre==='horror'&&lt>.4&&lt<.55){ g.globalCompositeOperation='difference'; g.fillStyle='#fff'; g.fillRect(-W,-H,W*2,H*2); } }
+  else if(s.type==='date'){ g.fillStyle='#000'; g.fillRect(0,0,W,H); g.globalAlpha=fade(.1,.3); g.fillStyle=G.ac; trlText(g,(cfg.date||'COMING SOON').toUpperCase(),W/2,H/2,W*.85,M*.09,trlFont(G,M*.09)); }
+  else if(s.type==='billing'){ g.fillStyle='#000'; g.fillRect(0,0,W,H); g.globalAlpha=fade(.3,.6); g.fillStyle=G.ac; trlText(g,cfg.title.toUpperCase(),W/2,H*.36,W*.8,M*.06,trlFont(G,M*.06)); g.fillStyle='rgba(255,255,255,.72)';
+    const cast=cfg.cast.join('   ').toUpperCase(), cr=`${(cfg.studio||'A WARREN OUTT FILM').toUpperCase()}  ${cast}  MUSIC BY THE NENJAC CREATOR  WRITTEN BY ${(S.scripts[0]?.author||'DEEGS & NOAH').toUpperCase()}  DIRECTED BY WARREN OUTT  ${showName().toUpperCase()} ENTERTAINMENT`;
+    g.save(); g.translate(W/2,H*.62); g.scale(.62,1); trlText(g,cr,0,0,W*1.2,M*.032,`600 ${M*.032}px "Arial Narrow", "Helvetica Neue", Arial, sans-serif`); g.restore(); g.font=`800 ${M*.022}px system-ui`; g.fillStyle='rgba(255,255,255,.5)'; g.fillText('MADE IN THE NENJAC CREATOR · NOT A REAL MOVIE (YET)',W/2,H*.86); }
+  g.restore(); }
+
+/* ---------- UI ---------- */
+function trlEnter(){ const el=$('#scr-trailer'); if(!el) return; const cfg=trlCfg(), sets=trlSets(), scripts=(S.scripts||[]).filter(s=>s.blocks&&s.blocks.some(b=>b.t==='dialogue'&&b.x&&b.x.trim()));
+  el.innerHTML=`<div class="trl"><div class="trl-head"><h2>🎞 Trailer Studio</h2><p class="tiny muted">In a world… where your cast gets a real movie trailer. Fill it in, hit ▶, export.</p></div>
+    <div class="trl-body"><div class="trl-form pk-opts col">
+      <div><span>Genre</span><div class="trl-gen">${Object.entries(TR_GENRES).map(([k,G])=>`<button data-trg="${k}" class="${cfg.genre===k?'on':''}">${G.n}</button>`).join('')}</div></div>
+      <label>Title <input class="txt" data-trf="title" value="${esc(cfg.title)}"></label><label>Tagline <input class="txt" data-trf="tag" value="${esc(cfg.tag)}" placeholder="Some doors should stay closed."></label>
+      <label>Studio <input class="txt" data-trf="studio" value="${esc(cfg.studio)}"></label><label>Release <input class="txt" data-trf="date" value="${esc(cfg.date)}" placeholder="COMING SOON"></label>
+      <div><span>Starring (up to 5)</span><div class="prs-cast">${S.chars.filter(c=>c.img).map(c=>`<button data-trc="${esc(c.name)}" class="${cfg.cast.includes(c.name)?'on':''}" title="${esc(c.name)}">${charArt(c)}</button>`).join('')}</div></div>
+      <div><span>Sets</span><select class="txt" id="trlSet" multiple size="4">${sets.map(([p,n])=>`<option value="${esc(p)}" ${cfg.sets.includes(p)?'selected':''}>${esc(n)}</option>`).join('')}</select><small class="muted">Ctrl/⌘-click for more than one. None = picks one.</small></div>
+      <div><span>Lines</span><div id="trlLines" class="trl-lines"></div><div class="row wrap"><button class="btn sm" id="trlAddL">＋ Line</button><button class="btn sm" id="trlRoll">🎲 Write them for me</button>${scripts.length?`<select class="txt" id="trlScr"><option value="">📜 Pull from a script…</option>${scripts.map(s=>`<option value="${s.id}">${esc(s.title||'Untitled')}</option>`).join('')}</select>`:''}</div></div></div>
+    <div class="trl-main"><div class="trl-stage"><canvas id="trlCv" width="1280" height="720"></canvas><div class="trl-busy" id="trlBusy" hidden>Cutting the trailer…</div></div>
+      <div class="row wrap"><button class="btn primary big" id="trlPlay">▶ Play trailer</button><button class="btn" id="trlRecut" title="Same stuff, different edit">🔀 Re-cut</button><span class="pill" id="trlLen"></span><span class="grow"></span><button class="btn" data-trx="h">⬇ MP4 16:9</button><button class="btn" data-trx="v">⬇ MP4 9:16</button></div><div id="trlOut"></div></div></div></div>`;
+  const f=el.querySelector('.trl-form');
+  f.oninput=e=>{ const x=e.target.closest('[data-trf]'); if(x){ cfg[x.dataset.trf]=x.value; save(); trlStill(); } const l=e.target.closest('[data-trl]'); if(l){ cfg.lines[+l.dataset.trl][l.dataset.k]=l.value; save(); trlStill(); } };
+  f.onchange=e=>{ if(e.target.id==='trlSet'){ cfg.sets=[...e.target.selectedOptions].map(o=>o.value); save(); trlStill(); } const l=e.target.closest('[data-trl]'); if(l){ cfg.lines[+l.dataset.trl][l.dataset.k]=l.value; save(); trlStill(); } if(e.target.id==='trlScr'&&e.target.value){ const n=trlFromScript(cfg,e.target.value); save(); toast(n?`📜 Pulled ${n} lines.`:'No dialogue in that one.'); trlEnter(); } };
+  f.onclick=e=>{ const g=e.target.closest('[data-trg]'); if(g){ cfg.genre=g.dataset.trg; save(); $$('[data-trg]').forEach(b=>b.classList.toggle('on',b===g)); return trlStill(); }
+    const c=e.target.closest('[data-trc]'); if(c){ const n=c.dataset.trc, i=cfg.cast.indexOf(n); if(i>=0) cfg.cast.splice(i,1); else { if(cfg.cast.length>=5) cfg.cast.shift(); cfg.cast.push(n); } save(); $$('[data-trc]').forEach(b=>b.classList.toggle('on',cfg.cast.includes(b.dataset.trc))); trlLinesUI(); return trlStill(); }
+    const rm=e.target.closest('[data-trrm]'); if(rm){ cfg.lines.splice(+rm.dataset.trrm,1); save(); trlLinesUI(); return trlStill(); }
+    if(e.target.id==='trlAddL'){ if(cfg.lines.length>=8) return toast('8 lines max. It\'s a trailer, not the movie.'); cfg.lines.push({who:cfg.cast[cfg.lines.length%Math.max(1,cfg.cast.length)]||'',text:''}); save(); trlLinesUI(); }
+    if(e.target.id==='trlRoll'){ trlRoll(cfg); save(); trlLinesUI(); trlStill(); } };
+  $('#trlPlay').onclick=trlPlay; $('#trlRecut').onclick=()=>{ cfg.seed=(cfg.seed||1)+1; save(); trlStill(); toast('🔀 New edit.'); };
+  el.querySelectorAll('[data-trx]').forEach(b=>b.onclick=()=>trlExport(b.dataset.trx)); trlLinesUI(); trlStill(); }
+function trlLinesUI(){ const el=$('#trlLines'), cfg=trlCfg(); if(!el) return; el.innerHTML=cfg.lines.map((l,i)=>`<div class="trl-line"><select data-trl="${i}" data-k="who">${cfg.cast.map(n=>`<option ${l.who===n?'selected':''}>${esc(n)}</option>`).join('')}${l.who&&!cfg.cast.includes(l.who)?`<option selected>${esc(l.who)}</option>`:''}</select><input class="txt" data-trl="${i}" data-k="text" value="${esc(l.text)}" placeholder="What they say…"><button class="pz-x" data-trrm="${i}">✕</button></div>`).join('')||'<p class="tiny muted">No lines = a moody silent trailer. Or hit 🎲.</p>'; }
+async function trlStill(){ clearTimeout(TRL.st); TRL.st=setTimeout(async()=>{ if(TRL.playing) return; const cv=$('#trlCv'); if(!cv) return; const cfg=trlCfg(), plan=trlPlan(cfg); $('#trlLen').textContent=fmtT(plan.dur); await trlLoad(cfg,plan); const s=plan.shots.find(x=>x.type==='say'||x.type==='pose')||plan.shots.find(x=>x.type==='title'); trlDraw(cv.getContext('2d'),cv.width,cv.height,plan,s?s.t0+(s.t1-s.t0)*.6:0,cfg); },150); }
+async function trlPlay(){ if(TRL.playing){ trlStop(); return; } const cfg=trlCfg(), plan=trlPlan(cfg), b=$('#trlPlay'), busy=$('#trlBusy'); busy.hidden=false; await trlLoad(cfg,plan); let buf; try{ buf=await trlAudio(plan,cfg); }catch(e){ console.error(e); } busy.hidden=true;
+  const ac=new (window.AudioContext||window.webkitAudioContext)(); const src=ac.createBufferSource(); if(buf){ src.buffer=buf; src.connect(ac.destination); } const t0=ac.currentTime+.08; if(buf) src.start(t0); TRL.playing={ac,src,t0}; b.textContent='■ Stop';
+  const cv=$('#trlCv'), g=cv.getContext('2d'); const loop=()=>{ if(!TRL.playing||!$('#trlCv')) return trlStop(); const t=ac.currentTime-t0; if(t>plan.dur+.2) return trlStop(); trlDraw(g,cv.width,cv.height,plan,Math.max(0,t),cfg); TRL.raf=requestAnimationFrame(loop); }; loop(); }
+function trlStop(){ const P=TRL.playing; TRL.playing=null; cancelAnimationFrame(TRL.raf); if(P){ try{ P.src.stop(); }catch(e){} try{ P.ac.close(); }catch(e){} } const b=$('#trlPlay'); if(b) b.textContent='▶ Play trailer'; }
+async function trlExport(fmt){ const out=$('#trlOut'), cfg=trlCfg(), plan=trlPlan(cfg); if(TRL.playing) trlStop(); out.innerHTML='<div class="vb-bar"><i id="trlBar" style="width:0"></i></div><p class="tiny muted" id="trlPt">Scoring the music…</p>';
+  try{ await trlLoad(cfg,plan); const buf=await trlAudio(plan,cfg), [W,H]=fmt==='v'?[1080,1920]:[1920,1080];
+    const r=await encodeMovie({w:W,h:H,fps:30,dur:plan.dur+.2,audio:buf,onProgress:p=>{ const b=$('#trlBar'); if(b) b.style.width=(p*100).toFixed(1)+'%'; const pt=$('#trlPt'); if(pt) pt.textContent=`Rendering… ${Math.round(p*100)}%`; },draw:(g,t)=>trlDraw(g,W,H,plan,t,cfg)});
+    if(!r) throw new Error('This browser can\'t make videos (try Chrome).'); const name=`${slug(cfg.title)}-trailer-${fmt==='v'?'vertical':'wide'}.${r.ext}`; download(name,r.blob); unlock('trailer1');
+    out.innerHTML=`<p class="good">✅ Saved ${esc(name)} (${fmtMB(r.blob.size)}). It's playing in Nenjac Cinemas now too.</p>${encNote(r)}`; }catch(e){ console.error(e); out.innerHTML=`<p class="bad">Export failed: ${esc(e.message||e)}</p>`; } }
+{ const _g=go; go=function(s){ if(current==='trailer'&&s!=='trailer') trlStop(); const r=_g.apply(this,arguments); if(s==='trailer') setTimeout(trlEnter,0); return r; }; }
+{ const _c=commands; commands=function(){ const C=_c(); Object.entries(TR_GENRES).forEach(([k,G])=>C.push({ico:'🎞',label:'Trailer Studio: '+G.n.replace(/^\S+\s/,''),run:()=>{ trlCfg().genre=k; go('trailer'); },kw:'trailer movie preview coming soon '+k})); return C; }; }
+if(!FIRST_RUN&&!S.settings.seen50) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello50" role="status"><div class="h40-art">${castArt('Neen')}</div><div><b>5.0: The Make Anything Update.</b><small>🎭 Live Puppet Studio (improv whole episodes with your mic), 🖨 Print Shop (stickers, posters, shirts, zines and more) and one surprise: 🎞 Trailer Studio.${S.settings.seen492?'':' Plus 4.9.2: hubs, Home, search, Post Kit and full backups.'}</small><div class="row"><button class="btn sm primary" id="h50p">🎭 Puppet Studio</button><button class="btn sm" id="h50t">🎞 Trailers</button><button class="btn sm" id="h50w">✨ What's new</button><button class="btn sm" id="h50x" aria-label="Dismiss">✕</button></div></div></div>`);
+  const done=()=>{ ['seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello50')?.remove(); }; $('#h50p').onclick=()=>{ done(); go('puppet'); }; $('#h50t').onclick=()=>{ done(); go('trailer'); }; $('#h50w').onclick=()=>{ done(); openWhatsNew(); }; $('#h50x').onclick=done; },3300);
+if(FIRST_RUN) S.settings.seen50=true;
 
 </script>
 </body>

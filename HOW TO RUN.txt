@@ -1,4 +1,4 @@
-NENJAC CREATOR 4.9.2: how to run it
+NENJAC CREATOR 5.0: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -86,6 +86,22 @@ ON YOUR PHONE
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
 
+NEW IN 5.0: THE MAKE ANYTHING UPDATE (all three live in the MAKE hub)
+  🎭 PUPPET STUDIO. Improv a whole episode with your mic. Pick a set, add up to 6
+     characters, hit ⏺ (or R) and talk: whoever's selected talks. 1–6 switch who,
+     ←/→ walk, ↑ hop, drag to move. ＋ New scene, then ▶ Watch it all.
+     PRO mode: emotes Z X C V B N, sound pads 7 8 9 0 - =, Q/E tilt, W/S grow, F flip,
+     T close-up, voice filters per character, and 🎙 Add a pass (O) to voice another
+     character over what you already recorded. Webcam head tracking is BETA (it loads
+     a face tracker from the internet the first time, Chrome works best).
+     ⬇ Export MP4 wide or vertical (camera follows the talker), or 🎬 Edit in Animate:
+     moves become keyframes, lines get lip-sync.
+  🖨 PRINT SHOP. Sticker sheets, posters, T-shirt prints, button sheets, 8-page zines,
+     DVD covers, VHS sleeves, album covers. Real print sizes, PNG or PDF, with mockups.
+  🎞 TRAILER STUDIO (the surprise). Genre + title + cast + a few lines (type them,
+     🎲 roll them, or pull them from a script) = a full movie trailer with music.
+     🔀 Re-cut for a different edit. Export 16:9 or 9:16.
+
 NEW IN 4.9.2: THE CLEANUP UPDATE
   🧭 HUBS. The tabs are now five hubs: 🏠 Home, ✍️ Write, 🎬 Make, 🎮 Play, 🍿 Watch. Pick one
      and its rooms show up in the strip under the header. Alt+1…0 still jumps around.
@@ -109,7 +125,7 @@ NEW IN 4.9.2: THE CLEANUP UPDATE
   ⏳ TIME MACHINE. Settings → Backup & data (or ⌘K "Time Machine"). Older versions of every
      script, comic, animation and song. Peek, then restore.
 
-PUSHING 4.9.2
+PUSHING 5.0
   index.html, sw.js and this file changed. Commit + push in GitHub Desktop like always.
 
 NEW IN 4.9: THE NENJAC CITY UPDATE
