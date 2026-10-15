@@ -1,4 +1,4 @@
-NENJAC CREATOR 5.2: how to run it
+NENJAC CREATOR 5.2.1: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.

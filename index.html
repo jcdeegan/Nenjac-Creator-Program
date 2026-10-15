@@ -2493,8 +2493,8 @@ html,body{overflow-x:hidden}
 .bk-pop{position:absolute;right:0;top:100%;margin-top:4px;background:#2f9e44;color:#fff;font-weight:800;padding:3px 9px;border-radius:999px;border:2px solid #000;animation:bkPop 2.2s ease-out forwards;pointer-events:none;z-index:50;white-space:nowrap}
 @keyframes bkPop{0%{opacity:0;transform:translateY(-8px) scale(.7)}12%{opacity:1;transform:none}80%{opacity:1}100%{opacity:0;transform:translateY(16px)}}
 #scr-casino,#scr-empire{background:radial-gradient(circle at 50% -10%,#3b1d4a,#120b1c 60%);color:#f1f3f5;min-height:100%}
-.cs{max-width:1280px;margin:0 auto;padding:14px 16px 40px}.cs h2,.cs h3,.em h2,.em h3{color:#fff}
-.cs .tiny,.em .tiny{color:#ced4da}.cs .muted,.em .muted{color:#adb5bd!important}
+#scr-casino>.cs{max-width:1280px;margin:0 auto;padding:14px 16px 40px}#scr-casino>.cs h2,#scr-casino>.cs h3,.em h2,.em h3{color:#fff}
+#scr-casino>.cs .tiny,.em .tiny{color:#ced4da}#scr-casino>.cs .muted,.em .muted{color:#adb5bd!important}
 .csn-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:10px}
 .cs-neon{flex:1;display:flex;flex-direction:column;font-family:Lobster,Fredoka,cursive;line-height:1;text-shadow:0 0 6px #ff6bcb,0 0 18px #ff2fb2,0 0 40px #c2255c;color:#ffe3f6;animation:csFlick 6s infinite}
 .cs-neon span{font-size:20px;color:#ffd43b;text-shadow:0 0 6px #ffd43b,0 0 20px #f08c00;letter-spacing:.2em;font-family:Fredoka,system-ui}.cs-neon b{font-size:clamp(30px,5vw,52px)}
@@ -2504,11 +2504,11 @@ html,body{overflow-x:hidden}
 .cs-nav button,.em-nav button{flex:none;display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.07);color:#f1f3f5;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:7px 12px;font-weight:700;cursor:pointer;font-size:13px}
 .cs-nav button span{font-size:16px}.cs-nav button.on,.em-nav button.on{background:linear-gradient(135deg,#f08c00,#e8590c);border-color:#ffd43b;color:#fff}
 .cs-body{margin-top:6px}.cs-foot{text-align:center;margin-top:26px;opacity:.7}
-.cs .btn,.em .btn{background:#2b2342;color:#fff;border:1px solid #5f3dc4;box-shadow:none;text-transform:none;letter-spacing:0}
-.cs .btn:hover,.em .btn:hover{background:#3b3159}.cs .btn.primary,.em .btn.primary{background:linear-gradient(135deg,#f08c00,#e8590c);border-color:#ffd43b;color:#fff}
-.cs .btn:disabled,.em .btn:disabled{opacity:.45}.cs .chip,.em .chip{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18)}.cs .chip.on,.em .chip.on{background:#f08c00;border-color:#ffd43b}
-.cs .card,.em .card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#f1f3f5;box-shadow:none}
-.cs .txt,.em .txt{background:#1b1528;color:#fff;border:1px solid #4c3a75}
+#scr-casino>.cs .btn,.em .btn{background:#2b2342;color:#fff;border:1px solid #5f3dc4;box-shadow:none;text-transform:none;letter-spacing:0}
+#scr-casino>.cs .btn:hover,.em .btn:hover{background:#3b3159}#scr-casino>.cs .btn.primary,.em .btn.primary{background:linear-gradient(135deg,#f08c00,#e8590c);border-color:#ffd43b;color:#fff}
+#scr-casino>.cs .btn:disabled,.em .btn:disabled{opacity:.45}#scr-casino>.cs .chip,.em .chip{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.18)}#scr-casino>.cs .chip.on,.em .chip.on{background:#f08c00;border-color:#ffd43b}
+#scr-casino>.cs .card,.em .card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#f1f3f5;box-shadow:none}
+#scr-casino>.cs .txt,.em .txt{background:#1b1528;color:#fff;border:1px solid #4c3a75}
 .cs-tony{display:flex;align-items:center;gap:14px;margin:8px 0 16px}.cs-tony>img,.cs-tony>.art,.cs-tony>div:first-child{width:80px;height:80px;object-fit:contain}
 .cs-say{background:#fff;color:#111;border-radius:16px;padding:10px 14px;font-weight:700;position:relative;max-width:560px}.cs-say small{display:block;color:#666;font-weight:600;margin-top:2px}
 .cs-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
@@ -2551,7 +2551,7 @@ html,body{overflow-x:hidden}
 /* video poker, hi-lo */
 .vp-pay{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:3px 12px;background:#0b2a6b;border:3px solid #ffd43b;border-radius:10px;padding:8px;margin-bottom:12px;font-size:13px}.vp-pay span{display:flex;justify-content:space-between;color:#ffd43b;font-weight:700}
 .vp-slot{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer}.vp-slot span{font-weight:900;color:#ffd43b;min-height:18px}.vp-slot.held .pc{transform:translateY(-8px);outline:3px solid #ffd43b}
-.hl-row{display:flex;gap:20px;justify-content:center;align-items:center}.hl-prev{opacity:.55;transform:scale(.8)}.cs .btn small{opacity:.8;margin-left:4px}
+.hl-row{display:flex;gap:20px;justify-content:center;align-items:center}.hl-prev{opacity:.55;transform:scale(.8)}#scr-casino>.cs .btn small{opacity:.8;margin-left:4px}
 /* hold'em */
 .he-lobby{text-align:center;padding:30px}.he-lobby .btn{display:flex;flex-direction:column}.he-log{background:rgba(0,0,0,.3);border-radius:10px;padding:8px;margin-top:10px;max-height:120px;overflow:auto}
 .he-table{position:relative;height:440px;max-width:880px;margin:0 auto}.he-felt{position:absolute;left:12%;right:12%;top:18%;bottom:18%;border-radius:50%/40%;background:radial-gradient(ellipse,#1f7a3d,#0f4a24);border:12px solid #5c3a1a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;box-shadow:inset 0 0 40px rgba(0,0,0,.6)}
@@ -2607,7 +2607,7 @@ html,body{overflow-x:hidden}
 /* nenshi */
 .ns-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:8px}.ns-m{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px;display:grid;grid-template-columns:1fr auto;gap:6px;align-items:center}.ns-m.closed{opacity:.6}
 .ns-q b{display:block;font-size:14px}.ns-spark{color:#8ce99a;width:120px;height:28px}.ns-p{grid-column:1/-1;display:flex;gap:6px;align-items:center}.ns-chance{font-size:22px;font-weight:900;margin-right:auto}
-.cs .ns-y{background:#2f9e44;border-color:#8ce99a}.cs .ns-n{background:#c92a2a;border-color:#ffa8a8}.ns-pos{grid-column:1/-1}.ns-qty{margin-top:10px}
+#scr-casino>.cs .ns-y{background:#2f9e44;border-color:#8ce99a}#scr-casino>.cs .ns-n{background:#c92a2a;border-color:#ffa8a8}.ns-pos{grid-column:1/-1}.ns-qty{margin-top:10px}
 /* bank */
 .bk-wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}.bk-big{font-size:44px;font-weight:900;color:#8ce99a;margin:4px 0}
 .bk-row{display:grid;grid-template-columns:130px 1fr auto;gap:8px;align-items:center;margin:6px 0;font-size:13px}.bk-row .tiny{grid-column:2/-1;margin-top:-6px}
@@ -3108,6 +3108,27 @@ body.night .pk-day{background:#1f2128;border-color:#333}
 .pb-acts{display:flex;flex-direction:column;gap:8px;margin-top:10px}.pb-acts .row{gap:6px;align-items:center}
 .pb-qr{width:180px;background:#fff;border:3px solid #000;border-radius:12px;padding:6px}.pb-qr.sm{width:110px;float:right;margin:-70px 0 0 10px}.pb-qr svg{width:100%;height:auto;display:block}
 .pb-tsel{display:flex;gap:5px;flex-wrap:wrap}.pb-tsel .chip{cursor:pointer;font-size:12.5px}.pb-set h3{margin:14px 0 6px}.pb-set label.row{gap:8px;align-items:center;margin:6px 0;flex-wrap:wrap}.pb-ntfy{background:#f8f9fa;border:2px solid #000;border-radius:12px;padding:8px 10px;margin:6px 0;overflow:hidden}.pb-ntfy ol{margin:4px 0;padding-left:18px;line-height:1.7}
+/* 5.2.1 settings scroll + small screens */
+.modal:has(.setw){display:flex;flex-direction:column;max-height:calc(100dvh - 24px)}
+.setw{height:min(720px,calc(100dvh - 40px));max-height:none;min-height:0;grid-template-rows:minmax(0,1fr);flex:1 1 auto}
+.set-body{min-height:0;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.set-nav{min-height:0;overflow-y:auto}
+@media (max-width:700px){.setw{height:auto;grid-template-rows:auto minmax(0,1fr)}.modal:has(.setw){max-height:none}}
+/* 5.2.1 short screens (Chromebooks, zoomed laptops) */
+@media (max-height:760px) and (min-width:701px){
+  header.marquee{padding-top:3px!important;padding-bottom:3px!important}
+  header.marquee .logo{zoom:.62}header.marquee .hubs,header.marquee .hdr-right{zoom:.85}
+  #app{grid-template-rows:auto auto 1fr 48px}
+  footer.grass .mini{zoom:.82}footer.grass #pet{zoom:.62}footer.grass .foot-note{font-size:11px}
+  .hubbar{zoom:.92}
+  .nc-frame canvas{max-height:calc(100dvh - 190px);width:auto;max-width:100%;margin:0 auto}
+  .pz-stage canvas,.trl-stage canvas{max-height:calc(100dvh - 250px);width:auto;max-width:100%;margin:0 auto}
+  .gf-stage{width:min(100%,calc((100dvh - 210px)*16/9));margin:0 auto}
+  .frg-l canvas{max-height:calc(100dvh - 190px);width:auto;max-width:100%;margin:0 auto}
+  .prs-canvas canvas{max-height:calc(100dvh - 200px)}
+  .modal{max-height:calc(100dvh - 16px)}.modal-bg{padding:8px}
+}
+.nc-frame,.pz-stage,.trl-stage{display:flex;justify-content:center}
 
 </style>
 </head>
@@ -10971,7 +10992,7 @@ drawWheel=function(){ whRender(); }; spinWheel=function(){ whSpin(); };
    points, storage safety, one-tab guard, error catcher, offline app,
    help menu, what's new, accessibility.
    =================================================================== */
-const APP_NAME='Nenjac Creator', APP_VER='5.2', BACKUP_FORMAT=2;
+const APP_NAME='Nenjac Creator', APP_VER='5.2.1', BACKUP_FORMAT=2;
 const showName = () => (S.settings.showName||'').trim() || 'Nenjac';
 S.version = Math.max(S.version||1, 4);
 const ONLINE_APP = /^https?:$/.test(location.protocol);
@@ -10981,6 +11002,11 @@ const ONLINE_APP = /^https?:$/.test(location.protocol);
 
 /* ---------- WHAT'S NEW ---------- */
 const CHANGELOG=[
+  {v:'5.2.1',title:'Fixes for smaller screens',items:[
+    ['🛠','Settings scroll again','Every Settings tab scrolls now, on any screen size.'],
+    ['📋','Call Sheet fixed','The Call Sheet was borrowing the casino\'s dark styling (washed-out white text). It\'s back to normal.'],
+    ['💻','Chromebook mode','On shorter screens the header and the music bar shrink so you get more room, and the Puppet Studio, Trailer Studio, NenjCam, Projects Wall and face rig editor size themselves to fit.'],
+  ]},
   {v:'5.2',title:'The Pitch Box',items:[
     ['💡','Pitch Box','Anyone can pitch you ideas from their phone: episodes, characters, lore, headcanons, songs (they can hum them), comics, running gags, lines, shorts, places, items, villains, AUs, fan theories, duos, specials, games, merch, fan art and wildcards. They can sketch it, add a photo, record a voice memo, or just talk and it types for them.'],
     ['📥','Your pitch inbox','Write → 💡 Pitch Box. Filter by type, search, sort by spice. ⭐ Keeper, 👀 Maybe, ✅ Used, 🗑 Pass, private notes. One click turns a pitch into a new script, a Bible character, lore, or an idea, and keeps the credit.'],
