@@ -1,4 +1,4 @@
-NENJAC CREATOR 4.7: how to run it
+NENJAC CREATOR 4.8: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -85,6 +85,18 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 4.8: THE MONEY UPDATE
+  💵 NENJAC BUCKS. Earned only by making stuff: new writing (anywhere), new shapes in the
+     Art Studio, exported videos and music. Your wallet is the green pill at the top right.
+     Copy-pasting, retyping and gibberish don't pay. It lives in this browser only.
+  🎰 CASINO tab. Card games, slots, keno, lottery, poker, horse racing, the NBL sportsbook,
+     NENSHI prediction markets, the Card Shop (trading cards) and your card collection.
+  💎 EMPIRE tab. Spend your Bucks on stuff in 10 stages, from junk to planets. Name things.
+     Businesses pay into a vault that opens on days you made something.
+
+PUSHING 4.8
+  index.html, sw.js and this file changed. Commit + push in GitHub Desktop like always.
 
 NEW IN 4.7: THE PLAYGROUND UPDATE
   🧨 NENJAC PLAYGROUND (Chaos Corner, top card). A ragdoll sandbox with your cast.
