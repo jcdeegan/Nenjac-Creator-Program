@@ -3129,6 +3129,93 @@ body.night .pk-day{background:#1f2128;border-color:#333}
   .modal{max-height:calc(100dvh - 16px)}.modal-bg{padding:8px}
 }
 .nc-frame,.pz-stage,.trl-stage{display:flex;justify-content:center}
+/* ===== NENJACTALE ===== */
+.door.d25{background:linear-gradient(160deg,#fff 55%,#cfe9ff)}
+.isl{position:relative;height:calc(100dvh - 200px);min-height:440px;border-radius:14px;overflow:hidden;background:#000;outline:none;font-family:"Press Start 2P",monospace;color:#fff;user-select:none;-webkit-user-select:none;touch-action:none}
+.isl:fullscreen{height:100dvh;border-radius:0}
+#isCv{position:absolute;inset:0;width:100%;height:100%;display:block}
+#ibCv{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000;z-index:6;image-rendering:pixelated}
+.isl.is-flash::after{content:"";position:absolute;inset:0;background:#fff;z-index:9;animation:isFl .5s steps(4)}
+@keyframes isFl{0%,50%{opacity:1}25%,75%{opacity:0}100%{opacity:0}}
+.isl.is-shake{animation:isSh .4s}@keyframes isSh{25%{transform:translate(-6px,3px)}50%{transform:translate(5px,-4px)}75%{transform:translate(-3px,2px)}}
+.is-hud{position:absolute;inset:0;pointer-events:none;z-index:2}
+.is-hud button,.is-touch{pointer-events:auto}
+.is-me{position:absolute;left:10px;top:10px;display:flex;gap:8px;align-items:center;background:#000c;border:3px solid #fff;padding:6px 10px 6px 4px}
+.is-me canvas{width:56px;height:56px}
+.is-me b{font-size:11px;color:#ffd43b}.is-me small{display:block;font-size:8px;margin-top:5px;max-width:240px;line-height:1.5;opacity:.9}
+.is-hp{position:relative;width:150px;height:14px;background:#a00;margin-top:5px}.is-hp i{position:absolute;inset:0 auto 0 0;background:#ffe14d;transition:width .3s}.is-hp span{position:relative;font-size:8px;color:#000;padding-left:4px;line-height:14px}
+.is-right{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+#isMini{width:130px;height:130px;border-radius:50%;border:3px solid #fff;background:#246;box-shadow:0 2px 10px #0008}
+.is-track{background:#000b;border:3px solid #fff;padding:8px 10px;max-width:260px;font-size:8px;line-height:1.6}
+.is-track:empty{display:none}.is-track div+div{margin-top:7px}.is-track b{display:block;color:#8fd3ff}.is-track .m b{color:#ffd43b}
+.is-prompt{position:absolute;left:50%;bottom:120px;transform:translateX(-50%);background:#000c;border:3px solid #fff;padding:8px 12px;font-size:10px;white-space:nowrap}
+.is-prompt kbd{background:#ffd43b;color:#000;padding:2px 6px;margin-right:6px;font-family:inherit}
+.is-banner{position:absolute;left:50%;top:22%;transform:translateX(-50%);text-align:center;text-shadow:3px 3px 0 #000;max-width:90%}
+.is-banner b{display:block;font-size:20px;color:#ffd43b}.is-banner small{display:block;font-size:10px;margin-top:10px;text-shadow:1px 1px 0 #000,0 0 6px #000}
+.is-banner.go{animation:isBn 3.4s both}@keyframes isBn{0%{opacity:0;transform:translate(-50%,-14px)}10%,80%{opacity:1;transform:translate(-50%,0)}100%{opacity:0}}
+.is-toasts{position:absolute;left:10px;top:100px;display:flex;flex-direction:column;gap:6px}
+.is-toasts div{background:#000c;border:2px solid #ffd43b;padding:6px 9px;font-size:8px;max-width:300px;line-height:1.5;animation:isT 3.2s both}
+@keyframes isT{0%{opacity:0;transform:translateX(-20px)}8%,85%{opacity:1;transform:none}100%{opacity:0}}
+.is-btns{position:absolute;right:10px;bottom:10px;display:flex;gap:6px}
+.is-btns button{width:42px;height:42px;font-size:18px;background:#000c;border:3px solid #fff;color:#fff;cursor:pointer;border-radius:0}
+.is-touch{display:none}
+@media (pointer:coarse){.is-touch{display:block}.is-btns{bottom:auto;top:160px}.is-prompt{bottom:190px}}
+.is-joy{position:absolute;left:24px;bottom:24px;width:120px;height:120px;border-radius:50%;background:#fff2;border:3px solid #fff8;touch-action:none}
+.is-joy i{position:absolute;left:35px;top:35px;width:50px;height:50px;border-radius:50%;background:#fffc}
+.is-tbtns{position:absolute;right:20px;bottom:24px;display:grid;grid-template-columns:repeat(2,64px);gap:10px}
+.is-tbtns button{height:64px;border-radius:50%;border:3px solid #fff;background:#000a;color:#fff;font:14px "Press Start 2P",monospace}
+.is-tbtns #isA{grid-row:span 2;height:138px;border-radius:32px;background:#ffd43b;color:#000}.is-tbtns button.on{background:#39ff5a;color:#000}
+.is-dlg{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);width:min(820px,calc(100% - 24px));background:#000;border:4px solid #fff;display:flex;gap:12px;padding:12px;z-index:4;min-height:120px;cursor:pointer}
+.is-dlg.cine{bottom:auto;top:50%;transform:translate(-50%,-50%)}
+.is-dlg canvas{width:96px;height:96px;flex:0 0 auto;background:#111}
+.is-dlg.flavor canvas{display:none}
+.is-dtxt{flex:1;min-width:0}.is-dtxt b{font-size:10px;color:#ffd43b}.is-dtxt p{font-size:12px;line-height:1.8;margin:6px 0 0;white-space:pre-wrap}
+.is-ch{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.is-ch button{text-align:left;background:none;border:2px solid #fff;color:#fff;font:10px "Press Start 2P",monospace;padding:8px;cursor:pointer}
+.is-ch button:hover{background:#fff;color:#000}.is-ch button b{color:#ffd43b}
+.is-more{position:absolute;right:12px;bottom:8px;font-size:10px;animation:isBl 1s infinite}@keyframes isBl{50%{opacity:0}}
+.is-menu{position:absolute;inset:0;background:#000a;z-index:7;display:flex;align-items:center;justify-content:center;padding:12px}
+.is-mbox{background:#000;border:4px solid #fff;width:min(760px,100%);max-height:100%;display:flex;flex-direction:column}
+.is-mh{display:flex;flex-wrap:wrap;gap:4px;padding:8px;border-bottom:3px solid #fff;align-items:center}
+.is-mh button{background:none;border:2px solid #fff6;color:#fff;font:9px "Press Start 2P",monospace;padding:8px;cursor:pointer}
+.is-mh button.on{background:#ffd43b;color:#000;border-color:#ffd43b}.is-mh [data-x]{margin-left:auto}.is-mh>b{font-size:12px;color:#ffd43b}.is-mh>small{font-size:9px;margin-left:10px}
+.is-mb{overflow-y:auto;padding:12px;min-height:0;font-size:9px;line-height:1.7}
+.is-mb .tiny{font-size:8px;opacity:.7}
+.is-q>div{border:2px solid #fff4;padding:8px 10px;margin-bottom:8px}.is-q .main b{color:#ffd43b}.is-q .side b{color:#8fd3ff}.is-q .done{opacity:.45}
+.is-q p{margin:4px 0;font-size:8px;opacity:.85}.is-q span{font-size:8px;color:#39ff5a}
+.is-party,.is-items,.is-shop{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.is-party button,.is-items button,.is-shop button{background:#111;border:2px solid #fff4;color:#fff;font:9px "Press Start 2P",monospace;padding:8px;cursor:pointer;text-align:center;display:flex;flex-direction:column;align-items:center;gap:5px}
+.is-party button.on{border-color:#ffd43b;background:#332b00}.is-party .art,.is-party img{width:64px;height:64px;object-fit:contain}
+.is-items button span,.is-shop button span{font-size:26px}.is-items small,.is-shop small,.is-party small{font-size:7px;opacity:.75;line-height:1.5}.is-shop i{color:#ffd43b;font-style:normal}.is-shop em{font-size:7px;opacity:.6;font-style:normal}
+.is-items button:disabled{opacity:.6;cursor:default}
+#isBig{width:min(100%,560px);aspect-ratio:1;display:block;margin:0 auto;border:3px solid #fff;background:#246}
+.is-set label{display:block;margin-bottom:12px;font-size:9px}.is-set select,.is-set input[type=range]{font:9px "Press Start 2P",monospace;margin-left:8px;vertical-align:middle}
+.is-title{position:absolute;inset:0;z-index:8;background:radial-gradient(circle at 50% 35%,#1a2a55,#000 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:16px;overflow-y:auto;text-align:center}
+.is-title[hidden]{display:none}
+.is-logo h1{font-size:clamp(26px,6vw,56px);margin:8px 0;color:#ffd43b;text-shadow:4px 4px 0 #b00,8px 8px 0 #000;letter-spacing:2px}
+.is-logo small{font-size:9px;opacity:.7}.is-logo p{font-size:10px;line-height:1.7;max-width:520px;margin:10px auto}
+.is-tm{display:flex;flex-direction:column;gap:10px;align-items:center}
+.is-tb{background:#000;border:3px solid #fff;color:#fff;font:13px "Press Start 2P",monospace;padding:12px 22px;cursor:pointer;min-width:240px}
+.is-tb:hover:not(:disabled){background:#ffd43b;color:#000;border-color:#ffd43b}.is-tb:disabled{opacity:.4;cursor:default}.is-tb small{display:block;font-size:8px;margin-top:6px;opacity:.75}
+.is-tb.sm{font-size:9px;padding:9px 14px;min-width:0}
+.is-tip{font-size:8px;opacity:.6;line-height:1.7;max-width:560px}
+.is-lbar{width:260px;height:14px;border:3px solid #fff;margin:14px auto}.is-lbar i{display:block;height:100%;width:0;background:#ffd43b;transition:width .3s}
+.is-create{width:min(900px,100%)}.is-create h2{color:#ffd43b;font-size:20px}.is-create>p{font-size:9px;opacity:.8}
+.is-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px;max-height:min(46vh,400px);overflow-y:auto;padding:6px;border:3px solid #fff3;margin:10px 0}
+.is-grid button{background:#111;border:2px solid #fff3;color:#fff;font:7px "Press Start 2P",monospace;padding:6px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;line-height:1.4}
+.is-grid button.on{border-color:#ffd43b;background:#332b00}.is-grid img,.is-grid .art{width:70px;height:70px;object-fit:contain;font-size:40px}
+.is-grid .is-newart{font-size:30px;border-style:dashed;justify-content:center}.is-grid .is-newart span{font-size:7px}
+.is-cr{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center}
+.is-cr label{font-size:10px}.is-cr input{font:12px "Press Start 2P",monospace;background:#000;color:#fff;border:3px solid #fff;padding:8px;width:180px;margin-left:6px}
+.is-souls{font-size:10px;display:flex;align-items:center;gap:4px}.is-souls button{background:none;border:2px solid transparent;color:var(--c);font-size:20px;cursor:pointer;padding:2px 4px}.is-souls button.on{border-color:#fff}
+.is-cred{position:absolute;inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden}
+.is-roll{animation:isRoll 38s linear both;text-align:center;font-size:10px;line-height:1.8}.is-roll h1{color:#ffd43b;font-size:30px}.is-roll h3{color:#8fd3ff;margin-top:26px;font-size:12px}
+.is-cc{display:inline-flex;flex-direction:column;align-items:center;margin:8px;width:100px;font-size:7px}.is-cc .art,.is-cc img{width:60px;height:60px;object-fit:contain}
+@keyframes isRoll{from{transform:translateY(70vh)}to{transform:translateY(-100%)}}
+.is-cred .is-tb{position:absolute;bottom:16px;right:16px}
+@media (max-width:700px){.isl{height:calc(100dvh - 190px)}.is-track{display:none}#isMini{width:90px;height:90px}.is-me small{display:none}.is-dtxt p{font-size:10px}.is-dlg canvas{width:64px;height:64px}.is-banner b{font-size:14px}}
+@media (max-height:760px) and (min-width:701px){.isl{height:calc(100dvh - 165px);min-height:360px}}
+.is-dlg[hidden],.is-menu[hidden],.is-hud[hidden],.is-prompt[hidden],.is-banner[hidden]{display:none}
 
 </style>
 </head>
@@ -10992,7 +11079,7 @@ drawWheel=function(){ whRender(); }; spinWheel=function(){ whSpin(); };
    points, storage safety, one-tab guard, error catcher, offline app,
    help menu, what's new, accessibility.
    =================================================================== */
-const APP_NAME='Nenjac Creator', APP_VER='5.2.1', BACKUP_FORMAT=2;
+const APP_NAME='Nenjac Creator', APP_VER='5.3', BACKUP_FORMAT=2;
 const showName = () => (S.settings.showName||'').trim() || 'Nenjac';
 S.version = Math.max(S.version||1, 4);
 const ONLINE_APP = /^https?:$/.test(location.protocol);
@@ -11002,6 +11089,14 @@ const ONLINE_APP = /^https?:$/.test(location.protocol);
 
 /* ---------- WHAT'S NEW ---------- */
 const CHANGELOG=[
+  {v:'5.3',title:'NENJACTALE',items:[
+    ['🏝','A 3D RPG on Nenjac Island','Play → Nenjactale. The whole island in 3D with cardboard-cutout characters: Downtown, the Morelli Mansion, Haze Woods, the Boardwalk, the Police Station, the State House and more.'],
+    ['🎨','Play as YOUR character','Pick any cast member, or a hero you drew in the Art Studio, name them and pick a soul color.'],
+    ['📜','A real story','The Declaration of Nenjacpendence is torn into 5 pages and Inspector Wlater wants Nenjac to be normal. Five chapters, a finale, and two endings.'],
+    ['💛','Undertale battles','FIGHT, ACT, ITEM, MERCY. Dodge attacks with your soul. Spare everyone, or don\'t. Nenjac remembers.'],
+    ['👥','Miitopia party','Recruit Starr, Deegs, Elea, Spencer, Cas and Travis. Up to 3 follow you and help in battle. Campfire chats and bonds.'],
+    ['🗺','Side quests','Travis\'s hot dogs, Cas\'s "science", the Jeff hunt, Neen sightings, Nerd\'s map, a case for McCormack and scoops for Ligma.'],
+    ['🎥','First or third person','Press V to switch. Works with keyboard + mouse, or a touch joystick on phones and tablets.']]},
   {v:'5.2.1',title:'Fixes for smaller screens',items:[
     ['🛠','Settings scroll again','Every Settings tab scrolls now, on any screen size.'],
     ['📋','Call Sheet fixed','The Call Sheet was borrowing the casino\'s dark styling (washed-out white text). It\'s back to normal.'],
@@ -36995,9 +37090,775 @@ async function pbSettings(focus){ const c=pbCfg(); if(!c.ntfy) c.ntfy='nenjac-'+
 { const _pp=pbPublicCfg; pbPublicCfg=function(){ const o=_pp(); if(!pbCfg().ntfyOn) o.ntfy=''; return o; }; }
 { const _g=go; go=function(s){ const r=_g.apply(this,arguments); if(s==='pitches') setTimeout(pbEnter,0); return r; }; }
 { const _c=commands; commands=function(){ const C=_c(); C.push({ico:'💡',label:'Pitch Box (fan pitches)',run:()=>go('pitches'),kw:'pitch fans ideas submissions inbox'},{ico:'📣',label:'Share my Pitch Box link',run:()=>{ go('pitches'); setTimeout(pbShare,300); },kw:'pitch link qr share'}); return C; }; }
-if(!FIRST_RUN&&!S.settings.seen52) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello52" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>5.2: The Pitch Box.</b><small>Get a link anyone can pitch you ideas from (episodes, characters, lore, songs, headcanons…) and they land in Write → 💡 Pitch Box, with pings to your phone.${S.settings.seen51?'':' Plus 5.1: face rigs, NenjCam and the Projects Wall.'}</small><div class="row"><button class="btn sm primary" id="h52p">💡 Set it up</button><button class="btn sm" id="h52w">✨ What's new</button><button class="btn sm" id="h52x" aria-label="Dismiss">✕</button></div></div></div>`);
+if(!FIRST_RUN&&!S.settings.seen52&&S.settings.seen53) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello52" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>5.2: The Pitch Box.</b><small>Get a link anyone can pitch you ideas from (episodes, characters, lore, songs, headcanons…) and they land in Write → 💡 Pitch Box, with pings to your phone.${S.settings.seen51?'':' Plus 5.1: face rigs, NenjCam and the Projects Wall.'}</small><div class="row"><button class="btn sm primary" id="h52p">💡 Set it up</button><button class="btn sm" id="h52w">✨ What's new</button><button class="btn sm" id="h52x" aria-label="Dismiss">✕</button></div></div></div>`);
   const done=()=>{ ['seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello52')?.remove(); }; $('#h52p').onclick=()=>{ done(); go('pitches'); }; $('#h52w').onclick=()=>{ done(); openWhatsNew(); }; $('#h52x').onclick=done; },3300);
 if(FIRST_RUN) S.settings.seen52=true;
+/* =====================================================================
+   [ISLE] 5.3 NENJACTALE — a 3D cardboard-cutout RPG across Nenjac Island.
+   This file: the map, the people, the quests and every line of dialogue.
+   Canon only: the 200th Nenjacpendence anniversary, Governor Warren's
+   Declaration, Town meetings that end in beatings, the Chief's red rooms
+   and Siri reminders, the Morellis, the ferry that's always on fire,
+   Bugman hunting Neen for "atrocities" nobody explains.
+   ===================================================================== */
+const ISLE_R=640;
+/* landmarks: [x,z,radius,name] */
+const IL={
+  beach:[0,560,40,'Ferry Beach'], ferry:[70,650,30,'The Ferry (on fire)'], theater:[0,410,34,'Nenjac Theater'], square:[0,215,30,'Town Square'],
+  police:[-165,205,26,'Nenjac Police HQ'], clinic:[120,120,18,"Dr. Doctor's Clinic"], gas:[130,440,16,'Gas-N-Go'], projects:[190,300,40,'The Projects'],
+  mansion:[350,60,40,'The Morelli Mansion'], gate:[300,85,14,'Mansion Gate'], office:[372,48,12,"Tony's Office"], rehab:[285,175,16,'Nenjac Rehab (across from the mob base)'],
+  woods:[-300,140,40,'Haze Woods'], cabin:[-455,95,18,"Warren's Cabin"], tower:[-340,-50,14,'Ranger Tower'], boardwalk:[330,450,40,'The Boardwalk'],
+  lighthouse:[465,510,16,'The Lighthouse'], school:[-190,-60,30,'Nenjac High'], statehouse:[0,40,30,'The State House'], peak:[0,-280,30,'Mount Nenjac'],
+  swamp:[-60,-470,50,'The Swamp'], cliffs:[430,-160,30,'Morelli Cliffs'], park:[95,250,20,'Nenjac Park'], dock:[-60,600,20,'Old Dock']};
+/* regions that can be "normalized" (grey) until you win back their page */
+const IREG=[{id:'downtown',n:'Downtown Nenjac City',c:[0,210],r:210,ch:'ch1'},{id:'mansion',n:'Morelli Territory',c:[330,90],r:150,ch:'ch2'},{id:'woods',n:'Haze Woods',c:[-380,70],r:200,ch:'ch3'},
+  {id:'boardwalk',n:'The Boardwalk',c:[380,470],r:150,ch:'ch4'},{id:'police',n:'Police District',c:[-170,210],r:85,ch:'ch5'},{id:'statehouse',n:'Capitol Hill',c:[0,40],r:70,ch:'fin'}];
+/* roads (polyline of landmark ids or [x,z]) */
+const IROADS=[['beach','theater','square','statehouse',[0,-120],'school'],['theater','gas','boardwalk','lighthouse'],['square','park','projects','rehab','gate','mansion'],['square','police',[-260,180],'woods','cabin'],
+  ['woods','tower'],['school',[-120,-200],'peak'],['peak',[-40,-380],'swamp'],['beach','dock'],['statehouse',[160,40],'clinic'],['mansion','cliffs']];
+/* party members: what they do in battle */
+const IPARTY={
+  Starr:{e:'📄',act:['Encourage','paper cuts your worries'],sup:'Starr gives you a thumbs up. Your DEFENSE feels taller.',atk:'Starr folds into a paper airplane and pokes them.',hint:true},
+  Deegs:{e:'💣',atk:'Deegs pulls a bomb out of nowhere. BOOM.',sup:'Deegs pulls out a bomb. Looks at you. Puts it away. Respectfully.',dmg:9},
+  Elea:{e:'🥫',atk:'Elea chugs a Red Bull and absolutely body-slams them.',sup:'Elea shares a Red Bull. +5 HP.',heal:5,dmg:6},
+  Spencer:{e:'💀',atk:'Spencer makes Minecraft skeleton noises at them. Weirdly effective.',sup:'Spencer spreads positive vibes. Everyone feels a bit more spareable.',spare:8,heal:3,dmg:4},
+  Cas:{e:'🎸',atk:'cas jumps forty feet in the air and stomps them. monotone the whole time.',sup:'cas stares at them. they feel uncomfortable. good.',spare:6,dmg:12},
+  Travis:{e:'🤠',atk:'"HELL YEAH, BROTHER!" A bald eagle comes out of nowhere.',sup:'Travis offers everyone a hot dog. +4 HP.',heal:4,dmg:8}};
+const IITEMS={
+  sushi:['🍣','Gas Station Sushi',25,20,'Bold. Heals 25.'],redbull:['🥫','Red Bull',12,8,'Heals 12. Tastes like a heartbeat.'],bar:['🍫','Protein Bar',18,14,'Heals 18. 40% chalk.'],
+  slushie:['🧋','Mystery Slushie',35,30,'Heals 35. Flavor: "blue".'],cannoli:['🥐','Morelli Cannoli',40,0,'Heals 40. Tony insists.'],wings:['🍗',"Chief's Wings",20,0,"Heals 20. Don't ask where he got them."],
+  cherry:['🍒','Cherry Bomb',0,0,'Melissa & Marissa\'s gift. Big damage, only once.'],sock:['🧦',"Jeff's Lucky Sock",0,0,'Survive one knockout with 1 HP. Jeff always does.'],
+  hotdog:['🌭','Travis\'s Hot Dog',15,0,'A hot dog from the hunt. Heals 15 (Travis will be sad).'],
+  /* key items */ drawing:['🖍','Elea\'s Drawing',0,0,'"MY DAD IS THE BEST DAD (NOT A CRIMINAL)" — age 7'],lighter:['🔥',"Warren's Lighter",0,0,'Says "WOOT 69.4" on it.'],radio:['📻',"Warren's Radio",0,0,'Stuck on one station forever.'],
+  phone:['📱',"The Chief's Phone",0,0,'14,000 unread Siri reminders.'],tooth:['🦷','A Tooth',0,0,'Not yours. Not anyone\'s.'],trap:['🪤','A Bear Trap',0,0,'Still warm.'],battery:['🔋','A 9-Volt Battery',0,0,'Cas wants to lick it.'],shoe:['👟','A Single Shoe',0,0,'Someone Deegs met.'],
+  page:['📜','Declaration Page',0,0,'A page of the Declaration of Nenjacpendence.']};
+const IKEY=new Set(['drawing','lighter','radio','phone','tooth','trap','battery','shoe','page']);
+/* quests: steps are {t:text, at:landmark/npc for the marker, go:landmark that completes it on arrival, then:script} */
+const IQ={
+  pro:{n:'Washed Up',k:'main',d:'The ferry caught fire (again). You washed up on Nenjac Island.',s:[{t:'Follow Starr to the Nenjac Theater',at:'theater',go:'theater',then:'proTheater'},{t:'Talk to Deegs in the theater',at:'deegs'}]},
+  ch1:{n:'Town Meeting',k:'main',d:'The Mayor got "normalized" and stopped holding town meetings. Without meetings, nobody gets beaten. The town is falling apart.',s:[{t:'Go to Town Square',at:'square',go:'square',then:'ch1Square'},{t:'Round up a crowd: Monoleg, Heroin Harry and Reporter Ligma (0/3)',at:'crowd'},{t:'Start the meeting at the podium',at:'mayor'}]},
+  ch2:{n:'Family Business',k:'main',d:'Tony Morelli signed something. Now the mob is "a legitimate business". Elea is horrified.',s:[{t:'Find Elea at the Projects',at:'elea'},{t:'Get past Rocco at the Mansion Gate',at:'rocco'},{t:"Find Elea's old drawing in the Mansion",at:'drawing'},{t:"Confront Tony in his office",at:'tony'}]},
+  ch3:{n:'The Haze',k:'main',d:"Warren quit everything. He jogs now. Haze Woods has never been so clear and so sad.",s:[{t:"Find Warren's cabin in Haze Woods",at:'cabin',go:'cabin',then:'ch3Cabin'},{t:"Get Warren's lighter back from Jeff",at:'jeffw'},{t:"Find Warren's radio at the Ranger Tower",at:'radio'},{t:'Bring them back to Warren',at:'warren'}]},
+  ch4:{n:'Nobody Notices Dean',k:'main',d:"Dean McQueen went normal. Normal people don't get noticed. Now nobody can see him at all.",s:[{t:'Talk to Melissa & Marissa on the Boardwalk',at:'twins'},{t:'Find Ciggy. She sees everything.',at:'ciggy'},{t:'Climb the Lighthouse',at:'lighthouse',go:'lighthouse',then:'ch4Top'}]},
+  ch5:{n:'Law & Order',k:'main',d:"The Chief is being NICE. Following procedure. Saying please. Officer McCormack is terrified.",s:[{t:'Talk to Officer McCormack at Police HQ',at:'mcc'},{t:"Get the Chief's phone back from Monoleg",at:'monoleg'},{t:'Return the phone to the Chief',at:'chief'}]},
+  fin:{n:'Nenjacpendence Day',k:'main',d:"All five pages. Get to the State House before Inspector Wlater files the paperwork.",s:[{t:'Go to the State House',at:'statehouse',go:'statehouse',then:'finHouse'},{t:'Get to the theater for the 200th Anniversary Show',at:'theater',go:'theater',then:'finShow'}]},
+  hot:{n:'Hot Dog Hunt',k:'side',d:"Travis hid five hot dogs around the island \"for emergencies\" and forgot where.",s:[{t:'Find 5 hot dogs (0/5)',at:'hotdog'},{t:'Bring them to Travis at Ferry Beach',at:'travisN'}]},
+  casq:{n:"Cas's Collection",k:'side',d:'Cas wants four items. Cas did not say why.',s:[{t:'Get Cas: a tooth, a bear trap, a 9-volt battery, a single shoe (0/4)',at:'casitem'},{t:'Give them to Cas',at:'cas'}]},
+  jeff:{n:'Jeff Survives',k:'side',d:'Jeff keeps ending up in deadly places. Jeff is always fine.',s:[{t:'Find Jeff somewhere dangerous (0/4)',at:'jeffs'},{t:'Talk to Jeff at Ferry Beach',at:'jeffb'}]},
+  neen:{n:'Neen Is Watching',k:'side',d:"You keep seeing Neen. Standing very still. In places. Watching.",s:[{t:'Spot Neen (0/6)',at:'neens'},{t:'Go to the top of Mount Nenjac',at:'peak',go:'peak',then:'neenPeak'}]},
+  nerd:{n:'Let Nerd Talk',k:'side',d:'Nerd has been trying to finish one sentence since 2019.',s:[{t:'Listen to Nerd at Nenjac High',at:'nerd'}]},
+  case:{n:'Case File: McCormack',k:'side',d:"Officer McCormack is still investigating who killed his family. He has a hunch it's \"a drifter.\"",s:[{t:'Find 3 clues around Police HQ (0/3)',at:'clue'},{t:'Show McCormack the clues',at:'mcc'}]},
+  scoop:{n:'Breaking News',k:'side',d:'Reporter Ligma needs three scoops before the 200th.',s:[{t:'Visit the burning ferry, the Rehab Center and the Swamp (0/3)',at:'scoops'},{t:'Report back to Ligma',at:'ligma'}]}};
+/* who's in the world. at = landmark id or [x,z]. talk(G) returns a script */
+const INPC=[
+  {id:'starr',w:'Starr',at:[12,532],t:G=>G.q('pro')===0?[['Starr','The theater\'s just up the road! Follow me!']]:[['Starr',pick(['You\'re doing great, {hero}. Like, objectively.','If you see Deegs holding anything round, run.','I still can\'t believe the ferry caught fire. I mean I CAN. It always does.'])]],follow:true},
+  {id:'deegs',w:'Deegs',at:'theater',off:[-8,-6],t:G=>G.q('pro')===1?'proDeegs':G.inParty('Deegs')?null:[['Deegs','Town Square. The Mayor. The meeting. Let\'s go make some noise.']]},
+  {id:'trudy',w:'Gertrude',at:'theater',off:[9,-4],t:G=>[['Gertrude','Rest on the stage any time. I\'ll patch you up. I\'m basically a nurse. I have a Stanley cup.'],{heal:1},['*','You rest on the stage. Your HP was maxed out.'],{save:1}]},
+  {id:'travisN',w:'Travis',at:'beach',off:[-30,10],t:'travisTalk'},
+  {id:'mayor',w:'Mister Mayor',at:'square',off:[0,-10],grey:'downtown',t:'mayorTalk'},
+  {id:'mcc',w:'Officer McCormack',at:'police',off:[12,14],t:'mccTalk'},
+  {id:'monoleg',w:'Monoleg',at:'park',off:[0,4],t:'monolegTalk'},
+  {id:'harry',w:'Heroin Harry',at:[60,150],t:'harryTalk'},
+  {id:'ligma',w:'Reporter Ligma',at:[-40,250],proc:'reporter',t:'ligmaTalk'},
+  {id:'elea',w:'Elea',at:'projects',off:[-10,8],t:'eleaTalk'},
+  {id:'rocco',w:'Rocco',at:'gate',off:[0,0],grey:'mansion',t:'roccoTalk'},
+  {id:'gianni',w:'Gianni',at:[318,40],grey:'mansion',t:G=>G.done('ch2')?[['Gianni','Boss is back! I\'m making a pasta so big it has its own zip code.']]:[['Gianni','We do legitimate business now. I filed a W-2. I don\'t know what it is. I cried.']]},
+  {id:'tony',w:'Tony Morelli',at:'office',grey:'mansion',t:'tonyTalk'},
+  {id:'spencer',w:'Spencer',at:[-215,160],t:'spencerTalk'},
+  {id:'warren',w:'Warren',at:'cabin',off:[8,6],grey:'woods',t:'warrenTalk'},
+  {id:'jeffw',w:'Jeff',at:[-385,10],t:'jeffWoods'},
+  {id:'twins',w:'Melissa & Marissa',at:'boardwalk',off:[-14,0],t:'twinsTalk'},
+  {id:'ciggy',w:'Ciggy',at:[292,388],t:'ciggyTalk'},
+  {id:'dean',w:'Dean McQueen',at:'lighthouse',off:[0,-10],grey:'boardwalk',hidden:G=>!G.q('ch4')||G.q('ch4')<2,t:'deanTalk'},
+  {id:'chief',w:'Chief',at:'police',off:[-6,-10],grey:'police',t:'chiefTalk'},
+  {id:'cas',w:'Cas',at:'projects',off:[22,-12],t:'casTalk'},
+  {id:'nerd',w:'Nerd',at:'school',off:[0,6],t:'nerdTalk'},
+  {id:'doctor',w:'Dr Doctor',at:'clinic',off:[0,8],t:'doctorTalk'},
+  {id:'principal',w:'Principal Schoolman',at:'school',off:[14,-4],t:G=>[['Principal Schoolman','Nenjac High: we have a 4% graduation rate and a 100% explosion rate. Go Bombers.']]},
+  {id:'clerk',w:'Bananinem',at:'gas',off:[0,6],t:'shopTalk'},
+  {id:'wlater',w:'Inspector Wlater',at:'statehouse',off:[0,-8],proc:'inspector',hidden:G=>!G.q('fin')&&!G.f('wlaterSeen'),t:'wlaterTalk'},
+  {id:'jeffb',w:'Jeff',at:'beach',off:[30,-6],hidden:G=>G.q('jeff')!==1,t:'jeffDone'}];
+/* collectibles: {id, kind, at:[x,z], quest, need(G) visible} */
+const ICOL=[
+  ...[[-120,560],[380,250],[-420,-120],[150,-330],[505,470]].map((p,i)=>({id:'hd'+i,k:'hotdog',e:'🌭',at:p,q:'hot'})),
+  {id:'tooth',k:'tooth',e:'🦷',at:[128,104],q:'casq'},{id:'trap',k:'trap',e:'🪤',at:[-140,236],q:'casq'},{id:'battery',k:'battery',e:'🔋',at:[-205,-82],q:'casq'},{id:'shoe',k:'shoe',e:'👟',at:[35,585],q:'casq'},
+  {id:'drawing',k:'drawing',e:'🖍',at:[392,74],q:'ch2',step:2},{id:'radio',k:'radio',e:'📻',at:[-336,-58],q:'ch3',step:2},
+  ...[[-150,196],[-185,226],[-128,178]].map((p,i)=>({id:'clue'+i,k:'clue',e:'🔎',at:p,q:'case',txt:["A truncheon engraved \"McCormack Family Reunion\". It's been used.","A receipt: \"Chicken wings (family size) x1. Rope x4. Card: 'sorry for your loss lol'\".","A Siri reminder printed out: \"Remind me: kill McCormack's family. Act surprised.\""][i]}))];
+/* Neen sightings (appear after ch2) and Jeff's dangerous spots */
+const INEEN=[[70,622],[-458,118],[300,48],[0,-150],[465,530],[-60,-445]];
+const IJEFF=[[72,648,'standing on the burning ferry, waving'],[438,-175,'on the edge of Morelli Cliffs, napping'],[-150,232,'stuck in three of the Chief\'s bear traps'],[2,-290,'at the top of Mount Nenjac in a lightning storm']];
+/* random encounters in normalized (grey) areas */
+const IFOES={
+  form:{n:'Form 27-B',art:'form',hp:24,atk:3,gold:6,check:'ATK 3 DEF 1. A tax form with 400 boxes. Every box says "N/A".',flav:['* Form 27-B rustles menacingly.','* It smells like a waiting room.','* Somewhere, a stapler clicks.'],
+    acts:[['Fill it out','You fill out all 400 boxes. It is deeply satisfied.',60],['Doodle on it','You draw a little guy in the margin. The form... smiles?',40],['Paper airplane','You fold it into a plane and throw it. WHEEE. It has never felt this free.',100,'Starr']],pat:['rain','sides'],shot:'📄'},
+  tape:{n:'Red Tape',art:'tape',hp:30,atk:4,gold:8,check:'ATK 4 DEF 2. Holds everything back. Mostly progress.',flav:['* Red Tape wraps around itself.','* Red Tape is stuck on itself again.'],
+    acts:[['Wait patiently','You wait. And wait. Red Tape is impressed by your compliance.',35],['Complain','Red Tape grows longer. Wrong move.',-10],['Cut through','Deegs blows a hole in it. That counts as cutting.',100,'Deegs']],pat:['walls','bars'],shot:'━'},
+  chair:{n:'Folding Chair',art:'chair',hp:20,atk:3,gold:5,check:'ATK 3 DEF 0. Has been unfolded for three days straight. Exhausted.',flav:['* The chair creaks.','* It wants to be put away.'],
+    acts:[['Fold it','You fold it up. It sighs with relief.',100],['Sit on it','You sit. It feels useful for the first time in years.',50]],pat:['rain','bounce'],shot:'🪑'},
+  hoa:{n:'HOA Guy',art:'hoa',hp:34,atk:4,gold:10,check:'ATK 4 DEF 3. Your grass is 0.5 inches too long.',flav:['* HOA Guy measures your lawn with a ruler.','* He\'s writing you up.'],
+    acts:[['Agree','"Yes sir. Sorry sir." He relaxes a little.',30],['Throw a party','You throw a party in his face. He has never been so offended. Or so alive.',70],['Mow','You mow nothing. Somehow it counts.',40]],pat:['aim','sides'],shot:'📋'},
+  bump:{n:'Speed Bump',art:'bump',hp:28,atk:3,gold:7,check:'ATK 3 DEF 5. Exists to slow you down. It loves its job.',flav:['* Speed Bump is lying there.','* Speed Bump is doing its best.'],
+    acts:[['Slow down','You slow down. It feels seen.',50],['Jump it','Cas launches you over it. Speed Bump respects the hustle.',100,'Cas'],['Speed up','BONK.',-5]],pat:['bars','walls'],shot:'▬'},
+  beige:{n:'Beige Wall',art:'beige',hp:36,atk:4,gold:9,check:'ATK 4 DEF 4. Painted the most neutral color legally possible.',flav:['* Beige Wall is beige.','* Beige Wall continues to be beige.'],
+    acts:[['Graffiti it','You tag it with your name. It blushes a slightly less beige beige.',80],['Lick it','Tastes like eggshell.',10],['Hang a poster','A poster of Deegs. It\'s a start.',40]],pat:['walls','rings'],shot:'▯'},
+  intern:{n:'Federal Intern',art:'intern',hp:26,atk:3,gold:12,check:'ATK 3 DEF 1. Works for Inspector Wlater. Unpaid. Visibly.',flav:['* The intern is updating a spreadsheet.','* The intern hasn\'t slept since Tuesday.'],
+    acts:[['Offer coffee','He drinks it in one gulp. He\'s crying a little.',45],['Tell him about Nenjac','You tell him about town meetings. He looks horrified. And interested.',35],['Give him a lunch break','He has never had one. He leaves to go find a sandwich.',100]],pat:['aim','spiral'],shot:'☕'}};
+/* bosses */
+const IBOSS={
+  mayor:{n:'NORMALIZED MAYOR',w:'Mister Mayor',hp:70,atk:5,gold:30,check:'ATK 5 DEF 3. Signed a form to become "Governor of a Real State." Hasn\'t held a meeting in three days.',
+    open:'* The Mayor clears his throat. Nothing comes out.',flav:['* The Mayor reads the minutes of the last meeting. There are no minutes.','* The Mayor adjusts his tie to regulation length.','* Somewhere, Monoleg is NOT getting beaten. It feels wrong.'],
+    talk:['Order... order... in the... appropriately scheduled forum.','I filed a request to hold a meeting. It\'s pending.','Please submit all chaos in writing.'],
+    acts:[['Heckle','You yell "BOOOO" from the back. The Mayor flinches. A tiny bit of color comes back.',25],['Start a chant','"NEN-JAC! NEN-JAC!" The crowd joins in. The Mayor\'s foot is tapping.',30,null,'crowd'],['Sing the Anthem','You start singing the Nenjac Anthem. The Mayor\'s eyes go wide. He knows ALL the words.',50,null,'chanted'],['Deegs: Light a fuse','Deegs lights a fuse just to make a sizzling noise. The Mayor jolts. Nostalgia.',30,'Deegs']],
+    pat:['rain','aim','rings'],shot:'📜',spareLine:'"...WHERE WAS I? AH YES. ORDER! ORDER IN THE SQUARE!"'},
+  tony:{n:'LEGITIMATE TONY',w:'Tony Morelli',hp:95,atk:6,gold:45,check:'ATK 6 DEF 4. Signed a deal to make the family "a legitimate business" so Elea could have a normal life. Elea did not ask for this.',
+    open:'* Tony is doing his taxes. Correctly. It\'s horrifying.',flav:['* Tony files a receipt.','* Tony offers you a business card. It just says "TONY".','* The gravy is getting cold.'],
+    talk:['Kid. I run a legitimate operation now. We sell... olive oil.','You want a W-2? I got W-2s.','My daughter deserves normal. Normal is safe.'],
+    acts:[['Show the drawing','You show Tony the drawing Elea made when she was seven. He goes very quiet. Then very loud.',55,null,'item:drawing'],['Make an offer','"I\'ll make you an offer you can\'t refuse." He laughs despite himself.',25],['Insult the gravy','You say the gravy is "fine." Tony\'s eye twitches. His attacks get angrier.',-10],['Elea: Talk to Dad','Elea grabs his hand. "Dad. I don\'t WANT normal. I want YOU."',45,'Elea']],
+    pat:['sides','aim','luck'],shot:'💵',spareLine:'"...Elea? How long was I gone?" "Three days, Dad." "Somebody get this kid a cannoli."'},
+  warren:{n:'CLEAR-HEADED WARREN',w:'Warren',hp:90,atk:6,gold:40,check:'ATK 6 DEF 2. Quit everything. Jogs now. Can hear his own thoughts for the first time in 40 years and HATES it.',
+    open:'* Warren is doing jumping jacks in the clearest air Haze Woods has ever had.',flav:['* Warren drinks a kale smoothie. He shudders.','* Warren checks his step count. 12. He seems proud and sad.','* The woods are way too clear.'],
+    talk:['I feel... great. I hate it.','My thoughts are so LOUD, man.','My great-great-great-grandpappy wrote that Declaration. Also named Warren. Also high.'],
+    acts:[['Light it up','You hand Warren his lighter. Click. A little flame. A little haze. A little Warren.',40,null,'item:lighter'],['Play the old station','You switch on his radio. "W.O.O.T. 69.4, the station that never changes." Warren starts nodding.',40,null,'item:radio'],['Ask about the old days','Warren tells a story about 1998 that can\'t be legally repeated. He laughs for the first time.',25],['Spencer: Positive vibes','Spencer: "Hey man. You don\'t have to be normal to be okay." Warren\'s eyes get misty.',35,'Spencer']],
+    pat:['haze','rain','spiral'],shot:'💨',spareLine:'"...Damn. I could hear myself think in there. Worst thing that ever happened to me."'},
+  dean:{n:'NORMAL DEAN',w:'Dean McQueen',hp:85,atk:6,gold:40,check:'ATK 6 DEF 3. Became normal. Normal people don\'t get noticed. Now he\'s practically invisible.',invis:true,
+    open:'* You think someone\'s here. You can\'t tell.',flav:['* Dean is... somewhere?','* A voice: "I\'m right here."','* The wind blows. Dean\'s hair does not get noticed.'],
+    talk:['Hello? Can anyone see me?','I used to have girls. Now I have a lanyard.','Do you know what it\'s like when nobody looks at you?'],
+    acts:[['Notice him','You look right at him. "I see you, Dean." He flickers back into view a little.',30],['Compliment the hair','"Nice hair, man." He gasps. It\'s been DAYS.',30],['Ignore him','He gets so mad that you\'re ignoring him that he becomes a little more visible.',15],['Twins: Cherry Bomb','You toss the Cherry Bomb. POP. Everybody sees THAT.',40,null,'item:cherry']],
+    pat:['sides','rings','aim'],shot:'💲',spareLine:'"...Oh. You do know what it\'s like. You\'re the new kid." He grins. "Welcome to Nenjac."'},
+  chief:{n:'POLITE CHIEF',w:'Chief',hp:110,atk:7,gold:55,check:'ATK 7 DEF 5. Traded his page for "real federal authority." Now follows procedure. Says please. Nobody has ever been this scared.',
+    open:'* The Chief smiles warmly. Every bird in the district flies away.',flav:['* The Chief reads you your rights. All of them. Slowly.','* The Chief offers you a sticker. You\'re terrified.','* "Siri, remind me to be kind." Siri doesn\'t answer. Siri is gone.'],
+    talk:['License and registration, please. Thank you so much.','I\'d like to formally apologize to everyone. In triplicate.','Have a nice day, citizen. I mean it. I think.'],
+    acts:[['Return his phone','You hand the Chief his phone. 14,000 reminders hit at once. "Remind me: be evil at 3." It\'s 3.',55,null,'item:phone'],['Jaywalk','You jaywalk right in front of him. His truncheon hand twitches.',25],['Mention the red rooms','You say "red rooms." The Chief\'s smile cracks just slightly.',30],['Cas: Stare','cas stares at the chief. the chief stares back. something ancient happens.',30,'Cas']],
+    pat:['traps','aim','walls'],shot:'🪤',spareLine:'"...Siri, cancel my plans." "Okay, I\'ve cancelled: being nice." The Chief cracks his neck. "GOOD MORNING, NENJAC."'},
+  wlater:{n:'INSPECTOR WLATER',w:'Inspector Wlater',proc:'inspector',hp:160,atk:8,gold:100,check:'ATK 8 DEF 6. Federal inspector from the mainland. Thinks Nenjac is "a public safety situation." Has never once had fun.',
+    open:'* Inspector Wlater opens his briefcase. It\'s just more briefcases.',flav:['* Wlater stamps something. DENIED.','* Wlater recites building code 14.2.7. From memory.','* The State House flags go limp.','* Wlater is sweating. Nenjac does that to people.'],
+    talk:['This island is a code violation with a beach.','Bombs. In a THEATER. Do you know how many forms that is?','Normal is safe. Normal is quiet. Normal is... normal.','I came here to fix you people.'],
+    acts:[['Read the Declaration','You read the Declaration of Nenjacpendence out loud. Governor Warren\'s signature glows.',35,null,'pages5'],['Show him around','You tell him about the beach, the ferry, the theater. He tries not to look interested. He fails.',25],['Ask why he came','"...My dad was an inspector. His dad was an inspector. Nobody ever asked if I wanted to be." Oh.',30],['Everyone: Be loud','Every friend you made today yells at once. It\'s the loudest thing the mainland has ever heard.',50,'party3']],
+    pat:['stamps','walls','aim','spiral','rain'],shot:'🗂',spareLine:'"...Is it always like this here?" "Yeah." "...Can I stay?"'},
+  bugman:{n:'BUGMAN',w:'Bugman',proc:'bug',hp:200,atk:9,gold:0,check:'ATK 9 DEF 9. Has been hunting Neen for a very long time. Says Neen committed atrocities. Won\'t say what.',
+    open:'* Bugman steps into the light. Every insect on the island goes quiet.',flav:['* Bugman watches Neen. Neen watches Bugman.','* Bugman\'s patience is endless. Yours is not.','* A beach ball rolls by. You don\'t ask.'],
+    talk:['Step aside. This is not your business.','If you knew what that note did, you would hand it over yourself.','You are very small noise, child.'],
+    acts:[['Ask what Neen did','"You would never sleep again." That\'s all he\'ll say.',20],['Stand in front of Neen','You don\'t move. Neither does Neen. Bugman tilts his head.',30],['Ask him to wait','"Wait?" He considers it. He has waited a long time already.',30],['Everyone: Protect Neen','Everyone steps in front of Neen. Deegs has a bomb. Cas has a look. Bugman counts them.',45,'party3']],
+    pat:['beach','aim','rings','walls','spiral'],shot:'⛱',spareLine:'"...Fine. Today, I wait." He floats up into the dark. "But this isn\'t the last you\'ll be seeing of me, Nenjac Theater."',noKill:true}};
+/* cutscene and conversation scripts */
+const IS={
+  intro:[['Travis','Ahh, Nenjac Island. Autonomous Federal Region. Part of the good ol\' U.S. of A., but with its own government and whatnot.'],['Travis','Home of the brave, the deranged, and one ferry that has been on fire since before I was born.'],['Travis','Today\'s a big day. September 11th, 2026. The 200th anniversary of Nenjacpendence. Yes, we\'re aware of the other things that happened that day. We try not to celebrate too much.'],['Travis','And today, that ferry\'s carrying one passenger.'],['Travis','...Now it\'s carrying zero, \'cause you\'re in the ocean.']],
+  wake:[['*','You wake up on the sand. Your clothes are damp. Somewhere behind you, a ferry is very on fire.'],['Starr','Oh my god! Are you okay?! You washed up like ten seconds after the ferry went KABOOM!'],['Starr','I\'m Starr! I\'m made of paper, so I don\'t go in the water. Ever. That\'s my whole thing.'],{ask:[['I\'m okay',[['Starr','You\'re a tough one. Nenjac\'s gonna love you.']]],['Where am I?',[['Starr','Nenjac Island! Sorry. Welcome. Sorry again.']]]]},['Starr','Wait... you look kinda grey. And kinda... flat?'],['Starr','No, that\'s just how everybody looks. It\'s fine. Okay! Come on, the theater\'s up the road. Everyone\'s freaking out and we could use literally anybody.'],{join:'Starr'},{q:'pro'}],
+  proTheater:[['*','The Nenjac Theater. It has blown up 40 times. It has been rebuilt 40 times. It smells like both.'],['Starr','Deegs is inside. He\'ll explain. Probably with his hands. Possibly with a bomb.']],
+  proDeegs:[['Deegs','Starr, who\'s this? Are they a cop?'],['Starr','This is {hero}. They washed up from the ferry.'],['Deegs','Oh, cool. Respect. Okay, so. Here\'s the situation.'],['Deegs','Tonight is the 200th Nenjacpendence Show. Big anniversary. Travis is gonna read the whole Declaration of Nenjacpendence on stage. Governor Warren wrote it in 1826.'],['Deegs','Except somebody STOLE it. Tore it into five pages. And now there\'s this guy from the mainland walking around with a clipboard.'],['Starr','Inspector Wlater. Federal inspector. He says if the Declaration isn\'t on display by tonight, Nenjac goes back to being a normal U.S. territory.'],['Deegs','Normal laws, {hero}. NORMAL LAWS. I would need a PERMIT for my bombs.'],['Gertrude','And it\'s already happening. Wherever Wlater files his paperwork, things go... grey. Boring. Normal.'],['Starr','The Mayor\'s been standing at his podium for three days. No town meetings. No beatings. Society is collapsing.'],['Deegs','Also Neen\'s missing. Neen does that though. Neen\'s probably watching us right now.'],['*','You feel like Neen is watching you right now.'],['Deegs','So. Five pages. Five people who signed Wlater\'s stupid forms. We get the pages back, we save Nenjac.'],['Starr','And we do it WITHOUT hurting anybody, right?'],['Deegs','...Respectfully, we\'ll see.'],['Starr','Hey, {hero}, real quick: when you get into a fight here, you don\'t HAVE to fight. You can ACT. Talk to people. Make them remember who they are. Then SPARE them.'],['Starr','Or you can hit them. I\'m not your dad. But it matters. Nenjac remembers.'],{done:'pro'},{q:'ch1'},{q:'hot'},{q:'casq'},{q:'jeff'},{q:'nerd'},{q:'case'},{q:'scoop'},['*','The smell of a burning ferry fills you with DETERMINATION.'],{save:1}],
+  ch1Square:[['*','Town Square. Usually there\'s a meeting here. Usually it ends with somebody getting beaten.'],['*','Today it is silent. The Mayor stands frozen at the podium in a grey suit.'],['Officer McCormack','Oh thank god, a citizen. He\'s been like this for three days. I\'ve had eleven bosses get shot in the face and none of them were this upsetting.'],['Officer McCormack','A meeting needs a crowd. Get some people down here. Monoleg\'s at the park. Heroin Harry\'s... around. And Reporter Ligma never misses a story.'],{step:'ch1'}],
+  mayorTalk:G=>G.done('ch1')?[['Mister Mayor',pick(['ORDER! ORDER! Thank you, {hero}! The town meeting is BACK!','Next meeting: tomorrow. Bring a helmet.','Citizens! The beatings will continue until morale improves!'])]]
+    :G.q('ch1')===2?[['*','The Mayor stares at nothing. The crowd is gathered. Monoleg is sweating, out of habit.'],['Monoleg','Somebody start it. Please. I can\'t take the suspense.'],{battle:'mayor',spare:'ch1Spare',kill:'ch1Kill'}]
+    :[['Mister Mayor','...Please submit all meeting requests through the appropriate federal channels.'],['*','His eyes are grey. Like a waiting room.']],
+  ch1Spare:[['Mister Mayor','Citizens of Nenjac! This meeting is now IN SESSION!'],['*','The crowd cheers. Somewhere, the Chief\'s truncheon hums.'],['Monoleg','...Oh. Oh no. It\'s working.'],{fx:'boom'},['*','Order has been restored. Monoleg has been beaten. The town is healing.'],['Mister Mayor','Young {hero}. When Wlater gave me that form, he said I\'d be Governor of a real state. A REAL one. Like Ohio.'],['Mister Mayor','But Ohio doesn\'t have town meetings like ours. Take this. It\'s yours. It\'s all of ours.'],{page:'ch1'},['Deegs','Okay. Okay okay okay. That was sick. I\'m coming with you.'],['Deegs','Not because I care. Because I want to see what else I can blow up.'],['Starr','He cares.'],['Deegs','I respectfully don\'t.'],{join:'Deegs'},{restore:'downtown'},{done:'ch1'},{q:'ch2'},{save:1}],
+  ch1Kill:[['*','The Mayor folds flat like a stage prop. He\'s fine. He\'s cardboard. He\'s just... quieter now.'],['Mister Mayor','...the meeting... is adjourned...'],['Starr','{hero}...'],{page:'ch1'},['Deegs','Okay, that was kinda metal. I\'m coming with you.'],{join:'Deegs'},{restore:'downtown'},{done:'ch1'},{q:'ch2'},{save:1}],
+  monolegTalk:G=>G.q('ch1')===1&&!G.f('c_monoleg')?[['Monoleg','A meeting? You want ME at a meeting? Every meeting I go to, I get beaten. With PTSD. In the form of the Chief.'],['Monoleg','...But the quiet\'s worse. I keep waiting for it. Fine. I\'ll come.'],{set:'c_monoleg'},{crowd:1}]
+    :G.q('ch5')===1?[['Monoleg','Yeah, I took the Chief\'s phone. You know what it\'s like being beaten every week for 14 years? It\'s been three days of peace. THREE DAYS.'],{ask:[['He\'s being nice now',[['Monoleg','I know. I KNOW. It\'s so much worse. He waved at me yesterday. I haven\'t slept.']]],['You want the old Chief back?',[['Monoleg','...God help me. Yeah. At least I knew where I stood. Usually on one leg.']]]]},['Monoleg','Take it. Before I change my mind.'],{give:'phone'},{step:'ch5'}]
+    :[['Monoleg',pick(['I fought in a war. Which one? Yes.','This leg? Lost it in the war. The other one? Also the war. I\'m a mess.','I keep grenades for emotional support.'])]],
+  harryTalk:G=>G.q('ch1')===1&&!G.f('c_harry')?[['Heroin Harry','A TOWN MEETING?! Hell yeah! I LOVE a meeting! I love everything! I\'m so itchy!'],{set:'c_harry'},{crowd:1}]:[['Heroin Harry',pick(['Say no to drugs! More for me!','I\'m not on anything! I\'m just HAPPY! And sweating!','The 200th anniversary! I\'m celebrating so hard I can see sounds!'])]],
+  ligmaTalk:G=>{ const s=G.q('scoop');
+    if(G.q('ch1')===1&&!G.f('c_ligma')) return [['Reporter Ligma','A town meeting? After three days of silence? That\'s a SCOOP. I\'m there. Camera rolling.'],{set:'c_ligma'},{crowd:1}];
+    if(s===1) return [['Reporter Ligma','The ferry, the rehab across from the mob base AND the Swamp? You\'re a natural. You ever think about journalism?'],['Reporter Ligma','Here. Hush money. I mean payment. I mean hush money.'],{pay:60},{done:'scoop'}];
+    return [['Reporter Ligma','Reporter Ligma, Channel 6. Breaking news: everything. Always.']]; },
+  travisTalk:G=>{ const s=G.q('hot');
+    if(s===1) return [['Travis','Are those... ALL FIVE of my emergency hot dogs?! Brother, you have saved my life and my lunch.'],{take:'hotdogs'},['Travis','You know what that means. I\'m with you. Wherever you\'re going. HELL YEAH, BROTHER!'],['*','A bald eagle lands nearby. It seems to agree.'],{join:'Travis'},{done:'hot'}];
+    if(G.done('hot')) return [['Travis',pick(['HELL YEAH, BROTHER!','I\'m narrating this in my head right now.','Hot dogs are a vegetable if you believe hard enough.'])]];
+    return [['Travis','Howdy! Travis Corbin. Narrator, historian, hot dog enthusiast.'],['Travis','I hid five hot dogs around this island for emergencies. Then I had an emergency. Now I can\'t find any of \'em. Five. Hot. Dogs.'],['Travis','You find \'em, I\'ll owe ya big.']]; },
+  eleaTalk:G=>{ const s=G.q('ch2');
+    if(s===0) return [['Elea','Oh thank GOD, someone who isn\'t wearing a lanyard. Hi! I\'m Elea! I\'m having the worst week of my entire life!'],['Elea','My dad. Tony Morelli. Mafia boss. Best dad ever. He signed one of Wlater\'s forms and now the family is a "legitimate business."'],['Elea','He did his TAXES. Correctly. He paid a PARKING TICKET. I found him reading a book about ETHICS.'],['Deegs','Oh that\'s messed up.'],['Elea','He says he did it so I could have "a normal life." I DON\'T WANT A NORMAL LIFE. I want my dad back.'],['Elea','Rocco\'s guarding the gate. He won\'t let anybody in. Please. Help me.'],{step:'ch2'}];
+    if(G.done('ch2')) return [['Elea',pick(['My dad shot at three guys this morning! He\'s BACK!','Thank you, {hero}. I mean it. Okay I\'m gonna drink six Red Bulls now.'])]];
+    return [['Elea','Rocco\'s at the gate. Dad\'s office is in the back of the mansion. My old room\'s upstairs, east side. Probably still has my drawings.']]; },
+  roccoTalk:G=>{ const s=G.q('ch2');
+    if(s===1) return [['Rocco','Mansion\'s closed. We\'re a legitimate business now. Appointments only.'],['Rocco','...Unless you can answer the family question. Boss\'s rule. You get it wrong, you leave. Legitimately.'],['Rocco','What\'s the family\'s golden rule?'],{ask:[['"Family comes first."',[['Rocco','Nice try. That\'s every family.'],{set:'roccoWrong'}]],['"Never talk business at the dinner table. Or anywhere. To anyone."',[['Rocco','...Yeah. Yeah, that\'s it. Go ahead, kid. Bring him back.'],{step:'ch2'}]],['"Always tip your waiter."',[['Rocco','We do tip. Generously. That\'s not the rule though.']]]]}];
+    return [['Rocco',pick(['Mansion\'s open. Boss says hi.','I\'ve been standing here for three days. I don\'t mind. I like standing.'])]]; },
+  tonyTalk:G=>G.done('ch2')?[['Tony Morelli',pick(['Kid, anything you need. Anything. Within reason. My reason.','Have a cannoli. That\'s not a request.'])]]
+    :G.q('ch2')===3?[['Tony Morelli','Come in. Sit. Would you like to see our quarterly earnings? They\'re legal.'],['Elea','Dad...'],['Tony Morelli','Elea, honey. This is what you deserve. A normal father. A normal house. Normal.'],{battle:'tony',spare:'ch2Spare',kill:'ch2Kill'}]
+    :[['Tony Morelli','I\'m busy with paperwork. Legal paperwork. Please make an appointment.']],
+  ch2Spare:[['Tony Morelli','...Normal. I signed my family away for "normal." What kinda father does that.'],['Elea','The kind who loves me too much and is bad at it. Like all of them.'],['Tony Morelli','C\'mere. Somebody get this kid a cannoli. Get {hero} a cannoli. Get EVERYBODY a cannoli.'],{give:'cannoli'},{page:'ch2'},['Elea','I\'m coming with you. Dad\'s fine. Dad, are you fine?'],['Tony Morelli','I\'m gonna go do some crimes to feel better.'],['Elea','He\'s fine!'],{join:'Elea'},{restore:'mansion'},{done:'ch2'},{q:'ch3'},{save:1}],
+  ch2Kill:[['*','Tony folds flat like a cardboard cutout. He\'s fine. He\'s just quieter. The family is very quiet tonight.'],['Elea','...We got the page. That\'s what matters. Right?'],{page:'ch2'},{join:'Elea'},{restore:'mansion'},{done:'ch2'},{q:'ch3'},{save:1}],
+  spencerTalk:G=>{ const s=G.q('ch3');
+    if(s===undefined) return [['Spencer','Hey! Positive vibes only on this trail! *minecraft skeleton noises*']];
+    if(G.done('ch3')) return [['Spencer','Warren\'s back to normal! I mean, back to NOT normal! That\'s the good one!']];
+    if(!G.f('spencerMet')) return [['Spencer','Hey hey! {hero}! Spencer! Big fan already!'],['Spencer','Positive spin: Haze Woods has never looked this clear and beautiful.'],['Spencer','Negative spin: that\'s because Warren quit. Everything. He JOGS now. He said "good morning" to me. Sober. In daylight.'],['Spencer','His cabin\'s way out west. I\'ll be here, vibing. Holding the vibes down.'],{set:'spencerMet'}];
+    return [['Spencer','You got this! I believe in you! Every bone of me does! I\'m all bones!']]; },
+  ch3Cabin:[['*','Warren\'s cabin. For 40 years, it was the haziest place on the island. Today the air is crisp. A treadmill sits on the porch.'],['Warren','Oh. Hey, kid. Wanna see my step count? It\'s 12.'],['Warren','Inspector guy came by. Said "Mr. Outt, I can make it all go away." I said, you mean my problems? He said, no, your whole personality. I said, eh. Where do I sign.'],['Warren','Now I can hear my own thoughts. All of \'em. All day. You ever hear your own thoughts, kid? They\'re SO LOUD.'],['Warren','Gave my lighter to some guy named Jeff. Threw my radio up the Ranger Tower. Don\'t need \'em. Gonna go eat a salad. Gonna feel nothing.'],{step:'ch3'}],
+  jeffWoods:G=>G.q('ch3')===1?[['Jeff','Hi. I\'m Jeff. I fell out of this tree three times. I\'m fine.'],['Jeff','Warren\'s lighter? Yeah, he gave it to me. It\'s got a radio station on it. Here. I don\'t smoke. I barely breathe.'],{give:'lighter'},{step:'ch3'}]:[['Jeff','Hi. I\'m Jeff. I\'m fine.']],
+  warrenTalk:G=>G.done('ch3')?[['Warren',pick(['Kid. You did me a solid. Haze Woods is hazy again. As God intended.','Wanna know a secret? The Declaration? Grandpappy Warren wrote it on the back of a menu.','*cough* Yeah. That\'s the stuff.'])]]
+    :G.q('ch3')===3?[['Warren','You brought my... huh. You came all the way out here with my junk.'],['Warren','You know what, kid? I\'m good. I\'m HEALTHY. Don\'t make me feel things.'],{battle:'warren',spare:'ch3Spare',kill:'ch3Kill'}]
+    :[['Warren','12 steps. Personal best. Feel nothing.']],
+  ch3Spare:[['Warren','*click* ...Yeah. Yeah, there it is.'],['*','A soft haze rolls back into the woods. Birds that you didn\'t know were missing start singing. Badly.'],['Warren','The page? Here. My great-great-great-grandpappy\'s signature\'s on that one. He\'d want it back where it belongs.'],{page:'ch3'},['Spencer','That was BEAUTIFUL. I\'m crying! Out of my eye holes! I\'m coming with you, {hero}!'],{join:'Spencer'},{restore:'woods'},{done:'ch3'},{q:'ch4'},{set:'bugmanAttack'},{save:1}],
+  ch3Kill:[['*','Warren folds flat like a cardboard cutout. The woods stay clear. Too clear.'],{page:'ch3'},['Spencer','Hey. Positive spin. We got the page. I\'m... I\'m coming with you.'],{join:'Spencer'},{restore:'woods'},{done:'ch3'},{q:'ch4'},{set:'bugmanAttack'},{save:1}],
+  bugmanTheater:[['*','The theater doors BLOW OPEN.'],['Bugman','Hello, actors of Nenjac Theater. I am looking for somebody who may go by the alias of "Neen."'],['Bugman','Bring them to me, and you will not be hurt.'],['Deegs','Neen? Never heard of \'em.'],['Starr','Yeah! We\'re Nenjac Theater, and we\'re not scared of bullies like you!'],['Bugman','Hm. Very well.'],{battle:'bugman1'}],
+  bugmanAfter:[['Bugman','Are you willing to let your friends get hurt to protect a monster like Neen?'],['Deegs','Neen\'s not a monster! They\'re just kinda creepy! And quiet!'],['Bugman','Ohoho. If you could only learn of the atrocities they\'ve committed.'],['Deegs','Hm. Guess I never will, though.'],['Bugman','Huh?'],['Cas','leave my friends alone.'],['*','Cas comes out of NOWHERE. Forty feet in the air. Directly onto Bugman\'s head.'],['Bugman','AGH! FINE! But this isn\'t the last you\'ll be seeing of me, Nenjac Theater!'],['*','Bugman flies off. On his way out, he drops a bomb on the theater. The theater explodes. For the 41st time.'],['Gertrude','...I\'ll get the broom.'],['Starr','Wait. Where\'s Neen? Has anyone actually seen Neen?'],['*','You get the feeling Neen has been watching this whole time.'],{q:'neen'},{set:'bugmanDone'},{save:1}],
+  twinsTalk:G=>{ const s=G.q('ch4');
+    if(s===0) return [['Melissa & Marissa','Dean\'s gone!'],['Melissa & Marissa','Not GONE gone.'],['Melissa & Marissa','Like... gone gone.'],['Melissa & Marissa','He signed Wlater\'s form to "become a normal guy, for once." And now nobody can see him. At all. He\'s just. A voice. Saying "guys?" sadly.'],['Melissa & Marissa','Ciggy will know where he is. Ciggy knows where EVERYONE is. It\'s a problem.'],{step:'ch4'}];
+    if(G.done('ch4')) return [['Melissa & Marissa','DEAN!'],['Melissa & Marissa','He\'s BACK!'],['Melissa & Marissa','He\'s so back.']];
+    return [['Melissa & Marissa','Find Ciggy! She\'s probably in a bush! Watching us! Right now!']]; },
+  ciggyTalk:G=>G.q('ch4')===1?[['Ciggy','...How did you find me. Nobody finds me. I find THEM.'],['Ciggy','Dean? Top of the lighthouse. He\'s been up there for two days. He talks to the seagulls. They don\'t notice him either.'],['Ciggy','Also, {hero}, you walk funny when you think nobody\'s watching. I\'m always watching.'],{step:'ch4'}]:[['Ciggy',pick(['I know what you did at the Gas-N-Go.','You have sand in your left shoe. I counted.','Don\'t mind me. I\'m a bush.'])]],
+  ch4Top:[['*','The top of the lighthouse. Wind. Seagulls. And... a voice?'],['Dean McQueen','Is someone there? Can you SEE me?'],{battle:'dean',spare:'ch4Spare',kill:'ch4Kill'}],
+  deanTalk:G=>[['Dean McQueen',G.done('ch4')?pick(['Ladies. Gentlemen. {hero}. I\'m back.','You saw me when nobody else could. That\'s real, man.']):'Hello?? Can anyone see me??']],
+  ch4Spare:[['Dean McQueen','I signed that form \'cause I was tired of everybody always looking at me. Then nobody did. And it was SO much worse.'],['Dean McQueen','Here. The page. And {hero}? Thanks for noticing.'],{page:'ch4'},['Melissa & Marissa','DEAN! You\'re back! We got you a present! Wait, no, we got {hero} a present!'],{give:'cherry'},{restore:'boardwalk'},{done:'ch4'},{q:'ch5'},{save:1}],
+  ch4Kill:[['*','Dean folds flat. Now he\'s visible. Just... very, very quiet.'],{page:'ch4'},{restore:'boardwalk'},{done:'ch4'},{q:'ch5'},{save:1}],
+  mccTalk:G=>{ const s=G.q('ch5'), c=G.q('case');
+    if(c===1) return [['Officer McCormack','Clues? About my family? Let me see.'],['*','You show him the truncheon, the receipt and the Siri reminder.'],['Officer McCormack','...Hmm. Hmmmm.'],['Officer McCormack','Could\'ve been anyone.'],['Starr','It\'s literally the Chief.'],['Officer McCormack','A drifter. Probably a drifter. Here, take this for your trouble. I\'m gonna go lie down in my car.'],{give:'wings'},{pay:40},{done:'case'}];
+    if(s===0) return [['Officer McCormack','{hero}. Thank god. It\'s the Chief. He\'s... he\'s being NICE.'],['Officer McCormack','He said "please." He held a door for me. He bought a homeless guy a SANDWICH instead of a truncheon. I\'ve never been so scared in my life.'],['Officer McCormack','He traded his page for "real federal authority." Turned off his phone. Siri\'s gone. Without Siri reminding him to be evil, he just... isn\'t.'],['Officer McCormack','Monoleg has his phone. Get it back. Please. I can\'t believe I\'m saying this. Bring back the monster.'],{step:'ch5'}];
+    return [['Officer McCormack',pick(['Eleven bosses. Shot in the face. All of them. I\'m starting to think it\'s me.','I\'m still on the case. The family case. Any day now.'])]]; },
+  chiefTalk:G=>G.done('ch5')?[['Chief',pick(['Siri, remind me to beat Monoleg at 4. ...Siri, remind me to beat Monoleg at 4:15 too.','You. New kid. You did good. Want to see my red room? No? Smart.','I\'m back, baby.'])]]
+    :G.q('ch5')===2?[['Chief','Oh, hello there, citizen! Welcome to Nenjac Police. Can I help you with anything? Anything at all? I mean that.'],['*','Every hair on your body stands up.'],{battle:'chief',spare:'ch5Spare',kill:'ch5Kill'}]
+    :[['Chief','Have a wonderful day, citizen! Remember: safety first!'],['*','You have never been more afraid.']],
+  ch5Spare:[['Chief','...Siri. Remind me who I am.'],['*','"Here\'s what I found: You are the Chief. You like red rooms. You have a meeting with Monoleg\'s face at 4."'],['Chief','...Yeah. YEAH. There he is.'],['Chief','The page? Here. Federal authority\'s overrated. Too much paperwork. Not enough truncheon.'],{page:'ch5'},['Officer McCormack','Oh thank god. Oh no. Oh thank god.'],{restore:'police'},{done:'ch5'},{q:'fin'},{set:'wlaterSeen'},['Starr','{hero}. That\'s five. That\'s all five pages.'],['Deegs','State House. Now. Let\'s go ruin an inspector\'s whole day.'],{save:1}],
+  ch5Kill:[['*','The Chief folds flat. For the first time in Nenjac history, the Chief is the one who got beaten.'],['Officer McCormack','...I have to be honest, I\'ve dreamed about this.'],{page:'ch5'},{restore:'police'},{done:'ch5'},{q:'fin'},{set:'wlaterSeen'},{save:1}],
+  casTalk:G=>{ const s=G.q('casq');
+    if(s===1) return [['Cas','oh. you got them. all four.'],['*','Cas takes the tooth, the bear trap, the battery and the shoe. Cas puts them in a pile. Cas stares at the pile.'],['Cas','perfect.'],['Starr','What are they for?'],['Cas','i\'m coming with you now.'],['Starr','That doesn\'t answer'],['Cas','i\'m coming with you now.'],{take:'casitems'},{join:'Cas'},{done:'casq'}];
+    if(G.done('casq')) return [['Cas',pick(['this island makes me want to play jump rope with my intestines','chillin','balright'])]];
+    return [['Cas','hi. i need four things. a tooth. a bear trap. a 9 volt battery. one shoe. don\'t ask.'],['Cas','if you get them i\'ll come with you. i jump really high. i hit really hard. i don\'t like anyone.'],['Cas','except you maybe. we\'ll see.']]; },
+  nerdTalk:G=>G.done('nerd')?[['Nerd','I FINISHED A SENTENCE. Do you know how long I\'ve waited? My map\'s yours. It shows everything. I calculated it.']]
+    :[['Nerd','Oh! Hello! I\'m Reginald H. Wellington III. Everyone calls me Nerd. I\'ve been trying to explain something for years. The Declaration pages, they—'],['Deegs','Nerd, nobody asked.'],{ask:[['Let him finish',[['Nerd','Thank you. As I was saying, the pages have a measurable signature, so with a bit of triangulation—'],['Starr','Ooh, is this the math part?'],{ask:[['Let him finish',[['Nerd','—I\'ve mapped every interesting thing on the island! Hot dogs. Neen sightings. Jeff\'s locations. All of it. Here.'],['*','Nerd finished a sentence. Nerd is crying. Nerd gives you his map.'],['*','(Everything you still need to find now shows on your map.)'],{set:'nerdMap'},{pay:20},{done:'nerd'}]],['Interrupt him too',[['Nerd','...Right. Of course.']]]]}]],['"Yeah Nerd, nobody asked"',[['Nerd','...Right. Of course. Nobody ever does.']]]]}],
+  doctorTalk:G=>[['Dr Doctor',pick(['I\'m a doctor! It\'s in my name twice! Legally!','Your HP? Looks fine. Want some pills anyway? They\'re free. They\'re free because they\'re expired.','I went to medical school. Online. For a weekend.'])]],
+  shopTalk:G=>[['Bananinem','Yo. Welcome to the Gas-N-Go. Everything\'s overpriced, the sushi is "fresh," the slushie machine has been running since 1994.'],{shop:1}],
+  jeffDone:G=>[['Jeff','Hi. You found me four times. Every time I was fine. I\'m always fine.'],['Jeff','Here. My lucky sock. I\'ve worn it through four ferry fires. Keep it on and you\'ll be fine too. Probably.'],{give:'sock'},{done:'jeff'}],
+  neenPeak:[['*','The top of Mount Nenjac. Wind. Stars. And standing at the very edge, perfectly still...'],['*','Neen.'],['*','Neen doesn\'t say anything. Neen never says anything.'],['*','Neen looks at you for a very long time. Then Neen looks at the island. The whole island. All of it.'],['*','You get the feeling Neen has been keeping an eye on you this whole time. Making sure you were okay.'],['*','Neen places something small and warm in your hand. It hums.'],['*','(Got NEEN\'S HUM. Something tells you it will matter later.)'],{set:'neenHum'},{done:'neen'},{pay:50}],
+  wlaterTalk:G=>G.done('fin')?[['Inspector Wlater','I filed a report. It says "Nenjac: no notes." Then I tore it up. I\'m a Nenjacian now. Hell yeah. Brother. Is that how you say it?']]:[['Inspector Wlater','Do NOT approach the inspector. This is an active inspection.']],
+  finHouse:[['*','The State House. In 1826, Governor Warren drafted the Declaration of Nenjacpendence here. In 2026, a man with a clipboard is about to undo it.'],['Inspector Wlater','Ah. The new kid. I\'ve read your file. It\'s very short. You washed up this morning.'],['Inspector Wlater','In six minutes I file the Normalization Order. The Declaration isn\'t on display. Nenjac becomes a standard territory. Permits. Inspections. Speed limits.'],['Deegs','Over my dead body.'],['Inspector Wlater','I\'ll need that in writing.'],['Starr','{hero}... we have all five pages. Let\'s show him.'],{battle:'wlater',spare:'finWin',kill:'finWin'}],
+  finWin:[{restore:'statehouse'},['Inspector Wlater','...I came here to fix you people. You don\'t want to be fixed, do you.'],['Travis','Nope!'],['Deegs','Nope.'],['Cas','no'],['Inspector Wlater','...Then what am I supposed to do with my life?'],['Starr','Come to the show. It starts in five minutes. Travis is gonna read the Declaration. There will probably be an explosion.'],['Deegs','There will DEFINITELY be an explosion.'],{step:'fin'}],
+  finShow:G=>[['*','The Nenjac Theater. Rebuilt for the 41st time, just this afternoon. The whole island is packed inside.'],['Travis','Ladies and gentlemen, Nenjacians of all ages! On this, the 200th anniversary of Nenjacpendence—'],['*','The doors BLOW OPEN. Again.'],['Bugman','Hello again, actors of Nenjac Theater.'],['Deegs','Oh, come ON.'],['Bugman','I told you this wasn\'t the last you\'d be seeing of me. Hand over Neen.'],['*','On stage, in the spotlight, very still... Neen.'],G.f('neenHum')?['*','The thing Neen gave you on Mount Nenjac starts humming in your pocket.']:['*','Neen looks at you. Just you.'],{battle:'bugman',spare:'finEnd',kill:'finEnd'}],
+  finEnd:G=>[['*','The theater is quiet for a second. Then Travis clears his throat.'],['Travis','...Anyway! The Declaration of Nenjacpendence!'],['*','Travis reads all five pages. The audience knows every word. Some of them are crying. Monoleg is getting beaten in the back, out of respect.'],['Mister Mayor','NENJAC, OH NENJAC!'],['*','The whole theater sings the anthem. It is extremely loud and extremely not appropriate for children.'],['*','At the end, the theater explodes. For the 42nd time. Nobody is hurt. Probably Jeff, but Jeff is fine.'],...(G.score()>=6?[['Starr','{hero}... you didn\'t hurt anybody. Not once. You know how rare that is here?'],['Starr','Nenjac remembers. And it\'s gonna remember you.'],['*','★ LOUD ENDING ★ You spared everyone. Nenjac is louder than ever.']]:[['Starr','We did it, {hero}. Some people are a little quieter than before... but we did it.'],['Starr','There\'s always another show. We can fix it. That\'s the thing about Nenjac.'],['*','★ QUIET ENDING ★ Nenjac was saved. Some voices are a little softer now.']]),['Travis','And that\'s the story of the 200th Nenjacpendence Day. Thanks for listenin\', brother.'],{done:'fin'},{ending:1},{pay:200},{save:1}]};
+const IS_BUG1={...IBOSS.bugman,n:'BUGMAN',hp:999,acts:[['Stand your ground','You stand your ground. Bugman doesn\'t notice.',0],['Call for help','You yell for help. Somewhere, someone is jumping very high.',0]],scripted:3};
+/* campfire chats when you rest with your party (Miitopia-style) */
+const ICAMP=[[['Deegs','Starr'],[['Deegs','Starr. Hypothetically. If I blew up the Gas-N-Go, would you still be my friend?'],['Starr','Yes. But I\'d be disappointed.'],['Deegs','...That\'s worse.']]],
+  [['Deegs','Cas'],[['Cas','deegs. give me a bomb.'],['Deegs','No.'],['Cas','i\'ll be good.'],['Deegs','You said that last time, and the time before that.'],['Cas','and i was good. for a second.']]],
+  [['Spencer','Elea'],[['Spencer','Elea! Positive spin on your dad thing: he loves you SO much he did crimes to stop doing crimes!'],['Elea','...That\'s actually really sweet. That\'s so sweet. I\'m gonna cry and drink a Red Bull at the same time.']]],
+  [['Travis','Deegs'],[['Travis','Y\'know, Deegs, your great-great-great-grandpappy was there in 1826. Sir Deegs. Blew up a whole tavern for Nenjacpendence.'],['Deegs','I KNEW it. It\'s genetic. It\'s a condition.']]],
+  [['Starr','Spencer'],[['Starr','Spencer, how are you ALWAYS positive?'],['Spencer','Easy! I\'m a skull. The worst thing that could happen to me already happened!'],['Starr','...Wow.'],['Spencer','*minecraft skeleton noises*']]],
+  [['Cas','Elea'],[['Elea','Cas! Wanna split a Red Bull?'],['Cas','i ate the can.'],['Elea','What?'],['Cas','last time. i ate the can. it was good.']]],
+  [['Travis','Cas'],[['Travis','HELL YEAH, BROTHER!'],['Cas','why are you yelling'],['Travis','I\'m HAPPY, brother!'],['Cas','...hell yeah brother'],['*','A bald eagle lands on Cas. Cas allows it.']]],
+  [['Deegs','Elea'],[['Elea','Deegs, real talk, where do the bombs COME from?'],['Deegs','Doctors say it\'s "a condition." I say it\'s a gift. Starr says it\'s "a problem we\'re working on."']]],
+  [['Starr','Elea'],[['Elea','Starr, you\'re made of paper. Do you, like, recycle?'],['Starr','Elea that\'s a really personal question.']]],
+  [['Spencer','Cas'],[['Spencer','Cas, I just want you to know I think you\'re doing amazing.'],['Cas','i set a shed on fire today'],['Spencer','And you did AMAZING.']]]];
+/* =====================================================================
+   [ISLE] the 3D world: terrain, water, towns, landmarks, trees, cardboard
+   cutout people, the player (first + third person), party followers,
+   collisions, day/night, minimap. Three.js loads only when you open it.
+   ===================================================================== */
+const ISLE_THREE='https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js';
+const IW={T:null,r:null,scene:null,cam:null,ready:false,N:200,SPAN:1500,H:null,col:null,base:null,tmesh:null,colliders:[],treeGrid:new Map(),npcs:{},cols:{},
+  player:null,pv:{x:0,y:0,z:0,vy:0,yaw:0,pitch:-.2,cy:0,cp:.38,dist:13,ground:true,face:1,walk:0},keys:{},trail:[],followers:[],tex:{},markers:[],t:0,q:null,water:null,sun:null,hemi:null,sky:null,lastEnc:0,encAt:90,anim:[]};
+const IQUAL={low:{pr:.75,far:420,trees:900,shadow:false,aa:false},med:{pr:1,far:650,trees:1900,shadow:false,aa:true},high:{pr:1.5,far:900,trees:3200,shadow:true,aa:true}};
+async function iwThree(){ if(IW.T) return IW.T; IW.T=await import(ISLE_THREE); return IW.T; }
+
+/* ---------- noise + terrain ---------- */
+function iwHash(x,y){ let h=Math.imul(x|0,374761393)+Math.imul(y|0,668265263); h=Math.imul(h^(h>>>13),1274126177); return ((h^(h>>>16))>>>0)/4294967295; }
+function iwNoise(x,y){ const xi=Math.floor(x), yi=Math.floor(y), xf=x-xi, yf=y-yi, u=xf*xf*(3-2*xf), v=yf*yf*(3-2*yf); const a=iwHash(xi,yi), b=iwHash(xi+1,yi), c=iwHash(xi,yi+1), d=iwHash(xi+1,yi+1); return a+(b-a)*u+(c-a)*v+(a-b-c+d)*u*v; }
+function iwFbm(x,y,o=4){ let s=0, a=.5, f=1; for(let i=0;i<o;i++){ s+=a*iwNoise(x*f,y*f); a*=.5; f*=2.03; } return s; }
+const iwSS=(a,b,x)=>{ const t=clamp((x-a)/(b-a),0,1); return t*t*(3-2*t); };
+function iwRawH(x,z){ const d=Math.hypot(x,z), th=Math.atan2(z,x), R=ISLE_R*(.86+.16*iwFbm(Math.cos(th)*1.6+5,Math.sin(th)*1.6+5,3)), land=iwSS(-40,120,R-d);
+  let h=-16+land*(18+iwFbm(x*.0045+11,z*.0045+3)*16+iwFbm(x*.03,z*.03,2)*2.5);
+  const mx=x, mz=z+280, mt=Math.exp(-(mx*mx+mz*mz)/(2*125*125)); h+=mt*land*(150+iwFbm(x*.02,z*.02,3)*30);
+  const cx=x-430, cz=z+160; h+=Math.exp(-(cx*cx+cz*cz)/(2*70*70))*land*28;
+  const wx=x+380, wz=z-60; h+=Math.exp(-(wx*wx+wz*wz)/(2*170*170))*land*10*iwFbm(x*.01,z*.01);
+  const sx=x+60, sz=z+470; h=h-Math.exp(-(sx*sx+sz*sz)/(2*90*90))*land*12; return h; }
+function iwSegDist(px,pz,ax,az,bx,bz){ const dx=bx-ax, dz=bz-az, L=dx*dx+dz*dz||1, t=clamp(((px-ax)*dx+(pz-az)*dz)/L,0,1); return Math.hypot(px-(ax+dx*t),pz-(az+dz*t)); }
+function iwRoadSegs(){ const P=p=>typeof p==='string'?[IL[p][0],IL[p][1]]:p, segs=[]; IROADS.forEach(r=>{ for(let i=0;i<r.length-1;i++){ const a=P(r[i]), b=P(r[i+1]); segs.push([a[0],a[1],b[0],b[1]]); } }); return segs; }
+const IFLAT={beach:[1.4,70],theater:[0,46],square:[0,60],police:[0,34],clinic:[0,22],gas:[0,22],projects:[0,55],mansion:[0,60],gate:[0,16],rehab:[0,20],cabin:[0,26],tower:[0,16],boardwalk:[1.6,60],lighthouse:[4,24],school:[0,40],statehouse:[0,44],peak:[0,16],park:[0,24],dock:[1.2,18],swamp:[1.2,40]};
+function iwBuildHeights(){ const N=IW.N, S=IW.SPAN, H=new Float32Array((N+1)*(N+1)), segs=iwRoadSegs(), road=new Float32Array((N+1)*(N+1)), flats=Object.entries(IFLAT).map(([k,[min,r]])=>{ const p=IL[k]; return [p[0],p[1],r,Math.max(min||2.2,iwRawH(p[0],p[1])),k]; });
+  flats.find(f=>f[4]==='peak')[3]=iwRawH(0,-280);
+  for(let j=0;j<=N;j++) for(let i=0;i<=N;i++){ const x=-S/2+i*S/N, z=-S/2+j*S/N; let h=iwRawH(x,z);
+    for(const [fx,fz,r,fh] of flats){ const d=Math.hypot(x-fx,z-fz); if(d<r*1.9){ const w=1-iwSS(r,r*1.9,d); h=h+(fh-h)*w; } }
+    let rd=1e9; for(const s of segs){ const d=iwSegDist(x,z,s[0],s[1],s[2],s[3]); if(d<rd) rd=d; } road[j*(N+1)+i]=rd; if(rd<14&&h>-2){ const w=1-iwSS(6,14,rd); h=h+(Math.max(1.6,h*.97)-h)*w*.6; }
+    H[j*(N+1)+i]=h; }
+  IW.H=H; IW.road=road; }
+function iwH(x,z){ const N=IW.N, S=IW.SPAN, fx=(x+S/2)/S*N, fz=(z+S/2)/S*N; if(fx<0||fz<0||fx>=N||fz>=N) return -20; const i=Math.floor(fx), j=Math.floor(fz), u=fx-i, v=fz-j, H=IW.H, W=N+1;
+  const a=H[j*W+i], b=H[j*W+i+1], c=H[(j+1)*W+i], d=H[(j+1)*W+i+1]; return u+v<1?a+(b-a)*u+(c-a)*v:d+(c-d)*(1-u)+(b-d)*(1-v); }
+function iwRegionAt(x,z){ for(const R of IREG){ const d=Math.hypot(x-R.c[0],z-R.c[1]); if(d<R.r) return R; } return null; }
+function iwGrey(x,z){ let g=0; for(const R of IREG){ if(IS_ST().restored[R.id]) continue; const d=Math.hypot(x-R.c[0],z-R.c[1]); g=Math.max(g,1-iwSS(R.r*.7,R.r,d)); } return g; }
+function iwColors(){ const T=IW.T, N=IW.N, S=IW.SPAN, W=N+1, col=IW.col||new Float32Array(W*W*3), c=new T.Color(); IW.col=col;
+  for(let j=0;j<=N;j++) for(let i=0;i<=N;i++){ const k=j*W+i, x=-S/2+i*S/N, z=-S/2+j*S/N, h=IW.H[k], n=iwNoise(x*.05,z*.05), rd=IW.road[k];
+    const hx=IW.H[j*W+Math.min(N,i+1)]-h, hz=IW.H[Math.min(N,j+1)*W+i]-h, slope=Math.hypot(hx,hz)/(S/N);
+    if(h<-1) c.setRGB(.82,.76,.55); else if(h<2.6) c.setRGB(.91,.84,.62);
+    else if(h>128) c.setRGB(.95,.96,.98); else if(slope>.75||h>78) c.setRGB(.52+n*.08,.49+n*.06,.45+n*.06);
+    else { const woods=Math.hypot(x+380,z-70)<210, swamp=Math.hypot(x+60,z+470)<140; if(swamp) c.setRGB(.30+n*.06,.40+n*.05,.22); else if(woods) c.setRGB(.17+n*.07,.42+n*.08,.2); else c.setRGB(.33+n*.1,.62+n*.1,.27); }
+    if(rd<5&&h>1.5){ const town=Math.hypot(x,z-200)<230; if(town) c.setRGB(.36,.36,.38); else c.setRGB(.74,.62,.44); }
+    const g=iwGrey(x,z); if(g>0){ const l=c.r*.3+c.g*.59+c.b*.11; c.setRGB(c.r+(l*.95-c.r)*g,c.g+(l*.95-c.g)*g,c.b+(l*.95-c.b)*g); }
+    col[k*3]=c.r; col[k*3+1]=c.g; col[k*3+2]=c.b; }
+  if(IW.tmesh){ IW.tmesh.geometry.attributes.color.needsUpdate=true; } return col; }
+function iwTerrain(){ const T=IW.T, N=IW.N, S=IW.SPAN, g=new T.PlaneGeometry(S,S,N,N); g.rotateX(-Math.PI/2); const p=g.attributes.position;
+  for(let i=0;i<p.count;i++){ p.setY(i,IW.H[i]); } g.computeVertexNormals(); g.setAttribute('color',new T.BufferAttribute(iwColors(),3));
+  const m=new T.Mesh(g,new T.MeshLambertMaterial({vertexColors:true})); m.receiveShadow=true; IW.tmesh=m; IW.scene.add(m);
+  const wg=new T.PlaneGeometry(5000,5000,1,1); wg.rotateX(-Math.PI/2); const w=new T.Mesh(wg,new T.MeshPhongMaterial({color:0x2b8fd8,transparent:true,opacity:.86,shininess:90,specular:0x88ccff})); w.position.y=0; IW.water=w; IW.scene.add(w);
+  const sg=new T.RingGeometry(ISLE_R*.6,2600,64,1); sg.rotateX(-Math.PI/2); const deep=new T.Mesh(sg,new T.MeshBasicMaterial({color:0x13568f,transparent:true,opacity:.35})); deep.position.y=.05; IW.scene.add(deep); }
+
+/* ---------- canvas textures ---------- */
+function iwCanvas(w,h,fn){ const c=document.createElement('canvas'); c.width=w; c.height=h; fn(c.getContext('2d'),w,h); return c; }
+function iwTex(key,w,h,fn,rep){ if(IW.tex[key]) return IW.tex[key]; const T=IW.T, t=new T.CanvasTexture(iwCanvas(w,h,fn)); t.colorSpace=T.SRGBColorSpace; if(rep){ t.wrapS=t.wrapT=T.RepeatWrapping; } t.anisotropy=4; return IW.tex[key]=t; }
+function iwSignTex(text,bg='#3b2a1a',fg='#ffe8a3',font='Bangers'){ return iwTex('sign:'+text+bg,512,128,(g,w,h)=>{ g.fillStyle=bg; g.fillRect(0,0,w,h); g.strokeStyle='rgba(0,0,0,.6)'; g.lineWidth=10; g.strokeRect(5,5,w-10,h-10); g.fillStyle=fg; g.font=`${text.length>16?54:72}px ${font}, Impact, sans-serif`; g.textAlign='center'; g.textBaseline='middle'; g.fillText(text,w/2,h/2+4,w-30); }); }
+function iwWindowTex(base,win){ return iwTex('win:'+base+win,128,128,(g,w,h)=>{ g.fillStyle=base; g.fillRect(0,0,w,h); for(let y=10;y<h;y+=32) for(let x=10;x<w;x+=32){ g.fillStyle=Math.random()<.3?'#ffe9a8':win; g.fillRect(x,y,18,20); g.fillStyle='rgba(0,0,0,.25)'; g.fillRect(x,y+18,18,3); } },true); }
+function iwBrickTex(){ return iwTex('brick',128,128,(g,w,h)=>{ g.fillStyle='#c9b9a3'; g.fillRect(0,0,w,h); for(let r=0;r<8;r++) for(let c=-1;c<5;c++){ const v=(Math.random()-.5)*30; g.fillStyle=`rgb(${150+v},${64+v*.5},${48+v*.4})`; g.fillRect(c*32+(r%2?16:0)+2,r*16+2,28,12); } },true); }
+/* ---------- buildings & props ---------- */
+function iwBox(x,z,w,d,h,mat,{rot=0,y=null,collide=true,roof=null,roofH=0,cast=true}={}){ const T=IW.T, gy=y??iwGroundUnder(x,z,w,d), m=new T.Mesh(new T.BoxGeometry(w,h,d),mat); m.position.set(x,gy+h/2,z); m.rotation.y=rot; m.castShadow=cast; m.receiveShadow=true; IW.scene.add(m);
+  if(roof){ const r=new T.Mesh(new T.ConeGeometry(Math.hypot(w,d)/2*1.02,roofH||h*.35,4),new T.MeshLambertMaterial({color:roof})); r.position.set(x,gy+h+(roofH||h*.35)/2,z); r.rotation.y=rot+Math.PI/4; r.scale.set(w/Math.hypot(w,d)*1.42,1,d/Math.hypot(w,d)*1.42); IW.scene.add(r); }
+  if(collide){ const c=Math.abs(Math.cos(rot)), s=Math.abs(Math.sin(rot)); IW.colliders.push({x0:x-(w*c+d*s)/2-.4,x1:x+(w*c+d*s)/2+.4,z0:z-(w*s+d*c)/2-.4,z1:z+(w*s+d*c)/2+.4,top:gy+h}); } return m; }
+function iwGroundUnder(x,z,w=4,d=4){ let m=1e9; for(const [a,b] of [[0,0],[-w/2,-d/2],[w/2,-d/2],[-w/2,d/2],[w/2,d/2]]) m=Math.min(m,iwH(x+a,z+b)); return m; }
+function iwSign(x,z,text,rot=0,{bg,fg,w=8,h=2,y=3,post=true}={}){ const T=IW.T, gy=iwH(x,z), m=new T.Mesh(new T.PlaneGeometry(w,h),new T.MeshLambertMaterial({map:iwSignTex(text,bg,fg),side:T.DoubleSide})); m.position.set(x,gy+y,z); m.rotation.y=rot; IW.scene.add(m);
+  if(post){ const p=new T.Mesh(new T.CylinderGeometry(.15,.15,y,6),new T.MeshLambertMaterial({color:0x5a3d22})); p.position.set(x,gy+y/2,z); IW.scene.add(p); } return m; }
+function iwCyl(x,z,r,h,color,{y=null,seg=12,collide=true,r2=null}={}){ const T=IW.T, gy=y??iwH(x,z), m=new T.Mesh(new T.CylinderGeometry(r2??r,r,h,seg),new T.MeshLambertMaterial({color})); m.position.set(x,gy+h/2,z); m.castShadow=true; IW.scene.add(m); if(collide) IW.colliders.push({c:1,x,z,r:r+.4,top:gy+h}); return m; }
+function iwLandmarks(){ const T=IW.T, L=c=>new T.MeshLambertMaterial({color:c}), Lm=(t,c=0xffffff)=>new T.MeshLambertMaterial({map:t,color:c});
+  /* Nenjac Theater */ { const [x,z]=IL.theater; const gy=iwH(x,z-14); iwBox(x,z-20,34,18,16,Lm(iwBrickTex(),0xd04a3a),{y:gy}); iwBox(x,z-20,36,19,2,L(0x3a1010),{y:gy+16,collide:false});
+    const sign=new T.Mesh(new T.PlaneGeometry(22,4),new T.MeshBasicMaterial({map:iwSignTex('NENJAC THEATER','#111','#ffd43b')})); sign.position.set(x,gy+13,z-10.9); IW.scene.add(sign);
+    for(let i=0;i<14;i++){ const b=new T.Mesh(new T.SphereGeometry(.28,6,6),new T.MeshBasicMaterial({color:0xffe8a0})); b.position.set(x-11+i*22/13,gy+15.4,z-10.8); IW.scene.add(b); IW.anim.push(t=>{ b.material.color.setHex(Math.floor(t*4+i)%3?0xffe8a0:0x7a5a10); }); }
+    iwBox(x,z-6,22,8,1.4,L(0x5a3020),{y:gy,collide:false}); const cur=new T.Mesh(new T.PlaneGeometry(22,8),L(0x9b1020)); cur.position.set(x,gy+5.5,z-10.95); IW.scene.add(cur); iwSign(x+16,z+4,'TONIGHT: 200th SHOW',0,{bg:'#ffd43b',fg:'#111'}); }
+  /* Town Square + downtown blocks */ { const [x,z]=IL.square; const gy=iwH(x,z); iwBox(x,z-12,4,2,2.4,L(0x6b4423),{y:gy}); iwSign(x,z-13.4,'TOWN MEETING',0,{bg:'#1c3d7a',fg:'#fff',w:6,h:1.4,y:3.2,post:false}); iwCyl(x-6,z-12,.15,9,0xcccccc,{collide:false}); iwCyl(x+6,z-12,.15,9,0xcccccc,{collide:false});
+    const flag=new T.Mesh(new T.PlaneGeometry(3,2),L(0x2f9e44)); flag.position.set(x-4.5,gy+8,z-12); IW.scene.add(flag); IW.anim.push(t=>{ flag.rotation.y=Math.sin(t*3)*.2; });
+    const R=gfRand('downtown'); for(let i=0;i<46;i++){ const a=R()*Math.PI*2, d=50+R()*140, bx=x+Math.cos(a)*d, bz=z+Math.sin(a)*d*0.9; if(Object.values(IL).some(l=>Math.hypot(bx-l[0],bz-l[1])<l[2]+12)) continue; if(iwNearRoad(bx,bz,9)) continue; const w=10+R()*10, d2=10+R()*10, h=10+R()*30;
+      iwBox(bx,bz,w,d2,h,Lm(iwWindowTex(pick(['#8a8f99','#a3826a','#6c7a8a','#b5a07a','#7a6c8f']),'#2a3b55')),{rot:Math.round(R()*4)*Math.PI/2}); } }
+  /* Police HQ */ { const [x,z]=IL.police; iwBox(x,z-8,22,14,10,Lm(iwWindowTex('#4b5a78','#1a2333')),{}); iwSign(x,z,'NENJAC POLICE',0,{bg:'#1c2a5a',fg:'#fff',w:9}); for(let i=0;i<6;i++){ const t=new T.Mesh(new T.TorusGeometry(.6,.12,4,10),L(0x777777)); t.rotation.x=-Math.PI/2; t.position.set(x-10+i*4,iwH(x-10+i*4,z+8)+.15,z+8); IW.scene.add(t); } }
+  /* Clinic, Gas-N-Go, Rehab, School, Projects */ { const [x,z]=IL.clinic; iwBox(x,z-6,14,10,8,L(0xf1f3f5)); iwSign(x,z+1,"DR. DOCTOR M.D. M.D.",0,{bg:'#fff',fg:'#e03131'}); }
+  { const [x,z]=IL.gas; iwBox(x,z-6,10,8,5,L(0xe9ecef)); const roof=iwBox(x,z+4,14,10,.6,L(0xe03131),{y:iwH(x,z)+6,collide:false}); iwCyl(x-5,z+4,.3,6,0xbbbbbb); iwCyl(x+5,z+4,.3,6,0xbbbbbb); iwSign(x,z-1.9,'GAS-N-GO',0,{bg:'#e03131',fg:'#fff',post:false,y:4}); }
+  { const [x,z]=IL.rehab; iwBox(x,z-4,14,10,7,L(0xbac8e0)); iwSign(x,z+2,'NENJAC REHAB',0,{bg:'#fff',fg:'#1c7ed6'}); iwSign(x+9,z+3,'(across from the mob base)',0,{bg:'#fff',fg:'#555',w:7,h:1.2,y:1.6}); }
+  { const [x,z]=IL.school; iwBox(x,z-10,40,14,12,Lm(iwBrickTex(),0xd8a070)); iwSign(x,z-2.9,'NENJAC HIGH · GO BOMBERS',0,{bg:'#7a1c1c',fg:'#ffd43b',w:12,post:false,y:9}); iwCyl(x+24,z,.15,12,0xcccccc,{collide:false}); }
+  { const [x,z]=IL.projects; const R=gfRand('projects'); for(let i=0;i<4;i++){ const a=i*Math.PI/2+.4, bx=x+Math.cos(a)*32, bz=z+Math.sin(a)*28; iwBox(bx,bz,16,12,26+R()*12,Lm(iwBrickTex(),0xb06050),{rot:a}); }
+    IW.projWall=iwBox(x,z+30,26,2,8,L(0x8a8f99)); iwSign(x-14,z+22,'THE PROJECTS',0,{bg:'#333',fg:'#fff'}); }
+  /* Morelli Mansion */ { const [x,z]=IL.mansion; const gy=iwH(x,z); iwBox(x+10,z-6,44,24,16,L(0xf8f4ea),{y:gy,roof:0x4a4e57,roofH:9}); for(let i=0;i<6;i++) iwCyl(x-8+i*7.2,z+7,.8,15,0xffffff,{y:gy,collide:false}); iwBox(x+10,z+8,44,4,.8,L(0xffffff),{y:gy+15,collide:false});
+    const [gx,gz]=IL.gate; for(let i=-6;i<=6;i++){ if(Math.abs(i)<2) continue; iwCyl(gx+i*2.2,gz,.12,3.5,0x222222); } iwSign(gx,gz-1,'MORELLI',0,{bg:'#111',fg:'#d4af37',w:5,h:1.2,y:4.5,post:false}); }
+  /* Warren's cabin + tower */ { const [x,z]=IL.cabin; iwBox(x,z-5,14,10,6,L(0x7a4a24),{roof:0x4a2a14,roofH:5}); iwCyl(x+5,z-8,.8,10,0x666666,{collide:false}); iwBox(x-3,z+3,2,4,1,L(0x222222)); }
+  { const [x,z]=IL.tower; for(const [a,b] of [[-2,-2],[2,-2],[-2,2],[2,2]]) iwCyl(x+a,z+b,.3,22,0x6b4423); iwBox(x,z,7,7,.6,L(0x6b4423),{y:iwH(x,z)+22,collide:false}); iwSign(x+5,z+5,'RANGER TOWER',0); }
+  /* State House */ { const [x,z]=IL.statehouse; const gy=iwH(x,z); iwBox(x,z-10,36,20,14,L(0xf1ece0),{y:gy}); const dome=new T.Mesh(new T.SphereGeometry(9,20,12,0,Math.PI*2,0,Math.PI/2),L(0xd4af37)); dome.position.set(x,gy+14,z-10); IW.scene.add(dome); for(let i=0;i<8;i++) iwCyl(x-14+i*4,z+1.5,.7,12,0xffffff,{y:gy,collide:false}); iwSign(x,z+4,'STATE HOUSE · EST. 1826',0,{bg:'#f1ece0',fg:'#333',post:false,y:13.5,w:12}); }
+  /* Lighthouse + Boardwalk */ { const [x,z]=IL.lighthouse; const gy=iwH(x,z); for(let i=0;i<6;i++) iwCyl(x,z,3.4-i*.25,5,i%2?0xe03131:0xffffff,{y:gy+i*5,r2:3.4-(i+1)*.25,collide:i===0}); const top=new T.Mesh(new T.SphereGeometry(2,12,8),new T.MeshBasicMaterial({color:0xfff3a0})); top.position.set(x,gy+31,z); IW.scene.add(top);
+    const beam=new T.Mesh(new T.ConeGeometry(6,60,16,1,true),new T.MeshBasicMaterial({color:0xfff6b0,transparent:true,opacity:.18,side:T.DoubleSide,depthWrite:false})); beam.position.set(x,gy+31,z); beam.rotation.z=Math.PI/2; const piv=new T.Group(); piv.position.set(x,gy+31,z); beam.position.set(30,0,0); piv.add(beam); IW.scene.add(piv); IW.anim.push(t=>{ piv.rotation.y=t*.8; }); }
+  { const [x,z]=IL.boardwalk; const gy=iwH(x,z); iwBox(x,z+8,70,14,.6,L(0xb08050),{y:gy+.2,collide:false}); const wheel=new T.Group(); wheel.position.set(x+20,gy+16,z-6); const rim=new T.Mesh(new T.TorusGeometry(13,.4,6,40),L(0xff4d8d)); wheel.add(rim); for(let i=0;i<10;i++){ const s=new T.Mesh(new T.BoxGeometry(.25,26,.25),L(0xffffff)); s.rotation.z=i*Math.PI/10; wheel.add(s); const cab=new T.Mesh(new T.BoxGeometry(2,2,2),L([0xffd43b,0x4dabf7,0x69db7c,0xff8787][i%4])); cab.position.set(Math.cos(i/10*Math.PI*2)*13,Math.sin(i/10*Math.PI*2)*13,0); wheel.add(cab); } IW.scene.add(wheel); IW.anim.push(t=>{ wheel.rotation.z=t*.15; }); iwCyl(x+20,z-6,.6,16,0xcccccc,{y:gy}); iwSign(x-20,z,'THE BOARDWALK',0,{bg:'#ff4d8d',fg:'#fff'}); }
+  /* Ferry (on fire) */ { const [x,z]=IL.ferry; const g=new T.Group(); const hull=new T.Mesh(new T.BoxGeometry(26,5,10),L(0xf1f3f5)); hull.position.y=1.5; g.add(hull); const cab=new T.Mesh(new T.BoxGeometry(12,6,8),L(0xdee2e6)); cab.position.set(-2,7,0); g.add(cab); g.position.set(x,0,z); g.rotation.y=.4; IW.scene.add(g); IW.anim.push(t=>{ g.rotation.z=Math.sin(t*.7)*.03; g.position.y=Math.sin(t*.9)*.3; });
+    const fl=[]; for(let i=0;i<14;i++){ const f=new T.Mesh(new T.ConeGeometry(1+Math.random()*1.5,3+Math.random()*4,6),new T.MeshBasicMaterial({color:pick([0xff6b00,0xffa000,0xff3d00,0xffd000]),transparent:true,opacity:.9})); f.position.set(x-8+Math.random()*14,10,z-3+Math.random()*6); IW.scene.add(f); fl.push(f); } IW.anim.push(t=>fl.forEach((f,i)=>{ f.scale.y=.6+Math.abs(Math.sin(t*6+i))*.8; f.position.y=9+Math.sin(t*4+i)*.5; })); }
+  /* Dock, swamp cave, park */ { const [x,z]=IL.dock; iwBox(x,z+14,5,30,.5,L(0x8a6238),{y:1.3,collide:false}); }
+  { const [x,z]=IL.swamp; const gy=iwH(x,z-14); const arch=new T.Mesh(new T.TorusGeometry(7,2.5,8,16,Math.PI),L(0x2b2b2b)); arch.position.set(x,gy,z-20); IW.scene.add(arch); const hole=new T.Mesh(new T.CircleGeometry(6.5,16,0,Math.PI),new T.MeshBasicMaterial({color:0x000000})); hole.position.set(x,gy,z-20.2); IW.scene.add(hole); iwSign(x+12,z,'KEEP OUT · BUGS',0,{bg:'#2b2b2b',fg:'#b2f2bb'}); }
+  { const [x,z]=IL.park; for(let i=0;i<3;i++) iwBox(x-6+i*6,z-6,3,1,1,L(0x6b4423),{collide:false}); iwSign(x,z+10,'NENJAC PARK',0,{bg:'#2f9e44',fg:'#fff'}); }
+  /* signposts at the start */ iwSign(18,520,'← DOCK   THEATER ↑   GAS-N-GO →',0,{w:12,h:1.6}); iwSign(18,330,'↑ TOWN SQUARE',0,{w:8,h:1.6}); iwSign(-120,190,'← HAZE WOODS',0,{w:8,h:1.6}); iwSign(150,250,'MORELLI TERRITORY →',0,{w:9,h:1.6}); iwSign(0,-60,'↑ NENJAC HIGH · MOUNT NENJAC',0,{w:11,h:1.6}); }
+function iwNearRoad(x,z,r){ if(!IW._segs) IW._segs=iwRoadSegs(); return IW._segs.some(s=>iwSegDist(x,z,s[0],s[1],s[2],s[3])<r); }
+function iwTrees(){ const T=IW.T, n=IW.q.trees, R=gfRand('trees'), pts=[]; let tries=0;
+  while(pts.length<n&&tries<n*12){ tries++; const x=(R()-.5)*1300, z=(R()-.5)*1300, h=iwH(x,z); if(h<3||h>95) continue; const woods=Math.hypot(x+380,z-70)<220, swamp=Math.hypot(x+60,z+470)<150, dens=woods?.95:swamp?.5:Math.hypot(x,z-200)<240?.04:.28; if(R()>dens) continue;
+    if(iwNearRoad(x,z,8)) continue; if(Object.values(IL).some(l=>Math.hypot(x-l[0],z-l[1])<l[2]+10)) continue; pts.push([x,z,h,woods,swamp,.8+R()*.8]); }
+  const trunk=new T.InstancedMesh(new T.CylinderGeometry(.35,.55,4,6),new T.MeshLambertMaterial({color:0x6b4423}),pts.length), crown=new T.InstancedMesh(new T.ConeGeometry(3,8,7),new T.MeshLambertMaterial({color:0xffffff}),pts.length), M=new T.Matrix4(), q=new T.Quaternion(), c=new T.Color();
+  pts.forEach(([x,z,h,woods,swamp,s],i)=>{ M.compose(new T.Vector3(x,h+2*s,z),q,new T.Vector3(s,s,s)); trunk.setMatrixAt(i,M); M.compose(new T.Vector3(x,h+(swamp?5:7.5)*s,z),q,new T.Vector3(s,swamp?.6*s:s,s)); crown.setMatrixAt(i,M);
+    const g=iwGrey(x,z); c.setHex(swamp?0x4a5a2a:woods?0x1f6b34:0x2f8f3f); const l=c.r*.3+c.g*.59+c.b*.11; c.setRGB(c.r+(l-c.r)*g,c.g+(l-c.g)*g,c.b+(l-c.b)*g); crown.setColorAt(i,c);
+    const k=Math.floor(x/20)+','+Math.floor(z/20); (IW.treeGrid.get(k)||IW.treeGrid.set(k,[]).get(k)).push([x,z]); });
+  trunk.castShadow=crown.castShadow=IW.q.shadow; IW.scene.add(trunk); IW.scene.add(crown); IW.crowns=crown; IW.treePts=pts;
+  const rocks=new T.InstancedMesh(new T.DodecahedronGeometry(1.6,0),new T.MeshLambertMaterial({color:0x8a8378}),260); for(let i=0;i<260;i++){ const a=R()*Math.PI*2, d=R()*190, x=Math.cos(a)*d, z=-280+Math.sin(a)*d; const s=.5+R()*2.5; M.compose(new T.Vector3(x,iwH(x,z),z),q.setFromEuler(new T.Euler(R(),R(),R())),new T.Vector3(s,s*.7,s)); rocks.setMatrixAt(i,M); } IW.scene.add(rocks); }
+function iwTreeRecolor(){ if(!IW.crowns) return; const T=IW.T, c=new T.Color(); IW.treePts.forEach(([x,z,,woods,swamp],i)=>{ const g=iwGrey(x,z); c.setHex(swamp?0x4a5a2a:woods?0x1f6b34:0x2f8f3f); const l=c.r*.3+c.g*.59+c.b*.11; c.setRGB(c.r+(l-c.r)*g,c.g+(l-c.g)*g,c.b+(l-c.b)*g); IW.crowns.setColorAt(i,c); }); IW.crowns.instanceColor.needsUpdate=true; }
+
+/* ---------- cardboard cutouts ---------- */
+const IPROC={bug:(g,w,h)=>{ g.fillStyle='#2f3a2a'; g.beginPath(); g.ellipse(w/2,h*.62,w*.26,h*.3,0,0,7); g.fill(); g.fillStyle='#45563c'; g.beginPath(); g.ellipse(w/2,h*.28,w*.17,h*.14,0,0,7); g.fill(); g.strokeStyle='#2f3a2a'; g.lineWidth=8; g.beginPath(); g.moveTo(w*.44,h*.16); g.quadraticCurveTo(w*.3,0,w*.2,h*.04); g.moveTo(w*.56,h*.16); g.quadraticCurveTo(w*.7,0,w*.8,h*.04); g.stroke();
+    g.fillStyle='#d8f5a2'; g.beginPath(); g.arc(w*.44,h*.27,10,0,7); g.arc(w*.56,h*.27,10,0,7); g.fill(); g.strokeStyle='#1d2619'; g.lineWidth=10; for(const s of [-1,1]) for(let i=0;i<3;i++){ g.beginPath(); g.moveTo(w/2+s*w*.22,h*(.52+i*.1)); g.lineTo(w/2+s*w*.42,h*(.58+i*.12)); g.stroke(); } g.strokeStyle='#5c6e51'; g.lineWidth=4; g.beginPath(); g.moveTo(w/2,h*.35); g.lineTo(w/2,h*.9); g.stroke(); },
+  inspector:(g,w,h)=>{ g.fillStyle='#8d939c'; g.fillRect(w*.28,h*.3,w*.44,h*.62); g.fillStyle='#d9c4a8'; g.fillRect(w*.33,h*.06,w*.34,h*.24); g.fillStyle='#111'; g.fillRect(w*.37,h*.14,w*.1,h*.03); g.fillRect(w*.53,h*.14,w*.1,h*.03); g.fillRect(w*.45,h*.15,w*.1,h*.01); g.fillRect(w*.42,h*.24,w*.16,h*.012); g.fillStyle='#4a5568'; g.beginPath(); g.moveTo(w*.47,h*.3); g.lineTo(w*.53,h*.3); g.lineTo(w*.5,h*.55); g.fill(); g.fillStyle='#e9ecef'; g.fillRect(w*.62,h*.45,w*.22,h*.28); g.strokeStyle='#495057'; g.lineWidth=3; for(let i=1;i<6;i++){ g.beginPath(); g.moveTo(w*.65,h*(.47+i*.04)); g.lineTo(w*.81,h*(.47+i*.04)); g.stroke(); } g.fillStyle='#868e96'; g.fillRect(w*.68,h*.43,w*.1,h*.03); },
+  reporter:(g,w,h)=>{ g.fillStyle='#343a40'; g.beginPath(); g.arc(w/2,h*.25,w*.2,0,7); g.fill(); g.fillStyle='#868e96'; g.fillRect(w*.44,h*.4,w*.12,h*.52); g.fillStyle='#fff'; g.beginPath(); g.arc(w*.42,h*.22,14,0,7); g.arc(w*.58,h*.22,14,0,7); g.fill(); g.fillStyle='#111'; g.beginPath(); g.arc(w*.42,h*.23,6,0,7); g.arc(w*.58,h*.23,6,0,7); g.fill(); g.fillStyle='#e03131'; g.fillRect(w*.3,h*.55,w*.4,h*.08); g.fillStyle='#fff'; g.font=`900 ${w*.08}px system-ui`; g.textAlign='center'; g.fillText('CH 6',w/2,h*.61); },
+  form:(g,w,h)=>{ g.fillStyle='#fff'; g.fillRect(w*.2,h*.08,w*.6,h*.84); g.strokeStyle='#adb5bd'; g.lineWidth=3; for(let i=0;i<12;i++){ g.strokeRect(w*.26,h*(.16+i*.06),w*.06,h*.04); g.beginPath(); g.moveTo(w*.36,h*(.18+i*.06)); g.lineTo(w*.72,h*(.18+i*.06)); g.stroke(); } g.fillStyle='#111'; g.font=`900 ${w*.07}px system-ui`; g.textAlign='center'; g.fillText('27-B',w/2,h*.13); },
+  tape:(g,w,h)=>{ g.strokeStyle='#e03131'; g.lineWidth=w*.08; g.lineCap='round'; g.beginPath(); for(let i=0;i<7;i++){ g.lineTo(w*(.2+.6*(i%2)),h*(.1+i*.13)); } g.stroke(); },
+  chair:(g,w,h)=>{ g.strokeStyle='#868e96'; g.lineWidth=w*.05; g.beginPath(); g.moveTo(w*.3,h*.1); g.lineTo(w*.3,h*.9); g.moveTo(w*.7,h*.1); g.lineTo(w*.7,h*.9); g.moveTo(w*.3,h*.55); g.lineTo(w*.7,h*.55); g.stroke(); g.fillStyle='#adb5bd'; g.fillRect(w*.28,h*.1,w*.44,h*.2); g.fillRect(w*.26,h*.52,w*.48,h*.06); },
+  hoa:(g,w,h)=>{ g.fillStyle='#a9e34b'; g.fillRect(w*.3,h*.35,w*.4,h*.55); g.fillStyle='#ffd8a8'; g.beginPath(); g.arc(w/2,h*.22,w*.15,0,7); g.fill(); g.fillStyle='#111'; g.fillRect(w*.42,h*.2,w*.05,h*.02); g.fillRect(w*.53,h*.2,w*.05,h*.02); g.fillRect(w*.44,h*.28,w*.12,h*.012); g.fillStyle='#fff'; g.fillRect(w*.62,h*.45,w*.16,h*.22); },
+  bump:(g,w,h)=>{ g.fillStyle='#fcc419'; g.beginPath(); g.ellipse(w/2,h*.8,w*.42,h*.14,0,Math.PI,0); g.fill(); g.fillStyle='#111'; for(let i=0;i<5;i++) g.fillRect(w*(.15+i*.16),h*.7,w*.07,h*.08); },
+  beige:(g,w,h)=>{ g.fillStyle='#e6d5b8'; g.fillRect(w*.1,h*.1,w*.8,h*.82); g.fillStyle='#d4c09e'; for(let i=0;i<6;i++) g.fillRect(w*.1,h*(.16+i*.13),w*.8,3); },
+  intern:(g,w,h)=>{ g.fillStyle='#dee2e6'; g.fillRect(w*.32,h*.36,w*.36,h*.55); g.fillStyle='#e8c39e'; g.beginPath(); g.arc(w/2,h*.24,w*.13,0,7); g.fill(); g.fillStyle='#4dabf7'; g.fillRect(w*.47,h*.36,w*.06,h*.2); g.fillStyle='#fff'; g.fillRect(w*.38,h*.44,w*.1,h*.06); g.fillStyle='#111'; g.fillRect(w*.44,h*.21,w*.04,h*.02); g.fillRect(w*.53,h*.21,w*.04,h*.02); g.fillStyle='rgba(80,60,120,.5)'; g.fillRect(w*.43,h*.24,w*.06,h*.02); g.fillRect(w*.52,h*.24,w*.06,h*.02); }};
+async function iwArt(name,proc){ const key='art:'+(proc||name); if(IW.tex[key]) return IW.tex[key];
+  let im=null, B={x0:0,y0:0,x1:1,y1:1};
+  if(name&&String(name).startsWith('drawing:')){ try{ const d=await ArtDB.get(name.slice(8)); if(d){ im=await renderToCanvas(d,{maxSide:700}); B=imgBox(im)||B; } }catch(e){} }
+  else if(!proc){ const n=iwWho(name); if(n){ const I=await pzCharImg(n); if(I){ im=I.im; B=I.B; } } }
+  if(!im){ const p=IPROC[proc||'']; im=iwCanvas(400,600,(g,w,h)=>{ if(p) p(g,w,h); else { g.fillStyle=groupColor((charByName(name)||{}).group)||'#888'; g.beginPath(); g.ellipse(w/2,h*.55,w*.3,h*.4,0,0,7); g.fill(); g.fillStyle='#fff'; g.font=`900 ${w*.3}px system-ui`; g.textAlign='center'; g.textBaseline='middle'; g.fillText(String(name||'?')[0],w/2,h*.55); } }); B=imgBox(im)||B; }
+  const sx=Math.max(0,B.x0-.02)*im.width, sy=Math.max(0,B.y0-.02)*im.height, sw=Math.min(1,B.x1+.02)*im.width-sx, sh=Math.min(1,B.y1+.02)*im.height-sy, sc=Math.min(1,512/Math.max(sw,sh));
+  const front=iwCanvas(Math.round(sw*sc),Math.round(sh*sc),(g,w,h)=>g.drawImage(im,sx,sy,sw,sh,0,0,w,h)), sil=c=>iwCanvas(front.width,front.height,(g,w,h)=>{ g.drawImage(front,0,0); g.globalCompositeOperation='source-in'; g.fillStyle=c; g.fillRect(0,0,w,h); });
+  const grey=iwCanvas(front.width,front.height,(g,w,h)=>{ g.filter='grayscale(1) contrast(.8) brightness(1.08)'; g.drawImage(front,0,0); });
+  const back=sil('#c49a6c'), edge=sil('#8a6238'); { const g=back.getContext('2d'); g.globalCompositeOperation='source-atop'; g.strokeStyle='rgba(120,80,40,.35)'; g.lineWidth=3; for(let y=8;y<back.height;y+=14){ g.beginPath(); g.moveTo(0,y); g.lineTo(back.width,y); g.stroke(); } }
+  const T=IW.T, mk=c=>{ const t=new T.CanvasTexture(c); t.colorSpace=T.SRGBColorSpace; t.anisotropy=4; return t; };
+  return IW.tex[key]={front:mk(front),grey:mk(grey),back:mk(back),edge:mk(edge),aspect:front.width/front.height,canvas:front}; }
+function iwWho(n){ if(!n) return null; const L=S.chars, lc=String(n).toLowerCase(); const c=L.find(c=>c.name.toLowerCase()===lc)||L.find(c=>c.name.toLowerCase().startsWith(lc))||L.find(c=>c.name.toLowerCase().includes(lc))||L.find(c=>lc.includes(c.name.toLowerCase().split(' ')[0])&&c.name.length>3); return c?c.name:null; }
+function iwCutout(art,h,{grey=false}={}){ const T=IW.T, w=h*art.aspect, t=h*.045, grp=new T.Group(), inner=new T.Group(); grp.add(inner);
+  const geo=new T.PlaneGeometry(w,h); geo.translate(0,h/2,0); const mat=(map,side=T.FrontSide)=>new T.MeshLambertMaterial({map,alphaTest:.5,side,transparent:false});
+  const front=new T.Mesh(geo,mat(grey?art.grey:art.front)); front.position.z=t/2; inner.add(front); const back=new T.Mesh(geo,mat(art.back)); back.rotation.y=Math.PI; back.position.z=-t/2; inner.add(back);
+  for(let i=1;i<4;i++){ const e=new T.Mesh(geo,mat(art.edge,T.DoubleSide)); e.position.z=-t/2+t*i/4; inner.add(e); }
+  [front,back].forEach(m=>{ m.castShadow=IW.q.shadow; });
+  const sh=new T.Mesh(new T.CircleGeometry(Math.min(w*.32,1.6),16),new T.MeshBasicMaterial({color:0x000000,transparent:true,opacity:.28,depthWrite:false})); sh.rotation.x=-Math.PI/2; sh.position.y=.06; grp.add(sh);
+  grp.userData={inner,front,art,h,w,flip:1,flipT:1,grey}; return grp; }
+function iwSetGrey(cut,grey){ const u=cut.userData; if(u.grey===grey) return; u.grey=grey; u.front.material.map=grey?u.art.grey:u.art.front; u.front.material.needsUpdate=true; }
+function iwMarker(e,color='#ffd43b'){ const T=IW.T, tex=iwTex('mk:'+e,128,128,(g,w,h)=>{ g.font='96px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",Bangers,sans-serif'; g.textAlign='center'; g.textBaseline='middle'; if(e==='!'||e==='?'){ g.fillStyle=color; g.strokeStyle='#000'; g.lineWidth=10; g.font='900 110px Bangers, Impact'; g.strokeText(e,w/2,h/2+6); } else g.fillStyle='#fff'; g.fillText(e,w/2,h/2+6); });
+  const s=new T.Sprite(new T.SpriteMaterial({map:tex,depthTest:true})); s.scale.set(2.4,2.4,1); return s; }
+
+/* ---------- people & things in the world ---------- */
+async function iwPeople(){ const T=IW.T, st=IS_ST();
+  for(const n of INPC){ const art=await iwArt(n.w,n.proc); const h=n.proc==='bug'?7:n.w==='Neen'?3:5.2; const c=iwCutout(art,h); let [x,z]=typeof n.at==='string'?IL[n.at]:n.at; if(n.off){ x+=n.off[0]; z+=n.off[1]; }
+    c.position.set(x,iwH(x,z),z); IW.scene.add(c); const mk=iwMarker('!'); mk.position.y=h+1.6; c.add(mk); IW.npcs[n.id]={def:n,obj:c,home:[x,z],mk,h,wander:Math.random()*6}; }
+  for(const k of ICOL){ const spr=iwMarker(k.e); spr.scale.set(2.2,2.2,1); spr.position.set(k.at[0],iwH(k.at[0],k.at[1])+1.6,k.at[1]); IW.scene.add(spr); IW.cols[k.id]={def:k,obj:spr}; }
+  INEEN.forEach((p,i)=>{ IW.cols['neen'+i]={def:{id:'neen'+i,k:'neen',at:p,q:'neen'},obj:null,pos:p}; });
+  IJEFF.forEach((p,i)=>{ IW.cols['jeff'+i]={def:{id:'jeff'+i,k:'jeff',at:[p[0],p[1]],q:'jeff',txt:p[2]},obj:null,pos:p}; });
+  const neenArt=await iwArt('Neen'), jeffArt=await iwArt('Jeff');
+  Object.values(IW.cols).forEach(C=>{ if(C.def.k==='neen'){ C.obj=iwCutout(neenArt,3); } else if(C.def.k==='jeff'){ C.obj=iwCutout(jeffArt,4.6); } else return; const [x,z]=C.def.at; C.obj.position.set(x,Math.max(iwH(x,z),C.def.k==='jeff'&&x>60&&z>600?3:-99),z); if(C.def.k==='jeff'&&z>600) C.obj.position.y=8.5; IW.scene.add(C.obj); });
+  iwPeopleRefresh(); }
+function iwPeopleRefresh(){ const st=IS_ST(), G=isG();
+  Object.values(IW.npcs).forEach(N=>{ const d=N.def, hid=(d.hidden&&d.hidden(G))||(['starr','deegs','elea','spencer','cas','travisN'].includes(d.id)&&st.party.includes(d.w)&&!isNpcMarked(d.id)); N.obj.visible=!hid; if(d.grey) iwSetGrey(N.obj,!st.restored[d.grey]); N.mk.visible=!hid&&isNpcMarked(d.id); });
+  Object.values(IW.cols).forEach(C=>{ const d=C.def, q=st.quests[d.q]; let vis=!st.found[d.id]&&q&&!q.done; if(d.step!=null) vis=vis&&q.s===d.step; if(d.k==='hotdog'||d.k==='tooth'||d.k==='trap'||d.k==='battery'||d.k==='shoe') vis=vis&&q.s===0; if(d.k==='clue') vis=vis&&q.s===0; if(d.k==='neen') vis=vis&&q.s===0; if(d.k==='jeff') vis=vis&&q.s===0; if(C.obj) C.obj.visible=!!vis; C.vis=!!vis; }); }
+function isNpcMarked(id){ return ISL.marks&&ISL.marks.has(id); }
+
+/* ---------- scene setup ---------- */
+async function iwInit(canvas,onProgress=()=>{}){ const T=await iwThree(); const qk=IS_ST().quality==='auto'?(navigator.hardwareConcurrency<=4||/CrOS/.test(navigator.userAgent)?'low':'med'):IS_ST().quality; IW.q=IQUAL[qk]||IQUAL.med; IW.qk=qk;
+  const r=new T.WebGLRenderer({canvas,antialias:IW.q.aa,powerPreference:'high-performance'}); r.setPixelRatio(Math.min(devicePixelRatio||1,IW.q.pr)); r.shadowMap.enabled=IW.q.shadow; r.outputColorSpace=T.SRGBColorSpace; IW.r=r;
+  IW.scene=new T.Scene(); IW.scene.background=new T.Color(0x8fd3ff); IW.scene.fog=new T.Fog(0x8fd3ff,IW.q.far*.45,IW.q.far); IW.cam=new T.PerspectiveCamera(62,1,.25,IW.q.far+100);
+  IW.hemi=new T.HemisphereLight(0xdff3ff,0x6b8f4a,.95); IW.scene.add(IW.hemi); IW.sun=new T.DirectionalLight(0xfff2d6,1.15); IW.sun.position.set(120,240,80); IW.scene.add(IW.sun);
+  if(IW.q.shadow){ IW.sun.castShadow=true; IW.sun.shadow.mapSize.set(2048,2048); const sc=IW.sun.shadow.camera; sc.left=-80; sc.right=80; sc.top=80; sc.bottom=-80; sc.far=600; IW.scene.add(IW.sun.target); }
+  onProgress('Raising the island…'); await new Promise(r=>setTimeout(r,20)); iwBuildHeights(); onProgress('Planting grass…'); await new Promise(r=>setTimeout(r,20)); iwTerrain();
+  onProgress('Building Nenjac City…'); await new Promise(r=>setTimeout(r,20)); iwLandmarks(); onProgress('Growing Haze Woods…'); await new Promise(r=>setTimeout(r,20)); iwTrees();
+  onProgress('Cutting out cardboard people…'); await iwPeople(); await iwHero(); iwMinimapBase(); IW.ready=true; }
+async function iwHero(){ const st=IS_ST(); if(IW.player){ IW.scene.remove(IW.player); } const art=await iwArt(st.hero.src); IW.player=iwCutout(art,4.8); IW.scene.add(IW.player); const p=st.pos||[0,540]; IW.pv.x=p[0]; IW.pv.z=p[1]; IW.pv.y=iwH(p[0],p[1]); IW.pv.cy=st.yaw??0; await iwFollowers(); }
+async function iwFollowers(){ IW.followers.forEach(f=>IW.scene.remove(f.obj)); IW.followers=[]; for(const n of IS_ST().party.slice(0,3)){ const art=await iwArt(n); const o=iwCutout(art,4.6); IW.scene.add(o); IW.followers.push({n,obj:o,x:IW.pv.x,z:IW.pv.z,walk:0}); } }
+
+/* ---------- movement & collision ---------- */
+function iwCollide(p,r=.8){ for(const c of IW.colliders){ if(c.c){ const dx=p.x-c.x, dz=p.z-c.z, d=Math.hypot(dx,dz), m=c.r+r; if(d<m&&p.y<c.top-.5){ p.x=c.x+dx/(d||1)*m; p.z=c.z+dz/(d||1)*m; } continue; }
+    if(p.x>c.x0-r&&p.x<c.x1+r&&p.z>c.z0-r&&p.z<c.z1+r&&p.y<c.top-.5){ const l=p.x-(c.x0-r), rr=c.x1+r-p.x, t=p.z-(c.z0-r), b=c.z1+r-p.z, m=Math.min(l,rr,t,b); if(m===l) p.x=c.x0-r; else if(m===rr) p.x=c.x1+r; else if(m===t) p.z=c.z0-r; else p.z=c.z1+r; } }
+  const kx=Math.floor(p.x/20), kz=Math.floor(p.z/20); for(let a=-1;a<=1;a++) for(let b=-1;b<=1;b++){ const L=IW.treeGrid.get((kx+a)+','+(kz+b)); if(!L) continue; for(const [tx,tz] of L){ const dx=p.x-tx, dz=p.z-tz, d=Math.hypot(dx,dz); if(d<1.1){ p.x=tx+dx/(d||1)*1.1; p.z=tz+dz/(d||1)*1.1; } } } }
+function iwUpdate(dt){ const P=IW.pv, k=IW.keys, st=IS_ST(), fp=st.view==='first', T=IW.T; IW.t+=dt;
+  let mx=(k.d||k.arrowright?1:0)-(k.a||k.arrowleft?1:0), mz=(k.s||k.arrowdown?1:0)-(k.w||k.arrowup?1:0); if(ISL.joy){ mx+=ISL.joy.x; mz+=ISL.joy.y; } const len=Math.hypot(mx,mz); if(len>1){ mx/=len; mz/=len; }
+  if(ISL.busy){ mx=mz=0; } const yaw=P.cy, sp=(k.shift||ISL.run?17:9.5)*(st.dev?3:1); const fx=Math.sin(yaw), fz=Math.cos(yaw);
+  const dx=(mx*Math.cos(yaw)+mz*Math.sin(yaw))*sp*dt, dz=(-mx*Math.sin(yaw)+mz*Math.cos(yaw))*sp*dt;
+  if(IW.trail.length&&Math.hypot(IW.trail[0][0]-P.x,IW.trail[0][1]-P.z)>30){ IW.trail=[]; IW.followers.forEach(f=>{ f.x=P.x; f.z=P.z; }); } const old={x:P.x,z:P.z}; P.x+=dx; P.z+=dz; const moving=Math.abs(dx)+Math.abs(dz)>.001; const gh=iwH(P.x,P.z);
+  if(gh<-.8){ P.x=old.x; P.z=old.z; } iwCollide(P); const ground=Math.max(iwH(P.x,P.z),-.6);
+  if((k[' ']||ISL.jump)&&P.ground&&!ISL.busy){ P.vy=10; P.ground=false; ISL.jump=false; } P.vy-=28*dt; P.y+=P.vy*dt; if(P.y<=ground){ P.y=ground; P.vy=0; P.ground=true; }
+  const walked=Math.hypot(P.x-old.x,P.z-old.z); P.walk+=walked; if(moving){ const sx=dx*Math.cos(yaw)-dz*Math.sin(yaw); if(Math.abs(sx)>.002) P.face=sx>0?1:-1; }
+  /* player cutout */ const pl=IW.player; pl.position.set(P.x,P.y,P.z); pl.visible=!fp; const u=pl.userData; u.flip+=(P.face-u.flip)*Math.min(1,dt*12); u.inner.scale.x=u.flip||.01;
+  const bob=moving&&P.ground?Math.abs(Math.sin(P.walk*.55))*.5:0; u.inner.position.y=bob; u.inner.rotation.z=moving?Math.sin(P.walk*.55)*.07:0; pl.rotation.y=yaw;
+  /* trail + followers */ if(moving){ IW.trail.unshift([P.x,P.z]); if(IW.trail.length>200) IW.trail.pop(); }
+  IW.followers.forEach((f,i)=>{ const FM=[[3.8,.8],[-3.8,.8],[2,5.5]][i]||[0,6], tp=[P.x+Math.cos(yaw)*FM[0]-Math.sin(yaw)*FM[1],P.z-Math.sin(yaw)*FM[0]-Math.cos(yaw)*FM[1]]; const ddx=tp[0]-f.x, ddz=tp[1]-f.z, dd=Math.hypot(ddx,ddz); if(dd>.3){ const s=Math.min(dd,(sp+1)*dt); f.x+=ddx/dd*s; f.z+=ddz/dd*s; f.walk+=s; const sx=ddx*Math.cos(yaw)-ddz*Math.sin(yaw); if(Math.abs(sx)>.05) f.face=sx>0?1:-1; }
+    const o=f.obj, fu=o.userData; o.position.set(f.x,iwH(f.x,f.z),f.z); o.rotation.y=yaw; fu.flip+=((f.face||1)-fu.flip)*Math.min(1,dt*10); fu.inner.scale.x=fu.flip||.01; fu.inner.position.y=dd>.3?Math.abs(Math.sin(f.walk*.6))*.45:0; });
+  /* npcs face the camera and idle */ Object.values(IW.npcs).forEach(N=>{ if(!N.obj.visible) return; const o=N.obj, d=Math.hypot(o.position.x-P.x,o.position.z-P.z); o.rotation.y=yaw; if(d>220) return; N.wander-=dt; const iu=o.userData.inner; iu.position.y=Math.abs(Math.sin(IW.t*2+N.home[0]))*.12; iu.rotation.z=Math.sin(IW.t*1.3+N.home[1])*.03;
+    const toP=Math.sign((P.x-o.position.x)*Math.cos(yaw)-(P.z-o.position.z)*Math.sin(yaw))||1; if(d<14){ o.userData.flip+=(toP-o.userData.flip)*Math.min(1,dt*8); iu.scale.x=o.userData.flip||.01; } N.mk.position.y=N.h+1.6+Math.sin(IW.t*3)*.25; });
+  Object.values(IW.cols).forEach(C=>{ if(!C.vis||!C.obj) return; if(C.obj.isSprite){ C.obj.position.y=iwH(C.def.at[0],C.def.at[1])+1.6+Math.sin(IW.t*2.5+C.def.at[0])*.35; C.obj.material.rotation=Math.sin(IW.t*2)*.2; } else C.obj.rotation.y=yaw; });
+  /* camera */ const cam=IW.cam, eye=fp?4.3:2.6;
+  if(fp){ cam.position.set(P.x,P.y+eye,P.z); cam.rotation.order='YXZ'; cam.rotation.set(P.fp||0,yaw,0); }
+  else { const dist=P.dist, cx=P.x+Math.sin(yaw)*Math.cos(P.cp)*dist, cz=P.z+Math.cos(yaw)*Math.cos(P.cp)*dist; let cy=P.y+eye+Math.sin(P.cp)*dist; cy=Math.max(cy,iwH(cx,cz)+1.2,.8);
+    const kk=Math.hypot(cam.position.x-cx,cam.position.z-cz)>40?1:Math.min(1,dt*10); cam.position.x+=(cx-cam.position.x)*kk; cam.position.y+=(cy-cam.position.y)*kk; cam.position.z+=(cz-cam.position.z)*kk; cam.lookAt(P.x,P.y+eye,P.z); }
+  if(IW.q.shadow){ IW.sun.position.set(P.x+120,240,P.z+80); IW.sun.target.position.set(P.x,0,P.z); }
+  IW.water.position.y=Math.sin(IW.t*.6)*.12; IW.anim.forEach(f=>f(IW.t)); iwDayNight(dt);
+  st.pos=[Math.round(P.x*10)/10,Math.round(P.z*10)/10]; st.yaw=+yaw.toFixed(3); return walked; }
+function iwDayNight(dt){ const st=IS_ST(); st.time=(st.time+dt/600)%1; const t=st.time, day=Math.max(0,Math.sin(t*Math.PI*2-.3)*1.2+.35), d=clamp(day,.18,1), T=IW.T;
+  const sky=new T.Color().setHSL(.56,.75,.2+d*.52); if(day<.55){ sky.lerp(new T.Color(0xff9b6b),clamp((.55-day)*1.4,0,.45)*(day>.2?1:.3)); } IW.scene.background.copy(sky); IW.scene.fog.color.copy(sky); IW.hemi.intensity=.35+d*.7; IW.sun.intensity=.2+d*1.0; }
+function iwRender(){ const c=IW.r.domElement, w=c.clientWidth, h=c.clientHeight; if(c.width!==Math.floor(w*IW.r.getPixelRatio())||c.height!==Math.floor(h*IW.r.getPixelRatio())){ IW.r.setSize(w,h,false); IW.cam.aspect=w/Math.max(1,h); IW.cam.updateProjectionMatrix(); } IW.r.render(IW.scene,IW.cam); }
+function iwRestoreRegion(id){ IS_ST().restored[id]=true; iwColors(); iwTreeRecolor(); iwPeopleRefresh(); iwMinimapBase(); }
+/* ---------- minimap ---------- */
+function iwMinimapBase(){ const N=IW.N, W=N+1, c=IW.mmBase||(IW.mmBase=document.createElement('canvas')); c.width=c.height=N; const g=c.getContext('2d'), d=g.createImageData(N,N);
+  for(let j=0;j<N;j++) for(let i=0;i<N;i++){ const k=j*W+i, h=IW.H[k], o=(j*N+i)*4; if(h<0){ d.data[o]=40; d.data[o+1]=120; d.data[o+2]=200; } else { d.data[o]=IW.col[k*3]*255; d.data[o+1]=IW.col[k*3+1]*255; d.data[o+2]=IW.col[k*3+2]*255; } d.data[o+3]=255; }
+  g.putImageData(d,0,0); }
+function iwMapXY(x,z,size,zoomC){ if(zoomC){ return [size/2+(x-zoomC[0])*zoomC[2],size/2+(z-zoomC[1])*zoomC[2]]; } return [(x+IW.SPAN/2)/IW.SPAN*size,(z+IW.SPAN/2)/IW.SPAN*size]; }
+function iwDrawMap(g,size,mini){ const P=IW.pv; g.clearRect(0,0,size,size); g.imageSmoothingEnabled=true;
+  if(mini){ const z=size/160, sx=(P.x+IW.SPAN/2)/IW.SPAN*IW.N, sz=(P.z+IW.SPAN/2)/IW.SPAN*IW.N, span=160/(IW.SPAN/IW.N); g.save(); g.beginPath(); g.arc(size/2,size/2,size/2,0,7); g.clip(); g.drawImage(IW.mmBase,sx-span/2,sz-span/2,span,span,0,0,size,size); g.restore(); }
+  else g.drawImage(IW.mmBase,0,0,size,size);
+  const zc=mini?[P.x,P.z,size/160]:null, pt=(x,z)=>iwMapXY(x,z,size,zc), inb=([x,y])=>!mini||Math.hypot(x-size/2,y-size/2)<size/2-6;
+  if(!mini){ g.font='bold 12px system-ui'; g.textAlign='center'; Object.entries(IL).forEach(([k,[x,z,,n]])=>{ const [a,b]=pt(x,z); g.fillStyle='rgba(0,0,0,.55)'; g.fillText(n,a+1,b-7); g.fillStyle='#fff'; g.fillText(n,a,b-8); g.beginPath(); g.arc(a,b,2.5,0,7); g.fill(); }); }
+  (ISL.targets||[]).forEach(t=>{ let [a,b]=pt(t.x,t.z); if(mini&&!inb([a,b])){ const ang=Math.atan2(b-size/2,a-size/2); a=size/2+Math.cos(ang)*(size/2-8); b=size/2+Math.sin(ang)*(size/2-8); } g.fillStyle=t.main?'#ffd43b':'#74c0fc'; g.strokeStyle='#000'; g.lineWidth=2; g.beginPath(); g.arc(a,b,t.main?6:4.5,0,7); g.fill(); g.stroke(); });
+  const [px,py]=pt(P.x,P.z); g.save(); g.translate(px,py); g.rotate(-P.cy+Math.PI); g.fillStyle='#ff2e63'; g.strokeStyle='#fff'; g.lineWidth=2; g.beginPath(); g.moveTo(0,-8); g.lineTo(6,7); g.lineTo(0,3); g.lineTo(-6,7); g.closePath(); g.fill(); g.stroke(); g.restore();
+  if(mini){ g.strokeStyle='#000'; g.lineWidth=4; g.beginPath(); g.arc(size/2,size/2,size/2-2,0,7); g.stroke(); g.fillStyle='#fff'; g.font='900 12px system-ui'; g.textAlign='center'; g.fillText('N',size/2,13); } }
+/* =====================================================================
+   [ISLE] battles, Undertale style: FIGHT / ACT / ITEM / MERCY, then dodge
+   in the box. Your party (Miitopia style) chips in every turn: they attack
+   if you attacked, they support if you didn't. Spare everyone for the
+   Loud Ending. 640x480, pixel font, heart soul.
+   ===================================================================== */
+const IB_W=640, IB_H=480;
+let IB=null;
+function ibStart(id,{onEnd}={}){ return new Promise(res=>{ const st=IS_ST(), def=id==='bugman1'?IS_BUG1:IBOSS[id]||IFOES[id]; if(!def) return res('none');
+  const boss=!!IBOSS[id]||id==='bugman1'; IB={id,def,boss,hp:def.hp,max:def.hp,spare:0,turn:0,state:'intro',sel:0,sub:0,list:null,text:'',tq:[],tt:0,typed:0,soul:{x:IB_W/2,y:300,inv:0},box:{x:32,y:250,w:576,h:140},bul:[],pt:0,pdur:5,pat:null,res,fought:false,flags:{},shake:0,fx:[],enemyY:0,anim:0,art:null,mode:null,keys:{},fightBar:null,talkBubble:null,flash:0,dead:false,endT:0,endKind:null,usedSock:false};
+  iwArt(def.w||def.art,def.proc||(IFOES[id]?def.art:null)).then(a=>{ if(IB) IB.art=a.canvas; });
+  const el=$('#ibCv'); el.hidden=false; ISL.busy=true; ISL.inBattle=true; ibSay([def.open||(def.flav||['* Something approaches.'])[0]],'menu'); ibMusic(boss); requestAnimationFrame(ibFrame); }); }
+const ibPx=s=>`${s}px "Press Start 2P", monospace`;
+function ibSay(lines,next){ IB.tq=lines.map(l=>String(l).replace(/\{hero\}/g,IS_ST().hero.name)); IB.next=next; IB.state='text'; IB.typed=0; IB.text=IB.tq.shift(); }
+function ibKey(k){ if(!IB) return; const K=k.toLowerCase(), up=['arrowup','w'].includes(K), dn=['arrowdown','s'].includes(K), lf=['arrowleft','a'].includes(K), rt=['arrowright','d'].includes(K), ok=['z','enter',' ','e'].includes(K), back=['x','shift','escape','backspace'].includes(K);
+  if(IB.state==='text'){ if(ok||back){ if(IB.typed<IB.text.length){ IB.typed=IB.text.length; return; } if(IB.tq.length){ IB.text=IB.tq.shift(); IB.typed=0; ibBlip(); return; } ibAfterText(); } return; }
+  if(IB.state==='menu'){ if(lf) IB.sel=(IB.sel+3)%4; if(rt) IB.sel=(IB.sel+1)%4; if(lf||rt) ibBlip(); if(ok){ ibBlip(1); ibOpen(IB.sel); } return; }
+  if(IB.state==='sub'){ const n=IB.list.length; if(up) IB.sub=(IB.sub+n-1)%n; if(dn) IB.sub=(IB.sub+1)%n; if(lf&&n>2) IB.sub=Math.max(0,IB.sub-2); if(rt&&n>2) IB.sub=Math.min(n-1,IB.sub+2); if(up||dn||lf||rt) ibBlip(); if(back){ IB.state='menu'; return; } if(ok){ const it=IB.list[IB.sub]; if(it.dis){ ibBlip(); return; } ibBlip(1); it.go(); } return; }
+  if(IB.state==='fight'&&ok&&!IB.fightBar.done){ ibFightHit(); return; }
+  if(IB.state==='end'&&ok&&IB.endT>.6) ibClose();
+  if(IB&&IB.state==='over'&&IB.endT>.8){ if(ok){ const st=IS_ST(); st.hp=st.maxhp; Object.assign(IB,{hp:IB.max,spare:0,turn:0,bul:[],angry:0,box:{x:32,y:250,w:576,h:140},lastFlav:null}); ibMusic(IB.boss); ibSay(['* You got back up.','* You\'re filled with DETERMINATION.'],'menu'); } else if(back){ IB.endKind='over'; ibClose(); } } }
+function ibOpen(i){ const st=IS_ST(), D=IB.def;
+  if(i===0){ IB.state='fight'; IB.fightBar={x:0,done:false,t:0}; return; }
+  if(i===1){ const acts=[['Check',()=>ibAct({check:1})],...(D.acts||[]).map(a=>{ const [n,txt,val,who,req]=a; let dis=false; if(who&&!st.party.includes(who)&&who!=='party3') dis=true; if(who==='party3') dis=st.party.length<2;
+      if(req){ if(req.startsWith('item:')) dis=dis||!(st.items[req.slice(5)]>0); else if(req==='pages5') dis=dis||st.pages<5; else if(req==='party3') dis=dis||st.party.length<2; else if(req==='crowd') dis=false; else dis=dis||!IB.flags[req]; }
+      return [n+(dis?' ✕':''),()=>ibAct({a}),dis]; })];
+    IB.list=acts.map(([n,go,dis])=>({n,go,dis})); IB.sub=0; IB.state='sub'; IB.subKind='act'; return; }
+  if(i===2){ const inv=Object.entries(st.items).filter(([k,n])=>n>0&&IITEMS[k]&&(IITEMS[k][2]>0||k==='cherry')); if(!inv.length){ ibSay(['* You have no items. Your pockets are full of sand.'],'menu'); return; }
+    IB.list=inv.map(([k,n])=>({n:`${IITEMS[k][1]}${n>1?' x'+n:''}`,go:()=>ibItem(k)})); IB.sub=0; IB.state='sub'; IB.subKind='item'; return; }
+  if(i===3){ const can=IB.spare>=100; IB.list=[{n:can?'Spare ★':'Spare',go:()=>ibSpare()},...(IB.boss?[]:[{n:'Flee',go:()=>ibFlee()}])]; IB.sub=0; IB.state='sub'; IB.subKind='mercy'; } }
+function ibAct({check,a}){ const D=IB.def; if(check){ ibSay(['* '+D.n+' - '+D.check],'party'); return; } const [n,txt,val,who,req]=a; let v=val;
+  if(n==='Start a chant') IB.flags.chanted=1; if(req&&req.startsWith('item:')&&req!=='item:drawing'&&req!=='item:lighter'&&req!=='item:radio'&&req!=='item:phone'){ IS_ST().items[req.slice(5)]--; }
+  if(v<0) IB.angry=(IB.angry||0)+1; IB.spare=clamp(IB.spare+v,0,100); IB.didAct=true; ibSay(['* '+txt,...(IB.spare>=100?['* '+D.n+' looks like they don\'t want to fight anymore.']:[])],'party'); }
+function ibItem(k){ const st=IS_ST(), it=IITEMS[k]; st.items[k]--; if(k==='cherry'){ IB.spare=Math.min(100,IB.spare+40); const d=40; IB.hp=Math.max(1,IB.hp-d); IB.shake=12; ibSay(['* You throw the Cherry Bomb. POP!',`* ${IB.def.n} took ${d} damage... and is impressed.`],'party'); return; }
+  const h=Math.min(it[2],st.maxhp-st.hp); st.hp+=h; ibSay([`* You ate the ${it[1]}.`,`* You recovered ${h} HP!`],'party'); }
+function ibSpare(){ const D=IB.def; if(IB.spare>=100||(!IB.boss&&IB.hp<IB.max*.25)){ ibEnd('spare'); return; } ibSay([`* You spared ${D.n}.`,'* But they aren\'t ready to stop yet.'],'party'); }
+function ibFlee(){ if(Math.random()<.75||IB.turn>2){ ibSay(['* You escaped. Barely. With dignity. Mostly.'],'fled'); return; } ibSay(['* You tried to run. Red tape grabbed your ankle.'],'party'); }
+function ibFightHit(){ const F=IB.fightBar; F.done=true; const off=Math.abs(F.x-.5); const st=IS_ST(), base=6+st.pages*3+(st.party.length*0); let mult=Math.max(.15,1-off*2.2); if(off<.04) mult=1.6; let d=Math.round(base*mult*(1+Math.random()*.25));
+  if(IB.def.noKill&&IB.hp-d<=0){ d=IB.hp; } IB.hp=Math.max(0,IB.hp-d); IB.fought=true; IB.fightThisTurn=true; IB.shake=10; IB.fx.push({t:0,txt:String(d),crit:off<.04}); ibHitSfx();
+  setTimeout(()=>{ if(!IB) return; if(IB.hp<=0){ if(IB.def.noKill){ ibEnd('spare'); return; } ibEnd('kill'); return; } ibSay([off<.04?'* CRITICAL HIT!':`* You hit ${IB.def.n} for ${d}.`],'party'); },700); }
+function ibPartyLines(){ const st=IS_ST(), out=[]; st.party.slice(0,3).forEach(n=>{ const P=IPARTY[n]; if(!P) return;
+    if(IB.lastFight&&P.atk&&!IB.def.noKill){ const d=Math.round((P.dmg||5)*(.8+Math.random()*.5)); IB.hp=Math.max(1,IB.hp-d); out.push(`* ${P.atk} (${d})`); }
+    else if(P.hint&&IB.spare<100){ const best=(IB.def.acts||[]).filter(a=>a[2]>0).sort((a,b)=>b[2]-a[2]).find(a=>{ const [,, ,who,req]=a; if(who&&who!=='party3'&&!st.party.includes(who)) return false; if(req&&req.startsWith('item:')&&!(st.items[req.slice(5)]>0)) return false; if(req==='chanted'&&!IB.flags.chanted) return false; if(req==='pages5'&&st.pages<5) return false; return true; }); out.push(best?`* Starr whispers: "Try ${best[0]}!"`:'* Starr gives you a thumbs up.'); }
+    else { if(P.heal){ st.hp=Math.min(st.maxhp,st.hp+P.heal); } if(P.spare) IB.spare=Math.min(100,IB.spare+P.spare); out.push('* '+P.sup); } });
+  return out; }
+function ibAfterText(){ const n=IB.next; if(n==='menu'){ IB.state='menu'; return; } if(n==='fled'){ ibEnd('fled'); return; }
+  if(n==='party'){ IB.lastFight=IB.state==='text'&&IB.fought&&IB.fightThisTurn; const L=ibPartyLines(); IB.fightThisTurn=false; if(L.length){ ibSay(L,'enemy'); return; } ibEnemyTurn(); return; }
+  if(n==='enemy'){ ibEnemyTurn(); return; } if(n==='dodge'){ ibDodge(); return; } }
+function ibEnemyTurn(){ const D=IB.def; IB.turn++; if(D.scripted&&IB.turn>D.scripted){ ibEnd('scripted'); return; }
+  const line=IB.angry&&IB.turn%2?'You\'re really testing my patience.':pick(D.talk||['...']); IB.talkBubble={text:line,t:0}; setTimeout(()=>{ if(IB&&IB.state!=='end') ibDodge(); },1500); IB.state='talk'; }
+function ibDodge(){ const D=IB.def; IB.talkBubble=null; IB.state='dodge'; IB.box={x:IB_W/2-80,y:230,w:160,h:150}; const pats=D.pat||['rain']; IB.pat=pats[(IB.turn-1)%pats.length]; if(D.n&&IB.boss&&IB.turn>3) IB.pat=pick(pats); IB.pt=0; IB.pdur=IB.boss?6.5:4.8; IB.bul=[]; IB.soul.x=IB.box.x+IB.box.w/2; IB.soul.y=IB.box.y+IB.box.h/2; IB.spawnT=0; }
+function ibEnd(kind){ const st=IS_ST(), D=IB.def; IB.state='end'; IB.endKind=kind; IB.endT=0; const id=IB.id;
+  if(kind==='kill'){ st.fought[id]=(st.fought[id]||0)+1; IB.endText=[`* ${D.n} folds flat like a stage prop.`,'* They\'re fine. They\'re cardboard. They\'re just... quieter now.']; }
+  else if(kind==='spare'){ st.spared[id]=(st.spared[id]||0)+1; IB.endText=[`* YOU WON!`,...(D.spareLine?['* '+D.spareLine]:[`* ${D.n} goes home happier than they came.`])]; }
+  else if(kind==='fled') IB.endText=['* You ran away.']; else IB.endText=['* ...'];
+  const gold=kind==='fled'||kind==='scripted'?0:(D.gold||0); if(gold){ IB.endText.push(`* You got N$${gold}.`); try{ bkPay(gold,'Nenjactale: '+D.n,'win'); }catch(e){} }
+  st.party.forEach(n=>{ st.bonds[n]=(st.bonds[n]||0)+1; }); IB.typed=0; save(); }
+function ibClose(){ const k=IB.endKind, r=IB.res; $('#ibCv').hidden=true; ibMusicStop(); IB=null; ISL.inBattle=false; ISL.busy=false; isMusic(); r(k); }
+function ibGameOver(){ if(IS_ST().items.sock>0&&!IB.usedSock){ IB.usedSock=true; IS_ST().hp=1; IB.flash=1; ibSay(['* Jeff\'s Lucky Sock glows!','* You\'re fine. You\'re always fine.'],'menu'); IB.bul=[]; return; }
+  if(IB.id==='bugman1'){ IS_ST().hp=1; ibEnd('scripted'); return; } IB.state='over'; IB.endT=0; ibMusicStop(); }
+/* ---------- bullet patterns ---------- */
+function ibSpawn(dt){ const B=IB.box, pat=IB.pat, t=IB.pt, a=IB.def.atk||4, glyph=IB.def.shot||'●', R=Math.random, sp=55+a*9; IB.spawnT-=dt; const add=o=>IB.bul.push(Object.assign({r:7,g:glyph,life:0},o));
+  if(IB.spawnT>0) return; const every={rain:.32,sides:.45,aim:.7,spiral:.08,walls:1.1,bars:.8,rings:1.2,bounce:.9,luck:.5,haze:.5,traps:.9,stamps:.85,beach:1}[pat]||.5; IB.spawnT=every*(1-Math.min(.45,a*.03));
+  if(pat==='rain') add({x:B.x+R()*B.w,y:B.y-10,vx:0,vy:sp*(1+R()*.6)});
+  else if(pat==='sides'){ const l=R()<.5; add({x:l?B.x-10:B.x+B.w+10,y:B.y+10+R()*(B.h-20),vx:(l?1:-1)*sp*1.2,vy:0}); }
+  else if(pat==='aim'){ const x=B.x+R()*B.w, y=B.y-14, dx=IB.soul.x-x, dy=IB.soul.y-y, d=Math.hypot(dx,dy); add({x,y,vx:dx/d*sp*1.4,vy:dy/d*sp*1.4}); }
+  else if(pat==='spiral'){ const ang=t*4.2, cx=B.x+B.w/2, cy=B.y+B.h/2; for(const k of [0,Math.PI]) add({x:cx,y:cy,vx:Math.cos(ang+k)*sp*.9,vy:Math.sin(ang+k)*sp*.9,r:6,born:.0}); }
+  else if(pat==='walls'){ const gap=B.y+20+R()*(B.h-70), l=R()<.5; for(let y=B.y;y<B.y+B.h;y+=14){ if(y>gap&&y<gap+46) continue; add({x:l?B.x-8:B.x+B.w+8,y,vx:(l?1:-1)*sp*.9,vy:0,r:6,g:'■'}); } }
+  else if(pat==='bars'){ const fromTop=R()<.5, x=B.x+R()*B.w; for(let i=0;i<5;i++) add({x,y:fromTop?B.y-10-i*12:B.y+B.h+10+i*12,vx:0,vy:(fromTop?1:-1)*sp*1.2,r:6,g:'▮'}); }
+  else if(pat==='rings'){ const cx=B.x+B.w/2, cy=B.y+B.h/2, gap=R()*Math.PI*2, n=18; for(let i=0;i<n;i++){ const ang=i/n*Math.PI*2; if(Math.abs(((ang-gap+Math.PI*3)%(Math.PI*2))-Math.PI)<.5) continue; add({x:cx+Math.cos(ang)*150,y:cy+Math.sin(ang)*150,vx:-Math.cos(ang)*sp*.8,vy:-Math.sin(ang)*sp*.8,r:6}); } }
+  else if(pat==='bounce') add({x:B.x+R()*B.w,y:B.y+4,vx:(R()-.5)*sp*2,vy:sp*.8,bounce:3,r:9});
+  else if(pat==='luck'){ const x=B.x+R()*B.w; add({x,y:B.y-10,vx:0,vy:sp*1.5,luck:1}); }
+  else if(pat==='haze') add({x:B.x+R()*B.w,y:B.y+B.h+12,vx:(R()-.5)*30,vy:-sp*.55,r:12,g:'💨',grow:1});
+  else if(pat==='traps'){ add({x:B.x+16+R()*(B.w-32),y:B.y+16+R()*(B.h-32),vx:0,vy:0,r:14,g:'🪤',warn:.9,ttl:1.6}); }
+  else if(pat==='stamps'){ add({x:B.x+20+R()*(B.w-40),y:B.y+20+R()*(B.h-40),vx:0,vy:0,r:18,g:'DENIED',warn:.8,ttl:1.4,stamp:1}); }
+  else if(pat==='beach') add({x:B.x+R()*B.w,y:B.y-12,vx:(R()-.5)*sp*1.6,vy:0,grav:260,bounce:4,r:11,g:'⛱'}); }
+function ibDodgeStep(dt){ const S=IB.soul, B=IB.box, k=ISL.keys, sp=150*dt; let mx=(k.arrowright||k.d?1:0)-(k.arrowleft||k.a?1:0), my=(k.arrowdown||k.s?1:0)-(k.arrowup||k.w?1:0); if(ISL.joy){ mx+=ISL.joy.x*1.2; my+=ISL.joy.y*1.2; } if(ISL.drag){ S.x+=ISL.drag.dx; S.y+=ISL.drag.dy; ISL.drag.dx=ISL.drag.dy=0; }
+  S.x=clamp(S.x+mx*sp,B.x+7,B.x+B.w-7); S.y=clamp(S.y+my*sp,B.y+7,B.y+B.h-7); S.inv=Math.max(0,S.inv-dt); IB.pt+=dt; if(IB.pt<IB.pdur-.6) ibSpawn(dt);
+  const st=IS_ST(); IB.bul=IB.bul.filter(b=>{ b.life+=dt; if(b.warn&&b.life<b.warn) return true; if(b.grav) b.vy+=b.grav*dt; if(b.grow) b.r=Math.min(24,b.r+dt*6); if(b.luck&&b.y>S.y-40&&!b.swerved){ b.swerved=1; b.vx=(b.x<S.x?-1:1)*160; }
+    b.x+=b.vx*dt; b.y+=b.vy*dt; if(b.bounce){ if(b.x<B.x+b.r||b.x>B.x+B.w-b.r){ b.vx*=-1; b.bounce--; } if(b.y>B.y+B.h-b.r){ b.vy=-Math.abs(b.vy)*.85; b.bounce--; } }
+    if(Math.hypot(b.x-S.x,b.y-S.y)<b.r+5&&S.inv<=0){ const dmg=Math.max(1,(IB.def.atk||4)+(IB.angry?2:0)-Math.floor(st.pages/2)); st.hp=Math.max(0,st.hp-dmg); S.inv=1; IB.shake=6; ibHurtSfx(); if(st.hp<=0){ ibGameOver(); return false; } }
+    if(b.ttl&&b.life>b.ttl) return false; return b.x>B.x-60&&b.x<B.x+B.w+60&&b.y>B.y-80&&b.y<B.y+B.h+80&&b.life<9; });
+  if(IB.state==='dodge'&&IB.pt>=IB.pdur){ IB.bul=[]; IB.box={x:32,y:250,w:576,h:140}; IB.lastFlav=IB.spare>=100?IB.def.n+' is ready to be spared.':pick(IB.def.flav||['* ...']).replace(/^\* /,''); IB.state='menu'; } }
+/* ---------- drawing ---------- */
+function ibHeart(g,x,y,s,col){ g.fillStyle=col; g.beginPath(); g.moveTo(x,y+s*.35); g.bezierCurveTo(x-s,y-s*.3,x-s*.35,y-s,x,y-s*.35); g.bezierCurveTo(x+s*.35,y-s,x+s,y-s*.3,x,y+s*.35); g.fill(); }
+function ibFrame(now){ if(!IB) return; requestAnimationFrame(ibFrame); const cv=$('#ibCv'), g=cv.getContext('2d'), dt=Math.min(.05,(now-(IB.last||now))/1000); IB.last=now; IB.anim+=dt; const st=IS_ST(), D=IB.def;
+  if(IB.state==='dodge') ibDodgeStep(dt); if(IB.state==='fight'&&!IB.fightBar.done){ IB.fightBar.x+=dt*.75; if(IB.fightBar.x>1){ IB.fightBar.done=true; IB.fightThisTurn=true; ibSay(['* You missed!'],'party'); } }
+  if(IB.state==='text'&&IB.typed<IB.text.length){ IB.tt+=dt; while(IB.tt>.025&&IB.typed<IB.text.length){ IB.tt-=.025; IB.typed++; if(IB.typed%2===0) ibBlip(); } } if(IB.state==='end'||IB.state==='over') IB.endT+=dt;
+  g.setTransform(1,0,0,1,0,0); g.fillStyle='#000'; g.fillRect(0,0,IB_W,IB_H); g.save(); if(IB.shake>0){ g.translate((Math.random()-.5)*IB.shake,(Math.random()-.5)*IB.shake); IB.shake=Math.max(0,IB.shake-dt*40); }
+  if(IB.state==='over'){ g.restore(); g.fillStyle='#fff'; g.font=ibPx(34); g.textAlign='center'; g.fillText('GAME',IB_W/2,150); g.fillText('OVER',IB_W/2,200); g.font=ibPx(12); g.fillText(`Don't give up, ${st.hero.name}!`,IB_W/2,280); g.fillText('Stay determined.',IB_W/2,305); g.fillStyle='#ffd43b'; g.fillText('Z: try again    X: give up',IB_W/2,370); return; }
+  /* enemy */ const a=IB.art, ey=IB.enemyY; if(a){ const h=200, w=h*a.width/a.height, x=IB_W/2-w/2, y=24; g.save(); let alpha=1; if(D.invis) alpha=.15+IB.spare/100*.85; if(IB.state==='end'&&IB.endKind==='kill'){ const p=Math.min(1,IB.endT/.6); g.translate(IB_W/2,y+h); g.scale(1,1-p*.95); g.translate(-IB_W/2,-(y+h)); alpha*=1-p*.4; } if(IB.state==='end'&&IB.endKind==='spare') alpha=.5;
+    g.globalAlpha=alpha; const wob=Math.sin(IB.anim*2)*3; g.translate(IB_W/2,y+h); g.rotate(Math.sin(IB.anim*1.3)*.02); g.drawImage(a,-w/2,-h+wob,w,h); g.restore(); }
+  if(IB.fx.length){ IB.fx=IB.fx.filter(f=>(f.t+=dt)<1); IB.fx.forEach(f=>{ g.fillStyle=f.crit?'#ffd43b':'#ff3b3b'; g.font=ibPx(f.crit?22:18); g.textAlign='center'; g.fillText(f.txt,IB_W/2,120-f.t*40); }); }
+  /* enemy hp + name */ if(IB.state==='fight'||IB.fx.length){ g.fillStyle='#404040'; g.fillRect(IB_W/2-60,214,120,10); g.fillStyle='#00e000'; g.fillRect(IB_W/2-60,214,120*IB.hp/IB.max,10); }
+  if(IB.talkBubble){ const t=IB.talkBubble; t.t+=dt; g.fillStyle='#fff'; g.beginPath(); g.roundRect(IB_W/2+110,40,200,90,10); g.fill(); g.beginPath(); g.moveTo(IB_W/2+112,90); g.lineTo(IB_W/2+96,100); g.lineTo(IB_W/2+112,104); g.fill(); g.fillStyle='#000'; g.font=ibPx(9); g.textAlign='left'; ibWrap(g,t.text.slice(0,Math.floor(t.t*40)),IB_W/2+120,58,182,14); }
+  /* box */ const B=IB.box; g.strokeStyle='#fff'; g.lineWidth=4; g.strokeRect(B.x,B.y,B.w,B.h);
+  if(IB.state==='text'||IB.state==='end'){ const txt=IB.state==='end'?IB.endText.join('\n'):IB.text.slice(0,IB.typed); g.fillStyle='#fff'; g.font=ibPx(14); g.textAlign='left'; let y=B.y+30; txt.split('\n').forEach(par=>{ y=ibWrap(g,par,B.x+22,y,B.w-44,22)+6; }); if(IB.state==='end'&&IB.endT>.6){ g.fillStyle='#ffd43b'; g.font=ibPx(10); g.fillText('[Z] continue',B.x+B.w-150,B.y+B.h-12); } }
+  if(IB.state==='menu'){ g.fillStyle='#fff'; g.font=ibPx(14); g.textAlign='left'; ibWrap(g,'* '+(IB.lastFlav||(IB.lastFlav=pick(D.flav||['...']).replace(/^\* /,''))),B.x+22,B.y+30,B.w-44,22); }
+  if(IB.state==='sub'){ g.font=ibPx(14); g.textAlign='left'; IB.list.forEach((it,i)=>{ const col=i%2, row=Math.floor(i/2), x=B.x+50+col*270, y=B.y+32+row*30; g.fillStyle=it.dis?'#666':IB.subKind==='mercy'&&i===0&&IB.spare>=100?'#ffd43b':'#fff'; g.fillText('* '+it.n,x,y); if(i===IB.sub) ibHeart(g,x-20,y-6,9,'#ff1a1a'); }); }
+  if(IB.state==='fight'){ const F=IB.fightBar; g.strokeStyle='#fff'; g.lineWidth=2; for(let i=0;i<14;i++){ const x=B.x+20+i*(B.w-40)/13; g.strokeStyle=Math.abs(i-6.5)<1?'#ffd43b':'#4a4a4a'; g.beginPath(); g.ellipse(B.x+B.w/2,B.y+B.h/2,(B.w-40)/2*(1-i/14),(B.h-24)/2*(1-i/14),0,0,7); g.stroke(); }
+    const x=B.x+20+F.x*(B.w-40); g.fillStyle=F.done?'#ffd43b':'#fff'; g.fillRect(x-4,B.y+6,8,B.h-12); g.fillStyle='#fff'; g.font=ibPx(10); g.textAlign='center'; g.fillText('PRESS [Z] IN THE MIDDLE',IB_W/2,B.y-8); }
+  if(IB.state==='dodge'){ IB.bul.forEach(b=>{ const warn=b.warn&&b.life<b.warn; g.save(); g.globalAlpha=warn?.35+Math.sin(b.life*30)*.25:1; if(b.stamp){ g.strokeStyle='#e03131'; g.lineWidth=3; g.strokeRect(b.x-30,b.y-12,60,24); g.fillStyle='#e03131'; g.font=ibPx(9); g.textAlign='center'; g.fillText('DENIED',b.x,b.y+4); }
+      else { g.font=`${Math.round(b.r*2.2)}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji","Press Start 2P",sans-serif`; g.textAlign='center'; g.textBaseline='middle'; g.fillStyle='#fff'; g.fillText(b.g,b.x,b.y); g.textBaseline='alphabetic'; } g.restore(); });
+    const S=IB.soul; if(!(S.inv>0&&Math.floor(S.inv*14)%2)) ibHeart(g,S.x,S.y,9,st.soul||'#ff1a1a'); }
+  g.restore();
+  /* hp line */ g.font=ibPx(13); g.textAlign='left'; g.fillStyle='#fff'; g.fillText(`${st.hero.name.toUpperCase().slice(0,10)}   LV ${1+st.pages}`,32,418); g.fillText('HP',290,418); g.fillStyle='#c00'; g.fillRect(330,404,Math.max(30,st.maxhp*2),16); g.fillStyle='#ff0'; g.fillRect(330,404,st.hp/st.maxhp*Math.max(30,st.maxhp*2),16); g.fillStyle='#fff'; g.fillText(`${st.hp} / ${st.maxhp}`,345+Math.max(30,st.maxhp*2),418);
+  if(IB.spare>0&&IB.state!=='end'){ g.fillStyle=IB.spare>=100?'#ffd43b':'#8a8a8a'; g.font=ibPx(9); g.fillText(`MERCY ${IB.spare}%`,500,236); }
+  /* buttons */ const btn=['FIGHT','ACT','ITEM','MERCY'], ic=['⚔','💬','🎒','✋']; btn.forEach((b,i)=>{ const x=32+i*152, y=436, on=IB.state==='menu'&&IB.sel===i; g.strokeStyle=on?'#ffd43b':'#ff7f27'; g.lineWidth=3; g.strokeRect(x,y,128,38); g.fillStyle=on?'#ffd43b':'#ff7f27'; g.font=ibPx(15); g.textAlign='left'; g.fillText(b,x+38,y+27); if(on) ibHeart(g,x+20,y+20,9,'#ff1a1a'); else { g.font='16px "Apple Color Emoji","Segoe UI Emoji",sans-serif'; g.fillText(ic[i],x+10,y+26); } });
+  if(IB.state==='menu'&&IB.spare>=100){ g.fillStyle='#ffd43b'; g.font=ibPx(9); g.textAlign='center'; g.fillText('★ '+D.n+' can be SPARED (MERCY)',IB_W/2,236); } }
+function ibWrap(g,text,x,y,w,lh){ const words=String(text).split(' '); let line=''; for(const wd of words){ const t=line?line+' '+wd:wd; if(g.measureText(t).width>w&&line){ g.fillText(line,x,y); y+=lh; line=wd; } else line=t; } if(line){ g.fillText(line,x,y); y+=lh; } return y; }
+/* ---------- sound ---------- */
+function ibAC(){ try{ SB_AC=SB_AC||new (window.AudioContext||window.webkitAudioContext)(); if(SB_AC.state==='suspended') SB_AC.resume(); return SB_AC; }catch(e){ return null; } }
+function ibBlip(hi){ const ac=ibAC(); if(!ac||IS_ST().mute) return; try{ oTone(ac,ac.currentTime,hi?880:520,.03,'square',.04,ac.destination); }catch(e){} }
+function ibHitSfx(){ const ac=ibAC(); if(!ac||IS_ST().mute) return; try{ oNoise(ac,ac.currentTime,.18,'lowpass',900,.5,ac.destination); oTone(ac,ac.currentTime,180,.2,'square',.08,ac.destination,60); }catch(e){} }
+function ibHurtSfx(){ const ac=ibAC(); if(!ac||IS_ST().mute) return; try{ oTone(ac,ac.currentTime,240,.15,'sawtooth',.08,ac.destination,90); }catch(e){} }
+function ibMusic(boss){ isMusic(boss?'boss':'battle'); } function ibMusicStop(){ isMusic(null); }
+/* =====================================================================
+   [ISLE] the game: title screen, hero creator, script runner (dialogue,
+   choices, quests, battles), HUD, quest tracker, map, menus, saving,
+   music, controls (keyboard, mouse, touch), endings.
+   ===================================================================== */
+SCREEN_NAMES.island='Nenjactale';
+addTab('island','🏝','Nenjactale',{before:'casino',door:{cls:'d25',h:'NENJACTALE',p:'A 3D cardboard RPG across all of Nenjac Island. Make a hero, recruit the cast, win back the Declaration without hurting anybody. Or do.',k:'3D RPG',art:'Starr'}});
+try{ const pl=HUBS.find(h=>h.k==='play'); if(pl&&!pl.s.includes('island')) pl.s.splice(pl.s.indexOf('city')+1,0,'island'); HUB_SHORT.island='Nenjactale'; }catch(e){}
+ACH.push({id:'isle1',e:'🏝',n:'Washed Up',d:'Start Nenjactale'},{id:'isle2',e:'📜',n:'Nenjacpendence',d:'Finish Nenjactale'},{id:'isle3',e:'💛',n:'Stay Loud',d:'Get the Loud Ending without hurting anyone'});
+const ISL={busy:false,keys:{},joy:null,run:false,jump:false,marks:new Set(),targets:[],inBattle:false,raf:0,last:0,started:false,loading:false,drag:null,lock:false,region:null,saveT:0,near:null,toastT:0};
+function IS_ST(){ if(!S.island) S.island=isFresh(); return S.island; }
+function isFresh(hero){ return {v:1,hero:hero||{name:'Kid',src:'Starr'},soul:'#ff1a1a',pos:[0,548],yaw:0,view:'third',hp:20,maxhp:20,quests:{},flags:{},items:{redbull:2},party:[],joined:[],cnt:{},found:{},spared:{},fought:{},restored:{},bonds:{},pages:0,time:.3,enc:'normal',quality:'auto',sens:1,inv:false,mute:false,created:Date.now(),ending:null,track:null}; }
+function isG(){ const st=IS_ST(); return {q:id=>{ const Q=st.quests[id]; return Q?(Q.done?99:Q.s):undefined; },done:id=>!!st.quests[id]?.done,f:k=>!!st.flags[k],inParty:n=>st.party.includes(n),has:(k,n=1)=>(st.items[k]||0)>=n,hero:st.hero.name,score:()=>['mayor','tony','warren','dean','chief','wlater'].filter(b=>st.spared[b]&&!st.fought[b]).length}; }
+
+/* ---------- screen ---------- */
+async function isEnter(){ const el=$('#scr-island'); if(!el) return; if(el.querySelector('.isl')){ isResume(); return; }
+  el.innerHTML=`<div class="isl" id="isl" tabindex="0"><canvas id="isCv"></canvas><canvas id="ibCv" width="${IB_W}" height="${IB_H}" hidden></canvas>
+    <div class="is-hud" id="isHud" hidden><div class="is-me"><canvas id="isMe" width="96" height="96"></canvas><div><b id="isName"></b><div class="is-hp"><i id="isHpBar"></i><span id="isHp"></span></div><small id="isMeta"></small></div></div>
+      <div class="is-right"><canvas id="isMini" width="150" height="150"></canvas><div class="is-track" id="isTrack"></div></div>
+      <div class="is-prompt" id="isPrompt" hidden></div><div class="is-banner" id="isBanner" hidden></div><div class="is-toasts" id="isToasts"></div>
+      <div class="is-btns"><button id="isView" title="First / third person (V)">🎥</button><button id="isMapB" title="Map (M)">🗺</button><button id="isMenuB" title="Menu (Esc)">☰</button></div>
+      <div class="is-touch" id="isTouch"><div class="is-joy" id="isJoy"><i></i></div><div class="is-tbtns"><button id="isA">A</button><button id="isB">⤒</button><button id="isRun">🏃</button></div></div></div>
+    <div class="is-dlg" id="isDlg" hidden><canvas id="isPort" width="120" height="120"></canvas><div class="is-dtxt"><b id="isWho"></b><p id="isLine"></p><div class="is-ch" id="isCh"></div></div><span class="is-more">▼</span></div>
+    <div class="is-menu" id="isMenu" hidden></div><div class="is-title" id="isTitle"></div></div>`;
+  isTitle(); isWire(); }
+function isTitle(){ const t=$('#isTitle'), st=S.island; t.hidden=false; isMusic('title');
+  t.innerHTML=`<div class="is-logo"><small>A NENJAC CREATOR GAME</small><h1>NENJACTALE</h1><p>The 200th Nenjacpendence Day. Five missing pages. One new kid.</p></div><div class="is-tm">${st&&st.quests.pro?`<button class="is-tb" id="isCont">▶ Continue<small>${esc(st.hero.name)} · 📜 ${st.pages}/5 · ${isPlayTime(st)}</small></button>`:''}<button class="is-tb" id="isNew">${st&&st.quests.pro?'✚ New game':'▶ Start'}</button><button class="is-tb sm" id="isTSet">⚙ Settings</button></div><p class="is-load" id="isLoad"></p>
+    <p class="is-tip">WASD / arrows move · mouse drag looks · E talk · Space jump · Shift run · V first/third person · M map · Esc menu. Phones: joystick + buttons.</p>`;
+  $('#isNew').onclick=()=>{ if(st&&st.quests.pro&&!confirm('Start a new game? Your current save gets replaced.')) return; isCreate(); }; $('#isCont')&&($('#isCont').onclick=()=>isBoot(false)); $('#isTSet').onclick=()=>isMenu('settings',true); }
+function isPlayTime(st){ const m=Math.round((st.play||0)/60); return m<60?`${m} min`:`${Math.floor(m/60)}h ${m%60}m`; }
+async function isCreate(){ const t=$('#isTitle'), chars=S.chars.filter(c=>c.img), drs=(typeof DRAWINGS!=='undefined'?DRAWINGS:[]).filter(d=>d.kind==='character'); let pick2={src:null,name:''}, soul='#ff1a1a';
+  t.innerHTML=`<div class="is-create"><h2>WHO ARE YOU?</h2><p>Pick your hero. Your own drawings from the 🎨 Art Studio are at the top.</p>
+    <div class="is-grid">${drs.map(d=>`<button data-src="drawing:${d.id}" data-n="${esc(d.name)}">${DRAW_URLS[d.id]?`<img src="${DRAW_URLS[d.id]}">`:'🎨'}<span>${esc(d.name)}</span></button>`).join('')}<button class="is-newart" id="isArt">✏️<span>Draw a new hero</span></button>${chars.map(c=>`<button data-src="${esc(c.name)}" data-n="${esc(c.name.split(' ')[0])}">${charArt(c)}<span>${esc(c.name)}</span></button>`).join('')}</div>
+    <div class="is-cr"><label>NAME <input id="isNm" maxlength="12" placeholder="Your name"></label><div class="is-souls">SOUL ${['#ff1a1a','#00e5ff','#ff8a00','#2f6bff','#b14bff','#39ff5a','#ffe14d'].map(c=>`<button data-soul="${c}" style="--c:${c}" class="${c===soul?'on':''}">♥</button>`).join('')}</div><button class="is-tb" id="isGo" disabled>WASH UP ON NENJAC →</button><button class="is-tb sm" id="isBack">← back</button></div></div>`;
+  t.querySelector('.is-grid').onclick=e=>{ const b=e.target.closest('[data-src]'); if(!b) return; $$('.is-grid button').forEach(x=>x.classList.toggle('on',x===b)); pick2={src:b.dataset.src,name:b.dataset.n}; if(!$('#isNm').value) $('#isNm').value=b.dataset.n.slice(0,12); $('#isGo').disabled=false; };
+  t.querySelector('.is-souls').onclick=e=>{ const b=e.target.closest('[data-soul]'); if(!b) return; soul=b.dataset.soul; $$('[data-soul]').forEach(x=>x.classList.toggle('on',x===b)); };
+  $('#isArt').onclick=()=>{ toast('🎨 Hit New Character, draw your hero, then come back to Nenjactale. They\'ll be at the top of the list.'); go('studio'); };
+  $('#isBack').onclick=isTitle; $('#isGo').onclick=()=>{ const name=($('#isNm').value||pick2.name||'Kid').trim().slice(0,12); S.island=isFresh({name,src:pick2.src}); S.island.soul=soul; save(); isBoot(true); }; }
+async function isBoot(fresh){ const t=$('#isTitle'); if(ISL.loading) return; ISL.loading=true; const L=$('#isLoad'); t.innerHTML=`<div class="is-logo"><h1>NENJACTALE</h1><p id="isLoad">Loading the 3D engine (first time needs internet)…</p><div class="is-lbar"><i id="isLbar"></i></div></div>`; let n=0;
+  try{ if(!IW.ready) await iwInit($('#isCv'),msg=>{ $('#isLoad')&&($('#isLoad').textContent=msg); n++; $('#isLbar')&&($('#isLbar').style.width=Math.min(100,n*17)+'%'); }); else { await iwHero(); iwColors(); iwTreeRecolor(); iwPeopleRefresh(); iwMinimapBase(); } }
+  catch(e){ console.error(e); t.innerHTML=`<div class="is-logo"><h1>NENJACTALE</h1><p>Couldn't load the 3D engine. It needs internet the first time (and a browser with WebGL).</p><button class="is-tb" onclick="isTitle()">← back</button></div>`; ISL.loading=false; return; }
+  ISL.loading=false; t.hidden=true; $('#isHud').hidden=false; ISL.started=true; unlock('isle1'); isRefreshQuests(); isHud(); isLoop(); $('#isl').focus();
+  if(fresh){ IW.pv.cy=0; await isRun(IS.intro,{cine:true}); await isRun(IS.wake); }
+  isMusic(); }
+function isResume(){ if(ISL.started){ $('#isHud').hidden=false; isLoop(); isMusic(); } }
+function isLoop(){ if(ISL.raf) return; ISL.last=0; const f=now=>{ ISL.raf=current==='island'&&ISL.started?requestAnimationFrame(f):0; if(!ISL.raf) return; const dt=Math.min(.05,(now-(ISL.last||now))/1000); ISL.last=now; const st=IS_ST(); st.play=(st.play||0)+dt;
+    if(!ISL.inBattle){ const walked=iwUpdate(dt); iwRender(); isTick(dt,walked); } }; ISL.raf=requestAnimationFrame(f); }
+
+/* ---------- per-frame game logic ---------- */
+function isTick(dt,walked){ const st=IS_ST(), P=IW.pv, G=isG(); ISL.hudT=(ISL.hudT||0)+dt; if(ISL.hudT>.12){ ISL.hudT=0; isHud(); }
+  const mm=$('#isMini'); if(mm) iwDrawMap(mm.getContext('2d'),150,true); ISL.saveT+=dt; if(ISL.saveT>30){ ISL.saveT=0; save(); }
+  const R=iwRegionAt(P.x,P.z); if((R&&R.id)!==(ISL.region&&ISL.region.id)){ ISL.region=R; if(R) isBanner(R.n,st.restored[R.id]?'':'NORMALIZED · grey and boring'); isMusic(); }
+  if(ISL.busy) { $('#isPrompt').hidden=true; return; }
+  /* quest arrivals */ Object.entries(st.quests).forEach(([id,Q])=>{ if(Q.done) return; const step=IQ[id].s[Q.s]; if(step&&step.go){ const l=IL[step.go]; if(Math.hypot(P.x-l[0],P.z-l[1])<l[2]*.8&&!ISL.busy){ const sc=step.then, at=Q.s; if(sc) isRun(IS[sc]).then(()=>{ if(!Q.done&&Q.s===at) isQStep(id); }); else isQStep(id); } } });
+  if(st.flags.bugmanAttack&&!st.flags.bugmanDone&&Math.hypot(P.x-IL.theater[0],P.z-IL.theater[1])<30&&!ISL.busy){ isRun(IS.bugmanTheater).then(()=>isRun(IS.bugmanAfter)); return; }
+  /* scoops */ if(st.quests.scoop&&!st.quests.scoop.done&&st.quests.scoop.s===0){ [['ferry',150],['rehab',22],['swamp',60]].forEach(([k,r])=>{ if(!st.found['scoop_'+k]&&Math.hypot(P.x-IL[k][0],P.z-IL[k][1])<r){ st.found['scoop_'+k]=1; isCount('scoop',3,`📰 Scoop: ${IL[k][3]}`); } }); }
+  /* collectibles */ Object.values(IW.cols).forEach(C=>{ if(!C.vis) return; const d=C.def, [x,z]=d.at, dist=Math.hypot(P.x-x,P.z-z);
+    if(d.k==='neen'&&dist<26){ isNeenSpotted(C); return; } if(d.k==='jeff') return; if(dist<3.2) isPickup(C); });
+  /* nearest interactable */ let best=null, bd=6;
+  Object.values(IW.npcs).forEach(N=>{ if(!N.obj.visible) return; const d=Math.hypot(N.obj.position.x-P.x,N.obj.position.z-P.z); if(d<bd){ bd=d; best={kind:'npc',N}; } });
+  Object.values(IW.cols).forEach(C=>{ if(!C.vis||C.def.k!=='jeff') return; const [x,z]=C.def.at, d=Math.hypot(x-P.x,z-P.z); if(d<(z>600?40:8)&&d<bd+4){ bd=d; best={kind:'jeff',C}; } });
+  ISL.near=best; const pr=$('#isPrompt'); if(best){ pr.hidden=false; pr.innerHTML=best.kind==='npc'?`<kbd>E</kbd> Talk to <b>${esc(best.N.def.w)}</b>`:`<kbd>E</kbd> Is that... <b>Jeff</b>?`; } else pr.hidden=true;
+  /* random encounters in normalized areas */ if(walked>0&&R&&!st.restored[R.id]&&st.enc!=='off'&&!st.dev){ const nearNpc=Object.values(IW.npcs).some(N=>N.obj.visible&&Math.hypot(N.obj.position.x-P.x,N.obj.position.z-P.z)<30); if(!nearNpc){ IW.lastEnc+=walked*(st.enc==='low'?.4:1); if(IW.lastEnc>IW.encAt){ IW.lastEnc=0; IW.encAt=70+Math.random()*90; isEncounter(R.id); } } } }
+async function isEncounter(rid){ const pool={downtown:['form','chair','hoa'],mansion:['tape','intern','form'],woods:['chair','beige','bump'],boardwalk:['bump','hoa','beige'],police:['tape','form','intern'],statehouse:['intern','form','tape']}[rid]||['form'];
+  ISL.busy=true; isFlash(); await new Promise(r=>setTimeout(r,450)); const k=await ibStart(pick(pool)); ISL.busy=false; if(k==='over') isGameOver(); }
+function isFlash(){ const el=$('#isl'); el.classList.add('is-flash'); setTimeout(()=>el.classList.remove('is-flash'),500); try{ ibBlip(1); setTimeout(()=>ibBlip(1),120); }catch(e){} }
+function isPickup(C){ const st=IS_ST(), d=C.def; st.found[d.id]=1; if(C.obj) C.obj.visible=false; C.vis=false; ibBlip(1);
+  if(d.k==='hotdog'){ st.items.hotdog=(st.items.hotdog||0)+1; isCount('hot',5,'🌭 Found a hot dog!'); }
+  else if(['tooth','trap','battery','shoe'].includes(d.k)){ st.items[d.k]=1; isCount('casq',4,`${d.e} Got ${IITEMS[d.k][1]}`); }
+  else if(d.k==='clue'){ isRun([['*','🔎 '+d.txt]]); isCount('case',3,'🔎 Clue found'); }
+  else if(d.k==='drawing'){ st.items.drawing=1; isRun([['*','You find a crayon drawing in a frame. "MY DAD IS THE BEST DAD (NOT A CRIMINAL)" — Elea, age 7.'],['Elea','...Oh my god. He kept it.']]); isQStep('ch2'); }
+  else if(d.k==='radio'){ st.items.radio=1; isToast('📻 Got Warren\'s Radio'); isQStep('ch3'); }
+  save(); iwPeopleRefresh(); isRefreshQuests(); }
+function isCount(q,need,msg){ const st=IS_ST(); st.cnt[q]=(st.cnt[q]||0)+1; isToast(`${msg} (${st.cnt[q]}/${need})`); const Q=st.quests[q]; if(st.cnt[q]>=need&&Q&&!Q.done&&(IQ[q].s[Q.s]||{t:''}).t.includes('/'+need+')')) isQStep(q); isRefreshQuests(); }
+function isNeenSpotted(C){ const st=IS_ST(); st.found[C.def.id]=1; C.vis=false; const o=C.obj; let t=0; const f=()=>{ t+=.05; o.scale.set(1-t,1+t,1); if(t<1) requestAnimationFrame(f); else o.visible=false; }; f(); try{ OSFX.neen?OSFX.neen.run(ibAC(),ibAC().currentTime,ibAC().destination):ibBlip(); }catch(e){} isCount('neen',6,'👀 You saw Neen. Then you didn\'t.'); }
+
+/* ---------- scripts ---------- */
+async function isRun(script,opt={}){ if(!script) return; if(typeof script==='function') script=script(isG()); if(typeof script==='string') script=IS[script]; if(typeof script==='function') script=script(isG()); if(!Array.isArray(script)) return;
+  const nested=ISL.busy; ISL.busy=true; try{ for(const line of script){ const L=typeof line==='function'?line(isG()):line; if(!L) continue; if(Array.isArray(L)){ await isSay(L[0],L[1],opt); continue; } const r=await isCmd(L); if(r==='stop') break; } }
+  finally{ if(!nested){ ISL.busy=false; $('#isDlg').hidden=true; } } }
+async function isCmd(c){ const st=IS_ST(), G=isG();
+  if(c.q){ isQStart(c.q); } if(c.step){ isQStep(c.step); } if(c.done){ isQDone(c.done); } if(c.set){ st.flags[c.set]=1; } if(c.give){ st.items[c.give]=(st.items[c.give]||0)+1; isToast(`${IITEMS[c.give]?.[0]||'🎁'} Got ${IITEMS[c.give]?.[1]||c.give}`); }
+  if(c.take){ if(c.take==='hotdogs') st.items.hotdog=Math.max(0,(st.items.hotdog||0)-5); else if(c.take==='casitems') ['tooth','trap','battery','shoe'].forEach(k=>delete st.items[k]); else delete st.items[c.take]; }
+  if(c.join){ if(!st.joined.includes(c.join)) st.joined.push(c.join); if(!st.party.includes(c.join)&&st.party.length<3) st.party.push(c.join); isToast(`🎉 ${c.join} joined your party!`); await iwFollowers(); iwPeopleRefresh(); }
+  if(c.crowd){ isCount('ch1',3,'👥 Crowd member recruited'); }
+  if(c.heal){ st.hp=st.maxhp; } if(c.pay){ try{ bkPay(c.pay,'Nenjactale','win'); }catch(e){} isToast(`💵 +N$${c.pay}`); }
+  if(c.page){ st.pages++; st.maxhp+=6; st.hp=st.maxhp; isBanner(`📜 DECLARATION PAGE ${st.pages}/5`,'Max HP up! Attack up!'); confetti(60); }
+  if(c.restore){ iwRestoreRegion(c.restore); const R=IREG.find(r=>r.id===c.restore); isBanner(`${R?R.n:'It'} is LOUD again!`,'Color and chaos restored'); }
+  if(c.fx==='boom'){ try{ OSFX.boom.run(ibAC(),ibAC().currentTime,ibAC().destination); }catch(e){} isShake(); }
+  if(c.save){ save(); isToast('💾 Saved. The smell of a burning ferry fills you with DETERMINATION.'); }
+  if(c.shop){ await isShop(); }
+  if(c.ask){ const i=await isAsk(c.ask.map(a=>a[0])); await isRun(c.ask[i][1]); }
+  if(c.battle){ $('#isDlg').hidden=true; isFlash(); await new Promise(r=>setTimeout(r,450)); const k=await ibStart(c.battle); if(k==='over'){ isGameOver(); return 'stop'; } const br=k==='kill'?c.kill:k==='spare'?c.spare:c.win; if(br) await isRun(IS[br]||br); }
+  if(c.ending){ st.ending=G.score()>=6?'loud':'quiet'; unlock('isle2'); if(st.ending==='loud') unlock('isle3'); await isCredits(); }
+  isRefreshQuests(); }
+function isSay(who,text,opt={}){ return new Promise(res=>{ const st=IS_ST(), d=$('#isDlg'), w=who==='*'?'':who, line=String(text).replace(/\{hero\}/g,st.hero.name); d.hidden=false; d.classList.toggle('flavor',who==='*'); d.classList.toggle('cine',!!opt.cine);
+    $('#isWho').textContent=w==='Travis'&&opt.cine?'TRAVIS (narrating)':w; $('#isCh').innerHTML=''; const p=$('#isLine'); let i=0, done=false; ISL.talk={who:w,t:0,on:true};
+    try{ if(w&&w!=='*'){ const ac=ibAC(); if(ac&&!st.mute) babble(ac,ac.currentTime+.02,line.slice(0,120),w,ac.destination,1.15); } }catch(e){}
+    const tick=()=>{ if(done) return; i=Math.min(line.length,i+2); p.textContent=line.slice(0,i); if(i<line.length) setTimeout(tick,22); else ISL.talk.on=false; }; tick(); isPortrait(w);
+    ISL.advance=()=>{ if(i<line.length){ i=line.length; p.textContent=line; ISL.talk.on=false; return; } done=true; ISL.advance=null; res(); }; }); }
+function isAsk(opts){ return new Promise(res=>{ const ch=$('#isCh'); ch.innerHTML=opts.map((o,i)=>`<button data-i="${i}"><b>${i+1}</b> ${esc(o)}</button>`).join(''); ISL.choose=i=>{ ISL.choose=null; ch.innerHTML=''; res(i); }; ch.onclick=e=>{ const b=e.target.closest('[data-i]'); if(b&&ISL.choose) ISL.choose(+b.dataset.i); }; }); }
+async function isPortrait(who){ const cv=$('#isPort'), g=cv.getContext('2d'); cancelAnimationFrame(ISL.portRaf); if(!who){ g.clearRect(0,0,120,120); cv.style.visibility='hidden'; return; } cv.style.visibility='visible';
+  const name=iwWho(who); if(name) await pzCharImg(name); const procArt=!name?(await iwArt(who,{'Bugman':'bug','Inspector Wlater':'inspector','Reporter Ligma':'reporter'}[who])).canvas:null; const t0=performance.now();
+  const f=()=>{ g.clearRect(0,0,120,120); const t=(performance.now()-t0)/1000, m=ISL.talk?.on?Math.abs(Math.sin(t*16))*.85:0;
+    if(name&&PZ.img[name]) rgDrawChar(g,name,60,64,108,{x:0,y:0,s:1,r:Math.sin(t*2)*2,f:false,m,bL:0,bR:0,br:0,sm:0,lx:0,ly:0,tg:0,tk:0,emo:null},t);
+    else if(procArt){ const h=108, w=h*procArt.width/procArt.height; g.drawImage(procArt,60-w/2,8+Math.sin(t*3)*2+(m*3),w,h); }
+    ISL.portRaf=requestAnimationFrame(f); }; f(); }
+/* ---------- quests ---------- */
+function isQStart(id){ const st=IS_ST(); if(st.quests[id]) return; st.quests[id]={s:0,done:false,t:Date.now()}; if(IQ[id].k==='main'){ st.track=id; isBanner('NEW QUEST: '+IQ[id].n,IQ[id].s[0].t); } isRefreshQuests(); }
+function isQStep(id){ const st=IS_ST(), Q=st.quests[id]; if(!Q||Q.done) return; Q.s++; if(Q.s>=IQ[id].s.length){ isQDone(id); return; } if(IQ[id].k==='main') isToast('➜ '+isStepText(id)); isRefreshQuests(); save(); }
+function isQDone(id){ const st=IS_ST(), Q=st.quests[id]||(st.quests[id]={s:0}); if(Q.done) return; Q.done=true; isBanner('QUEST COMPLETE: '+IQ[id].n,''); try{ OSFX.fanfare.run(ibAC(),ibAC().currentTime,ibAC().destination); }catch(e){} if(st.track===id){ const nxt=Object.keys(st.quests).find(k=>!st.quests[k].done&&IQ[k].k==='main'); st.track=nxt||null; } isRefreshQuests(); save(); }
+function isStepText(id){ const st=IS_ST(), Q=st.quests[id]; if(!Q) return ''; const s=IQ[id].s[Math.min(Q.s,IQ[id].s.length-1)]; return s.t.replace(/\(0\/(\d)\)/,(m,n)=>`(${Math.min(+n,st.cnt[id]||0)}/${n})`); }
+function isRefreshQuests(){ const st=IS_ST(), G=isG(), marks=new Set(), tg=[]; ISL.marks=marks;
+  for(const [id,Q] of Object.entries(st.quests)){ if(Q.done) continue; const step=IQ[id].s[Q.s]; if(!step) continue; const main=IQ[id].k==='main', at=step.at;
+    const addNpc=n=>{ marks.add(n); const N=IW.npcs[n]; if(N) tg.push({x:N.obj.position.x,z:N.obj.position.z,main}); };
+    if(IL[at]) tg.push({x:IL[at][0],z:IL[at][1],main}); else if(IW.npcs[at]) addNpc(at);
+    else if(at==='crowd'){ [['monoleg','c_monoleg'],['harry','c_harry'],['ligma','c_ligma']].forEach(([n,f])=>{ if(!st.flags[f]) addNpc(n); }); }
+    else if(['hotdog','casitem','clue','neens','jeffs','scoops','drawing','radio'].includes(at)&&(st.flags.nerdMap||['drawing','radio','clue'].includes(at))){ Object.values(IW.cols).forEach(C=>{ if(C.vis&&({hotdog:'hotdog',casitem:'casq',clue:'clue',neens:'neen',jeffs:'jeff',drawing:'drawing',radio:'radio'}[at]===(at==='casitem'?C.def.q:C.def.k))) tg.push({x:C.def.at[0],z:C.def.at[1],main}); }); }
+    if(at==='scoops') ['ferry','rehab','swamp'].forEach(k=>{ if(!st.found['scoop_'+k]) tg.push({x:IL[k][0],z:IL[k][1],main}); }); }
+  /* quest givers for side quests not started yet don't exist: all start in the prologue */ ISL.targets=tg; if(IW.ready) iwPeopleRefresh(); isTrack(); }
+function isTrack(){ const el=$('#isTrack'); if(!el) return; const st=IS_ST(), act=Object.entries(st.quests).filter(([,Q])=>!Q.done); const main=act.find(([id])=>IQ[id].k==='main'), side=act.filter(([id])=>IQ[id].k==='side').slice(0,2);
+  el.innerHTML=(main?`<div class="m"><b>★ ${esc(IQ[main[0]].n)}</b><span>${esc(isStepText(main[0]))}</span></div>`:'')+side.map(([id])=>`<div><b>${esc(IQ[id].n)}</b><span>${esc(isStepText(id))}</span></div>`).join(''); }
+/* ---------- HUD ---------- */
+function isHud(){ const st=IS_ST(); $('#isName').textContent=st.hero.name; $('#isHp').textContent=`${st.hp}/${st.maxhp}`; $('#isHpBar').style.width=(st.hp/st.maxhp*100)+'%'; $('#isMeta').textContent=`📜 ${st.pages}/5 · N$${typeof CZ!=='undefined'?CZ.bal:0}${st.party.length?' · 👥 '+st.party.join(', '):''}`;
+  const me=$('#isMe'); if(me&&!ISL.meDrawn&&IW.tex['art:'+st.hero.src]){ const c=IW.tex['art:'+st.hero.src].canvas, g=me.getContext('2d'), h=88, w=h*c.width/c.height; g.clearRect(0,0,96,96); g.drawImage(c,48-w/2,4,w,h); ISL.meDrawn=true; } }
+function isBanner(title,sub){ const b=$('#isBanner'); if(!b) return; b.innerHTML=`<b>${esc(title)}</b>${sub?`<small>${esc(sub)}</small>`:''}`; b.hidden=false; b.classList.remove('go'); void b.offsetWidth; b.classList.add('go'); clearTimeout(ISL.bT); ISL.bT=setTimeout(()=>{ b.hidden=true; },3400); }
+function isToast(msg){ const el=$('#isToasts'); if(!el) return; const t=document.createElement('div'); t.textContent=msg; el.appendChild(t); setTimeout(()=>t.remove(),3200); }
+function isShake(){ const el=$('#isl'); el.classList.add('is-shake'); setTimeout(()=>el.classList.remove('is-shake'),400); }
+/* ---------- shop, menu, map ---------- */
+function isShop(){ return new Promise(res=>{ const m=$('#isMenu'), st=IS_ST(), list=['redbull','bar','sushi','slushie'];
+  const draw=()=>{ m.innerHTML=`<div class="is-mbox"><div class="is-mh"><b>⛽ GAS-N-GO</b><small>Wallet: N$${CZ.bal}</small><button data-x>✕</button></div><div class="is-shop">${list.map(k=>{ const it=IITEMS[k]; return `<button data-buy="${k}"><span>${it[0]}</span><b>${it[1]}</b><small>${it[4]}</small><i>N$${it[3]}</i><em>have ${st.items[k]||0}</em></button>`; }).join('')}</div><p class="tiny">Prices are in your real Nenjac Bucks. Earn them by writing, drawing and winning battles.</p></div>`; };
+  draw(); m.hidden=false; ISL.menuOpen=true; m.onclick=e=>{ const b=e.target.closest('[data-buy]'); if(b){ const it=IITEMS[b.dataset.buy]; if(bkSpend(it[3],'Gas-N-Go: '+it[1],'buy')){ st.items[b.dataset.buy]=(st.items[b.dataset.buy]||0)+1; ibBlip(1); draw(); } return; } if(e.target.closest('[data-x]')||e.target===m){ m.hidden=true; ISL.menuOpen=false; res(); } }; }); }
+function isMenu(tab='quests',fromTitle){ const m=$('#isMenu'), st=IS_ST(); ISL.menuOpen=true; ISL.busy=!fromTitle; if(document.pointerLockElement) document.exitPointerLock();
+  const tabs=fromTitle?[['settings','⚙ Settings']]:[['quests','📜 Quests'],['party','👥 Party'],['items','🎒 Items'],['map','🗺 Map'],['settings','⚙ Settings']];
+  const body=()=>{ if(tab==='quests'){ const L=Object.entries(st.quests).sort((a,b)=>(a[1].done-b[1].done)||(IQ[a[0]].k==='main'?-1:1)); return `<div class="is-q">${L.map(([id,Q])=>`<div class="${Q.done?'done':''} ${IQ[id].k}"><b>${IQ[id].k==='main'?'★ ':''}${esc(IQ[id].n)}${Q.done?' ✓':''}</b><p>${esc(IQ[id].d)}</p>${Q.done?'':`<span>➜ ${esc(isStepText(id))}</span>`}</div>`).join('')||'<p>No quests yet.</p>'}</div><p class="tiny">Spared: ${Object.keys(st.spared).length} · Flattened: ${Object.keys(st.fought).length}</p>`; }
+    if(tab==='party') return `<p class="tiny">Up to 3 people walk with you and help in battles. Tap to swap. Bonds grow every battle you fight together.</p><div class="is-party">${st.joined.map(n=>`<button data-pt="${esc(n)}" class="${st.party.includes(n)?'on':''}">${castArt(iwWho(n)||n)}<b>${esc(n)}</b><small>${esc((IPARTY[n]||{}).e||'')} bond ${'♥'.repeat(Math.min(5,Math.floor((st.bonds[n]||0)/3)))}${'♡'.repeat(Math.max(0,5-Math.floor((st.bonds[n]||0)/3)))}</small></button>`).join('')||'<p>Nobody yet. Talk to people!</p>'}</div>${st.party.length>=2?'<button class="is-tb sm" id="isCamp">🔥 Campfire chat</button>':''}`;
+    if(tab==='items'){ const L=Object.entries(st.items).filter(([k,n])=>n>0&&IITEMS[k]); return `<div class="is-items">${L.map(([k,n])=>{ const it=IITEMS[k]; return `<button data-use="${k}" ${it[2]>0?'':'disabled'}><span>${it[0]}</span><b>${it[1]}${n>1?' x'+n:''}</b><small>${esc(it[4])}</small></button>`; }).join('')||'<p>Your pockets are full of sand.</p>'}</div><p class="tiny">HP ${st.hp}/${st.maxhp}</p>`; }
+    if(tab==='map') return `<canvas id="isBig" width="620" height="620"></canvas><p class="tiny">Yellow = main quest · blue = side quest · red arrow = you.</p>`;
+    return `<div class="is-set"><label>Graphics <select data-set="quality">${['auto','low','med','high'].map(q=>`<option ${st.quality===q?'selected':''}>${q}</option>`).join('')}</select> <small>(reload the game to apply)</small></label>
+      <label>Random battles <select data-set="enc">${[['normal','Normal'],['low','Fewer'],['off','Off (story only)']].map(([k,n])=>`<option value="${k}" ${st.enc===k?'selected':''}>${n}</option>`).join('')}</select></label>
+      <label>Mouse sensitivity <input type="range" min=".3" max="2.5" step=".1" data-set="sens" value="${st.sens}"></label><label><input type="checkbox" data-set="inv" ${st.inv?'checked':''}> Invert look up/down</label><label><input type="checkbox" data-set="mute" ${st.mute?'checked':''}> Mute game music & sounds</label>
+      ${fromTitle?'':`<button class="is-tb sm" id="isSaveQ">💾 Save & back to title</button>`}</div>`; };
+  const draw=()=>{ m.innerHTML=`<div class="is-mbox"><div class="is-mh">${tabs.map(([k,n])=>`<button data-tab="${k}" class="${tab===k?'on':''}">${n}</button>`).join('')}<button data-x>✕</button></div><div class="is-mb">${body()}</div></div>`; m.hidden=false; if(tab==='map'){ const c=$('#isBig'); iwDrawMap(c.getContext('2d'),620,false); } };
+  draw(); m.onclick=async e=>{ const t=e.target.closest('[data-tab]'); if(t){ tab=t.dataset.tab; draw(); return; } if(e.target.closest('[data-x]')||e.target===m){ m.hidden=true; ISL.menuOpen=false; ISL.busy=false; return; }
+    const p=e.target.closest('[data-pt]'); if(p){ const n=p.dataset.pt, i=st.party.indexOf(n); if(i>=0) st.party.splice(i,1); else { if(st.party.length>=3) st.party.shift(); st.party.push(n); } await iwFollowers(); iwPeopleRefresh(); draw(); return; }
+    const u=e.target.closest('[data-use]'); if(u){ const k=u.dataset.use, it=IITEMS[k]; st.items[k]--; st.hp=Math.min(st.maxhp,st.hp+it[2]); ibBlip(1); isToast(`${it[0]} +${it[2]} HP`); draw(); return; }
+    if(e.target.id==='isCamp'){ m.hidden=true; ISL.menuOpen=false; ISL.busy=false; const opts=ICAMP.filter(([w])=>w.every(n=>st.party.includes(n))); const c=opts.length?pick(opts)[1]:[['*','Everyone sits around the campfire in comfortable silence. Somewhere, Neen is watching.']]; await isRun([['*','You sit around a campfire with your party.'],...c,{heal:1},['*','(HP fully restored.)']]); return; }
+    if(e.target.id==='isSaveQ'){ save(); m.hidden=true; ISL.menuOpen=false; ISL.busy=false; ISL.started=false; cancelAnimationFrame(ISL.raf); ISL.raf=0; $('#isHud').hidden=true; isTitle(); } };
+  m.onchange=m.oninput=e=>{ const x=e.target.closest('[data-set]'); if(!x) return; const k=x.dataset.set; st[k]=x.type==='checkbox'?x.checked:x.type==='range'?+x.value:x.value; save(); if(k==='mute') isMusic(); }; }
+function isGameOver(){ const st=IS_ST(); st.hp=st.maxhp; isToast('💛 Stay determined. You got back up.'); }
+async function isCredits(){ const m=$('#isMenu'), st=IS_ST(); ISL.busy=true; const cast=['Starr','Deegs','Elea','Spencer','Cas','Travis','Mister Mayor','Tony Morelli','Warren','Dean McQueen','Chief','Officer McCormack','Monoleg','Heroin Harry','Melissa & Marissa','Ciggy','Nerd','Jeff','Gertrude','Rocco','Gianni','Neen'].filter(iwWho);
+  m.innerHTML=`<div class="is-cred"><div class="is-roll"><h1>NENJACTALE</h1><p>${st.ending==='loud'?'★ LOUD ENDING ★':'★ QUIET ENDING ★'}</p><h3>STARRING</h3><p><b>${esc(st.hero.name)}</b> as The New Kid</p>${cast.map(n=>`<div class="is-cc">${castArt(iwWho(n))}<span>${esc(n)}</span></div>`).join('')}<h3>CREATED BY</h3><p>JC & Noah</p><h3>BUILT IN</h3><p>Nenjac Creator</p><p>Spared: ${Object.keys(st.spared).length} · Flattened: ${Object.keys(st.fought).length}</p><h3>THANKS FOR PLAYING</h3><p>Stay loud.</p></div><button class="is-tb" id="isCredX">Keep exploring →</button></div>`;
+  m.hidden=false; isMusic('title'); await new Promise(r=>{ $('#isCredX').onclick=r; }); m.hidden=true; ISL.busy=false; isMusic(); }
+/* ---------- music ---------- */
+const IS_MUS={title:{bpm:84,k:57,prog:[0,-4,-2,-5],lead:'celesta',arp:[0,7,12,7],pad:'strings'},town:{bpm:104,k:60,prog:[0,5,-3,7],lead:'epiano',arp:[0,4,7,12,7,4],pad:'pad',dr:1},mansion:{bpm:92,k:50,prog:[0,-2,-4,-5],lead:'pizz',arp:[0,3,7,3],pad:'strings'},woods:{bpm:72,k:55,prog:[0,5,7,5],lead:'flute',arp:[0,7,12,14],pad:'pad'},beach:{bpm:112,k:62,prog:[0,5,7,5],lead:'harp',arp:[0,4,7,11],pad:'pad',dr:1},grey:{bpm:60,k:57,prog:[0,0,-1,0],lead:'celesta',arp:[0],pad:'pad'},battle:{bpm:150,k:52,prog:[0,0,-4,-2],lead:'synth',arp:[0,12,7,12,3,12,7,12],pad:'bass',dr:2},boss:{bpm:164,k:50,prog:[0,1,-2,-4],lead:'brass',arp:[0,7,12,15,12,7],pad:'strings',dr:2}};
+function isMusic(force){ const st=IS_ST(); let k=force; if(force===undefined){ const R=ISL.region; k=!ISL.started?'title':R&&!st.restored[R.id]?'grey':R?.id==='mansion'?'mansion':R?.id==='woods'?'woods':R?.id==='boardwalk'?'beach':'town'; }
+  if(st.mute||current!=='island') k=null; if(ISL.mus&&ISL.mus.k===k) return; if(ISL.mus){ clearInterval(ISL.mus.timer); ISL.mus=null; } if(!k) return; const P=IS_MUS[k], ac=ibAC(); if(!ac) return; const step=60/P.bpm/4, M={k,next:ac.currentTime+.2,i:0}, out=ac.createGain(); out.gain.value=k==='battle'||k==='boss'?.5:.32; out.connect(ac.destination); M.out=out;
+  const N=(inst,p,d,v,at)=>{ try{ INST[inst].play(ac,out,p,ac.currentTime+Math.max(0,at),d,v,{}); }catch(e){} };
+  M.timer=setInterval(()=>{ if(current!=='island'){ return; } while(M.next<ac.currentTime+.3){ const i=M.i++, bar=Math.floor(i/16), root=P.k+P.prog[bar%P.prog.length], s=i%16, at=M.next-ac.currentTime;
+      if(P.arp.length>1&&s%2===0) N(P.lead,root+12+P.arp[(s/2)%P.arp.length],step*1.8,.28,at); else if(P.arp.length===1&&s===0) N(P.lead,root+24,step*6,.2,at);
+      if(s===0){ N(P.pad,root,step*15,.3,at); N(P.pad,root+(P.k%2?3:4),step*15,.2,at); }
+      if(P.dr){ if(s%8===0) N('drums',36,.2,.5,at); if(s%8===4) N('drums',38,.2,.4,at); if(P.dr>1&&s%2===1) N('drums',42,.05,.25,at); }
+      M.next+=step; } },80); ISL.mus=M; }
+/* ---------- controls ---------- */
+function isWire(){ const el=$('#isl'), cv=$('#isCv');
+  const down=e=>{ if(current!=='island') return; if(/INPUT|TEXTAREA|SELECT/.test(document.activeElement?.tagName)) return; const k=e.key.toLowerCase(); if(ISL.inBattle){ ISL.keys[k]=true; ibKey(e.key); if([' ','arrowup','arrowdown','arrowleft','arrowright'].includes(k)) e.preventDefault(); return; }
+    if(!$('#isTitle').hidden) return; if([' ','arrowup','arrowdown','arrowleft','arrowright','tab'].includes(k)) e.preventDefault();
+    if(ISL.menuOpen){ if(k==='escape'||k==='tab'||k==='m'||k==='q'){ $('#isMenu').hidden=true; ISL.menuOpen=false; ISL.busy=false; } return; }
+    if(ISL.choose&&/^[1-4]$/.test(k)){ ISL.choose(+k-1); return; } if(ISL.advance&&!ISL.choose&&(k==='e'||k==='enter'||k===' '||k==='z')){ ISL.advance(); return; }
+    ISL.keys[k]=true; if(ISL.busy) return;
+    if(k==='e'||k==='enter') isInteract(); if(k==='v') isToggleView(); if(k==='m') isMenu('map'); if(k==='q') isMenu('quests'); if(k==='escape'||k==='tab') isMenu('quests'); if(k==='shift') ISL.run=false; };
+  const up=e=>{ ISL.keys[e.key.toLowerCase()]=false; }; document.addEventListener('keydown',down); document.addEventListener('keyup',up);
+  let drag=null; cv.addEventListener('pointerdown',e=>{ if(ISL.busy&&!ISL.advance) return; if(ISL.advance){ ISL.advance(); return; } if(IS_ST().view==='first'&&e.pointerType==='mouse'){ cv.requestPointerLock?.(); return; } drag={x:e.clientX,y:e.clientY,id:e.pointerId}; cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener('pointermove',e=>{ const st=IS_ST(), s=st.sens*.005; if(document.pointerLockElement===cv){ IW.pv.cy-=e.movementX*s; IW.pv.fp=clamp((IW.pv.fp||0)-e.movementY*s*(st.inv?-1:1),-1.3,1.3); return; } if(!drag||drag.id!==e.pointerId) return; const dx=e.clientX-drag.x, dy=e.clientY-drag.y; drag.x=e.clientX; drag.y=e.clientY; IW.pv.cy-=dx*s*1.2; if(st.view==='first') IW.pv.fp=clamp((IW.pv.fp||0)-dy*s*(st.inv?-1:1),-1.3,1.3); else IW.pv.cp=clamp(IW.pv.cp+dy*s*(st.inv?-1:1),-.15,1.25); });
+  cv.addEventListener('pointerup',()=>{ drag=null; }); cv.addEventListener('wheel',e=>{ e.preventDefault(); IW.pv.dist=clamp(IW.pv.dist+e.deltaY*.01,4,22); },{passive:false});
+  $('#isDlg').addEventListener('click',e=>{ if(e.target.closest('#isCh')) return; ISL.advance&&ISL.advance(); });
+  $('#isView').onclick=isToggleView; $('#isMapB').onclick=()=>isMenu('map'); $('#isMenuB').onclick=()=>isMenu('quests');
+  /* touch joystick */ const joy=$('#isJoy'), knob=joy.querySelector('i'); let jid=null, jc=null; joy.addEventListener('pointerdown',e=>{ jid=e.pointerId; const r=joy.getBoundingClientRect(); jc=[r.left+r.width/2,r.top+r.height/2]; joy.setPointerCapture(e.pointerId); mv(e); });
+  const mv=e=>{ if(e.pointerId!==jid) return; let dx=(e.clientX-jc[0])/50, dy=(e.clientY-jc[1])/50; const l=Math.hypot(dx,dy); if(l>1){ dx/=l; dy/=l; } ISL.joy={x:dx,y:dy}; knob.style.transform=`translate(${dx*40}px,${dy*40}px)`; ISL.run=l>.95; };
+  joy.addEventListener('pointermove',mv); joy.addEventListener('pointerup',()=>{ jid=null; ISL.joy=null; knob.style.transform=''; ISL.run=false; }); joy.addEventListener('pointercancel',()=>{ jid=null; ISL.joy=null; knob.style.transform=''; });
+  $('#isA').onclick=()=>{ if(ISL.inBattle){ ibKey('z'); return; } if(ISL.advance){ ISL.advance(); return; } isInteract(); }; $('#isB').onclick=()=>{ if(ISL.inBattle){ ibKey('x'); return; } ISL.jump=true; }; $('#isRun').onclick=e=>{ ISL.runLock=!ISL.runLock; ISL.run=ISL.runLock; e.target.classList.toggle('on',ISL.runLock); };
+  /* battle touch: tap the 4 buttons, drag the soul */ const bc=$('#ibCv'); let bd=null; bc.addEventListener('pointerdown',e=>{ if(!IB) return; const r=bc.getBoundingClientRect(), x=(e.clientX-r.left)*IB_W/r.width, y=(e.clientY-r.top)*IB_H/r.height;
+    if(IB.state==='menu'&&y>430){ IB.sel=clamp(Math.floor((x-32)/152),0,3); ibKey('z'); return; } if(IB.state==='sub'){ const B=IB.box; const col=x>B.x+300?1:0, row=Math.floor((y-B.y-12)/30); const i=row*2+col; if(i>=0&&i<IB.list.length){ IB.sub=i; ibKey('z'); return; } ibKey('x'); return; }
+    if(IB.state==='dodge'){ bd={x:e.clientX,y:e.clientY}; bc.setPointerCapture(e.pointerId); return; } ibKey('z'); });
+  bc.addEventListener('pointermove',e=>{ if(!bd||!IB) return; const r=bc.getBoundingClientRect(); ISL.drag={dx:(e.clientX-bd.x)*IB_W/r.width,dy:(e.clientY-bd.y)*IB_H/r.height}; bd={x:e.clientX,y:e.clientY}; }); bc.addEventListener('pointerup',()=>{ bd=null; ISL.drag=null; });
+  ISL.keys=IW.keys=ISL.keys; }
+function isToggleView(){ const st=IS_ST(); st.view=st.view==='first'?'third':'first'; IW.pv.fp=0; isToast(st.view==='first'?'🎥 First person (click to look around)':'🎥 Third person'); if(st.view!=='first'&&document.pointerLockElement) document.exitPointerLock(); }
+function isInteract(){ const n=ISL.near; if(!n||ISL.busy) return; if(n.kind==='npc'){ const d=n.N.def; const t=typeof d.t==='string'?IS[d.t]:d.t; isRun(t); }
+  else if(n.kind==='jeff'){ const C=n.C, st=IS_ST(); st.found[C.def.id]=1; C.vis=false; C.obj.visible=false; isRun([['*','Jeff is '+C.def.txt+'.'],['Jeff','Hi. I\'m Jeff. I\'m fine.']]).then(()=>isCount('jeff',4,'🩹 Jeff is fine')); } }
+{ const _g=go; go=function(s){ if(current==='island'&&s!=='island'){ save(); if(ISL.mus){ clearInterval(ISL.mus.timer); ISL.mus=null; } if(document.pointerLockElement) document.exitPointerLock(); } const r=_g.apply(this,arguments); if(s==='island') setTimeout(isEnter,0); return r; }; }
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'🏝',label:'Nenjactale (3D RPG)',run:()=>go('island'),kw:'nenjactale rpg 3d game island quest undertale'}); return C; }; }
+if(!FIRST_RUN&&!S.settings.seen53) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello53" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>5.3: NENJACTALE.</b><small>A 3D cardboard RPG across all of Nenjac Island. Play as your own character, recruit the cast, and save the 200th Nenjacpendence Day. Play → 🏝 Nenjactale.</small><div class="row"><button class="btn sm primary" id="h53p">🏝 Play it</button><button class="btn sm" id="h53w">✨ What's new</button><button class="btn sm" id="h53x" aria-label="Dismiss">✕</button></div></div></div>`);
+  const done=()=>{ ['seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello53')?.remove(); }; $('#h53p').onclick=()=>{ done(); go('island'); }; $('#h53w').onclick=()=>{ done(); openWhatsNew(); }; $('#h53x').onclick=done; },3300);
+if(FIRST_RUN) S.settings.seen53=true;
 
 </script>
 </body>

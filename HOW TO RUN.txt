@@ -1,4 +1,4 @@
-NENJAC CREATOR 5.2.1: how to run it
+NENJAC CREATOR 5.3: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -85,6 +85,18 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 5.3: NENJACTALE (3D RPG)
+  Play → 🏝 Nenjactale. A big 3D Nenjac Island with cardboard-cutout characters,
+  Undertale-style battles (FIGHT / ACT / ITEM / MERCY) and a Miitopia-style party.
+  - Play as any character, or one YOU drew in the Art Studio (New Character).
+  - Controls: WASD/arrows move, drag the mouse to look, E talk, Space jump, Shift run,
+    V first/third person, M map, Esc menu. Phones/tablets get a joystick + buttons.
+  - The 3D engine (three.js) downloads from the internet the first time you play.
+    After that it's cached. If it runs slow on a Chromebook, Menu → Settings →
+    Graphics → low (then reload the game).
+  - Saves automatically every 30 seconds, and whenever you finish a quest.
+  - Random battles can be turned down or off in the game's Settings.
 
 NEW IN 5.2: THE PITCH BOX
   💡 Write → Pitch Box. Uses the same Google Drive drop box as actor invites.
