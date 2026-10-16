@@ -1,4 +1,4 @@
-NENJAC CREATOR 5.3: how to run it
+NENJAC CREATOR 5.4: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -85,6 +85,15 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 5.4: NENJACTALE GLOW-UP
+  - New sky with sun, moon, stars and clouds; full day/night (towns light up at night).
+  - Animated ocean with foam, textured roads and sidewalks, a real storefront downtown,
+    houses, cars, street lamps, power lines, 4 kinds of trees, flowers and windy grass.
+  - Walk INTO buildings: look for the 🚪 above a door and press E. Theater, Police HQ,
+    Clinic, Gas-N-Go, Morelli Mansion, Warren's Cabin, State House, Nenjac High.
+  - Chromebooks automatically use the lighter "low" graphics. On a strong computer,
+    Menu → Settings → Graphics → high (then reload) for shadows, more trees and grass.
 
 NEW IN 5.3: NENJACTALE (3D RPG)
   Play → 🏝 Nenjactale. A big 3D Nenjac Island with cardboard-cutout characters,
