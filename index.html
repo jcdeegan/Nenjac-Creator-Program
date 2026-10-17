@@ -39421,13 +39421,29 @@ const FG_SPH=(()=>{ const P=[]; for(let i=0;i<=8;i++){ const v=Math.PI*i/8; for(
 function fgHull(P){ if(P.length<3) return P; P=[...P].sort((a,b)=>a[0]-b[0]||a[1]-b[1]); const cr=(o,a,b)=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]); const lo=[],up=[]; for(const p of P){ while(lo.length>=2&&cr(lo[lo.length-2],lo[lo.length-1],p)<=0) lo.pop(); lo.push(p); } for(let i=P.length-1;i>=0;i--){ const p=P[i]; while(up.length>=2&&cr(up[up.length-2],up[up.length-1],p)<=0) up.pop(); up.push(p); } up.pop(); lo.pop(); return lo.concat(up); }
 /* project every part to a 2D outline, sorted back to front */
 function fgOutlines(F,Wd,Ht,S){ const {parts,W,d}=fgParts(F); let C=fgCam(F,Wd,Ht,S);
-  if(F.ground!==false){ /* stand on the floor (or hover for flying poses) */ let lo=1e9; parts.forEach(p=>{ if(p.k==='cap'){ lo=Math.min(lo,p.a[1]-p.ra,p.b[1]-p.rb); } else if(p.k==='ell'){ lo=Math.min(lo,p.c[1]-Math.max(...p.r)*.8); } }); const dy=-lo+(F.air||0); parts.forEach(p=>{ if(p.k==='cap'){ p.a=[p.a[0],p.a[1]+dy,p.a[2]]; p.b=[p.b[0],p.b[1]+dy,p.b[2]]; } else if(p.k==='ell') p.c=[p.c[0],p.c[1]+dy,p.c[2]]; else p.pts=p.pts.map(q=>[q[0],q[1]+dy,q[2]]); }); Object.values(W).forEach(w=>w.p=[w.p[0],w.p[1]+dy,w.p[2]]); }
-  const O=parts.map(p=>{ let pts=[], z=0;
+  let dy=0; if(F.ground!==false){ /* stand on the floor (or hover for flying poses) */ let lo=1e9; parts.forEach(p=>{ if(p.k==='cap'){ lo=Math.min(lo,p.a[1]-p.ra,p.b[1]-p.rb); } else if(p.k==='ell'){ lo=Math.min(lo,p.c[1]-Math.max(...p.r)*.8); } }); dy=(S&&S.dyLock!=null)?S.dyLock:-lo+(F.air||0); parts.forEach(p=>{ if(p.k==='cap'){ p.a=[p.a[0],p.a[1]+dy,p.a[2]]; p.b=[p.b[0],p.b[1]+dy,p.b[2]]; } else if(p.k==='ell') p.c=[p.c[0],p.c[1]+dy,p.c[2]]; else p.pts=p.pts.map(q=>[q[0],q[1]+dy,q[2]]); }); Object.values(W).forEach(w=>w.p=[w.p[0],w.p[1]+dy,w.p[2]]); }
+  let O=parts.map(p=>{ let pts=[], z=0;
     if(p.k==='cap'){ const A=C.proj(p.a), Bp=C.proj(p.b), ra=p.ra*C.F/A[2], rb=p.rb*C.F/Bp[2]; for(let i=0;i<20;i++){ const a=i/20*Math.PI*2; pts.push([A[0]+Math.cos(a)*ra,A[1]+Math.sin(a)*ra],[Bp[0]+Math.cos(a)*rb,Bp[1]+Math.sin(a)*rb]); } z=(A[2]+Bp[2])/2; }
     else if(p.k==='ell'){ FG_SPH.forEach(s=>{ const w=fgV.add(p.c,fgQ.rot(p.q,[s[0]*p.r[0],s[1]*p.r[1],s[2]*p.r[2]])); pts.push(C.proj(w)); }); z=C.proj(p.c)[2]; }
     else { pts=p.pts.map(q=>C.proj(q)); z=pts.reduce((a,q)=>a+q[2],0)/pts.length; return {...p,poly:pts.map(q=>[q[0],q[1]]),z}; }
-    return {...p,poly:fgHull(pts.map(q=>[q[0],q[1]])),z:z+(p.bias||0)}; }).sort((a,b)=>b.z-a.z);
-  const J={}; Object.entries(W).forEach(([k,w])=>J[k]=C.proj(w.p)); return {O,J,C,W,d}; }
+    return {...p,poly:fgHull(pts.map(q=>[q[0],q[1]])),z:z+(p.bias||0)}; }); fgDepthSort(O,C);
+  const J={}; Object.entries(W).forEach(([k,w])=>J[k]=C.proj(w.p)); return {O,J,C,W,d,dy}; }
+/* depth ordering: for every pair of parts that overlap on screen, compare how far each
+   surface is from the camera right where they overlap, then draw far → near */
+function fgSeg(p,C){ const f=C.f, dep=v=>fgV.dot(fgV.sub(v,C.pos),f);
+  if(p.k==='cap') return {a:p.a,b:p.b,ra:p.ra,rb:p.rb,dep};
+  if(p.k==='ell'){ const ex=Math.hypot(...[0,1,2].map(i=>{ const ax=[0,0,0]; ax[i]=1; return p.r[i]*fgV.dot(fgQ.rot(p.q,ax),f); })); return {a:p.c,b:p.c,ra:ex,rb:ex,dep}; }
+  const P=p.pts, top=fgV.mul(fgV.add(P[0],P[1]),.5); return {a:top,b:P[3],ra:0,rb:0,dep}; }
+function fgSegClosest(A,B,Cp,Dp){ /* closest params between 2D segments AB and CD (sampled, robust) */ let best=1e18, bt=0, bu=0; for(let i=0;i<=8;i++){ const t=i/8, x=A[0]+(B[0]-A[0])*t, y=A[1]+(B[1]-A[1])*t; const dx=Dp[0]-Cp[0], dy=Dp[1]-Cp[1], L=dx*dx+dy*dy; const u=L?clamp(((x-Cp[0])*dx+(y-Cp[1])*dy)/L,0,1):0; const d=(x-Cp[0]-dx*u)**2+(y-Cp[1]-dy*u)**2; if(d<best){ best=d; bt=t; bu=u; } } return [bt,bu]; }
+function fgDepthSort(O,C){ const n=O.length; O.forEach(o=>{ let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9; o.poly.forEach(q=>{ x0=Math.min(x0,q[0]); y0=Math.min(y0,q[1]); x1=Math.max(x1,q[0]); y1=Math.max(y1,q[1]); }); o.bb=[x0,y0,x1,y1]; o.sg=fgSeg(o,C); o.s2=[C.proj(o.sg.a),C.proj(o.sg.b)]; });
+  const out=O.map(()=>[]), indeg=new Array(n).fill(0), lerp=(a,b,t)=>fgV.add(a,fgV.mul(fgV.sub(b,a),t));
+  for(let i=0;i<n;i++) for(let j=i+1;j<n;j++){ const A=O[i], B=O[j]; if(A.bb[2]<B.bb[0]||B.bb[2]<A.bb[0]||A.bb[3]<B.bb[1]||B.bb[3]<A.bb[1]||A.poly.length<3||B.poly.length<3) continue;
+    const [t,u]=fgSegClosest(A.s2[0],A.s2[1],B.s2[0],B.s2[1]), Pa=lerp(A.sg.a,A.sg.b,t), Pb=lerp(B.sg.a,B.sg.b,u), ra=A.sg.ra+(A.sg.rb-A.sg.ra)*t, rb=B.sg.ra+(B.sg.rb-B.sg.ra)*u;
+    const joined=fgV.len(fgV.sub(Pa,Pb))<Math.min(ra,rb)*.9+.04&&(t<.06||t>.94)&&(u<.06||u>.94);
+    let far; if(joined) far=A.z>=B.z?i:j; else { const da=A.sg.dep(Pa)-ra, db=B.sg.dep(Pb)-rb; if(Math.abs(da-db)<1e-4) far=A.z>=B.z?i:j; else far=da>db?i:j; }
+    const near=far===i?j:i; out[far].push(near); indeg[near]++; }
+  const done=new Array(n).fill(false), res=[]; for(let k=0;k<n;k++){ let pick=-1; for(let i=0;i<n;i++) if(!done[i]&&indeg[i]===0&&(pick<0||O[i].z>O[pick].z)) pick=i; if(pick<0) for(let i=0;i<n;i++) if(!done[i]&&(pick<0||O[i].z>O[pick].z)) pick=i; done[pick]=true; res.push(O[pick]); out[pick].forEach(m=>indeg[m]--); }
+  O.splice(0,n,...res); return O; }
 function fgShade(hex,k){ const c=hexRGB(hex); return '#'+c.map(v=>Math.round(clamp(v*k,0,255)).toString(16).padStart(2,'0')).join(''); }
 
 /* ---------- drawing ---------- */
@@ -39469,25 +39485,29 @@ function fgLoop(){ const w=$('#fgWrap'); if(!w||!w.classList.contains('on')) ret
   requestAnimationFrame(fgLoop); }
 function fgHit(x,y){ const order=['haL','haR','ftL','ftR','head','elL','elR','knL','knR','neck','chest','shL','shR','pelvis']; for(const j of order){ const p=FG.R&&FG.R.J[j]; if(p&&Math.hypot(p[0]-x,p[1]-y)<13) return j; } return null; }
 function fgSetWorldQ(j,qw){ const p=FG_PAR[j]; const W=fgSolve(FG.F).W; FG.F.pose[j]=fgQ.norm(p?fgQ.mul(fgQ.conj(W[p].q),qw):qw); }
-function fgDragJoint(j,mx,my){ const R=FG.R, C=R.C, J=R.J;
+function fgFrame(){ return fgOutlines(FG.F,FG.W,FG.H,FG.S); }
+function fgDragJoint(j,mx,my){ const R=fgFrame(), C=R.C, J=R.J;
   if(j==='pelvis'){ /* spin the whole body */ const dx=mx-FG.drag.lx; FG.drag.lx=mx; FG.F.pose.pelvis=fgQ.norm(fgQ.mul(fgQ.axis([0,1,0],dx*.012),FG.F.pose.pelvis)); return; }
   const ends={haL:['shL','elL'],haR:['shR','elR'],ftL:['hipL','knL'],ftR:['hipR','knR']};
-  if(FG.ik&&ends[j]){ const [a,b]=ends[j], Wd=fgSolve(FG.F).W, A=Wd[a].p, E=Wd[b].p, T0=Wd[j].p; const z=C.proj(T0)[2]; const X=fgV.add(fgV.add(C.pos,fgV.mul(C.f,z)),fgV.add(fgV.mul(C.r,(mx-C.cx)*z/C.F),fgV.mul(C.u,-(my-C.cy)*z/C.F)));
-    const L1=fgV.len(fgV.sub(E,A)), L2=fgV.len(fgV.sub(T0,E)); let to=fgV.sub(X,A); const dd=clamp(fgV.len(to),.05,L1+L2-.001); const dir=fgV.norm(to); let n=fgV.cross(to,fgV.sub(E,A)); if(fgV.len(n)<1e-4) n=C.f; n=fgV.norm(n);
-    const aa=(L1*L1-L2*L2+dd*dd)/(2*dd), hh=Math.sqrt(Math.max(0,L1*L1-aa*aa)); let bd=fgV.norm(fgV.cross(n,dir)); if(fgV.dot(bd,fgV.sub(E,A))<0) bd=fgV.mul(bd,-1);
-    const En=fgV.add(fgV.add(A,fgV.mul(dir,aa)),fgV.mul(bd,hh)), Tn=fgV.add(A,fgV.mul(dir,dd));
-    const q1=fgQ.fromTo(fgV.sub(E,A),fgV.sub(En,A)); const upW=fgQ.mul(q1,Wd[a].q); fgSetWorldQ(a,upW);
-    const W2=fgSolve(FG.F).W; const q2=fgQ.fromTo(fgV.sub(W2[j].p,W2[b].p),fgV.sub(Tn,W2[b].p)); fgSetWorldQ(b,fgQ.mul(q2,W2[b].q)); FG.sel=a; return; }
-  /* FK: rotate the parent bone in the screen plane */ const P=FG_PAR[j]==='chest'&&(j==='shL'||j==='shR')?null:FG_PAR[j]; const bone=j==='head'?'neck':P; if(!bone) return; const pv=J[bone], cj=J[j]; if(!pv||!cj) return;
-  const a0=Math.atan2(cj[1]-pv[1],cj[0]-pv[0]), a1=Math.atan2(my-pv[1],mx-pv[0]); let da=a1-a0; if(da>Math.PI) da-=Math.PI*2; if(da<-Math.PI) da+=Math.PI*2;
-  const Wd=fgSolve(FG.F).W; fgSetWorldQ(bone,fgQ.mul(fgQ.axis(C.f,-da),Wd[bone].q)); FG.sel=bone; }
+  if(FG.ik&&ends[j]){ const [a,b]=ends[j], Wd=R.W, A=Wd[a].p, E=Wd[b].p, T0=Wd[j].p; const z=C.proj(T0)[2]; const X=fgV.add(fgV.add(C.pos,fgV.mul(C.f,z)),fgV.add(fgV.mul(C.r,(mx-C.cx)*z/C.F),fgV.mul(C.u,-(my-C.cy)*z/C.F)));
+    const L1=fgV.len(fgV.sub(E,A)), L2=fgV.len(fgV.sub(T0,E)); const to=fgV.sub(X,A); const dd=clamp(fgV.len(to),Math.abs(L1-L2)+.02,L1+L2-.001); const dir=fgV.norm(to);
+    /* keep the elbow/knee bending the way it already bends */ let pole=fgV.sub(E,fgV.add(A,fgV.mul(dir,fgV.dot(fgV.sub(E,A),dir)))); if(fgV.len(pole)<1e-3) pole=j[0]==='f'?fgQ.rot(Wd.pelvis.q,[0,0,1]):fgQ.rot(Wd.chest.q,[0,0,-1]); pole=fgV.norm(fgV.sub(pole,fgV.mul(dir,fgV.dot(pole,dir))));
+    const aa=(L1*L1-L2*L2+dd*dd)/(2*dd), hh=Math.sqrt(Math.max(0,L1*L1-aa*aa));
+    const En=fgV.add(fgV.add(A,fgV.mul(dir,aa)),fgV.mul(pole,hh)), Tn=fgV.add(A,fgV.mul(dir,dd));
+    const q1=fgQ.fromTo(fgV.sub(E,A),fgV.sub(En,A)); fgSetWorldQ(a,fgQ.mul(q1,Wd[a].q));
+    const W2=fgSolve(FG.F).W, off=[0,R.dy,0], Ep=fgV.add(W2[b].p,off), Tp=fgV.add(W2[j].p,off); const q2=fgQ.fromTo(fgV.sub(Tp,Ep),fgV.sub(Tn,Ep)); fgSetWorldQ(b,fgQ.mul(q2,W2[b].q)); FG.sel=a; return; }
+  /* FK: swing the bone above the dot so the dot follows the mouse */ const bone=j==='head'?'neck':(j==='shL'||j==='shR')?'chest':FG_PAR[j]; if(!bone) return; const pv=J[bone], cj=J[j]; if(!pv||!cj) return;
+  if(Math.hypot(mx-pv[0],my-pv[1])<14||Math.hypot(cj[0]-pv[0],cj[1]-pv[1])<4) return; /* too close to the pivot = unstable */
+  const a0=Math.atan2(cj[1]-pv[1],cj[0]-pv[0]), a1=Math.atan2(my-pv[1],mx-pv[0]); let da=a1-a0; if(da>Math.PI) da-=Math.PI*2; if(da<-Math.PI) da+=Math.PI*2; da=clamp(da,-.35,.35)*(FG_ROTSIGN);
+  fgSetWorldQ(bone,fgQ.mul(fgQ.axis(C.f,da),R.W[bone].q)); FG.sel=bone; }
+let FG_ROTSIGN=1;
 function fgBind(){ const cv=$('#fgCv'); let pinch=null; const P=new Map();
   cv.addEventListener('pointerdown',e=>{ const r=cv.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top; cv.setPointerCapture(e.pointerId); P.set(e.pointerId,[x,y]); if(P.size===2){ const [a,b]=[...P.values()]; pinch={d:Math.hypot(a[0]-b[0],a[1]-b[1]),z:FG.F.cam.zoom}; FG.drag=null; return; }
-    const j=e.button===0?fgHit(x,y):null; FG.drag={j,x,y,lx:x,pan:e.button===2||e.shiftKey&&!j,yaw:FG.F.cam.yaw,pitch:FG.F.cam.pitch,ox:FG.S.ox,oy:FG.S.oy}; if(j){ FG.sel=j==='pelvis'?'pelvis':j; fgPane(); } });
+    const j=e.button===0?fgHit(x,y):null; FG.drag={j,x,y,lx:x,pan:e.button===2||e.shiftKey&&!j,yaw:FG.F.cam.yaw,pitch:FG.F.cam.pitch,ox:FG.S.ox,oy:FG.S.oy}; if(j&&FG.R) FG.S.dyLock=FG.R.dy; if(j){ FG.sel=j==='pelvis'?'pelvis':j; fgPane(); } });
   cv.addEventListener('pointermove',e=>{ const r=cv.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top; if(P.has(e.pointerId)) P.set(e.pointerId,[x,y]); if(pinch&&P.size===2){ const [a,b]=[...P.values()]; FG.F.cam.zoom=clamp(pinch.z*Math.hypot(a[0]-b[0],a[1]-b[1])/pinch.d,.3,4); return; }
     const D2=FG.drag; if(!D2){ cv.style.cursor=fgHit(x,y)?'grab':'default'; return; } if(D2.j){ fgDragJoint(D2.j,x,y); FG.paneT=FG.paneT||setTimeout(()=>{ FG.paneT=null; fgPaneSliders(); },80); return; }
     if(D2.pan){ FG.S.ox=D2.ox+(x-D2.x); FG.S.oy=D2.oy+(y-D2.y); return; } FG.F.cam.yaw=D2.yaw-(x-D2.x)*.01; FG.F.cam.pitch=clamp(D2.pitch+(y-D2.y)*.008,-1.45,1.45); });
-  const up=e=>{ P.delete(e.pointerId); if(P.size<2) pinch=null; if(FG.drag){ FG.drag=null; fgPush(); fgPaneSliders(); } }; cv.addEventListener('pointerup',up); cv.addEventListener('pointercancel',up); cv.addEventListener('contextmenu',e=>e.preventDefault());
+  const up=e=>{ P.delete(e.pointerId); if(P.size<2) pinch=null; delete FG.S.dyLock; if(FG.drag){ FG.drag=null; fgPush(); fgPaneSliders(); } }; cv.addEventListener('pointerup',up); cv.addEventListener('pointercancel',up); cv.addEventListener('contextmenu',e=>e.preventDefault());
   cv.addEventListener('wheel',e=>{ e.preventDefault(); FG.F.cam.zoom=clamp(FG.F.cam.zoom*Math.exp(-e.deltaY*.0012),.3,4); },{passive:false});
   document.addEventListener('keydown',e=>{ if(!$('#fgWrap')?.classList.contains('on')) return; if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)) return; if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='z'){ e.preventDefault(); e.stopPropagation(); fgUndo(e.shiftKey?1:-1); } if(e.key==='Escape'){ e.stopPropagation(); fgClose(); } },true);
   const w=$('#fgWrap'); w.addEventListener('click',fgClick); w.addEventListener('input',fgInput); w.addEventListener('change',()=>fgPush()); }
