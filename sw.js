@@ -2,7 +2,7 @@
    The app page always tries the network first (so updates show up right away)
    and falls back to the saved copy when you're offline. Art, music and fonts are
    saved the first time they load. */
-const CACHE = 'nenjac-creator-v5-8';
+const CACHE = 'nenjac-creator-v5-8-1';
 const CORE = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).catch(() => {}));
