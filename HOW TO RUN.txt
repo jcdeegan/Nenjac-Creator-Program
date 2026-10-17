@@ -1,4 +1,4 @@
-NENJAC CREATOR 5.4: how to run it
+NENJAC CREATOR 5.5: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -85,6 +85,23 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 5.5: THE JCU MULTIVERSE
+  Hit 🌌 MULTIVERSE in the top bar. It's its own space: the rest of the app is the
+  Nenjac Universe, and this is where every OTHER universe lives.
+  - JCU-0000 = real life (unchanged), JCU-0001 = the Everything Universe (fills itself
+    in with everything from every universe), JCU-0002 = Nenjac (auto-filled from your
+    Bible, lore and episodes). Every universe you make gets the next number.
+  - ＋ Universe: Alternate Earth (real life except what you change), Original universe
+    (pick genres, optional starter kit) or Pocket dimension.
+  - Each universe: Overview, Catalog (characters, teams, worlds, places, species,
+    powers, items, events, stories, lore, or make your own type), Timeline, Places
+    tree, Web of connections, Notes.
+  - Quick add: type a name + Enter to brain-dump. 📋 Paste a list adds a bunch at once.
+  - 🪞 Variants: make a version of anyone in another universe; they stay linked.
+  - ⬇ Export: the whole multiverse as ONE text file, or a .jcu.json backup.
+  - It saves in this browser (its own storage, separate from the rest of the app) and
+    is included in the full backup (⚙ Settings → Backup).
 
 NEW IN 5.4: NENJACTALE GLOW-UP
   - New sky with sun, moon, stars and clouds; full day/night (towns light up at night).
