@@ -3635,6 +3635,160 @@ body.sh-on .sh{height:calc(100dvh - 210px)}
 /* 5.9 iPhone writer setup */
 .ph-sec{margin:14px 0 6px}.ph-qr{background:#fff;padding:10px;width:230px;max-width:100%;border:3px solid #000;border-radius:12px;margin:10px 0}.ph-qr svg{display:block;width:100%;height:auto}.ph-steps{margin:6px 0 8px;padding-left:20px}.ph-steps li{margin:3px 0}
 
+/* 5.9.1 Season Planner */
+.sn{max-width:1500px;margin:0 auto;color:#121212}
+.sn h1{font:400 26px var(--display);margin:0}
+.sn-head{padding:14px 16px;margin-bottom:14px;border-top:8px solid var(--sc)}
+.sn-row1{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.sn-seasons{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
+.sn-stab{font:400 13px var(--display);padding:6px 12px;border:2.5px solid #000;border-radius:999px;background:#fff;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.sn-stab small{font:700 11px var(--ui);background:#0001;border-radius:8px;padding:1px 6px}
+.sn-stab.on{background:var(--sc);color:#fff;box-shadow:2px 2px 0 #000}.sn-stab.on small{background:#fff3}
+.sn-stab.add{border-style:dashed;background:none}
+.sn-row2{display:flex;gap:10px;align-items:center;margin-top:10px}
+.sn-name{font:400 24px var(--display);border:0;border-bottom:3px dashed #0002;background:none;outline:none;width:240px;padding:2px 0}
+.sn-name:focus{border-bottom-color:var(--sc)}
+.sn-goal{flex:1}
+.sn-row2 input[type=color]{width:42px;height:38px;border:2.5px solid #000;border-radius:9px;padding:2px;background:#fff}
+.sn-arcs{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:10px}
+.sn-arcs>b{font:400 12px var(--display);margin-right:4px}
+.sn-arc{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;border:2px solid var(--ac);color:#121212;background:color-mix(in srgb,var(--ac) 14%,#fff);border-radius:999px;padding:3px 6px 3px 10px;cursor:pointer;user-select:none}
+.sn-arc::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--ac)}
+.sn-arc.on{background:var(--ac);color:#fff}
+.sn-arc i{font-style:normal;opacity:.5;padding:0 3px}.sn-arc i:hover{opacity:1}
+.sn-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.sn-seg{display:flex;border:2.5px solid #000;border-radius:11px;overflow:hidden;box-shadow:2px 2px 0 #000}
+.sn-seg button{font:400 12px var(--display);padding:7px 12px;background:#fff;border:0;border-right:2px solid #000;cursor:pointer}
+.sn-seg button:last-child{border-right:0}
+.sn-seg button.on{background:var(--sun)}
+.sn-seg em{font-style:normal;background:#e03131;color:#fff;border-radius:8px;padding:0 6px;margin-left:3px;font:700 11px var(--ui)}
+.sn-hi{width:auto!important;max-width:200px;padding:6px 8px!important}
+.sn-stats{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-top:12px;font-size:13px}
+.sn-ready{position:relative;width:150px;height:22px;border:2px solid #000;border-radius:7px;overflow:hidden;background:#f1f3f5;display:grid;place-items:center}
+.sn-ready i{position:absolute;left:0;top:0;bottom:0;background:#69db7c}.sn-ready b{position:relative;font-size:12px}
+.sn-stbar{display:flex;flex:1;min-width:200px;height:22px;border:2px solid #000;border-radius:7px;overflow:hidden}
+.sn-stbar i{font-style:normal;font-size:11px;font-weight:700;display:grid;place-items:center;white-space:nowrap;overflow:hidden;border-right:1.5px solid #0004}
+.sn-cols{display:grid;grid-template-columns:270px 1fr;gap:14px;align-items:start}
+.sn-pool{padding:10px;position:sticky;top:0;max-height:calc(100vh - 220px);display:flex;flex-direction:column;gap:8px}
+.sn-pool.sn-droppool{outline:4px dashed #e03131;outline-offset:3px}
+.sn-ptabs{display:flex;gap:4px}
+.sn-ptabs button{flex:1;font:400 12px var(--display);padding:7px 4px;border:2px solid #000;border-radius:9px;background:#fff;cursor:pointer}
+.sn-ptabs button.on{background:var(--sun)}
+.sn-ptabs small{font:700 11px var(--ui);opacity:.6}
+.sn-plist{overflow:auto;flex:1;min-height:80px;display:flex;flex-direction:column;gap:6px}
+.sn-pitem{display:flex;gap:8px;align-items:center;background:#fff;border:2px solid #000;border-radius:10px;padding:6px 6px 6px 8px;cursor:grab;touch-action:pan-y}
+.sn-pitem:hover{background:#fff9db}
+.sn-pitem b{display:block;font-size:13px;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sn-pitem small{display:block;font-size:11px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sn-pitem small em{font-style:normal;background:#e7f5ff;border-radius:5px;padding:0 4px;color:#1864ab}
+.sn-pitem .grow{min-width:0}
+.sn-pst{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-size:13px;flex:none;border:1.5px solid #0003}
+.sn-padd{flex:none;width:28px;height:28px;border-radius:8px;border:2px solid #000;background:var(--sun);font-weight:900;cursor:pointer}
+.sn-quick p{margin:4px 2px 0}
+.sn-board{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;min-height:200px;border-radius:14px;padding:2px}
+.sn-board.sn-dropend .sn-addtile{outline:4px solid var(--sign);outline-offset:2px}
+.sn-card{position:relative;background:#fff;border:3px solid #000;border-radius:14px;box-shadow:4px 4px 0 #000;padding:10px 11px 12px;cursor:grab;display:flex;flex-direction:column;gap:5px;border-top:9px solid var(--st);touch-action:pan-y;transition:opacity .15s,transform .12s}
+.sn-card:hover{transform:translateY(-2px)}
+.sn-card:focus{outline:3px solid var(--sign);outline-offset:2px}
+.sn-card.sel{box-shadow:4px 4px 0 var(--sign)}
+.sn-card.dim{opacity:.32}
+.sn-card.sn-dragging{opacity:.25}
+.sn-card.sn-dropb{box-shadow:-10px 0 0 -4px var(--sign),4px 4px 0 #000}
+.sn-ghost{position:fixed;left:0;top:0;z-index:9999;pointer-events:none;opacity:.92;box-shadow:10px 12px 0 #0005}
+body.sn-drag,body.sn-drag *{cursor:grabbing!important;user-select:none}
+.sn-ctop{display:flex;align-items:center;gap:6px}
+.sn-num{font:400 22px/1 var(--display);background:#121212;color:#fff;border-radius:8px;padding:4px 7px}
+.sn-num.big{font-size:18px}
+.sn-st{font-size:11px;font-weight:700;background:color-mix(in srgb,var(--st) 30%,#fff);border:1.5px solid var(--st);border-radius:999px;padding:2px 8px}
+.sn-st small{opacity:.55;font-weight:400}
+.sn-lock{margin-left:auto;font-size:14px}
+.sn-warn{margin-left:auto;font-size:11px;font-weight:800;background:#ffe3e3;color:#c92a2a;border-radius:7px;padding:2px 6px}
+.sn-lock+.sn-warn{margin-left:0}
+.sn-kind{font-size:11px;font-weight:700;color:var(--muted)}
+.sn-card h3{font:400 16px/1.15 var(--display);margin:0;overflow-wrap:anywhere}
+.sn-card p{margin:0;font-size:13px;color:#495057;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.sn-tags{display:flex;flex-wrap:wrap;gap:4px}
+.sn-tags span{font-size:11px;font-weight:700;background:#f1f3f5;border-radius:6px;padding:1px 6px}
+.sn-faces{display:flex;align-items:center;gap:2px}
+.sn-faces small{font-size:11px;color:var(--muted);margin-left:4px}
+.sn-face{width:28px;height:28px;border-radius:50%;overflow:hidden;border:2px solid var(--c,#999);background:#fff;flex:none;display:inline-grid;place-items:center}
+.sn-face>*{width:100%!important;height:100%!important;font-size:10px!important}
+.sn-face img{object-fit:contain}
+.sn-foot{display:flex;align-items:center;gap:8px;margin-top:auto;font-size:11px;color:var(--muted);font-weight:700}
+.sn-bar{flex:1;height:8px;border-radius:5px;background:#e9ecef;overflow:hidden;border:1.5px solid #0002}
+.sn-bar i{display:block;height:100%;background:#40c057}
+.sn-bar.sm{flex:0 0 70px}
+.sn-threads{display:flex;gap:3px;margin:2px -2px -4px}
+.sn-threads i{flex:1;height:6px;border-radius:3px}
+.sn-move{position:absolute;right:6px;bottom:6px;display:none;gap:3px}
+.sn-card:hover .sn-move,.sn-card:focus-within .sn-move{display:flex}
+.sn-move button{width:26px;height:24px;border:2px solid #000;border-radius:7px;background:var(--sun);font-size:11px;cursor:pointer}
+.sn-addtile{border:3px dashed #0005;border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px;align-items:stretch;justify-content:center;min-height:150px;background:#ffffff80}
+.sn-addtile b{font:400 14px var(--display);text-align:center}
+.sn-drop-hint{grid-column:1/-1;border:3px dashed #0004;border-radius:14px;padding:30px;text-align:center;color:var(--muted);background:#fff8}
+.sn-help{margin:12px 2px}
+.sn-pad{padding:14px 16px}
+.sn-pad h2{font:400 20px var(--display);margin:0 0 6px}
+.sn-gridwrap{overflow:auto;margin-top:10px}
+.sn-grid{border-collapse:separate;border-spacing:3px}
+.sn-grid th{font-size:11px;text-align:left;white-space:nowrap;padding:2px 6px}
+.sn-grid thead th{text-align:center;vertical-align:bottom}
+.sn-grid thead th span{display:block;font:400 13px var(--display)}
+.sn-grid thead th small{display:block;font-weight:400;color:var(--muted);max-width:70px;overflow:hidden;text-overflow:ellipsis}
+.sn-grid td{width:44px;height:30px;border-radius:7px;background:#f1f3f5;cursor:pointer;text-align:center}
+.sn-grid td.on{background:var(--ac)}
+.sn-grid td.gap{background:repeating-linear-gradient(45deg,#ffe3e3 0 5px,#fff 5px 10px)}
+.sn-grid td.ch{cursor:default;background:#f8f9fa}
+.sn-grid td.ch.on{background:color-mix(in srgb,var(--ac) 18%,#fff)}
+.sn-grid td.ch i{display:inline-block;width:20px;height:20px;border-radius:50%;background:var(--ac);transform:scale(var(--s))}
+.sn-gsep th{padding-top:14px!important;font:400 12px var(--display)!important}
+.sn-crow{display:inline-flex;align-items:center;gap:6px;font-weight:700}
+.sn-crow .sn-face{width:22px;height:22px}
+.sn-sched-tools{flex-wrap:wrap;gap:10px;margin:8px 0}
+.sn-sched-tools label{display:flex;gap:6px;align-items:center;font-size:13px;font-weight:700}
+.sn-sched-tools .txt{width:auto}
+.sn-month{font:400 15px var(--display);margin:16px 0 6px;border-bottom:2px solid #000;padding-bottom:3px}
+.sn-srow{display:flex;align-items:center;gap:10px;padding:5px 4px;border-radius:9px}
+.sn-srow:hover{background:#f8f9fa}
+.sn-srow.late{background:#fff5f5}
+.sn-srow input{width:150px!important;padding:5px 8px!important}
+.sn-srow b{font:400 14px var(--display);width:36px}
+.sn-stitle{cursor:pointer;font-weight:700}.sn-stitle:hover{text-decoration:underline}
+.sn-srow small{width:90px;text-align:right;color:var(--muted);font-weight:700}
+.sn-pill{font-size:11px;font-weight:700;border-radius:999px;padding:2px 8px;white-space:nowrap}
+.sn-find{display:flex;gap:10px;align-items:center;padding:8px 10px;border-radius:10px;border:2px solid #0001;margin-bottom:6px}
+.sn-find>span{font-size:20px}.sn-find p{margin:0;font-size:14px}
+.sn-find.bad{background:#fff5f5;border-color:#ffa8a8}.sn-find.warn{background:#fff9db;border-color:#ffe066}.sn-find.info{background:#f8f9fa}
+.sn-good{background:#ebfbee;border:2px solid #8ce99a;border-radius:10px;padding:12px;font-weight:700}
+.sn-empty{padding:30px;text-align:center;max-width:620px;margin:40px auto}
+.sn-empty p{font-size:16px}
+.sn-opts{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.sn-opts label{font-size:14px;cursor:pointer}
+.sn-cmp{max-height:44vh;overflow:auto;margin-top:12px;border:2px solid #000;border-radius:10px}
+.sn-cmprow{display:flex;gap:10px;align-items:center;padding:6px 10px;border-bottom:1px solid #0001}
+.sn-cmprow b{font:400 13px var(--display);width:34px}.sn-cmprow small{color:var(--muted);font-weight:700}
+.sn-cmprow.mv{background:#fff9db}
+.sn-vlist{margin-top:12px;display:flex;flex-direction:column;gap:6px}
+.sn-vrow{display:flex;gap:8px;align-items:center;border:2px solid #000;border-radius:10px;padding:8px}
+.sn-vrow b{display:block}.sn-vrow small{color:var(--muted)}
+.sn-morelist{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.sn-morelist .btn{justify-content:flex-start}
+.sn-dr .lab{margin-top:12px}
+.sn-link{margin-top:10px;padding:10px;border:2px dashed #0003;border-radius:10px;font-size:14px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.sn-stpick{display:flex;flex-wrap:wrap;gap:5px}
+.sn-stpick button{font-size:12px;font-weight:700;border:2px solid #000;border-radius:999px;padding:4px 10px;background:#fff;cursor:pointer}
+.sn-stpick button.on{background:var(--st,var(--sun))}
+.sn-chipset{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.sn-chipset .chip.on{background:var(--sun)}
+.sn-chipset .sn-ac.on{background:var(--ac);color:#fff}
+.sn-cchip{gap:5px;padding-left:3px}.sn-cchip .sn-face{width:22px;height:22px}.sn-cchip i{font-style:normal;cursor:pointer;opacity:.6}
+.sn-deps{display:flex;flex-direction:column;gap:6px}
+.sn-dep{display:flex;gap:8px;align-items:center;font-size:13px;font-weight:700;background:#f1f3f5;border-radius:8px;padding:6px 8px}
+.sn-dep i{margin-left:auto;font-style:normal;cursor:pointer}
+.sn-dr-move{margin-top:14px;gap:6px}
+@media (max-width:900px){.sn-cols{grid-template-columns:1fr}.sn-pool{position:static;max-height:none}.sn-name{width:160px}}
+body.night .sn-card,body.night .sn-pitem,body.night .sn-head,body.night .sn-pad,body.night .sn-pool{color:#121212}
+
 </style>
 </head>
 <body data-mood="rehearsal">
@@ -11497,7 +11651,7 @@ drawWheel=function(){ whRender(); }; spinWheel=function(){ whSpin(); };
    points, storage safety, one-tab guard, error catcher, offline app,
    help menu, what's new, accessibility.
    =================================================================== */
-const APP_NAME='Nenjac Creator', APP_VER='5.9', BACKUP_FORMAT=2;
+const APP_NAME='Nenjac Creator', APP_VER='5.9.1', BACKUP_FORMAT=2;
 const showName = () => (S.settings.showName||'').trim() || 'Nenjac';
 S.version = Math.max(S.version||1, 4);
 const ONLINE_APP = /^https?:$/.test(location.protocol);
@@ -11507,6 +11661,11 @@ const ONLINE_APP = /^https?:$/.test(location.protocol);
 
 /* ---------- WHAT'S NEW ---------- */
 const CHANGELOG=[
+  {v:'5.9.1',title:'🗂 Season Planner',items:[
+    ['🗂','Plan a season (Write → Seasons)','Drag episodes into order on a board. Anything fits: finished scripts, half-written drafts, Episode Ideas from the Bible (including the phone\'s Ideas tab), or a placeholder title like "Christmas episode?". Every card shows its number, how done it is (figured out from the script, voice takes and animations, or set by you), tags, arcs, who\'s in it, air date and length.'],
+    ['🧵','Arcs and who shows up where','Make story arcs ("Mafia war", "Dean & Starr") and mark which episodes they\'re in. The Arcs view is a grid of every arc and character across the season, with stripes where one disappears too long.'],
+    ['🪄','Suggest an order + Checkup','Lock episodes in place, say what has to come after what (and two-parters that go right after), tag the premiere, finale, big and filler episodes. Checkup finds problems with Fix buttons, and Suggest an order shuffles everything that isn\'t locked into an order that follows your rules. You see it before it changes anything.'],
+    ['📅','Air dates, versions and more','Pick a start date and how often episodes drop, and it fills in the dates (they match the Call Sheet). Save alternate orders as versions, duplicate a season as a what-if, renumber episode codes to match, print a one-page plan, undo anything. Seasons sync with a shared show.']]},
   {v:'5.9',title:'📱 Nenjac Writer for iPhone',items:[
     ['📱','A writing app for your phone','A separate app built from scratch for the iPhone: write scripts and edit the Bible on the go. It syncs through your shared show, so what you write on the phone shows up here (and the other way around). Install it from Settings → 👥 Shared show → 📱 iPhone writer: scan the QR code, then Add to Home Screen.'],
     ['💬','Write like a group chat','Tap a cast member\'s face and type their line. The next speaker is picked for you (ping-pong), "starr: hey" gives Starr the line, "(whispering)" adds how they say it, and scene names come from the ones you already use.'],
@@ -38795,9 +38954,13 @@ if(!FIRST_RUN&&!S.settings.seen58&&S.settings.seen59) setTimeout(()=>{ if($('#to
   const done=()=>{ ['seen58','seen57','seen56','seen55','seen54','seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello58')?.remove(); }; $('#h58p').onclick=()=>{ done(); go('multiverse'); setTimeout(()=>{ if(typeof hsOpen==='function') hsOpen('feed'); },700); }; $('#h58w').onclick=()=>{ done(); openWhatsNew(); }; $('#h58x').onclick=done; },3300);
 if(FIRST_RUN) S.settings.seen58=true;
 
-if(!FIRST_RUN&&!S.settings.seen59) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello59" role="status"><div class="h40-art">${castArt('Deegs')}</div><div><b>5.9: Nenjac Writer for iPhone.</b><small>Write scripts and edit the Bible on your phone, redesigned for touch. It syncs with this show. Set it up from Settings → 👥 Shared show → 📱 iPhone writer.</small><div class="row"><button class="btn sm primary" id="h59p">📱 Set it up</button><button class="btn sm" id="h59w">✨ What's new</button><button class="btn sm" id="h59x" aria-label="Dismiss">✕</button></div></div></div>`);
+if(!FIRST_RUN&&!S.settings.seen59&&S.settings.seen591) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello59" role="status"><div class="h40-art">${castArt('Deegs')}</div><div><b>5.9: Nenjac Writer for iPhone.</b><small>Write scripts and edit the Bible on your phone, redesigned for touch. It syncs with this show. Set it up from Settings → 👥 Shared show → 📱 iPhone writer.</small><div class="row"><button class="btn sm primary" id="h59p">📱 Set it up</button><button class="btn sm" id="h59w">✨ What's new</button><button class="btn sm" id="h59x" aria-label="Dismiss">✕</button></div></div></div>`);
   const done=()=>{ ['seen59','seen58','seen57','seen56','seen55','seen54','seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello59')?.remove(); }; $('#h59p').onclick=()=>{ done(); openSettings('shared'); }; $('#h59w').onclick=()=>{ done(); openWhatsNew(); }; $('#h59x').onclick=done; },3300);
 if(FIRST_RUN) S.settings.seen59=true;
+
+if(!FIRST_RUN&&!S.settings.seen591) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello591" role="status"><div class="h40-art">${castArt('Warren Outt')}</div><div><b>5.9.1: Season Planner.</b><small>Drag episodes into order and plan a whole season: scripts, drafts and ideas. Arcs, a checkup, suggested orders, air dates and versions.${S.settings.seen59?'':' (Plus 5.9: the Nenjac Writer app for iPhone, in Settings → 👥 Shared show.)'}</small><div class="row"><button class="btn sm primary" id="h591p">🗂 Plan a season</button><button class="btn sm" id="h591w">✨ What's new</button><button class="btn sm" id="h591x" aria-label="Dismiss">✕</button></div></div></div>`);
+  const done=()=>{ ['seen591','seen59','seen58','seen57','seen56','seen55','seen54','seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello591')?.remove(); }; $('#h591p').onclick=()=>{ done(); go('season'); }; $('#h591w').onclick=()=>{ done(); openWhatsNew(); }; $('#h591x').onclick=done; },3300);
+if(FIRST_RUN) S.settings.seen591=true;
 /* =====================================================================
    [JCU] THE JCU MULTIVERSE: its own little app inside the app.
    Every universe gets a number (JCU-0000 real life, JCU-0001 everything,
@@ -41208,6 +41371,359 @@ document.addEventListener('click',async e=>{ const b=e.target.closest('[data-ph]
   if(a==='copy'||a==='link'){ const t=a==='copy'?phCode():phLink(); try{ await navigator.clipboard.writeText(t); toast(a==='copy'?'📋 Setup code copied':'🔗 Link copied. Open it on your iPhone.'); }catch(_){ prompt('Copy this',t); } } });
 ACH.push({id:'phone1',e:'📱',n:'Pocket Writers\' Room',d:'Set up the iPhone writer'});
 { const _c=commands; commands=function(){ const C=_c(); C.push({ico:'📱',label:'iPhone writer setup (QR code)',run:()=>{ if(!syOn()){ toast('Connect a shared show first. The phone syncs through it.'); return openSettings('shared'); } openSettings('shared'); setTimeout(()=>$('[data-ph="qr"]')?.scrollIntoView({block:'center'}),300); },kw:'phone iphone mobile writer qr sync'}); return C; }; }
+/* ===================================================================
+   [SEASONS] 5.9.1 🗂 SEASON PLANNER
+   Put episodes in order and build a season out of anything: finished
+   scripts, half-written drafts, Episode Ideas from the Bible (and the
+   phone's Ideas tab), or just a placeholder title. It's THE plan, but
+   everything moves: drag cards, lock the ones that can't move, say what
+   has to come first, check the order for problems, let it suggest an
+   order, keep alternate versions, and schedule air dates.
+   Stored in S.seasons and synced with a shared show.
+   =================================================================== */
+S.seasons=S.seasons||[];
+if(typeof SY_MISC!=='undefined'&&!SY_MISC.includes('seasons')) SY_MISC.push('seasons');
+SCREEN_NAMES.season='Season Planner';
+addTab('season','🗂','Seasons',{before:'callsheet',door:{cls:'d12',h:'Season Planner',p:'Put episodes in order and plan a whole season. Finished scripts, half-done drafts and ideas all fit.',k:'PLAN',art:'Warren Outt'}});
+{ const w=HUBS.find(h=>h.k==='write'); if(w&&!w.s.includes('season')) w.s.splice(Math.max(0,w.s.indexOf('callsheet')),0,'season'); HUB_SHORT.season='Seasons'; }
+{ const _g=go; go=function(scr,then){ _g(scr,then); if(scr==='season') snRender(); }; }
+
+const SN_ST=[['idea','💡','Idea','#ffd43b'],['outline','🧩','Outline','#ffa94d'],['draft','✍️','Drafting','#74c0fc'],['written','📄','Written','#339af0'],['voiced','🎙','Voiced','#b197fc'],['animated','🎬','Animated','#38d9a9'],['posted','🚀','Posted','#40c057']];
+const SN_STI=Object.fromEntries(SN_ST.map((x,i)=>[x[0],i]));
+const SN_TAGS=[['premiere','🎉','Premiere'],['finale','🏁','Finale'],['tentpole','⭐','Big episode'],['filler','🍿','Filler'],['twoparter','➗','Two-parter'],['holiday','🎄','Holiday'],['musical','🎼','Musical'],['bottle','🍾','Bottle episode'],['special','✨','Special']];
+const SN_TAGM=Object.fromEntries(SN_TAGS.map(x=>[x[0],x]));
+const SN_COLS=['#e8590c','#4a86e8','#d6336c','#2b8a3e','#7048e8','#f08c00','#0b7285','#c92a2a','#5c940d','#862e9c','#1971c2','#a61e4d'];
+const SN={view:'board',pool:'scripts',q:'',hi:'',undo:{},sel:null,showChars:true};
+const snOpt=()=>S.settings.snOpt=Object.assign({locks:true,deps:true,ends:true,spread:true,alt:true,arcs:true,ready:false,gap:3},S.settings.snOpt||{});
+
+/* ---------- data helpers ---------- */
+function snSeason(){ let s=S.seasons.find(x=>x.id===S.settings.snOn); if(!s&&S.seasons.length){ s=S.seasons[0]; S.settings.snOn=s.id; } return s||null; }
+function snNew(name,num){ const n=num||(Math.max(0,...S.seasons.map(s=>+s.num||0))+1); const s={id:uid(),name:name||`Season ${n}`,num:n,goal:'',color:SN_COLS[(n-1)%SN_COLS.length],slots:[],arcs:[],start:'',cadence:7,versions:[],created:Date.now(),updated:Date.now()}; S.seasons.push(s); S.settings.snOn=s.id; unlock('season1'); return s; }
+const snGuessNum=()=>Math.max(1,...S.scripts.map(s=>+((s.code||'').match(/^S(\d+)/i)||[])[1]||0));
+function snSlot(ref,extra={}){ return {id:uid(),ref:ref||{t:'none'},title:'',logline:'',status:'',tags:[],arcs:[],chars:[],after:[],lock:false,date:'',mins:0,notes:'',...extra}; }
+const snIdeas=()=>S.lore.filter(l=>l.cat==='Episode Idea');
+function snWhere(t,id){ const out=[]; S.seasons.forEach(se=>se.slots.forEach((sl,i)=>{ if(sl.ref.t===t&&sl.ref.id===id) out.push({se,sl,i}); })); return out; }
+function snPush(){ const se=snSeason(); if(!se) return; const u=SN.undo[se.id]=SN.undo[se.id]||[]; const j=JSON.stringify(se); if(u[u.length-1]!==j) u.push(j); if(u.length>80) u.shift(); }
+function snUndo(){ const se=snSeason(); const u=SN.undo[se?.id]||[]; if(!u.length) return toast('Nothing to undo'); const prev=JSON.parse(u.pop()); Object.keys(se).forEach(k=>delete se[k]); Object.assign(se,prev); snSave(); snRender(); toast('↶ Undone'); }
+function snSave(){ const se=snSeason(); if(se) se.updated=Date.now(); save(); }
+function snMentions(text){ const t=' '+(text||'')+' ', out=[]; S.chars.forEach(c=>{ const first=(c.name||'').split(/[ &]/)[0]; const keys=[c.name,c.cue,first].filter(k=>k&&k.length>2); if(keys.some(k=>new RegExp('\\b'+k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'\\b','i').test(t))) out.push(c); }); return out; }
+/* everything we know about one episode card */
+function snInfo(sl){ let sc=null, idea=null;
+  if(sl.ref.t==='idea'){ idea=S.lore.find(l=>l.id===sl.ref.id)||null; if(idea?.ep&&S.scripts.some(s=>s.id===idea.ep)){ sl.ref={t:'script',id:idea.ep}; idea=null; } }
+  if(sl.ref.t==='script') sc=S.scripts.find(s=>s.id===sl.ref.id)||null;
+  const kind=sc?'script':idea?'idea':'none';
+  const title=sc?(sc.title||'Untitled'):idea?(idea.title||'Untitled idea'):(sl.title||'Untitled episode');
+  const logline=sc?(sc.logline||''):idea?(idea.body||''):(sl.logline||'');
+  let auto='idea', pct=0, secs=sl.mins?sl.mins*60:0, lines=0; const cnt=new Map();
+  if(sc){ const L=epLines(sc); lines=L.length; L.forEach(x=>(x.who||[]).forEach(n=>{ const c=charByName(n); if(c) cnt.set(c,(cnt.get(c)||0)+1); }));
+    let st=null; try{ if(CS.takes) st=csAuto(sc); }catch(e){} pct=st?csPct(st):Math.min(.6,lines/45*.35); secs=epSecs(sc)||secs;
+    const P=prodOf(sc); auto=st&&st.posted.val>=1?'posted':st&&(st.render.val>=1||st.anim.val>=1)?'animated':st&&st.voices.val>=.9&&lines?'voiced':(P.locked||lines>=45)?'written':lines>=4?'draft':'outline'; }
+  else if(idea){ auto=(idea.body||'').length>280||/A plot:|Cold open:/i.test(idea.body||'')?'outline':'idea'; pct=auto==='outline'?.08:.03; snMentions(idea.title+' '+idea.body).forEach(c=>cnt.set(c,1)); }
+  else { snMentions(sl.title+' '+sl.logline).forEach(c=>cnt.set(c,1)); }
+  (sl.chars||[]).forEach(id=>{ const c=S.chars.find(x=>x.id===id); if(c) cnt.set(c,(cnt.get(c)||0)+1000); });
+  const chars=[...cnt.entries()].sort((a,b)=>b[1]-a[1]).map(([c,n])=>({c,n:n%1000||n}));
+  const status=sl.status||auto; if(sl.status) pct=Math.max(pct,[0,.08,.3,.55,.7,.9,1][SN_STI[sl.status]]||0);
+  if(status==='posted') pct=1;
+  return {sl,kind,sc,idea,title,logline,status,auto,manual:!!sl.status,pct,secs,lines,chars,focus:chars[0]?.c||null,date:sc?(prodOf(sc).due||''):(sl.date||'')}; }
+function snSetDate(sl,d){ const i=snInfo(sl); if(i.sc) prodOf(i.sc).due=d; else sl.date=d; }
+const snHas=(sl,t)=>(sl.tags||[]).includes(t);
+const snStat=k=>SN_ST[SN_STI[k]]||SN_ST[0];
+const snFmtDate=d=>{ if(!d) return ''; const x=new Date(d+'T12:00'); return isNaN(x)?d:x.toLocaleDateString(undefined,{month:'short',day:'numeric'}); };
+const snDays=d=>d?Math.round((new Date(d+'T12:00')-new Date(new Date().toDateString()))/864e5):null;
+function snFace(c){ return `<span class="sn-face" title="${esc(c.name)}" style="--c:${groupColor(c.group)}">${charArt(c)}</span>`; }
+
+/* ---------- checking the order ---------- */
+function snCheck(se,list){ list=list||se.slots; const F=[], pos=new Map(list.map((s,i)=>[s.id,i])), I=new Map(list.map(s=>[s.id,snInfo(s)])), o=snOpt(), E=i=>'E'+(i+1);
+  list.forEach((s,i)=>{ const inf=I.get(s.id);
+    (s.after||[]).forEach(d=>{ const j=pos.get(d.id); if(j==null) return; const other=I.get(d.id).title;
+      if(j>i) F.push({lvl:'bad',ico:'⛓',slot:s.id,text:`“${inf.title}” has to come after “${other}”, but it's ${E(i)} and that's ${E(j)}.`,fix:['Move it after',()=>snMoveAfter(s.id,d.id)]});
+      else if(d.tight&&j!==i-1) F.push({lvl:'warn',ico:'🔗',slot:s.id,text:`“${inf.title}” should come right after “${other}” (a two-parter), but there ${i-j-1===1?'is 1 episode':'are '+(i-j-1)+' episodes'} in between.`,fix:['Put them together',()=>snMoveAfter(s.id,d.id)]}); });
+    if(snHas(s,'premiere')&&i!==0) F.push({lvl:'warn',ico:'🎉',slot:s.id,text:`The premiere “${inf.title}” is ${E(i)}, not first.`,fix:['Make it E1',()=>snMoveTo(s.id,0)]});
+    if(snHas(s,'finale')&&i!==list.length-1) F.push({lvl:'warn',ico:'🏁',slot:s.id,text:`The finale “${inf.title}” is ${E(i)}, not last.`,fix:['Make it last',()=>snMoveTo(s.id,list.length-1)]});
+    if(inf.date&&inf.status!=='posted'&&inf.pct<.5){ const d=snDays(inf.date); if(d!=null&&d>=0&&d<=14) F.push({lvl:'warn',ico:'⏰',slot:s.id,text:`${E(i)} “${inf.title}” airs ${d===0?'today':d===1?'tomorrow':'in '+d+' days'} and it's still at ${snStat(inf.status)[2]}.`}); }
+    if(i>0){ const p=I.get(list[i-1].id); if(inf.date&&p.date&&inf.date<p.date) F.push({lvl:'warn',ico:'📅',slot:s.id,text:`${E(i)} airs before ${E(i-1)} (${snFmtDate(inf.date)} vs ${snFmtDate(p.date)}).`,fix:['Redo the dates',()=>{ snFillDates(true); }]}); }
+    if(inf.sc){ const dead=inf.chars.filter(x=>/dead|deceased/i.test(x.c.status||'')&&x.n<1000); if(dead.length) F.push({lvl:'info',ico:'💀',slot:s.id,text:`${dead.map(x=>x.c.name).join(', ')} ${dead.length>1?'are':'is'} dead in the Bible but ${dead.length>1?'have':'has'} lines in ${E(i)}. Flashback, ghost, or plot armor?`});
+      const other=snWhere('script',inf.sc.id).filter(w=>w.se!==se); if(other.length) F.push({lvl:'warn',ico:'👯',slot:s.id,text:`“${inf.title}” is also in ${other.map(w=>w.se.name).join(', ')}.`}); } });
+  const ps=list.filter(s=>snHas(s,'premiere')), fs=list.filter(s=>snHas(s,'finale'));
+  if(ps.length>1) F.push({lvl:'info',ico:'🎉',text:`${ps.length} episodes are tagged Premiere.`}); if(fs.length>1) F.push({lvl:'info',ico:'🏁',text:`${fs.length} episodes are tagged Finale.`});
+  for(let i=2;i<list.length;i++){ const a=I.get(list[i-2].id).focus, b=I.get(list[i-1].id).focus, c=I.get(list[i].id).focus; if(a&&a===b&&b===c&&!(i+1<list.length&&I.get(list[i+1].id).focus===c&&false)) F.push({lvl:'info',ico:'🎯',slot:list[i].id,text:`${c.name} is the main character of ${E(i-2)}, ${E(i-1)} and ${E(i)} in a row.`}); }
+  const big=s=>snHas(s,'tentpole')||snHas(s,'twoparter')||snHas(s,'musical');
+  for(let i=1;i<list.length;i++){ if(big(list[i-1])&&big(list[i])&&!(list[i].after||[]).some(d=>d.id===list[i-1].id)) F.push({lvl:'info',ico:'⭐',slot:list[i].id,text:`Two big episodes back to back (${E(i-1)} and ${E(i)}). Maybe breathe in between?`});
+    if(snHas(list[i-1],'filler')&&snHas(list[i],'filler')) F.push({lvl:'info',ico:'🍿',slot:list[i].id,text:`Two filler episodes back to back (${E(i-1)} and ${E(i)}).`}); }
+  (se.arcs||[]).forEach(a=>{ const idx=list.map((s,i)=>(s.arcs||[]).includes(a.id)?i:-1).filter(i=>i>=0);
+    for(let k=1;k<idx.length;k++){ const gap=idx[k]-idx[k-1]-1; if(gap>=o.gap) F.push({lvl:'info',ico:'🧵',arc:a.id,text:`The ${a.name} arc disappears for ${gap} episodes (${E(idx[k-1]+1)} to ${E(idx[k]-1)}).`}); }
+    if(!idx.length) F.push({lvl:'info',ico:'🧵',arc:a.id,text:`The ${a.name} arc isn't in any episode yet.`}); });
+  const secs=list.map(s=>I.get(s.id).secs).filter(Boolean).sort((a,b)=>a-b); if(secs.length>=3){ const med=secs[Math.floor(secs.length/2)]; list.forEach((s,i)=>{ const x=I.get(s.id).secs; if(x>med*2.2&&x>240) F.push({lvl:'info',ico:'⏱',slot:s.id,text:`${E(i)} runs about ${fmtMin(x)}, more than twice the usual ${fmtMin(med)}. Two-parter?`}); }); }
+  const ideas=list.filter(s=>I.get(s.id).kind!=='script').length; if(ideas) F.push({lvl:'info',ico:'💡',text:`${ideas} episode${ideas>1?'s are':' is'} still just an idea or a placeholder.`});
+  return F; }
+/* ---------- moving things ---------- */
+function snMoveTo(id,to){ const se=snSeason(), i=se.slots.findIndex(s=>s.id===id); if(i<0) return; snPush(); const [s]=se.slots.splice(i,1); se.slots.splice(Math.max(0,Math.min(se.slots.length,to)),0,s); snSave(); snRender(); }
+function snMoveAfter(id,afterId){ const se=snSeason(); const i=se.slots.findIndex(s=>s.id===id); if(i<0) return; snPush(); const [s]=se.slots.splice(i,1); const j=se.slots.findIndex(x=>x.id===afterId); se.slots.splice(j+1,0,s); snSave(); snRender(); }
+function snAdd(ref,at,extra){ const se=snSeason(); snPush(); const sl=snSlot(ref,extra); se.slots.splice(at==null?se.slots.length:at,0,sl); snSave(); return sl; }
+function snRemove(id){ const se=snSeason(); snPush(); se.slots=se.slots.filter(s=>s.id!==id); se.slots.forEach(s=>s.after=(s.after||[]).filter(d=>d.id!==id)); snSave(); }
+
+/* ---------- suggest an order ---------- */
+function snScore(order,ctx,o){ let p=0; const pos=new Map(order.map((s,i)=>[s.id,i])), n=order.length;
+  for(let i=0;i<n;i++){ const s=order[i], inf=ctx.I.get(s.id);
+    if(o.locks&&s.lock&&ctx.lockAt.get(s.id)!==i) p+=1e7;
+    if(o.deps) for(const d of s.after||[]){ const j=pos.get(d.id); if(j==null) continue; if(j>i) p+=1e6; else if(d.tight&&j!==i-1) p+=2e5; }
+    if(o.ends){ if(snHas(s,'premiere')) p+=i*3e4; if(snHas(s,'finale')) p+=(n-1-i)*3e4; }
+    if(o.ready) p+=inf.pct*i*90;
+    if(i>0){ const a=ctx.I.get(order[i-1].id);
+      if(o.spread&&a.focus&&a.focus===inf.focus) p+=500;
+      if(o.alt){ const big=x=>snHas(x,'tentpole')||snHas(x,'twoparter')||snHas(x,'musical'); if(big(order[i-1])&&big(s)&&!(s.after||[]).some(d=>d.id===order[i-1].id)) p+=300; if(snHas(order[i-1],'filler')&&snHas(s,'filler')) p+=300; } }
+    if(o.spread&&i>1&&inf.focus&&ctx.I.get(order[i-2].id).focus===inf.focus) p+=150; }
+  if(o.arcs) for(const a of ctx.arcs){ let last=-1; for(let i=0;i<n;i++) if((order[i].arcs||[]).includes(a.id)){ if(last>=0){ const g=i-last-1; if(g>=o.gap) p+=(g-o.gap+1)*140; } last=i; } }
+  return p; }
+function snSuggest(se,o){ const cur=se.slots.slice(), ctx={I:new Map(cur.map(s=>[s.id,snInfo(s)])),lockAt:new Map(cur.map((s,i)=>[s.id,i])),arcs:se.arcs||[]};
+  const movable=cur.map((s,i)=>i).filter(i=>!(o.locks&&cur[i].lock)); let best=cur.slice(), bestP=snScore(best,ctx,o);
+  for(let run=0;run<3;run++){ let order=cur.slice(); if(run>0){ const vals=movable.map(i=>order[i]); for(let k=vals.length-1;k>0;k--){ const j=Math.floor(Math.random()*(k+1)); [vals[k],vals[j]]=[vals[j],vals[k]]; } movable.forEach((i,k)=>order[i]=vals[k]); }
+    let P=snScore(order,ctx,o), T=3000;
+    for(let it=0;it<5000&&movable.length>1;it++){ const a=movable[Math.floor(Math.random()*movable.length)], b=movable[Math.floor(Math.random()*movable.length)]; if(a===b) continue;
+      const nx=order.slice(); if(Math.random()<.5){ [nx[a],nx[b]]=[nx[b],nx[a]]; } else { const vals=movable.map(i=>nx[i]), ia=movable.indexOf(a), ib=movable.indexOf(b); const [x]=vals.splice(ia,1); vals.splice(ib,0,x); movable.forEach((i,k)=>nx[i]=vals[k]); }
+      const np=snScore(nx,ctx,o); if(np<=P||Math.random()<Math.exp((P-np)/T)){ order=nx; P=np; if(P<bestP){ best=order.slice(); bestP=P; } } T*=.9985; } }
+  return {order:best,before:snScore(cur,ctx,o),after:bestP}; }
+function snSuggestDialog(){ const se=snSeason(); if(!se||se.slots.length<2) return toast('Add at least 2 episodes first'); const o=snOpt();
+  const opts=[['locks','🔒 Keep locked episodes where they are'],['deps','⛓ Keep "has to come after" in order'],['ends','🎉 Premiere first, 🏁 finale last'],['spread','🎯 Spread out who each episode is about'],['alt','⭐ Don\'t put two big (or two filler) episodes back to back'],['arcs','🧵 Keep arcs from disappearing too long'],['ready','✅ Put the most finished episodes first']];
+  openModal(`<div class="row"><h2 class="grow">🪄 Suggest an order</h2><button class="btn sm" onclick="closeModal()">✕</button></div><p class="muted tiny">It shuffles the unlocked episodes until it finds an order that breaks the fewest of these rules. You see it before anything changes.</p>
+    <div class="sn-opts">${opts.map(([k,l])=>`<label><input type="checkbox" data-sno="${k}" ${o[k]?'checked':''}> ${l}</label>`).join('')}</div>
+    <div class="row" style="margin-top:12px"><button class="btn primary" id="snRun">🪄 Find an order</button></div><div id="snPrev"></div>`);
+  $$('[data-sno]').forEach(c=>c.onchange=()=>{ o[c.dataset.sno]=c.checked; save(); });
+  const run=()=>{ const r=snSuggest(se,o), cur=se.slots, same=r.order.every((s,i)=>s===cur[i]); const fb=snCheck(se,cur).filter(f=>f.lvl!=='info').length, fa=snCheck(se,r.order).filter(f=>f.lvl!=='info').length;
+    $('#snPrev').innerHTML=same?`<p class="sn-good">✅ Your order already works best for these rules. Nothing to change.</p>`:`<div class="sn-cmp">${r.order.map((s,i)=>{ const was=cur.indexOf(s), inf=snInfo(s), mv=was-i; return `<div class="sn-cmprow ${mv?'mv':''}"><b>E${i+1}</b><span class="grow">${esc(inf.title)}${s.lock?' 🔒':''}</span><small>${mv>0?`⬆ was E${was+1}`:mv<0?`⬇ was E${was+1}`:'same'}</small></div>`; }).join('')}</div>
+      <p class="tiny muted">${fb!==fa?`Problems: ${fb} → ${fa}. `:''}${Math.round(Math.max(0,(r.before-r.after)/Math.max(1,r.before))*100)}% better by these rules.</p>
+      <div class="row"><button class="btn primary" id="snApply">✅ Use this order</button><button class="btn" id="snAgain">🎲 Try another</button></div>`;
+    $('#snApply')&&($('#snApply').onclick=()=>{ snPush(); se.slots=r.order; snSave(); closeModal(); snRender(); toast('🪄 New order in. Undo is right there if you hate it.'); });
+    $('#snAgain')&&($('#snAgain').onclick=run); };
+  $('#snRun').onclick=run; }
+
+/* ---------- dates ---------- */
+function snFillDates(all){ const se=snSeason(); if(!se.start) return toast('Pick a start date first'); snPush(); let d=new Date(se.start+'T12:00'); const step=+se.cadence||7;
+  se.slots.forEach(sl=>{ const inf=snInfo(sl); if(all||!inf.date) snSetDate(sl,d.toISOString().slice(0,10)); else d=new Date(inf.date+'T12:00');
+    if(step===30) d.setMonth(d.getMonth()+1); else d.setDate(d.getDate()+step); });
+  snSave(); snRender(); toast('📅 Dates filled in. Scripts\' dates show on the Call Sheet too.'); }
+
+/* ---------- render ---------- */
+async function snRender(){ const el=$('#scr-season'); if(!el) return; if(!CS.takes){ CS.takes=[]; csLoad().then(()=>{ if(current==='season') snRender(); }); }
+  const se=snSeason();
+  if(!se){ el.innerHTML=`<div class="sn"><div class="card sn-empty"><h1>🗂 Season Planner</h1><p>Lay out a season: drag episodes into order, from finished scripts to one-line ideas. It's the plan, and you can change it whenever.</p>
+    <div class="row"><button class="btn primary" data-sn="newseason">🚀 Start Season ${snGuessNum()}</button></div>
+    <p class="tiny muted">You have ${S.scripts.length} script${S.scripts.length===1?'':'s'} and ${snIdeas().length} Episode Idea${snIdeas().length===1?'':'s'} ready to drag in.</p></div></div>`; return; }
+  const infos=se.slots.map(snInfo), F=snCheck(se), probs=F.filter(f=>f.lvl!=='info').length;
+  const secs=infos.reduce((n,i)=>n+(i.secs||0),0), avg=infos.length?infos.reduce((n,i)=>n+i.pct,0)/infos.length:0;
+  const stc={}; infos.forEach(i=>stc[i.status]=(stc[i.status]||0)+1);
+  const hiOpts=`<option value="">Highlight…</option><optgroup label="Arcs">${(se.arcs||[]).map(a=>`<option value="arc:${a.id}" ${SN.hi==='arc:'+a.id?'selected':''}>🧵 ${esc(a.name)}</option>`).join('')}</optgroup><optgroup label="Characters">${S.chars.filter(c=>infos.some(i=>i.chars.some(x=>x.c===c))).map(c=>`<option value="char:${c.id}" ${SN.hi==='char:'+c.id?'selected':''}>${esc(c.name)}</option>`).join('')}</optgroup><optgroup label="Tags">${SN_TAGS.map(t=>`<option value="tag:${t[0]}" ${SN.hi==='tag:'+t[0]?'selected':''}>${t[1]} ${t[2]}</option>`).join('')}</optgroup>`;
+  el.innerHTML=`<div class="sn" style="--sc:${se.color||'#4a86e8'}"><div class="card sn-head">
+    <div class="sn-row1"><h1>🗂 Season Planner</h1><div class="sn-seasons">${S.seasons.map(s=>`<button class="sn-stab ${s===se?'on':''}" data-snsea="${s.id}" style="--sc:${s.color}">${esc(s.name)}<small>${s.slots.length}</small></button>`).join('')}<button class="sn-stab add" data-sn="newseason">＋ Season</button></div></div>
+    <div class="sn-row2"><input class="sn-name" data-snf="name" value="${esc(se.name)}" aria-label="Season name"><input class="txt sn-goal" data-snf="goal" value="${esc(se.goal||'')}" placeholder="What's this season about? (the big story, the vibe, the ending)">
+      <input type="color" data-snf="color" value="${se.color||'#4a86e8'}" title="Season color"></div>
+    <div class="sn-arcs"><b>Arcs</b>${(se.arcs||[]).map(a=>`<span class="sn-arc ${SN.hi==='arc:'+a.id?'on':''}" style="--ac:${a.color}" data-snarc="${a.id}" title="Click to highlight. Double-click to rename.">${esc(a.name)}<i data-snarcx="${a.id}" title="Delete arc">✕</i></span>`).join('')}<button class="chip" data-sn="newarc">＋ Arc</button><span class="tiny muted">${se.arcs?.length?'':'Story threads that run across episodes, like "Mafia war" or "Dean & Starr".'}</span></div>
+    <div class="sn-tools"><div class="sn-seg">${[['board','🧱 Board'],['arcs','🧵 Arcs'],['schedule','📅 Schedule'],['check',`🩺 Checkup${probs?` <em>${probs}</em>`:''}`]].map(([k,l])=>`<button class="${SN.view===k?'on':''}" data-snview="${k}">${l}</button>`).join('')}</div>
+      <select class="txt sn-hi" id="snHi">${hiOpts}</select>
+      <button class="btn sm primary" data-sn="suggest">🪄 Suggest an order</button><button class="btn sm" data-sn="undo" ${(SN.undo[se.id]||[]).length?'':'disabled'}>↶ Undo</button><button class="btn sm" data-sn="versions">💾 Versions${se.versions?.length?` (${se.versions.length})`:''}</button><button class="btn sm" data-sn="more">⋯ More</button></div>
+    <div class="sn-stats"><span><b>${se.slots.length}</b> episode${se.slots.length===1?'':'s'}</span><span><b>${infos.filter(i=>i.kind==='script').length}</b> scripts, <b>${infos.filter(i=>i.kind!=='script').length}</b> ideas</span>${secs?`<span>about <b>${Math.round(secs/60)}</b> min total</span>`:''}
+      <span class="sn-ready" title="How done the season is"><i style="width:${Math.round(avg*100)}%"></i><b>${Math.round(avg*100)}% done</b></span>
+      <span class="sn-stbar">${SN_ST.filter(x=>stc[x[0]]).map(x=>`<i style="flex:${stc[x[0]]};background:${x[3]}" title="${x[2]}: ${stc[x[0]]}">${x[1]} ${stc[x[0]]}</i>`).join('')}</span></div></div>
+    <div class="sn-cols"><aside class="card sn-pool" id="snPool">${snPoolHTML(se)}</aside><div class="sn-main" id="snMain">${SN.view==='arcs'?snArcsHTML(se,infos):SN.view==='schedule'?snSchedHTML(se,infos):SN.view==='check'?snCheckHTML(se,F):snBoardHTML(se,infos,F)}</div></div></div>`; }
+function snHiMatch(sl,inf){ if(!SN.hi) return true; const [t,id]=SN.hi.split(':'); if(t==='arc') return (sl.arcs||[]).includes(id); if(t==='tag') return snHas(sl,id); if(t==='char') return inf.chars.some(x=>x.c.id===id); return true; }
+function snBoardHTML(se,infos,F){ const warn={}; F.forEach(f=>{ if(f.slot&&f.lvl!=='info') warn[f.slot]=(warn[f.slot]||0)+1; });
+  if(!se.slots.length) return `<div class="sn-board" id="snBoard"><div class="sn-drop-hint">Drag scripts and ideas here from the left, or click ＋ on them.<br><br>Order is everything: E1 is the first episode people watch.</div>${snAddTile()}</div>`;
+  return `<div class="sn-board" id="snBoard">${infos.map((inf,i)=>{ const sl=inf.sl, st=snStat(inf.status), dim=!snHiMatch(sl,inf);
+    return `<div class="sn-card ${dim?'dim':''} ${SN.sel===sl.id?'sel':''}" data-snslot="${sl.id}" tabindex="0" style="--st:${st[3]}">
+      <div class="sn-ctop"><b class="sn-num">E${i+1}</b><span class="sn-st" title="${inf.manual?'Set by you':'Figured out automatically'}">${st[1]} ${st[2]}${inf.manual?'':' <small>auto</small>'}</span>${sl.lock?'<span class="sn-lock" title="Locked in place">🔒</span>':''}${warn[sl.id]?`<span class="sn-warn" title="Problems in Checkup">⚠ ${warn[sl.id]}</span>`:''}</div>
+      <div class="sn-kind">${inf.kind==='script'?`📄 ${esc(inf.sc.code||'Script')}`:inf.kind==='idea'?'💡 Idea':'⬜ Placeholder'}</div>
+      <h3>${esc(inf.title)}</h3>${inf.logline?`<p>${esc(inf.logline.split('\n')[0])}</p>`:''}
+      ${(sl.tags||[]).length?`<div class="sn-tags">${sl.tags.map(t=>SN_TAGM[t]?`<span>${SN_TAGM[t][1]} ${SN_TAGM[t][2]}</span>`:'').join('')}</div>`:''}
+      ${inf.chars.length?`<div class="sn-faces">${inf.chars.slice(0,5).map(x=>snFace(x.c)).join('')}${inf.chars.length>5?`<small>+${inf.chars.length-5}</small>`:''}</div>`:''}
+      <div class="sn-foot"><div class="sn-bar"><i style="width:${Math.round(inf.pct*100)}%"></i></div><span>${inf.date?'📅 '+snFmtDate(inf.date):''}${inf.secs?` ⏱ ${fmtMin(inf.secs)}`:''}</span></div>
+      ${(sl.arcs||[]).length?`<div class="sn-threads">${sl.arcs.map(id=>{ const a=se.arcs.find(x=>x.id===id); return a?`<i style="background:${a.color}" title="${esc(a.name)}"></i>`:''; }).join('')}</div>`:''}
+      <div class="sn-move"><button data-snmv="-1" title="Earlier">◀</button><button data-snmv="1" title="Later">▶</button></div></div>`; }).join('')}${snAddTile()}</div>
+    <p class="tiny muted sn-help">Drag cards to change the order (or use ◀ ▶). Click a card for everything: status, tags, arcs, who's in it, what it has to come after, air date, notes. Drag a card back to the left to take it out of the season.</p>`; }
+function snAddTile(){ return `<div class="sn-addtile" id="snAddTile"><b>＋ Add an episode</b><button class="btn sm" data-sn="addph">⬜ Placeholder</button><button class="btn sm" data-sn="addidea">💡 New idea</button><button class="btn sm" data-sn="addnew">📄 New script</button></div>`; }
+function snPoolHTML(se){ const q=SN.q.toLowerCase().trim(), inSe=new Set(se.slots.map(s=>s.ref.t+':'+s.ref.id));
+  const scripts=S.scripts.filter(s=>!inSe.has('script:'+s.id)&&(!q||[s.title,s.code,s.logline].join(' ').toLowerCase().includes(q))).sort((a,b)=>(a.code||'').localeCompare(b.code||'',undefined,{numeric:true})||(b.updated-a.updated));
+  const ideas=snIdeas().filter(l=>!inSe.has('idea:'+l.id)&&!(l.ep&&inSe.has('script:'+l.ep))&&(!q||[l.title,l.body].join(' ').toLowerCase().includes(q)));
+  const item=(t,id,title,sub,st,where)=>`<div class="sn-pitem" data-snpool="${t}:${id}" title="Drag into the season"><span class="sn-pst" style="background:${snStat(st)[3]}">${snStat(st)[1]}</span><div class="grow"><b>${esc(title)}</b><small>${esc(sub)}${where?` <em>in ${esc(where)}</em>`:''}</small></div><button class="sn-padd" data-snpadd="${t}:${id}" title="Add to the end">＋</button></div>`;
+  const list=SN.pool==='scripts'?scripts.map(s=>{ const inf=snInfo({ref:{t:'script',id:s.id},chars:[],tags:[]}); const w=snWhere('script',s.id)[0]; return item('script',s.id,s.title||'Untitled',`${s.code||''} ${inf.lines} lines`,inf.status,w?.se.name); })
+    :ideas.map(l=>{ const w=snWhere('idea',l.id)[0]; return item('idea',l.id,l.title||'Untitled idea',(l.body||'').split('\n')[0].slice(0,60),'idea',w?.se.name); });
+  return `<div class="sn-ptabs"><button class="${SN.pool==='scripts'?'on':''}" data-snpool-tab="scripts">📄 Scripts <small>${scripts.length}</small></button><button class="${SN.pool==='ideas'?'on':''}" data-snpool-tab="ideas">💡 Ideas <small>${ideas.length}</small></button></div>
+    <input class="txt" id="snQ" placeholder="Search" value="${esc(SN.q)}">
+    <div class="sn-plist">${list.join('')||`<p class="tiny muted" style="padding:8px">${SN.pool==='scripts'?'Every script is already in this season.':'No unused ideas. Type one below.'}</p>`}</div>
+    <div class="sn-quick"><input class="txt" id="snIdea" placeholder="💡 Quick idea, then Enter"><p class="tiny muted">Saved to the Bible as an Episode Idea and added to the end. It shows up in the phone's Ideas tab too.</p></div>
+    ${SN.pool==='scripts'&&S.scripts.length>scripts.length?'':''}`; }
+function snArcsHTML(se,infos){ if(!se.slots.length) return `<div class="card sn-pad"><p class="muted">Add episodes first, then this shows which arcs and characters show up where.</p></div>`;
+  const o=snOpt(), rowHTML=(label,has)=>{ const idx=infos.map((inf,i)=>has(inf,i)?i:-1).filter(i=>i>=0); const gaps=new Set(); for(let k=1;k<idx.length;k++){ if(idx[k]-idx[k-1]-1>=o.gap) for(let j=idx[k-1]+1;j<idx[k];j++) gaps.add(j); }
+    return {label,cells:infos.map((inf,i)=>({on:has(inf,i),gap:gaps.has(i),i}))}; };
+  const arcRows=(se.arcs||[]).map(a=>({a,...rowHTML(a.name,inf=>(inf.sl.arcs||[]).includes(a.id))}));
+  const cc=new Map(); infos.forEach(inf=>inf.chars.forEach(x=>cc.set(x.c,(cc.get(x.c)||0)+1))); const top=[...cc.entries()].sort((a,b)=>b[1]-a[1]).slice(0,16).map(x=>x[0]);
+  const charRows=top.map(c=>({c,...rowHTML(c.name,inf=>inf.chars.some(x=>x.c===c)),lines:infos.map(inf=>inf.chars.find(x=>x.c===c)?.n||0)}));
+  const head=`<thead><tr><th></th>${infos.map((inf,i)=>`<th title="${esc(inf.title)}"><span>E${i+1}</span><small>${esc(inf.title.slice(0,14))}</small></th>`).join('')}</tr></thead>`;
+  return `<div class="card sn-pad"><div class="row"><h2 class="grow">🧵 Who and what shows up where</h2><label class="tiny">Warn after <select class="txt" id="snGap" style="width:auto">${[2,3,4,5,6].map(n=>`<option ${o.gap===n?'selected':''}>${n}</option>`).join('')}</select> episodes missing</label><label class="tiny"><input type="checkbox" id="snShowChars" ${SN.showChars?'checked':''}> Characters</label></div>
+    <p class="tiny muted">Click a square to put an arc in that episode or take it out. Striped squares are gaps where an arc or character vanishes for a while.</p>
+    <div class="sn-gridwrap"><table class="sn-grid">${head}
+    ${arcRows.length?arcRows.map(r=>`<tr><th><span class="sn-arc" style="--ac:${r.a.color}">${esc(r.a.name)}</span></th>${r.cells.map(c=>`<td class="${c.on?'on':''} ${c.gap?'gap':''}" data-snac="${r.a.id}:${infos[c.i].sl.id}" style="--ac:${r.a.color}"></td>`).join('')}</tr>`).join(''):`<tr><th colspan="${infos.length+1}" class="tiny muted" style="text-align:left;font-weight:400">No arcs yet. Add one up top (＋ Arc).</th></tr>`}
+    ${SN.showChars?`<tr class="sn-gsep"><th colspan="${infos.length+1}">Characters (lines in each episode)</th></tr>`+charRows.map(r=>`<tr><th><span class="sn-crow">${snFace(r.c)}${esc(r.c.name)}</span></th>${r.cells.map((c,k)=>`<td class="ch ${c.on?'on':''} ${c.gap?'gap':''}" style="--ac:${groupColor(r.c.group)}" title="${r.lines[k]?r.lines[k]+' line'+(r.lines[k]>1?'s':''):''}">${r.lines[k]?`<i style="--s:${Math.min(1,.35+Math.sqrt(r.lines[k])/8)}"></i>`:''}</td>`).join('')}</tr>`).join(''):''}
+    </table></div></div>`; }
+function snSchedHTML(se,infos){ const months=new Map(); infos.forEach((inf,i)=>{ const k=inf.date?inf.date.slice(0,7):'zzzz'; if(!months.has(k)) months.set(k,[]); months.get(k).push({inf,i}); });
+  const mName=k=>k==='zzzz'?'No date yet':new Date(k+'-15T12:00').toLocaleDateString(undefined,{month:'long',year:'numeric'});
+  return `<div class="card sn-pad"><h2>📅 Air dates</h2><div class="row sn-sched-tools"><label>Season starts <input type="date" class="txt" data-snf="start" value="${esc(se.start||'')}"></label>
+      <label>New episode <select class="txt" data-snf="cadence">${[[7,'every week'],[14,'every 2 weeks'],[3,'every 3 days'],[10,'every 10 days'],[30,'every month']].map(([v,l])=>`<option value="${v}" ${(+se.cadence||7)===v?'selected':''}>${l}</option>`).join('')}</select></label>
+      <button class="btn sm primary" data-sn="filldates">📅 Fill in the dates</button><button class="btn sm" data-sn="fillempty">Only the empty ones</button><button class="btn sm" data-sn="cleardates">Clear dates</button></div>
+    <p class="tiny muted">Dates go in episode order. A script's date is the same as its due date on the Call Sheet, so changing one changes both.</p>
+    ${[...months.keys()].sort().map(k=>`<h3 class="sn-month">${mName(k)}</h3>${months.get(k).map(({inf,i})=>{ const d=snDays(inf.date), late=inf.date&&inf.status!=='posted'&&inf.pct<.5&&d!=null&&d<=14;
+      return `<div class="sn-srow ${late?'late':''}"><input type="date" class="txt" data-sndate="${inf.sl.id}" value="${esc(inf.date)}"><b>E${i+1}</b><span class="grow sn-stitle" data-snopen="${inf.sl.id}">${esc(inf.title)}</span><span class="sn-pill" style="background:${snStat(inf.status)[3]}">${snStat(inf.status)[1]} ${snStat(inf.status)[2]}</span><div class="sn-bar sm"><i style="width:${Math.round(inf.pct*100)}%"></i></div><small>${d==null?'':d<0?(inf.status==='posted'?'aired':Math.abs(d)+' days ago'):d===0?'today':'in '+d+' days'}${late?' ⚠':''}</small></div>`; }).join('')}`).join('')}</div>`; }
+function snCheckHTML(se,F){ const L={bad:['⛔','Breaks the plan'],warn:['⚠','Worth fixing'],info:['💭','Just so you know']};
+  return `<div class="card sn-pad"><h2>🩺 Checkup</h2><p class="tiny muted">Looks at the order you have now. Fix buttons move things for you (and you can undo).</p>
+    ${F.length?['bad','warn','info'].filter(l=>F.some(f=>f.lvl===l)).map(l=>`<h3 class="sn-month">${L[l][0]} ${L[l][1]}</h3>${F.map((f,k)=>f.lvl===l?`<div class="sn-find ${l}"><span>${f.ico}</span><p class="grow">${esc(f.text)}</p>${f.fix?`<button class="btn sm" data-snfix="${k}">${esc(f.fix[0])}</button>`:''}${f.slot?`<button class="btn sm" data-snopen="${f.slot}">Open</button>`:''}</div>`:'').join('')}`).join(''):`<p class="sn-good">✅ No problems. This order holds up.</p>`}</div>`; }
+
+/* ---------- one episode, in the side drawer ---------- */
+function snOpen(id){ const se=snSeason(), sl=se.slots.find(s=>s.id===id); if(!sl) return; SN.sel=id; const i=se.slots.indexOf(sl), inf=snInfo(sl);
+  const head=`<span class="sn-num big">E${i+1}</span><b class="grow" style="font-family:var(--display);font-size:17px">${esc(inf.title)}</b><button class="btn sm" onclick="closeDrawer()">✕</button>`;
+  const others=se.slots.filter(s=>s!==sl);
+  const body=`<div class="sn-dr">
+    <label class="lab">Title</label><input class="txt" data-snd="title" value="${esc(inf.title)}">
+    <label class="lab">${inf.kind==='idea'?'The idea':'Logline'}</label><textarea class="txt" data-snd="logline" style="min-height:${inf.kind==='idea'?110:60}px">${esc(inf.logline)}</textarea>
+    <div class="sn-link">${inf.kind==='script'?`📄 Script <b>${esc(inf.sc.code||'')}</b>, ${inf.lines} lines <button class="btn sm" data-snd-a="openscript">✍️ Open script</button> <button class="btn sm" data-snd-a="unlink">Unlink</button>`
+      :inf.kind==='idea'?`💡 Episode Idea in the Bible <button class="btn sm primary" data-snd-a="write">✍️ Start the script</button> <button class="btn sm" data-snd-a="openidea">Open in Bible</button>`
+      :`⬜ Just a placeholder <button class="btn sm primary" data-snd-a="write">✍️ Start the script</button>`}
+      ${inf.kind!=='script'?`<select class="txt" data-snd="link" style="margin-top:6px"><option value="">🔗 Or link a script that exists…</option>${S.scripts.map(s=>`<option value="${s.id}">${esc((s.code?s.code+' ':'')+(s.title||'Untitled'))}</option>`).join('')}</select>`:''}</div>
+    <label class="lab">Where it's at</label><div class="sn-stpick"><button class="${!sl.status?'on':''}" data-snd-st="">🤖 Auto (${snStat(inf.auto)[2]})</button>${SN_ST.map(x=>`<button class="${sl.status===x[0]?'on':''}" data-snd-st="${x[0]}" style="--st:${x[3]}">${x[1]} ${x[2]}</button>`).join('')}</div>
+    <label class="lab">Tags</label><div class="sn-chipset">${SN_TAGS.map(t=>`<button class="chip ${snHas(sl,t[0])?'on':''}" data-snd-tag="${t[0]}">${t[1]} ${t[2]}</button>`).join('')}</div>
+    <label class="lab">Arcs in this episode</label><div class="sn-chipset">${(se.arcs||[]).map(a=>`<button class="chip sn-ac ${(sl.arcs||[]).includes(a.id)?'on':''}" style="--ac:${a.color}" data-snd-arc="${a.id}">${esc(a.name)}</button>`).join('')}<button class="chip" data-snd-a="newarc">＋ New arc</button></div>
+    <label class="lab">Who's in it</label><div class="sn-chipset">${inf.chars.slice(0,14).map(x=>`<span class="chip sn-cchip">${snFace(x.c)}${esc(x.c.name)}${(sl.chars||[]).includes(x.c.id)?` <i data-snd-cx="${x.c.id}">✕</i>`:x.n>1?` <small>${x.n}</small>`:''}</span>`).join('')}
+      <select class="txt" data-snd="addchar" style="width:auto"><option value="">＋ Add someone</option>${S.chars.filter(c=>!inf.chars.some(x=>x.c===c)).map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join('')}</select></div>
+    <p class="tiny muted">${inf.kind==='script'?'Pulled from the script\'s lines. Add people who matter but don\'t talk much.':'Picked up from names in the idea. Add anyone else.'}</p>
+    <label class="lab">Has to come after</label><div class="sn-deps">${(sl.after||[]).map(d=>{ const o=se.slots.find(x=>x.id===d.id); return o?`<div class="sn-dep">⛓ E${se.slots.indexOf(o)+1} ${esc(snInfo(o).title)} <label class="tiny"><input type="checkbox" data-snd-tight="${d.id}" ${d.tight?'checked':''}> right after (two-parter)</label><i data-snd-depx="${d.id}">✕</i></div>`:''; }).join('')}
+      <select class="txt" data-snd="adddep"><option value="">＋ Pick an episode that sets this one up…</option>${others.filter(o=>!(sl.after||[]).some(d=>d.id===o.id)).map(o=>`<option value="${o.id}">E${se.slots.indexOf(o)+1} ${esc(snInfo(o).title)}</option>`).join('')}</select></div>
+    <div class="row" style="align-items:flex-end;gap:10px"><div class="grow"><label class="lab">Air date</label><input type="date" class="txt" data-snd="date" value="${esc(inf.date)}"></div>${inf.kind!=='script'?`<div style="width:110px"><label class="lab">Length (min)</label><input type="number" min="0" class="txt" data-snd="mins" value="${sl.mins||''}" placeholder="?"></div>`:''}</div>
+    <label class="tiny" style="display:block;margin-top:10px"><input type="checkbox" data-snd="lock" ${sl.lock?'checked':''}> 🔒 Lock it in place (Suggest an order won't move it)</label>
+    <label class="lab">Notes</label><textarea class="txt" data-snd="notes" placeholder="Why it goes here, what it sets up, cold open ideas…">${esc(sl.notes||'')}</textarea>
+    <div class="row sn-dr-move"><button class="btn sm" data-snd-a="first">⏮ First</button><button class="btn sm" data-snd-a="earlier">◀ Earlier</button><button class="btn sm" data-snd-a="later">Later ▶</button><button class="btn sm" data-snd-a="last">Last ⏭</button></div>
+    <div class="row" style="margin-top:8px"><select class="txt" data-snd="moveto" style="width:auto"><option value="">Move to another season…</option>${S.seasons.filter(s=>s!==se).map(s=>`<option value="${s.id}">${esc(s.name)}</option>`).join('')}<option value="__new">＋ A new season</option></select><button class="btn sm red" data-snd-a="remove">Take out of season</button></div></div>`;
+  openDrawer(head,body); snRender(); }
+function snDrawerRefresh(){ if(SN.sel&&$('#drawer.on .sn-dr')){ const b=$('#drawerBody'), t=b.scrollTop; snOpen(SN.sel); $('#drawerBody').scrollTop=t; } else snRender(); }
+document.addEventListener('input',e=>{ const t=e.target; if(!t.closest?.('.sn-dr')) return; const se=snSeason(), sl=se?.slots.find(s=>s.id===SN.sel); if(!sl) return; const f=t.dataset.snd, inf=snInfo(sl);
+  if(f==='title'){ if(inf.sc) inf.sc.title=t.value; else if(inf.idea) inf.idea.title=t.value; else sl.title=t.value; $('#drawerHead b').textContent=t.value; snSave(); clearTimeout(SN.rt); SN.rt=setTimeout(snRender,300); }
+  if(f==='logline'){ if(inf.sc) inf.sc.logline=t.value; else if(inf.idea) inf.idea.body=t.value; else sl.logline=t.value; snSave(); clearTimeout(SN.rt); SN.rt=setTimeout(snRender,400); }
+  if(f==='notes'){ sl.notes=t.value; snSave(); }
+  if(f==='mins'){ sl.mins=Math.max(0,+t.value||0); snSave(); clearTimeout(SN.rt); SN.rt=setTimeout(snRender,300); } });
+document.addEventListener('change',e=>{ const t=e.target; if(!t.closest?.('.sn-dr')) return; const se=snSeason(), sl=se?.slots.find(s=>s.id===SN.sel); if(!sl) return; const f=t.dataset.snd;
+  if(f==='date'){ snPush(); snSetDate(sl,t.value); snSave(); return snRender(); }
+  if(f==='lock'){ snPush(); sl.lock=t.checked; snSave(); return snRender(); }
+  if(f==='link'&&t.value){ snPush(); if(sl.ref.t==='idea'){ const l=S.lore.find(x=>x.id===sl.ref.id); if(l) l.ep=t.value; } sl.ref={t:'script',id:t.value}; snSave(); return snDrawerRefresh(); }
+  if(f==='addchar'&&t.value){ sl.chars=sl.chars||[]; sl.chars.push(t.value); snSave(); return snDrawerRefresh(); }
+  if(f==='adddep'&&t.value){ snPush(); sl.after=sl.after||[]; sl.after.push({id:t.value,tight:false}); snSave(); return snDrawerRefresh(); }
+  if(f==='moveto'&&t.value){ const dest=t.value==='__new'?(()=>{ const cur=S.settings.snOn, s=snNew(); S.settings.snOn=cur; return s; })():S.seasons.find(s=>s.id===t.value); if(!dest) return; snPush(); se.slots=se.slots.filter(s=>s!==sl); se.slots.forEach(s=>s.after=(s.after||[]).filter(d=>d.id!==sl.id)); sl.after=[]; dest.slots.push(sl); snSave(); closeDrawer(); SN.sel=null; snRender(); return toast(`Moved to ${dest.name}`); }
+  if(t.dataset.sndTight){ const d=(sl.after||[]).find(x=>x.id===t.dataset.sndTight); if(d){ snPush(); d.tight=t.checked; snSave(); snRender(); } } });
+document.addEventListener('click',e=>{ const t=e.target; if(!t.closest?.('.sn-dr')) return; const se=snSeason(), sl=se?.slots.find(s=>s.id===SN.sel); if(!sl) return; const inf=snInfo(sl), i=se.slots.indexOf(sl);
+  const st=t.closest('[data-snd-st]'); if(st){ snPush(); sl.status=st.dataset.sndSt; snSave(); return snDrawerRefresh(); }
+  const tg=t.closest('[data-snd-tag]'); if(tg){ snPush(); const k=tg.dataset.sndTag; sl.tags=snHas(sl,k)?sl.tags.filter(x=>x!==k):[...(sl.tags||[]),k]; snSave(); return snDrawerRefresh(); }
+  const ar=t.closest('[data-snd-arc]'); if(ar){ snPush(); const k=ar.dataset.sndArc; sl.arcs=(sl.arcs||[]).includes(k)?sl.arcs.filter(x=>x!==k):[...(sl.arcs||[]),k]; snSave(); return snDrawerRefresh(); }
+  const cx=t.closest('[data-snd-cx]'); if(cx){ sl.chars=(sl.chars||[]).filter(x=>x!==cx.dataset.sndCx); snSave(); return snDrawerRefresh(); }
+  const dx=t.closest('[data-snd-depx]'); if(dx){ snPush(); sl.after=(sl.after||[]).filter(d=>d.id!==dx.dataset.sndDepx); snSave(); return snDrawerRefresh(); }
+  const a=t.closest('[data-snd-a]')?.dataset.sndA; if(!a) return;
+  if(a==='openscript'){ S.activeScript=inf.sc.id; save(); closeDrawer(); return go('desk'); }
+  if(a==='openidea'){ closeDrawer(); go('bible'); setTimeout(()=>{ if(typeof openLoreEditor==='function') openLoreEditor(inf.idea.id); },250); return; }
+  if(a==='unlink'){ if(!confirm('Unlink the script? The card keeps its title as a placeholder. The script itself is not deleted.')) return; snPush(); sl.title=inf.title; sl.logline=inf.logline; sl.ref={t:'none'}; snSave(); return snDrawerRefresh(); }
+  if(a==='write'){ snPush(); const code=`S${se.num||1}E${i+1}`; const s=newScript({title:inf.title,logline:(inf.logline||'').split('\n')[0].slice(0,240),code:S.scripts.some(x=>x.code===code)?undefined:code}); if(inf.idea) inf.idea.ep=s.id; sl.ref={t:'script',id:s.id}; snSave(); closeDrawer(); toast('✍️ New script. It\'s linked to this card.'); return go('desk'); }
+  if(a==='newarc'){ const n=snNewArc(); if(n){ sl.arcs=[...(sl.arcs||[]),n.id]; snSave(); snDrawerRefresh(); } return; }
+  if(a==='first') return snMoveTo(sl.id,0), snDrawerRefresh(); if(a==='last') return snMoveTo(sl.id,se.slots.length-1), snDrawerRefresh();
+  if(a==='earlier') return snMoveTo(sl.id,i-1), snDrawerRefresh(); if(a==='later') return snMoveTo(sl.id,i+1), snDrawerRefresh();
+  if(a==='remove'){ snRemove(sl.id); closeDrawer(); SN.sel=null; snRender(); toast('Taken out. It\'s back in the list on the left (Undo works too).'); } });
+function snNewArc(){ const se=snSeason(); const name=(prompt('Name the arc (a story thread across episodes)','')||'').trim(); if(!name) return null; snPush(); const a={id:uid(),name,color:SN_COLS[(se.arcs||[]).length%SN_COLS.length]}; (se.arcs=se.arcs||[]).push(a); snSave(); snRender(); return a; }
+
+/* ---------- versions + more ---------- */
+function snVersions(){ const se=snSeason(); se.versions=se.versions||[];
+  openModal(`<div class="row"><h2 class="grow">💾 Versions of ${esc(se.name)}</h2><button class="btn sm" onclick="closeModal()">✕</button></div><p class="muted tiny">Save the order you have now as a version ("Chronological", "Mafia arc first"…), try something else, and switch back whenever.</p>
+    <div class="row"><input class="txt" id="snVName" placeholder="Name this version" value="Plan ${String.fromCharCode(65+se.versions.length%26)}"><button class="btn primary" id="snVSave">💾 Save the current order</button></div>
+    <div class="sn-vlist">${se.versions.slice().reverse().map(v=>`<div class="sn-vrow"><div class="grow"><b>${esc(v.name)}</b><small>${new Date(v.at).toLocaleString()}: ${v.order.map(id=>{ const s=se.slots.find(x=>x.id===id); return s?snInfo(s).title:null; }).filter(Boolean).slice(0,4).map(esc).join(', ')}${v.order.length>4?'…':''}</small></div><button class="btn sm" data-snv="${v.id}">Use this order</button><button class="btn sm" data-snvx="${v.id}">🗑</button></div>`).join('')||'<p class="tiny muted">No saved versions yet.</p>'}</div>`);
+  $('#snVSave').onclick=()=>{ se.versions.push({id:uid(),name:$('#snVName').value.trim()||'Version',order:se.slots.map(s=>s.id),at:Date.now()}); snSave(); snVersions(); snRender(); toast('💾 Saved'); };
+  $$('[data-snv]').forEach(b=>b.onclick=()=>{ const v=se.versions.find(x=>x.id===b.dataset.snv); snPush(); const by=new Map(se.slots.map(s=>[s.id,s])); const out=v.order.map(id=>by.get(id)).filter(Boolean); se.slots.forEach(s=>{ if(!out.includes(s)) out.push(s); }); se.slots=out; snSave(); closeModal(); snRender(); toast(`Switched to “${v.name}”`); });
+  $$('[data-snvx]').forEach(b=>b.onclick=()=>{ se.versions=se.versions.filter(x=>x.id!==b.dataset.snvx); snSave(); snVersions(); snRender(); }); }
+function snText(se){ return `${se.name}${se.goal?' — '+se.goal:''}\n\n`+se.slots.map((sl,i)=>{ const inf=snInfo(sl); return `E${i+1}. ${inf.title}${inf.sc?.code?' ('+inf.sc.code+')':''} [${snStat(inf.status)[2]}]${inf.date?' · airs '+inf.date:''}${inf.logline?'\n    '+inf.logline.split('\n')[0]:''}`; }).join('\n'); }
+function snMore(){ const se=snSeason();
+  openModal(`<div class="row"><h2 class="grow">⋯ ${esc(se.name)}</h2><button class="btn sm" onclick="closeModal()">✕</button></div><div class="sn-morelist">
+    <button class="btn" data-snm="codes">🔢 Renumber episode codes to match this order</button>
+    <button class="btn" data-snm="print">🖨 Print a one-page season plan</button>
+    <button class="btn" data-snm="copy">📋 Copy the plan as text</button>
+    <button class="btn" data-snm="dup">🧪 Duplicate as a what-if season</button>
+    <label class="lab">Season number</label><input type="number" min="0" class="txt" id="snNum" value="${se.num||1}" style="width:100px">
+    <button class="btn red" data-snm="del">🗑 Delete this season (scripts and ideas stay)</button></div>`);
+  $('#snNum').onchange=e=>{ se.num=+e.target.value||1; snSave(); };
+  $$('[data-snm]').forEach(b=>b.onclick=async()=>{ const k=b.dataset.snm;
+    if(k==='codes'){ const ch=[]; se.slots.forEach((sl,i)=>{ const inf=snInfo(sl); const code=`S${se.num||1}E${i+1}`; if(inf.sc&&inf.sc.code!==code) ch.push([inf.sc,code]); }); if(!ch.length) return toast('Codes already match the order'); if(!confirm(`Change ${ch.length} episode code${ch.length>1?'s':''}?\n\n`+ch.slice(0,14).map(([s,c])=>`${s.code||'(none)'} → ${c}   ${s.title||'Untitled'}`).join('\n'))) return; ch.forEach(([s,c])=>{ s.code=c; s.updated=Date.now(); }); save(); closeModal(); snRender(); return toast('🔢 Codes updated'); }
+    if(k==='print'){ const rows=se.slots.map((sl,i)=>{ const inf=snInfo(sl); return `<h2>E${i+1}. ${esc(inf.title)}</h2><p class="sub">${esc([inf.sc?.code,snStat(inf.status)[2],inf.date&&'airs '+snFmtDate(inf.date),inf.secs&&'~'+fmtMin(inf.secs)+' min',(sl.tags||[]).map(t=>SN_TAGM[t]?.[2]).join(', '),(sl.arcs||[]).map(id=>se.arcs.find(a=>a.id===id)?.name).filter(Boolean).join(', ')].filter(Boolean).join(' · '))}</p>${inf.logline?`<pre>${esc(inf.logline)}</pre>`:''}${inf.chars.length?`<h3>With</h3><p>${esc(inf.chars.slice(0,10).map(x=>x.c.name).join(', '))}</p>`:''}${sl.notes?`<h3>Notes</h3><pre>${esc(sl.notes)}</pre>`:''}`; }).join('');
+      return muPrint(se.name,`<h1>${esc(se.name)}</h1><p class="sub">${esc(showName())}${se.goal?' · '+esc(se.goal):''}</p>${rows}`); }
+    if(k==='copy'){ try{ await navigator.clipboard.writeText(snText(se)); toast('📋 Copied'); }catch(_){ prompt('Copy',snText(se)); } return; }
+    if(k==='dup'){ const c=JSON.parse(JSON.stringify(se)); const map={}; c.id=uid(); c.name=se.name+' (what if)'; c.versions=[]; c.slots.forEach(s=>{ map[s.id]=uid(); }); c.slots.forEach(s=>{ s.id=map[s.id]; s.after=(s.after||[]).map(d=>({...d,id:map[d.id]})).filter(d=>d.id); }); c.created=c.updated=Date.now(); S.seasons.push(c); S.settings.snOn=c.id; save(); closeModal(); snRender(); return toast('🧪 Copy made. Mess with it freely.'); }
+    if(k==='del'){ if(!confirm(`Delete ${se.name}? The scripts and ideas in it are not deleted.`)) return; S.seasons=S.seasons.filter(s=>s!==se); S.settings.snOn=S.seasons[0]?.id||null; save(); closeModal(); snRender(); } }); }
+
+/* ---------- clicks, typing ---------- */
+document.addEventListener('click',e=>{ if(current!=='season'||!e.target.closest('#scr-season')) return; if(SND.justDropped&&Date.now()-SND.justDropped<250) return; const t=e.target, se=snSeason();
+  const a=t.closest('[data-sn]')?.dataset.sn;
+  if(a==='newseason'){ const s=snNew(null,S.seasons.length?null:snGuessNum()); const add=S.scripts.filter(x=>!snWhere('script',x.id).length&&(x.code||'').toUpperCase().startsWith('S'+s.num+'E')); if(add.length&&confirm(`Start ${s.name} with the ${add.length} script${add.length>1?'s':''} coded S${s.num}E…?`)) add.sort((a,b)=>(a.code||'').localeCompare(b.code||'',undefined,{numeric:true})).forEach(x=>s.slots.push(snSlot({t:'script',id:x.id}))); save(); return snRender(); }
+  if(!se) return;
+  if(a==='newarc') return snNewArc(); if(a==='suggest') return snSuggestDialog(); if(a==='undo') return snUndo(); if(a==='versions') return snVersions(); if(a==='more') return snMore();
+  if(a==='addph'){ const n=(prompt('Placeholder title (like "Christmas episode" or "Nerd gets revenge?")','')||'').trim(); if(!n) return; const sl=snAdd({t:'none'},null,{title:n}); snRender(); return snOpen(sl.id); }
+  if(a==='addidea'){ const n=(prompt('The idea, in a sentence','')||'').trim(); if(!n) return; const l={id:uid(),title:n.slice(0,80),cat:'Episode Idea',body:n,tags:['season planner'],at:Date.now()}; S.lore.unshift(l); snAdd({t:'idea',id:l.id}); return snRender(); }
+  if(a==='addnew'){ const s=newScript({code:`S${se.num||1}E${se.slots.length+1}`}); snAdd({t:'script',id:s.id}); toast('📄 New script added to the end'); return go('desk'); }
+  if(a==='filldates') return snFillDates(true); if(a==='fillempty') return snFillDates(false);
+  if(a==='cleardates'){ if(!confirm('Clear every air date in this season?')) return; snPush(); se.slots.forEach(sl=>snSetDate(sl,'')); snSave(); return snRender(); }
+  const sea=t.closest('[data-snsea]'); if(sea){ S.settings.snOn=sea.dataset.snsea; SN.hi=''; save(); return snRender(); }
+  const v=t.closest('[data-snview]'); if(v){ SN.view=v.dataset.snview; return snRender(); }
+  const ptab=t.closest('[data-snpool-tab]'); if(ptab){ SN.pool=ptab.dataset.snpoolTab; return snRender(); }
+  const pa=t.closest('[data-snpadd]'); if(pa){ const [k,id]=pa.dataset.snpadd.split(':'); snAdd({t:k,id}); return snRender(); }
+  const ax=t.closest('[data-snarcx]'); if(ax){ e.stopPropagation(); const ar=se.arcs.find(x=>x.id===ax.dataset.snarcx); if(!confirm(`Delete the “${ar.name}” arc? Episodes keep everything else.`)) return; snPush(); se.arcs=se.arcs.filter(x=>x!==ar); se.slots.forEach(s=>s.arcs=(s.arcs||[]).filter(id=>id!==ar.id)); if(SN.hi==='arc:'+ar.id) SN.hi=''; snSave(); return snRender(); }
+  const arc=t.closest('[data-snarc]'); if(arc){ const k='arc:'+arc.dataset.snarc; SN.hi=SN.hi===k?'':k; return snRender(); }
+  const ac=t.closest('[data-snac]'); if(ac){ const [aid,sid]=ac.dataset.snac.split(':'); const sl=se.slots.find(s=>s.id===sid); snPush(); sl.arcs=(sl.arcs||[]).includes(aid)?sl.arcs.filter(x=>x!==aid):[...(sl.arcs||[]),aid]; snSave(); return snRender(); }
+  const fx=t.closest('[data-snfix]'); if(fx){ const f=snCheck(se)[+fx.dataset.snfix]; f?.fix?.[1](); return; }
+  const op=t.closest('[data-snopen]'); if(op) return snOpen(op.dataset.snopen);
+  const mv=t.closest('[data-snmv]'); if(mv){ const c=mv.closest('[data-snslot]'), i=se.slots.findIndex(s=>s.id===c.dataset.snslot), to=i+ +mv.dataset.snmv; if(to<0||to>=se.slots.length) return; SN.sel=c.dataset.snslot; snMoveTo(c.dataset.snslot,to); $(`[data-snslot="${SN.sel}"]`)?.focus(); return; }
+  const card=t.closest('[data-snslot]'); if(card) return snOpen(card.dataset.snslot); });
+document.addEventListener('dblclick',e=>{ const arc=e.target.closest('#scr-season [data-snarc]'); if(!arc) return; const se=snSeason(), a=se.arcs.find(x=>x.id===arc.dataset.snarc); const n=(prompt('Rename the arc',a.name)||'').trim(); if(!n) return; a.name=n; snSave(); snRender(); });
+document.addEventListener('input',e=>{ const t=e.target; if(!t.closest?.('#scr-season')) return; const se=snSeason();
+  if(t.id==='snQ'){ SN.q=t.value; const p=$('#snPool'); p.innerHTML=snPoolHTML(se); const q=$('#snQ'); q.focus(); q.setSelectionRange(q.value.length,q.value.length); return; }
+  if(t.dataset.snf==='name'||t.dataset.snf==='goal'){ se[t.dataset.snf]=t.value; snSave(); if(t.dataset.snf==='name'){ const b=$(`[data-snsea="${se.id}"]`); if(b) b.firstChild.textContent=t.value; } } });
+document.addEventListener('change',e=>{ const t=e.target; if(!t.closest?.('#scr-season')) return; const se=snSeason();
+  if(t.id==='snHi'){ SN.hi=t.value; return snRender(); }
+  if(t.id==='snGap'){ snOpt().gap=+t.value; save(); return snRender(); }
+  if(t.id==='snShowChars'){ SN.showChars=t.checked; return snRender(); }
+  if(t.dataset.snf==='color'){ se.color=t.value; snSave(); return snRender(); }
+  if(t.dataset.snf==='start'||t.dataset.snf==='cadence'){ se[t.dataset.snf]=t.dataset.snf==='cadence'?+t.value:t.value; snSave(); return; }
+  if(t.dataset.sndate){ const sl=se.slots.find(s=>s.id===t.dataset.sndate); snPush(); snSetDate(sl,t.value); snSave(); return snRender(); } });
+document.addEventListener('keydown',e=>{ if(current!=='season') return; const t=e.target;
+  if(t.id==='snIdea'&&e.key==='Enter'){ const v=t.value.trim(); if(!v) return; const l={id:uid(),title:v.slice(0,80),cat:'Episode Idea',body:v,tags:['season planner'],at:Date.now()}; S.lore.unshift(l); snAdd({t:'idea',id:l.id}); snRender(); $('#snIdea')?.focus(); toast('💡 Idea added to the end'); return; }
+  if(/INPUT|TEXTAREA|SELECT/.test(t.tagName)||$('#modalBg.on')) return;
+  if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='z'){ e.preventDefault(); return snUndo(); }
+  const card=t.closest?.('[data-snslot]'); if(card&&(e.key==='ArrowLeft'||e.key==='ArrowRight')&&(e.altKey||e.shiftKey)){ e.preventDefault(); const se=snSeason(), i=se.slots.findIndex(s=>s.id===card.dataset.snslot), to=i+(e.key==='ArrowLeft'?-1:1); if(to<0||to>=se.slots.length) return; SN.sel=card.dataset.snslot; snMoveTo(SN.sel,to); $(`[data-snslot="${SN.sel}"]`)?.focus(); }
+  if(card&&e.key==='Enter') snOpen(card.dataset.snslot); });
+
+/* ---------- drag and drop (mouse, pen, or sideways touch) ---------- */
+const SND={d:null,justDropped:0};
+document.addEventListener('pointerdown',e=>{ if(current!=='season'||e.button>0) return; const c=e.target.closest('#scr-season .sn-card,#scr-season .sn-pitem'); if(!c||e.target.closest('button,input,select,textarea,a')) return; SND.d={el:c,x:e.clientX,y:e.clientY,on:false}; });
+document.addEventListener('pointermove',e=>{ const d=SND.d; if(!d) return; if(!d.on){ if(Math.hypot(e.clientX-d.x,e.clientY-d.y)<7) return; d.on=true; const r=d.el.getBoundingClientRect(); d.dx=e.clientX-r.left; d.dy=e.clientY-r.top;
+    d.g=d.el.cloneNode(true); d.g.classList.add('sn-ghost'); d.g.style.width=r.width+'px'; document.body.appendChild(d.g); d.el.classList.add('sn-dragging'); document.body.classList.add('sn-drag'); }
+  e.preventDefault(); d.g.style.transform=`translate(${e.clientX-d.dx}px,${e.clientY-d.dy}px) rotate(-2deg)`;
+  const sc=$('#scr-season'); if(e.clientY<90) sc.scrollTop-=14; else if(e.clientY>innerHeight-70) sc.scrollTop+=14;
+  $$('.sn-dropb,.sn-dropa').forEach(x=>x.classList.remove('sn-dropb','sn-dropa')); $('#snPool')?.classList.remove('sn-droppool'); $('#snBoard')?.classList.remove('sn-dropend'); d.target=null;
+  const under=document.elementFromPoint(e.clientX,e.clientY); const pool=under?.closest('#snPool'), board=under?.closest('#snBoard')||under?.closest('#snMain');
+  if(pool&&d.el.classList.contains('sn-card')){ pool.classList.add('sn-droppool'); d.target={pool:true}; return; }
+  const B=$('#snBoard'); if(board&&B&&SN.view==='board'){ const cards=$$('.sn-card',B).filter(x=>x!==d.el); let at=cards.length;
+    for(let k=0;k<cards.length;k++){ const r=cards[k].getBoundingClientRect(); if(e.clientY<r.top||(e.clientY<=r.bottom&&e.clientX<r.left+r.width/2)){ at=k; break; } }
+    if(at<cards.length) cards[at].classList.add('sn-dropb'); else B.classList.add('sn-dropend'); d.target={board:true,before:cards[at]?.dataset.snslot||null}; } });
+document.addEventListener('pointerup',()=>{ const d=SND.d; SND.d=null; if(!d||!d.on) return; d.g.remove(); d.el.classList.remove('sn-dragging'); document.body.classList.remove('sn-drag'); SND.justDropped=Date.now();
+  $$('.sn-dropb').forEach(x=>x.classList.remove('sn-dropb')); const se=snSeason(), T=d.target; if(!T||!se) return snRender();
+  if(T.pool&&d.el.dataset.snslot){ snRemove(d.el.dataset.snslot); snRender(); return toast('Taken out of the season'); }
+  if(T.board){ const at=T.before?se.slots.findIndex(s=>s.id===T.before):se.slots.length;
+    if(d.el.dataset.snslot){ const i=se.slots.findIndex(s=>s.id===d.el.dataset.snslot); snPush(); const [s]=se.slots.splice(i,1); const j=T.before?se.slots.findIndex(x=>x.id===T.before):se.slots.length; se.slots.splice(j,0,s); SN.sel=s.id; snSave(); return snRender(); }
+    if(d.el.dataset.snpool){ const [k,id]=d.el.dataset.snpool.split(':'); snAdd({t:k,id},at); return snRender(); } }
+  snRender(); });
+document.addEventListener('pointercancel',()=>{ const d=SND.d; SND.d=null; if(d?.on){ d.g.remove(); d.el.classList.remove('sn-dragging'); document.body.classList.remove('sn-drag'); snRender(); } });
+
+/* ---------- elsewhere in the app ---------- */
+{ const _r=syRefresh; syRefresh=async function(A){ await _r(A); if(A.has('seasons')&&current==='season'&&!$('#drawer.on')) snRender(); }; }
+ACH.push({id:'season1',e:'🗂',n:'Season Architect',d:'Plan a season'});
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'🗂',label:'Season Planner',run:()=>go('season'),kw:'season order episodes plan schedule arc showrunner'}); return C; }; }
 
 </script>
 </body>

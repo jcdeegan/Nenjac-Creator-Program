@@ -1,4 +1,4 @@
-NENJAC CREATOR 5.9: how to run it
+NENJAC CREATOR 5.9.1: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -87,6 +87,18 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 5.9.1: SEASON PLANNER (Write → 🗂 Seasons)
+  Plan the order of a season. Drag scripts and Episode Ideas in from the left (or make a
+  placeholder like "Christmas episode?"), then drag the cards into order. Click a card to
+  set where it's at, tags (premiere, finale, big episode, filler, two-parter...), arcs,
+  who's in it, what it has to come after, the air date, and notes. 🔒 locks one in place.
+  VIEWS: 🧱 Board, 🧵 Arcs (which arcs and characters show up in which episode), 📅 Schedule
+  (fill in air dates from a start date; they match the Call Sheet), 🩺 Checkup (problems
+  with the order, with Fix buttons).
+  🪄 SUGGEST AN ORDER rearranges everything that isn't locked to follow your rules. You see
+  it first. 💾 VERSIONS keep alternate orders. ⋯ MORE: renumber episode codes, print the
+  plan, copy it as text, make a what-if copy. Ctrl/Cmd+Z undoes. Syncs with a shared show.
 
 NEW IN 5.9: NENJAC WRITER FOR iPHONE
   A separate writing app made for your phone. Scripts and the Bible, redesigned for
