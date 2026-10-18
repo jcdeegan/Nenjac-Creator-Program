@@ -3632,6 +3632,9 @@ body.sh-on .sh{height:calc(100dvh - 210px)}
 .hs-pknew{display:flex;gap:10px;align-items:center;background:rgba(0,149,246,.15)!important;border:1px dashed #0095f6!important;color:#fff;padding:7px 9px;border-radius:8px;cursor:pointer;text-align:left;font:inherit;margin-bottom:4px}.hs-pknew span{display:flex;flex-direction:column}.hs-pknew small{opacity:.65;font-size:11.5px}
 .jx-qnrow{color:#69db7c!important;font-weight:700}
 
+/* 5.9 iPhone writer setup */
+.ph-sec{margin:14px 0 6px}.ph-qr{background:#fff;padding:10px;width:230px;max-width:100%;border:3px solid #000;border-radius:12px;margin:10px 0}.ph-qr svg{display:block;width:100%;height:auto}.ph-steps{margin:6px 0 8px;padding-left:20px}.ph-steps li{margin:3px 0}
+
 </style>
 </head>
 <body data-mood="rehearsal">
@@ -11494,7 +11497,7 @@ drawWheel=function(){ whRender(); }; spinWheel=function(){ whSpin(); };
    points, storage safety, one-tab guard, error catcher, offline app,
    help menu, what's new, accessibility.
    =================================================================== */
-const APP_NAME='Nenjac Creator', APP_VER='5.8.1', BACKUP_FORMAT=2;
+const APP_NAME='Nenjac Creator', APP_VER='5.9', BACKUP_FORMAT=2;
 const showName = () => (S.settings.showName||'').trim() || 'Nenjac';
 S.version = Math.max(S.version||1, 4);
 const ONLINE_APP = /^https?:$/.test(location.protocol);
@@ -11504,6 +11507,10 @@ const ONLINE_APP = /^https?:$/.test(location.protocol);
 
 /* ---------- WHAT'S NEW ---------- */
 const CHANGELOG=[
+  {v:'5.9',title:'📱 Nenjac Writer for iPhone',items:[
+    ['📱','A writing app for your phone','A separate app built from scratch for the iPhone: write scripts and edit the Bible on the go. It syncs through your shared show, so what you write on the phone shows up here (and the other way around). Install it from Settings → 👥 Shared show → 📱 iPhone writer: scan the QR code, then Add to Home Screen.'],
+    ['💬','Write like a group chat','Tap a cast member\'s face and type their line. The next speaker is picked for you (ping-pong), "starr: hey" gives Starr the line, "(whispering)" adds how they say it, and scene names come from the ones you already use.'],
+    ['📖','The Bible in your pocket','Every character and lore entry, editable with touch. Snap a photo to give a character a new look, add quotes and fields, and keep Episode Ideas in a quick idea inbox (shake for a prompt).']]},
   {v:'5.8.1',title:'＋ Create new, everywhere',items:[
     ['＋','Make anyone on the spot','Every "who / where / which" picker can now create a brand new one right there: tagging people on HeroSpace, posting as, locations, who took it, events, stories, Top 8, relationships, multiverse connections, "inside…" for places, the comic Hero Kit cast, Power Forge, Versus and the figure poser. Type a name, pick a role, done. Every universe dropdown has ＋ New universe too.']]},
   {v:'5.8',title:'HeroSpace',items:[
@@ -38784,9 +38791,13 @@ if(!FIRST_RUN&&!S.settings.seen57&&S.settings.seen58) setTimeout(()=>{ if($('#to
   const done=()=>{ ['seen57','seen56','seen55','seen54','seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello57')?.remove(); }; $('#h57p').onclick=()=>{ done(); go('shooter'); }; $('#h57w').onclick=()=>{ done(); openWhatsNew(); }; $('#h57x').onclick=done; },3300);
 if(FIRST_RUN) S.settings.seen57=true;
 
-if(!FIRST_RUN&&!S.settings.seen58) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello58" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>5.8: HeroSpace.</b><small>Instagram × MySpace × Facebook for everybody in your multiverse. Post snapshots and reels as any character, tag people, customize profiles (with a profile song), and every post becomes a snapshot in the multiverse.</small><div class="row"><button class="btn sm primary" id="h58p">📱 Open HeroSpace</button><button class="btn sm" id="h58w">✨ What's new</button><button class="btn sm" id="h58x" aria-label="Dismiss">✕</button></div></div></div>`);
+if(!FIRST_RUN&&!S.settings.seen58&&S.settings.seen59) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello58" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>5.8: HeroSpace.</b><small>Instagram × MySpace × Facebook for everybody in your multiverse. Post snapshots and reels as any character, tag people, customize profiles (with a profile song), and every post becomes a snapshot in the multiverse.</small><div class="row"><button class="btn sm primary" id="h58p">📱 Open HeroSpace</button><button class="btn sm" id="h58w">✨ What's new</button><button class="btn sm" id="h58x" aria-label="Dismiss">✕</button></div></div></div>`);
   const done=()=>{ ['seen58','seen57','seen56','seen55','seen54','seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello58')?.remove(); }; $('#h58p').onclick=()=>{ done(); go('multiverse'); setTimeout(()=>{ if(typeof hsOpen==='function') hsOpen('feed'); },700); }; $('#h58w').onclick=()=>{ done(); openWhatsNew(); }; $('#h58x').onclick=done; },3300);
 if(FIRST_RUN) S.settings.seen58=true;
+
+if(!FIRST_RUN&&!S.settings.seen59) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello59" role="status"><div class="h40-art">${castArt('Deegs')}</div><div><b>5.9: Nenjac Writer for iPhone.</b><small>Write scripts and edit the Bible on your phone, redesigned for touch. It syncs with this show. Set it up from Settings → 👥 Shared show → 📱 iPhone writer.</small><div class="row"><button class="btn sm primary" id="h59p">📱 Set it up</button><button class="btn sm" id="h59w">✨ What's new</button><button class="btn sm" id="h59x" aria-label="Dismiss">✕</button></div></div></div>`);
+  const done=()=>{ ['seen59','seen58','seen57','seen56','seen55','seen54','seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello59')?.remove(); }; $('#h59p').onclick=()=>{ done(); openSettings('shared'); }; $('#h59w').onclick=()=>{ done(); openWhatsNew(); }; $('#h59x').onclick=done; },3300);
+if(FIRST_RUN) S.settings.seen59=true;
 /* =====================================================================
    [JCU] THE JCU MULTIVERSE: its own little app inside the app.
    Every universe gets a number (JCU-0000 real life, JCU-0001 everything,
@@ -41172,6 +41183,31 @@ document.addEventListener('change',async ev=>{ const s=ev.target; if(!s||s.tagNa
   if(v==='__newu'){ const u=await jxQuickUniverse(); if(!u){ s.value=prev; return; } s.insertBefore(new Option(`${u.emoji||''} ${jxCode(u)} · ${u.name}`,u.id),marker); s.value=u.id; }
   else { const types=v.slice(6).split(',').filter(Boolean); const uidFrom=s.dataset.uidFrom&&$(s.dataset.uidFrom); const id=await jxQuickNew({types,uid:uidFrom?uidFrom.value:null}); if(!id){ s.value=prev; return; } const e=jxE(id); s.insertBefore(new Option(s.dataset.qnFmt==='handle'?'@'+hsHandle(e):`${e.name}`,id),marker); s.value=id; }
   s.dataset.qnPrev=s.value; s.dispatchEvent(new Event('change',{bubbles:true})); s.dispatchEvent(new Event('input',{bubbles:true})); },true);
+/* ===================================================================
+   [PHONE] 5.9: set up the iPhone writer (writer/ next to this page).
+   Settings → 👥 Shared show gets a QR code the phone camera can scan.
+   It carries the repo + key (+ your name), so it stays hidden until
+   you ask for it (handy when you're recording your screen).
+   =================================================================== */
+function phWriterURL(){ if(!/^https?:$/.test(location.protocol)) return ''; return location.href.split('#')[0].split('?')[0].replace(/[^/]*$/,'')+'writer/'; }
+function phCode(){ const c=SY.cfg; return 'NENJAC-CREW:'+btoa(unescape(encodeURIComponent(JSON.stringify({o:c.owner,r:c.repo,t:c.token,n:c.name||myName()||''})))); }
+function phLink(){ const u=phWriterURL(); return u?u+'#join='+encodeURIComponent(phCode()):''; }
+function phSection(){ const u=phWriterURL();
+  return `<h3>📱 iPhone writer</h3><p class="tiny muted">Write scripts and edit the Bible on your phone, redesigned for touch. It syncs with this show like another computer would.</p>
+    ${u?`<div class="row"><button class="btn sm primary" data-ph="qr">📱 Show the setup QR</button><a class="btn sm" href="${esc(u)}" target="_blank" rel="noopener">Open the writer ↗</a></div>`
+      :`<p class="tiny sy-warn">Open the Creator from its GitHub Pages link (not from a file on this computer) to get the phone QR code. The writer lives at <b>writer/</b> next to index.html.</p>`}
+    <div id="phBox" hidden><div class="ph-qr" id="phQr"></div>
+      <ol class="tiny ph-steps"><li>Point your iPhone camera at the code and tap the link.</li><li>Tap <b>Copy setup code</b>, then Share → <b>Add to Home Screen</b>.</li><li>Open <b>Nenjac Writer</b> from your Home Screen and tap <b>Paste from clipboard</b>.</li></ol>
+      <p class="tiny sy-warn">This code has your GitHub key in it. Don't show it on stream or post it anywhere.</p>
+      <div class="row"><button class="btn sm" data-ph="copy">📋 Copy setup code</button><button class="btn sm" data-ph="link">🔗 Copy the link</button><button class="btn sm" data-ph="hide">Hide</button></div></div>`; }
+{ const _p=syPanelRender; syPanelRender=function(){ _p(); const el=$('#syPanel'); if(!el||!SY.cfg?.on||el.querySelector('#phBox')) return; const h=[...el.querySelectorAll('h3')].find(x=>/Recent activity/.test(x.textContent));
+    const box=document.createElement('div'); box.className='ph-sec'; box.innerHTML=phSection(); h?h.before(box):el.appendChild(box); }; }
+document.addEventListener('click',async e=>{ const b=e.target.closest('[data-ph]'); if(!b) return; const a=b.dataset.ph;
+  if(a==='qr'){ const box=$('#phBox'); box.hidden=false; const link=phLink(); try{ const qr=qrcode(0,link.length>600?'L':'M'); qr.addData(link); qr.make(); $('#phQr').innerHTML=qr.createSvgTag({cellSize:4,margin:2,scalable:true}); }catch(err){ $('#phQr').innerHTML='<p class="tiny">Couldn\'t draw the code. Use Copy the link instead.</p>'; } unlock('phone1'); return; }
+  if(a==='hide'){ $('#phBox').hidden=true; $('#phQr').innerHTML=''; return; }
+  if(a==='copy'||a==='link'){ const t=a==='copy'?phCode():phLink(); try{ await navigator.clipboard.writeText(t); toast(a==='copy'?'📋 Setup code copied':'🔗 Link copied. Open it on your iPhone.'); }catch(_){ prompt('Copy this',t); } } });
+ACH.push({id:'phone1',e:'📱',n:'Pocket Writers\' Room',d:'Set up the iPhone writer'});
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'📱',label:'iPhone writer setup (QR code)',run:()=>{ if(!syOn()){ toast('Connect a shared show first. The phone syncs through it.'); return openSettings('shared'); } openSettings('shared'); setTimeout(()=>$('[data-ph="qr"]')?.scrollIntoView({block:'center'}),300); },kw:'phone iphone mobile writer qr sync'}); return C; }; }
 
 </script>
 </body>

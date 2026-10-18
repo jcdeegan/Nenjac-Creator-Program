@@ -1,4 +1,4 @@
-NENJAC CREATOR 5.5: how to run it
+NENJAC CREATOR 5.9: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -15,6 +15,8 @@ THE FILES
     icon-512.png
     icon-maskable-512.png
     apple-touch-icon.png
+    writer/                <- NENJAC WRITER, the iPhone app (keep the whole folder
+                              here, next to index.html and assets/)
 
 ON A WEBSITE (GitHub Pages) = THE BEST WAY
   Anyone with the link just opens it. Art exports work right away (no folder linking),
@@ -85,6 +87,92 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 5.9: NENJAC WRITER FOR iPHONE
+  A separate writing app made for your phone. Scripts and the Bible, redesigned for
+  touch, and it syncs with your shared show (so it needs one connected, see below).
+  SET IT UP
+    1. Commit + push the writer/ folder with everything else (GitHub Desktop).
+    2. On the computer, open the Creator from its GitHub Pages link:
+       ⚙ Settings → 👥 Shared show → 📱 Show the setup QR.
+       (The QR has your GitHub key in it. Don't show it on stream.)
+    3. Scan it with the iPhone camera and tap the link. Tap "Copy setup code".
+    4. In Safari: Share → Add to Home Screen. Open Nenjac Writer from the home screen
+       and tap "Paste from clipboard". Done. It works offline too.
+  WRITING ON THE PHONE
+    Tap a face in the cast row and type their line. Return adds it. The next speaker
+    is picked for you (ping-pong). "starr: hey" gives Starr the line, "(whispering) hi"
+    adds how they say it, "[the sewers]" starts a scene. Tap any line to fix it, change
+    its type, move it or add a note. Hold a line for more. Swipe from the left edge to
+    go back. Notes you add show up on the computer's script lines, and vice versa.
+  ALSO: the whole Bible (snap a photo to give a character a new look), an Ideas inbox
+  (saved as Episode Ideas in the Bible; shake the phone for a prompt), share a script
+  as text, chat bubbles or a screenplay page, dark mode and text sizes.
+
+NEW IN 5.8.1: ＋ CREATE NEW, EVERYWHERE
+  Any time you pick a character, place, team, event, story or universe, there's a
+  ＋ Create option. Type a name in the search box and hit "Create “…”", or pick
+  "＋ New character…" / "＋ New universe…" in a dropdown. It's made in the
+  multiverse instantly and dropped right where you were.
+
+NEW IN 5.8: HEROSPACE
+  🌌 Multiverse → 📱 HeroSpace (top bar). The multiverse's own Instagram / MySpace /
+  Facebook. Everything you post is also a snapshot or clip in the multiverse.
+  - "Acting as" (left side) is who you're liking and commenting as. Switch anytime.
+  - ➕ Create: Upload (pick several for a carousel), Draw it (Art Studio + Hero Kit,
+    hit ✓ Done when finished), Pose someone (3D figure), Reel from Animate, a comic
+    page, or a text status. Then crop, filter, and click "Tag someone" + click the
+    picture to tag people. Then the details: caption (@handles and #tags work),
+    who's posting, location, in-universe date/year (puts it on the timeline), kind of
+    shot, canon status, event, story, comic, mood, song, behind-the-scenes, likes.
+  - Reels from Animate: open any animation → Export → 📱 Post to HeroSpace.
+  - Profiles: ✏️ Edit profile has Basics, Look (themes, colors, fonts, patterns,
+    banner), Song (upload an mp3, it autoplays), About (work, school, lives in, from,
+    relationship), Top 8 and Custom CSS. 👥 Add friend makes a real connection.
+  - In the multiverse: each universe has a 📸 Snapshots tab, character/place pages
+    show their snapshots, and dated snapshots appear on the Timeline.
+
+NEW IN 5.7: NENJAC SHOOTER
+  🎮 PLAY → 🔫 Nenjac Shooter. A 3D shooter: Bugman brought every bug on the island to
+  get Neen. Protect Neen (purple bar, top left) and survive.
+  - Story: 6 arenas (Ferry Beach, Town Square, the Projects, Haze Woods, the Boardwalk,
+    Mount Nenjac), 3 waves + a boss each. Endless: any arena, boss every 5 waves.
+    Boss Rush: just the 6 bosses.
+  - Controls: click the game to aim (mouse locks), WASD move, click shoot, right-click
+    or E special, Space jump, Shift dash, Q cherry bomb, V first/third person,
+    Esc pause. Phones get twin sticks + buttons. Xbox/PS controllers work.
+  - Pick 1 of 3 upgrades between waves (keys 1/2/3). Grab Red Bulls, hot dogs and
+    gas station sushi for health. Coins pay out Nenjac Bucks at the end.
+  - Unlock Jeff (clear Town Square), Warren (Haze Woods), Tony (the Boardwalk) and the
+    Chief (beat Bugman). Jeff is hiding somewhere in every story arena.
+  - If it runs slow: ⚙ Settings → Graphics → low.
+
+NEW IN 5.6: MULTIVERSE COMICS
+  The multiverse runs on comics now.
+  - Every universe opens on 📚 Comics. ＋ New issue: pick the series, issue #, format
+    (comic page, Instagram, square, vertical, landscape), a Marvel-style layout and the
+    page count. "Start with a cover" builds a masthead, issue box and universe code.
+  - It opens the full Art Studio comic editor right inside the multiverse. The bar on
+    top has the series, issue, title and status (Idea → … → ✅ Done). ← Multiverse saves
+    and goes back. 📖 Read flips through the issue and downloads pages.
+  - 🦸 Hero Kit tab (right side): click a panel first, then:
+      🧍 Figures: open the 3D poser, or quick-drop a pose. Drop as Inks, Flats,
+         Silhouette, Pencils (a trace layer that never exports) or Shaded.
+      🪣 Fill & ink: bucket (click inside lines to fill, click a shape to recolor),
+         ink weights, black outline, drop shadow, pop gradient, black gutters.
+      📐 Layouts + covers, 💬 lettering (Marvel captions, location boxes, editor's
+         notes, SFX in 7 styles), 💥 panel FX, 🏙 20 backgrounds (🎲 rerolls them),
+         📦 hero props, 👥 cast tagging, ⭐ save anything as a reusable asset.
+  - 🧍 FIGURE POSER: drag the dots (hands and feet use IK, the green hip dot spins the
+    body), drag empty space to orbit, scroll to zoom, right-drag to slide. Tabs: Pose
+    (18 presets, sliders per joint, mirror), Body (11 types + sliders), Look (costume
+    presets, colors, sleeves, gloves, boots, hair, cape, mask), Camera (shots,
+    perspective, Dutch tilt), Save (poses, figures, a character's body model).
+  - Character pages: 📚 Appears in, 🧍 Body model, ⚡ Forge them a power, 🔥 Rapid Fire,
+    🃏 Trading card. Home: ⚡ Power Forge, 🎰 Hero Machine, ⚔️ Versus, 🔥 Rapid Fire.
+  - 👤 The button next to ＋ Universe switches whose multiverse it is. Everybody gets
+    their own universes, comics and code letters. Multiverse stuff is never shared
+    through the GitHub shared show; move it with ⬇ Export or the app backup.
 
 NEW IN 5.5: THE JCU MULTIVERSE
   Hit 🌌 MULTIVERSE in the top bar. It's its own space: the rest of the app is the
