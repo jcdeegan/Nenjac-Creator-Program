@@ -3867,33 +3867,61 @@ body.night .sn-card,body.night .sn-pitem,body.night .sn-head,body.night .sn-pad,
 .pt-dim{opacity:.6}
 .pt-clear{text-align:center;padding:20px 0}
 .pt-pin{display:flex;gap:8px;align-items:center;justify-content:center;font-size:13px;color:#a9afd6;margin-top:10px}
-
 /* ===== [5.9.3] 🏋️ The Practice Room ===== */
-.wq{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
-.wq-head{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start;background:linear-gradient(160deg,#fff 55%,#efe2ff)}
-.wq-head h1{margin:0 0 4px;font-family:var(--display);font-size:26px}.wq-head p{margin:0 0 8px;color:var(--muted)}
-.wq-stats{display:flex;gap:8px;flex-wrap:wrap}.wq-stats span{background:#fff;border:2px solid #000;border-radius:999px;padding:3px 10px;font-size:13px}.wq-stats .wq-due{background:var(--sun)}
-.wq-mods{display:flex;flex-direction:column;gap:6px;min-width:260px}.wq-mods>b{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
-.wq-mod{display:block;border:2px solid #000;border-radius:10px;padding:7px 10px;background:#fff;cursor:pointer;font-weight:700;font-size:14px}.wq-mod small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-left:22px}
-.wq-mod.on{background:#1b1b1b;color:#fff}.wq-mod.on small{color:#cfcfcf}
-.wq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
-.wq-drill{display:flex;flex-direction:column;gap:8px}.wq-drill p{margin:0}
-.wq-dt{font-family:var(--display);font-size:17px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}.wq-dt small{font-family:var(--ui);font-size:12px;color:var(--muted)}
-.wq-gym{background:linear-gradient(160deg,#fff 50%,#fff3c4);grid-column:span 1}.wq-pilot{background:linear-gradient(160deg,#fff 50%,#d0ebff)}
-.wq-con{display:flex;gap:10px;align-items:flex-start}.wq-con>span{font-size:34px;line-height:1}.wq-con p{color:var(--muted);font-size:14px}
-.wq-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin-top:auto}.wq-row select.txt{width:auto}
-.wq-odd{display:flex;gap:6px;align-items:center}.wq-odd>b{font-size:20px}.wq-face{width:58px;height:58px;display:inline-flex;align-items:center;justify-content:center;overflow:hidden}.wq-face img,.wq-face svg{max-width:100%;max-height:100%}
-.wq-odd.sm .wq-face{width:42px;height:42px}
-.wq-prem{font-family:var(--mono);font-size:15px;background:var(--soft);border-left:4px solid var(--sign);padding:6px 10px;border-radius:6px}
-.wq-phases{display:flex;flex-wrap:wrap;gap:4px}.wq-phases span{font-size:12px;border:1.5px solid #000;border-radius:999px;padding:1px 8px;background:#fff}
-.wq-duels{display:flex;flex-direction:column;gap:6px;margin-top:4px}.wq-duel{display:flex;gap:6px;align-items:center;border-top:1px dashed #bbb;padding-top:6px}.wq-duel small{display:block;color:var(--muted);font-size:12px}
-.wq-sec h2{margin:0 0 6px;font-family:var(--display);font-size:18px}
-.wq-list{display:flex;flex-direction:column;gap:6px}
-.wq-it{display:flex;gap:8px;align-items:center;border:2px solid #000;border-radius:10px;padding:7px 10px;background:#fff}.wq-it small{display:block;color:var(--muted);font-size:12px}.wq-ic{font-size:22px}
-.wq-score{font-family:var(--display);background:var(--sun);border:2px solid #000;border-radius:8px;padding:2px 7px;font-size:13px;white-space:nowrap}
+.wq{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:16px;padding-bottom:20px}
+.wq h1,.wq h2,.wq h3{font-family:var(--display);font-weight:400;margin:0}
+.wq-head{display:grid;grid-template-columns:1fr 340px;gap:20px;align-items:center;background:#fff;border:3px solid #000;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;position:relative;overflow:hidden}
+.wq-head::before{content:'';position:absolute;inset:0 0 auto 0;height:8px;background:repeating-linear-gradient(90deg,#8a52d1 0 40px,var(--sun) 40px 80px,#4a86e8 80px 120px,#ff5fa2 120px 160px)}
+.wq-kick{font:700 11px var(--ui);letter-spacing:.14em;color:#8a52d1;margin:4px 0 4px}
+.wq-head h1{font-size:30px;line-height:1.1}.wq-hl>p{margin:6px 0 14px;color:var(--muted);max-width:560px;line-height:1.45}
+.wq-stats{display:flex;gap:10px;flex-wrap:wrap}.wq-stats>div{border:2.5px solid #000;border-radius:12px;padding:6px 14px;background:var(--soft);display:flex;flex-direction:column;min-width:86px}
+.wq-stats b{font:400 20px var(--display);line-height:1.1}.wq-stats small{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700}.wq-stats .wq-due{background:var(--sun)}
+.wq-mods{display:flex;flex-direction:column;gap:8px}.wq-mlab{font:700 11px var(--ui);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.wq-mod{display:flex;gap:10px;align-items:center;border:2.5px solid #000;border-radius:12px;padding:9px 12px;background:#fff;cursor:pointer;transition:background .15s,transform .1s}.wq-mod:hover{transform:translateY(-1px)}
+.wq-mod input{position:absolute;opacity:0;pointer-events:none}
+.wq-sw{flex:0 0 38px;height:22px;border:2.5px solid #000;border-radius:999px;background:#e6e8ee;position:relative;transition:background .15s}.wq-sw::after{content:'';position:absolute;top:2px;left:2px;width:13px;height:13px;border-radius:50%;background:#000;transition:left .15s}
+.wq-mod.on{background:#1b1530;color:#fff}.wq-mod.on .wq-sw{background:var(--sun)}.wq-mod.on .wq-sw::after{left:18px}
+.wq-mt{display:flex;flex-direction:column;min-width:0}.wq-mt b{font-size:14px}.wq-mt small{font-size:12px;color:var(--muted);line-height:1.3}.wq-mod.on .wq-mt small{color:#c9c2e6}
+.wq-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.wq-drill{--dc:#8a52d1;display:flex;flex-direction:column;background:#fff;border:3px solid #000;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;min-width:0}
+.wq-drill.wide{grid-column:span 2}
+.wq-dh{display:flex;align-items:center;gap:10px;padding:12px 16px;border-bottom:3px solid #000;background:color-mix(in srgb,var(--dc) 16%,#fff)}
+.wq-di{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;font-size:20px;background:var(--dc);border:2.5px solid #000;border-radius:10px;box-shadow:2px 2px 0 #000}
+.wq-dh b{font:400 17px var(--display);flex:1;min-width:0}.wq-dh small{font:700 11px var(--ui);text-transform:uppercase;letter-spacing:.06em;background:#fff;border:2px solid #000;border-radius:999px;padding:2px 9px;white-space:nowrap}
+.wq-db{padding:14px 16px 4px;flex:1;display:flex;flex-direction:column;gap:10px;font-size:14px;line-height:1.45}.wq-db p{margin:0}
+.wq-df{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:12px 16px 14px}.wq-df .btn.primary{margin-left:auto}
+.wq-sel{width:auto!important;padding:7px 28px 7px 10px!important;font-size:14px!important;border-radius:10px}
+.wqk-gym{--dc:var(--sun)}.wqk-chaos{--dc:#ff5fa2}.wqk-odd{--dc:#4a86e8}.wqk-ep20{--dc:#f6b26b}.wqk-pilot{--dc:#69db7c}.wqk-duel{--dc:#e03131}.wqk-free{--dc:#adb5bd}
+.wqk-gym .wq-db{justify-content:center;background:linear-gradient(160deg,#fff 50%,#fff6d6)}
+.wq-con{display:flex;gap:16px;align-items:flex-start}.wq-cone{font-size:44px;line-height:1;width:72px;height:72px;flex:0 0 72px;display:grid;place-items:center;background:#fff;border:3px solid #000;border-radius:16px;box-shadow:3px 3px 0 #000;transform:rotate(-4deg)}
+.wq-con h3{font-size:22px;margin-bottom:4px}.wq-con p{color:#333;margin:0 0 10px!important;font-size:15px}
+.wq-pill{display:inline-block;font-size:12px;font-weight:700;border:2px solid #000;border-radius:999px;padding:2px 9px;background:#fff;margin:0 4px 4px 0}.wq-pill.hot{background:var(--sun)}
+.wq-deck{display:flex;flex-direction:column;gap:6px;margin-top:2px}.wq-deck span{font-size:12px;font-weight:700;background:#fff0f6;border:2px solid #000;border-radius:8px;padding:5px 9px;box-shadow:2px 2px 0 #000}.wq-deck span:nth-child(1){transform:rotate(-1.5deg)}.wq-deck span:nth-child(2){transform:rotate(1deg);margin-left:12px}.wq-deck span:nth-child(3){transform:rotate(-.5deg);margin-left:4px}
+.wq-pair{display:flex;align-items:center;justify-content:center;gap:12px;padding:4px 0}.wq-pair>div{display:flex;flex-direction:column;align-items:center;gap:4px}.wq-pair>div b{font-size:13px}
+.wq-plus{width:30px;height:30px;display:grid;place-items:center;border:2.5px solid #000;border-radius:50%;background:var(--sun);font-weight:900}
+.wq-face{width:76px;height:76px;display:inline-grid;place-items:center;overflow:hidden;background:var(--soft);border:2.5px solid #000;border-radius:14px}.wq-face.sm{width:44px;height:44px;flex:0 0 44px;border-radius:10px}
+.wq-face>*{max-width:88%;max-height:88%}.wq-face img,.wq-face svg{max-width:100%;max-height:100%;object-fit:contain}
+.wq-prem{display:flex;gap:10px;align-items:center;font-family:var(--mono);font-size:15px;background:var(--soft);border:2px solid #000;padding:10px 12px;border-radius:10px}
+.wq-phases{display:flex;flex-wrap:wrap;gap:5px}.wq-phases span{font-size:12px;font-weight:700;border:2px solid #000;border-radius:999px;padding:2px 9px 2px 3px;background:#fff;display:inline-flex;align-items:center;gap:5px}.wq-phases i{font-style:normal;font-size:10px;background:#000;color:#fff;border-radius:999px;padding:1px 5px}
+.wq-poster{display:flex;gap:12px;align-items:center;background:#111;color:#fff;border:3px solid #000;border-radius:12px;padding:12px}.wq-poster .wq-face{background:#2a2a35;border-color:#444}
+.wq-pt{font:400 20px var(--display);line-height:1;text-transform:uppercase}.wq-pt span{font-size:12px;letter-spacing:.3em;color:var(--sun)}.wq-poster small{display:block;margin-top:6px;color:#ccc;font-size:13px}
+.wq-duels{display:flex;flex-direction:column;gap:6px}.wq-duel{display:flex;gap:8px;align-items:center;border:2px solid #000;border-radius:10px;padding:7px 10px;background:var(--soft)}.wq-duel small{display:block;color:var(--muted);font-size:12px}
+.wq-sec{background:#fff;border:3px solid #000;border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px}
+.wq-sh{margin-bottom:12px;gap:10px;align-items:center}.wq-sh h2{font-size:20px}.wq-sh p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.wq-reread{background:linear-gradient(160deg,#fff 60%,#fff6d6)}
+.wq-list{display:flex;flex-direction:column;gap:8px}
+.wq-it{display:flex;gap:10px;align-items:center;border:2.5px solid #000;border-radius:12px;padding:9px 12px;background:#fff;transition:transform .1s}.wq-it:hover{transform:translateX(2px)}.wq-it small{display:block;color:var(--muted);font-size:12px}.wq-ic{font-size:22px;width:38px;height:38px;display:grid;place-items:center;background:var(--soft);border:2px solid #000;border-radius:10px;flex:0 0 38px}
+.wq-score{font-family:var(--display);background:var(--sun);border:2px solid #000;border-radius:8px;padding:2px 8px;font-size:13px;white-space:nowrap}
+.wq-empty{display:flex;flex-direction:column;align-items:center;gap:2px;padding:22px;border:2.5px dashed #0003;border-radius:12px;text-align:center}.wq-empty span{font-size:30px}.wq-empty small{color:var(--muted)}
 .wq-taste{display:flex;gap:8px;align-items:flex-end;overflow-x:auto;padding:6px 0}.wq-tc{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:44px}.wq-tc small{font-size:10px;color:var(--muted)}
 .wq-bars{display:flex;gap:3px;align-items:flex-end;height:90px}.wq-bars i{display:block;width:12px;background:var(--sun);border:1.5px solid #000;border-radius:3px 3px 0 0}.wq-bars i.l{background:var(--sign)}
+@media (max-width:1000px){.wq-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.wq-head{grid-template-columns:1fr}}
+@media (max-width:640px){.wq-grid{grid-template-columns:1fr}.wq-drill.wide{grid-column:auto}.wq-con{flex-direction:column}.wq-head{padding:16px}.wq-head h1{font-size:24px}}
+body.night .wq-head,body.night .wq-drill,body.night .wq-sec,body.night .wq-it,body.night .wq-mod:not(.on),body.night .wq-dh small,body.night .wq-pill,body.night .wq-phases span{background:var(--card);color:var(--ink)}
+body.night .wq-dh{background:color-mix(in srgb,var(--dc) 22%,var(--card))}body.night .wqk-gym .wq-db,body.night .wq-reread{background:var(--card)}body.night .wq-con p{color:var(--ink)}
+body.night .wq-stats>div,body.night .wq-prem,body.night .wq-duel,body.night .wq-face,body.night .wq-ic{background:color-mix(in srgb,var(--ink) 8%,var(--card))}body.night .wq-deck span{background:color-mix(in srgb,#ff5fa2 18%,var(--card))}
 /* the editor */
+.wq-side-card .wq-face{width:48px;height:48px;border-radius:10px}.wq-odd{display:flex;gap:6px;margin-top:6px}.wq-side-card .wq-prem{font-size:13px;padding:6px 8px;margin-top:6px}
 body.wq-open #modalBg{z-index:4000}body.wq-open .tr-bg{z-index:3300}body.wq-open #toasts{z-index:3400;position:fixed}
 .wq-ed{position:fixed;inset:0;z-index:3000;background:#2a2340;display:flex;flex-direction:column;opacity:0;transition:opacity .2s;--fade:0}
 .wq-ed.on{opacity:1}
@@ -3940,7 +3968,7 @@ body.wq-open #modalBg{z-index:4000}body.wq-open .tr-bg{z-index:3300}body.wq-open
 .wq-cmp-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-top:8px}
 .wq-cmp-col{display:flex;flex-direction:column;gap:6px;border:2px solid #000;border-radius:10px;padding:8px}.wq-cmp-h small{display:block;color:var(--muted);font-size:12px}.wq-trophy{font-weight:700}
 .wq-cmp-page{max-height:55vh;overflow:auto;font-family:var(--mono);font-size:13px;line-height:20px;background:#fff;padding:6px}.wq-cmp-page .wq-b{cursor:default}
-body.night .wq-head,body.night .wq-gym,body.night .wq-pilot{background:var(--card)}body.night .wq-it,body.night .wq-mod,body.night .wq-stats span{background:var(--card);color:var(--ink)}
+
 body.night .wq-paper{background:linear-gradient(90deg,transparent 54px,#7a2a2a 54px,#7a2a2a 56px,transparent 56px),repeating-linear-gradient(#1e1e26 0 27px,#2d3550 27px 28px);color:#eee}body.night .wq-page{background:#1e1e26}body.night .wq-inbar{background:#24242e}body.night .wq-inrow textarea,body.night .wq-chip,body.night .wq-side-card,body.night .wq-help{background:#2a2a35;color:#eee}
 @media (max-width:760px){.wq-top{flex-wrap:wrap;gap:6px;padding:8px 10px}.wq-title{order:5;flex-basis:100%}.wq-timer{font-size:20px;margin-left:auto}.wq-help{display:none}.wq-body{flex-direction:column;padding:8px}.wq-side{width:auto;max-height:28vh}.wq-paper{padding:14px 12px 14px 40px;background:repeating-linear-gradient(#fff 0 27px,var(--rule) 27px 28px)}.wq-b.dl{margin:0 6%}.wq-b.pa{margin:0 12%}.wq-wc{display:none}}
 </style>
@@ -42385,32 +42413,36 @@ const wqMonthEnd=()=>{ const d=new Date(); return Math.ceil((new Date(d.getFullY
 /* ---------- the drawer: rendering the Practice Room ---------- */
 const WQ_D={gym:['🏋️','Weekly Challenge'],chaos:['🌪','Chaos Mode'],elevator:['🛗','Odd Couple'],ep20:['⏱','20-Minute Episode'],pilot:['📺','Pilot of the Month'],duel:['⚔️','Writers\' Duel'],free:['✍️','Free write']};
 function wqRender(){ const el=$('#scr-practice'); if(!el) return; const P=S.practice.pieces, me=myName(), wk=wqWeek(), con=wqWeekCon(wk), gymDone=P.find(p=>p.drill==='gym'&&p.week===wk&&p.done), streak=wqGymStreak();
-  const pil=wqPilot(), pilP=P.find(p=>p.drill==='pilot'&&p.month===pil.month&&(!me||p.author===me)), pilC=S.chars.find(c=>c.id===pil.c);
-  WQ.odd=WQ.odd||wqOddCouple(); WQ.prem=WQ.prem||wqPremise(); const oA=WQ.odd&&S.chars.find(c=>c.id===WQ.odd.a), oB=WQ.odd&&S.chars.find(c=>c.id===WQ.odd.b);
+  const pil=wqPilot(), pilP=P.find(p=>p.drill==='pilot'&&p.month===pil.month&&(!me||p.author===me)), pilC=S.chars.find(c=>c.id===pil.c), left=wqMonthEnd();
+  WQ.odd=WQ.odd||wqOddCouple(); WQ.prem=WQ.prem||wqPremise(); const oA=WQ.odd&&S.chars.find(c=>c.id===WQ.odd.a), oB=WQ.odd&&S.chars.find(c=>c.id===WQ.odd.b), prC=S.chars.find(c=>c.id===WQ.prem.c);
   const due=P.filter(p=>p.done&&p.ratings?.now&&!p.ratings?.later&&Date.now()-(p.ratings.now.at||p.created)>6.5*864e5);
-  const words=P.reduce((n,p)=>n+(p.words||0),0), duels=S.practice.duels.filter(d=>!d.closed);
-  el.innerHTML=`<div class="wq"><div class="card wq-head"><div class="grow"><h1>🏋️ The Practice Room</h1><p>Episodes that will never get made. Write fast, write weird, get funnier. Nothing here touches your real show unless you 🎓 graduate it.</p>
-      <div class="wq-stats"><span><b>${P.filter(p=>p.done).length}</b> pieces</span><span><b>${words.toLocaleString()}</b> words</span><span>🔥 <b>${streak}</b> week${streak===1?'':'s'} in a row</span>${due.length?`<span class="wq-due">🔁 <b>${due.length}</b> to reread</span>`:''}</div></div>
-      <div class="wq-mods"><b>Modes for your next drill</b><label class="wq-mod ${WQ.mods.die?'on':''}"><input type="checkbox" data-wqmod="die" ${WQ.mods.die?'checked':''}> 💀 Keep Typing or It Dies<small>Stop for 5 seconds and your last line starts dying</small></label><label class="wq-mod ${WQ.mods.tunnel?'on':''}"><input type="checkbox" data-wqmod="tunnel" ${WQ.mods.tunnel?'checked':''}> 🔦 Tunnel Vision<small>You only see the line you just wrote. No going back.</small></label></div></div>
+  const words=P.reduce((n,p)=>n+(p.words||0),0), duels=S.practice.duels.filter(d=>!d.closed), done=P.filter(p=>p.done).length;
+  const sel=(id,opts,def)=>`<select class="txt wq-sel" id="${id}">${opts.map(([v,l])=>`<option value="${v}" ${v===def?'selected':''}>${l}</option>`).join('')}</select>`;
+  const card=(cls,ico,title,tag,body,foot)=>`<div class="wq-drill ${cls}"><div class="wq-dh"><span class="wq-di">${ico}</span><b>${title}</b>${tag?`<small>${tag}</small>`:''}</div><div class="wq-db">${body}</div><div class="wq-df">${foot}</div></div>`;
+  const mod=(k,ico,t,d)=>`<label class="wq-mod ${WQ.mods[k]?'on':''}"><input type="checkbox" data-wqmod="${k}" ${WQ.mods[k]?'checked':''}><span class="wq-sw"></span><span class="wq-mt"><b>${ico} ${t}</b><small>${d}</small></span></label>`;
+  el.innerHTML=`<div class="wq">
+    <div class="wq-head"><div class="wq-hl"><div class="wq-kick">WRITE ▸ PRACTICE</div><h1>🏋️ The Practice Room</h1><p>Episodes that will never get made. Write fast, write weird, get funnier. Nothing in here touches your real show unless you 🎓 graduate it.</p>
+        <div class="wq-stats"><div><b>${done}</b><small>pieces</small></div><div><b>${words.toLocaleString()}</b><small>words</small></div><div><b>🔥 ${streak}</b><small>week streak</small></div>${due.length?`<div class="wq-due"><b>🔁 ${due.length}</b><small>to reread</small></div>`:''}</div></div>
+      <div class="wq-mods"><div class="wq-mlab">Modes for your next drill</div>${mod('die','💀','Keep Typing or It Dies','Stop for 5 seconds and your last line starts dying')}${mod('tunnel','🔦','Tunnel Vision','You only see the line you just wrote. No going back.')}</div></div>
     <div class="wq-grid">
-      <div class="card wq-drill wq-gym"><div class="wq-dt">🏋️ This week's challenge <small>${wk.replace('-W',' · week ')}</small></div><div class="wq-con"><span>${con.e}</span><div><b>${esc(con.t)}</b><p>${esc(con.d)}</p></div></div>
-        <div class="wq-row"><select class="txt" id="wqGymMin">${[[10,'10 min'],[15,'15 min'],[20,'20 min'],[0,'No timer']].map(([v,l])=>`<option value="${v}" ${v===15?'selected':''}>${l}</option>`).join('')}</select>${gymDone?`<button class="btn" data-wqo="${gymDone.id}">✅ Done. Open it</button><button class="btn sm" data-wq="gym">Do it again</button>`:`<button class="btn primary" data-wq="gym">💪 Start</button>`}</div>
-        <p class="tiny muted">${con.honor?'✋ Honor system: no robot can check this one.':'🤖 It checks your lines as you write.'} Same challenge for everyone this week. New one every Monday.</p></div>
-      <div class="card wq-drill"><div class="wq-dt">🌪 Chaos Mode</div><p>A timed sprint. Every so often a chaos card drops and you HAVE to work it in. Somebody bursts in, the power goes out, a secret comes out.</p>
-        <div class="wq-row"><select class="txt" id="wqChMin">${[10,15,20].map(v=>`<option value="${v}" ${v===15?'selected':''}>${v} min</option>`).join('')}</select><select class="txt" id="wqChLvl">${Object.entries(WQ_LVL).map(([k,v])=>`<option value="${k}" ${k==='medium'?'selected':''}>${v.l}</option>`).join('')}</select><button class="btn primary" data-wq="chaos">🌪 Start</button></div></div>
-      <div class="card wq-drill"><div class="wq-dt">🛗 Odd Couple</div>${oA&&oB?`<div class="wq-odd"><span class="wq-face">${charArt(oA)}</span><b>+</b><span class="wq-face">${charArt(oB)}</span></div><p><b>${esc(oA.name)}</b> and <b>${esc(oB.name)}</b> have basically never shared a scene. Now they're stuck in <b>${esc(WQ.odd.where)}</b>, and ${esc(WQ.odd.why)}.</p>`:'<p class="muted">Add a few characters to the Bible first.</p>'}
-        <div class="wq-row"><button class="btn" data-wq="reodd">🎲 Different pair</button><button class="btn primary" data-wq="elevator" ${oA?'':'disabled'}>🛗 Start (10 min)</button></div></div>
-      <div class="card wq-drill"><div class="wq-dt">⏱ 20-Minute Episode</div><p class="wq-prem">“${esc(WQ.prem.t)}”</p><div class="wq-phases">${WQ_EP20.map(p=>`<span>${p[1]}</span>`).join('')}</div>
-        <div class="wq-row"><button class="btn" data-wq="reprem">🎲 New premise</button><button class="btn primary" data-wq="ep20">⏱ Start</button></div></div>
-      <div class="card wq-drill wq-pilot"><div class="wq-dt">📺 Pilot of the Month <small>${wqMonthEnd()} day${wqMonthEnd()===1?'':'s'} left</small></div>${pilC?`<div class="wq-odd"><span class="wq-face">${charArt(pilC)}</span></div>`:''}<p class="wq-prem"><b>${esc(pil.star)}: The Series</b><br>…but it's ${esc(pil.fmt)}.</p><p class="tiny muted">Write a whole pilot for a spinoff that will never exist. No timer. Chip away at it all month.</p>
-        <div class="wq-row">${pilP?`<button class="btn primary" data-wqo="${pilP.id}">✍️ Keep writing (${pilP.words||0} words)</button>`:`<button class="btn primary" data-wq="pilot">📺 Start the pilot</button>`}</div></div>
-      <div class="card wq-drill"><div class="wq-dt">⚔️ Writers' Duel</div><p>Same prompt, same timer, two writers. Then read both side by side and pick a winner. With a shared show, Noah gets it on his computer. Or play on one computer, taking turns.</p>
-        <div class="wq-row"><button class="btn primary" data-wq="newduel">⚔️ New duel</button></div>
-        ${duels.length?`<div class="wq-duels">${duels.slice(-6).reverse().map(d=>{ const ents=S.practice.pieces.filter(p=>p.duel===d.id&&p.done), mine=ents.find(p=>p.author===me); return `<div class="wq-duel"><div class="grow"><b>${esc(d.title)}</b><small>by ${esc(d.by||'?')} · ${ents.length} entr${ents.length===1?'y':'ies'}${ents.length?': '+ents.map(p=>esc(p.author||'?')).join(', '):''}</small></div>${mine?'':`<button class="btn sm primary" data-wqduel="${d.id}">✍️ Write mine</button>`}${ents.length>=2?`<button class="btn sm" data-wqcmp="${d.id}">👀 Compare</button>`:''}</div>`; }).join('')}</div>`:''}</div>
-      <div class="card wq-drill"><div class="wq-dt">✍️ Free write</div><p>No prompt, no rules. Just you and a blank page that doesn't count.</p><div class="wq-row"><select class="txt" id="wqFrMin">${[[0,'No timer'],[5,'5 min'],[10,'10 min'],[20,'20 min'],[30,'30 min']].map(([v,l])=>`<option value="${v}">${l}</option>`).join('')}</select><button class="btn primary" data-wq="free">✍️ Start</button></div></div></div>
-    ${due.length?`<div class="card wq-sec"><h2>🔁 Reread these cold</h2><p class="tiny muted">You rated these right after writing them. A week later, read them with fresh eyes and rate again. Fresh eyes don't lie.</p><div class="wq-list">${due.map(p=>wqItem(p,true)).join('')}</div></div>`:''}
-    <div class="card wq-sec"><div class="row"><h2 class="grow">🗄 The drawer</h2><select class="txt" id="wqFilt" style="width:auto"><option value="">Everything</option>${Object.entries(WQ_D).map(([k,v])=>`<option value="${k}" ${WQ.filt===k?'selected':''}>${v[0]} ${v[1]}</option>`).join('')}</select></div>
-      <div class="wq-list">${P.filter(p=>!WQ.filt||p.drill===WQ.filt).slice().sort((a,b)=>(b.updated||b.created)-(a.updated||a.created)).map(p=>wqItem(p)).join('')||'<p class="muted tiny">Nothing yet. Pick a drill up top. It\'s supposed to be bad, that\'s the point.</p>'}</div></div>
+      ${card('wqk-gym wide','🏋️','This week\'s challenge',wk.replace(/^\d+-W/,'Week '),`<div class="wq-con"><span class="wq-cone">${con.e}</span><div><h3>${esc(con.t)}</h3><p>${esc(con.d)}</p><span class="wq-pill">${con.honor?'✋ Honor system':'🤖 Checks your lines live'}</span> <span class="wq-pill">New one every Monday</span>${streak?` <span class="wq-pill hot">🔥 ${streak} week${streak===1?'':'s'} in a row</span>`:''}</div></div>`,
+        `${sel('wqGymMin',[[10,'10 min'],[15,'15 min'],[20,'20 min'],[0,'No timer']],15)}${gymDone?`<button class="btn" data-wqo="${gymDone.id}">✅ Done · open it</button><button class="btn" data-wq="gym">Again</button>`:`<button class="btn primary" data-wq="gym">💪 Start the challenge</button>`}`)}
+      ${card('wqk-chaos','🌪','Chaos Mode','Sprint',`<p>Chaos cards drop mid-sprint and you <b>have</b> to work them in.</p><div class="wq-deck"><span>⚡ The power goes out.</span><span>🚨 A cop shows up.</span><span>🤫 Somebody says the quiet part out loud.</span></div>`,
+        `${sel('wqChMin',[[10,'10 min'],[15,'15 min'],[20,'20 min']],15)}${sel('wqChLvl',Object.entries(WQ_LVL).map(([k,v])=>[k,v.l]),'medium')}<button class="btn primary" data-wq="chaos">Start</button>`)}
+      ${card('wqk-odd','🛗','Odd Couple','10 min',oA&&oB?`<div class="wq-pair"><div><span class="wq-face">${charArt(oA)}</span><b>${esc(wqFirst(oA))}</b></div><span class="wq-plus">+</span><div><span class="wq-face">${charArt(oB)}</span><b>${esc(wqFirst(oB))}</b></div></div><p>Basically never shared a scene. Now they're stuck in <b>${esc(WQ.odd.where)}</b>, and ${esc(WQ.odd.why)}.</p>`:'<p class="muted">Add a few characters to the Bible first.</p>',
+        `<button class="btn" data-wq="reodd" title="Different pair">🎲</button><button class="btn primary" data-wq="elevator" ${oA?'':'disabled'}>Start</button>`)}
+      ${card('wqk-ep20','⏱','20-Minute Episode','20 min',`<div class="wq-prem">${prC?`<span class="wq-face sm">${charArt(prC)}</span>`:''}<span>“${esc(WQ.prem.t)}”</span></div><div class="wq-phases">${WQ_EP20.map(p=>`<span><i>${p[0]}′</i>${p[1]}</span>`).join('')}</div>`,
+        `<button class="btn" data-wq="reprem" title="New premise">🎲</button><button class="btn primary" data-wq="ep20">Start</button>`)}
+      ${card('wqk-pilot','📺','Pilot of the Month',`${left} day${left===1?'':'s'} left`,`<div class="wq-poster">${pilC?`<span class="wq-face">${charArt(pilC)}</span>`:''}<div><div class="wq-pt">${esc(pil.star)}<br><span>THE SERIES</span></div><small>…but it's ${esc(pil.fmt)}.</small></div></div><p class="tiny muted">A whole pilot for a spinoff that will never exist. Chip away at it all month.</p>`,
+        pilP?`<button class="btn primary" data-wqo="${pilP.id}">✍️ Keep writing · ${pilP.words||0} words</button>`:`<button class="btn primary" data-wq="pilot">Start the pilot</button>`)}
+      ${card('wqk-duel wide','⚔️','Writers\' Duel','2 writers',`<p>Same prompt, same timer, two writers. Nobody sees the other one until both are in, then you read them side by side and vote. ${typeof syOn==='function'&&syOn()?'Shared show is on, so Noah gets it on his computer.':'No shared show? Take turns on this computer.'}</p>
+        ${duels.length?`<div class="wq-duels">${duels.slice(-4).reverse().map(d=>{ const ents=S.practice.pieces.filter(p=>p.duel===d.id&&p.done), mine=ents.find(p=>p.author===me); return `<div class="wq-duel"><div class="grow"><b>${esc(d.title)}</b><small>by ${esc(d.by||'?')} · ${ents.length?ents.map(p=>esc(p.author||'?')).join(' vs '):'no entries yet'}</small></div>${mine?'':`<button class="btn sm primary" data-wqduel="${d.id}">✍️ Write mine</button>`}${ents.length>=2?`<button class="btn sm" data-wqcmp="${d.id}">👀 Compare</button>`:''}</div>`; }).join('')}</div>`:''}`,
+        `<button class="btn primary" data-wq="newduel">⚔️ New duel</button>`)}
+      ${card('wqk-free','✍️','Free write','',`<p>No prompt, no rules. Just you and a blank page that doesn't count.</p>`,`${sel('wqFrMin',[[0,'No timer'],[5,'5 min'],[10,'10 min'],[20,'20 min'],[30,'30 min']],0)}<button class="btn primary" data-wq="free">Start</button>`)}
+    </div>
+    ${due.length?`<div class="wq-sec wq-reread"><div class="wq-sh"><h2>🔁 Reread these cold</h2><p>You rated these right after writing them. Now read them with fresh eyes and rate again.</p></div><div class="wq-list">${due.map(p=>wqItem(p,true)).join('')}</div></div>`:''}
+    <div class="wq-sec"><div class="wq-sh row"><h2 class="grow">🗄 The drawer</h2><select class="txt wq-sel" id="wqFilt"><option value="">Everything</option>${Object.entries(WQ_D).map(([k,v])=>`<option value="${k}" ${WQ.filt===k?'selected':''}>${v[0]} ${v[1]}</option>`).join('')}</select></div>
+      <div class="wq-list">${P.filter(p=>!WQ.filt||p.drill===WQ.filt).slice().sort((a,b)=>(b.updated||b.created)-(a.updated||a.created)).map(p=>wqItem(p)).join('')||'<div class="wq-empty"><span>🗄</span><b>Nothing in here yet.</b><small>Pick a drill up top. It\'s supposed to be bad, that\'s the point.</small></div>'}</div></div>
     ${wqTasteHTML()}</div>`; }
 function wqItem(p,reread){ const d=WQ_D[p.drill]||WQ_D.free, r=p.ratings||{}, avg=x=>x?((x.l+x.s+x.v)/3).toFixed(1):'–';
   return `<div class="wq-it"><span class="wq-ic">${d[0]}</span><div class="grow"><b>${esc(p.title||'Untitled practice')}</b><small>${d[1]} · ${p.author?esc(p.author)+' · ':''}${ago(p.created)} · ${p.words||0} words${p.done?'':' · ✏️ unfinished'}${p.grad?' · 🎓 graduated':''}</small></div>
@@ -42418,7 +42450,7 @@ function wqItem(p,reread){ const d=WQ_D[p.drill]||WQ_D.free, r=p.ratings||{}, av
     ${reread?`<button class="btn sm primary" data-wqre="${p.id}">🔁 Reread</button>`:`<button class="btn sm" data-wqo="${p.id}">Open</button>`}<button class="btn sm" data-wqhear="${p.id}" title="Table Read: the cast reads it">🗣</button>${p.grad?'':`<button class="btn sm" data-wqgrad="${p.id}" title="Turn it into a real script">🎓</button>`}<button class="btn sm" data-wqdel="${p.id}" title="Delete">🗑</button></div>`; }
 function wqTasteHTML(){ const R=S.practice.pieces.filter(p=>p.ratings?.now&&p.ratings?.later).sort((a,b)=>a.created-b.created).slice(-16); if(R.length<2) return '';
   const avg=x=>(x.l+x.s+x.v)/3, diff=R.reduce((n,p)=>n+avg(p.ratings.now)-avg(p.ratings.later),0)/R.length;
-  return `<div class="card wq-sec"><h2>📈 Your taste over time</h2><p class="tiny muted">Left bar: how you rated it right after writing. Right bar: a week later, cold. ${Math.abs(diff)<.3?'You judge your own stuff pretty accurately.':diff>0?`You rate your stuff about ${diff.toFixed(1)} higher right after writing it. Everyone does. Trust the cold read.`:`You're harder on yourself in the moment than a week later. It's better than you think.`}</p>
+  return `<div class="wq-sec"><div class="wq-sh"><h2>📈 Your taste over time</h2></div><p class="tiny muted" style="margin:0 0 8px">Left bar: how you rated it right after writing. Right bar: a week later, cold. ${Math.abs(diff)<.3?'You judge your own stuff pretty accurately.':diff>0?`You rate your stuff about ${diff.toFixed(1)} higher right after writing it. Everyone does. Trust the cold read.`:`You're harder on yourself in the moment than a week later. It's better than you think.`}</p>
     <div class="wq-taste">${R.map(p=>`<div class="wq-tc" title="${esc(p.title)}"><div class="wq-bars"><i style="height:${avg(p.ratings.now)*20}%"></i><i class="l" style="height:${avg(p.ratings.later)*20}%"></i></div><small>${esc((p.title||'').slice(0,10))}</small></div>`).join('')}</div></div>`; }
 
 /* ---------- starting a drill ---------- */
