@@ -1,4 +1,4 @@
-NENJAC CREATOR 5.9.2: how to run it
+NENJAC CREATOR 5.9.3: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -87,6 +87,25 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 5.9.3: THE PRACTICE ROOM (Write → 🏋️ Practice)
+  Episodes that will never get made. Practice pieces live in their own drawer: they never
+  touch your real scripts, the Season Planner, the Call Sheet, the Numbers or canon.
+  Type lines like a text:  deegs: get out   [the roof]   (whispering)   :same person again
+  Anything else is an action line. Enter adds it. Click a line to fix it.
+  🏋️ Weekly challenge   a new rule every Monday (No Deegs, no questions...). It checks your
+                        lines live and marks rule-breakers red. Weekly streak.
+  🌪 Chaos Mode         timed sprint. Chaos cards drop and you HAVE to work them in.
+  🛗 Odd Couple         two characters who have never shared a scene, stuck together.
+  ⏱ 20-Minute Episode  a premise and a clock with the phases (cold open → the button).
+  📺 Pilot of the Month one character's spinoff in a totally wrong format. All month.
+  ⚔️ Writers' Duel      same prompt + timer for two writers. Shared show = Noah gets it on
+                        his computer. No shared show = take turns on one. Compare + vote.
+  💀 Keep Typing or It Dies   stop for 5 seconds and your last line starts dying.
+  🔦 Tunnel Vision            you only see the line you just wrote. All revealed at the end.
+  When you wrap: rate it (laugh / surprise / sounds like them) and pick your best line.
+  A week later it asks you to 🔁 reread it cold and rate it again. 🗣 Hear it = Table Read.
+  🎓 Graduate turns a practice piece into a real script on the Writing Desk.
 
 NEW IN 5.9.2: THE CAST UPDATE (🎙 Voice Booth → 📨 Actors)
   ONE-TIME (needed for actor pages): update your drop box script to version 4:
