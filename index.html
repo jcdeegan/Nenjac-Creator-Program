@@ -3789,6 +3789,84 @@ body.sn-drag,body.sn-drag *{cursor:grabbing!important;user-select:none}
 @media (max-width:900px){.sn-cols{grid-template-columns:1fr}.sn-pool{position:static;max-height:none}.sn-name{width:160px}}
 body.night .sn-card,body.night .sn-pitem,body.night .sn-head,body.night .sn-pad,body.night .sn-pool{color:#121212}
 
+
+/* 5.9.2 Cast, Dailies, studio recording */
+.modal:has(.rm-wide){width:min(1040px,100%)}
+.vb-clean{display:inline-flex;align-items:center;gap:4px;font-weight:700;white-space:nowrap}
+.ca-need{background:#fff9db;border:2px solid #ffe066;border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:13.5px}
+.ca-add{display:flex;gap:8px;margin-bottom:10px}.ca-add .txt{flex:1}
+.ca-q{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;font-size:13px;margin-bottom:12px;padding:8px 10px;border:2px dashed #0002;border-radius:10px}
+.ca-q small{flex-basis:100%}
+.ca-list{display:flex;flex-direction:column;gap:10px}
+.ca-card{border:3px solid #000;border-radius:14px;padding:10px 12px;background:#fff;box-shadow:3px 3px 0 #000;color:#121212}
+.ca-top{display:flex;gap:10px;align-items:center}
+.ca-faces{display:flex}.ca-face{width:42px;height:42px;border-radius:50%;overflow:hidden;border:2px solid #000;background:#fff;margin-left:-10px;display:grid;place-items:center;font-size:20px}
+.ca-face:first-child{margin-left:0}.ca-face>*{width:100%!important;height:100%!important}
+.ca-name{font:400 18px var(--display);display:block}.ca-top small{display:block;color:var(--muted);font-size:12px}.ca-seen{color:#1864ab!important}
+.ca-num{text-align:right}.ca-num b{display:block;font:400 20px var(--display)}.ca-num small{color:var(--muted);font-size:11px}
+.ca-reqs{margin:8px 0;display:flex;flex-direction:column;gap:5px}
+.ca-req{display:flex;gap:8px;align-items:center;background:#f8f9fa;border-radius:9px;padding:6px 8px;font-size:13px}
+.ca-req b{display:block}.ca-req small{color:var(--muted)}.ca-req.done{background:#ebfbee}
+.ca-late{color:#e03131;font-weight:800}
+.ca-bar{height:6px;border-radius:4px;background:#e9ecef;overflow:hidden;margin-top:3px}.ca-bar i{display:block;height:100%;background:#40c057}
+.ca-btns{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.ca-ask h3{margin:0;font:400 18px var(--display)}
+.ca-lines{display:flex;flex-direction:column;gap:6px;max-height:340px;overflow:auto;border:2px solid #000;border-radius:10px;padding:8px;background:#fff}
+.ca-line{border-bottom:1px solid #0001;padding:4px 2px 8px}
+.ca-lt{font-size:14px}.ca-lt small{color:var(--muted);margin-right:6px}.ca-lt i{color:#666}
+.ca-dir{display:flex;gap:6px;align-items:center;margin-top:5px;flex-wrap:wrap}
+.ca-dir .txt{flex:1;min-width:200px;padding:5px 8px!important;font-size:13px}
+.ca-int{display:flex;border:2px solid #000;border-radius:9px;overflow:hidden}
+.ca-int button{width:32px;height:30px;border:0;border-right:1px solid #0002;background:#fff;cursor:pointer;font-size:15px}
+.ca-int button:last-child{border-right:0}.ca-int button.on{background:var(--sun)}
+.ca-rd.has{background:#e7f5ff}.ca-rd.recording{background:#ff6b6b;color:#fff}
+.ca-sent{padding:14px;background:#ebfbee}
+/* dailies */
+.dl-bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:10px}.dl-bar .txt{width:auto;padding:5px 8px!important}
+.dl-ep{font:700 12px var(--ui);color:var(--muted);margin-bottom:6px}
+.dl-cue{background:#f1f3f5;border-radius:10px;padding:8px 12px;font-size:14px;color:#495057;margin-bottom:6px}.dl-cue b{font:400 12px var(--display);margin-right:6px;color:#121212}
+.dl-card{border:3px solid #000;border-radius:16px;padding:12px 14px;background:#fff;box-shadow:4px 4px 0 #000;color:#121212}
+.dl-who{display:flex;gap:10px;align-items:center}.dl-who b{font:400 16px var(--display);display:block}.dl-who small{color:var(--muted);font-size:12px}
+.dl-face{width:46px;height:46px;border-radius:50%;overflow:hidden;border:2px solid #000;flex:none}.dl-face>*{width:100%!important;height:100%!important}
+.dl-pill{font:800 11px var(--ui);border-radius:999px;padding:3px 9px;background:#e7f5ff}.dl-pill.k{background:#fff3bf}.dl-pill.x{background:#ffe3e3}.dl-pill.r{background:#f3d9fa}
+.dl-paren{font-style:italic;color:#666;margin-top:8px}
+.dl-text{font:600 22px/1.3 Georgia,serif;margin:4px 0 8px}
+.dl-dir{font-size:13px;background:#fff9db;border-radius:8px;padding:6px 10px;margin-bottom:8px}
+.dl-wave{width:100%;height:70px;display:block;background:#f8f9fa;border-radius:10px}
+.dl-q{display:flex;gap:10px;align-items:center;margin:6px 0;flex-wrap:wrap}
+.dl-qv{font:800 12px var(--ui);border-radius:999px;padding:3px 10px;background:#d3f9d8}.dl-qv.clip{background:#ffe3e3}.dl-qv.quiet,.dl-qv.noisy{background:#fff3bf}
+.dl-acts{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:6px}
+.dl-acts kbd{font:700 10px var(--ui);background:#0001;border-radius:4px;padding:0 4px;margin-left:3px}
+.dl-k{background:var(--sun)}
+.dl-redo{margin-top:10px;background:#f8f0fc;border:2px solid #d0bfff;border-radius:10px;padding:10px}
+.dl-pre{display:flex;flex-wrap:wrap;gap:5px;margin:6px 0}
+.dl-others{margin-top:10px;display:flex;gap:5px;flex-wrap:wrap;align-items:center}.dl-others small{color:var(--muted)}
+.dl-nav{display:flex;justify-content:space-between;margin-top:10px}
+.dl-keys{margin-top:10px}
+.dl-empty{text-align:center;padding:30px}
+/* the actor's page + booth extras */
+.bt-micx{margin-top:12px;display:flex;flex-direction:column;gap:8px;align-items:stretch}
+.bt-warn{background:#fff3bf;color:#5c3c00;border:3px solid #000;border-radius:14px;padding:10px 12px;font-size:14.5px}
+.bt-lab{font:800 12px var(--ui);color:#a9afd6;text-transform:none}
+.bt-sel{font:600 16px var(--ui);padding:10px;border-radius:12px;border:2px solid rgba(255,255,255,.3);background:#1f2240;color:#fff}
+.bt-redo{background:#f3d9fa;color:#5f3dc4;border:3px solid #000;border-radius:14px;padding:10px 12px;margin-bottom:10px;font-size:15px}
+.bt-dir{margin-top:12px;border-top:2px dashed #0002;padding-top:10px;display:flex;flex-direction:column;gap:8px}
+.bt-int{display:flex;align-items:center;gap:10px;font-size:14px}
+.bt-intbar{display:flex;gap:3px}.bt-intbar i{width:18px;height:10px;border-radius:3px;background:#e9ecef}.bt-intbar i.on{background:#fd7e14}
+.bt-dirn{font-size:15.5px;background:#fff9db;border-radius:10px;padding:8px 10px}
+.bt-read{border:3px solid #000;border-radius:12px;background:#e7f5ff;color:#111;font:800 15px var(--ui);padding:10px;box-shadow:3px 3px 0 #000}
+.bt-q{font:700 13px var(--ui);color:#d3f9d8;text-align:center}.bt-q.clip{color:#ffa8a8}.bt-q.quiet,.bt-q.noisy{color:#ffe066}
+.pt-list{display:flex;flex-direction:column;gap:10px}
+.pt-req{display:flex;gap:10px;align-items:center;text-align:left;border:3px solid #000;border-radius:18px;background:#fff;color:#111;padding:10px 12px;box-shadow:4px 4px 0 #000;font:inherit;width:100%}
+.pt-req.redo{background:#f3d9fa}
+.pt-req b{display:block;font:800 16px var(--ui)}.pt-req small{display:block;color:#555;font-size:13px}.pt-req .bt-bar{background:#e9ecef}
+.pt-note{margin-top:2px;font-style:italic}
+.pt-av{display:flex;flex:none}.pt-av>span{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid #000;background:#fff;margin-left:-12px}.pt-av>span:first-child{margin-left:0}.pt-av>span>*{width:100%!important;height:100%!important}
+.pt-go{font:900 26px var(--ui);color:#999}
+.pt-late{color:#e03131;font-weight:800}
+.pt-dim{opacity:.6}
+.pt-clear{text-align:center;padding:20px 0}
+.pt-pin{display:flex;gap:8px;align-items:center;justify-content:center;font-size:13px;color:#a9afd6;margin-top:10px}
 </style>
 </head>
 <body data-mood="rehearsal">
@@ -8109,7 +8187,7 @@ const vbMicOptions = () => `<option value="">🎙 Default mic</option>`+VB.mics.
 async function vbEnsureMic(){
   if(VB.stream && VB.stream.active) return VB.stream;
   if(!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder){ toast("This browser can't record audio here. Try Chrome.",'bad'); return null; }
-  try{ VB.stream=await navigator.mediaDevices.getUserMedia({audio:{...(VB.micId?{deviceId:{exact:VB.micId}}:{}), echoCancellation:false, noiseSuppression:true, autoGainControl:true}}); }
+  try{ VB.stream=await navigator.mediaDevices.getUserMedia(hfAudio(VB.micId,S.settings.recClean)); }
   catch(e){ openModal(`<div class="row"><h2 class="grow">🎙 Mic is blocked</h2><button class="btn sm" onclick="closeModal()">✕</button></div><p>The browser said no to the microphone. Click the 🔒 or 🎙 icon at the left of the address bar, set <b>Microphone → Allow</b>, then try again.</p><p class="tiny muted">On a Chromebook also check Settings → Privacy → Microphone. On a Mac: System Settings → Privacy & Security → Microphone → Chrome.</p>`); return null; }
   const a=ac(); VB.srcNode=a.createMediaStreamSource(VB.stream); VB.an=a.createAnalyser(); VB.an.fftSize=1024; const mute=a.createGain(); mute.gain.value=0; VB.srcNode.connect(VB.an); VB.an.connect(mute).connect(a.destination);
   vbListMics(); vbMeterLoop(); const h=$('#vbMicHint'); if(h) h.textContent='🎙 Mic is live: aim for the yellow';
@@ -8135,7 +8213,7 @@ async function vbRecord(){
   if(VB.countIn){ VB.counting=true; VB.cancelCount=false; vbRecBtn(); for(const n of [3,2,1]){ if(VB.cancelCount) break; vbCount(n); tone(n===1?1320:880,.07,'sine',.1); await sleep(560); }
     vbCount(''); VB.counting=false; if(VB.cancelCount){ VB.cancelCount=false; vbRecBtn(); return; } }
   const mt=['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg;codecs=opus'].find(m=>MediaRecorder.isTypeSupported?.(m))||'';
-  const chunks=[]; let rec; try{ rec=new MediaRecorder(st, mt?{mimeType:mt}:undefined); }catch(e){ rec=new MediaRecorder(st); }
+  const chunks=[]; let rec; try{ rec=hfRecorder(st,S.settings.recQ); }catch(e){ rec=new MediaRecorder(st); }
   rec.ondataavailable=e=>{ if(e.data&&e.data.size) chunks.push(e.data); };
   rec.onstop=()=>vbSaveTake(new Blob(chunks,{type:rec.mimeType||mt||'audio/webm'}), L);
   VB.rec=rec; rec.start(100); VB.recording=true; VB.t0=performance.now(); VB.live=[]; VB.heard=0; VB.quiet=0; vbRecBtn();
@@ -11651,7 +11729,7 @@ drawWheel=function(){ whRender(); }; spinWheel=function(){ whSpin(); };
    points, storage safety, one-tab guard, error catcher, offline app,
    help menu, what's new, accessibility.
    =================================================================== */
-const APP_NAME='Nenjac Creator', APP_VER='5.9.1', BACKUP_FORMAT=2;
+const APP_NAME='Nenjac Creator', APP_VER='5.9.2', BACKUP_FORMAT=2;
 const showName = () => (S.settings.showName||'').trim() || 'Nenjac';
 S.version = Math.max(S.version||1, 4);
 const ONLINE_APP = /^https?:$/.test(location.protocol);
@@ -11661,6 +11739,11 @@ const ONLINE_APP = /^https?:$/.test(location.protocol);
 
 /* ---------- WHAT'S NEW ---------- */
 const CHANGELOG=[
+  {v:'5.9.2',title:'🎧 The Cast Update',items:[
+    ['🎚','Studio-quality recording','Actors on their phones (and you in the 🎙 Voice Booth) now record the raw mic straight to uncompressed WAV: 24-bit, 48 kHz, no phone-call filters, no auto volume. It keeps a quarter second from before REC so first words never get cut, warns about Bluetooth earbud mics, does a room-noise check, and grades every take (clean, too loud, too quiet, noisy). Pick Studio, High or Compact in 👥 Cast or the Voice Booth.'],
+    ['👥','One link per actor, forever','🎙 Voice Booth → 📨 Actors → 👥 Cast. Add the people in your cast once and send each of them one link. Every time you need lines, hit ＋ Ask for lines and it shows up on their page with a due date, already sorted. Edit the script and their page updates. You see how many lines are in and (with the updated drop box script) when they last opened it, and 💬 copies a reminder text.'],
+    ['🎬','Direction on every line','While asking for lines, give any line a note ("like you just found out your dog is a cop"), a loudness from 🤫 whisper to 🤬 SCREAMING, and record your own line read they can play before they record.'],
+    ['🎧','Dailies','Review every take that came back in script order with the cue line before it. Space plays, C plays it in context, 1 keeper, 2 alt, 3 reject, R asks for a redo: pick or type a note and it lands on their page as a 🔁 redo request. Quality grade and waveform on every take.']]},
   {v:'5.9.1',title:'🗂 Season Planner',items:[
     ['🗂','Plan a season (Write → Seasons)','Drag episodes into order on a board. Anything fits: finished scripts, half-written drafts, Episode Ideas from the Bible (including the phone\'s Ideas tab), or a placeholder title like "Christmas episode?". Every card shows its number, how done it is (figured out from the script, voice takes and animations, or set by you), tags, arcs, who\'s in it, air date and length.'],
     ['🧵','Arcs and who shows up where','Make story arcs ("Mafia war", "Dean & Starr") and mark which episodes they\'re in. The Arcs view is a grid of every arc and character across the season, with stripes where one disappears too long.'],
@@ -31072,7 +31155,7 @@ function btList(){ const lines=btLines(); const sh=document.createElement('div')
 /* uploads: one at a time, retry forever (gently) */
 async function btQueue(){ if(BT.queue||BT.inv?.mode!=='drive'||!BT.url||BT.gone) return; BT.queue=true; let wait=1500;
   try{ while(true){ const t=Object.values(BT.takes).find(x=>!x.sent); if(!t) break; if(!navigator.onLine){ await new Promise(r=>setTimeout(r,4000)); continue; }
-      try{ const data=rmB64(new Uint8Array(await t.blob.arrayBuffer())).replace(/-/g,'+').replace(/_/g,'/'), ext=(t.mime.match(/mp4|aac/)?'m4a':'webm');
+      try{ const data=rmB64(new Uint8Array(await t.blob.arrayBuffer())).replace(/-/g,'+').replace(/_/g,'/'), ext=(/wav/.test(t.mime)?'wav':t.mime.match(/mp4|aac/)?'m4a':'webm');
         const upBody={a:'up',c:BT.code,k:t.k,w:t.w,t:t.t,by:BT.inv.actor||'',dur:t.dur,n:t.n,mime:t.mime,name:`${t.w} - line ${btLines().findIndex(L=>L.k===t.k)+1} - take ${t.n}.${ext}`,data}; const j=await njPost(BT.url,upBody,async()=>{ for(let q=0;q<3;q++){ const v=await njJsonp(BT.url,{a:'seen',c:BT.code,k:t.k,n:t.n}).catch(()=>({ok:false,err:'?'})); if(v.ok) return {ok:true,id:v.id}; if(v.err==='gone') return v; await new Promise(r=>setTimeout(r,1500)); } return {ok:false,err:'upload not confirmed'}; }); BT.upFails=0; BT.upErr='';
         if(j.ok){ const cur=BT.takes[t.k]; if(cur===t){ t.sent=true; t.fileId=j.id; await BoothDB.put(t); } wait=1500; if(BT.screen==='rec'&&btLines()[BT.i]?.k===t.k){ const s=$('.bt-status'); if(s) s.textContent='☁️ Sent'; } if(BT.screen==='done') btDone(); }
         else if(j.err==='gone'){ BT.gone=true; btToast('This invite was switched off. Use 📤 Send as a file at the end.'); break; }
@@ -38958,7 +39041,7 @@ if(!FIRST_RUN&&!S.settings.seen59&&S.settings.seen591) setTimeout(()=>{ if($('#t
   const done=()=>{ ['seen59','seen58','seen57','seen56','seen55','seen54','seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello59')?.remove(); }; $('#h59p').onclick=()=>{ done(); openSettings('shared'); }; $('#h59w').onclick=()=>{ done(); openWhatsNew(); }; $('#h59x').onclick=done; },3300);
 if(FIRST_RUN) S.settings.seen59=true;
 
-if(!FIRST_RUN&&!S.settings.seen591) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello591" role="status"><div class="h40-art">${castArt('Warren Outt')}</div><div><b>5.9.1: Season Planner.</b><small>Drag episodes into order and plan a whole season: scripts, drafts and ideas. Arcs, a checkup, suggested orders, air dates and versions.${S.settings.seen59?'':' (Plus 5.9: the Nenjac Writer app for iPhone, in Settings → 👥 Shared show.)'}</small><div class="row"><button class="btn sm primary" id="h591p">🗂 Plan a season</button><button class="btn sm" id="h591w">✨ What's new</button><button class="btn sm" id="h591x" aria-label="Dismiss">✕</button></div></div></div>`);
+if(!FIRST_RUN&&!S.settings.seen591&&S.settings.seen592) setTimeout(()=>{ if($('#tour')||$('.hello40')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello591" role="status"><div class="h40-art">${castArt('Warren Outt')}</div><div><b>5.9.1: Season Planner.</b><small>Drag episodes into order and plan a whole season: scripts, drafts and ideas. Arcs, a checkup, suggested orders, air dates and versions.${S.settings.seen59?'':' (Plus 5.9: the Nenjac Writer app for iPhone, in Settings → 👥 Shared show.)'}</small><div class="row"><button class="btn sm primary" id="h591p">🗂 Plan a season</button><button class="btn sm" id="h591w">✨ What's new</button><button class="btn sm" id="h591x" aria-label="Dismiss">✕</button></div></div></div>`);
   const done=()=>{ ['seen591','seen59','seen58','seen57','seen56','seen55','seen54','seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello591')?.remove(); }; $('#h591p').onclick=()=>{ done(); go('season'); }; $('#h591w').onclick=()=>{ done(); openWhatsNew(); }; $('#h591x').onclick=done; },3300);
 if(FIRST_RUN) S.settings.seen591=true;
 /* =====================================================================
@@ -41724,6 +41807,390 @@ document.addEventListener('pointercancel',()=>{ const d=SND.d; SND.d=null; if(d?
 { const _r=syRefresh; syRefresh=async function(A){ await _r(A); if(A.has('seasons')&&current==='season'&&!$('#drawer.on')) snRender(); }; }
 ACH.push({id:'season1',e:'🗂',n:'Season Architect',d:'Plan a season'});
 { const _c=commands; commands=function(){ const C=_c(); C.push({ico:'🗂',label:'Season Planner',run:()=>go('season'),kw:'season order episodes plan schedule arc showrunner'}); return C; }; }
+
+
+/* ===================================================================
+   [5.9.2] 🎚 STUDIO-QUALITY RECORDING
+   Browsers normally record like a phone call: noise suppression, auto
+   volume and echo cancelling squash the voice, then it's compressed.
+   This records the RAW mic (all of that switched off) straight into an
+   uncompressed WAV: 24-bit, at the mic's own sample rate (48 kHz on an
+   iPhone), mono. It also keeps a quarter second from before you hit REC
+   so the first syllable never gets cut, and checks every take for
+   clipping, low volume and background noise.
+   Used by the actor's phone booth AND your own 🎙 Voice Booth.
+   =================================================================== */
+S.settings.recQ=S.settings.recQ||'studio';
+const HF_Q={studio:{l:'🎚 Studio (24-bit WAV)',bits:24},hi:{l:'🎚 High (16-bit WAV)',bits:16},compact:{l:'📦 Compact (Opus 256k)',bits:0}};
+const HF_WORKLET=`class HFCap extends AudioWorkletProcessor{ constructor(){ super(); this.buf=new Float32Array(2048); this.n=0; }
+  process(inputs){ const ch=inputs[0]&&inputs[0][0]; if(ch){ for(let i=0;i<ch.length;i++){ this.buf[this.n++]=ch[i]; if(this.n===this.buf.length){ this.port.postMessage(this.buf); this.buf=new Float32Array(2048); this.n=0; } } } return true; } }
+registerProcessor('hf-cap',HFCap);`;
+const HF={taps:new WeakMap(),modUrl:null};
+function hfAudio(deviceId,clean){ return {audio:{...(deviceId?{deviceId:{exact:deviceId}}:{}),echoCancellation:false,noiseSuppression:!!clean,autoGainControl:false,channelCount:{ideal:1},sampleRate:{ideal:48000},sampleSize:{ideal:24}}}; }
+/* one always-on "tap" per mic stream: feeds recorders and keeps a short pre-roll */
+async function hfTap(stream){ let t=HF.taps.get(stream); if(t){ try{ await t.ctx.resume(); }catch(e){} return t; }
+  const track=stream.getAudioTracks()[0], sr=track?.getSettings?.().sampleRate, AC=window.AudioContext||window.webkitAudioContext; let ctx;
+  try{ ctx=new AC(sr?{sampleRate:sr,latencyHint:'interactive'}:{latencyHint:'interactive'}); }catch(e){ ctx=new AC(); }
+  try{ await ctx.resume(); }catch(e){}
+  const src=ctx.createMediaStreamSource(stream); t={ctx,src,sr:ctx.sampleRate,ring:[],ringLen:0,sinks:new Set(),label:track?.label||''};
+  const onBlock=b=>{ t.ring.push(b); t.ringLen+=b.length; while(t.ring.length>1&&t.ringLen-t.ring[0].length>t.sr*.6) t.ringLen-=t.ring.shift().length; t.sinks.forEach(f=>f(b)); };
+  const mute=ctx.createGain(); mute.gain.value=0; mute.connect(ctx.destination);
+  try{ if(!ctx.audioWorklet) throw new Error('no worklet'); HF.modUrl=HF.modUrl||URL.createObjectURL(new Blob([HF_WORKLET],{type:'application/javascript'})); await ctx.audioWorklet.addModule(HF.modUrl);
+    const node=new AudioWorkletNode(ctx,'hf-cap',{numberOfInputs:1,numberOfOutputs:1,channelCount:1,channelCountMode:'explicit',channelInterpretation:'speakers'}); node.port.onmessage=e=>onBlock(e.data); src.connect(node); node.connect(mute); t.node=node; }
+  catch(e){ const sp=ctx.createScriptProcessor(4096,1,1); sp.onaudioprocess=ev=>onBlock(new Float32Array(ev.inputBuffer.getChannelData(0))); src.connect(sp); sp.connect(mute); t.node=sp; }
+  HF.taps.set(stream,t); track?.addEventListener('ended',()=>{ try{ ctx.close(); }catch(e){} HF.taps.delete(stream); }); return t; }
+/* the recorder: same shape as MediaRecorder, so it drops into existing code */
+class HiFiRecorder{ constructor(stream,{bits=24}={}){ this.stream=stream; this.bits=bits; this.state='inactive'; this.mimeType='audio/wav'; this.ondataavailable=null; this.onstop=null; this.onstart=null; this.onerror=null; this.stats=null; }
+  start(){ if(this.state!=='inactive') return; this.state='recording'; this.bufs=[]; this.n=0; const ready=HF.taps.get(this.stream); try{ ready?.ctx.resume(); }catch(e){}
+    hfTap(this.stream).then(t=>{ if(this.state==='inactive') return; this.t=t; let need=Math.round(t.sr*.25); const pre=[];
+      for(let i=t.ring.length-1;i>=0&&need>0;i--){ const b=t.ring[i]; if(b.length<=need){ pre.unshift(b); need-=b.length; } else { pre.unshift(b.subarray(b.length-need)); need=0; } }
+      pre.forEach(b=>this._add(b)); this.sink=b=>this._add(b); t.sinks.add(this.sink); this.onstart?.(); }).catch(err=>{ this.state='inactive'; this.onerror?.(err); }); }
+  _add(b){ if(this.state==='inactive') return; this.bufs.push(b); this.n+=b.length; }
+  requestData(){}
+  pause(){} resume(){}
+  stop(){ if(this.state!=='recording') return; this.state='stopping';
+    setTimeout(()=>{ if(this.t&&this.sink) this.t.sinks.delete(this.sink); this.state='inactive'; const sr=this.t?.sr||48000, all=hfJoin(this.bufs,this.n);
+      this.stats={...hfStats(all,sr),sr,bits:this.bits,fmt:'wav'}; const blob=hfWav(all,sr,this.bits); this.ondataavailable?.({data:blob}); this.onstop?.(); },180); } }
+function hfJoin(bufs,n){ const out=new Float32Array(n); let o=0; for(const b of bufs){ out.set(b,o); o+=b.length; } return out; }
+function hfWav(f,sr,bits){ const bps=bits===16?2:3, n=f.length, ab=new ArrayBuffer(44+n*bps), v=new DataView(ab), w=(o,s)=>{ for(let i=0;i<s.length;i++) v.setUint8(o+i,s.charCodeAt(i)); };
+  w(0,'RIFF'); v.setUint32(4,36+n*bps,true); w(8,'WAVE'); w(12,'fmt '); v.setUint32(16,16,true); v.setUint16(20,1,true); v.setUint16(22,1,true); v.setUint32(24,sr,true); v.setUint32(28,sr*bps,true); v.setUint16(32,bps,true); v.setUint16(34,bits===16?16:24,true); w(36,'data'); v.setUint32(40,n*bps,true);
+  let o=44; if(bps===2){ for(let i=0;i<n;i++){ const x=Math.max(-1,Math.min(1,f[i]+(Math.random()-Math.random())/65536)); v.setInt16(o,x<0?x*32768:x*32767,true); o+=2; } }
+  else { for(let i=0;i<n;i++){ let x=Math.round(Math.max(-1,Math.min(1,f[i]))*8388607); if(x<0) x+=16777216; v.setUint8(o,x&255); v.setUint8(o+1,(x>>8)&255); v.setUint8(o+2,(x>>16)&255); o+=3; } }
+  return new Blob([ab],{type:'audio/wav'}); }
+/* how good is it? peak, clipping, loudness, room noise */
+function hfStats(f,sr){ let peak=0, clips=0; for(let i=0;i<f.length;i++){ const a=Math.abs(f[i]); if(a>peak) peak=a; if(a>=.999) clips++; }
+  const win=Math.max(64,Math.round(sr*.05)), rms=[]; for(let i=0;i+win<=f.length;i+=win){ let s=0; for(let j=i;j<i+win;j++) s+=f[j]*f[j]; rms.push(Math.sqrt(s/win)); }
+  const srt=rms.slice().sort((a,b)=>a-b), q=p=>srt.length?srt[Math.min(srt.length-1,Math.floor(srt.length*p))]:0, db=x=>x>0?20*Math.log10(x):-120;
+  return {peak:+db(peak).toFixed(1),clips,loud:+db(q(.9)).toFixed(1),noise:+db(q(.1)).toFixed(1),dur:f.length/sr}; }
+function hfVerdict(st){ if(!st) return null; let v='good';
+  if(st.clips>4||st.peak>-.05) v='clip'; else if(st.peak<-24||st.loud<-36) v='quiet'; else if(st.noise>-46||(st.loud-st.noise)<18) v='noisy';
+  return {...st,v}; }
+const HF_V={good:['🎚','Studio quality','Clean and clear.'],clip:['⚠️','Too loud','It distorted. Back up a little and redo it.'],quiet:['⚠️','Pretty quiet','Get a little closer to the mic.'],noisy:['⚠️','Background noise','Find a quieter spot if you can (a closet is perfect).']};
+async function hfAnalyzeBlob(blob){ try{ const buf=await decodeBlob(blob), st=hfStats(buf.getChannelData(0),buf.sampleRate); let bits=0; try{ const h=new DataView(await blob.slice(0,44).arrayBuffer()); if(h.getUint32(0)===0x52494646) bits=h.getUint16(34,true); }catch(e){}
+  return {...hfVerdict(st),sr:buf.sampleRate,bits,fmt:/wav/.test(blob.type)?'wav':/mp4|aac/.test(blob.type)?'aac':'opus'}; }catch(e){ return null; } }
+function hfFmt(q){ if(!q) return ''; return q.fmt==='wav'?`${q.bits||24}-bit WAV · ${Math.round((q.sr||48000)/100)/10} kHz`:`${q.fmt==='aac'?'AAC':'Opus'} · ${Math.round((q.sr||48000)/100)/10} kHz`; }
+function hfRecorder(stream,q){ q=q||S.settings.recQ||'studio'; const AC=window.AudioContext||window.webkitAudioContext;
+  if(q!=='compact'&&AC) return new HiFiRecorder(stream,{bits:HF_Q[q]?.bits||24});
+  const mt=['audio/webm;codecs=opus','audio/mp4','audio/webm'].find(m=>{ try{ return MediaRecorder.isTypeSupported(m); }catch(e){ return false; } })||'';
+  try{ return new MediaRecorder(stream,{...(mt?{mimeType:mt}:{}),audioBitsPerSecond:256000}); }catch(e){ return new MediaRecorder(stream); } }
+const hfIsBT=label=>/airpod|bluetooth|headset|hands-?free|buds|beats|bose|jabra|sony wh|wf-|\bbt\b/i.test(label||'');
+
+/* ---------- your 🎙 Voice Booth: raw mic + studio recorder ---------- */
+{ const _e=vbEnsureMic; vbEnsureMic=async function(){ const was=VB.stream&&VB.stream.active; const st=await _e.apply(this,arguments); if(st&&!was){ hfTap(st).catch(()=>{}); const lbl=st.getAudioTracks()[0]?.label||''; if(hfIsBT(lbl)) toast('🎧 You\'re recording through a Bluetooth headset mic, which is low quality. Pick your Mac\'s mic (or a USB mic) in the mic menu.','bad'); } return st; }; }
+{ const _r=renderVoice; renderVoice=function(){ _r.apply(this,arguments); const m=$('#vbMic'); if(m&&!$('#vbQ')){ m.insertAdjacentHTML('afterend',`<select class="txt vb-mic" id="vbQ" title="Recording quality">${Object.entries(HF_Q).map(([k,v])=>`<option value="${k}" ${S.settings.recQ===k?'selected':''}>${v.l}</option>`).join('')}</select><label class="tiny vb-clean" title="Turns on the browser's noise suppression. Use it only if your room is noisy: it makes voices a little less natural."><input type="checkbox" id="vbClean" ${S.settings.recClean?'checked':''}> Noise cleanup</label>`);
+    $('#vbQ').onchange=e=>{ S.settings.recQ=e.target.value; save(); toast(e.target.value==='compact'?'📦 Compact: small files, still good quality.':'🎚 Recording uncompressed WAV from the raw mic.'); };
+    $('#vbClean').onchange=e=>{ S.settings.recClean=e.target.checked; save(); vbDropMic(); toast(e.target.checked?'Noise cleanup on (for noisy rooms).':'Noise cleanup off: the purest sound.'); }; } }; }
+
+/* ---------- the actor's phone booth: raw mic, studio recorder, coaching ---------- */
+btMic=async function(){ if(BT.stream&&BT.stream.active) return BT.stream; BT.stream=await navigator.mediaDevices.getUserMedia(hfAudio(BT.micId));
+  const tr=BT.stream.getAudioTracks()[0]; BT.micLabel=tr?.label||'';
+  try{ const t=await hfTap(BT.stream); BT.ac=t.ctx; BT.an=t.ctx.createAnalyser(); BT.an.fftSize=2048; t.src.connect(BT.an); }catch(e){} return BT.stream; };
+btStart=async function(){ btStopPlay(); try{ await btMic(); }catch(e){ return btMicCheck(); }
+  let rec; try{ rec=hfRecorder(BT.stream,BT.hfFail?'compact':BT.inv?.q); }catch(e){ return btToast('Recording isn\'t supported in this browser. Try Safari or Chrome.'); }
+  const parts=[]; rec.ondataavailable=e=>{ if(e.data&&e.data.size) parts.push(e.data); }; BT.rec=rec; BT.recT0=performance.now(); BT.recMime=rec.mimeType||'audio/wav';
+  rec.onerror=()=>{ BT.rec=null; btToast('The recording hiccuped. Try again.'); btRender(); };
+  rec.onstop=async()=>{ const dur=(performance.now()-BT.recT0)/1000; BT.rec=null; const blob=new Blob(parts,{type:BT.recMime}); if(dur<.4||!blob.size){ btToast('Too short, try again!'); return btRender(); }
+    if(rec instanceof HiFiRecorder&&(rec.stats?.dur||0)<Math.min(.3,dur*.5)){ BT.hfFail=1; btToast('Didn\'t catch any sound. Tap record again.'); return btRender(); }
+    const L=btLines()[BT.i], old=btTake(L), t={id:BT.code+'|'+L.k,code:BT.code,k:L.k,w:L.w,t:L.t,blob,mime:BT.recMime,dur,at:Date.now(),n:(old?.n||0)+1,sent:false,fileId:'',qa:hfVerdict(rec.stats)};
+    BT.takes[L.k]=t; await BoothDB.put(t); try{ navigator.vibrate?.(30); }catch(e){} btRender(); btQueue(); };
+  rec.start(); try{ navigator.vibrate?.(20); }catch(e){} const dock=$('#btDock'); dock.innerHTML=btDockHTML(); btBindDock(); btWaveLoop(); BT.autoStop=setTimeout(()=>{ if(BT.rec) btStop(); },120000); };
+/* mic check screen: which mic, Bluetooth warning, room check */
+async function btMicExtras(){ const w=$('#booth .bt-wrap'); if(!w||$('#btMicX')) return; let mics=[]; try{ mics=(await navigator.mediaDevices.enumerateDevices()).filter(d=>d.kind==='audioinput'); }catch(e){}
+  const bt=hfIsBT(BT.micLabel), tips=$('#booth .bt-tips');
+  const html=`<div id="btMicX" class="bt-micx">${bt?`<div class="bt-warn">🎧 <b>You're on a Bluetooth mic</b> (${btEsc(BT.micLabel)}). Those sound like a phone call. Disconnect your earbuds, or pick the phone's own mic below.</div>`:''}
+    ${mics.length>1?`<label class="bt-lab">Microphone</label><select class="bt-sel" id="btMicSel">${mics.map((m,i)=>`<option value="${btEsc(m.deviceId)}" ${(BT.micLabel&&m.label===BT.micLabel)?'selected':''}>${btEsc(m.label||'Microphone '+(i+1))}${hfIsBT(m.label)?' (Bluetooth)':''}</option>`).join('')}</select>`:BT.micLabel?`<p class="bt-fine">🎙 ${btEsc(BT.micLabel)}</p>`:''}
+    <button class="bt-sm" id="btRoom">🤫 Room check (stay quiet for 2 seconds)</button><p class="bt-fine" id="btRoomOut">Studio mode: no auto volume and no filters, so it sounds like you, not a phone call. Keep the bar green, never red.</p></div>`;
+  (tips||w.querySelector('.bt-meterlbl'))?.insertAdjacentHTML('afterend',html);
+  $('#btMicSel')&&($('#btMicSel').onchange=async e=>{ BT.micId=e.target.value; try{ BT.stream?.getTracks().forEach(t=>t.stop()); }catch(_){} BT.stream=null; BT.an=null; await btMicCheck(); });
+  $('#btRoom').onclick=async()=>{ const out=$('#btRoomOut'), b=$('#btRoom'); if(!BT.an){ out.textContent='Mic isn\'t on yet.'; return; } b.disabled=true; let n=0, sum=0; const d=new Float32Array(BT.an.fftSize), t0=performance.now();
+    while(performance.now()-t0<2000){ BT.an.getFloatTimeDomainData(d); let s=0; for(const x of d) s+=x*x; sum+=s/d.length; n++; out.textContent=`Listening… ${Math.ceil((2000-(performance.now()-t0))/1000)}`; await new Promise(r=>setTimeout(r,60)); }
+    const db=20*Math.log10(Math.sqrt(sum/Math.max(1,n))||1e-6); b.disabled=false;
+    out.innerHTML=db<-60?`✅ <b>Super quiet room.</b> Perfect.`:db<-50?`👍 <b>Quiet enough.</b> You're good.`:`⚠️ <b>It's a little noisy</b> (fan, AC, TV, traffic?). If you can, move somewhere quieter. Closets are great.`; }; }
+/* the line screen: direction from the director, redo notes, quality of the last take, way home */
+const BT_INT=[['🤫','Whisper'],['🙂','Soft'],['😐','Normal'],['📢','Loud'],['🤬','SCREAMING']];
+function btRecExtras(){ const L=btLines()[BT.i]; if(!L) return; const line=$('#booth .bt-line'); if(!line) return;
+  if(L.rd) line.insertAdjacentHTML('beforebegin',`<div class="bt-redo">🔁 <b>${btEsc(BT.inv.from||'They')} wants another take</b>${L.rd.n?`: “${btEsc(L.rd.n)}”`:''}</div>`);
+  if(L.dn||L.dl!=null||L.dr){ line.insertAdjacentHTML('beforeend',`<div class="bt-dir">${L.dl!=null?`<div class="bt-int"><span class="bt-intbar">${BT_INT.map((x,i)=>`<i class="${i<=L.dl?'on':''}"></i>`).join('')}</span><b>${BT_INT[L.dl][0]} ${BT_INT[L.dl][1]}</b></div>`:''}${L.dn?`<div class="bt-dirn">🎬 ${btEsc(L.dn)}</div>`:''}${L.dr?`<button class="bt-read" id="btRead">🎧 Hear how ${btEsc(BT.inv.from||'they')} want${BT.inv.from?'s':''} it</button>`:''}</div>`);
+    $('#btRead')&&($('#btRead').onclick=()=>{ btStopPlay(); const a=new Audio(`data:${L.dm||'audio/webm'};base64,${L.dr}`); BT.player=a; a.play().catch(()=>btToast('Couldn\'t play it. Turn off silent mode?')); }); }
+  const T=btTake(L), q=T?.qa; if(T&&q&&HF_V[q.v]){ const st=$('#booth .bt-status'); st?.insertAdjacentHTML('afterend',`<div class="bt-q ${q.v}">${HF_V[q.v][0]} <b>${HF_V[q.v][1]}</b> ${q.v==='good'?'':HF_V[q.v][2]}</div>`); }
+  if(BT.portal&&!$('#btHome')){ $('#booth .bt-top')?.insertAdjacentHTML('afterbegin',`<button class="bt-ic" id="btHome" aria-label="All my requests">🏠</button>`); $('#btHome').onclick=()=>{ btStopPlay(); ptHome(); }; } }
+{ const _r=btRender; btRender=function(s){ _r.apply(this,arguments); if(BT.screen==='mic') btMicExtras(); else if(BT.screen==='rec'&&!BT.rec) btRecExtras(); }; }
+
+/* iPhones only let audio start from a tap, so every tap in the booth wakes the recorder up */
+document.addEventListener('click',()=>{ if(current==='booth'&&BT.ac&&BT.ac.state!=='running') BT.ac.resume().catch(()=>{}); },true);
+document.addEventListener('touchend',()=>{ if(current==='booth'&&BT.ac&&BT.ac.state!=='running') BT.ac.resume().catch(()=>{}); },true);
+
+
+/* ===================================================================
+   [5.9.2] 👥 THE CAST: one link per actor, forever
+   Each actor gets a permanent page (their "portal"). Everything you need
+   from them shows up there: new episodes, redo requests, due dates and
+   your direction on each line (a note, how loud, and your own line read
+   they can listen to). Edit the script after asking and their page
+   updates. Lives in your Google Drive drop box like the invites do.
+   =================================================================== */
+S.actors=S.actors||[]; S.dirs=S.dirs||{};
+const ReadDB={db:null,open(){ return new Promise(res=>{ if(this.db) return res(this.db); try{ const r=indexedDB.open('nenjac-reads',1); r.onupgradeneeded=()=>r.result.createObjectStore('reads',{keyPath:'id'}); r.onsuccess=()=>{ this.db=r.result; res(this.db); }; r.onerror=()=>res(null); }catch(e){ res(null); } }); },
+  async get(id){ const db=await this.open(); if(!db) return null; return new Promise(res=>{ const q=db.transaction('reads').objectStore('reads').get(id); q.onsuccess=()=>res(q.result||null); q.onerror=()=>res(null); }); },
+  async put(o){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction('reads','readwrite'); tx.objectStore('reads').put(o); tx.oncomplete=res; tx.onerror=res; }); },
+  async del(id){ const db=await this.open(); if(!db) return; return new Promise(res=>{ const tx=db.transaction('reads','readwrite'); tx.objectStore('reads').delete(id); tx.oncomplete=res; tx.onerror=res; }); } };
+const CA={actor:null,ask:null,pub:{},rec:null};
+const caFind=id=>S.actors.find(a=>a.id===id);
+const caByCode=code=>S.actors.find(a=>a.code===code);
+const caLink=a=>{ const s=rmSite(), d=rmDeployId(rmUrl()); return s&&d?`${s}#p=${a.code}.${d}`:''; };
+const caDirKey=(sid,k)=>sid+'|'+k;
+async function caB64(blob){ return rmB64(new Uint8Array(await blob.arrayBuffer())).replace(/-/g,'+').replace(/_/g,'/'); }
+/* portal keys: "<scriptId>~<lineKey>" and "~r<stamp>" for redo requests */
+function caSplitKey(k){ const m=String(k||'').match(/^([^~]+)~(.+?)(?:~r([a-z0-9]+))?$/); return m?{sid:m[1],k:m[2],redo:m[3]||''}:null; }
+
+/* ---------- the drop box script, version 3 (adds "when did they open it") ---------- */
+{ const _s=rmScript; rmScript=function(){ let s=_s(); s=s.replace('line drop box (version 2)','line drop box (version 3)').replace('const VERSION = 2;','const VERSION = 3;')
+    .replace("if(p.a==='seen') return out_(seen_(p),cb);","if(p.a==='seen') return out_(seen_(p),cb);\n    if(p.a==='open') return out_(open_(p),cb);")
+    .replace("  return {ok:false,err:'what'}; }","  if(b.a==='opens'){ const all=PropertiesService.getScriptProperties().getProperties(), out={}; Object.keys(all).forEach(k=>{ if(k.indexOf('open_')===0){ try{ out[k.slice(5)]=JSON.parse(all[k]); }catch(x){} } }); return {ok:true,opens:out}; }\n  return {ok:false,err:'what'}; }")
+    .replace("function admin_(b){","function open_(p){ const c=clean_(p.c); if(!getInv_(c)) return {ok:false,err:'gone'}; PropertiesService.getScriptProperties().setProperty('open_'+c,JSON.stringify({at:Date.now(),d:+p.d||0,n:+p.n||0})); return {ok:true}; }\nfunction admin_(b){"); return s; }; }
+async function caScriptVersion(){ if(!rmUrl()) return 0; try{ const j=await rmPost({a:'ping',key:rmKey()}); S.settings.rmV=j.v||1; save(); return S.settings.rmV; }catch(e){ return S.settings.rmV||0; } }
+
+/* ---------- build + publish an actor's page ---------- */
+function caLinesFor(r){ const s=S.scripts.find(x=>x.id===r.sid); if(!s) return []; let L=rmLinesFor(r.sid,r.chars,{cue:true,paren:true,scene:true});
+  if(r.keys) L=L.filter(x=>r.keys.includes(x.k)); return L; }
+async function caPayload(a){ const takes=await VoiceDB.all(), mine=takes.filter(t=>t.fromInv===a.code&&t.portalKey&&t.rev!=='x'), reqs=[];
+  for(const r of a.reqs||[]){ if(r.done) continue; const s=S.scripts.find(x=>x.id===r.sid); if(!s) continue; const lines=[];
+    for(const L of caLinesFor(r)){ const o={...L}, d=S.dirs[caDirKey(r.sid,L.k)];
+      if(d){ if(d.n) o.dn=d.n; if(d.l!=null&&d.l!=='') o.dl=+d.l; if(d.r){ const rd=await ReadDB.get(caDirKey(r.sid,L.k)); if(rd){ o.dr=await caB64(rd.blob); o.dm=rd.mime; } } }
+      if(r.pickup){ const rq=r.redo?.[L.k]; o.k=`${r.sid}~${L.k}~r${(rq?.at||r.created).toString(36)}`; o.rd={n:rq?.n||''}; } else o.k=`${r.sid}~${L.k}`;
+      lines.push(o); }
+    const got=lines.filter(L=>mine.some(t=>t.portalKey===L.k)).map(L=>L.k);
+    reqs.push({id:r.id,ep:(s.code?s.code+': ':'')+(s.title||'Untitled'),due:r.due||'',note:r.note||'',pickup:!!r.pickup,created:r.created,
+      chars:[...new Set(lines.map(L=>L.w))].map(w=>{ const c=charByName(w); return {n:w,art:c&&c.img&&!c.img.startsWith('drawing:')&&!c.img.startsWith('data:')?c.img:'',col:c?groupColor(c.group):'#888'}; }),lines,got}); }
+  return {v:2,kind:'portal',code:a.code,show:showName(),from:S.settings.rmFrom||'',actor:a.name,note:a.note||'',q:S.settings.recQ||'studio',requests:reqs,at:Date.now()}; }
+async function caPublish(a,{quiet=false}={}){ if(!rmUrl()){ if(!quiet) toast('Actor pages need the ☁️ Google Drive drop box. Set it up in the ☁️ Google Drive tab (5 minutes, once).','bad'); return false; }
+  const p=await caPayload(a); try{ await rmPost({a:'addinv',key:rmKey(),c:a.code,payload:p,folder:`Actor - ${a.name.replace(/[^\w .-]/g,'')}`}); a.published=Date.now(); a.pubErr=''; save(); if(!quiet) toast(`✅ ${esc(a.name)}'s page is updated`,'good'); return true; }
+  catch(err){ a.pubErr=err.message; save(); if(!quiet) toast(`Couldn't update ${esc(a.name)}'s page: ${esc(err.message)}`,'bad'); return false; } }
+function caPublishSoon(a){ clearTimeout(CA.pub[a.id]); CA.pub[a.id]=setTimeout(()=>caPublish(a,{quiet:true}),1500); }
+/* status: how far along is each request */
+async function caProgress(a,takes){ takes=takes||await VoiceDB.all(); const mine=takes.filter(t=>t.fromInv===a.code&&t.portalKey&&t.rev!=='x'); let total=0, got=0, redos=0; const per={};
+  for(const r of a.reqs||[]){ if(r.done) continue; const L=caLinesFor(r); const keys=L.map(x=>r.pickup?`${r.sid}~${x.k}~r${(r.redo?.[x.k]?.at||r.created).toString(36)}`:`${r.sid}~${x.k}`); const g=keys.filter(k=>mine.some(t=>t.portalKey===k)).length; per[r.id]={n:keys.length,got:g}; total+=keys.length; got+=g; if(r.pickup) redos+=keys.length-g; }
+  return {total,got,left:total-got,redos,per}; }
+
+/* ---------- 👥 Cast tab ---------- */
+async function caTab(el){ const drive=!!rmUrl(); if(drive&&!S.settings.rmV) caScriptVersion().then(v=>{ if(RM.tab==='cast'&&$('#caV')) $('#caV').style.display=v<3?'':'none'; });
+  let opens={}; if(drive&&(S.settings.rmV||0)>=3){ try{ opens=(await rmPost({a:'opens',key:rmKey()})).opens||{}; }catch(e){} }
+  const takes=await VoiceDB.all(), prog={}; for(const a of S.actors) prog[a.id]=await caProgress(a,takes);
+  el.innerHTML=`<div class="ca">${drive?'':`<div class="ca-need">☁️ <b>Actor pages live in your Google Drive drop box.</b> Set it up once (about 5 minutes) and every actor gets one permanent link. <button class="btn sm primary" data-rmt="drive">☁️ Set it up</button></div>`}
+    <div class="ca-need" id="caV" style="display:${drive&&(S.settings.rmV||3)<3?'':'none'}">🆕 <b>Update your drop box script</b> (1 minute) to see when actors open their page: ☁️ Google Drive → 📋 Copy the script → paste over the old one → Deploy → Manage deployments → ✏️ → New version → Deploy.</div>
+    <div class="ca-add"><input class="txt" id="caNew" placeholder="Add someone to the cast (their name)"><button class="btn primary" id="caAdd">＋ Add to cast</button></div>
+    <div class="ca-q"><b>🎚 Quality they record in</b>${Object.entries(HF_Q).map(([k,v])=>`<label><input type="radio" name="caQ" value="${k}" ${S.settings.recQ===k?'checked':''}> ${v.l}</label>`).join('')}<small class="muted">Studio is uncompressed, straight from the raw mic. About 1 MB per 7 seconds.</small></div>
+    <div class="ca-list">${S.actors.map(a=>{ const p=prog[a.id], o=opens[a.code], open=(a.reqs||[]).filter(r=>!r.done); return `<div class="ca-card" data-ca="${a.id}">
+      <div class="ca-top"><div class="ca-faces">${(a.chars||[]).slice(0,4).map(w=>{ const c=charByName(w); return `<span class="ca-face" title="${esc(w)}">${c?charArt(c):fallbackHTML(w,'#888')}</span>`; }).join('')||'<span class="ca-face">🎭</span>'}</div>
+        <div class="grow"><b class="ca-name">${esc(a.name)}</b><small>${(a.chars||[]).map(esc).join(', ')||'No characters yet'}</small><small class="ca-seen">${o?`👀 Opened their page ${ago(o.at)}`:drive&&(S.settings.rmV||0)>=3?'👀 Hasn\'t opened their page yet':''}${a.pubErr?` · ⚠️ ${esc(a.pubErr)}`:''}</small></div>
+        <div class="ca-num">${p.total?`<b>${p.got}/${p.total}</b><small>lines in</small>`:'<small>Nothing asked yet</small>'}</div></div>
+      ${open.length?`<div class="ca-reqs">${open.map(r=>{ const s=S.scripts.find(x=>x.id===r.sid), pp=p.per[r.id]||{n:0,got:0}, d=r.due?Math.round((new Date(r.due+'T12:00')-new Date(new Date().toDateString()))/864e5):null;
+        return `<div class="ca-req ${pp.n&&pp.got>=pp.n?'done':''}"><span>${r.pickup?'🔁':'📄'}</span><div class="grow"><b>${esc(s?((s.code?s.code+': ':'')+(s.title||'Untitled')):'(deleted script)')}</b><small>${r.pickup?'Redo request · ':''}${esc(r.chars.join(', '))} · ${pp.got}/${pp.n} in${d!=null?` · ${d<0?`<span class="ca-late">${-d} day${d===-1?'':'s'} late</span>`:d===0?'due today':`due in ${d} day${d===1?'':'s'}`}`:''}</small><div class="ca-bar"><i style="width:${pp.n?pp.got/pp.n*100:0}%"></i></div></div><button class="btn sm" data-car="done" data-r="${r.id}" title="Done with this one (hides it from their page)">✓</button><button class="btn sm" data-car="del" data-r="${r.id}" title="Remove">✕</button></div>`; }).join('')}</div>`:''}
+      <div class="ca-btns"><button class="btn sm primary" data-caa="ask">＋ Ask for lines</button><button class="btn sm" data-caa="link">🔗 Their link</button><button class="btn sm" data-caa="nudge" ${p.left?'':'disabled'}>💬 Reminder text</button><button class="btn sm" data-caa="more">⋯</button></div></div>`; }).join('')||'<p class="muted tiny">Nobody in the cast yet. Add the people who voice your characters, then hit ＋ Ask for lines.</p>'}</div></div>`;
+  $('#caAdd').onclick=()=>{ const n=$('#caNew').value.trim(); if(!n) return $('#caNew').focus(); const a={id:uid(),name:n,code:'P'+rmCode(),chars:[],reqs:[],created:Date.now()}; S.actors.push(a); save(); unlock('cast1'); caTab(el); };
+  $('#caNew').onkeydown=e=>{ if(e.key==='Enter') $('#caAdd').click(); };
+  $$('[name=caQ]').forEach(r=>r.onchange=()=>{ S.settings.recQ=r.value; save(); S.actors.forEach(a=>{ if((a.reqs||[]).some(r=>!r.done)) caPublishSoon(a); }); toast('🎚 '+HF_Q[r.value].l); });
+  el.onclick=async e=>{ const card=e.target.closest('[data-ca]'); if(!card) return; const a=caFind(card.dataset.ca); if(!a) return;
+    const rb=e.target.closest('[data-car]'); if(rb){ const r=a.reqs.find(x=>x.id===rb.dataset.r); if(rb.dataset.car==='done'){ r.done=true; } else { if(!confirm('Remove this request from their page?')) return; a.reqs=a.reqs.filter(x=>x!==r); } save(); caPublish(a,{quiet:true}); return caTab(el); }
+    const b=e.target.closest('[data-caa]')?.dataset.caa; if(!b) return;
+    if(b==='ask') return caAsk(a,el);
+    if(b==='link') return caShowLink(a,el);
+    if(b==='nudge'){ const p=await caProgress(a), link=caLink(a); const txt=`Hey ${a.name}! ${p.redos?`I need ${p.redos} redo${p.redos>1?'s':''} and `:''}${p.left} line${p.left>1?'s':''} on your ${showName()} page 🎙 Takes like 2 minutes, just open this on your phone:\n${link}`; navigator.clipboard.writeText(txt); return toast('💬 Copied. Paste it in your texts.'); }
+    if(b==='more'){ const n=prompt(`Rename ${a.name}? (Type DELETE to remove them from the cast.)`,a.name); if(n==null) return; if(n.trim()==='DELETE'){ if(confirm(`Remove ${a.name}? Their page stops working. Takes you already have stay.`)){ try{ await rmPost({a:'delinv',key:rmKey(),c:a.code}); }catch(err){} S.actors=S.actors.filter(x=>x!==a); save(); } } else if(n.trim()){ a.name=n.trim(); save(); caPublish(a,{quiet:true}); } caTab(el); } }; }
+function caShowLink(a,el){ const link=caLink(a); if(link&&!a.sent){ a.sent=Date.now(); save(); } if(!link) return toast(rmUrl()?'Set where your app lives online first (📨 One-off invite asks for it).':'Set up the ☁️ Google Drive drop box first.','bad');
+  const msg=`Hey ${a.name}! This is your recording page for ${showName()} 🎙 Bookmark it: every time I need lines from you they show up here.\n${link}`;
+  el.innerHTML=`<div class="rm-link card"><div class="rm-qr" id="caQr"></div><div class="grow"><h3>🔗 ${esc(a.name)}'s page</h3><p class="tiny muted">One link for good. New requests, redos and due dates show up on it by themselves. Send it once.</p><input class="txt" readonly value="${esc(link)}" onclick="this.select()" style="width:100%">
+    <div class="row" style="margin-top:6px;flex-wrap:wrap"><button class="btn primary" id="caShare">📤 Share</button><button class="btn" id="caCopy">📋 Copy link</button><button class="btn" id="caMsg">💬 Copy as a text</button><button class="btn" id="caTry">🧪 Try it myself</button></div><div class="row" style="margin-top:8px"><button class="btn sm" data-rmt="cast">← Back to the cast</button></div></div></div>`;
+  try{ const qr=qrcode(0,'M'); qr.addData(link); qr.make(); $('#caQr').innerHTML=qr.createSvgTag({cellSize:4,margin:2,scalable:true}); }catch(e){ $('#caQr').remove(); }
+  $('#caCopy').onclick=()=>{ navigator.clipboard.writeText(link); toast('📋 Link copied'); }; $('#caMsg').onclick=()=>{ navigator.clipboard.writeText(msg); toast('💬 Copied'); }; $('#caTry').onclick=()=>window.open(link,'_blank');
+  $('#caShare').onclick=async()=>{ if(navigator.share){ try{ await navigator.share({title:'Your recording page',text:msg.replace(/\n.*$/,''),url:link}); }catch(e){} } else { navigator.clipboard.writeText(msg); toast('📋 Copied'); } }; }
+
+/* ---------- ask for lines (with direction on each one) ---------- */
+async function caAsk(a,el){ const sid=CA.askSid&&S.scripts.some(s=>s.id===CA.askSid)?CA.askSid:(activeScript()?.id||S.scripts[0]?.id); CA.askSid=sid; const s=S.scripts.find(x=>x.id===sid);
+  const takes=(await VoiceDB.all()).filter(t=>t.scriptId===sid), P=vbParse(sid).lines, by={}; P.forEach(x=>{ by[x.who]=by[x.who]||{n:0,need:0}; by[x.who].n++; if(!takes.some(t=>t.key===x.key)) by[x.who].need++; });
+  const pre=CA.askChars||(a.chars||[]).filter(w=>by[w]); const due=(typeof prodOf==='function'&&s?prodOf(s).due:'')||'';
+  el.innerHTML=`<div class="ca-ask"><div class="row"><h3 class="grow">📨 Ask ${esc(a.name)} for lines</h3><button class="btn sm" data-rmt="cast">← Cast</button></div>
+    <div class="rm-grid"><div><label class="lab">Episode</label><select class="txt" id="caS" style="width:100%">${S.scripts.map(x=>`<option value="${x.id}" ${x.id===sid?'selected':''}>${esc((x.code?x.code+' · ':'')+(x.title||'Untitled'))}</option>`).join('')}</select>
+      <label class="lab">Which character(s)?</label><div class="rm-chars">${Object.entries(by).sort((x,y)=>y[1].n-x[1].n).map(([w,v])=>{ const c=charByName(w); return `<label class="rm-ch ${pre.includes(w)?'on':''}"><input type="checkbox" value="${esc(w)}" hidden ${pre.includes(w)?'checked':''}>${c?charArt(c):fallbackHTML(w,'#888')}<b>${esc(w)}</b><small>${v.n} line${v.n>1?'s':''}${v.need<v.n?` · ${v.need} need takes`:''}</small></label>`; }).join('')||'<p class="tiny">No dialogue yet.</p>'}</div></div>
+    <div><label class="lab">Which lines?</label><div class="rm-opts"><label><input type="radio" name="caMode" value="all" checked> Every line for them <small>(stays up to date if you edit the script)</small></label><label><input type="radio" name="caMode" value="miss"> Only lines without a take yet</label></div>
+      <label class="lab">Due</label><input type="date" class="txt" id="caDue" value="${esc(due)}">
+      <label class="lab">Note for this episode <span class="muted">(optional)</span></label><textarea class="txt" id="caNote" rows="2" style="width:100%" placeholder="Starr is LOSING it in this one. Go big."></textarea></div></div>
+    <label class="lab">🎬 Direction <span class="muted">(optional, per line: a note, how loud, and your own line read they can play)</span></label><div class="ca-lines" id="caLines"></div>
+    <button class="btn primary rm-go" id="caGo">📨 Put it on ${esc(a.name)}'s page</button></div>`;
+  const chars=()=>$$('#caS ~ .rm-chars input:checked, .ca-ask .rm-chars input:checked').map(i=>i.value);
+  const drawLines=async()=>{ const box=$('#caLines'), cs=chars(); CA.askChars=cs; if(!cs.length){ box.innerHTML='<p class="tiny muted">Pick a character to see their lines.</p>'; return; }
+    const miss=$('[name=caMode]:checked').value==='miss', has=new Set(takes.map(t=>t.key)); const L=rmLinesFor(sid,cs,{cue:true,paren:true}).filter(x=>!miss||!has.has(x.k));
+    box.innerHTML=L.map((x,i)=>{ const d=S.dirs[caDirKey(sid,x.k)]||{}; return `<div class="ca-line" data-k="${esc(x.k)}"><div class="ca-lt"><small>${i+1}</small><b>${esc(x.w)}</b> ${x.p?`<i>(${esc(x.p)})</i> `:''}${esc(x.t)}</div>
+      <div class="ca-dir"><input class="txt" data-dn placeholder="Note: like you just found out your dog is a cop" value="${esc(d.n||'')}"><div class="ca-int">${BT_INT.map((v,j)=>`<button class="${d.l!=null&&d.l!==''&&+d.l===j?'on':''}" data-dl="${j}" title="${v[1]}">${v[0]}</button>`).join('')}</div>
+      <button class="btn sm ca-rd ${d.r?'has':''}" data-rd>${d.r?'▶ Your read':'🎙 Record your read'}</button>${d.r?'<button class="btn sm" data-rdx title="Delete your line read">🗑</button>':''}</div></div>`; }).join('')||'<p class="tiny muted">No lines with those settings.</p>'; };
+  $('#caS').onchange=e=>{ CA.askSid=e.target.value; CA.askChars=null; caAsk(a,el); };
+  $$('.ca-ask .rm-ch input').forEach(i=>i.onchange=()=>{ i.closest('.rm-ch').classList.toggle('on',i.checked); drawLines(); }); $$('[name=caMode]').forEach(r=>r.onchange=drawLines); drawLines();
+  $('#caLines').oninput=e=>{ const row=e.target.closest('[data-k]'); if(!row||!e.target.matches('[data-dn]')) return; const key=caDirKey(sid,row.dataset.k), d=S.dirs[key]=S.dirs[key]||{}; d.n=e.target.value.trim(); d.at=Date.now(); save(); };
+  $('#caLines').onclick=async e=>{ const row=e.target.closest('[data-k]'); if(!row) return; const key=caDirKey(sid,row.dataset.k), d=S.dirs[key]=S.dirs[key]||{};
+    const dl=e.target.closest('[data-dl]'); if(dl){ d.l=(d.l!=null&&d.l!==''&&+d.l===+dl.dataset.dl)?'':+dl.dataset.dl; save(); $$('[data-dl]',row).forEach(b=>b.classList.toggle('on',d.l!==''&&+b.dataset.dl===d.l)); return; }
+    if(e.target.closest('[data-rdx]')){ await ReadDB.del(key); d.r=0; save(); return drawLines(); }
+    const rb=e.target.closest('[data-rd]'); if(rb){ if(d.r&&!CA.rec){ const rd=await ReadDB.get(key); if(rd){ const au=new Audio(URL.createObjectURL(rd.blob)); au.play(); } return; } return caRecordRead(rb,key,d,drawLines); } };
+  $('#caGo').onclick=async()=>{ const cs=chars(); if(!cs.length) return toast('Pick at least one character','bad'); const miss=$('[name=caMode]:checked').value==='miss', has=new Set(takes.map(t=>t.key));
+    const r={id:uid(),sid,chars:cs,keys:miss?rmLinesFor(sid,cs).filter(x=>!has.has(x.k)).map(x=>x.k):null,due:$('#caDue').value,note:$('#caNote').value.trim(),created:Date.now()};
+    if(miss&&!r.keys.length) return toast('Every line for them already has a take.','bad');
+    a.reqs=a.reqs||[]; a.reqs.push(r); a.chars=[...new Set([...(a.chars||[]),...cs])]; save(); const btn=$('#caGo'); btn.disabled=true; btn.textContent='Updating their page…';
+    const ok=await caPublish(a); btn.disabled=false; if(!ok){ btn.textContent='📨 Try again'; return; } unlock('invite1');
+    el.innerHTML=`<div class="ca-sent card"><h3>✅ It's on ${esc(a.name)}'s page</h3><p>${caLinesFor(r).length} lines${r.due?`, due ${new Date(r.due+'T12:00').toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})}`:''}. ${a.sent?'They already have their link, so it just shows up there. Want to give them a heads up?':'This is their first request, so send them their link (it\'s the same link forever).'}</p>
+      <div class="row" style="flex-wrap:wrap"><button class="btn primary" id="caSendLink">${a.sent?'💬 Copy a heads-up text':'🔗 Send them their link'}</button><button class="btn" data-rmt="cast">← Back to the cast</button></div></div>`;
+    $('#caSendLink').onclick=()=>{ if(!a.sent){ a.sent=Date.now(); save(); return caShowLink(a,el); } navigator.clipboard.writeText(`Hey ${a.name}! New lines on your ${showName()} page 🎙 ${caLink(a)}`); toast('💬 Copied'); }; }; }
+async function caRecordRead(btn,key,d,after){ if(CA.rec){ CA.rec.stop(); return; } let st; try{ st=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true}}); }catch(e){ return toast('Allow the microphone to record a line read.','bad'); }
+  const mt=['audio/mp4','audio/webm;codecs=opus','audio/webm'].find(m=>{ try{ return MediaRecorder.isTypeSupported(m); }catch(e){ return false; } })||''; const rec=new MediaRecorder(st,{...(mt?{mimeType:mt}:{}),audioBitsPerSecond:64000}), parts=[];
+  rec.ondataavailable=e=>e.data.size&&parts.push(e.data); rec.onstop=async()=>{ st.getTracks().forEach(t=>t.stop()); CA.rec=null; const blob=new Blob(parts,{type:rec.mimeType||mt||'audio/webm'}); if(blob.size<800) return after();
+    await ReadDB.put({id:key,blob,mime:(rec.mimeType||mt||'audio/webm').split(';')[0],at:Date.now()}); d.r=1; d.at=Date.now(); save(); toast('🎧 Line read saved'); after(); };
+  CA.rec=rec; rec.start(); btn.textContent='■ Stop'; btn.classList.add('recording'); setTimeout(()=>{ if(CA.rec===rec) rec.stop(); },20000); }
+/* one-off invites get the text direction too */
+{ const _l=rmLinesFor; rmLinesFor=function(sid,chars,opt){ const out=_l.apply(this,arguments); out.forEach(o=>{ const d=S.dirs[caDirKey(sid,o.k)]; if(d){ if(d.n&&!o.dn) o.dn=d.n; if(d.l!=null&&d.l!==''&&o.dl==null) o.dl=+d.l; } }); return out; }; }
+
+/* ---------- takes that come back from a page land on the right line ---------- */
+{ const _a=rmAddTake; rmAddTake=async function(blob,take,meta){ const sp=caSplitKey(take.k); let full='';
+    if(sp&&caByCode(meta.code)){ full=take.k; take={...take,k:sp.k}; meta={...meta,sid:sp.sid}; }
+    const res=await _a.call(this,blob,take,meta); if((res==='ok'||res==='wild')&&(full||meta.rid)){ const all=await VoiceDB.all(), t=all.find(x=>x.remoteId===meta.rid); if(t){ if(full) t.portalKey=full; t.rev=''; await VoiceDB.put(t); } }
+    if(full){ const a=caByCode(meta.code); if(a) caPublishSoon(a); } return res; }; }
+
+/* ---------- the actor's side: their page ---------- */
+async function portalStart(){ document.body.classList.add('booth-mode'); current='booth'; try{ tourStart=function(){}; tourClose?.(true); }catch(e){}
+  let el=$('#booth'); if(!el){ el=document.createElement('div'); el.id='booth'; document.body.appendChild(el); } el.innerHTML='<div class="bt-load"><div class="bt-spin">🎙</div><p>Opening your page…</p></div>';
+  const m=location.hash.match(/^#p=([A-Za-z0-9]+)\.([A-Za-z0-9_-]+)/); if(!m){ el.innerHTML='<div class="bt-wrap bt-center"><div class="bt-big">😬</div><h1>This link looks cut off</h1><p>Ask for your link again.</p></div>'; return; }
+  BT.portal=true; BT.code=m[1]; BT.url=`https://script.google.com/macros/s/${m[2]}/exec`; btLS('lastPortal',location.hash);
+  let P=null, why=''; try{ const j=await btFetchJSON(BT.url+'?a=inv&c='+BT.code+'&_='+Date.now()); if(!j.ok){ if(j.err==='gone') BT.gone=true; throw new Error(j.err||'no answer'); } P=j.inv; btLS('portal.'+BT.code,P); }
+  catch(err){ why=err.message; if(!BT.gone) P=btLS('portal.'+BT.code); }
+  if(!P){ el.innerHTML=`<div class="bt-wrap bt-center"><div class="bt-big">${BT.gone?'🚫':'😬'}</div><h1>${BT.gone?'This page was switched off':'Hmm, your page didn\'t open'}</h1><p>${BT.gone?'Ask whoever sent it for a new link.':'Check your internet, then tap Try again.'}</p><p class="bt-fine">${btEsc(why)}</p><div class="bt-dock"><button class="bt-go" onclick="location.reload()">↻ Try again</button></div></div>`; return; }
+  BT.P=P; for(const t of await BoothDB.all()) if(t.code===BT.code) BT.takes[t.k]=t;
+  const all=P.requests.flatMap(r=>r.lines); BT.inv={code:BT.code,mode:'drive',show:P.show,from:P.from,actor:P.actor,ep:'',chars:[],lines:all,q:P.q};
+  try{ const left=ptLeft(); njJsonp(BT.url,{a:'open',c:BT.code,d:all.length-left,n:all.length}).catch(()=>{}); }catch(e){}
+  ptHome(); btQueue(); window.addEventListener('online',btQueue); }
+const ptDone=(r,L)=>!!(BT.takes[L.k]||(r.got||[]).includes(L.k));
+function ptLeft(){ return (BT.P?.requests||[]).reduce((n,r)=>n+r.lines.filter(L=>!ptDone(r,L)).length,0); }
+function ptHome(){ const P=BT.P, el=$('#booth'); BT.screen='portal'; BT.req=null; cancelAnimationFrame(BT.raf); const all=P.requests.flatMap(r=>r.lines); BT.inv={...BT.inv,lines:all,ep:''}; BT.char='';
+  const todo=P.requests.filter(r=>r.lines.some(L=>!ptDone(r,L))), done=P.requests.filter(r=>r.lines.length&&r.lines.every(L=>ptDone(r,L)));
+  const dueTxt=d=>{ if(!d) return ''; const n=Math.round((new Date(d+'T12:00')-new Date(new Date().toDateString()))/864e5); return n<0?`<span class="pt-late">${-n} day${n===-1?'':'s'} late</span>`:n===0?'<span class="pt-late">due today</span>':n===1?'due tomorrow':`due ${new Date(d+'T12:00').toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'})}`; };
+  const card=r=>{ const left=r.lines.filter(L=>!ptDone(r,L)).length, n=r.lines.length; return `<button class="pt-req ${r.pickup?'redo':''}" data-ptr="${r.id}"><span class="pt-av">${r.chars.slice(0,3).map(c=>`<span>${btArtC(c)}</span>`).join('')}</span><div class="grow"><b>${r.pickup?'🔁 Redo: ':''}${btEsc(r.ep)}</b><small>${btEsc(r.chars.map(c=>c.n).join(', '))} · ${left?`${left} of ${n} left`:'all done ✅'}${r.due&&left?' · '+dueTxt(r.due):''}</small><div class="bt-bar"><i style="width:${(n-left)/Math.max(1,n)*100}%"></i></div>${r.note?`<small class="pt-note">💬 ${btEsc(r.note)}</small>`:''}</div><span class="pt-go">›</span></button>`; };
+  el.innerHTML=`<div class="bt-wrap"><div class="bt-show">🎙 ${btEsc(P.show||'Recording Booth')}</div><div class="bt-hero"><h1>Hey${P.actor?' '+btEsc(P.actor):''} 👋</h1><p>This is your recording page${P.from?` from <b>${btEsc(P.from)}</b>`:''}. Every time they need lines from you, they show up right here.</p>${P.note?`<div class="bt-note">💬 “${btEsc(P.note)}”</div>`:''}</div>
+    ${todo.length?`<h2 class="bt-h">To record</h2><div class="pt-list">${todo.sort((a,b)=>(b.pickup?1:0)-(a.pickup?1:0)||(a.due||'9').localeCompare(b.due||'9')).map(card).join('')}</div>`:`<div class="pt-clear"><div class="bt-big">🎉</div><h2>You're all caught up</h2><p>Nothing to record right now. New lines show up here when there are some.</p></div>`}
+    ${done.length?`<h2 class="bt-h pt-dim">Done</h2><div class="pt-list pt-dim">${done.map(card).join('')}</div>`:''}
+    <p class="bt-fine" style="margin-top:22px">🔖 Bookmark this page (or Share → Add to Home Screen). Everything you record is sent automatically.</p>
+    <label class="pt-pin"><input type="checkbox" id="ptPin" ${btLS('pin')?'checked':''}> Open straight to this page whenever I visit the site on this phone</label></div>`;
+  $$('[data-ptr]').forEach(b=>b.onclick=()=>ptOpen(b.dataset.ptr)); $('#ptPin').onchange=e=>btLS('pin',e.target.checked?location.hash:null); }
+function btArtC(c){ return c.art?artHTML(c.art,c.n,c.col):fallbackHTML(c.n,c.col||'#888'); }
+function ptOpen(id){ const r=BT.P.requests.find(x=>x.id===id); if(!r) return; BT.req=r; const lines=r.lines.filter(L=>!(r.got||[]).includes(L.k)||BT.takes[L.k]);
+  if(!lines.length){ btToast('They already have all of these 🎉'); return; }
+  BT.inv={...BT.inv,ep:r.ep,note:r.note,chars:r.chars,lines}; BT.char=''; const first=lines.findIndex(L=>!btTake(L)); BT.i=first<0?0:first;
+  if(BT.micOk&&BT.stream&&BT.stream.active) return btRender('rec'); BT.micOk=true; btMicCheck(); }
+{ const _d=btDone; btDone=function(){ _d.apply(this,arguments); if(!BT.portal) return; const dock=$('#booth .bt-dock'); if(dock&&!$('#ptBack')){ dock.insertAdjacentHTML('afterbegin',`<button class="bt-go" id="ptBack">🏠 Back to my page</button>`); $('#ptBack').onclick=()=>ptHome(); } }; }
+/* "Got an invite?" understands page links too */
+btPasteInvite=function(){ openModal(`<div class="row"><h2 class="grow">🎙 Got an invite?</h2><button class="btn sm" onclick="closeModal()">✕</button></div><p>Paste the link someone sent you and you'll go straight to your lines.</p><input class="txt" id="btPaste" placeholder="Paste your link here" style="width:100%"><div class="row" style="margin-top:8px"><button class="btn primary" id="btPasteGo">🎤 Open my lines</button></div>`);
+  setTimeout(()=>$('#btPaste')?.focus(),60); $('#btPasteGo').onclick=()=>{ const v=$('#btPaste').value.trim(), m=v.match(/#(r|rec|p)=.+$/); if(!m) return toast('That doesn\'t look like an invite link. Copy the whole thing.','bad'); closeModal(); location.hash=m[0].slice(1); location.reload(); }; };
+window.addEventListener('hashchange',()=>{ if(/^#p=/.test(location.hash)) location.reload(); });
+document.addEventListener('click',e=>{ if(e.target.closest?.('#qlGotInv')){ e.stopImmediatePropagation(); e.preventDefault(); btPasteInvite(); } },true);
+if(/^#p=/.test(location.hash)) portalStart();
+else if(!location.hash&&btLS('pin')&&/^#p=/.test(btLS('pin'))){ location.hash=btLS('pin'); }
+
+/* ---------- the Actors window gets 👥 Cast and 🎧 Dailies ---------- */
+rmOpen=async function(tab){ RM.tab=tab||RM.tab||'cast'; const unrev=await dlCount(); openModal(`<div class="rm rm-wide"><div class="row"><h2 class="grow">🎙 Actors</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
+  <div class="seg rm-tabs"><button data-rmt="cast">👥 Cast</button><button data-rmt="dailies">🎧 Dailies${unrev?` <b class="rm-badge">${unrev}</b>`:''}</button><button data-rmt="new">📨 One-off invite</button><button data-rmt="list">📬 Invites & takes${RM.newCount?` <b class="rm-badge">${RM.newCount}</b>`:''}</button><button data-rmt="drive">☁️ Google Drive ${rmUrl()?'✓':''}</button></div><div id="rmBody"></div></div>`);
+  $('#modal').onclick=e=>{ const b=e.target.closest('[data-rmt]'); if(b){ e.preventDefault(); RM.tab=b.dataset.rmt; rmTab(); } }; rmTab(); };
+{ const _t=rmTab; rmTab=async function(){ $$('[data-rmt]').forEach(b=>b.classList.toggle('on',b.dataset.rmt===RM.tab)); const el=$('#rmBody'); if(!el) return; dlStop(); el.onclick=null;
+    if(RM.tab==='cast') return caTab(el); if(RM.tab==='dailies') return dlTab(el); return _t.apply(this,arguments); }; }
+ACH.push({id:'cast1',e:'👥',n:'Cast List',d:'Add someone to the cast'},{id:'dailies1',e:'🎧',n:'Dailies',d:'Review takes from an actor'});
+
+
+/* ===================================================================
+   [5.9.2] 🎧 DAILIES: review every take that came back, fast
+   In script order, with the cue line before it. Space plays, 1 = keeper,
+   2 = alt, 3 = reject, R = ask for a redo (lands on their page with your
+   note), C = hear it in context (the line before, then this one).
+   =================================================================== */
+const DL={list:[],i:0,filter:{actor:'',sid:'',unrev:true},src:null,on:false,buf:{}};
+async function dlCount(){ try{ return (await VoiceDB.all()).filter(t=>t.fromInv&&!t.rev).length; }catch(e){ return 0; } }
+function dlActorName(t){ const a=caByCode(t.fromInv); if(a) return a.name; const inv=(S.invites||[]).find(i=>i.code===t.fromInv); return inv?.actor||t.from||'Someone'; }
+async function dlLoad(){ const all=await VoiceDB.all(), f=DL.filter; let L=all.filter(t=>t.fromInv&&t.scriptId);
+  if(f.unrev) L=L.filter(t=>!t.rev); if(f.actor) L=L.filter(t=>t.fromInv===f.actor||dlActorName(t)===f.actor); if(f.sid) L=L.filter(t=>t.scriptId===f.sid);
+  const order={}; const sids=[...new Set(L.map(t=>t.scriptId))]; sids.forEach(sid=>{ vbParse(sid).lines.forEach((x,i)=>order[sid+'|'+x.key]=i); });
+  const sIdx=id=>{ const s=S.scripts.find(x=>x.id===id); return s?(s.code||'')+' '+(s.title||''):'zzz'; };
+  L.sort((a,b)=>sIdx(a.scriptId).localeCompare(sIdx(b.scriptId),undefined,{numeric:true})||(order[a.scriptId+'|'+a.key]??1e9)-(order[b.scriptId+'|'+b.key]??1e9)||(a.created-b.created));
+  DL.all=all; DL.list=L; DL.i=Math.min(DL.i,Math.max(0,L.length-1)); }
+async function dlTab(el){ DL.el=el; DL.on=true; unlock('dailies1'); await dlLoad(); const all=DL.all, remote=all.filter(t=>t.fromInv);
+  const actors=[...new Map(remote.map(t=>[t.fromInv,dlActorName(t)])).entries()], eps=[...new Set(remote.map(t=>t.scriptId))].map(id=>S.scripts.find(s=>s.id===id)).filter(Boolean);
+  el.innerHTML=`<div class="dl"><div class="dl-bar"><div id="dlFresh"></div><select class="txt" id="dlA"><option value="">Everyone</option>${actors.map(([c,n])=>`<option value="${esc(c)}" ${DL.filter.actor===c?'selected':''}>${esc(n)}</option>`).join('')}</select>
+      <select class="txt" id="dlS"><option value="">Every episode</option>${eps.map(s=>`<option value="${s.id}" ${DL.filter.sid===s.id?'selected':''}>${esc((s.code?s.code+' · ':'')+(s.title||'Untitled'))}</option>`).join('')}</select>
+      <label class="tiny"><input type="checkbox" id="dlU" ${DL.filter.unrev?'checked':''}> Only new</label><span class="grow"></span><span class="tiny muted" id="dlCountTxt"></span></div>
+    <div class="dl-main" id="dlMain"></div>
+    <p class="tiny muted dl-keys"><b>Space</b> play · <b>C</b> in context · <b>1</b> keeper · <b>2</b> alt · <b>3</b> reject · <b>R</b> ask for a redo · <b>← →</b> move</p></div>`;
+  $('#dlA').onchange=e=>{ DL.filter.actor=e.target.value; DL.i=0; dlTab(el); }; $('#dlS').onchange=e=>{ DL.filter.sid=e.target.value; DL.i=0; dlTab(el); }; $('#dlU').onchange=e=>{ DL.filter.unrev=e.target.checked; DL.i=0; dlTab(el); };
+  el.onclick=dlClick; dlShow(); dlFresh(); }
+async function dlFresh(){ const box=$('#dlFresh'); if(!box||!rmUrl()) return; try{ if(Date.now()-RM.lastCheck>15000) await rmQuiet(); }catch(e){} if(!$('#dlFresh')) return;
+  box.innerHTML=RM.newCount?`<button class="btn sm primary" id="dlImp">📥 Bring in ${RM.newCount} new take${RM.newCount>1?'s':''}</button>`:''; $('#dlImp')&&($('#dlImp').onclick=async()=>{ $('#dlImp').disabled=true; $('#dlImp').textContent='Bringing them in…'; await dlImportAll(); DL.i=0; dlTab(DL.el); }); }
+async function dlImportAll(){ try{ const r=await rmPost({a:'list',key:rmKey(),since:S.settings.rmSince||0}); const have=new Set((await VoiceDB.all()).map(t=>t.remoteId).filter(Boolean)); const fresh=(r.files||[]).filter(f=>!have.has(f.id)&&!(S.settings.rmSkip||[]).includes(f.id)).sort((a,b)=>a.at-b.at); let n=0; const sids=new Set();
+    for(const f of fresh){ try{ const g=await rmPost({a:'get',key:rmKey(),id:f.id}), blob=new Blob([rmUnB64(g.data.replace(/\+/g,'-').replace(/\//g,'_'))],{type:g.mime||f.mime}); const res=await rmAddTake(blob,{k:f.k,w:f.w,t:f.t},{code:f.c,by:f.by,rid:f.id,at:f.at}); if(res==='ok'||res==='wild'){ n++; sids.add('__wild'); } }catch(err){ console.warn(err); } }
+    RM.newCount=0; rmBadge(); await rmAfterImport(n,sids); toast(`📥 ${n} take${n===1?'':'s'} in`,'good'); }catch(err){ toast('Couldn\'t reach your Drive: '+esc(err.message),'bad'); } }
+function dlShow(){ const box=$('#dlMain'); if(!box) return; const L=DL.list; $('#dlCountTxt')&&($('#dlCountTxt').textContent=L.length?`${DL.i+1} of ${L.length}`:'');
+  if(!L.length){ box.innerHTML=`<div class="dl-empty"><div style="font-size:44px">🎬</div><h3>${DL.filter.unrev?'All caught up':'No takes from actors yet'}</h3><p class="muted">${DL.filter.unrev?'Every take from your actors has been reviewed. Untick “Only new” to see them all again.':'When actors record from their page or an invite, their takes land here.'}</p></div>`; return; }
+  const t=L[DL.i], s=S.scripts.find(x=>x.id===t.scriptId), P=vbParse(t.scriptId).lines, li=P.findIndex(x=>x.key===t.key), line=P[li], prev=li>0?P[li-1]:null, c=charByName(t.who), d=S.dirs[caDirKey(t.scriptId,t.key)];
+  const others=DL.all.filter(x=>x.key===t.key&&x.scriptId===t.scriptId&&x.id!==t.id).sort((a,b)=>a.created-b.created), q=t.qa;
+  box.innerHTML=`<div class="dl-ep">${esc(s?((s.code?s.code+' · ':'')+(s.title||'Untitled')):'')}${line?` · line ${li+1}${line.sceneName?' · '+esc(line.sceneName):''}`:''}</div>
+    ${prev?`<div class="dl-cue"><b>${esc(prev.who)}</b> ${esc(prev.text)}</div>`:''}
+    <div class="dl-card"><div class="dl-who"><span class="dl-face">${c?charArt(c):fallbackHTML(t.who,'#888')}</span><div class="grow"><b>${esc(t.who)}</b><small>${esc(dlActorName(t))} · take ${t.n||1} · ${ago(t.remoteAt||t.created)}${t.portalKey&&caSplitKey(t.portalKey)?.redo?' · 🔁 redo':''}</small></div>${t.keeper?'<span class="dl-pill k">⭐ Keeper</span>':''}${t.rev==='a'?'<span class="dl-pill">👍 Alt</span>':t.rev==='x'?'<span class="dl-pill x">✕ Rejected</span>':t.rev==='r'?'<span class="dl-pill r">🔁 Redo asked</span>':''}</div>
+      ${line?.paren?`<div class="dl-paren">(${esc(line.paren)})</div>`:''}<div class="dl-text">${esc(t.text)}</div>
+      ${d&&(d.n||d.l!=null&&d.l!=='')?`<div class="dl-dir">🎬 You asked: ${d.l!=null&&d.l!==''?BT_INT[d.l][0]+' '+BT_INT[d.l][1]+' ':''}${d.n?'“'+esc(d.n)+'”':''}</div>`:''}
+      <canvas class="dl-wave" id="dlWave" width="900" height="90"></canvas>
+      <div class="dl-q" id="dlQ">${q?dlQHTML(q):'<span class="tiny muted">Checking quality…</span>'}</div>
+      <div class="dl-acts"><button class="btn primary" data-dl="play">▶ Play</button><button class="btn" data-dl="ctx" ${prev?'':'disabled'}>⏮ In context</button><span class="grow"></span>
+        <button class="btn dl-k" data-dl="keep">⭐ Keeper <kbd>1</kbd></button><button class="btn" data-dl="alt">👍 Alt <kbd>2</kbd></button><button class="btn" data-dl="rej">✕ Reject <kbd>3</kbd></button><button class="btn" data-dl="redo">🔁 Redo… <kbd>R</kbd></button></div>
+      <div id="dlRedo"></div>
+      ${others.length?`<div class="dl-others"><small>Other takes of this line:</small>${others.map(o=>`<button class="chip ${o.keeper?'on':''}" data-dlo="${o.id}">${o.keeper?'⭐ ':''}${esc(o.fromInv?dlActorName(o):'You')} #${o.n||1}${o.rev==='x'?' ✕':''}</button>`).join('')}</div>`:''}</div>
+    <div class="dl-nav"><button class="btn sm" data-dl="prev" ${DL.i?'':'disabled'}>← Previous</button><button class="btn sm" data-dl="next" ${DL.i<L.length-1?'':'disabled'}>Next →</button></div>`;
+  dlWave(t); if(!q) hfAnalyzeBlob(t.blob).then(async qa=>{ if(!qa) return; t.qa=qa; await VoiceDB.put(t); if(DL.list[DL.i]===t&&$('#dlQ')) $('#dlQ').innerHTML=dlQHTML(qa); }); }
+function dlQHTML(q){ const v=HF_V[q.v]||HF_V.good; return `<span class="dl-qv ${q.v}">${v[0]} ${v[1]}</span><span class="tiny muted">${hfFmt(q)} · peak ${q.peak} dB · room ${q.noise} dB</span>`; }
+function dlWave(t){ const cv=$('#dlWave'); if(!cv) return; const c=cv.getContext('2d'), W=cv.width, H=cv.height, pk=t.peaks||[]; c.clearRect(0,0,W,H); if(!pk.length) return; const s=(t.trimS||0)/t.dur, e=(t.trimE||t.dur)/t.dur;
+  pk.forEach((v,i)=>{ const x=i/pk.length*W, on=i/pk.length>=s&&i/pk.length<=e, h=Math.max(2,Math.min(1,v)*H*.92); c.fillStyle=v>=.98?'#e03131':on?'#4a86e8':'#ced4da'; c.fillRect(x,(H-h)/2,Math.max(1,W/pk.length-1),h); }); }
+async function dlBuf(t){ if(DL.buf[t.id]) return DL.buf[t.id]; const b=await decodeBlob(t.blob); DL.buf[t.id]=b; return b; }
+function dlStop(){ try{ DL.src?.stop(); }catch(e){} DL.src=null; DL.ctxT&&clearTimeout(DL.ctxT); }
+async function dlPlay(t,then){ dlStop(); const a=ac(); let b; try{ b=await dlBuf(t); }catch(e){ return toast('Couldn\'t play that take','bad'); }
+  const src=a.createBufferSource(); src.buffer=b; const g=a.createGain(); g.gain.value=t.gain||1; src.connect(g).connect(a.destination); const s=t.trimS||0, e=Math.max(s+.05,t.trimE||b.duration);
+  src.start(0,s,e-s); DL.src=src; src.onended=()=>{ if(DL.src===src){ DL.src=null; then?.(); } }; }
+async function dlContext(t){ const P=vbParse(t.scriptId).lines, li=P.findIndex(x=>x.key===t.key), prev=li>0?P[li-1]:null; if(!prev) return dlPlay(t);
+  const pt=DL.all.filter(x=>x.key===prev.key&&x.scriptId===t.scriptId).sort((a,b)=>(b.keeper?1:0)-(a.keeper?1:0)||b.created-a.created)[0];
+  if(pt) return dlPlay(pt,()=>{ DL.ctxT=setTimeout(()=>dlPlay(t),150); });
+  try{ const u=new SpeechSynthesisUtterance(prev.text); u.rate=1.05; u.onend=()=>dlPlay(t); speechSynthesis.cancel(); speechSynthesis.speak(u); }catch(e){ dlPlay(t); } }
+async function dlMark(kind){ const t=DL.list[DL.i]; if(!t) return; dlStop();
+  if(kind==='keep'){ for(const o of DL.all.filter(x=>x.key===t.key&&x.scriptId===t.scriptId&&x.keeper&&x.id!==t.id)){ o.keeper=false; await VoiceDB.put(o); } t.keeper=true; t.rev='k'; }
+  else if(kind==='alt'){ t.rev='a'; }
+  else if(kind==='rej'){ t.rev='x'; if(t.keeper){ t.keeper=false; const back=DL.all.filter(x=>x.key===t.key&&x.scriptId===t.scriptId&&x.id!==t.id&&x.rev!=='x').sort((a,b)=>b.created-a.created)[0]; if(back){ back.keeper=true; await VoiceDB.put(back); } } }
+  await VoiceDB.put(t); if(typeof CS!=='undefined') CS.takes=null; tone?.(kind==='keep'?1046:kind==='rej'?330:660,.05,'sine',.06);
+  const a=caByCode(t.fromInv); if(a) caPublishSoon(a); dlAdvance(); }
+function dlAdvance(){ if(DL.filter.unrev){ DL.list.splice(DL.i,1); DL.i=Math.min(DL.i,DL.list.length-1); } else DL.i=Math.min(DL.i+1,DL.list.length-1); DL.i=Math.max(0,DL.i); dlShow(); const t=DL.list[DL.i]; if(t&&DL.auto!==false) setTimeout(()=>{ if(DL.list[DL.i]===t&&$('#dlMain')) dlPlay(t); },120); }
+function dlRedoUI(){ const t=DL.list[DL.i]; if(!t) return; const box=$('#dlRedo'); if(!box) return; if(box.innerHTML){ box.innerHTML=''; return; }
+  const presets=['Louder','More energy','Slower','Funnier','Clearer, I couldn\'t hear a word','Less yelling','More deadpan','Wrong word, read it as written'];
+  box.innerHTML=`<div class="dl-redo"><b>🔁 What should they change?</b><div class="dl-pre">${presets.map(p=>`<button class="chip" data-dlp="${esc(p)}">${esc(p)}</button>`).join('')}</div><div class="row"><input class="txt grow" id="dlRN" placeholder="Your note (they see this on the line)"><button class="btn primary" id="dlRGo">Send to their page</button></div></div>`;
+  $('#dlRN').focus(); box.onclick=e=>{ const p=e.target.closest('[data-dlp]'); if(p){ const i=$('#dlRN'); i.value=i.value?i.value+'. '+p.dataset.dlp:p.dataset.dlp; i.focus(); } };
+  $('#dlRN').onkeydown=e=>{ if(e.key==='Enter') $('#dlRGo').click(); e.stopPropagation(); }; $('#dlRGo').onclick=()=>dlRedo(t,$('#dlRN').value.trim()); }
+async function dlRedo(t,note){ if(!rmUrl()) return toast('Redo requests go to the actor\'s page, which needs the ☁️ Google Drive drop box.','bad');
+  let a=caByCode(t.fromInv); if(!a){ const name=dlActorName(t); a=S.actors.find(x=>x.name.toLowerCase()===String(name).toLowerCase()); if(!a){ a={id:uid(),name:name||'Actor',code:'P'+rmCode(),chars:[t.who],reqs:[],created:Date.now()}; S.actors.push(a); toast(`👥 Made a page for ${esc(a.name)} so they can see the redo. Send them their link from 👥 Cast.`); } }
+  a.reqs=a.reqs||[]; let r=a.reqs.find(x=>x.pickup&&!x.done&&x.sid===t.scriptId); if(!r){ r={id:uid(),sid:t.scriptId,chars:[],keys:[],pickup:true,redo:{},created:Date.now(),due:''}; a.reqs.push(r); }
+  if(!r.chars.includes(t.who)) r.chars.push(t.who); if(!r.keys.includes(t.key)) r.keys.push(t.key); r.redo[t.key]={n:note,at:Date.now()};
+  t.rev='r'; await VoiceDB.put(t); save(); const ok=await caPublish(a,{quiet:true}); toast(ok?`🔁 Sent to ${esc(a.name)}'s page${a.sent?'':'. They don\'t have their link yet: 👥 Cast → 🔗 Their link'}`:`Saved, but couldn't update ${esc(a.name)}'s page yet (${esc(a.pubErr||'')}). It retries next time.`,ok?'good':'bad'); dlAdvance(); }
+async function dlClick(e){ const b=e.target.closest('[data-dl]')?.dataset.dl, t=DL.list[DL.i];
+  const o=e.target.closest('[data-dlo]'); if(o){ const x=DL.all.find(y=>y.id===o.dataset.dlo); if(x) dlPlay(x); return; }
+  if(!b) return; if(b==='play') return t&&dlPlay(t); if(b==='ctx') return t&&dlContext(t); if(b==='prev'){ dlStop(); DL.i=Math.max(0,DL.i-1); return dlShow(); } if(b==='next'){ dlStop(); DL.i=Math.min(DL.list.length-1,DL.i+1); return dlShow(); }
+  if(b==='redo') return dlRedoUI(); return dlMark(b); }
+document.addEventListener('keydown',e=>{ if(!$('#dlMain')||RM.tab!=='dailies'||e.metaKey||e.ctrlKey||e.altKey) return; if(e.target.closest?.('input,textarea,select')) return; const t=DL.list[DL.i]; if(!t) return; const k=e.key.toLowerCase();
+  const act={' ':()=>DL.src?dlStop():dlPlay(t),c:()=>dlContext(t),'1':()=>dlMark('keep'),'2':()=>dlMark('alt'),'3':()=>dlMark('rej'),backspace:()=>dlMark('rej'),r:()=>dlRedoUI(),
+    arrowright:()=>{ dlStop(); DL.i=Math.min(DL.list.length-1,DL.i+1); dlShow(); },arrowleft:()=>{ dlStop(); DL.i=Math.max(0,DL.i-1); dlShow(); }}[k];
+  if(!act) return; e.preventDefault(); e.stopImmediatePropagation(); act(); },true);
+{ const _c=closeModal; closeModal=function(){ dlStop(); return _c.apply(this,arguments); }; }
+/* doors: Voice Booth, lobby, ⌘K */
+{ const _rv=renderVoice; renderVoice=function(){ _rv.apply(this,arguments); const r=$('#vbRmBtn'); if(r&&!$('#vbDlBtn')){ r.insertAdjacentHTML('afterend','<button class="btn sm" id="vbDlBtn" title="Review takes your actors sent">🎧 Dailies</button>'); $('#vbDlBtn').onclick=()=>rmOpen('dailies'); dlCount().then(n=>{ const b=$('#vbDlBtn'); if(b&&n) b.innerHTML=`🎧 Dailies <b class="rm-badge">${n}</b>`; }); } }; }
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'👥',label:'Cast: actor pages',run:()=>rmOpen('cast'),kw:'cast actor page portal link record'},{ico:'🎧',label:'Dailies: review actor takes',run:()=>rmOpen('dailies'),kw:'dailies review takes keeper redo'}); return C; }; }
+rmBadge=(_b=>function(){ _b.apply(this,arguments); const p=$('#qlActors small'); dlCount().then(n=>{ if(p&&!RM.newCount&&n) p.textContent=`${n} take${n>1?'s':''} to review`; }); })(rmBadge);
+
+if(!FIRST_RUN&&!S.settings.seen592) setTimeout(()=>{ if($('#tour')||$('.hello40')||current==='booth') return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello592" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>5.9.2: The Cast Update.</b><small>Studio-quality recording, one permanent link per actor, direction on every line, and Dailies to review takes fast.${S.settings.seen591?'':' (Plus the 🗂 Season Planner from 5.9.1.)'}</small><div class="row"><button class="btn sm primary" id="h592p">👥 Set up my cast</button><button class="btn sm" id="h592w">✨ What's new</button><button class="btn sm" id="h592x" aria-label="Dismiss">✕</button></div></div></div>`);
+  const done=()=>{ ['seen592','seen591','seen59','seen58','seen57','seen56','seen55','seen54','seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello592')?.remove(); }; $('#h592p').onclick=()=>{ done(); rmOpen('cast'); }; $('#h592w').onclick=()=>{ done(); openWhatsNew(); }; $('#h592x').onclick=done; },3300);
+if(FIRST_RUN) S.settings.seen592=true;
 
 </script>
 </body>
