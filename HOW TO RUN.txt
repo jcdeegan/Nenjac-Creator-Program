@@ -1,4 +1,4 @@
-NENJAC CREATOR 5.9.3: how to run it
+NENJAC CREATOR 6.0: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -87,6 +87,44 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 6.0: NENJAC EVERYWHERE
+  🗄 THE BIG MOVE: the show now also saves to the browser's big storage (hundreds of times
+     more room than the old ~5 MB). Nothing to do: it moved itself the first time 6.0
+     opened, and a copy of your show from before the move was set aside first.
+  🎛 STUDIO MODE: the 🎛 button up top (or Alt+Shift+S). Hides Play, Watch, the casino,
+     wallet, ticker, pet and Vibe bar. Home becomes the Studio dashboard: every episode's
+     Script → Voices → Animation → Music → Rendered → Posted, what's next, new takes,
+     open notes, ideas. Tap a step to mark it done. It's per computer, flip it off anytime.
+  🗒 NOTES: a red dot on 🗒 means the other writer left a note or a reply. New ones say NEW.
+  📱 NENJAC WRITER 2.0 (writer/ folder, works on Android AND iPhone):
+     Tabs: Scripts · Bible · 🏋️ Practice · 🎡 Wheel · 💡 Ideas
+     🗣 Table Read: the 🗣 button in any script (or practice piece). Play, skip, speed.
+     🆘 Stuck? + 🎬 cold opens: the 🆘 chip at the end of the name row, or ⋯.
+     🏋️ Practice: the same drawer as the computer. Weekly challenge, Chaos, Odd Couple,
+        20-Minute Episode, Pilot of the Month, duels (Noah can write his half on his phone),
+        Keep Typing or It Dies, Tunnel Vision, rate it twice.
+     🗒 Notes inbox: the 🗒 button on the Scripts tab. Every open note on every script,
+        reply, mark done, jump to the line.
+     💡 Ideas: the same inbox as Alt+I on the computer.
+     🎡 Wheel of Doom: your wheels from the computer. Tap Spin or flick a wheel.
+     Android: Chrome ⋮ → Add to Home screen (or Install app). Long-press the icon for
+        💡 New idea, 🏋️ Practice and 🎡 Wheel shortcuts.
+     Setting up a phone: Creator → ⚙ Settings → 👥 Shared show → 📱 Phone writer → QR code.
+
+NEW IN 5.9.4: THE VARIETY PACK
+  🆘 STUCK? (Writing Desk toolbar, or Alt+S while writing): a nudge that uses the names in
+     your scene. Pick a kind (make it worse, someone walks in, cut away, callback, character,
+     the next line, structure, go wild) or let it pick. "Drop it in as a note" puts it in the
+     script as a grey note. Second tab = 🎬 cold open starters.
+  🏋️ PRACTICE ROOM now uses the real Writing Desk editor: Tab, Enter, name autocomplete,
+     Alt+1-9, all of it. Tap a name at the bottom to start their line. 🆘 works in there too.
+     Free write has a 🎬 Cold open button. Duels have their own prompts (🎤).
+  📄 18 new episode templates (+ New → search box): heist, murder mystery, time loop, body
+     swap, courtroom, tech week, cast party, villain, road trip, mockumentary, true crime...
+  🎡 Wheel of Doom, challenges and twists got way bigger (added into your wheels once; your
+     own entries are kept). Bigger BREAKING ticker, more Nenshi bets (from next week),
+     more 🍃 High Mode thoughts, 60 new weekly challenges (from next Monday).
 
 NEW IN 5.9.3: THE PRACTICE ROOM (Write → 🏋️ Practice)
   Episodes that will never get made. Practice pieces live in their own drawer: they never

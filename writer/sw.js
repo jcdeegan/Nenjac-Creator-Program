@@ -1,7 +1,7 @@
 /* Nenjac Writer offline helper. The page always tries the network first
    (so updates show up right away) and falls back to the saved copy offline.
    Fonts and character art are saved the first time they load. */
-const CACHE = 'nenjac-writer-v1-0';
+const CACHE = 'nenjac-writer-v2-0';
 const CORE = ['./', './index.html', './manifest.webmanifest', './apple-touch-icon.png', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(CORE)).catch(() => {}).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => {
