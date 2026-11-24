@@ -89,10 +89,11 @@ ON YOUR PHONE
   on your computer.
 
 NEW IN 5.9.2: THE CAST UPDATE (🎙 Voice Booth → 📨 Actors)
-  ONE-TIME: update your drop box script so you can see when actors open their page:
+  ONE-TIME (needed for actor pages): update your drop box script to version 4:
     📨 Actors → ☁️ Google Drive → 📋 Copy the script → in script.google.com select all, paste
     over it → 💾 Save → Deploy → Manage deployments → ✏️ → Version: New version → Deploy.
-    (Everything else works without this step.)
+    Then 🩺 Full check should end with 🎉. (Version 4 lets phones read their page the
+    reliable way, and shows you when actors open it.)
   👥 CAST: add each person who voices your characters once. ＋ Ask for lines puts an
     episode on their page (pick the characters, a due date, a note). Each person has ONE
     link forever: 🔗 Their link, send it once. New requests and redos just show up there.

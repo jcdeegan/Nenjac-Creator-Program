@@ -31028,7 +31028,7 @@ function rmDriveTab(el){ const url=rmUrl();
       <li>Google asks for permission. You'll see "Google hasn't verified this app" because it's YOUR script: click <b>Advanced → Go to Nenjac Drop Box</b> → Allow.</li>
       <li>Copy the <b>Web app URL</b> (ends in <code>/exec</code>) and paste it here:</li></ol>
     <div class="row"><input class="txt grow" id="rmUrlIn" value="${esc(url)}" placeholder="https://script.google.com/macros/s/…/exec"><button class="btn primary" id="rmTest">🔌 Connect & test</button></div><div id="rmTestOut" class="tiny" style="margin-top:6px"></div>
-    <div class="rm-update"><b>Already set up before 4.5.2?</b> Update your script once: 📋 Copy the script again → in Apps Script select everything and paste over it → 💾 Save → <b>Deploy → Manage deployments → ✏️ → Version: New version → Deploy</b>. The /exec link stays the same. If Google shows checkboxes, tick <b>Select all</b>. Then hit 🩺 Full check.</div>
+    <div class="rm-update"><b>Set up before 5.9.2?</b> Update your script once (version 4, needed for actor pages): 📋 Copy the script again → in Apps Script select everything and paste over it → 💾 Save → <b>Deploy → Manage deployments → ✏️ → Version: New version → Deploy</b>. The /exec link stays the same. If Google shows checkboxes, tick <b>Select all</b>. Then hit 🩺 Full check.</div>
     <div class="row" style="margin-top:8px"><button class="btn" id="rmDiag">🩺 Full check</button><button class="btn sm" id="rmDiagCopy" style="display:none">📋 Copy results for Albert</button></div><div id="rmDiagOut" class="rm-diag"></div>
     ${url?'<div class="row" style="margin-top:10px"><button class="btn sm red" id="rmOff">Disconnect (use files instead)</button></div>':''}
     <details class="tiny" style="margin-top:12px"><summary>🔐 What can actors do with this?</summary><p>Upload takes for an invite you made and that you haven't switched off. That's it. They can't see, list or download anything. Only this app (which holds the secret key) can. Your key: <code>${esc(rmKey().slice(0,4))}…</code> (stored only on this computer). If you use Nenjac Creator on another computer, copy the script again there and redeploy, or paste this key: <button class="btn sm" id="rmShowKey">show key</button></p></details></div>`;
@@ -41944,8 +41944,10 @@ async function caB64(blob){ return rmB64(new Uint8Array(await blob.arrayBuffer()
 function caSplitKey(k){ const m=String(k||'').match(/^([^~]+)~(.+?)(?:~r([a-z0-9]+))?$/); return m?{sid:m[1],k:m[2],redo:m[3]||''}:null; }
 
 /* ---------- the drop box script, version 3 (adds "when did they open it") ---------- */
-{ const _s=rmScript; rmScript=function(){ let s=_s(); s=s.replace('line drop box (version 2)','line drop box (version 3)').replace('const VERSION = 2;','const VERSION = 3;')
+{ const _s=rmScript; rmScript=function(){ let s=_s();
+    s=s.replace(/line drop box \(version \d+\)/,'line drop box (version 4)').replace(/const VERSION = \d+;/,'const VERSION = 4;')
     .replace("if(p.a==='seen') return out_(seen_(p),cb);","if(p.a==='seen') return out_(seen_(p),cb);\n    if(p.a==='open') return out_(open_(p),cb);")
+    .replace("const b=JSON.parse(e.postData.contents); return out_(","const b=JSON.parse(e.postData.contents);\n    if(b.a==='inv'){ const inv=getInv_(b.c); return out_(inv?{ok:true,inv:inv.payload}:{ok:false,err:'gone'}); }\n    if(b.a==='open') return out_(open_(b));\n    if(b.a==='seen') return out_(seen_(b));\n    return out_(")
     .replace("  return {ok:false,err:'what'}; }","  if(b.a==='opens'){ const all=PropertiesService.getScriptProperties().getProperties(), out={}; Object.keys(all).forEach(k=>{ if(k.indexOf('open_')===0){ try{ out[k.slice(5)]=JSON.parse(all[k]); }catch(x){} } }); return {ok:true,opens:out}; }\n  return {ok:false,err:'what'}; }")
     .replace("function admin_(b){","function open_(p){ const c=clean_(p.c); if(!getInv_(c)) return {ok:false,err:'gone'}; PropertiesService.getScriptProperties().setProperty('open_'+c,JSON.stringify({at:Date.now(),d:+p.d||0,n:+p.n||0})); return {ok:true}; }\nfunction admin_(b){"); return s; }; }
 async function caScriptVersion(){ if(!rmUrl()) return 0; try{ const j=await rmPost({a:'ping',key:rmKey()}); S.settings.rmV=j.v||1; save(); return S.settings.rmV; }catch(e){ return S.settings.rmV||0; } }
@@ -41973,16 +41975,16 @@ async function caProgress(a,takes){ takes=takes||await VoiceDB.all(); const mine
   return {total,got,left:total-got,redos,per}; }
 
 /* ---------- 👥 Cast tab ---------- */
-async function caTab(el){ const drive=!!rmUrl(); if(drive&&!S.settings.rmV) caScriptVersion().then(v=>{ if(RM.tab==='cast'&&$('#caV')) $('#caV').style.display=v<3?'':'none'; });
-  let opens={}; if(drive&&(S.settings.rmV||0)>=3){ try{ opens=(await rmPost({a:'opens',key:rmKey()})).opens||{}; }catch(e){} }
+async function caTab(el){ const drive=!!rmUrl(); if(drive&&!S.settings.rmV) caScriptVersion().then(v=>{ if(RM.tab==='cast'&&$('#caV')) $('#caV').style.display=v<4?'':'none'; });
+  let opens={}; if(drive&&(S.settings.rmV||0)>=4){ try{ opens=(await rmPost({a:'opens',key:rmKey()})).opens||{}; }catch(e){} }
   const takes=await VoiceDB.all(), prog={}; for(const a of S.actors) prog[a.id]=await caProgress(a,takes);
   el.innerHTML=`<div class="ca">${drive?'':`<div class="ca-need">☁️ <b>Actor pages live in your Google Drive drop box.</b> Set it up once (about 5 minutes) and every actor gets one permanent link. <button class="btn sm primary" data-rmt="drive">☁️ Set it up</button></div>`}
-    <div class="ca-need" id="caV" style="display:${drive&&(S.settings.rmV||3)<3?'':'none'}">🆕 <b>Update your drop box script</b> (1 minute) to see when actors open their page: ☁️ Google Drive → 📋 Copy the script → paste over the old one → Deploy → Manage deployments → ✏️ → New version → Deploy.</div>
+    <div class="ca-need" id="caV" style="display:${drive&&(S.settings.rmV||4)<4?'':'none'}">🆕 <b>Update your drop box script</b> (1 minute). Actor pages need it to open reliably on phones: ☁️ Google Drive → 📋 Copy the script → paste over the old one → Deploy → Manage deployments → ✏️ → New version → Deploy.</div>
     <div class="ca-add"><input class="txt" id="caNew" placeholder="Add someone to the cast (their name)"><button class="btn primary" id="caAdd">＋ Add to cast</button></div>
     <div class="ca-q"><b>🎚 Quality they record in</b>${Object.entries(HF_Q).map(([k,v])=>`<label><input type="radio" name="caQ" value="${k}" ${S.settings.recQ===k?'checked':''}> ${v.l}</label>`).join('')}<small class="muted">Studio is uncompressed, straight from the raw mic. About 1 MB per 7 seconds.</small></div>
     <div class="ca-list">${S.actors.map(a=>{ const p=prog[a.id], o=opens[a.code], open=(a.reqs||[]).filter(r=>!r.done); return `<div class="ca-card" data-ca="${a.id}">
       <div class="ca-top"><div class="ca-faces">${(a.chars||[]).slice(0,4).map(w=>{ const c=charByName(w); return `<span class="ca-face" title="${esc(w)}">${c?charArt(c):fallbackHTML(w,'#888')}</span>`; }).join('')||'<span class="ca-face">🎭</span>'}</div>
-        <div class="grow"><b class="ca-name">${esc(a.name)}</b><small>${(a.chars||[]).map(esc).join(', ')||'No characters yet'}</small><small class="ca-seen">${o?`👀 Opened their page ${ago(o.at)}`:drive&&(S.settings.rmV||0)>=3?'👀 Hasn\'t opened their page yet':''}${a.pubErr?` · ⚠️ ${esc(a.pubErr)}`:''}</small></div>
+        <div class="grow"><b class="ca-name">${esc(a.name)}</b><small>${(a.chars||[]).map(esc).join(', ')||'No characters yet'}</small><small class="ca-seen">${o?`👀 Opened their page ${ago(o.at)}`:drive&&(S.settings.rmV||0)>=4?'👀 Hasn\'t opened their page yet':''}${a.pubErr?` · ⚠️ ${esc(a.pubErr)}`:''}</small></div>
         <div class="ca-num">${p.total?`<b>${p.got}/${p.total}</b><small>lines in</small>`:'<small>Nothing asked yet</small>'}</div></div>
       ${open.length?`<div class="ca-reqs">${open.map(r=>{ const s=S.scripts.find(x=>x.id===r.sid), pp=p.per[r.id]||{n:0,got:0}, d=r.due?Math.round((new Date(r.due+'T12:00')-new Date(new Date().toDateString()))/864e5):null;
         return `<div class="ca-req ${pp.n&&pp.got>=pp.n?'done':''}"><span>${r.pickup?'🔁':'📄'}</span><div class="grow"><b>${esc(s?((s.code?s.code+': ':'')+(s.title||'Untitled')):'(deleted script)')}</b><small>${r.pickup?'Redo request · ':''}${esc(r.chars.join(', '))} · ${pp.got}/${pp.n} in${d!=null?` · ${d<0?`<span class="ca-late">${-d} day${d===-1?'':'s'} late</span>`:d===0?'due today':`due in ${d} day${d===1?'':'s'}`}`:''}</small><div class="ca-bar"><i style="width:${pp.n?pp.got/pp.n*100:0}%"></i></div></div><button class="btn sm" data-car="done" data-r="${r.id}" title="Done with this one (hides it from their page)">✓</button><button class="btn sm" data-car="del" data-r="${r.id}" title="Remove">✕</button></div>`; }).join('')}</div>`:''}
@@ -42057,12 +42059,12 @@ async function portalStart(){ document.body.classList.add('booth-mode'); current
   let el=$('#booth'); if(!el){ el=document.createElement('div'); el.id='booth'; document.body.appendChild(el); } el.innerHTML='<div class="bt-load"><div class="bt-spin">🎙</div><p>Opening your page…</p></div>';
   const m=location.hash.match(/^#p=([A-Za-z0-9]+)\.([A-Za-z0-9_-]+)/); if(!m){ el.innerHTML='<div class="bt-wrap bt-center"><div class="bt-big">😬</div><h1>This link looks cut off</h1><p>Ask for your link again.</p></div>'; return; }
   BT.portal=true; BT.code=m[1]; BT.url=`https://script.google.com/macros/s/${m[2]}/exec`; btLS('lastPortal',location.hash);
-  let P=null, why=''; try{ const j=await btFetchJSON(BT.url+'?a=inv&c='+BT.code+'&_='+Date.now()); if(!j.ok){ if(j.err==='gone') BT.gone=true; throw new Error(j.err||'no answer'); } P=j.inv; btLS('portal.'+BT.code,P); }
+  let P=null, why=''; try{ const j=await njReadInv(BT.url,BT.code); if(!j.ok){ if(j.err==='gone') BT.gone=true; throw new Error(j.err||'no answer'); } P=j.inv; btLS('portal.'+BT.code,P); }
   catch(err){ why=err.message; if(!BT.gone) P=btLS('portal.'+BT.code); }
   if(!P){ el.innerHTML=`<div class="bt-wrap bt-center"><div class="bt-big">${BT.gone?'🚫':'😬'}</div><h1>${BT.gone?'This page was switched off':'Hmm, your page didn\'t open'}</h1><p>${BT.gone?'Ask whoever sent it for a new link.':'Check your internet, then tap Try again.'}</p><p class="bt-fine">${btEsc(why)}</p><div class="bt-dock"><button class="bt-go" onclick="location.reload()">↻ Try again</button></div></div>`; return; }
   BT.P=P; for(const t of await BoothDB.all()) if(t.code===BT.code) BT.takes[t.k]=t;
   const all=P.requests.flatMap(r=>r.lines); BT.inv={code:BT.code,mode:'drive',show:P.show,from:P.from,actor:P.actor,ep:'',chars:[],lines:all,q:P.q};
-  try{ const left=ptLeft(); njJsonp(BT.url,{a:'open',c:BT.code,d:all.length-left,n:all.length}).catch(()=>{}); }catch(e){}
+  try{ const left=ptLeft(); fetch(BT.url,{method:'POST',mode:'no-cors',body:JSON.stringify({a:'open',c:BT.code,d:all.length-left,n:all.length})}).catch(()=>{}); }catch(e){}
   ptHome(); btQueue(); window.addEventListener('online',btQueue); }
 const ptDone=(r,L)=>!!(BT.takes[L.k]||(r.got||[]).includes(L.k));
 function ptLeft(){ return (BT.P?.requests||[]).reduce((n,r)=>n+r.lines.filter(L=>!ptDone(r,L)).length,0); }
@@ -42097,6 +42099,25 @@ rmOpen=async function(tab){ RM.tab=tab||RM.tab||'cast'; const unrev=await dlCoun
 { const _t=rmTab; rmTab=async function(){ $$('[data-rmt]').forEach(b=>b.classList.toggle('on',b.dataset.rmt===RM.tab)); const el=$('#rmBody'); if(!el) return; dlStop(); el.onclick=null;
     if(RM.tab==='cast') return caTab(el); if(RM.tab==='dailies') return dlTab(el); return _t.apply(this,arguments); }; }
 ACH.push({id:'cast1',e:'👥',n:'Cast List',d:'Add someone to the cast'},{id:'dailies1',e:'🎧',n:'Dailies',d:'Review takes from an actor'});
+
+/* reading an invite/page: POST first (works everywhere uploads work), then the old GET routes */
+async function njReadInv(url,code){ let first;
+  for(let k=0;k<3;k++){ if(k) await new Promise(r=>setTimeout(r,700*k)); try{ const r=await fetch(url,{method:'POST',body:JSON.stringify({a:'inv',c:code})}); const j=JSON.parse(await r.text()); if(j.ok||j.err==='gone') return j; first=new Error(j.err==='key'||j.err==='what'?'old drop box script':j.err); break; }catch(e){ first=e; } }
+  try{ return await btFetchJSON(url+'?a=inv&c='+code+'&_='+Date.now(),{},2); }catch(e){ throw new Error(`${first?.message||first} / ${e.message}`); } }
+/* the 🩺 Full check tests the routes phones really use */
+rmDiag=async function(){ const out=$('#rmDiagOut'); if(!out) return; const u=rmUrl()||$('#rmUrlIn')?.value.trim(); if(!u) return out.innerHTML='Paste your /exec link first.'; const rows=[]; const show=()=>{ out.innerHTML=rows.map(r=>`<div>${r[0]} ${esc(r[1])}${r[2]?` <small>${esc(r[2])}</small>`:''}</div>`).join(''); };
+  const step=async(name,fn,soft)=>{ rows.push(['⏳',name]); show(); try{ const d=await fn(); rows[rows.length-1]=['✅',name,d||'']; return true; }catch(e){ rows[rows.length-1]=[soft?'➖':'❌',name,(e.message||String(e))+(soft?' (fine, there\'s another route)':'')]; show(); return false; } finally{ show(); } };
+  const code='TEST'+Math.random().toString(36).slice(2,7).toUpperCase().replace(/[^A-Z0-9]/g,''); let v=0;
+  { const ua=navigator.userAgent; rows.push(['ℹ️','Browser',(/Edg\//.test(ua)?'Edge':/CriOS|Chrome\//.test(ua)?'Chrome':/Firefox\//.test(ua)?'Firefox':/Safari\//.test(ua)?'Safari':'?')+(/Mobile/.test(ua)?' (phone)':'')+' · '+location.protocol.replace(':','')]); }
+  await step('Reach the script',async()=>{ let j; try{ j=JSON.parse(await (await fetch(u+'?_='+Date.now())).text()); }catch(e){ j=await njJsonp(u,{}); } v=j.v||1; return 'version '+v+(j.drive===false?' · NO DRIVE ACCESS: '+j.derr:''); });
+  await step('Secret key matches',async()=>{ const j=await rmPost({a:'ping',key:rmKey()}); S.settings.rmV=j.v||1; save(); return 'version '+(j.v||1); });
+  if(v<4) rows.push(['🆕','Your script is version '+v+'. Update it to version 4 (steps above) so actor pages open reliably.']);
+  await step('Save a test invite to Drive',async()=>{ await rmPost({a:'addinv',key:rmKey(),c:code,payload:{test:1,lines:[]},folder:'_test'}); });
+  const main=await step('Read it back like a phone',async()=>{ const j=await njReadInv(u,code); if(!j.ok) throw new Error(j.err); });
+  await step('Read it back (old route)',async()=>{ const j=await njJsonp(u,{a:'inv',c:code}); if(!j.ok) throw new Error(j.err); },true);
+  await step('Upload a test take like a phone',async()=>{ const j=await njPost(u,{a:'up',c:code,k:'test',w:'TEST',by:'check',t:'test',n:1,mime:'audio/wav',name:'connection test.wav',data:btoa('nenjac test')},async()=>{ const s=await njJsonp(u,{a:'seen',c:code,k:'test',n:1}); return s.ok?{ok:true,id:s.id,blind:true}:{ok:false,err:'upload not confirmed: '+s.err}; }); if(!j.ok) throw new Error(j.err); return j.blind?'(through the backup route)':''; });
+  await step('Clean up the test invite',async()=>{ await rmPost({a:'delinv',key:rmKey(),c:code}); });
+  const bad=rows.some(r=>r[0]==='❌'); rows.push(['',!bad&&v>=4?'🎉 Everything works. Actor pages and invites are good to go.':!bad?'✅ Works, but update the script to version 4 for actor pages.':'Something failed. Hit 📋 Copy results and paste them to Albert.']); show(); const cp=$('#rmDiagCopy'); if(cp) cp.style.display=''; };
 
 
 /* ===================================================================
