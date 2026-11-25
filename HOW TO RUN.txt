@@ -1,4 +1,4 @@
-NENJAC CREATOR 6.0: how to run it
+NENJAC CREATOR 6.1: how to run it
 =================================
 The whole object-show studio in one file: write it, draw it, voice it, score it,
 animate it, post it.
@@ -15,7 +15,7 @@ THE FILES
     icon-512.png
     icon-maskable-512.png
     apple-touch-icon.png
-    writer/                <- NENJAC WRITER, the iPhone app (keep the whole folder
+    writer/                <- NENJAC WRITER, the phone app (Android + iPhone) (keep the whole folder
                               here, next to index.html and assets/)
 
 ON A WEBSITE (GitHub Pages) = THE BEST WAY
@@ -87,6 +87,47 @@ ON YOUR PHONE
   notes and the wheels. The Pit, Animate and Art Studio work but are made for a big
   screen. Connect the shared show on your phone too and lines you record there show up
   on your computer.
+
+NEW IN 6.1: THE STREAMER UPDATE
+  🔴 STREAMER MODE: the 🔴 button at the top (or Alt+Shift+L). Hides your GitHub key, setup
+     codes, drop box links and actor links, and asks before showing any QR code. Turn it
+     on BEFORE you go live.
+  🪟 THE OVERLAY WINDOW: 🔴 → "Open the overlay". A separate little window with a solid
+     color background that shows what you're doing, live. Three modes:
+       ✍️ WRITING   the episode, the scene, a live "words this stream" goal bar, and the
+                    line you're typing right now. Chaos cards + Hot Potato pop up on it.
+       🎨 DRAWING   a list of expressions to draw (pulled from your script's parentheticals,
+                    or type your own). Click the overlay window and press → (next),
+                    ← (back), Space (done). Great while you're in Google Drawings.
+       🎬 ANIMATING scene x of y, the line you're on, progress and an ETA. Click the overlay
+                    window and press → / ← for lines, S for next scene. For Premiere.
+     OBS: Sources → + → Window Capture → pick "Nenjac Overlay". Right-click it → Filters →
+       + → Chroma Key → Key Color Type: Green (or Magenta/Blue, match the overlay's color).
+     TIKTOK LIVE STUDIO: + Add source → Window capture → "Nenjac Overlay". If it won't key out
+       the color, switch the overlay to PANEL (no green), then crop the capture to the card.
+     Keep the overlay window open (it can sit behind other windows). If you reload the
+       app it reconnects on its own in a few seconds.
+  🔍 WHAT CHANGED: open a script and every line that's new or changed since you last looked
+     (on that computer or phone) is highlighted, with ▲ ▼ to hop between them and "Got it".
+     The script list shows 🔍 3 on scripts with changes waiting. Your own edits never count.
+  🥔 HOT POTATO: Ctrl+K → Hot Potato, or the card in 🏋️ Practice, or ⋯ in the phone writer.
+     One script, a timer. When it runs out, the script passes to the other writer mid-scene.
+     With a shared show, Noah plays from his own phone/computer (the script locks for
+     whoever doesn't have the potato). Without one, it's pass-the-laptop.
+  🎬 INDUSTRY SCRIPT EXPORT: Writing Desk → Export → 🎬 Screenplay. Real screenplay format
+     (Courier 12, INT. headings, MORE/CONT'D across pages, title page): PDF, Final Draft
+     (.fdx), Word (.docx) or straight into GOOGLE DOCS. The phone writer has it too (⋯).
+  📄 GOOGLE DOCS needs the drop box script updated ONCE (it's now version 5):
+     🎙 Voice Booth → 📨 Actors → ☁️ Drive → copy the new script → paste it over the
+     old one in Apps Script → Save → run "setup" once (it asks for Google Docs permission,
+     say yes) → Deploy → Manage deployments → ✏️ → Version: NEW VERSION → Deploy.
+     The link stays the same. Docs land in your Drive: Nenjac Takes → Scripts (Google Docs).
+  🎃 HOLIDAY MODE: on its own around Halloween, Thanksgiving, Christmas, New Year's,
+     Valentine's, St. Patrick's, April Fools, July 4th and every Friday the 13th. Decorations,
+     holiday chaos cards, wheel slices, Stuck prompts, cold opens, headlines and a holiday
+     drill in Practice. Turn it off: Ctrl+K → Holiday Mode (phone: ⚙ Settings).
+  📱 NENJAC WRITER 2.1 (phone) gets What Changed, Hot Potato, the screenplay export and
+     Holiday Mode too.
 
 NEW IN 6.0: NENJAC EVERYWHERE
   🗄 THE BIG MOVE: the show now also saves to the browser's big storage (hundreds of times

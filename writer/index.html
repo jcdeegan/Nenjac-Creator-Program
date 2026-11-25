@@ -400,6 +400,41 @@ button.sec.wx-fold{display:block;width:100%;text-align:left}
 .wx-reel{display:flex;flex-direction:column;align-items:center;position:relative}.wx-ptr{font-size:26px;line-height:1;color:var(--barn);margin-bottom:-12px;z-index:2;text-shadow:0 2px 0 #000}
 .wx-reel canvas{touch-action:none;filter:drop-shadow(3px 4px 0 rgba(0,0,0,.6))}
 .wx-ro{display:flex;align-items:center;gap:8px;margin-top:4px;max-width:92vw}.wx-ro small{font:700 11px var(--ui);color:var(--muted)}.wx-ro b{font:400 16px var(--display);max-width:58vw;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ---------- [2.1] What Changed ---------- */
+#wChg{flex:none;display:flex;align-items:center;gap:6px;padding:7px 10px;background:#4a86e8;color:#fff;font-size:13px;z-index:4}
+#wChg small{opacity:.85;font-size:12px}
+#wChg .grow{min-width:0;line-height:1.2}#wChg button{flex:none;white-space:nowrap;height:30px;min-width:34px;padding:0 9px;border-radius:999px;border:2px solid #000;background:#fff;color:#000;font-weight:800;font-size:13px}
+#wChg button.ok{background:var(--sun)}#wChg button:disabled{opacity:.4}
+#edBody .b.chg{box-shadow:inset 4px 0 0 #4a86e8;background:color-mix(in srgb,#4a86e8 16%,transparent)!important}
+#edBody .grp.chg-who .who{box-shadow:0 0 0 2px #4a86e8;border-radius:8px}
+.scard .wchg{flex:none;margin-left:6px;background:#4a86e8;color:#fff;border-radius:999px;padding:2px 8px;font:800 12px var(--ui)}
+/* ---------- [2.1] Export ---------- */
+.sp-go{display:flex;flex-direction:column;gap:8px}.sp-go .btn{width:100%}
+/* ---------- [2.1] Hot Potato ---------- */
+#potPillW{position:fixed;left:50%;transform:translateX(-50%);top:calc(var(--safeT) + 56px);z-index:40;display:flex;align-items:center;gap:6px;max-width:calc(100vw - 20px);padding:5px 6px 5px 5px;background:#1b1530;color:#fff;border:2.5px solid #000;border-radius:999px;box-shadow:3px 3px 0 #000;font:600 12px var(--ui)}
+#potPillW.mine{background:#ffc81e;color:#000}
+#potPillW .grow{min-width:0;line-height:1.15}#potPillW .grow b{display:block;font-size:12.5px;white-space:nowrap}#potPillW .grow small{display:block;opacity:.8;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:42vw}
+#potPillW .pot-ic{width:30px;height:30px;border-radius:50%;border:0;background:#fff;font-size:17px;padding:0}
+#potPillW .pot-t{font:400 16px var(--display);padding:0 4px;font-variant-numeric:tabular-nums}#potPillW .pot-t.hot{color:#e03131}
+#potPillW button[data-pw]:not(.pot-ic){height:28px;padding:0 10px;border-radius:999px;border:2px solid #000;background:#fff;color:#000;font-weight:800;font-size:12px}
+#potPillW.mine button[data-pw="pass"]{background:#000;color:#ffc81e}
+body.kb #potPillW{top:calc(var(--safeT) + 4px)}
+#potPillW.inbar{position:relative;left:auto;top:auto;transform:none;flex:none;margin:6px 8px;max-width:none;border-radius:16px;z-index:4}#potPillW.inbar .grow{flex:1}#potPillW.inbar .grow small{max-width:none}
+.ed.pot-locked .comp{display:none}
+#potNoteW{flex:none;padding:12px 14px calc(var(--safeB) + 12px);background:#1b1530;color:#fff;font:600 14px var(--ui);text-align:center}
+.pot-pass{text-align:center}.pot-big{font-size:64px;line-height:1.1}.pot-pass h2{font:400 24px var(--display);margin:6px 0}.pot-pass p{margin:6px 0 14px}
+.pot-score{display:flex;gap:10px;justify-content:center;margin:6px 0 16px}.pot-score div{flex:1;background:var(--chip);border:2px solid #000;border-radius:14px;padding:10px}.pot-score b{display:block;font:400 28px var(--display)}.pot-score small{font-size:12px;opacity:.8}
+.wx-dc.pot{--dc:#c97b2a}.wx-dc.hol{--dc:#e8590c}
+/* ---------- [2.1] Holiday Mode ---------- */
+#holFxW{position:fixed;inset:0;pointer-events:none;z-index:30;overflow:hidden}
+#holFxW span{position:absolute;top:-40px;opacity:.5;animation:holfall linear infinite}
+@keyframes holfall{from{transform:translateY(-40px) rotate(0)}to{transform:translateY(110vh) rotate(360deg)}}
+body.hol-halloween #holFxW span{animation-name:holbat}
+@keyframes holbat{0%{transform:translate(0,-40px)}50%{transform:translate(50px,55vh) rotate(20deg)}100%{transform:translate(-25px,110vh) rotate(-20deg)}}
+body.pushed #holFxW,body.kb #holFxW{display:none}
+.hero .holGarW{position:absolute;left:0;right:0;bottom:-2px;height:18px;overflow:hidden;white-space:nowrap;font-size:12px;line-height:18px;letter-spacing:5px;pointer-events:none;text-shadow:0 1px 0 rgba(0,0,0,.3)}
+@media (prefers-reduced-motion:reduce){#holFxW{display:none}}
 </style>
 </head>
 <body>
@@ -491,12 +526,12 @@ function merge3(b,l,r,ctx,depth=0,key=''){
    those four folders, so songs, drawings, animations etc. in the repo
    are never changed from here.
    =================================================================== */
-const COLS=['scripts','chars','lore','notes','ideas']; const MISC=['practice','wheels'];
+const COLS=['scripts','chars','lore','notes','ideas']; const MISC=['practice','wheels','potato'];
 const ENC=new TextEncoder(), DEC=new TextDecoder();
 const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const idSafe=id=>String(id).replace(/[^A-Za-z0-9_-]/g,c=>'~'+c.charCodeAt(0).toString(16));
-const isMine=p=>/^show\/(scripts|chars|lore|notes|ideas)\/[^/]+\.json$/.test(p)||/^show\/misc\/(practice|wheels)\.json$/.test(p);
+const isMine=p=>/^show\/(scripts|chars|lore|notes|ideas)\/[^/]+\.json$/.test(p)||/^show\/misc\/(practice|wheels|potato)\.json$/.test(p);
 const colOf=p=>p.split('/')[1];
 const INFO_PATH='show/misc/showInfo.json';
 
@@ -649,7 +684,7 @@ const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelect
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const ago=t=>{ if(!t) return ''; const d=(Date.now()-t)/1000; if(d<60) return 'just now'; if(d<3600) return Math.floor(d/60)+'m ago'; if(d<86400) return Math.floor(d/3600)+'h ago'; if(d<86400*7) return Math.floor(d/86400)+'d ago'; return new Date(t).toLocaleDateString(undefined,{month:'short',day:'numeric'}); };
 const pick=a=>a[Math.floor(Math.random()*a.length)];
-const APP_VER='2.0';
+const APP_VER='2.1';
 Object.assign(GROUPS,{'Main Cast':'#4a86e8','Side Characters':'#e69138','Background Cast':'#9aa3b2','Real Life':'#c2255c','Classic Nenjac':'#a1887f','Fusions':'#cc5de8'});
 const PREF=Object.assign({view:'chat',alt:true,hints:true,fs:17,theme:'auto'},lsGet('nwriter.prefs',{}));
 function savePrefs(){ lsSet('nwriter.prefs',PREF); }
@@ -1469,6 +1504,183 @@ const WX_DOOM={ev:["blows up the theater","accidentally joins the Mafia","gets s
 
 
 /* ===================================================================
+   [6.1] SHARED: used by the Nenjac Creator AND the phone writer
+   🎬 screenplay export (industry PDF, Final Draft .fdx, Word .docx,
+   Google Docs layout) · 🎃 Holiday Mode · 🔍 What Changed math
+   =================================================================== */
+
+/* ---------- 🎬 the screenplay model: your script, the way the industry lays it out ---------- */
+const SP_OPT_DEF={heading:'int',titlePage:true,scenesNum:false};
+function spScene(x,o){ let h=String(x||'').replace(/^\[|\]$/g,'').trim().toUpperCase(); if(!h) return ''; if(o.heading==='int'&&!/^(INT|EXT|EST|I\/E|INT\.\/EXT)[\. ]/.test(h)) h='INT. '+h; return h; }
+function spModel(s,o={}){ o={...SP_OPT_DEF,...o}; const els=[]; let sn=0;
+  (s.blocks||[]).forEach(b=>{ const x=String(b.x||'').replace(/\s+$/,''); if(!x.trim()||b.t==='note') return;
+    switch(b.t){
+      case 'scene': { const h=spScene(x,o); if(h) els.push({t:'scene',x:h,n:++sn}); break; }
+      case 'action': els.push({t:'action',x:x.replace(/^\[|\]$/g,'')}); break;
+      case 'character': els.push({t:'character',x:x.trim().toUpperCase()}); break;
+      case 'paren': els.push({t:'paren',x:'('+x.trim().replace(/^\(|\)$/g,'')+')'}); break;
+      case 'dialogue': els.push({t:'dialogue',x}); break;
+      case 'lyric': els.push({t:'lyric',x}); break;
+      case 'song': els.push({t:'song',x:'SONG: '+x.trim().toUpperCase()}); break;
+      case 'transition': { let t=x.replace(/^\[|\]$/g,'').trim().toUpperCase(); if(/^(INTRO|CREDITS|OUTRO|END CREDITS|TITLE CARD)$/.test(t)) els.push({t:'action',x:t,center:true}); else els.push({t:'transition',x:/:$/.test(t)?t:t+':'}); break; }
+      default: els.push({t:'action',x});
+    } });
+  return {title:(s.title||'Untitled').trim(),code:s.code||'',by:o.by||s.author||'',contact:o.contact||'',draft:o.draft||new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}),logline:s.logline||'',els,o}; }
+/* layout in Courier 12 (10 characters an inch, 6 lines an inch) */
+const SP_L={scene:{l:1.5,w:60,b:2},action:{l:1.5,w:60,b:1},character:{l:3.7,w:38,b:1},paren:{l:3.1,w:26,b:0},dialogue:{l:2.5,w:35,b:0},lyric:{l:2.5,w:35,b:0},song:{l:1.5,w:60,b:2},transition:{l:1.5,w:60,b:1,r:true}};
+function spWrap(text,w){ const out=[]; String(text).split('\n').forEach(par=>{ let line=''; par.split(/(\s+)/).forEach(tok=>{ if(!tok) return; if(/^\s+$/.test(tok)){ if(line) line+=' '; return; }
+    while(tok.length>w){ if(line){ out.push(line.trimEnd()); line=''; } out.push(tok.slice(0,w)); tok=tok.slice(w); }
+    if((line+tok).length>w){ out.push(line.trimEnd()); line=tok; } else line+=tok; }); out.push(line.trimEnd()); }); return out; }
+function spLines(M){ /* every printed line: {x,l(in),bold,ital,under,center,right,kind} grouped in keep-together chunks */
+  const chunks=[]; let cur=null, cue='';
+  M.els.forEach((e,i)=>{ const L=SP_L[e.t]||SP_L.action; const lines=spWrap(e.x,L.w).map(x=>({x,l:L.l,kind:e.t,bold:e.t==='scene'||e.t==='song',ital:e.t==='lyric',under:e.t==='song',right:L.r,center:e.center}));
+    if(e.t==='character'){ cue=e.x; cur={blank:L.b,lines,speech:true,cue}; chunks.push(cur); return; }
+    if((e.t==='paren'||e.t==='dialogue'||e.t==='lyric')&&cur&&cur.speech){ cur.lines.push(...lines); return; }
+    cur={blank:e.t==='scene'&&i===0?0:L.b,lines,keepNext:e.t==='scene'||e.t==='song'}; chunks.push(cur); });
+  return chunks; }
+function spPaginate(M,perPage=54){ const pages=[[]]; let used=0; const chunks=spLines(M);
+  const add=(ln)=>{ pages[pages.length-1].push(ln); used++; }, newPage=()=>{ pages.push([]); used=0; };
+  chunks.forEach((c,k)=>{ const blank=pages[pages.length-1].length?c.blank:0, next=chunks[k+1], need=blank+c.lines.length+(c.keepNext&&next?Math.min(2,next.lines.length)+next.blank:0);
+    if(used+need<=perPage){ for(let i=0;i<blank;i++) add({x:''}); c.lines.forEach(add); return; }
+    if(c.speech&&c.lines.length>3&&perPage-used-blank>=4){ /* split the speech: (MORE) / (CONT'D) */
+      for(let i=0;i<blank;i++) add({x:''}); let room=perPage-used-1, j=0; while(j<c.lines.length&&room>0){ add(c.lines[j]); j++; room--; }
+      if(c.lines[j-1]?.kind==='paren'){ pages[pages.length-1].pop(); j--; } add({x:'(MORE)',l:SP_L.character.l}); newPage();
+      add({x:c.cue+" (CONT'D)",l:SP_L.character.l,kind:'character'}); c.lines.slice(j).forEach(add); return; }
+    newPage(); c.lines.forEach(add); });
+  return pages.filter(p=>p.length); }
+/* plain-text to WinAnsi (what the PDF's built-in Courier can draw) */
+const SP_WIN={'’':0x92,'‘':0x91,'“':0x93,'”':0x94,'—':0x97,'–':0x96,'…':0x85,'•':0x95,'€':0x80,'™':0x99,'é':0xe9};
+function spAnsi(t){ let o=''; for(const ch of String(t).normalize('NFC')){ const c=ch.codePointAt(0); if(SP_WIN[ch]) o+=String.fromCharCode(SP_WIN[ch]); else if(c<256) o+=ch; else if(/\p{Extended_Pictographic}/u.test(ch)) continue; else o+='?'; } return o.replace(/[\\()]/g,m=>'\\'+m); }
+function spPDF(M){ const pages=spPaginate(M), W=612, H=792, objs=[], P=[]; const fonts={F1:'Courier',F2:'Courier-Bold',F3:'Courier-Oblique'};
+  const page=(ops)=>{ P.push(ops); };
+  if(M.o.titlePage!==false){ const ops=[]; const center=(t,y,f='F1')=>{ const s=spAnsi(t), w=t.length*7.2; ops.push(`BT /${f} 12 Tf ${((W-w)/2).toFixed(1)} ${y} Td (${s}) Tj ET`); };
+    center(M.title.toUpperCase(),H-288,'F2'); if(M.code) center(M.code,H-312); center('Written by',H-348); center(M.by||' ',H-372);
+    let y=108; [M.contact,M.draft].filter(Boolean).forEach(t=>{ spWrap(t,40).forEach(l=>{ ops.push(`BT /F1 12 Tf 108 ${y} Td (${spAnsi(l)}) Tj ET`); y-=14; }); }); page(ops); }
+  pages.forEach((lines,pi)=>{ const ops=[]; const n=pi+1; if(n>1){ const t=n+'.'; ops.push(`BT /F1 12 Tf ${(540-t.length*7.2).toFixed(1)} ${H-36} Td (${t}) Tj ET`); }
+    lines.forEach((ln,i)=>{ if(!ln.x) return; const y=H-72-12*(i+1)+3, f=ln.bold?'F2':ln.ital?'F3':'F1', w=ln.x.length*7.2; let x=(ln.l||1.5)*72;
+      if(ln.right) x=540-w; if(ln.center) x=(W-w)/2; ops.push(`BT /${f} 12 Tf ${x.toFixed(1)} ${y} Td (${spAnsi(ln.x)}) Tj ET`);
+      if(ln.under) ops.push(`${x.toFixed(1)} ${y-2} m ${(x+w).toFixed(1)} ${y-2} l 0.6 w S`); }); page(ops); });
+  /* write the file */
+  let out='%PDF-1.4\n%\xE2\xE3\xCF\xD3\n'; const off=[]; const obj=(n,body)=>{ off[n]=out.length; out+=`${n} 0 obj\n${body}\nendobj\n`; };
+  const fontIds={}; let id=3; Object.entries(fonts).forEach(([k,v])=>{ fontIds[k]=id; obj(id++,`<< /Type /Font /Subtype /Type1 /BaseFont /${v} /Encoding /WinAnsiEncoding >>`); });
+  const res=`<< /Font << ${Object.keys(fonts).map(k=>`/${k} ${fontIds[k]} 0 R`).join(' ')} >> >>`, kids=[];
+  P.forEach(ops=>{ const stream=ops.join('\n'); const cid=id++, pid=id++; obj(cid,`<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`); obj(pid,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W} ${H}] /Resources ${res} /Contents ${cid} 0 R >>`); kids.push(pid); });
+  obj(2,`<< /Type /Pages /Kids [${kids.map(k=>k+' 0 R').join(' ')}] /Count ${kids.length} >>`); obj(1,'<< /Type /Catalog /Pages 2 0 R >>');
+  const infoId=id++; obj(infoId,`<< /Title (${spAnsi(M.title)}) /Author (${spAnsi(M.by||'')}) /Creator (Nenjac Creator) >>`);
+  const xref=out.length; out+=`xref\n0 ${id}\n0000000000 65535 f \n`; for(let i=1;i<id;i++) out+=String(off[i]||0).padStart(10,'0')+' 00000 n \n';
+  out+=`trailer\n<< /Size ${id} /Root 1 0 R /Info ${infoId} 0 R >>\nstartxref\n${xref}\n%%EOF`;
+  const bytes=new Uint8Array(out.length); for(let i=0;i<out.length;i++) bytes[i]=out.charCodeAt(i)&255; return {blob:new Blob([bytes],{type:'application/pdf'}),pages:P.length}; }
+const spX=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function spFDX(M){ const T={scene:'Scene Heading',action:'Action',character:'Character',paren:'Parenthetical',dialogue:'Dialogue',lyric:'Dialogue',song:'Action',transition:'Transition'};
+  const para=e=>`    <Paragraph Type="${T[e.t]||'Action'}"${e.center?' Alignment="Center"':''}>${e.t==='scene'&&M.o.scenesNum?'':''}<Text${e.t==='lyric'?' Style="Italic"':e.t==='song'?' Style="Bold+Underline"':''}>${spX(e.x)}</Text></Paragraph>`;
+  const tp=[['Title',M.title.toUpperCase()],...(M.code?[['Title',M.code]]:[]),['Title',''],['Title','Written by'],['Title',M.by||'']].map(([k,x])=>`    <Paragraph Alignment="Center" Type="${k}"><Text>${spX(x)}</Text></Paragraph>`).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\n<FinalDraft DocumentType="Script" Template="No" Version="5">\n  <Content>\n${M.els.map(para).join('\n')}\n  </Content>\n  <TitlePage>\n   <Content>\n${tp}\n${M.contact?`    <Paragraph Type="Action"><Text>${spX(M.contact)}</Text></Paragraph>\n`:''}   </Content>\n  </TitlePage>\n</FinalDraft>\n`; }
+/* Google Docs / Word: one paragraph per element, indents in points */
+function spDocLines(M){ const out=[]; const IND={scene:0,action:0,character:158,paren:115,dialogue:72,lyric:72,song:0,transition:0};
+  if(M.o.titlePage!==false){ out.push({x:M.title.toUpperCase(),al:'c',b:true,sb:200},...(M.code?[{x:M.code,al:'c'}]:[]),{x:'Written by',al:'c',sb:24},{x:M.by||'',al:'c'}); if(M.contact) out.push({x:M.contact,sb:160}); out.push({x:M.draft,sb:M.contact?0:160},{pb:true}); }
+  M.els.forEach((e,i)=>{ const first=e.t==='paren'||e.t==='dialogue'||e.t==='lyric'; out.push({x:e.x,il:IND[e.t]||0,ir:e.t==='dialogue'||e.t==='lyric'?108:e.t==='paren'?144:0,sb:first||i===0?0:e.t==='scene'||e.t==='song'?24:12,b:e.t==='scene'||e.t==='song',i:e.t==='lyric',u:e.t==='song',al:e.t==='transition'?'r':e.center?'c':''}); });
+  return out; }
+/* a tiny .docx writer (zip, stored) so phones can hand a script to Google Docs or Word */
+const SP_CRC=(()=>{ const t=new Uint32Array(256); for(let n=0;n<256;n++){ let c=n; for(let k=0;k<8;k++) c=c&1?0xEDB88320^(c>>>1):c>>>1; t[n]=c>>>0; } return t; })();
+function spCrc(b){ let c=0xFFFFFFFF; for(let i=0;i<b.length;i++) c=SP_CRC[(c^b[i])&255]^(c>>>8); return (c^0xFFFFFFFF)>>>0; }
+function spZip(files){ const enc=new TextEncoder(), parts=[], cen=[]; let off=0; const u16=n=>[n&255,(n>>>8)&255], u32=n=>[n&255,(n>>>8)&255,(n>>>16)&255,(n>>>24)&255];
+  files.forEach(([name,txt])=>{ const nb=enc.encode(name), data=enc.encode(txt), crc=spCrc(data);
+    const head=new Uint8Array([0x50,0x4b,3,4,...u16(20),...u16(0x800),...u16(0),...u16(0),...u16(0x21),...u32(crc),...u32(data.length),...u32(data.length),...u16(nb.length),...u16(0)]);
+    parts.push(head,nb,data); cen.push(new Uint8Array([0x50,0x4b,1,2,...u16(20),...u16(20),...u16(0x800),...u16(0),...u16(0),...u16(0x21),...u32(crc),...u32(data.length),...u32(data.length),...u16(nb.length),...u16(0),...u16(0),...u16(0),...u16(0),...u32(0),...u32(off)]),nb);
+    off+=head.length+nb.length+data.length; });
+  const csize=cen.reduce((n,a)=>n+a.length,0); parts.push(...cen,new Uint8Array([0x50,0x4b,5,6,0,0,0,0,...u16(files.length),...u16(files.length),...u32(csize),...u32(off),0,0]));
+  return new Blob(parts,{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}); }
+function spDOCX(M){ const tw=pt=>Math.round(pt*20), L=spDocLines(M);
+  const body=L.map(p=>{ if(p.pb) return '<w:p><w:r><w:br w:type="page"/></w:r></w:p>';
+    const ppr=`<w:pPr><w:spacing w:before="${tw(p.sb||0)}" w:after="0" w:line="240" w:lineRule="auto"/>${p.il||p.ir?`<w:ind w:left="${tw(p.il||0)}" w:right="${tw(p.ir||0)}"/>`:''}${p.al==='c'?'<w:jc w:val="center"/>':p.al==='r'?'<w:jc w:val="right"/>':''}</w:pPr>`;
+    const rpr=`<w:rPr><w:rFonts w:ascii="Courier Prime" w:hAnsi="Courier Prime" w:cs="Courier New"/><w:sz w:val="24"/>${p.b?'<w:b/>':''}${p.i?'<w:i/>':''}${p.u?'<w:u w:val="single"/>':''}</w:rPr>`;
+    return `<w:p>${ppr}<w:r>${rpr}<w:t xml:space="preserve">${spX(p.x||'')}</w:t></w:r></w:p>`; }).join('');
+  const doc=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>${body}<w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="2160" w:header="720" w:footer="720" w:gutter="0"/></w:sectPr></w:body></w:document>`;
+  return spZip([['[Content_Types].xml','<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>'],
+    ['_rels/.rels','<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>'],
+    ['word/document.xml',doc]]); }
+const spFile=(s,ext)=>((s.code?s.code+' ':'')+(s.title||'Untitled')).replace(/[\\/:*?"<>|]+/g,'').replace(/\s+/g,' ').trim().slice(0,80)+'.'+ext;
+
+/* ---------- 🔍 What Changed: line fingerprints ---------- */
+function chgHash(b){ const s=(b.t||'')+'|'+String(b.x||'').trim(); let h=2166136261; for(let i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619); } return (h>>>0).toString(36); }
+const chgSkip=b=>!String(b.x||'').trim()||b.t==='note';
+function chgDiff(prev,blocks){ /* lines that are in the script now but weren't last time you looked, and how many got cut */
+  const left={}; (prev||[]).forEach(h=>left[h]=(left[h]||0)+1); const fresh=[]; let kept=0;
+  blocks.forEach(b=>{ if(chgSkip(b)) return; const h=chgHash(b); if(left[h]){ left[h]--; kept++; } else fresh.push(h); });
+  const cut=Object.values(left).reduce((n,v)=>n+v,0); return {fresh,cut}; }
+const chgPrint=blocks=>blocks.filter(b=>!chgSkip(b)).map(chgHash);
+
+/* ---------- 🎃 Holiday Mode ---------- */
+const HOLIDAYS=[
+  {k:'fri13',n:'Friday the 13th',e:'🔪',fx:['🔪','🖤','🏒','🕯'],garland:'🔪🖤🕯🔪🖤🕯🔪🖤🕯',
+   drill:{e:'🔪',t:'Friday the 13th',d:'Write a slasher scene where the killer is the least threatening character in the show. Everyone still dies.'},
+   chaos:['The lights cut out. When they come back, someone is missing.','Somebody hears a chainsaw. Nobody owns a chainsaw.','{A} says "I\'ll be right back." Bad move.','A hockey mask is found in the costume room. It\'s warm.','Everyone splits up. Classic mistake.','{A} trips while running away. On nothing.','The phone rings. It\'s coming from inside the theater.','{A} is the Final Girl now. They did not sign up for this.'],
+   cold:['Camp Akufathum, 1987. A counselor hears something in the woods. It\'s {A}, humming the Courtroom Shuffle.','A thunderstorm. The power\'s out. {A} holds a flashlight under their chin: "Okay. Scariest story wins."'],
+   heads:['Friday the 13th: Nenjac PD reminds residents the theater is "always like this."','Local man breaks 13 mirrors, says it\'s "for content."','Camp Akufathum reopens for one night only. Nobody RSVPs.'],
+   ev:['gets stalked by a guy in a hockey mask','hides in a closet with the killer','becomes the Final Girl'],pl:['Camp Akufathum at midnight','a cabin with no cell service','the woods behind the theater'],tw:['the killer was the camp counselor all along','the killer was a cardboard cutout the whole time'],
+   stuck:['Turn the lights off. What does everyone do in the dark?','Somebody says "I\'ll be right back." Make them not come back.'],hm:['Bro... Friday the 13th... and Nerd still won\'t die. He\'s the real slasher villain.','What if Jason just wanted to do theater and nobody let him audition']},
+  {k:'newyear',n:'New Year\'s',e:'🎉',from:'12-27',to:'01-02',fx:['🎉','✨','🎊','🥂'],garland:'🎉✨🎊🥂🎉✨🎊🥂',
+   drill:{e:'🥂',t:'New Year\'s resolutions',d:'Every character makes a resolution at midnight. Write the scene where every single one is broken by 12:05.'},
+   chaos:['The ball drop is in 60 seconds. Somebody has to say something important before it hits.','{A} makes a resolution out loud. Immediately breaks it.','Somebody kisses the wrong person at midnight.','The countdown is wrong. It\'s already next year.','{A} is still wearing last year\'s 2020 glasses.','Confetti cannon goes off indoors. It\'s glitter. Forever.','{A} and {B} realize this is the anniversary of something terrible.','Champagne bottle cork hits {A} in the face. Classic.'],
+   cold:['11:59 PM. The whole cast is crammed on the theater roof with sparklers. {A}: "Okay, nobody light anything near Deegs."','January 1st, 9 AM. Everyone wakes up in places they should not be. {A} is on the stage, in a tutu.'],
+   heads:['Nenjac City New Year\'s countdown starts 4 minutes late. Mayor "almost survived."','Local cheeseburger\'s resolution: "fewer explosions." Explodes at 12:01.','Warren\'s resolution: "drink less." Resolution lasts 9 seconds.'],
+   ev:['makes a New Year\'s resolution and breaks it immediately','kisses the wrong person at midnight','gets locked out of the New Year\'s party'],pl:['Times Square, somehow','the theater roof at midnight','a New Year\'s party nobody was invited to'],tw:['it was still last year the whole time','the countdown was for something else entirely'],
+   stuck:['Somebody makes a resolution in this scene. Break it by the end of the scene.','Countdown. Ten seconds. What\'s the most important thing anyone could say right now?'],hm:['Bro it\'s a new year but Nenjac is still the same day it\'s always been','New year new me. Same Deegs though. Always the same Deegs.']},
+  {k:'valentine',n:'Valentine\'s Day',e:'💘',from:'02-07',to:'02-14',fx:['💘','💔','🌹','💌'],garland:'💘💔🌹💌💘💔🌹💌',
+   drill:{e:'💘',t:'The worst date in Nenjac history',d:'Two characters who should never date go on a date. It goes so wrong it ends up in the news.'},
+   chaos:['A Valentine\'s card shows up. It\'s unsigned. It\'s for {A}.','{A} gets dumped by text. Mid-scene.','Cupid shows up. It\'s Heroin Harry in a diaper.','{A} confesses their feelings. To the wrong person.','Somebody brought roses. They\'re from the cemetery.','{A} and {B} accidentally match on a dating app.','A singing telegram arrives for Dean. Starr ordered it.','Somebody proposes. Nobody asked them to.'],
+   cold:['Starr is standing outside Dean\'s house with a boombox over his head. It\'s playing the Courtroom Shuffle.','A candlelit table for two at the Chili\'s. {A} is sitting alone. Checking their phone. Again.'],
+   heads:['Dean McQueen receives 4,000 Valentine\'s cards. Starr denies sending "most of them."','Local cheeseburger sends Valentine\'s card made of explosives. "It\'s the thought that counts."','Chili\'s Valentine\'s special sells out. Of riblets.'],
+   ev:['goes on a blind date with the worst possible person','gets a secret admirer','gets dumped on Valentine\'s Day'],pl:['a candlelit Chili\'s','a speed-dating night at the theater','a heart-shaped hot tub'],tw:['the secret admirer was Nerd','the date was a setup by the Mafia'],
+   stuck:['Somebody in this scene has a crush. Make it painfully obvious to everyone except the crush.','Write the most romantic line in the scene, then make it go horribly wrong.'],hm:['Starr has loved Dean for so long it\'s basically canon now. It\'s basically his whole character. Wait.','Love is like the brown water fountain. Nobody knows what\'s in it but we keep drinking.']},
+  {k:'stpat',n:'St. Patrick\'s Day',e:'☘️',from:'03-14',to:'03-17',fx:['☘️','🍀','💚','🌈'],garland:'☘️🍀💚🌈☘️🍀💚🌈',
+   drill:{e:'🍀',t:'Luck of the Nenjac',d:'One character has the best luck in the world for a day and another has the worst. They have to spend the whole day together.'},
+   chaos:['Somebody finds a four-leaf clover. Their luck is now insane.','{A} pinches someone for not wearing green. It\'s the Chief.','The brown water fountain is green today. Nobody knows why.','A leprechaun shows up. It\'s Rocco in a costume.','{A} finds a pot of gold. It\'s the Mafia\'s.','Everyone suddenly has an Irish accent. Elea\'s accent slips. Hers is Italian.'],
+   cold:['The theater\'s brown water fountain is running bright green. {A} drinks from it anyway.','A parade float shaped like a giant shamrock crashes into the theater. {A} climbs out: "Top of the morning."'],
+   heads:['Nenjac City St. Patrick\'s parade rerouted around the theater "for everyone\'s safety."','Brown water fountain turns green. Health department "not looking into it."','Local man finds pot of gold. Mafia finds local man.'],
+   ev:['finds a pot of gold that belongs to the Mafia','gets pinched for not wearing green','has insane luck for one day'],pl:['a St. Patrick\'s Day parade','an Irish pub that\'s actually a Chili\'s','the end of a rainbow'],tw:['the lucky charm was cursed','the leprechaun was a Morelli'],
+   stuck:['Somebody gets very lucky right now. Then make that luck the problem.','Make something green show up in this scene and become important.'],hm:['Bro the brown water turned green. Is that... an upgrade?','If Rocco can\'t talk, can he still say "top of the morning"? Like spiritually?']},
+  {k:'aprilfools',n:'April Fools\'',e:'🤡',from:'04-01',to:'04-01',fx:['🤡','🃏','🎭','🎈'],garland:'🤡🃏🎭🎈🤡🃏🎭🎈',
+   drill:{e:'🃏',t:'Prank war',d:'Two characters are in an all-out April Fools\' prank war. The last prank goes way too far.'},
+   chaos:['Everything that just happened was a prank. Was it?','{A} announces they\'re quitting the theater. "April Fools!" They\'re not kidding.','{B} rigs a whoopee cushion on the director\'s chair. Warren sits. Nothing. He\'s used to worse.','The prank backfires and someone ends up in the hospital. Dr. Doctor is pranked too.','{A} swears this time it\'s NOT a prank. Nobody believes them.','Somebody switches all the scripts with a different show.'],
+   cold:['April 1st. Deegs announces he\'s quitting the theater. Everyone cheers. Deegs: "...April Fools."','Every single prop in the theater has been wrapped in tin foil. {A} is standing in the middle, holding the last roll.'],
+   heads:['April Fools: Nenjac Theater announces it\'s "totally safe now." Nobody laughs.','Mayor announces his retirement. "April Fools," he says, before being shot.','Local cheeseburger fakes his death. Again. Nobody notices. Again.'],
+   ev:['pulls a prank that goes way too far','gets pranked by the whole cast','fakes their own death as a joke'],pl:['a prank war in the green room','a fake surprise party','a room full of whoopee cushions'],tw:['the whole episode was an April Fools\' prank','the prank was real all along'],
+   stuck:['Somebody in this scene is pranking someone else. Reveal it at the worst moment.','Undercut the most serious moment with "April Fools," then reveal it actually wasn\'t a joke.'],hm:['What if the whole show is an April Fools\' prank and it\'s just been going for years','Nerd doesn\'t understand April Fools. He fact-checks every prank.']},
+  {k:'july4',n:'4th of July',e:'🎆',from:'07-01',to:'07-05',fx:['🎆','🎇','🌭','🇺🇸'],garland:'🎆🎇🌭🇺🇸🎆🎇🌭🇺🇸',
+   drill:{e:'🎆',t:'Fireworks safety',d:'Write a scene where someone gives a fireworks safety speech while everything goes wrong behind them.'},
+   chaos:['Deegs has fireworks. Lots of fireworks. Too many fireworks.','The hot dog eating contest starts. {A} entered by accident.','A firework goes sideways. Into {P}.','{A} brings a sparkler indoors. Bad idea.','Travis shows up dressed as Uncle Sam. "Hell yeah, brother!"','Somebody lights the whole box at once.'],
+   cold:['The Nenjac City fireworks show. One firework goes up. Then the theater goes up. Deegs: "That one\'s on me."','A grill. A hot dog. {A} is staring at it like it owes them money.'],
+   heads:['Fireworks show cancelled after Deegs "helps set up."','Travis Corbin wins hot dog eating contest, crowd chants "Hell yeah, brother."','Fourth of July fireworks visible from space, thanks to theater fire.'],
+   ev:['sets off every firework at once','enters a hot dog eating contest','burns down the barbecue'],pl:['a Fourth of July barbecue','the fireworks show','a lake party'],tw:['the fireworks were the bomb all along','it was the Mafia\'s barbecue'],
+   stuck:['A firework goes off right now. Where does it land?','Somebody is grilling in this scene. What are they really burning?'],hm:['Deegs probably loves the 4th of July. It\'s explosions but legal.','Bro what if Travis IS America']},
+  {k:'halloween',n:'Halloween',e:'🎃',from:'10-13',to:'10-31',fx:['🦇','🎃','👻','🕸'],garland:'🎃🦇👻🕸🎃🦇👻🕸',
+   drill:{e:'👻',t:'Haunted theater',d:'The theater is actually haunted. Write the scene where everyone finds out, and Warren still doesn\'t care.'},
+   chaos:['The lights flicker. Something laughs in the vents.','{A} shows up in a costume. It\'s a costume of {B}. It\'s offensive.','A ghost appears. It\'s Daddy Deegs. He\'s disappointed.','Somebody is handing out candy. It\'s full-size bars. Suspicious.','{A} won\'t take the mask off. Nobody knows what\'s under it.','Trick or treat. Somebody picks trick.','The 10-foot spiders want to go trick-or-treating.','The Ouija board spells out a name. It\'s {A}.'],
+   cold:['Halloween night. The theater is decorated for the haunted house fundraiser. {A}: "Okay, the spiders are real, but the rest is fake."','A séance in the green room. Candles. {A}: "Daddy Deegs, if you can hear us, knock once." *Knock.* *Knock. Knock. Knock. Knock.*'],
+   heads:['Haunted house fundraiser at Nenjac Theater "too real," say survivors.','Local cheeseburger dresses as a cheeseburger for Halloween. "Bold."','Nenjac PD warns parents about "full-size candy bars" from the McQueen mansion.'],
+   ev:['gets possessed on Halloween night','wears the scariest costume in history','gets haunted by a ghost who wants the lead'],pl:['a haunted house that\'s actually haunted','the cemetery on Halloween','a costume party at the McQueen mansion'],tw:['the ghost was Warren in a sheet the whole time','the haunted house was the theater all along'],
+   stuck:['Turn off the lights. What\'s in the room with them?','Somebody is wearing a costume of another character. Make it a problem.'],hm:['What if everyone in Nenjac is just a Halloween costume','The spiders are thriving. This is their season.']},
+  {k:'thanksgiving',n:'Thanksgiving',e:'🦃',from:'11-18',to:'11-30',fx:['🍂','🍁','🦃','🥧'],garland:'🍂🦃🍁🥧🍂🦃🍁🥧',
+   drill:{e:'🦃',t:'Thanksgiving dinner',d:'The whole cast at one dinner table. Everybody has to say what they\'re thankful for, and every answer starts a fight.'},
+   chaos:['The turkey is still alive.','{A} is asked what they\'re thankful for. They say "{B}." Nobody believes it.','Somebody brings up politics at the table.','The turkey is on fire. Deegs swears it wasn\'t him.','{A}\'s parents show up unannounced.','The kids\' table rebels.','Somebody ate the whole pie before dinner.','The Mafia shows up for dinner. They brought cannoli.'],
+   cold:['Thanksgiving morning. The theater\'s oven is smoking. {A}: "Okay, the turkey\'s fine, the building\'s on fire."','The cast is sitting around the table. Total silence. {A}: "...So. Who wants to say grace?" Deegs raises his hand.'],
+   heads:['Thanksgiving at the theater ends with only two fires. "Personal best."','Local turkey escapes, joins the cast of Akufathum.','Warren thankful for "absolutely nothing," sources say.'],
+   ev:['ruins Thanksgiving dinner','gets stuck at the kids\' table','deep-fries a turkey indoors'],pl:['the Thanksgiving table','a grocery store on Thanksgiving morning','the kids\' table'],tw:['the turkey was alive the whole time','everyone was thankful for the wrong person'],
+   stuck:['Somebody at the table says what they\'re thankful for. Make it the worst possible thing to say.','The food is the problem. What went wrong in the kitchen?'],hm:['What if the turkey is the main character of Thanksgiving and we\'re all side characters','Deegs at Thanksgiving dinner. A cheeseburger. At a turkey dinner. Cannibalism adjacent.']},
+  {k:'christmas',n:'Christmas',e:'🎄',from:'12-01',to:'12-26',fx:['❄️','❄','🎁','🎄'],garland:'🎄❄️🎁⭐🎄❄️🎁⭐',
+   drill:{e:'🎄',t:'A Nenjac Christmas Carol',d:'Three ghosts visit the meanest character in the show on Christmas Eve. It doesn\'t go how the story usually goes.'},
+   chaos:['It\'s snowing. Inside.','{A} is Secret Santa for {B}. The gift is a threat.','Santa comes down the chimney. It\'s Heroin Harry.','The Christmas tree is on fire. Deegs says "It was like that when I got here."','Somebody has to dress up as Santa for the kids. It\'s Warren.','{A} gets coal. They earned it.','The Elf on the Shelf moved. Nobody moved it.','Somebody regifts a present to the person who gave it to them.'],
+   cold:['Christmas Eve. The theater is decorated, kind of. {A} is on a ladder putting a star on the tree. The tree is on fire.','A Christmas pageant at Nenjac High. Baby Jesus is a cheeseburger. Deegs is proud.'],
+   heads:['Nenjac City Christmas tree lighting lights more than the tree.','Santa spotted at the theater, arrested by Nenjac PD "on principle."','Local cheeseburger on naughty list for 19th straight year.'],
+   ev:['ruins Christmas','gets visited by three ghosts','gets coal for Christmas'],pl:['the North Pole','a mall Santa\'s lap','a Christmas tree farm'],tw:['Santa was the Mafia all along','it was the Grinch the whole time, and the Grinch was Warren'],
+   stuck:['Somebody gives a gift in this scene. Make it the worst gift possible.','Christmas spirit: make the meanest character do one nice thing. Then make it backfire.'],hm:['What if Santa is real but he\'s just Warren with a beard','Christmas in Nenjac is just regular Nenjac but with lights on the fire']}];
+function holMD(d){ return String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function holToday(d=new Date()){ if(d.getDay()===5&&d.getDate()===13) return HOLIDAYS[0]; const md=holMD(d);
+  return HOLIDAYS.find(h=>h.from&&(h.from<=h.to?md>=h.from&&md<=h.to:md>=h.from||md<=h.to))||null; }
+
+
+/* ===================================================================
    NENJAC WRITER 2.0
    🗣 Table Read · 🆘 Stuck + 🎬 cold opens · 🏋️ the Practice Room ·
    🗒 notes inbox · 💡 Idea Inbox · 🎡 Wheel of Doom
@@ -1823,6 +2035,161 @@ addEventListener('beforeinstallprompt',e=>{ e.preventDefault(); WX.bip=e; });
   b.insertAdjacentHTML('beforeend',`<div class="sec">Your name on practice + duels</div><input class="inp" id="wxMe" value="${esc(PREF.myName||'')}" placeholder="JC">`);
   $('#wxMe').oninput=e=>{ PREF.myName=e.target.value.trim(); savePrefs(); };
   $('#wxInstall')&&($('#wxInstall').onclick=async()=>{ const e=WX.bip; WX.bip=null; e.prompt(); try{ await e.userChoice; }catch(_){} closeSheet(); }); }; }
+
+/* ===================================================================
+   [Writer 2.1] 🔍 What Changed · 🥔 Hot Potato · 🎬 Screenplay export · 🎃 Holiday Mode
+   Same data and the same rules as the Nenjac Creator 6.1.
+   =================================================================== */
+const POTW={turn:''};
+WQ_D.potato=['🥔','Hot Potato']; WQ_D.holiday=['🎉','Holiday special'];
+if(!MISC.includes('potato')) MISC.push('potato');
+
+/* ---------- 🔍 WHAT CHANGED (since you last looked, on this phone) ---------- */
+const WCHG={db:lsGet('nwriter.seen',{})||{},t:0,i:-1};
+function wchgStore(){ clearTimeout(WCHG.t); WCHG.t=setTimeout(()=>lsSet('nwriter.seen',WCHG.db),700); }
+function wchgLook(s){ const db=WCHG.db, rec=db[s.id], now=chgPrint(s.blocks||[]);
+  if(!rec){ db[s.id]={h:now,fresh:[],cut:0}; wchgStore(); return; }
+  const d=chgDiff(rec.h,s.blocks||[]), have=new Set(now); rec.fresh=[...new Set([...(rec.fresh||[]).filter(h=>have.has(h)),...d.fresh])]; rec.cut=(rec.cut||0)+d.cut; rec.h=now; wchgStore(); }
+function wchgMine(s){ const rec=WCHG.db[s.id]; if(!rec) return; const now=chgPrint(s.blocks||[]), have=new Set(now); rec.h=now; rec.fresh=(rec.fresh||[]).filter(h=>have.has(h)); wchgStore(); }
+function wchgCount(s){ const rec=WCHG.db[s.id]; if(!rec) return 0; return chgDiff(rec.h,s.blocks||[]).fresh.length+(rec.fresh||[]).length; }
+const wchgReal=()=>ED.sid&&!ED.pp?byId('scripts',ED.sid):null;
+function wchgMark(){ const s=wchgReal(), ed=$('.ed'); if(!ed) return; let bar=$('#wChg',ed); if(!s){ bar?.remove(); return; }
+  const rec=WCHG.db[s.id], F=new Set(rec?.fresh||[]), B=s.blocks||[]; let n=0;
+  $$('#edBody .b[data-i]').forEach(el=>{ const b=B[+el.dataset.i]; const on=!!b&&F.has(chgHash(b)); el.classList.toggle('chg',on); if(on) n++; });
+  $$('#edBody .grp').forEach(g=>{ const i=+g.querySelector('[data-who]')?.dataset.who, b=B[i]; const on=!!b&&b.t==='character'&&F.has(chgHash(b)); g.classList.toggle('chg-who',on); if(on) n++; });
+  if(!n&&!rec?.cut){ bar?.remove(); return; }
+  if(!bar){ bar=document.createElement('div'); bar.id='wChg'; ($('.wx-strip',ed)||$('.nav',ed)).insertAdjacentElement('afterend',bar); }
+  bar.innerHTML=`<span class="grow">🔍 <b>${n} new or changed</b>${rec.cut?` · ${rec.cut} cut`:''}<small> since you last looked</small></span><button data-wc="prev" ${n?'':'disabled'}>▲</button><button data-wc="next" ${n?'':'disabled'}>▼</button><button data-wc="ok" class="ok">Got it</button>`; }
+document.addEventListener('click',e=>{ const a=e.target.closest('#wChg [data-wc]')?.dataset.wc; if(!a) return; tap(); const s=wchgReal();
+  if(a==='ok'){ const rec=s&&WCHG.db[s.id]; if(rec){ rec.fresh=[]; rec.cut=0; wchgStore(); } $$('#edBody .chg,#edBody .chg-who').forEach(x=>x.classList.remove('chg','chg-who')); $('#wChg')?.remove(); return; }
+  const L=$$('#edBody .chg,#edBody .chg-who'); if(!L.length) return; WCHG.i=(WCHG.i+(a==='next'?1:-1)+L.length)%L.length; const el=L[WCHG.i]; el.scrollIntoView({block:'center',behavior:'smooth'}); el.classList.remove('find'); void el.offsetWidth; el.classList.add('find'); });
+{ const _r=edRender; edRender=function(){ const r=_r.apply(this,arguments); try{ wchgMark(); potLockW(); }catch(e){} return r; }; }
+{ const _p=PAGES.script; PAGES.script=function(sid){ const s=!String(sid).startsWith('pp:')&&byId('scripts',sid); if(s){ wchgLook(s); WCHG.i=-1; } return _p.apply(this,arguments); }; }
+/* your own edits never count as "changed" */
+{ let t=0; const _t=touch; touch=function(){ const r=_t.apply(this,arguments); const s=wchgReal(); if(s){ clearTimeout(t); t=setTimeout(()=>{ const x=wchgReal(); if(x) wchgMine(x); },250); } return r; }; }
+/* the scripts list shows which ones have changes waiting */
+{ const _s=PAGES.scripts; PAGES.scripts=function(){ const P=_s.apply(this,arguments), el=P.el;
+  const pills=()=>$$('.scard[data-sid]',el).forEach(c=>{ const s=byId('scripts',c.dataset.sid), n=s&&WCHG.db[s.id]?wchgCount(s):0; c.querySelector('.wchg')?.remove(); if(n) c.querySelector('.t')?.insertAdjacentHTML('beforeend',`<span class="wchg">🔍 ${n}</span>`); });
+  const r=P.refresh, sh=P.shown; P.refresh=function(){ r?.apply(this,arguments); pills(); holHero(el); }; P.shown=function(){ sh?.apply(this,arguments); pills(); holHero(el); }; pills(); holHero(el); return P; }; }
+
+/* ---------- 🎬 SCREENPLAY EXPORT (PDF · Final Draft · Word) ---------- */
+async function spSave(name,blob){ const f=new File([blob],name,{type:blob.type});
+  try{ if(navigator.canShare&&navigator.canShare({files:[f]})){ await navigator.share({files:[f],title:name}); return 'shared'; } }catch(e){ if(e.name==='AbortError') return 'cancel'; }
+  const u=URL.createObjectURL(blob), a=document.createElement('a'); a.href=u; a.download=name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(u),30e3); return 'saved'; }
+function spSheet(s){ if(!s) return; if(ED.edit>=0) finishEdit({quiet:true});
+  const o={by:PREF.spBy||s.author||'',heading:PREF.spHeading||'int',titlePage:PREF.spTitle!==false};
+  const body=openSheet('Export screenplay',`<p class="tiny" style="margin:0 4px 10px">The real industry layout: Courier 12, scene headings, dialogue in the middle, (MORE) and (CONT'D) across pages. Notes are left out.</p>
+    <label class="lab">Written by</label><input class="inp" id="spBy" value="${esc(o.by)}" placeholder="JC Deegan & Noah" autocapitalize="words">
+    <label class="lab">Scene headings</label><div class="seg" id="spHd"><button data-v="int" class="${o.heading==='int'?'on':''}">INT. NENJAC THEATER</button><button data-v="raw" class="${o.heading!=='int'?'on':''}">As written</button></div>
+    <label class="tog" style="margin-top:10px"><span class="grow"><b>Title page</b></span><span class="sw"><input type="checkbox" id="spTp" ${o.titlePage?'checked':''}><i></i></span></label>
+    <p class="tiny" id="spPg" style="margin:10px 4px"></p>
+    <div class="sp-go"><button class="btn pri" data-sp="pdf">📄 Screenplay PDF</button><button class="btn" data-sp="fdx">🎞 Final Draft (.fdx)</button><button class="btn" data-sp="docx">📝 Word (.docx)</button></div>
+    <p class="tiny" style="margin:10px 4px 0">Opens the share sheet, so you can send it, save it to Files or Drive, or open it in another app. Google Docs opens the Word file.</p>`);
+  const read=()=>{ PREF.spBy=$('#spBy').value.trim(); PREF.spHeading=$('#spHd .on')?.dataset.v||'int'; PREF.spTitle=$('#spTp').checked; savePrefs(); return spModel(s,{by:PREF.spBy,heading:PREF.spHeading,titlePage:PREF.spTitle}); };
+  const count=()=>{ try{ const n=spPaginate(read()).length; $('#spPg').textContent=`${n} page${n===1?'':'s'} of script · about ${Math.max(1,n)} min on screen`; }catch(e){} };
+  body.addEventListener('input',count); body.addEventListener('change',count);
+  body.addEventListener('click',async e=>{ const sg=e.target.closest('#spHd [data-v]'); if(sg){ tap(); $$('#spHd button').forEach(b=>b.classList.toggle('on',b===sg)); count(); return; }
+    const k=e.target.closest('[data-sp]')?.dataset.sp; if(!k) return; tap(); const M=read();
+    const blob=k==='pdf'?spPDF(M).blob:k==='fdx'?new Blob([spFDX(M)],{type:'application/xml'}):spDOCX(M);
+    const r=await spSave(spFile(s,k),blob); if(r==='saved') toast(k==='pdf'?'📄 PDF saved to Downloads':k==='fdx'?'🎞 Final Draft file saved':'📝 Word file saved'); else if(r==='shared') toast('Sent'); });
+  count(); }
+{ const _m=edMore; edMore=function(){ _m.apply(this,arguments); const s=curScript(); if(!s||!ACTS) return; const i=ACTS.findIndex(a=>a.label==='Share');
+  const add=[{label:'🎬 Export screenplay (PDF, Final Draft, Word)',run:()=>spSheet(s)}];
+  if(!ED.pp) add.push({label:'🥔 Hot Potato with this script',run:()=>potNewW(s.id)});
+  const items=ACTS.slice(); items.splice(i<0?items.length:i+1,0,...add); actions(null,items); }; }
+
+/* ---------- 🥔 HOT POTATO ---------- */
+function potData(){ const m=NW.misc=NW.misc||{}; const p=m.potato=m.potato&&typeof m.potato==='object'?m.potato:{}; p.games=Array.isArray(p.games)?p.games:[]; return p; }
+const potMeW=()=>(myName()||'').trim().toLowerCase();
+const potLiveW=()=>(NW.misc?.potato?.games||[]).filter(g=>!g.ended&&(g.local||(g.players||[]).some(p=>p.toLowerCase()===potMeW())));
+const potGameW=()=>potLiveW().sort((a,b)=>b.started-a.started)[0]||null;
+const potHolderW=g=>g.players[g.turn%2];
+const potMineW=g=>!!g&&(g.local||potHolderW(g).toLowerCase()===potMeW());
+const potTargetW=g=>g.target.type==='practice'?wqPiece(g.target.id):byId('scripts',g.target.id);
+const potWordsW=g=>{ const t=potTargetW(g); return t?wqWords(t.blocks||[]):0; };
+const potOpenHere=g=>{ const t=g&&potTargetW(g); if(!t) return false; return g.target.type==='practice'?(ED.pp&&ED.pp.id===t.id):(ED.sid===t.id&&!ED.pp); };
+const potSave=()=>{ touch(); if(syncOn()) syncSoon(300); };
+const potFm=ms=>{ const s=Math.max(0,Math.ceil(ms/1000)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); };
+function potNewW(sid){ const me=myName()||'', them=PREF.potThem||(/^noah/i.test(me)?'JC':'Noah'), sc=[...NW.scripts].sort((a,b)=>(b.updated||0)-(a.updated||0));
+  const body=openSheet('🥔 Hot Potato',`<p class="tiny" style="margin:0 4px 10px">One script and a timer. When it goes off, the script passes to the other writer mid-scene, and they have to deal with whatever you left them.</p>
+    <div class="row"><div style="flex:1"><label class="lab">You</label><input class="inp" id="poMe" value="${esc(me)}" placeholder="JC" autocapitalize="words"></div><div style="flex:1"><label class="lab">Them</label><input class="inp" id="poThem" value="${esc(them)}" placeholder="Noah" autocapitalize="words"></div></div>
+    <label class="lab">Each turn</label><div class="seg" id="poMin">${[2,3,5,10].map(v=>`<button data-v="${v}" class="${v===(PREF.potMin||5)?'on':''}">${v} min</button>`).join('')}</div>
+    <label class="lab">Write in</label><select class="inp" id="poWhat"><option value="new">🆕 New practice piece (doesn't touch the show)</option>${sc.map(s=>`<option value="${esc(s.id)}" ${s.id===sid?'selected':''}>✍️ ${esc((s.code?s.code+' · ':'')+(s.title||'Untitled'))}</option>`).join('')}</select>
+    <div id="poPr" style="${sid?'display:none':''}"><label class="lab">Prompt (optional)</label><div class="row"><input class="inp" id="poPrompt" placeholder="Empty = no prompt" style="flex:1"><button class="chip" id="poRoll">🎲</button></div></div>
+    <label class="lab">Where's the other writer?</label><div class="seg" id="poWhere"><button data-v="shared" class="${syncOn()?'on':''}" ${syncOn()?'':'disabled'}>👥 Their own phone/computer</button><button data-v="local" class="${syncOn()?'':'on'}">📱 Right here</button></div>
+    <p class="tiny" style="margin:8px 4px">${syncOn()?'Turns pass through your shared show, so they can take a few seconds to show up.':'No shared show connected, so it\'s pass-the-phone mode.'}</p>
+    <button class="btn pri" id="poGo" style="width:100%;margin-top:6px">🥔 Start (you go first)</button>`);
+  body.addEventListener('click',e=>{ const b=e.target.closest('.seg [data-v]'); if(b&&!b.disabled){ tap(); $$('button',b.parentNode).forEach(x=>x.classList.toggle('on',x===b)); } });
+  $('#poRoll').onclick=()=>{ tap(); $('#poPrompt').value=vpFill(wqPick(WQ_DUEL)); }; $('#poWhat').onchange=e=>{ $('#poPr').style.display=e.target.value==='new'?'':'none'; };
+  $('#poGo').onclick=()=>{ const a=$('#poMe').value.trim(), b=$('#poThem').value.trim(); if(!a||!b) return toast('Both names, please','bad'); if(a.toLowerCase()===b.toLowerCase()) return toast('Two different names','bad');
+    if(!myName()){ PREF.myName=a; } PREF.potThem=b; const mins=+($('#poMin .on')?.dataset.v||5); PREF.potMin=mins; savePrefs();
+    const what=$('#poWhat').value, local=$('#poWhere .on')?.dataset.v==='local', prompt=$('#poPrompt').value.trim(); let target;
+    if(what==='new'){ const p={id:uid(),drill:'potato',title:'🥔 '+(prompt?prompt.slice(0,60):`${a} vs ${b}`),blocks:prompt?[{t:'note',x:'🥔 '+prompt},{t:'scene',x:''}]:[{t:'scene',x:''}],created:Date.now(),updated:Date.now(),author:`${a} + ${b}`,mods:{},secs:0,words:0,done:false,mins:0}; wxPr().pieces.push(p); target={type:'practice',id:p.id}; }
+    else target={type:'script',id:what};
+    const g={id:uid(),title:what==='new'?(prompt||'Hot Potato'):(byId('scripts',what)?.title||'Script'),target,players:[a,b],turn:0,mins,ends:Date.now()+mins*60e3,round:1,started:Date.now(),by:a,local,log:[]};
+    g.w0=potWordsW(g); potData().games.push(g); potSave(); closeSheet(); potOpenW(g); potTickW(); try{ navigator.vibrate?.(30); }catch(_){} }; }
+function potOpenW(g){ const t=potTargetW(g); if(!t) return toast('That script is gone','bad'); if(potOpenHere(g)) return; if(g.target.type==='practice') return wxOpen(t.id); if(NAV.tab!=='scripts') setRoot('scripts'); push('script',t.id); }
+function potPassW(g,{auto=false,take=false}={}){ if(ED.edit>=0&&potOpenHere(g)) finishEdit({quiet:true}); const w=potWordsW(g), who=potHolderW(g); g.log=g.log||[]; g.log.push({by:who,round:g.round,words:Math.max(0,w-(g.w0||0)),at:Date.now()}); g.w0=w;
+  g.turn=(g.turn+1)%2; if(g.turn===0) g.round++; g.ends=Date.now()+g.mins*60e3; POTW.turn=g.id+g.turn+g.round; potSave(); const next=potHolderW(g); try{ navigator.vibrate?.([40,60,40]); }catch(_){}
+  if(g.local){ g.ends=Date.now()+864e5; const body=openSheet('🥔 Pass the phone!',`<div class="pot-pass"><div class="pot-big">🥔</div><h2>Hand it to ${esc(next)}</h2><p>${esc(who)} wrote ${g.log[g.log.length-1].words} words. ${esc(next)}, you get ${g.mins} minutes. Pick up exactly where it stopped.</p><button class="btn pri" id="poNext" style="width:100%">I'm ${esc(next)}. Go! ⏱</button></div>`);
+    $('#poNext').onclick=()=>{ g.ends=Date.now()+g.mins*60e3; potSave(); closeSheet(); potTickW(); }; }
+  else toast(auto?`⏰ Time! The potato went to ${next}.`:take?`🥔 You grabbed it from ${who}.`:`🥔 Passed to ${next}.`);
+  potTickW(); if(potOpenHere(g)) edRender(); }
+function potEndW(g){ g.ended=true; potSave(); const by={}; (g.log||[]).forEach(l=>by[l.by]=(by[l.by]||0)+l.words);
+  openSheet('🥔 Game over',`<div class="pot-pass"><p>${g.round} round${g.round===1?'':'s'} of ${g.mins}-minute turns.</p><div class="pot-score">${g.players.map(p=>`<div><b>${by[p]||0}</b><small>words by ${esc(p)}</small></div>`).join('')}</div><button class="btn pri" id="poRead" style="width:100%">🗣 Hear the whole thing</button></div>`);
+  $('#poRead').onclick=()=>{ closeSheet(); const t=potTargetW(g); if(t) trOpen(t,{fromPractice:g.target.type==='practice'}); }; potTickW(); }
+function potTickW(){ const g=potGameW(); let pill=$('#potPillW');
+  if(!g){ pill?.remove(); potLockW(); return; }
+  if(!pill){ pill=document.createElement('div'); pill.id='potPillW'; }
+  const ed=$('.ed'); if(ed){ const after=$('#wChg',ed)||$('.wx-strip',ed)||$('.nav',ed); if(pill.previousElementSibling!==after) after.insertAdjacentElement('afterend',pill); pill.classList.add('inbar'); } else if(pill.parentNode!==document.body){ document.body.appendChild(pill); pill.classList.remove('inbar'); }
+  if(!POTW.turn) POTW.turn=g.id+g.turn+g.round;
+  const left=g.ends-Date.now(), mine=potMineW(g), hold=potHolderW(g);
+  if(mine&&left<=0&&!g.local){ potPassW(g,{auto:true}); return; }
+  if(g.local&&left<=0&&!$('#poNext')){ potPassW(g,{auto:true}); return; }
+  const late=!mine&&left<-30e3, wait=g.local&&left>36e5;
+  const html=`<button class="pot-ic" data-pw="open">🥔</button><div class="grow" data-pw="open"><b>${mine?(g.local?`${esc(hold)}'s turn`:'YOUR TURN'):`${esc(hold)} has it`}</b><small>${esc(String(g.title).slice(0,28))} · round ${g.round}</small></div><b class="pot-t ${left<30e3?'hot':''}">${wait?'⏸':late?'⌛':potFm(left)}</b>${mine?'<button data-pw="pass">Pass</button>':late?'<button data-pw="take">Grab</button>':''}<button data-pw="end" aria-label="End">✕</button>`;
+  if(pill.dataset.h!==html){ pill.innerHTML=html; pill.dataset.h=html; } pill.classList.toggle('mine',mine); document.body.classList.toggle('potting',true); potLockW(); }
+function potLockW(){ const g=potGameW(), ed=$('.ed'); if(!ed) return; const lock=!!(g&&!potMineW(g)&&potOpenHere(g)); ed.classList.toggle('pot-locked',lock); let n=$('#potNoteW',ed);
+  if(lock){ if(ED.edit>=0) finishEdit({quiet:true}); if(!n){ n=document.createElement('div'); n.id='potNoteW'; ed.appendChild(n); } n.textContent=`🥔 ${potHolderW(g)} has the potato. Read along. It comes back to you when their timer runs out.`; } else n?.remove();
+  if(!g) document.body.classList.remove('potting'); }
+{ const _n=wxNoEdit; wxNoEdit=function(){ return _n()||!!$('.ed.pot-locked'); }; }
+{ const _c=commitLine; commitLine=function(){ if($('.ed.pot-locked')) return toast('🥔 Not your turn yet','bad'); return _c.apply(this,arguments); }; }
+document.addEventListener('click',e=>{ const a=e.target.closest('#potPillW [data-pw]')?.dataset.pw; if(!a) return; tap(); const g=potGameW(); if(!g) return;
+  if(a==='pass') return potPassW(g); if(a==='take') return potPassW(g,{take:true}); if(a==='open') return potOpenW(g);
+  if(a==='end') actions('End this Hot Potato game for both of you?',[{label:'End the game',red:true,run:()=>potEndW(g)}]); });
+setInterval(potTickW,1000);
+SYNC.listeners.push(changed=>{ if(!changed.has('misc')) return; const g=potGameW(); if(g&&potMineW(g)&&!g.local){ const k=g.id+g.turn+g.round; if(POTW.turn&&POTW.turn!==k){ toast(`🥔 Your turn! ${g.mins} minutes on the clock.`,'good'); try{ navigator.vibrate?.([80,60,80]); }catch(_){} } POTW.turn=k; } potTickW(); });
+{ const g=potGameW(); if(g) POTW.turn=g.id+g.turn+g.round; }
+
+/* ---------- 🎃 HOLIDAY MODE ---------- */
+const HOLW={h:null};
+const holOnW=()=>PREF.holidayOff?null:HOLW.h;
+function holApplyW(){ HOLW.h=holToday(); const h=holOnW(), B=document.body; [...B.classList].forEach(c=>{ if(c.startsWith('hol-')) B.classList.remove(c); }); B.classList.toggle('hol',!!h); $('#holFxW')?.remove(); $$('.holGarW').forEach(x=>x.remove()); if(!h) return;
+  B.classList.add('hol-'+h.k); const fx=document.createElement('div'); fx.id='holFxW'; fx.setAttribute('aria-hidden','true');
+  fx.innerHTML=Array.from({length:10},(_,i)=>`<span style="left:${(i*10+Math.random()*6).toFixed(1)}%;animation-delay:${(-Math.random()*16).toFixed(1)}s;animation-duration:${(13+Math.random()*9).toFixed(1)}s;font-size:${(13+Math.random()*10).toFixed(0)}px">${h.fx[i%h.fx.length]}</span>`).join(''); B.appendChild(fx);
+  $$('.hero').forEach(holHero); }
+function holHero(el){ const h=holOnW(), hero=el?.classList?.contains('hero')?el:$('.hero',el); if(!hero) return; $('.holGarW',hero)?.remove(); if(!h) return; hero.insertAdjacentHTML('beforeend',`<div class="holGarW" aria-hidden="true">${h.garland.repeat(6)}</div>`); }
+/* themed chaos cards, Stuck prompts, cold opens and wheel slices, only while it's that holiday */
+{ const _c=wqChaosCard; wqChaosCard=function(){ const p=WX.run&&wqPiece(WX.run.id), h=holOnW(); if(h&&!p?.duelCards?.length&&Math.random()<.3) return vpFill(wqPick(h.chaos)); return _c.apply(this,arguments); }; }
+{ const _r=stuckRoll; stuckRoll=function(){ const h=holOnW(); if(h){ STUCK.holiday=h.stuck; STUCK_CATS.holiday=[h.e,h.n]; } else { delete STUCK.holiday; delete STUCK_CATS.holiday; }
+  if(h&&STW.tab==='cold'&&Math.random()<.35){ STW.cur=vpFill(pick(h.cold)); return; } return _r.apply(this,arguments); }; }
+{ const _w=whEntries; whEntries=function(reel){ const E=_w.apply(this,arguments), h=holOnW(); if(!h) return E; const add=reel.id==='what'?h.ev:reel.id==='where'?h.pl:reel.id==='t'?h.tw:null; return add?E.concat(add.map((t,i)=>({key:'h:'+h.k+i,t}))):E; }; }
+/* Practice tab: the holiday special + Hot Potato cards */
+{ const _p=PAGES.practice; PAGES.practice=function(){ const P=_p.apply(this,arguments), el=P.el;
+  const add=()=>{ const W=$('#prW',el); if(!W) return; $$('.wx-dc.hol,.wx-dc.pot',W).forEach(x=>x.remove()); const anchor=$('.wx-dc.free',W); if(!anchor) return; const h=holOnW(), g=potGameW();
+    const pot=`<div class="wx-dc pot"><div class="wx-dh"><span>🥔</span><b>Hot Potato</b><small>2 writers</small></div><div class="wx-db"><p>One script, a timer. When it goes off, the script passes to the other writer <b>mid-scene</b>. Practice piece or a real script.</p>${g?`<p><b>🥔 Game on:</b> ${esc(g.title)} · ${esc(potHolderW(g))} has it</p>`:''}</div><div class="wx-df">${g?'<button class="chip" data-pw2="open">↗ Open it</button>':''}<button class="chip go" data-pw2="new">🥔 New game</button></div></div>`;
+    const hol=h?`<div class="wx-dc hol"><div class="wx-dh"><span>${h.e}</span><b>${esc(h.n)} special</b><small>holiday</small></div><div class="wx-db"><div class="wx-con"><span>${h.drill.e}</span><div><b>${esc(h.drill.t)}</b><p>${esc(h.drill.d)}</p></div></div></div><div class="wx-df"><button class="chip go" data-holgo="1">${h.e} Start (15 min)</button></div></div>`:'';
+    anchor.insertAdjacentHTML('beforebegin',hol+pot); };
+  el.addEventListener('click',e=>{ const a=e.target.closest('[data-pw2]')?.dataset.pw2; if(a){ tap(); if(a==='new') return potNewW(); const g=potGameW(); if(g) potOpenW(g); return; }
+    if(e.target.closest('[data-holgo]')){ tap(); const h=holOnW(); if(h) wqStart('holiday',{title:`${h.drill.e} ${h.drill.t}`,mins:15,hol:h.k,blocks:[{t:'note',x:`${h.drill.e} ${h.drill.t}: ${h.drill.d}`}]}); } });
+  const r=P.refresh, sh=P.shown; P.refresh=function(){ r?.apply(this,arguments); add(); }; P.shown=function(){ sh?.apply(this,arguments); add(); }; add(); return P; }; }
+/* Settings: Holiday Mode switch */
+{ const _o=openSettings; openSettings=function(){ _o.apply(this,arguments); const b=$('#sheet .body'); if(!b) return; const h=holToday();
+  b.insertAdjacentHTML('beforeend',`<div class="sec">Holiday Mode</div><div class="list"><label class="tog"><span class="grow"><b>${h?h.e+' '+esc(h.n)+' decorations + drills':'🎉 Holiday decorations + drills'}</b><small>${h?'On right now. ':'Nothing to celebrate today. '}Falling ${h?h.fx.slice(0,2).join(''):'❄️🎃'}, themed chaos cards, wheel slices, Stuck prompts and a holiday drill</small></span><span class="sw"><input type="checkbox" id="wxHol" ${PREF.holidayOff?'':'checked'}><i></i></span></label></div>`);
+  $('#wxHol').onchange=e=>{ PREF.holidayOff=!e.target.checked; savePrefs(); holApplyW(); tap(); }; }; }
+holApplyW();
+setInterval(()=>{ const h=holToday(); if((h&&h.k)!==(HOLW.h&&HOLW.h.k)) holApplyW(); },60*60e3);
+if(holOnW()&&PREF.holSeen!==HOLW.h.k+new Date().getFullYear()&&CFG) setTimeout(()=>{ const h=holOnW(); if(!h||$('#sheet.on')) return; PREF.holSeen=h.k+new Date().getFullYear(); savePrefs(); toast(`${h.e} ${h.n} mode: holiday chaos cards, wheel slices and a ${h.n} drill in Practice`); },2500);
 
 /* ---------- refresh after sync ---------- */
 function refreshAll(changed){ for(const p of NAV.stack){ if(p.kind==='script'){ if(changed.has('scripts')||changed.has('notes')||changed.has('chars')){ if(!byId('scripts',p.arg)){ if(topPage()===p){ toast('This script was deleted on another device','bad'); pop(); } continue; } p.refresh?.(); } continue; } p.refresh?.(); } renderSyncPill(); }

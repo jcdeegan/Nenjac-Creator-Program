@@ -4026,6 +4026,51 @@ body.night .hq-main,body.night .hq-side{background:var(--card)}body.night .hq-ep
 /* [6.0] fresh notes */
 #notesBtn.fresh{position:relative}#notesBtn.fresh::after{content:'';position:absolute;top:2px;right:2px;width:11px;height:11px;border-radius:50%;background:#e03131;border:2px solid #fff;animation:pop .3s}
 .np-note.fresh{box-shadow:0 0 0 3px #e03131;position:relative}.np-note.fresh::before{content:'NEW';position:absolute;top:-9px;right:10px;font:700 10px var(--ui);background:#e03131;color:#fff;border-radius:999px;padding:1px 7px}
+/* ===== [6.1] ===== */
+/* 🎬 export */
+.spx{min-width:min(980px,92vw)}.spx-grid{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:16px;margin-top:6px}
+.spx-btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.spx-btns .btn{justify-content:center}
+.spx-prev{display:flex;flex-direction:column;gap:4px}.spx-prev iframe{width:100%;height:480px;border:3px solid #000;border-radius:10px;background:#fff}.spx-prev small{color:var(--muted);text-align:center}
+@media (max-width:820px){.spx-grid{grid-template-columns:1fr}.spx-prev iframe{height:320px}}
+/* 🔍 what changed */
+#chgBar,#potLockNote{position:sticky;top:0;z-index:12;display:flex;align-items:center;gap:6px;background:#1b1530;color:#fff;border:3px solid #000;border-radius:12px;box-shadow:var(--shadow-sm);padding:6px 8px 6px 12px;margin:0 auto 10px;max-width:860px;font-size:14px}
+#chgBar span{flex:1}#chgBar small{color:#c9c2e6;margin-left:4px}#chgBar button{border:2px solid #fff3;background:#2a2344;color:#fff;border-radius:8px;padding:3px 10px;cursor:pointer;font-weight:700}#chgBar button.ok{background:var(--sun);color:#000;border-color:#000}#chgBar button[disabled]{opacity:.35}
+#potLockNote{background:var(--sun);color:#000;font-weight:700}
+#editor .blk.chg{background:color-mix(in srgb,#4a86e8 16%,transparent);box-shadow:-10px 0 0 #4a86e8;border-radius:3px}
+#editor .blk.flash{animation:chgflash 1s}@keyframes chgflash{0%,40%{background:var(--sun)}}
+#editor.pot-locked{opacity:.85;cursor:not-allowed}
+.chg-pill{display:inline-block;margin-left:6px;font:700 11px var(--ui);background:#4a86e8;color:#fff;border-radius:999px;padding:1px 7px;vertical-align:middle}
+/* 🥔 hot potato */
+#potPill{position:fixed;left:14px;bottom:70px;z-index:2500;display:flex;align-items:center;gap:8px;background:#fff;border:3px solid #000;border-radius:16px;box-shadow:4px 4px 0 #000;padding:7px 8px 7px 10px;min-width:280px;max-width:420px}
+#potPill.mine{background:var(--sun);animation:potwob 2.4s ease-in-out infinite}@keyframes potwob{50%{transform:rotate(-1.2deg)}}
+#potPill .pot-ic{font-size:26px}#potPill b{display:block;font:400 14px var(--display)}#potPill small{display:block;font-size:11px;color:#333}
+#potPill .pot-t{font:400 18px var(--display);background:#000;color:var(--sun);border-radius:8px;padding:2px 8px}#potPill .pot-t.hot{color:#ff6b6b}
+#potPill button{border:2px solid #000;border-radius:8px;background:#fff;padding:3px 8px;font-weight:700;cursor:pointer}#potPill button[data-pot="pass"],#potPill button[data-pot="take"]{background:#1b1530;color:#fff}
+.pot-pass{text-align:center;min-width:min(440px,86vw)}.pot-big{font-size:72px;line-height:1;animation:potwob 1s infinite}.pot-pass h2{font-family:var(--display);margin:6px 0}
+.pot-score{display:flex;gap:10px;justify-content:center;margin:12px 0}.pot-score>div{border:3px solid #000;border-radius:14px;padding:8px 16px;background:var(--soft)}.pot-score b{display:block;font:400 30px var(--display)}.pot-score small{color:var(--muted)}
+.wqk-potato{--dc:#c9822b}.wq-drill.full{grid-column:1/-1}.wqk-hol{--dc:#e03131}
+@media (max-width:1000px){.wq-drill.full{grid-column:auto}}
+/* 🎃 holiday */
+#holFx{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+#holFx span{position:absolute;top:-40px;opacity:.55;animation:holfall linear infinite;filter:drop-shadow(0 2px 0 rgba(0,0,0,.25))}
+@keyframes holfall{from{transform:translateY(-40px) rotate(0)}to{transform:translateY(110vh) rotate(360deg)}}
+body.hol-christmas #holFx span{opacity:.75}body.hol-halloween #holFx span{animation-name:holbat}
+@keyframes holbat{0%{transform:translate(0,-40px)}50%{transform:translate(60px,55vh) rotate(20deg)}100%{transform:translate(-30px,110vh) rotate(-20deg)}}
+#holGar{position:absolute;left:0;right:0;bottom:-11px;height:20px;overflow:hidden;white-space:nowrap;font-size:13px;line-height:20px;letter-spacing:6px;pointer-events:none;z-index:3;text-shadow:0 1px 0 rgba(0,0,0,.3)}
+body.studio #holFx{display:none}
+@media (prefers-reduced-motion:reduce){#holFx{display:none}}
+/* 🔴 streamer */
+#streamBtn.live{background:#e03131;color:#fff;box-shadow:inset 0 0 0 2px #000;padding:0 8px;width:auto;animation:stlive 2s infinite}#streamBtn.live b{font:400 11px var(--display);margin-left:2px}
+@keyframes stlive{50%{box-shadow:inset 0 0 0 2px #000,0 0 0 4px rgba(224,49,49,.35)}}
+body.streamer :is(#syTok,#syRepo,#phBox,#phQr,#rmUrlIn,#rmOut,#rmQr,#caQr,#caMsg,#pbQr,#pbNtfyQr,#pbTopic,#rmCopyScript,.sy-code,textarea[readonly],input[type=password]){filter:blur(10px)!important;user-select:none}
+.stp{min-width:min(720px,92vw);display:flex;flex-direction:column;gap:8px}.stp h3{font-family:var(--display);font-weight:400;margin:10px 0 2px;font-size:17px}
+.stp-big{display:flex;gap:12px;align-items:center;border:3px solid #000;border-radius:14px;padding:10px 14px;cursor:pointer;background:#fff}.stp-big.on{background:#1b1530;color:#fff}.stp-big.on small{color:#c9c2e6}.stp-big b{display:block;font-size:16px}.stp-big small{display:block;font-size:12px;color:var(--muted)}
+.stp-big input{position:absolute;opacity:0}.stp-sw{flex:0 0 42px;height:24px;border:3px solid #000;border-radius:999px;background:#e6e8ee;position:relative}.stp-sw::after{content:'';position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#000;transition:left .15s}.stp-big.on .stp-sw{background:#e03131}.stp-big.on .stp-sw::after{left:20px;background:#fff}
+.stp .seg{display:inline-flex;border:2px solid #000;border-radius:10px;overflow:hidden}.stp .seg button{border:0;background:#fff;padding:6px 10px;font-weight:700;cursor:pointer;border-right:2px solid #000}.stp .seg button:last-child{border-right:0}.stp .seg button.on{background:var(--sun)}
+.stp-mode button{font-size:15px;padding:8px 14px!important}
+.spx .seg{display:inline-flex;border:2px solid #000;border-radius:10px;overflow:hidden}.spx .seg button{border:0;background:#fff;padding:6px 10px;font-weight:700;cursor:pointer;border-right:2px solid #000;font-family:var(--mono);font-size:13px}.spx .seg button:last-child{border-right:0}.spx .seg button.on{background:var(--sun)}
+.pot-new .seg{display:inline-flex;border:2px solid #000;border-radius:10px;overflow:hidden;flex-wrap:wrap}.pot-new .seg button{border:0;background:#fff;padding:6px 10px;font-weight:700;cursor:pointer;border-right:2px solid #000}.pot-new .seg button:last-child{border-right:0}.pot-new .seg button.on{background:var(--sun)}.pot-new .seg button[disabled]{opacity:.4}
+body.night .stp-big:not(.on),body.night .stp .seg button:not(.on),body.night .spx .seg button:not(.on),body.night .pot-new .seg button:not(.on),body.night #potPill:not(.mine){background:var(--card);color:var(--ink)}
 </style>
 </head>
 <body data-mood="rehearsal">
@@ -11947,7 +11992,7 @@ drawWheel=function(){ whRender(); }; spinWheel=function(){ whSpin(); };
    points, storage safety, one-tab guard, error catcher, offline app,
    help menu, what's new, accessibility.
    =================================================================== */
-const APP_NAME='Nenjac Creator', APP_VER='6.0', BACKUP_FORMAT=2;
+const APP_NAME='Nenjac Creator', APP_VER='6.1', BACKUP_FORMAT=2;
 const showName = () => (S.settings.showName||'').trim() || 'Nenjac';
 S.version = Math.max(S.version||1, 4);
 const ONLINE_APP = /^https?:$/.test(location.protocol);
@@ -11957,6 +12002,12 @@ const ONLINE_APP = /^https?:$/.test(location.protocol);
 
 /* ---------- WHAT'S NEW ---------- */
 const CHANGELOG=[
+  {v:'6.1',title:'🔴 Streamer Update',items:[
+    ['🔍','What Changed','Open a script and every line that changed since you last looked (Noah\'s edits, or your own from your phone) is highlighted in blue, with a bar to jump between them. Scripts with changes waiting show a 🔍 count in the list. Works on the phone app too.'],
+    ['🥔','Hot Potato','Ctrl+K → Hot Potato, or the card in 🏋️ Practice. One script and a timer: when it runs out, the script passes to the other writer mid-scene. Works across the shared show (computer or phone), or pass the laptop.'],
+    ['🎬','Screenplay export','Export → 🎬 Screenplay: a real industry-format PDF (Courier 12, proper margins, page numbers, title page, (MORE)/(CONT\'D)), a Final Draft file, a Word file, or straight into Google Docs through your drop box script (version 5).'],
+    ['🔴','Streamer Mode + overlay','The 🔴 button: Streamer Mode hides keys, setup codes and private links. The overlay window goes in OBS or TikTok LIVE Studio: writing (words-this-stream goal, the scene, the line you\'re typing), drawing faces in Google Drawings (a checklist pulled from your parentheticals), or animating in Premiere (scene, line, progress, time left). Chaos cards and potato passes pop up big on stream.'],
+    ['🎃','Holiday Mode','The app dresses up for Halloween, Thanksgiving, Christmas, New Year\'s, Valentine\'s, St. Patrick\'s, April Fools\', the 4th of July and every Friday the 13th: falling decorations, a holiday drill in Practice, and holiday chaos cards, wheel slices, nudges, cold opens and headlines.']]},
   {v:'6.0',title:'🎛 Nenjac Everywhere',items:[
     ['🗄','The Big Move','Your show now also saves to the browser\'s big storage, which holds hundreds of times more than the old ~5 MB box. No more "storage full" wall as the show grows. It moved itself the first time you opened 6.0, and a copy of your show from before the move was set aside first, just in case.'],
     ['🎛','Studio Mode','Hit 🎛 up top (or Alt+Shift+S). The app shrinks to just the pipeline: Play, Watch, the casino, cinema, wallet, ticker, pet and Vibe bar hide, and Home becomes the Studio dashboard. Every episode with its Script → Voices → Animation → Music → Rendered → Posted steps, what\'s next, new takes, open notes and ideas. Flip it off and everything is back.'],
@@ -43049,14 +43100,505 @@ const noteNewFor=n=>{ const me=(myName()||'').toLowerCase(), seen=S.settings.not
   if(A.has('ideas')&&typeof qlRenderCont==='function') qlRenderCont(); if(current==='hq') hqRender(); }; }
 setTimeout(notesBadge,600);
 
+
+/* ===================================================================
+   [6.1] SHARED: used by the Nenjac Creator AND the phone writer
+   🎬 screenplay export (industry PDF, Final Draft .fdx, Word .docx,
+   Google Docs layout) · 🎃 Holiday Mode · 🔍 What Changed math
+   =================================================================== */
+
+/* ---------- 🎬 the screenplay model: your script, the way the industry lays it out ---------- */
+const SP_OPT_DEF={heading:'int',titlePage:true,scenesNum:false};
+function spScene(x,o){ let h=String(x||'').replace(/^\[|\]$/g,'').trim().toUpperCase(); if(!h) return ''; if(o.heading==='int'&&!/^(INT|EXT|EST|I\/E|INT\.\/EXT)[\. ]/.test(h)) h='INT. '+h; return h; }
+function spModel(s,o={}){ o={...SP_OPT_DEF,...o}; const els=[]; let sn=0;
+  (s.blocks||[]).forEach(b=>{ const x=String(b.x||'').replace(/\s+$/,''); if(!x.trim()||b.t==='note') return;
+    switch(b.t){
+      case 'scene': { const h=spScene(x,o); if(h) els.push({t:'scene',x:h,n:++sn}); break; }
+      case 'action': els.push({t:'action',x:x.replace(/^\[|\]$/g,'')}); break;
+      case 'character': els.push({t:'character',x:x.trim().toUpperCase()}); break;
+      case 'paren': els.push({t:'paren',x:'('+x.trim().replace(/^\(|\)$/g,'')+')'}); break;
+      case 'dialogue': els.push({t:'dialogue',x}); break;
+      case 'lyric': els.push({t:'lyric',x}); break;
+      case 'song': els.push({t:'song',x:'SONG: '+x.trim().toUpperCase()}); break;
+      case 'transition': { let t=x.replace(/^\[|\]$/g,'').trim().toUpperCase(); if(/^(INTRO|CREDITS|OUTRO|END CREDITS|TITLE CARD)$/.test(t)) els.push({t:'action',x:t,center:true}); else els.push({t:'transition',x:/:$/.test(t)?t:t+':'}); break; }
+      default: els.push({t:'action',x});
+    } });
+  return {title:(s.title||'Untitled').trim(),code:s.code||'',by:o.by||s.author||'',contact:o.contact||'',draft:o.draft||new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}),logline:s.logline||'',els,o}; }
+/* layout in Courier 12 (10 characters an inch, 6 lines an inch) */
+const SP_L={scene:{l:1.5,w:60,b:2},action:{l:1.5,w:60,b:1},character:{l:3.7,w:38,b:1},paren:{l:3.1,w:26,b:0},dialogue:{l:2.5,w:35,b:0},lyric:{l:2.5,w:35,b:0},song:{l:1.5,w:60,b:2},transition:{l:1.5,w:60,b:1,r:true}};
+function spWrap(text,w){ const out=[]; String(text).split('\n').forEach(par=>{ let line=''; par.split(/(\s+)/).forEach(tok=>{ if(!tok) return; if(/^\s+$/.test(tok)){ if(line) line+=' '; return; }
+    while(tok.length>w){ if(line){ out.push(line.trimEnd()); line=''; } out.push(tok.slice(0,w)); tok=tok.slice(w); }
+    if((line+tok).length>w){ out.push(line.trimEnd()); line=tok; } else line+=tok; }); out.push(line.trimEnd()); }); return out; }
+function spLines(M){ /* every printed line: {x,l(in),bold,ital,under,center,right,kind} grouped in keep-together chunks */
+  const chunks=[]; let cur=null, cue='';
+  M.els.forEach((e,i)=>{ const L=SP_L[e.t]||SP_L.action; const lines=spWrap(e.x,L.w).map(x=>({x,l:L.l,kind:e.t,bold:e.t==='scene'||e.t==='song',ital:e.t==='lyric',under:e.t==='song',right:L.r,center:e.center}));
+    if(e.t==='character'){ cue=e.x; cur={blank:L.b,lines,speech:true,cue}; chunks.push(cur); return; }
+    if((e.t==='paren'||e.t==='dialogue'||e.t==='lyric')&&cur&&cur.speech){ cur.lines.push(...lines); return; }
+    cur={blank:e.t==='scene'&&i===0?0:L.b,lines,keepNext:e.t==='scene'||e.t==='song'}; chunks.push(cur); });
+  return chunks; }
+function spPaginate(M,perPage=54){ const pages=[[]]; let used=0; const chunks=spLines(M);
+  const add=(ln)=>{ pages[pages.length-1].push(ln); used++; }, newPage=()=>{ pages.push([]); used=0; };
+  chunks.forEach((c,k)=>{ const blank=pages[pages.length-1].length?c.blank:0, next=chunks[k+1], need=blank+c.lines.length+(c.keepNext&&next?Math.min(2,next.lines.length)+next.blank:0);
+    if(used+need<=perPage){ for(let i=0;i<blank;i++) add({x:''}); c.lines.forEach(add); return; }
+    if(c.speech&&c.lines.length>3&&perPage-used-blank>=4){ /* split the speech: (MORE) / (CONT'D) */
+      for(let i=0;i<blank;i++) add({x:''}); let room=perPage-used-1, j=0; while(j<c.lines.length&&room>0){ add(c.lines[j]); j++; room--; }
+      if(c.lines[j-1]?.kind==='paren'){ pages[pages.length-1].pop(); j--; } add({x:'(MORE)',l:SP_L.character.l}); newPage();
+      add({x:c.cue+" (CONT'D)",l:SP_L.character.l,kind:'character'}); c.lines.slice(j).forEach(add); return; }
+    newPage(); c.lines.forEach(add); });
+  return pages.filter(p=>p.length); }
+/* plain-text to WinAnsi (what the PDF's built-in Courier can draw) */
+const SP_WIN={'’':0x92,'‘':0x91,'“':0x93,'”':0x94,'—':0x97,'–':0x96,'…':0x85,'•':0x95,'€':0x80,'™':0x99,'é':0xe9};
+function spAnsi(t){ let o=''; for(const ch of String(t).normalize('NFC')){ const c=ch.codePointAt(0); if(SP_WIN[ch]) o+=String.fromCharCode(SP_WIN[ch]); else if(c<256) o+=ch; else if(/\p{Extended_Pictographic}/u.test(ch)) continue; else o+='?'; } return o.replace(/[\\()]/g,m=>'\\'+m); }
+function spPDF(M){ const pages=spPaginate(M), W=612, H=792, objs=[], P=[]; const fonts={F1:'Courier',F2:'Courier-Bold',F3:'Courier-Oblique'};
+  const page=(ops)=>{ P.push(ops); };
+  if(M.o.titlePage!==false){ const ops=[]; const center=(t,y,f='F1')=>{ const s=spAnsi(t), w=t.length*7.2; ops.push(`BT /${f} 12 Tf ${((W-w)/2).toFixed(1)} ${y} Td (${s}) Tj ET`); };
+    center(M.title.toUpperCase(),H-288,'F2'); if(M.code) center(M.code,H-312); center('Written by',H-348); center(M.by||' ',H-372);
+    let y=108; [M.contact,M.draft].filter(Boolean).forEach(t=>{ spWrap(t,40).forEach(l=>{ ops.push(`BT /F1 12 Tf 108 ${y} Td (${spAnsi(l)}) Tj ET`); y-=14; }); }); page(ops); }
+  pages.forEach((lines,pi)=>{ const ops=[]; const n=pi+1; if(n>1){ const t=n+'.'; ops.push(`BT /F1 12 Tf ${(540-t.length*7.2).toFixed(1)} ${H-36} Td (${t}) Tj ET`); }
+    lines.forEach((ln,i)=>{ if(!ln.x) return; const y=H-72-12*(i+1)+3, f=ln.bold?'F2':ln.ital?'F3':'F1', w=ln.x.length*7.2; let x=(ln.l||1.5)*72;
+      if(ln.right) x=540-w; if(ln.center) x=(W-w)/2; ops.push(`BT /${f} 12 Tf ${x.toFixed(1)} ${y} Td (${spAnsi(ln.x)}) Tj ET`);
+      if(ln.under) ops.push(`${x.toFixed(1)} ${y-2} m ${(x+w).toFixed(1)} ${y-2} l 0.6 w S`); }); page(ops); });
+  /* write the file */
+  let out='%PDF-1.4\n%\xE2\xE3\xCF\xD3\n'; const off=[]; const obj=(n,body)=>{ off[n]=out.length; out+=`${n} 0 obj\n${body}\nendobj\n`; };
+  const fontIds={}; let id=3; Object.entries(fonts).forEach(([k,v])=>{ fontIds[k]=id; obj(id++,`<< /Type /Font /Subtype /Type1 /BaseFont /${v} /Encoding /WinAnsiEncoding >>`); });
+  const res=`<< /Font << ${Object.keys(fonts).map(k=>`/${k} ${fontIds[k]} 0 R`).join(' ')} >> >>`, kids=[];
+  P.forEach(ops=>{ const stream=ops.join('\n'); const cid=id++, pid=id++; obj(cid,`<< /Length ${stream.length} >>\nstream\n${stream}\nendstream`); obj(pid,`<< /Type /Page /Parent 2 0 R /MediaBox [0 0 ${W} ${H}] /Resources ${res} /Contents ${cid} 0 R >>`); kids.push(pid); });
+  obj(2,`<< /Type /Pages /Kids [${kids.map(k=>k+' 0 R').join(' ')}] /Count ${kids.length} >>`); obj(1,'<< /Type /Catalog /Pages 2 0 R >>');
+  const infoId=id++; obj(infoId,`<< /Title (${spAnsi(M.title)}) /Author (${spAnsi(M.by||'')}) /Creator (Nenjac Creator) >>`);
+  const xref=out.length; out+=`xref\n0 ${id}\n0000000000 65535 f \n`; for(let i=1;i<id;i++) out+=String(off[i]||0).padStart(10,'0')+' 00000 n \n';
+  out+=`trailer\n<< /Size ${id} /Root 1 0 R /Info ${infoId} 0 R >>\nstartxref\n${xref}\n%%EOF`;
+  const bytes=new Uint8Array(out.length); for(let i=0;i<out.length;i++) bytes[i]=out.charCodeAt(i)&255; return {blob:new Blob([bytes],{type:'application/pdf'}),pages:P.length}; }
+const spX=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+function spFDX(M){ const T={scene:'Scene Heading',action:'Action',character:'Character',paren:'Parenthetical',dialogue:'Dialogue',lyric:'Dialogue',song:'Action',transition:'Transition'};
+  const para=e=>`    <Paragraph Type="${T[e.t]||'Action'}"${e.center?' Alignment="Center"':''}>${e.t==='scene'&&M.o.scenesNum?'':''}<Text${e.t==='lyric'?' Style="Italic"':e.t==='song'?' Style="Bold+Underline"':''}>${spX(e.x)}</Text></Paragraph>`;
+  const tp=[['Title',M.title.toUpperCase()],...(M.code?[['Title',M.code]]:[]),['Title',''],['Title','Written by'],['Title',M.by||'']].map(([k,x])=>`    <Paragraph Alignment="Center" Type="${k}"><Text>${spX(x)}</Text></Paragraph>`).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\n<FinalDraft DocumentType="Script" Template="No" Version="5">\n  <Content>\n${M.els.map(para).join('\n')}\n  </Content>\n  <TitlePage>\n   <Content>\n${tp}\n${M.contact?`    <Paragraph Type="Action"><Text>${spX(M.contact)}</Text></Paragraph>\n`:''}   </Content>\n  </TitlePage>\n</FinalDraft>\n`; }
+/* Google Docs / Word: one paragraph per element, indents in points */
+function spDocLines(M){ const out=[]; const IND={scene:0,action:0,character:158,paren:115,dialogue:72,lyric:72,song:0,transition:0};
+  if(M.o.titlePage!==false){ out.push({x:M.title.toUpperCase(),al:'c',b:true,sb:200},...(M.code?[{x:M.code,al:'c'}]:[]),{x:'Written by',al:'c',sb:24},{x:M.by||'',al:'c'}); if(M.contact) out.push({x:M.contact,sb:160}); out.push({x:M.draft,sb:M.contact?0:160},{pb:true}); }
+  M.els.forEach((e,i)=>{ const first=e.t==='paren'||e.t==='dialogue'||e.t==='lyric'; out.push({x:e.x,il:IND[e.t]||0,ir:e.t==='dialogue'||e.t==='lyric'?108:e.t==='paren'?144:0,sb:first||i===0?0:e.t==='scene'||e.t==='song'?24:12,b:e.t==='scene'||e.t==='song',i:e.t==='lyric',u:e.t==='song',al:e.t==='transition'?'r':e.center?'c':''}); });
+  return out; }
+/* a tiny .docx writer (zip, stored) so phones can hand a script to Google Docs or Word */
+const SP_CRC=(()=>{ const t=new Uint32Array(256); for(let n=0;n<256;n++){ let c=n; for(let k=0;k<8;k++) c=c&1?0xEDB88320^(c>>>1):c>>>1; t[n]=c>>>0; } return t; })();
+function spCrc(b){ let c=0xFFFFFFFF; for(let i=0;i<b.length;i++) c=SP_CRC[(c^b[i])&255]^(c>>>8); return (c^0xFFFFFFFF)>>>0; }
+function spZip(files){ const enc=new TextEncoder(), parts=[], cen=[]; let off=0; const u16=n=>[n&255,(n>>>8)&255], u32=n=>[n&255,(n>>>8)&255,(n>>>16)&255,(n>>>24)&255];
+  files.forEach(([name,txt])=>{ const nb=enc.encode(name), data=enc.encode(txt), crc=spCrc(data);
+    const head=new Uint8Array([0x50,0x4b,3,4,...u16(20),...u16(0x800),...u16(0),...u16(0),...u16(0x21),...u32(crc),...u32(data.length),...u32(data.length),...u16(nb.length),...u16(0)]);
+    parts.push(head,nb,data); cen.push(new Uint8Array([0x50,0x4b,1,2,...u16(20),...u16(20),...u16(0x800),...u16(0),...u16(0),...u16(0x21),...u32(crc),...u32(data.length),...u32(data.length),...u16(nb.length),...u16(0),...u16(0),...u16(0),...u16(0),...u32(0),...u32(off)]),nb);
+    off+=head.length+nb.length+data.length; });
+  const csize=cen.reduce((n,a)=>n+a.length,0); parts.push(...cen,new Uint8Array([0x50,0x4b,5,6,0,0,0,0,...u16(files.length),...u16(files.length),...u32(csize),...u32(off),0,0]));
+  return new Blob(parts,{type:'application/vnd.openxmlformats-officedocument.wordprocessingml.document'}); }
+function spDOCX(M){ const tw=pt=>Math.round(pt*20), L=spDocLines(M);
+  const body=L.map(p=>{ if(p.pb) return '<w:p><w:r><w:br w:type="page"/></w:r></w:p>';
+    const ppr=`<w:pPr><w:spacing w:before="${tw(p.sb||0)}" w:after="0" w:line="240" w:lineRule="auto"/>${p.il||p.ir?`<w:ind w:left="${tw(p.il||0)}" w:right="${tw(p.ir||0)}"/>`:''}${p.al==='c'?'<w:jc w:val="center"/>':p.al==='r'?'<w:jc w:val="right"/>':''}</w:pPr>`;
+    const rpr=`<w:rPr><w:rFonts w:ascii="Courier Prime" w:hAnsi="Courier Prime" w:cs="Courier New"/><w:sz w:val="24"/>${p.b?'<w:b/>':''}${p.i?'<w:i/>':''}${p.u?'<w:u w:val="single"/>':''}</w:rPr>`;
+    return `<w:p>${ppr}<w:r>${rpr}<w:t xml:space="preserve">${spX(p.x||'')}</w:t></w:r></w:p>`; }).join('');
+  const doc=`<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>${body}<w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="2160" w:header="720" w:footer="720" w:gutter="0"/></w:sectPr></w:body></w:document>`;
+  return spZip([['[Content_Types].xml','<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>'],
+    ['_rels/.rels','<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>'],
+    ['word/document.xml',doc]]); }
+const spFile=(s,ext)=>((s.code?s.code+' ':'')+(s.title||'Untitled')).replace(/[\\/:*?"<>|]+/g,'').replace(/\s+/g,' ').trim().slice(0,80)+'.'+ext;
+
+/* ---------- 🔍 What Changed: line fingerprints ---------- */
+function chgHash(b){ const s=(b.t||'')+'|'+String(b.x||'').trim(); let h=2166136261; for(let i=0;i<s.length;i++){ h^=s.charCodeAt(i); h=Math.imul(h,16777619); } return (h>>>0).toString(36); }
+const chgSkip=b=>!String(b.x||'').trim()||b.t==='note';
+function chgDiff(prev,blocks){ /* lines that are in the script now but weren't last time you looked, and how many got cut */
+  const left={}; (prev||[]).forEach(h=>left[h]=(left[h]||0)+1); const fresh=[]; let kept=0;
+  blocks.forEach(b=>{ if(chgSkip(b)) return; const h=chgHash(b); if(left[h]){ left[h]--; kept++; } else fresh.push(h); });
+  const cut=Object.values(left).reduce((n,v)=>n+v,0); return {fresh,cut}; }
+const chgPrint=blocks=>blocks.filter(b=>!chgSkip(b)).map(chgHash);
+
+/* ---------- 🎃 Holiday Mode ---------- */
+const HOLIDAYS=[
+  {k:'fri13',n:'Friday the 13th',e:'🔪',fx:['🔪','🖤','🏒','🕯'],garland:'🔪🖤🕯🔪🖤🕯🔪🖤🕯',
+   drill:{e:'🔪',t:'Friday the 13th',d:'Write a slasher scene where the killer is the least threatening character in the show. Everyone still dies.'},
+   chaos:['The lights cut out. When they come back, someone is missing.','Somebody hears a chainsaw. Nobody owns a chainsaw.','{A} says "I\'ll be right back." Bad move.','A hockey mask is found in the costume room. It\'s warm.','Everyone splits up. Classic mistake.','{A} trips while running away. On nothing.','The phone rings. It\'s coming from inside the theater.','{A} is the Final Girl now. They did not sign up for this.'],
+   cold:['Camp Akufathum, 1987. A counselor hears something in the woods. It\'s {A}, humming the Courtroom Shuffle.','A thunderstorm. The power\'s out. {A} holds a flashlight under their chin: "Okay. Scariest story wins."'],
+   heads:['Friday the 13th: Nenjac PD reminds residents the theater is "always like this."','Local man breaks 13 mirrors, says it\'s "for content."','Camp Akufathum reopens for one night only. Nobody RSVPs.'],
+   ev:['gets stalked by a guy in a hockey mask','hides in a closet with the killer','becomes the Final Girl'],pl:['Camp Akufathum at midnight','a cabin with no cell service','the woods behind the theater'],tw:['the killer was the camp counselor all along','the killer was a cardboard cutout the whole time'],
+   stuck:['Turn the lights off. What does everyone do in the dark?','Somebody says "I\'ll be right back." Make them not come back.'],hm:['Bro... Friday the 13th... and Nerd still won\'t die. He\'s the real slasher villain.','What if Jason just wanted to do theater and nobody let him audition']},
+  {k:'newyear',n:'New Year\'s',e:'🎉',from:'12-27',to:'01-02',fx:['🎉','✨','🎊','🥂'],garland:'🎉✨🎊🥂🎉✨🎊🥂',
+   drill:{e:'🥂',t:'New Year\'s resolutions',d:'Every character makes a resolution at midnight. Write the scene where every single one is broken by 12:05.'},
+   chaos:['The ball drop is in 60 seconds. Somebody has to say something important before it hits.','{A} makes a resolution out loud. Immediately breaks it.','Somebody kisses the wrong person at midnight.','The countdown is wrong. It\'s already next year.','{A} is still wearing last year\'s 2020 glasses.','Confetti cannon goes off indoors. It\'s glitter. Forever.','{A} and {B} realize this is the anniversary of something terrible.','Champagne bottle cork hits {A} in the face. Classic.'],
+   cold:['11:59 PM. The whole cast is crammed on the theater roof with sparklers. {A}: "Okay, nobody light anything near Deegs."','January 1st, 9 AM. Everyone wakes up in places they should not be. {A} is on the stage, in a tutu.'],
+   heads:['Nenjac City New Year\'s countdown starts 4 minutes late. Mayor "almost survived."','Local cheeseburger\'s resolution: "fewer explosions." Explodes at 12:01.','Warren\'s resolution: "drink less." Resolution lasts 9 seconds.'],
+   ev:['makes a New Year\'s resolution and breaks it immediately','kisses the wrong person at midnight','gets locked out of the New Year\'s party'],pl:['Times Square, somehow','the theater roof at midnight','a New Year\'s party nobody was invited to'],tw:['it was still last year the whole time','the countdown was for something else entirely'],
+   stuck:['Somebody makes a resolution in this scene. Break it by the end of the scene.','Countdown. Ten seconds. What\'s the most important thing anyone could say right now?'],hm:['Bro it\'s a new year but Nenjac is still the same day it\'s always been','New year new me. Same Deegs though. Always the same Deegs.']},
+  {k:'valentine',n:'Valentine\'s Day',e:'💘',from:'02-07',to:'02-14',fx:['💘','💔','🌹','💌'],garland:'💘💔🌹💌💘💔🌹💌',
+   drill:{e:'💘',t:'The worst date in Nenjac history',d:'Two characters who should never date go on a date. It goes so wrong it ends up in the news.'},
+   chaos:['A Valentine\'s card shows up. It\'s unsigned. It\'s for {A}.','{A} gets dumped by text. Mid-scene.','Cupid shows up. It\'s Heroin Harry in a diaper.','{A} confesses their feelings. To the wrong person.','Somebody brought roses. They\'re from the cemetery.','{A} and {B} accidentally match on a dating app.','A singing telegram arrives for Dean. Starr ordered it.','Somebody proposes. Nobody asked them to.'],
+   cold:['Starr is standing outside Dean\'s house with a boombox over his head. It\'s playing the Courtroom Shuffle.','A candlelit table for two at the Chili\'s. {A} is sitting alone. Checking their phone. Again.'],
+   heads:['Dean McQueen receives 4,000 Valentine\'s cards. Starr denies sending "most of them."','Local cheeseburger sends Valentine\'s card made of explosives. "It\'s the thought that counts."','Chili\'s Valentine\'s special sells out. Of riblets.'],
+   ev:['goes on a blind date with the worst possible person','gets a secret admirer','gets dumped on Valentine\'s Day'],pl:['a candlelit Chili\'s','a speed-dating night at the theater','a heart-shaped hot tub'],tw:['the secret admirer was Nerd','the date was a setup by the Mafia'],
+   stuck:['Somebody in this scene has a crush. Make it painfully obvious to everyone except the crush.','Write the most romantic line in the scene, then make it go horribly wrong.'],hm:['Starr has loved Dean for so long it\'s basically canon now. It\'s basically his whole character. Wait.','Love is like the brown water fountain. Nobody knows what\'s in it but we keep drinking.']},
+  {k:'stpat',n:'St. Patrick\'s Day',e:'☘️',from:'03-14',to:'03-17',fx:['☘️','🍀','💚','🌈'],garland:'☘️🍀💚🌈☘️🍀💚🌈',
+   drill:{e:'🍀',t:'Luck of the Nenjac',d:'One character has the best luck in the world for a day and another has the worst. They have to spend the whole day together.'},
+   chaos:['Somebody finds a four-leaf clover. Their luck is now insane.','{A} pinches someone for not wearing green. It\'s the Chief.','The brown water fountain is green today. Nobody knows why.','A leprechaun shows up. It\'s Rocco in a costume.','{A} finds a pot of gold. It\'s the Mafia\'s.','Everyone suddenly has an Irish accent. Elea\'s accent slips. Hers is Italian.'],
+   cold:['The theater\'s brown water fountain is running bright green. {A} drinks from it anyway.','A parade float shaped like a giant shamrock crashes into the theater. {A} climbs out: "Top of the morning."'],
+   heads:['Nenjac City St. Patrick\'s parade rerouted around the theater "for everyone\'s safety."','Brown water fountain turns green. Health department "not looking into it."','Local man finds pot of gold. Mafia finds local man.'],
+   ev:['finds a pot of gold that belongs to the Mafia','gets pinched for not wearing green','has insane luck for one day'],pl:['a St. Patrick\'s Day parade','an Irish pub that\'s actually a Chili\'s','the end of a rainbow'],tw:['the lucky charm was cursed','the leprechaun was a Morelli'],
+   stuck:['Somebody gets very lucky right now. Then make that luck the problem.','Make something green show up in this scene and become important.'],hm:['Bro the brown water turned green. Is that... an upgrade?','If Rocco can\'t talk, can he still say "top of the morning"? Like spiritually?']},
+  {k:'aprilfools',n:'April Fools\'',e:'🤡',from:'04-01',to:'04-01',fx:['🤡','🃏','🎭','🎈'],garland:'🤡🃏🎭🎈🤡🃏🎭🎈',
+   drill:{e:'🃏',t:'Prank war',d:'Two characters are in an all-out April Fools\' prank war. The last prank goes way too far.'},
+   chaos:['Everything that just happened was a prank. Was it?','{A} announces they\'re quitting the theater. "April Fools!" They\'re not kidding.','{B} rigs a whoopee cushion on the director\'s chair. Warren sits. Nothing. He\'s used to worse.','The prank backfires and someone ends up in the hospital. Dr. Doctor is pranked too.','{A} swears this time it\'s NOT a prank. Nobody believes them.','Somebody switches all the scripts with a different show.'],
+   cold:['April 1st. Deegs announces he\'s quitting the theater. Everyone cheers. Deegs: "...April Fools."','Every single prop in the theater has been wrapped in tin foil. {A} is standing in the middle, holding the last roll.'],
+   heads:['April Fools: Nenjac Theater announces it\'s "totally safe now." Nobody laughs.','Mayor announces his retirement. "April Fools," he says, before being shot.','Local cheeseburger fakes his death. Again. Nobody notices. Again.'],
+   ev:['pulls a prank that goes way too far','gets pranked by the whole cast','fakes their own death as a joke'],pl:['a prank war in the green room','a fake surprise party','a room full of whoopee cushions'],tw:['the whole episode was an April Fools\' prank','the prank was real all along'],
+   stuck:['Somebody in this scene is pranking someone else. Reveal it at the worst moment.','Undercut the most serious moment with "April Fools," then reveal it actually wasn\'t a joke.'],hm:['What if the whole show is an April Fools\' prank and it\'s just been going for years','Nerd doesn\'t understand April Fools. He fact-checks every prank.']},
+  {k:'july4',n:'4th of July',e:'🎆',from:'07-01',to:'07-05',fx:['🎆','🎇','🌭','🇺🇸'],garland:'🎆🎇🌭🇺🇸🎆🎇🌭🇺🇸',
+   drill:{e:'🎆',t:'Fireworks safety',d:'Write a scene where someone gives a fireworks safety speech while everything goes wrong behind them.'},
+   chaos:['Deegs has fireworks. Lots of fireworks. Too many fireworks.','The hot dog eating contest starts. {A} entered by accident.','A firework goes sideways. Into {P}.','{A} brings a sparkler indoors. Bad idea.','Travis shows up dressed as Uncle Sam. "Hell yeah, brother!"','Somebody lights the whole box at once.'],
+   cold:['The Nenjac City fireworks show. One firework goes up. Then the theater goes up. Deegs: "That one\'s on me."','A grill. A hot dog. {A} is staring at it like it owes them money.'],
+   heads:['Fireworks show cancelled after Deegs "helps set up."','Travis Corbin wins hot dog eating contest, crowd chants "Hell yeah, brother."','Fourth of July fireworks visible from space, thanks to theater fire.'],
+   ev:['sets off every firework at once','enters a hot dog eating contest','burns down the barbecue'],pl:['a Fourth of July barbecue','the fireworks show','a lake party'],tw:['the fireworks were the bomb all along','it was the Mafia\'s barbecue'],
+   stuck:['A firework goes off right now. Where does it land?','Somebody is grilling in this scene. What are they really burning?'],hm:['Deegs probably loves the 4th of July. It\'s explosions but legal.','Bro what if Travis IS America']},
+  {k:'halloween',n:'Halloween',e:'🎃',from:'10-13',to:'10-31',fx:['🦇','🎃','👻','🕸'],garland:'🎃🦇👻🕸🎃🦇👻🕸',
+   drill:{e:'👻',t:'Haunted theater',d:'The theater is actually haunted. Write the scene where everyone finds out, and Warren still doesn\'t care.'},
+   chaos:['The lights flicker. Something laughs in the vents.','{A} shows up in a costume. It\'s a costume of {B}. It\'s offensive.','A ghost appears. It\'s Daddy Deegs. He\'s disappointed.','Somebody is handing out candy. It\'s full-size bars. Suspicious.','{A} won\'t take the mask off. Nobody knows what\'s under it.','Trick or treat. Somebody picks trick.','The 10-foot spiders want to go trick-or-treating.','The Ouija board spells out a name. It\'s {A}.'],
+   cold:['Halloween night. The theater is decorated for the haunted house fundraiser. {A}: "Okay, the spiders are real, but the rest is fake."','A séance in the green room. Candles. {A}: "Daddy Deegs, if you can hear us, knock once." *Knock.* *Knock. Knock. Knock. Knock.*'],
+   heads:['Haunted house fundraiser at Nenjac Theater "too real," say survivors.','Local cheeseburger dresses as a cheeseburger for Halloween. "Bold."','Nenjac PD warns parents about "full-size candy bars" from the McQueen mansion.'],
+   ev:['gets possessed on Halloween night','wears the scariest costume in history','gets haunted by a ghost who wants the lead'],pl:['a haunted house that\'s actually haunted','the cemetery on Halloween','a costume party at the McQueen mansion'],tw:['the ghost was Warren in a sheet the whole time','the haunted house was the theater all along'],
+   stuck:['Turn off the lights. What\'s in the room with them?','Somebody is wearing a costume of another character. Make it a problem.'],hm:['What if everyone in Nenjac is just a Halloween costume','The spiders are thriving. This is their season.']},
+  {k:'thanksgiving',n:'Thanksgiving',e:'🦃',from:'11-18',to:'11-30',fx:['🍂','🍁','🦃','🥧'],garland:'🍂🦃🍁🥧🍂🦃🍁🥧',
+   drill:{e:'🦃',t:'Thanksgiving dinner',d:'The whole cast at one dinner table. Everybody has to say what they\'re thankful for, and every answer starts a fight.'},
+   chaos:['The turkey is still alive.','{A} is asked what they\'re thankful for. They say "{B}." Nobody believes it.','Somebody brings up politics at the table.','The turkey is on fire. Deegs swears it wasn\'t him.','{A}\'s parents show up unannounced.','The kids\' table rebels.','Somebody ate the whole pie before dinner.','The Mafia shows up for dinner. They brought cannoli.'],
+   cold:['Thanksgiving morning. The theater\'s oven is smoking. {A}: "Okay, the turkey\'s fine, the building\'s on fire."','The cast is sitting around the table. Total silence. {A}: "...So. Who wants to say grace?" Deegs raises his hand.'],
+   heads:['Thanksgiving at the theater ends with only two fires. "Personal best."','Local turkey escapes, joins the cast of Akufathum.','Warren thankful for "absolutely nothing," sources say.'],
+   ev:['ruins Thanksgiving dinner','gets stuck at the kids\' table','deep-fries a turkey indoors'],pl:['the Thanksgiving table','a grocery store on Thanksgiving morning','the kids\' table'],tw:['the turkey was alive the whole time','everyone was thankful for the wrong person'],
+   stuck:['Somebody at the table says what they\'re thankful for. Make it the worst possible thing to say.','The food is the problem. What went wrong in the kitchen?'],hm:['What if the turkey is the main character of Thanksgiving and we\'re all side characters','Deegs at Thanksgiving dinner. A cheeseburger. At a turkey dinner. Cannibalism adjacent.']},
+  {k:'christmas',n:'Christmas',e:'🎄',from:'12-01',to:'12-26',fx:['❄️','❄','🎁','🎄'],garland:'🎄❄️🎁⭐🎄❄️🎁⭐',
+   drill:{e:'🎄',t:'A Nenjac Christmas Carol',d:'Three ghosts visit the meanest character in the show on Christmas Eve. It doesn\'t go how the story usually goes.'},
+   chaos:['It\'s snowing. Inside.','{A} is Secret Santa for {B}. The gift is a threat.','Santa comes down the chimney. It\'s Heroin Harry.','The Christmas tree is on fire. Deegs says "It was like that when I got here."','Somebody has to dress up as Santa for the kids. It\'s Warren.','{A} gets coal. They earned it.','The Elf on the Shelf moved. Nobody moved it.','Somebody regifts a present to the person who gave it to them.'],
+   cold:['Christmas Eve. The theater is decorated, kind of. {A} is on a ladder putting a star on the tree. The tree is on fire.','A Christmas pageant at Nenjac High. Baby Jesus is a cheeseburger. Deegs is proud.'],
+   heads:['Nenjac City Christmas tree lighting lights more than the tree.','Santa spotted at the theater, arrested by Nenjac PD "on principle."','Local cheeseburger on naughty list for 19th straight year.'],
+   ev:['ruins Christmas','gets visited by three ghosts','gets coal for Christmas'],pl:['the North Pole','a mall Santa\'s lap','a Christmas tree farm'],tw:['Santa was the Mafia all along','it was the Grinch the whole time, and the Grinch was Warren'],
+   stuck:['Somebody gives a gift in this scene. Make it the worst gift possible.','Christmas spirit: make the meanest character do one nice thing. Then make it backfire.'],hm:['What if Santa is real but he\'s just Warren with a beard','Christmas in Nenjac is just regular Nenjac but with lights on the fire']}];
+function holMD(d){ return String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function holToday(d=new Date()){ if(d.getDay()===5&&d.getDate()===13) return HOLIDAYS[0]; const md=holMD(d);
+  return HOLIDAYS.find(h=>h.from&&(h.from<=h.to?md>=h.from&&md<=h.to:md>=h.from||md<=h.to))||null; }
+
+
+/* ===================================================================
+   [6.1] NENJAC CREATOR 6.1
+   🔍 What Changed · 🥔 Hot Potato · 🎬 industry export + ☁ Google Docs ·
+   🎃 Holiday Mode · 🔴 Streamer Mode + the stream overlay
+   =================================================================== */
+function spDownload(name,blob){ download(name,blob); }
+
+/* ===================================================================
+   🎬 EXPORT: industry screenplay PDF · Final Draft · Word · Google Docs
+   =================================================================== */
+$('#exportMenu .drop')?.insertAdjacentHTML('afterbegin',`<button data-spx="1">🎬 Screenplay (industry format) <small>Real screenplay PDF, Final Draft, Word or straight into Google Docs.</small></button>`);
+$('#exportMenu .drop')?.addEventListener('click',e=>{ if(!e.target.closest('[data-spx]')) return; e.stopPropagation(); $('#exportMenu').classList.remove('open'); syncEditor(); spOpen(activeScript()); },true);
+function spOpts(s){ return {by:S.settings.spBy??(s.author||myName()||''),contact:S.settings.spContact||'',heading:S.settings.spHeading||'int',titlePage:S.settings.spTitle!==false}; }
+function spOpen(s){ if(!s) return; const o=spOpts(s), docsOk=!!rmUrl(), v=+S.settings.rmV||0;
+  openModal(`<div class="spx"><div class="row"><h2 class="grow">🎬 Export as a real screenplay</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
+    <p class="tiny muted">The format agents, contests, fellowships and networks expect: Courier 12, proper margins, page numbers, a title page, and (MORE)/(CONT'D) when a speech breaks across pages. Notes are left out.</p>
+    <div class="spx-grid"><div><label class="lab">Written by</label><input class="txt" id="spBy" value="${esc(o.by)}" placeholder="JC Deegan & Noah …">
+      <label class="lab">Contact (bottom of the title page)</label><textarea class="txt" id="spCo" rows="2" placeholder="email · phone · website">${esc(o.contact)}</textarea>
+      <label class="lab">Scene headings</label><div class="seg" id="spH"><button data-v="int" class="${o.heading==='int'?'on':''}">INT. THE LOBBY</button><button data-v="keep" class="${o.heading==='keep'?'on':''}">THE LOBBY (as written)</button></div>
+      <label class="tiny" style="display:block;margin-top:8px"><input type="checkbox" id="spTp" ${o.titlePage?'checked':''}> Title page</label>
+      <div class="spx-btns"><button class="btn primary" data-sp="pdf">📄 Screenplay PDF</button><button class="btn" data-sp="fdx">🎞 Final Draft (.fdx)</button><button class="btn" data-sp="docx">📝 Word file (.docx)</button>
+        <button class="btn" data-sp="gdoc" ${docsOk?'':'disabled title="Set up the Google drop box first (🎙 Voice Booth → 📨 Actors → ☁️ Drive)"'}>☁️ Send to Google Docs</button></div>
+      <p class="tiny muted" id="spMsg">${docsOk?(v&&v<5?'☁️ Google Docs needs the drop box script version 5. It\'ll walk you through the update the first time.':'☁️ Google Docs makes a new Doc in your Google Drive (in Nenjac Takes → Scripts) and opens it.'):'☁️ Google Docs uses your Google drop box (the one actors send lines through). Set it up in 🎙 Voice Booth → 📨 Actors → ☁️ Drive.'}</p></div>
+      <div class="spx-prev"><iframe id="spPrev" title="Preview"></iframe><small id="spPg"></small></div></div></div>`);
+  const read=()=>{ S.settings.spBy=$('#spBy').value.trim(); S.settings.spContact=$('#spCo').value.trim(); S.settings.spHeading=$('#spH .on')?.dataset.v||'int'; S.settings.spTitle=$('#spTp').checked; save(); return spModel(s,spOpts(s)); };
+  let pv=null; const prev=()=>{ const M=read(), r=spPDF(M); if(pv) URL.revokeObjectURL(pv); pv=URL.createObjectURL(r.blob); $('#spPrev').src=pv+'#toolbar=0&view=FitH'; $('#spPg').textContent=`${r.pages} page${r.pages===1?'':'s'} · about ${Math.max(1,Math.round((r.pages-(M.o.titlePage?1:0))))} minute${r.pages===2?'':'s'} of screen time`; };
+  let t=0; $('#modal .spx').addEventListener('input',()=>{ clearTimeout(t); t=setTimeout(prev,400); }); $('#spTp').onchange=prev;
+  $$('#spH button').forEach(b=>b.onclick=()=>{ $$('#spH button').forEach(x=>x.classList.toggle('on',x===b)); prev(); });
+  $$('[data-sp]').forEach(b=>b.onclick=async()=>{ const M=read(), k=b.dataset.sp;
+    if(k==='pdf'){ spDownload(spFile(s,'pdf'),spPDF(M).blob); toast('📄 Screenplay PDF saved. Check your Downloads.','good'); unlock('spx1'); }
+    if(k==='fdx'){ spDownload(spFile(s,'fdx'),new Blob([spFDX(M)],{type:'application/xml'})); toast('🎞 Final Draft file saved.','good'); unlock('spx1'); }
+    if(k==='docx'){ spDownload(spFile(s,'docx'),spDOCX(M)); toast('📝 Word file saved. Google Docs opens it too (File → Open → Upload).','good'); }
+    if(k==='gdoc') spGDoc(s,M,b); });
+  prev(); }
+async function spGDoc(s,M,btn){ const msg=$('#spMsg'); btn.disabled=true; const old=btn.textContent; btn.textContent='☁️ Making your Doc…';
+  try{ const j=await rmPost({a:'gdoc',key:rmKey(),doc:JSON.stringify({title:(s.code?s.code+' ':'')+(s.title||'Untitled'),lines:spDocLines(M)})});
+    if(j&&j.ok&&j.url){ window.open(j.url,'_blank','noopener'); toast('☁️ It\'s in Google Docs (Nenjac Takes → Scripts (Google Docs))','good'); if(msg) msg.innerHTML=`✅ Made it: <a href="${esc(j.url)}" target="_blank" rel="noopener">open the Doc ↗</a>`; S.settings.rmV=Math.max(+S.settings.rmV||0,5); save(); unlock('gdoc1'); }
+    else if(j&&(j.err==='what'||j.err==='key'&&false)) spNeedUpdate(msg);
+    else if(j&&/DocumentApp|permission|authoriz/i.test(j.err||'')) msg.innerHTML=`⚠️ Google needs your OK to make Docs. In your Apps Script project, pick <b>setup</b> in the function menu up top, click ▶ Run, and allow it. Then try again.`;
+    else throw new Error(j?.err||'no answer'); }
+  catch(e){ if(msg) msg.innerHTML=`⚠️ Couldn't reach your drop box (${esc(e.message||e)}). If you never updated it to version 5, that's probably it.`; spNeedUpdate(msg,true); }
+  finally{ btn.disabled=false; btn.textContent=old; } }
+function spNeedUpdate(msg,soft){ if(!msg) return; msg.innerHTML=(soft?msg.innerHTML+'<br>':'')+`🆕 <b>Update your drop box script to version 5</b> (one time): 🎙 Voice Booth → 📨 Actors → ☁️ Drive → copy the script → paste it over the old one in Apps Script → Save → pick <b>setup</b> and ▶ Run (allow Google Docs) → Deploy → Manage deployments → ✏️ → New version → Deploy. <button class="btn sm" id="spUpd">☁️ Open the Drive tab</button>`; $('#spUpd')&&($('#spUpd').onclick=()=>{ closeModal(); rmOpen('drive'); }); }
+/* the drop box script learns to make Google Docs (version 5) */
+{ const _s=rmScript; rmScript=function(){ let s=_s(); s=s.replace(/^(\/\/[^\n]*?)\(version \d+\)/,'$1(version 5)').replace(/const VERSION = \d+;/,'const VERSION = 5;');
+  s=s.replace("  return admin_(b); }","  if(b.a==='gdoc') return gdoc_(b);\n  return admin_(b); }");
+  s=s.replace("// To re-do the permission any time:","// Version 5 also makes Google Docs from your scripts: after pasting, pick \"setup\" and ▶ Run once so Google asks for Docs permission.\n// To re-do the permission any time:");
+  return s+`
+
+// ---------- 📄 Google Docs (version 5) ----------
+function gdoc_(b){ var d=typeof b.doc==='string'?JSON.parse(b.doc):b.doc; var doc=DocumentApp.create(String(d.title||'Untitled script').slice(0,150)); var body=doc.getBody();
+  body.setMarginTop(72).setMarginBottom(72).setMarginLeft(108).setMarginRight(72); var first=body.getParagraphs()[0], used=false;
+  (d.lines||[]).forEach(function(L){ if(L.pb){ body.appendPageBreak(); return; } var x=String(L.x||''), p;
+    if(!used){ used=true; p=first; p.setText(x); } else p=body.appendParagraph(x);
+    if(x){ var t=p.editAsText(); t.setFontFamily('Courier Prime'); t.setFontSize(12); t.setBold(!!L.b); t.setItalic(!!L.i); t.setUnderline(!!L.u); }
+    p.setSpacingBefore(L.sb||0); p.setSpacingAfter(0); p.setLineSpacing(1); p.setIndentStart(L.il||0); p.setIndentFirstLine(L.il||0); p.setIndentEnd(L.ir||0);
+    if(L.al==='c') p.setAlignment(DocumentApp.HorizontalAlignment.CENTER); else if(L.al==='r') p.setAlignment(DocumentApp.HorizontalAlignment.RIGHT); });
+  doc.saveAndClose(); try{ DriveApp.getFileById(doc.getId()).moveTo(sub_(root_(),'Scripts (Google Docs)')); }catch(e){}
+  return {ok:true,url:doc.getUrl(),id:doc.getId()}; }
+`; }; }
+ACH.push({id:'spx1',e:'🎬',n:'Industry Standard',d:'Export a real screenplay PDF or Final Draft file'},{id:'gdoc1',e:'☁️',n:'Docs Drop',d:'Send a script to Google Docs'});
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'🎬',label:'Export screenplay (PDF / Final Draft / Google Docs)',run:()=>{ if(current!=='desk') go('desk'); setTimeout(()=>{ syncEditor(); spOpen(activeScript()); },200); },kw:'export screenplay pdf final draft fdx industry google docs word docx'}); return C; }; }
+
+/* ===================================================================
+   🔍 WHAT CHANGED (since you last looked at this script, on this computer)
+   =================================================================== */
+const CHG={key:'nenjac.seen.v1',db:null,i:-1,t:0};
+function chgDB(){ if(CHG.db) return CHG.db; try{ CHG.db=JSON.parse(localStorage.getItem(CHG.key)||'{}')||{}; }catch(e){ CHG.db={}; } return CHG.db; }
+function chgStore(){ clearTimeout(CHG.t); CHG.t=setTimeout(()=>{ try{ localStorage.setItem(CHG.key,JSON.stringify(CHG.db)); }catch(e){} },800); }
+function chgLook(s){ const db=chgDB(), rec=db[s.id], now=chgPrint(s.blocks||[]);
+  if(!rec){ db[s.id]={h:now,fresh:[],cut:0,at:Date.now()}; chgStore(); return db[s.id]; }
+  const d=chgDiff(rec.h,s.blocks||[]), have=new Set(now); rec.fresh=[...new Set([...(rec.fresh||[]).filter(h=>have.has(h)),...d.fresh])]; rec.cut=(rec.cut||0)+d.cut; rec.h=now; rec.at=Date.now(); chgStore(); return rec; }
+function chgMine(s){ const rec=chgDB()[s.id]; if(!rec) return; const now=chgPrint(s.blocks||[]), have=new Set(now); rec.h=now; rec.fresh=(rec.fresh||[]).filter(h=>have.has(h)); chgStore(); }
+function chgMark(){ const bar=$('#chgBar'); const s=activeScript(); if(!s||editorScriptId!==s.id){ bar?.remove(); return; } const rec=chgDB()[s.id], F=new Set(rec?.fresh||[]);
+  let n=0; $$('.blk',ED).forEach(el=>{ const on=F.has(chgHash({t:el.dataset.t,x:el.textContent})); el.classList.toggle('chg',on); if(on) n++; });
+  if(!n&&!(rec?.cut)){ bar?.remove(); return; }
+  let b=bar; if(!b){ b=document.createElement('div'); b.id='chgBar'; $('#pageWrap').prepend(b); }
+  b.innerHTML=`<span>🔍 <b>${n} new or changed line${n===1?'':'s'}</b>${rec.cut?` · ${rec.cut} cut`:''} <small>since you last looked</small></span><button data-chg="prev" title="Previous change" ${n?'':'disabled'}>▲</button><button data-chg="next" title="Next change" ${n?'':'disabled'}>▼</button><button data-chg="ok" class="ok">✓ Got it</button>`; }
+document.addEventListener('click',e=>{ const a=e.target.closest('#chgBar [data-chg]')?.dataset.chg; if(!a) return; const L=$$('.blk.chg',ED);
+  if(a==='ok'){ const s=activeScript(), rec=chgDB()[s?.id]; if(rec){ rec.fresh=[]; rec.cut=0; chgStore(); } L.forEach(x=>x.classList.remove('chg')); $('#chgBar')?.remove(); renderScriptList(); return; }
+  if(!L.length) return; CHG.i=(CHG.i+(a==='next'?1:-1)+L.length)%L.length; const el=L[CHG.i]; el.scrollIntoView({block:'center',behavior:'smooth'}); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); });
+ED.addEventListener('input',()=>{ if(curBlk?.classList.contains('chg')) curBlk.classList.remove('chg'); });
+{ const _l=loadScriptIntoEditor; loadScriptIntoEditor=function(s){ const r=_l.apply(this,arguments); if(s&&editorScriptId===s.id){ chgLook(s); CHG.i=-1; chgMark(); } return r; }; }
+{ const _s=syncEditor; syncEditor=function(){ const r=_s.apply(this,arguments); const s=activeScript(); if(s&&editorScriptId===s.id) chgMine(s); return r; }; }
+/* the script list shows which scripts have changes waiting */
+function chgCount(s){ const rec=chgDB()[s.id]; if(!rec) return 0; if(s.id===editorScriptId) return (rec.fresh||[]).length; return chgDiff(rec.h,s.blocks||[]).fresh.length+(rec.fresh||[]).length; }
+{ const _r=renderScriptList; renderScriptList=function(){ _r.apply(this,arguments); $$('#scriptList .script-item').forEach(el=>{ const s=S.scripts.find(x=>x.id===el.dataset.id); const n=s?chgCount(s):0; if(n) el.querySelector('b')?.insertAdjacentHTML('afterend',`<span class="chg-pill" title="${n} new or changed since you last looked">🔍 ${n}</span>`); }); }; }
+
+/* ===================================================================
+   🥔 HOT POTATO: one script, a timer, it passes back and forth
+   =================================================================== */
+S.potato=S.potato&&typeof S.potato==='object'?S.potato:{}; S.potato.games=Array.isArray(S.potato.games)?S.potato.games:[];
+if(typeof SY_MISC!=='undefined'&&!SY_MISC.includes('potato')) SY_MISC.push('potato');
+WQ_D.potato=['🥔','Hot Potato'];
+const POT={t:null,lockNote:false};
+const potMe=()=>(myName()||'').trim().toLowerCase();
+const potLive=()=>S.potato.games.filter(g=>!g.ended&&(g.local||g.players.some(p=>p.toLowerCase()===potMe())));
+const potGame=()=>potLive().sort((a,b)=>b.started-a.started)[0]||null;
+const potHolder=g=>g.players[g.turn%2];
+const potMine=g=>!!g&&(g.local||potHolder(g).toLowerCase()===potMe());
+function potTarget(g){ return g.target.type==='practice'?S.practice.pieces.find(p=>p.id===g.target.id):S.scripts.find(s=>s.id===g.target.id); }
+function potWords(g){ const t=potTarget(g); if(!t) return 0; if(g.target.type==='script'&&t.id===editorScriptId&&current==='desk'){ try{ return wqWords(serialize()); }catch(e){} } if(g.target.type==='practice'&&WQH.home&&WQ.run?.id===t.id){ try{ return wqWords(serialize()); }catch(e){} } return wqWords(t.blocks); }
+function potNew(){ const me=myName()||'', sc=S.scripts.slice().sort((a,b)=>b.updated-a.updated);
+  openModal(`<div class="pot-new"><div class="row"><h2 class="grow">🥔 Hot Potato</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
+    <p class="tiny muted">One script, a timer. When it goes off, the script passes to the other writer mid-scene, and they have to deal with whatever you left them.</p>
+    <div class="row" style="gap:10px"><div class="grow"><label class="lab">You</label><input class="txt" id="poMe" value="${esc(me)}" placeholder="JC"></div><div class="grow"><label class="lab">Them</label><input class="txt" id="poThem" value="${esc(S.settings.potThem||'Noah')}" placeholder="Noah"></div></div>
+    <label class="lab">Each turn</label><div class="seg" id="poMin">${[2,3,5,10].map(v=>`<button data-v="${v}" class="${v===(S.settings.potMin||5)?'on':''}">${v} min</button>`).join('')}</div>
+    <label class="lab">Write in</label><select class="txt" id="poWhat"><option value="new">🆕 A new practice piece (doesn't touch the real show)</option>${sc.map(s=>`<option value="${s.id}">✍️ ${esc((s.code?s.code+' · ':'')+(s.title||'Untitled'))}</option>`).join('')}</select>
+    <div id="poPromptRow"><label class="lab">Prompt (optional)</label><div class="row"><input class="txt grow" id="poPrompt" placeholder="Leave empty for no prompt"><button class="btn sm" id="poRoll">🎲</button></div></div>
+    <label class="lab">Where's the other writer?</label><div class="seg" id="poWhere"><button data-v="shared" class="${syOn()?'on':''}" ${syOn()?'':'disabled'}>👥 On their own computer or phone</button><button data-v="local" class="${syOn()?'':'on'}">💻 Right here (pass the laptop)</button></div>
+    <p class="tiny muted">${syOn()?'It passes through your shared show, so turns can take a few seconds to show up on the other side.':'No shared show is set up, so it\'s pass-the-laptop mode.'}</p>
+    <div class="row" style="margin-top:10px"><button class="btn primary" id="poGo">🥔 Start (you go first)</button></div></div>`);
+  $$('.seg button',$('#modal')).forEach(b=>b.onclick=()=>{ if(b.disabled) return; $$('button',b.parentNode).forEach(x=>x.classList.toggle('on',x===b)); });
+  $('#poRoll').onclick=()=>{ $('#poPrompt').value=vpFill(wqPick(WQ_DUEL)); }; $('#poWhat').onchange=e=>{ $('#poPromptRow').style.display=e.target.value==='new'?'':'none'; };
+  $('#poGo').onclick=()=>{ const a=$('#poMe').value.trim(), b=$('#poThem').value.trim(); if(!a||!b) return toast('Both names, please','bad'); if(a.toLowerCase()===b.toLowerCase()) return toast('Two different names','bad');
+    if(!myName()){ S.settings.myName=a; } S.settings.potThem=b; const mins=+($('#poMin .on')?.dataset.v||5); S.settings.potMin=mins; const what=$('#poWhat').value, local=$('#poWhere .on')?.dataset.v==='local', prompt=$('#poPrompt').value.trim();
+    let target; if(what==='new'){ const p={id:uid(),drill:'potato',title:'🥔 '+(prompt?prompt.slice(0,60):`${a} vs ${b}`),blocks:prompt?[{t:'note',x:'🥔 '+prompt},{t:'scene',x:''}]:[{t:'scene',x:''}],created:Date.now(),updated:Date.now(),author:`${a} + ${b}`,mods:{},secs:0,words:0,done:false,mins:0}; S.practice.pieces.push(p); target={type:'practice',id:p.id}; }
+    else target={type:'script',id:what};
+    const g={id:uid(),title:what==='new'?(prompt||'Hot Potato'):(S.scripts.find(s=>s.id===what)?.title||'Script'),target,players:[a,b],turn:0,mins,ends:Date.now()+mins*60e3,round:1,started:Date.now(),by:a,local,log:[]};
+    g.w0=potWords(g); S.potato.games.push(g); save(); if(syOn()) syncSoon(300); closeModal(); potOpen(g); potTick(); tone?.(660,.08,'triangle',.08); unlock('potato1'); }; }
+function potOpen(g){ const t=potTarget(g); if(!t) return toast('That script is gone','bad'); if(g.target.type==='practice'){ go('practice'); setTimeout(()=>wqOpen(t.id),120); } else { if(WQH.home) wqClose(true); S.activeScript=t.id; save(); go('desk'); } }
+function potPass(g,{auto=false,take=false}={}){ const w=potWords(g), who=potHolder(g); g.log=g.log||[]; g.log.push({by:who,round:g.round,words:Math.max(0,w-(g.w0||0)),at:Date.now()}); g.w0=w;
+  g.turn=(g.turn+1)%2; if(g.turn===0) g.round++; g.ends=Date.now()+g.mins*60e3; save(); if(syOn()&&!g.local) syncSoon(200);
+  const next=potHolder(g); ovAlert(`🥔 ${take?`${next} grabbed the potato`:`Passed to ${next}!`}`,`${g.mins} minutes. Round ${g.round}.`); tone?.(523,.12,'triangle',.1); setTimeout(()=>tone?.(784,.15,'triangle',.1),140);
+  if(g.local){ openModal(`<div class="pot-pass"><div class="pot-big">🥔</div><h2>Pass the laptop to ${esc(next)}!</h2><p>${esc(who)} wrote ${g.log[g.log.length-1].words} words. ${esc(next)}, you've got ${g.mins} minutes. Pick up exactly where it stopped.</p><button class="btn primary" id="poNext">I'm ${esc(next)}. Go! ⏱</button></div>`); $('#poNext').onclick=()=>{ g.ends=Date.now()+g.mins*60e3; save(); closeModal(); potTick(); }; }
+  else toast(auto?`⏰ Time! The potato went to ${esc(next)}.`:`🥔 Passed to ${esc(next)}.`); potTick(); }
+function potEnd(g){ g.ended=true; save(); if(syOn()&&!g.local) syncSoon(300); const by={}; (g.log||[]).forEach(l=>by[l.by]=(by[l.by]||0)+l.words);
+  openModal(`<div class="pot-pass"><div class="pot-big">🥔</div><h2>Game over</h2><p>${g.round} round${g.round===1?'':'s'} of ${g.mins}-minute turns.</p><div class="pot-score">${g.players.map(p=>`<div><b>${by[p]||0}</b><small>words by ${esc(p)}</small></div>`).join('')}</div><div class="row" style="justify-content:center;gap:8px"><button class="btn primary" id="poRead">🗣 Hear the whole thing</button><button class="btn" onclick="closeModal()">Done</button></div></div>`);
+  $('#poRead').onclick=()=>{ closeModal(); const t=potTarget(g); if(!t) return; if(g.target.type==='practice') wqHear(t.id); else { S.activeScript=t.id; go('desk'); setTimeout(()=>openTableRead(),300); } }; potTick(); }
+function potTick(){ const g=potGame(); let pill=$('#potPill');
+  if(!g){ pill?.remove(); potLock(null); return; }
+  if(!pill){ pill=document.createElement('div'); pill.id='potPill'; document.body.appendChild(pill); }
+  const left=g.ends-Date.now(), mine=potMine(g), hold=potHolder(g), fm=ms=>{ const s=Math.max(0,Math.ceil(ms/1000)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); };
+  if(mine&&left<=0&&!g.local){ potPass(g,{auto:true}); return; }
+  if(g.local&&left<=0&&!$('.pot-pass')){ potPass(g,{auto:true}); return; }
+  const late=!mine&&left<-30e3;
+  const html=`<span class="pot-ic">🥔</span><div class="grow"><b>${mine?(g.local?`${esc(hold)}'s turn`:'YOUR TURN'):`${esc(hold)} has it`}</b><small>${esc(g.title.slice(0,40))} · round ${g.round}</small></div><b class="pot-t ${left<30e3?'hot':''}">${late?'⌛':fm(left)}</b>
+    ${mine?'<button data-pot="pass">Pass ➜</button>':late?'<button data-pot="take">Grab it</button>':''}<button data-pot="open" title="Open the script">↗</button><button data-pot="end" title="End the game">✕</button>`;
+  if(pill.dataset.h!==html){ pill.innerHTML=html; pill.dataset.h=html; } pill.classList.toggle('mine',mine); potLock(g); }
+function potLock(g){ const t=g&&potTarget(g), lockIt=!!(g&&!potMine(g)&&t&&((g.target.type==='script'&&current==='desk'&&editorScriptId===t.id)||(g.target.type==='practice'&&WQH.home&&WQ.run?.id===t.id)));
+  if(lockIt){ if(ED.contentEditable!=='false'){ ED.contentEditable='false'; ED.classList.add('pot-locked'); } let n=$('#potLockNote'); if(!n){ n=document.createElement('div'); n.id='potLockNote'; $('#pageWrap').prepend(n); } n.textContent=`🥔 ${potHolder(g)} has the potato. You can read along. It comes back to you when their timer runs out.`; }
+  else { if(ED.classList.contains('pot-locked')){ ED.classList.remove('pot-locked'); if(!(WQH.home&&WQ.run?.reread)) ED.contentEditable='true'; } $('#potLockNote')?.remove(); } }
+document.addEventListener('click',e=>{ const a=e.target.closest('#potPill [data-pot]')?.dataset.pot; if(!a) return; const g=potGame(); if(!g) return;
+  if(a==='pass') return potPass(g); if(a==='take') return potPass(g,{take:true}); if(a==='open') return potOpen(g); if(a==='end'){ if(confirm('End this Hot Potato game for both of you?')) potEnd(g); } });
+setInterval(potTick,1000);
+{ const _r=syRefresh; syRefresh=async function(A){ await _r(A); if(A.has('potato')){ const g=potGame(); if(g&&potMine(g)&&!g.local&&POT.lastTurn!==g.id+g.turn+g.round){ POT.lastTurn=g.id+g.turn+g.round; ovAlert('🥔 Your turn!',`${g.mins} minutes. Go.`); tone?.(784,.12,'triangle',.1); toast(`🥔 Your turn! ${g.mins} minutes on the clock.`,'good'); if(g.target.type==='script'&&current==='desk'&&editorScriptId===g.target.id) syReloadEditor(); } potTick(); } }; }
+ACH.push({id:'potato1',e:'🥔',n:'Hot Potato',d:'Play a game of Hot Potato'});
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'🥔',label:'Hot Potato (pass the script back and forth)',run:()=>potNew(),kw:'hot potato pass script timer noah together'}); return C; }; }
+/* a Hot Potato card in the Practice Room */
+{ const _r=wqRender; wqRender=function(){ _r.apply(this,arguments); const grid=$('#scr-practice .wq-grid'); if(!grid||$('#potCard')) return; const g=potGame(), hol=holOn();
+  grid.insertAdjacentHTML('beforeend',`<div class="wq-drill wqk-potato ${hol?'wide':'full'}" id="potCard"><div class="wq-dh"><span class="wq-di">🥔</span><b>Hot Potato</b><small>2 writers</small></div><div class="wq-db"><p>One script and a timer. When it goes off, the script passes to the other writer <b>mid-scene</b>. ${syOn()?'Works across your shared show (computers and phones).':'Or pass the laptop.'} Use a practice piece or a real script.</p>${g?`<p><b>🥔 Game on:</b> ${esc(g.title)} · ${esc(potHolder(g))} has it</p>`:''}</div><div class="wq-df">${g?'<button class="btn" data-pot2="open">↗ Open it</button>':''}<button class="btn primary" data-pot2="new">🥔 New game</button></div></div>`); }; }
+document.addEventListener('click',e=>{ const a=e.target.closest('[data-pot2]')?.dataset.pot2; if(a==='new') potNew(); if(a==='open'){ const g=potGame(); if(g) potOpen(g); } });
+{ const _g=go; go=function(){ const r=_g.apply(this,arguments); setTimeout(potTick,0); return r; }; }
+
+/* ===================================================================
+   🎃 HOLIDAY MODE: the app dresses up (and so do the drills)
+   =================================================================== */
+const HOL={h:null};
+function holOn(){ return S.settings.holOff?null:HOL.h; }
+function holApply(){ HOL.h=holToday(); const h=holOn(); document.body.classList.forEach(c=>{ if(c.startsWith('hol-')) document.body.classList.remove(c); }); document.body.classList.toggle('hol',!!h); $('#holFx')?.remove(); $('#holGar')?.remove(); if(!h) return;
+  document.body.classList.add('hol-'+h.k); const fx=document.createElement('div'); fx.id='holFx'; fx.setAttribute('aria-hidden','true');
+  fx.innerHTML=Array.from({length:16},(_,i)=>`<span style="left:${(i*6.4+Math.random()*4).toFixed(1)}%;animation-delay:${(-Math.random()*18).toFixed(1)}s;animation-duration:${(12+Math.random()*10).toFixed(1)}s;font-size:${(14+Math.random()*14).toFixed(0)}px">${h.fx[i%h.fx.length]}</span>`).join(''); document.body.appendChild(fx);
+  const hd=$('header.marquee'); if(hd){ if(getComputedStyle(hd).position==='static') hd.style.position='relative'; hd.insertAdjacentHTML('beforeend',`<div id="holGar" aria-hidden="true">${h.garland.repeat(10)}</div>`); } }
+function holToggle(){ S.settings.holOff=!S.settings.holOff; save(); holApply(); toast(S.settings.holOff?'Holiday Mode off':`${HOL.h?HOL.h.e+' '+HOL.h.n+' mode on':'Holiday Mode on (nothing to celebrate today, though)'}`); if(current==='practice') wqRender(); }
+/* themed content, only while it's that holiday */
+{ const _c=wqChaosCard; wqChaosCard=function(level){ const p=typeof wqPiece==='function'?wqPiece(WQ.run?.id):null; const h=holOn(); if(h&&!p?.duelCards?.length&&Math.random()<.3) return vpFill(wqPick(h.chaos)); return _c.apply(this,arguments); }; }
+{ const _r=stkRoll; stkRoll=function(){ const h=holOn(); if(h){ STUCK.holiday=h.stuck; STUCK_CATS.holiday=[h.e,h.n]; } else { delete STUCK.holiday; delete STUCK_CATS.holiday; }
+  if(h&&STK.tab==='cold'&&Math.random()<.35){ STK.cur=vpFill(wqPick(h.cold)); return; } return _r.apply(this,arguments); }; }
+{ const _w=whEntries; whEntries=function(reel){ const E=_w.apply(this,arguments), h=holOn(); if(!h) return E; const add=reel.id==='what'?h.ev:reel.id==='where'?h.pl:reel.id==='t'?h.tw:null; return add?E.concat(add.map((t,i)=>({key:'h:'+h.k+i,t}))):E; }; }
+function holContent(){ const h=holOn(); if(!h||HOL.added===h.k) return; HOL.added=h.k; HEADLINES.push(...h.heads,...h.heads); HM_THOUGHTS.push(...h.hm); try{ renderTicker(); }catch(_){} }
+{ const _r=wqRender; wqRender=function(){ _r.apply(this,arguments); const h=holOn(), grid=$('#scr-practice .wq-grid'); if(!h||!grid||$('#holCard')) return;
+  grid.insertAdjacentHTML('beforeend',`<div class="wq-drill wqk-hol" id="holCard"><div class="wq-dh"><span class="wq-di">${h.e}</span><b>${esc(h.n)} special</b><small>holiday</small></div><div class="wq-db"><div class="wq-con"><span class="wq-cone">${h.drill.e}</span><div><h3>${esc(h.drill.t)}</h3><p>${esc(h.drill.d)}</p></div></div></div><div class="wq-df"><button class="btn primary" data-holgo="1">${h.e} Start (15 min)</button></div></div>`); }; }
+document.addEventListener('click',e=>{ if(!e.target.closest('[data-holgo]')) return; const h=holOn(); if(!h) return; wqStart('holiday',{title:`${h.drill.e} ${h.drill.t}`,mins:15,hol:h.k,blocks:[{t:'note',x:`${h.drill.e} ${h.drill.t}: ${h.drill.d}`}]}); });
+WQ_D.holiday=['🎉','Holiday special'];
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:HOL.h?.e||'🎉',label:S.settings.holOff?'Turn Holiday Mode on':'Turn Holiday Mode off',run:()=>holToggle(),kw:'holiday mode christmas halloween thanksgiving decorations snow'}); return C; }; }
+holApply(); holContent();
+setInterval(()=>{ const h=holToday(); if((h&&h.k)!==(HOL.h&&HOL.h.k)){ holApply(); holContent(); } },60*60e3);
+if(holOn()&&S.settings.holSeen!==HOL.h.k+new Date().getFullYear()&&!FIRST_RUN) setTimeout(()=>{ if($('.hello40')||$('#tour')) return; const h=holOn(); S.settings.holSeen=h.k+new Date().getFullYear(); save(); toast(`${h.e} It's ${h.n} in Nenjac City: holiday chaos cards, wheel slices, a ${h.n} drill in 🏋️ Practice and more. (Turn it off with Ctrl+K → Holiday Mode.)`); },9000);
+
+/* ===================================================================
+   🔴 STREAMER MODE + THE STREAM OVERLAY
+   =================================================================== */
+const STD={on:false,bg:'green',pos:'br',mode:'write',goal:500,goalTxt:'or Deegs blows up the theater',draw:{list:[],i:0,done:[]},anim:{}};
+S.settings.stream={...STD,...(S.settings.stream||{})}; S.settings.stream.draw={...STD.draw,...(S.settings.stream.draw||{})}; S.settings.stream.anim=S.settings.stream.anim||{};
+const STR=()=>S.settings.stream;
+const OV={win:null,t0:Date.now(),w0:null,html:'',beat:0,goalHit:false,anim0:null};
+function strOn(){ return !!STR().on; }
+function stApply(){ document.body.classList.toggle('streamer',strOn()); const b=$('#streamBtn'); if(b){ b.classList.toggle('live',strOn()); b.innerHTML=strOn()?'🔴 <b>LIVE</b>':'🔴'; } }
+$('#notesBtn')?.insertAdjacentHTML('beforebegin','<button class="iconbtn" id="streamBtn" title="Stream: Streamer Mode + the overlay for OBS / TikTok LIVE Studio" aria-label="Stream">🔴</button>');
+$('#streamBtn')?.addEventListener('click',()=>stPanel());
+/* privacy: nothing secret gets on stream */
+document.addEventListener('click',e=>{ if(!strOn()) return; const risky=e.target.closest('[data-ph="qr"],[data-ph="link"],#rmShowKey,#caQr,#rmQr,#pbQr,#pbNtfyQr,[data-sy="invite"],[data-sy="code"]'); if(risky&&!confirm('🔴 You\'re in Streamer Mode. This shows something private (a key, setup code or private link). Show it anyway?')){ e.preventDefault(); e.stopImmediatePropagation(); } },true);
+{ const _t=toast; toast=function(msg,...a){ if(strOn()&&typeof msg==='string'&&/^🗒 New note from/.test(msg)) msg='🗒 New note from the other writer (hidden in Streamer Mode)'; return _t.call(this,msg,...a); }; }
+function stTotalWords(){ let n=0; S.scripts.forEach(s=>{ n+=s.id===editorScriptId&&current==='desk'?0:wqWords(s.blocks); }); if(current==='desk'&&editorScriptId&&editorScriptId!=='__wq'){ try{ n+=wqWords(serialize()); }catch(_){} }
+  S.practice.pieces.forEach(p=>{ n+=WQH.home&&WQ.run?.id===p.id?0:(p.words||0); }); if(WQH.home){ try{ n+=wqWords(serialize()); }catch(_){} } return n; }
+function stScene(){ if(!ED.contains(curBlk)) return ''; let el=curBlk; while(el){ if(el.dataset.t==='scene'&&el.textContent.trim()) return el.textContent.trim().replace(/^\[|\]$/g,''); el=el.previousElementSibling; } return ''; }
+function stLine(){ let el=ED.contains(curBlk)?curBlk:null; if(!el){ const L=[...ED.children].filter(b=>b.textContent.trim()); el=L[L.length-1]; } if(!el) return null; let x=el.textContent.trim(), t=el.dataset.t, who='';
+  if(t==='character'){ const n=el.nextElementSibling; who=x; x=n?n.textContent.trim():''; } else if(t==='dialogue'||t==='paren'||t==='lyric'){ let p=el.previousElementSibling; while(p&&p.dataset.t!=='character'&&['dialogue','paren','lyric'].includes(p.dataset.t)) p=p.previousElementSibling; if(p?.dataset.t==='character') who=p.textContent.trim(); }
+  if(!x&&!who) return null; return {who,x,t}; }
+/* the overlay window (capture it in OBS or TikTok LIVE Studio) */
+const OV_CSS=`*{box-sizing:border-box}html,body{margin:0;height:100%;overflow:hidden;font-family:'Archivo',system-ui,sans-serif}
+body.bg-green{background:#00ff00}body.bg-magenta{background:#ff00ff}body.bg-blue{background:#0000ff}body.bg-panel{background:#1b1530}
+#ov{position:absolute;padding:18px}.pos-tl #ov{top:0;left:0}.pos-tr #ov{top:0;right:0}.pos-bl #ov{bottom:0;left:0}.pos-br #ov{bottom:0;right:0}.pos-bar #ov{left:0;right:0;bottom:0}
+.bg-panel #ov{position:static;padding:0;height:100%}
+.card{width:470px;background:#1b1530;color:#fff;border:5px solid #000;border-radius:20px;box-shadow:7px 7px 0 #000;overflow:hidden}.bg-panel .card{width:100%;height:100%;border:0;border-radius:0;box-shadow:none;display:flex;flex-direction:column}
+.pos-bar .card{width:100%;display:flex;align-items:stretch;border-radius:16px}.pos-bar .ch{writing-mode:horizontal-tb;flex:none;width:250px;border-bottom:0;border-right:4px solid #000}.pos-bar .cb{flex:1;display:flex;gap:18px;align-items:center}
+.ch{display:flex;align-items:center;gap:10px;background:#ffc81e;color:#000;padding:9px 14px;border-bottom:4px solid #000;font:400 16px 'Archivo Black',Impact,sans-serif;letter-spacing:.02em}.ch .live{background:#e03131;color:#fff;border-radius:7px;padding:1px 7px;font-size:12px;animation:blink 1.6s infinite}.ch .tm{margin-left:auto;background:#000;color:#ffc81e;border-radius:8px;padding:2px 9px;font-size:15px}
+@keyframes blink{50%{opacity:.55}}
+.cb{padding:12px 16px 14px;display:flex;flex-direction:column;gap:9px}.bg-panel .cb{flex:1;justify-content:center}
+.ep{font:400 22px/1.1 'Archivo Black',Impact,sans-serif}.ep small{display:block;font:700 12px 'Archivo',sans-serif;letter-spacing:.12em;color:#ffc81e;margin-bottom:3px}
+.sc{font:700 13px 'Archivo',sans-serif;color:#c9c2e6;text-transform:uppercase;letter-spacing:.06em}
+.goal{display:flex;flex-direction:column;gap:5px}.goal .gt{display:flex;justify-content:space-between;font:700 13px 'Archivo',sans-serif}.goal .gt b{font:400 17px 'Archivo Black',sans-serif;color:#ffc81e}
+.bar{height:16px;background:#2a2344;border:3px solid #000;border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,#ffc81e,#ff5fa2);transition:width .6s}
+.gtx{font:italic 600 12px 'Archivo',sans-serif;color:#c9c2e6}
+.line{background:#fff;color:#000;border:3px solid #000;border-radius:12px;padding:9px 12px;font:400 17px/1.35 'Courier Prime','Courier New',monospace;min-height:46px;max-height:118px;overflow:hidden}.line b{font:700 12px 'Archivo',sans-serif;display:block;letter-spacing:.08em;color:#930000}.line .cur{display:inline-block;width:9px;height:18px;background:#000;vertical-align:-3px;animation:blink 1s steps(1) infinite}
+.big{font:400 30px/1.1 'Archivo Black',Impact,sans-serif;color:#ffc81e}.big small{display:block;font:700 13px 'Archivo',sans-serif;color:#fff;letter-spacing:.1em;margin-bottom:4px}
+.ctx{font:italic 15px/1.35 'Courier Prime',monospace;color:#e5e0f5;border-left:4px solid #ffc81e;padding-left:10px}
+.next{font:700 12px 'Archivo',sans-serif;color:#c9c2e6}.next span{background:#2a2344;border-radius:999px;padding:2px 9px;margin:0 4px 4px 0;display:inline-block}
+.dots{display:flex;gap:4px;flex-wrap:wrap}.dots i{width:14px;height:14px;border-radius:50%;background:#2a2344;border:2px solid #000}.dots i.d{background:#69db7c}.dots i.c{background:#ffc81e;box-shadow:0 0 0 2px #fff}
+.pot{background:#ffc81e;color:#000;border:3px solid #000;border-radius:12px;padding:6px 10px;font:400 15px 'Archivo Black',sans-serif;display:flex;justify-content:space-between}
+#alerts{position:absolute;left:50%;top:42%;transform:translate(-50%,-50%);z-index:5;pointer-events:none}
+.al{background:#ffc81e;color:#000;border:6px solid #000;border-radius:22px;box-shadow:10px 10px 0 #000;padding:22px 30px;text-align:center;width:min(620px,86vw);animation:pop .45s cubic-bezier(.2,1.6,.4,1) both}
+.al small{display:block;font:700 14px 'Archivo',sans-serif;letter-spacing:.16em}.al b{display:block;font:400 34px/1.15 'Archivo Black',Impact,sans-serif;margin:8px 0}.al span{font:600 16px 'Archivo',sans-serif}
+.al.out{animation:out .35s ease-in both}@keyframes pop{from{transform:scale(.4) rotate(-8deg);opacity:0}}@keyframes out{to{transform:scale(.7);opacity:0}}
+#wait{position:absolute;inset:0;display:none;align-items:center;justify-content:center;font:400 22px 'Archivo Black',sans-serif;color:#fff;text-shadow:0 2px 0 #000}`;
+function ovOpen(){ let w=OV.win; if(!w||w.closed){ w=window.open('','njOverlay','width=1280,height=720,menubar=no,toolbar=no,location=no,status=no'); if(!w){ toast('Your browser blocked the overlay window. Allow pop-ups for this site, then try again.','bad'); return null; } }
+  OV.win=w; if(!w.document.getElementById('ov')){ w.document.open(); w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>Nenjac Overlay</title><script>window.__beat=Date.now(); setInterval(function(){ var dead=Date.now()-(window.__beat||0)>4000; var W=document.getElementById('wait'); if(W) W.style.display=dead?'flex':'none'; if(dead){ try{ if(window.opener&&!window.opener.closed&&window.opener.njOverlayAttach) window.opener.njOverlayAttach(window); }catch(e){} } },1500);
+document.addEventListener('keydown',function(e){ try{ if(window.opener&&window.opener.njOverlayKey&&window.opener.njOverlayKey(e.key,e.shiftKey)) e.preventDefault(); }catch(x){} });<\/script><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:ital,wght@0,400;0,600;0,700;1,600&family=Courier+Prime:ital@0;1&display=swap" rel="stylesheet"><style>${OV_CSS}</style></head><body><div id="ov"></div><div id="alerts"></div><div id="wait">Nenjac overlay · waiting for the app…</div>
+</body></html>`); w.document.close(); OV.html=''; }
+  ovRender(true); return w; }
+window.njOverlayAttach=w=>{ OV.win=w; OV.html=''; ovRender(true); };
+window.njOverlayKey=(k,shift)=>{ const m=STR().mode; if(m==='draw'){ if(k==='ArrowRight'||k==='n'||k==='N'){ stDrawStep(1); return true; } if(k==='ArrowLeft'||k==='b'||k==='B'){ stDrawStep(-1); return true; } if(k===' '){ stDrawDone(); return true; } }
+  if(m==='anim'){ if(k==='ArrowRight'||k==='n'||k==='N'){ stAnimStep(shift?'scene':1); return true; } if(k==='ArrowLeft'||k==='b'||k==='B'){ stAnimStep(shift?'-scene':-1); return true; } if(k==='s'||k==='S'){ stAnimStep('scene'); return true; } } return false; };
+function ovAlert(title,sub='',kicker='🔴 NENJAC'){ const w=OV.win; if(!w||w.closed) return; const box=w.document.getElementById('alerts'); if(!box) return; const d=w.document.createElement('div'); d.className='al'; d.innerHTML=`<small>${esc(kicker)}</small><b>${esc(title)}</b>${sub?`<span>${esc(sub)}</span>`:''}`; box.innerHTML=''; box.appendChild(d); setTimeout(()=>{ d.classList.add('out'); setTimeout(()=>d.remove(),400); },4200); }
+const fmtHMS=ms=>{ const s=Math.max(0,Math.floor(ms/1000)); return (s>=3600?Math.floor(s/3600)+':':'')+String(Math.floor(s/60)%60).padStart(s>=3600?2:1,'0')+':'+String(s%60).padStart(2,'0'); };
+function ovWidget(){ const st=STR(), tm=`<span class="tm">${fmtHMS(Date.now()-OV.t0)}</span>`, g=potGame(), pot=g?`<div class="pot"><span>🥔 ${potMine(g)?(g.local?esc(potHolder(g))+"'s turn":'MY TURN'):esc(potHolder(g))+' has it'}</span><span>${fmtHMS(g.ends-Date.now())}</span></div>`:'';
+  if(st.mode==='draw'){ const L=st.draw.list, i=Math.min(st.draw.i,Math.max(0,L.length-1)), cur=L[i], done=new Set(st.draw.done||[]);
+    return `<div class="card"><div class="ch"><span class="live">LIVE</span> 🎨 DRAWING EXPRESSIONS ${tm}</div><div class="cb">${cur?`<div class="big"><small>NOW DRAWING · ${i+1} OF ${L.length}</small>${esc(cur.who)} · ${esc(cur.emo)}</div>${cur.line?`<div class="ctx">“${esc(cur.line)}”${cur.code?` · ${esc(cur.code)}`:''}</div>`:''}
+      <div class="dots">${L.map((x,k)=>`<i class="${done.has(k)?'d':''} ${k===i?'c':''}"></i>`).join('')}</div>${L.slice(i+1,i+4).length?`<div class="next">NEXT: ${L.slice(i+1,i+4).map(x=>`<span>${esc(x.who)} · ${esc(x.emo)}</span>`).join('')}</div>`:''}`:'<div class="big"><small>EXPRESSION LIST</small>Add faces in the Stream panel</div>'}${pot}</div></div>`; }
+  if(st.mode==='anim'){ const s=S.scripts.find(x=>x.id===st.animSid)||activeScript(), A=stAnimItems(s), k=Math.min(st.anim[s?.id]||0,Math.max(0,A.length-1)), it=A[k], pct=A.length?Math.round(k/A.length*100):0, scenes=A.filter((x,j)=>j===0||x.scene!==A[j-1].scene).length, sc=it?A.slice(0,k+1).filter((x,j)=>j===0||x.scene!==A[j-1].scene).length:0;
+    let eta=''; if(OV.anim0&&OV.anim0.sid===s?.id&&k>OV.anim0.k){ const per=(Date.now()-OV.anim0.t)/(k-OV.anim0.k); eta=` · ~${fmtHMS(per*(A.length-k))} left at this pace`; }
+    return `<div class="card"><div class="ch"><span class="live">LIVE</span> 🎞 ANIMATING ${tm}</div><div class="cb"><div class="ep"><small>${esc(s?.code||'NENJAC')}</small>${esc(s?.title||'Untitled')}</div><div class="sc">🎬 Scene ${sc} of ${scenes}${it?.scene?' · '+esc(it.scene):''}</div>
+      ${it?`<div class="line">${it.who?`<b>${esc(it.who)}</b>`:''}${esc(it.x)}</div>`:''}<div class="goal"><div class="gt"><span>${k} of ${A.length} lines${eta}</span><b>${pct}%</b></div><div class="bar"><i style="width:${pct}%"></i></div></div>${pot}</div></div>`; }
+  const s=WQH.home?(wqPiece(WQ.run?.id)||{}):activeScript()||{}, words=Math.max(0,stTotalWords()-(OV.w0??stTotalWords())), goal=+st.goal||0, pct=goal?Math.min(100,Math.round(words/goal*100)):0, ln=stLine(), sc=stScene();
+  if(goal&&words>=goal&&!OV.goalHit){ OV.goalHit=true; setTimeout(()=>ovAlert('🎯 GOAL HIT!',`${words} words. ${st.goalTxt?st.goalTxt.replace(/^or\s+/i,'So now… '):''}`,'🔴 STREAM GOAL'),50); }
+  return `<div class="card"><div class="ch"><span class="live">LIVE</span> ✍️ WRITING NENJAC ${tm}</div><div class="cb"><div class="ep"><small>${esc(WQH.home?'PRACTICE ROOM':(s.code||'NEW EPISODE'))}</small>${esc((s.title||'Untitled').slice(0,46))}</div>${sc?`<div class="sc">📍 ${esc(sc)}</div>`:''}
+    ${goal?`<div class="goal"><div class="gt"><span>Words this stream</span><b>${words.toLocaleString()} / ${goal.toLocaleString()}</b></div><div class="bar"><i style="width:${pct}%"></i></div>${st.goalTxt?`<div class="gtx">${esc(goal)} words ${esc(st.goalTxt)}</div>`:''}</div>`:`<div class="goal"><div class="gt"><span>Words this stream</span><b>${words.toLocaleString()}</b></div></div>`}
+    <div class="line">${ln?`${ln.who?`<b>${esc(ln.who)}</b>`:''}${esc(ln.x.slice(-160))}<span class="cur"></span>`:'<span class="cur"></span>'}</div>${pot}</div></div>`; }
+function ovRender(force){ const w=OV.win; if(!w||w.closed) return; const d=w.document, ov=d.getElementById('ov'); if(!ov) return; w.__beat=Date.now(); const st=STR();
+  const cls=`bg-${st.bg} pos-${st.bg==='panel'?'br':st.pos}`; if(d.body.className!==cls) d.body.className=cls; const h=ovWidget(); if(force||h!==OV.html){ ov.innerHTML=h; OV.html=h; } }
+setInterval(()=>{ if(OV.win&&!OV.win.closed) ovRender(); },500);
+{ const _s=wqChaosShow; wqChaosShow=function(card){ _s.apply(this,arguments); ovAlert(card,'Work it in. Now.','🌪 CHAOS CARD'); }; }
+/* drawing: the list of faces to draw */
+function stDrawFill(sid){ const s=S.scripts.find(x=>x.id===sid); if(!s) return []; const out=[], seen=new Set(); let cue='';
+  (s.blocks||[]).forEach((b,i)=>{ if(b.t==='character') cue=b.x.trim(); if(b.t==='paren'&&cue){ const c=charByName(cue), who=c?wqFirst(c):cue.charAt(0)+cue.slice(1).toLowerCase(); let emo=b.x.trim().replace(/^\(|\)$/g,'').toLowerCase(); const m=PAREN_EMO.find(([re])=>re.test(emo)); if(m) emo=m[1]; emo=emo.split(/[,;]/)[0].slice(0,24);
+      const k=who.toLowerCase()+'|'+emo; if(seen.has(k)) return; seen.add(k); const nx=s.blocks[i+1]; out.push({who,emo,line:nx&&nx.t==='dialogue'?nx.x.slice(0,110):'',code:s.code||''}); } if(!['character','paren','dialogue','lyric'].includes(b.t)) cue=''; });
+  return out; }
+function stDrawStep(d){ const D=STR().draw; D.i=Math.max(0,Math.min(D.list.length-1,D.i+d)); save(); ovRender(); stPanelSync(); }
+function stDrawDone(){ const D=STR().draw; D.done=D.done||[]; if(!D.done.includes(D.i)){ D.done.push(D.i); ovAlert(`${D.list[D.i]?.who} · ${D.list[D.i]?.emo}`,'✅ Done! Next face…','🎨 EXPRESSION DONE'); } D.i=Math.min(D.list.length-1,D.i+1); save(); ovRender(); stPanelSync(); }
+/* animating: step through the episode */
+function stAnimItems(s){ if(!s) return []; const out=[]; let cue='', scene=''; (s.blocks||[]).forEach(b=>{ const x=String(b.x||'').trim(); if(b.t==='scene'){ scene=x.replace(/^\[|\]$/g,''); cue=''; return; } if(b.t==='character'){ cue=x; return; } if(!x||b.t==='note'||b.t==='paren'||b.t==='transition') return; out.push({who:(b.t==='dialogue'||b.t==='lyric')?cue:'',x,scene}); if(!['dialogue','lyric'].includes(b.t)) cue=''; }); return out; }
+function stAnimStep(d){ const st=STR(), s=S.scripts.find(x=>x.id===st.animSid)||activeScript(); if(!s) return; const A=stAnimItems(s); let k=st.anim[s.id]||0;
+  if(!OV.anim0||OV.anim0.sid!==s.id) OV.anim0={sid:s.id,k,t:Date.now()};
+  if(d==='scene'){ const sc=A[k]?.scene; while(k<A.length-1&&A[k].scene===sc) k++; } else if(d==='-scene'){ const sc=A[k]?.scene; while(k>0&&A[k-1].scene===sc) k--; if(k>0){ k--; const s2=A[k].scene; while(k>0&&A[k-1].scene===s2) k--; } } else k=Math.max(0,Math.min(A.length-1,k+d));
+  const prevScene=A[st.anim[s.id]||0]?.scene; st.anim[s.id]=k; save(); if(A[k]&&A[k].scene!==prevScene&&d!==-1) ovAlert(A[k].scene||'New scene','🎬 Next scene','🎞 ANIMATING');
+  if(k>=A.length-1&&A.length) ovAlert('THAT\'S A WRAP','🎉 Every line animated','🎞 ANIMATING'); ovRender(); stPanelSync(); }
+/* the 🔴 Stream panel */
+function stPanel(){ const st=STR(), sc=S.scripts.slice().sort((a,b)=>b.updated-a.updated); st.animSid=st.animSid&&S.scripts.some(s=>s.id===st.animSid)?st.animSid:(activeScript()?.id||sc[0]?.id);
+  openModal(`<div class="stp"><div class="row"><h2 class="grow">🔴 Stream</h2><button class="btn sm" onclick="closeModal()">✕</button></div>
+    <div class="stp-row"><label class="stp-big ${st.on?'on':''}"><input type="checkbox" id="stOn" ${st.on?'checked':''}><span class="stp-sw"></span><span><b>🙈 Streamer Mode</b><small>Hides your GitHub key, setup codes, drop box links and actor links, and asks before showing a QR code. Turn it on before you go live.</small></span></label></div>
+    <h3>🪟 The overlay</h3><p class="tiny muted">Opens a little window with a colored background. In <b>OBS</b>: Window Capture → pick “Nenjac Overlay” → right-click → Filters → Chroma Key (green). In <b>TikTok LIVE Studio</b>: add a window/app capture of it. If it can't key out the color there, use <b>Panel</b> (no green screen: the card fills the window, just crop it).</p>
+    <div class="row" style="flex-wrap:wrap;gap:8px"><button class="btn primary" id="stOpen">${OV.win&&!OV.win.closed?'🔄 Reconnect overlay':'🪟 Open the overlay'}</button>
+      <div class="seg" id="stBg">${[['green','🟩 Green'],['magenta','🟪 Magenta'],['blue','🟦 Blue'],['panel','⬛ Panel']].map(([v,l])=>`<button data-v="${v}" class="${st.bg===v?'on':''}">${l}</button>`).join('')}</div>
+      <div class="seg" id="stPos">${[['tl','↖'],['tr','↗'],['bl','↙'],['br','↘'],['bar','▁ Bar']].map(([v,l])=>`<button data-v="${v}" class="${st.pos===v?'on':''}" title="Where the card sits">${l}</button>`).join('')}</div></div>
+    <h3>What are you streaming?</h3><div class="seg stp-mode" id="stMode">${[['write','✍️ Writing'],['draw','🎨 Drawing faces'],['anim','🎞 Animating']].map(([v,l])=>`<button data-v="${v}" class="${st.mode===v?'on':''}">${l}</button>`).join('')}</div>
+    <div id="stModeBox"></div>
+    <div class="row" style="margin-top:12px;gap:8px"><button class="btn sm" id="stReset">⏱ Restart the stream timer + word count</button><button class="btn sm" id="stTest">✨ Test alert</button></div></div>`);
+  const box=()=>{ const st=STR(), el=$('#stModeBox'); if(!el) return;
+    if(st.mode==='write') el.innerHTML=`<p class="tiny muted">Shows the episode, the scene you're in, a live “words this stream” goal bar and the line you're typing. Chaos cards and Hot Potato passes pop up big on stream.</p><div class="row" style="gap:8px"><div><label class="lab">Word goal</label><input class="txt" id="stGoal" type="number" min="0" step="50" value="${st.goal}" style="width:110px"></div><div class="grow"><label class="lab">…or what happens</label><input class="txt" id="stGoalTxt" value="${esc(st.goalTxt)}" placeholder="or Deegs blows up the theater"></div></div>`;
+    if(st.mode==='draw'){ const D=st.draw; el.innerHTML=`<p class="tiny muted">For Google Drawings. One face per line (<b>Character · emotion</b>), or fill it from the parentheticals in a script. In the overlay window: <b>→</b> next, <b>←</b> back, <b>Space</b> done.</p>
+      <div class="row" style="gap:6px"><select class="txt grow" id="stDrawSrc">${sc.map(s=>`<option value="${s.id}">${esc((s.code?s.code+' · ':'')+(s.title||'Untitled'))}</option>`).join('')}</select><button class="btn sm" id="stDrawFill">📥 Fill from this script</button></div>
+      <textarea class="txt" id="stDrawList" rows="6" placeholder="Deegs · angry&#10;Starr · crying&#10;Nerd · smug" style="margin-top:6px">${esc(D.list.map(x=>`${x.who} · ${x.emo}`).join('\n'))}</textarea>
+      <div class="row" style="gap:6px;margin-top:6px;align-items:center"><button class="btn sm" data-dr="-1">◀</button><button class="btn sm primary" data-dr="done">✅ Done, next</button><button class="btn sm" data-dr="1">▶</button><span class="tiny" id="stDrawNow"></span><button class="btn sm" data-dr="clear" style="margin-left:auto">Clear ✓s</button></div>`; }
+    if(st.mode==='anim') el.innerHTML=`<p class="tiny muted">For Premiere. Shows the episode, scene, the line you're animating and a progress bar with a time estimate. In the overlay window: <b>→</b> next line, <b>←</b> back, <b>S</b> or <b>Shift+→</b> next scene.</p>
+      <select class="txt" id="stAnimSrc">${sc.map(s=>`<option value="${s.id}" ${s.id===st.animSid?'selected':''}>${esc((s.code?s.code+' · ':'')+(s.title||'Untitled'))}</option>`).join('')}</select>
+      <div class="row" style="gap:6px;margin-top:6px;align-items:center"><button class="btn sm" data-an="-scene">⏮ Scene</button><button class="btn sm" data-an="-1">◀ Line</button><button class="btn sm primary" data-an="1">Line ▶</button><button class="btn sm" data-an="scene">Scene ⏭</button><span class="tiny grow" id="stAnimNow"></span></div>`;
+    stPanelSync(); };
+  box(); const m=$('#modal .stp');
+  m.onclick=e=>{ const sg=e.target.closest('.seg button'); if(sg){ const id=sg.parentNode.id; $$('button',sg.parentNode).forEach(b=>b.classList.toggle('on',b===sg)); const st=STR();
+      if(id==='stBg') st.bg=sg.dataset.v; if(id==='stPos') st.pos=sg.dataset.v; if(id==='stMode'){ st.mode=sg.dataset.v; box(); } save(); ovRender(true); return; }
+    if(e.target.id==='stOpen'){ ovOpen(); e.target.textContent='🔄 Reconnect overlay'; OV.t0=OV.t0||Date.now(); if(OV.w0==null) OV.w0=stTotalWords(); return; }
+    if(e.target.id==='stReset'){ OV.t0=Date.now(); OV.w0=stTotalWords(); OV.goalHit=false; OV.anim0=null; toast('⏱ Stream timer and word count restarted'); ovRender(true); return; }
+    if(e.target.id==='stTest'){ ovAlert('This is a test alert','If you can read this on stream, you\'re set 🎉'); return; }
+    if(e.target.id==='stDrawFill'){ const L=stDrawFill($('#stDrawSrc').value); if(!L.length) return toast('No parentheticals in that script, so there are no faces to pull. Type them in instead.','bad'); STR().draw={list:L,i:0,done:[]}; save(); box(); ovRender(true); return toast(`📥 ${L.length} faces to draw`); }
+    const dr=e.target.closest('[data-dr]')?.dataset.dr; if(dr){ if(dr==='done') stDrawDone(); else if(dr==='clear'){ STR().draw.done=[]; save(); ovRender(true); } else stDrawStep(+dr); return; }
+    const an=e.target.closest('[data-an]')?.dataset.an; if(an){ stAnimStep(an==='scene'||an==='-scene'?an:+an); return; } };
+  m.onchange=e=>{ const st=STR(); if(e.target.id==='stOn'){ st.on=e.target.checked; e.target.closest('.stp-big').classList.toggle('on',st.on); save(); stApply(); toast(st.on?'🔴 Streamer Mode on. Private stuff is hidden.':'Streamer Mode off'); }
+    if(e.target.id==='stAnimSrc'){ st.animSid=e.target.value; OV.anim0=null; save(); stPanelSync(); ovRender(true); } };
+  m.oninput=e=>{ const st=STR(); if(e.target.id==='stGoal'){ st.goal=+e.target.value||0; OV.goalHit=false; save(); } if(e.target.id==='stGoalTxt'){ st.goalTxt=e.target.value; save(); }
+    if(e.target.id==='stDrawList'){ st.draw.list=e.target.value.split('\n').map(l=>l.trim()).filter(Boolean).map(l=>{ const [who,...r]=l.split(/\s*[·\-–—:|]\s*/); const old=st.draw.list.find(x=>x.who===who&&x.emo===(r.join(' ')||'neutral')); return old||{who:who||l,emo:r.join(' ')||'neutral',line:'',code:''}; }); st.draw.i=Math.min(st.draw.i,Math.max(0,st.draw.list.length-1)); save(); stPanelSync(); }
+    ovRender(); }; }
+function stPanelSync(){ const st=STR(), d=$('#stDrawNow'); if(d){ const c=st.draw.list[st.draw.i]; d.textContent=c?`Now: ${c.who} · ${c.emo} (${st.draw.i+1}/${st.draw.list.length}, ${(st.draw.done||[]).length} done)`:'No faces yet'; }
+  const a=$('#stAnimNow'); if(a){ const s=S.scripts.find(x=>x.id===st.animSid), A=stAnimItems(s), k=st.anim[s?.id]||0; a.textContent=A[k]?`${k+1}/${A.length}: ${A[k].who?A[k].who+': ':''}${A[k].x.slice(0,60)}`:'No lines'; } }
+document.addEventListener('keydown',e=>{ if(e.altKey&&e.shiftKey&&e.code==='KeyL'){ e.preventDefault(); STR().on=!STR().on; save(); stApply(); toast(STR().on?'🔴 Streamer Mode on':'Streamer Mode off'); } });
+{ const _c=commands; commands=function(){ const C=_c(); C.push({ico:'🔴',label:'Stream panel (Streamer Mode + overlay)',run:()=>stPanel(),kw:'stream streamer obs tiktok live overlay twitch youtube'},{ico:'🙈',label:STR().on?'Turn Streamer Mode off':'Turn Streamer Mode on',run:()=>{ STR().on=!STR().on; save(); stApply(); },kw:'streamer mode hide private stream'}); return C; }; }
+ACH.push({id:'stream1',e:'🔴',n:'On Air',d:'Open the stream overlay'});
+{ const _o=ovOpen; ovOpen=function(){ const w=_o.apply(this,arguments); if(w) unlock('stream1'); return w; }; }
+stApply();
+
 if(!FIRST_RUN&&!S.settings.seen594&&S.settings.seen600) setTimeout(()=>{ if($('#tour')||$('.hello40')||current==='booth'||$('#wqEd')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello594" role="status"><div class="h40-art">${castArt('Nerd')}</div><div><b>5.9.4: The Variety Pack.</b><small>${S.settings.seen593?'':'🏋️ The Practice Room (Write → Practice), plus: '}a 🆘 Stuck? button on the Writing Desk, 120 cold open starters, 18 new templates, and hundreds of new chaos cards, challenges, wheel slices, headlines and bets.</small><div class="row"><button class="btn sm primary" id="h594p">🏋️ Practice Room</button><button class="btn sm" id="h594w">✨ What's new</button><button class="btn sm" id="h594x" aria-label="Dismiss">✕</button></div></div></div>`);
   const done=()=>{ ['seen594','seen593','seen592','seen591','seen59','seen58','seen57','seen56','seen55','seen54','seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello594')?.remove(); }; $('#h594p').onclick=()=>{ done(); go('practice'); }; $('#h594w').onclick=()=>{ done(); openWhatsNew(); }; $('#h594x').onclick=done; },3300);
 if(FIRST_RUN) S.settings.seen594=true;
 
 SAFE_SKIP.push('nenjac.store','nenjac.store.t');
-if(!FIRST_RUN&&!S.settings.seen600) setTimeout(()=>{ if($('#tour')||$('.hello40')||current==='booth'||$('#wqEd')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40 h600" id="hello600" role="status"><div class="h40-art">${castArt('Deegs')}</div><div><b>Welcome to 6.0: Nenjac Everywhere.</b><small>🗄 No more 5 MB limit (your show moved to the big storage${window.NJSTORE&&NJSTORE.moved?', and a backup copy was set aside first':''}). 🎛 Studio Mode for when it's time to work. 📱 A way bigger phone app: Table Read, Practice, notes, ideas, the Wheel.</small><div class="row"><button class="btn sm primary" id="h600s">🎛 Try Studio Mode</button><button class="btn sm" id="h600w">✨ Everything new</button><button class="btn sm" id="h600x" aria-label="Dismiss">✕</button></div></div></div>`);
+if(!FIRST_RUN&&!S.settings.seen600&&S.settings.seen610) setTimeout(()=>{ if($('#tour')||$('.hello40')||current==='booth'||$('#wqEd')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40 h600" id="hello600" role="status"><div class="h40-art">${castArt('Deegs')}</div><div><b>Welcome to 6.0: Nenjac Everywhere.</b><small>🗄 No more 5 MB limit (your show moved to the big storage${window.NJSTORE&&NJSTORE.moved?', and a backup copy was set aside first':''}). 🎛 Studio Mode for when it's time to work. 📱 A way bigger phone app: Table Read, Practice, notes, ideas, the Wheel.</small><div class="row"><button class="btn sm primary" id="h600s">🎛 Try Studio Mode</button><button class="btn sm" id="h600w">✨ Everything new</button><button class="btn sm" id="h600x" aria-label="Dismiss">✕</button></div></div></div>`);
   const done=()=>{ ['seen600','seen594','seen593','seen592','seen591','seen59','seen58','seen57','seen56','seen55','seen54','seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello600')?.remove(); }; $('#h600s').onclick=()=>{ done(); studioToggle(true); }; $('#h600w').onclick=()=>{ done(); openWhatsNew(); }; $('#h600x').onclick=done; },3300);
 if(FIRST_RUN) S.settings.seen600=true;
+
+if(!FIRST_RUN&&!S.settings.seen610) setTimeout(()=>{ if($('#tour')||$('.hello40')||current==='booth'||$('#wqEd')) return; document.body.insertAdjacentHTML('beforeend',`<div class="hello40" id="hello610" role="status"><div class="h40-art">${castArt('Starr')}</div><div><b>6.1: The Streamer Update.</b><small>🔴 Streamer Mode + an overlay for OBS and TikTok LIVE Studio, 🔍 see what changed in a script, 🥔 Hot Potato with Noah, 🎬 real screenplay PDFs and Final Draft files, ☁️ send scripts to Google Docs, and 🎃 Holiday Mode.${S.settings.seen600?'':' (Plus everything from 6.0: the Big Move, 🎛 Studio Mode and the new phone app.)'}</small><div class="row"><button class="btn sm primary" id="h610s">🔴 Set up streaming</button><button class="btn sm" id="h610w">✨ Everything new</button><button class="btn sm" id="h610x" aria-label="Dismiss">✕</button></div></div></div>`);
+  const done=()=>{ ['seen610','seen600','seen594','seen593','seen592','seen591','seen59','seen58','seen57','seen56','seen55','seen54','seen53','seen52','seen51','seen50','seen492','seen49','seen48','seen47','seen46','seen44','seen43','seen42','seen41','seen40'].forEach(k=>S.settings[k]=true); save(); $('#hello610')?.remove(); }; $('#h610s').onclick=()=>{ done(); stPanel(); }; $('#h610w').onclick=()=>{ done(); openWhatsNew(); }; $('#h610x').onclick=done; },3300);
+if(FIRST_RUN) S.settings.seen610=true;
 
 </script>
 </body>
